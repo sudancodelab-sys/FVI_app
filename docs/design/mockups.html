@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FVI — تصميم الشاشات</title>
+<style>
+/* Cairo (SIL OFL) — Arabic + Latin subsets */
+@font-face{font-family:Cairo;font-weight:400;src:url(fonts/cairo-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:600;src:url(fonts/cairo-arabic-600-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:700;src:url(fonts/cairo-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:800;src:url(fonts/cairo-arabic-800-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:400;src:url(fonts/cairo-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
+@font-face{font-family:Cairo;font-weight:600;src:url(fonts/cairo-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
+@font-face{font-family:Cairo;font-weight:700;src:url(fonts/cairo-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
+@font-face{font-family:Cairo;font-weight:800;src:url(fonts/cairo-latin-800-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
+
+:root{
+  /* brand colors sampled from the FVI logo */
+  --navy:#262E62; --navy-d:#1A2048; --navy-soft:#E8EAF6; --navy-tint:#F2F3FA;
+  --orange:#E4451A; --orange-soft:#FDEDE7;
+  --bg:#F5F6FA; --surface:#FFFFFF; --text:#1A1D3B; --muted:#6B6E8C; --line:#E2E4EE;
+  --green:#14935A; --green-soft:#E2F4EB; --wa:#1FA855;
+  --amber:#A86F06; --amber-soft:#FFF3D6;
+  --red:#CF3434; --red-soft:#FCEBEB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Cairo,'DejaVu Sans',sans-serif;background:#DCDFEA;color:var(--text);line-height:1.5}
+b,strong{font-weight:700}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.i.sm{width:16px;height:16px} svg.i.lg{width:26px;height:26px} svg.i.xl{width:40px;height:40px;stroke-width:1.7}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+/* presentation board */
+.group{width:max-content;padding:44px 52px 34px;background:#ECEEF5}
+.ghead{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.ghead img{width:60px;height:60px}
+.ghead h1{font-size:27px;font-weight:800;color:var(--navy);line-height:1.3}
+.ghead p{font-size:15px;color:var(--muted);font-weight:600}
+.row{display:flex;gap:44px;align-items:flex-start}
+.device{display:flex;flex-direction:column;align-items:center;gap:16px}
+.phone{width:384px;height:804px;border-radius:48px;background:#15172C;padding:12px;box-shadow:0 26px 50px -20px rgba(26,32,72,.5),inset 0 0 0 2px #2C2F4E}
+.screen{position:relative;width:360px;height:780px;border-radius:36px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+.caption{font-size:16px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:9px}
+.caption .n{min-width:30px;height:30px;padding:0 6px;border-radius:99px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:800}
+.gfoot{margin-top:28px;font-size:13px;color:var(--muted);font-weight:600;display:flex;gap:8px;align-items:center}
+
+/* system bars */
+.sb{height:32px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 24px 0;font-size:13px;font-weight:700;direction:ltr}
+.sb .ic{display:flex;gap:6px;align-items:center}
+.sb svg{width:15px;height:15px;fill:currentColor}
+.light{color:#fff}
+
+/* app bar */
+.ab{height:58px;flex:none;display:flex;align-items:center;gap:6px;padding:0 10px}
+.ab .t{flex:1;min-width:0}
+.ab h2{font-size:18px;font-weight:800;line-height:1.3}
+.ab .sub{font-size:12px;font-weight:600;color:var(--muted);line-height:1.3}
+.ab.navy{background:var(--navy);color:#fff}
+.ab.navy .sub{color:#B9BDDD}
+.ib{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none}
+
+.body{flex:1;overflow:hidden;padding:6px 16px 16px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border-radius:18px;padding:14px;box-shadow:0 1px 2px rgba(26,32,72,.05),0 0 0 1px var(--line)}
+.sec{font-size:15px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.sec a{font-size:12.5px;color:var(--orange);font-weight:700}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.grow{flex:1}
+.hr{height:1px;background:var(--line)}
+
+/* controls */
+.btn{flex:none;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;width:100%}
+.btn.sm{height:36px;border-radius:10px;font-size:13px;width:auto;padding:0 14px}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-accent{background:var(--orange);color:#fff}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-outline{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost{color:var(--navy)}
+.btn-amber{background:var(--amber);color:#fff}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;font-weight:700;color:var(--muted)}
+.input{height:50px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);display:flex;align-items:center;gap:10px;padding:0 14px;font-size:15px;font-weight:600}
+.input .muted{color:#9C9FB8}
+.input.focus{box-shadow:inset 0 0 0 2px var(--navy)}
+.input svg{color:var(--muted)}
+.progress{height:6px;border-radius:99px;background:#E4E6EF;overflow:hidden}
+.progress>span{display:block;height:100%;background:var(--orange);border-radius:99px}
+.progress.navy>span{background:var(--navy)}
+.badge{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 10px;border-radius:99px;font-size:12px;font-weight:700;white-space:nowrap}
+.b-green{background:var(--green-soft);color:var(--green)}
+.b-amber{background:var(--amber-soft);color:var(--amber)}
+.b-red{background:var(--red-soft);color:var(--red)}
+.b-navy{background:var(--navy-soft);color:var(--navy)}
+.b-gray{background:#ECEDF3;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:34px;padding:0 13px;border-radius:99px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);color:var(--text)}
+.chip.on{background:var(--navy);color:#fff;box-shadow:none}
+.alert{border-radius:14px;padding:11px 12px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}
+.alert.amber{background:var(--amber-soft);color:#6B4703}
+.alert.amber svg{color:var(--amber)}
+.alert.green{background:var(--green-soft);color:#0D5C38}
+.alert.info{background:var(--navy-tint);color:var(--navy)}
+
+/* bottom nav */
+.nav{height:70px;flex:none;background:#fff;box-shadow:0 -1px 0 var(--line);display:flex;justify-content:space-around;align-items:center;padding:0 6px 4px}
+.nav .it{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11.5px;font-weight:700;color:var(--muted);width:78px}
+.nav .pill{width:58px;height:30px;border-radius:99px;display:grid;place-items:center}
+.nav .it.on{color:var(--navy)}
+.nav .it.on .pill{background:var(--navy-soft)}
+
+/* list rows */
+.li{display:flex;align-items:center;gap:12px;padding:11px 0}
+.li+.li{border-top:1px solid var(--line)}
+.li .tt{font-size:14.5px;font-weight:700;line-height:1.4}
+.li .ss{font-size:12px;font-weight:600;color:var(--muted);line-height:1.4}
+.ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none}
+.ico.navy{background:var(--navy-soft);color:var(--navy)}
+.ico.orange{background:var(--orange-soft);color:var(--orange)}
+.ico.green{background:var(--green-soft);color:var(--green)}
+.ico.gray{background:#ECEDF3;color:#9295AE}
+.ico.solid{background:var(--navy);color:#fff}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:15px;font-weight:800;flex:none}
+
+/* ---------- screen-specific ---------- */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.hero img{width:150px;height:150px;margin-bottom:12px}
+.hero h1{font-size:24px;font-weight:800;color:var(--navy);line-height:1.35}
+.hero .hs{font-size:15px;font-weight:700;color:var(--muted)}
+.tag{margin-top:12px;background:var(--orange-soft);color:var(--orange);font-weight:800;font-size:13px;padding:5px 14px;border-radius:99px}
+.opt{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.opt+.opt{margin-top:10px}
+.opt.on{box-shadow:inset 0 0 0 2px var(--navy);background:var(--navy-tint)}
+.opt .lg{width:40px;height:40px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px}
+.opt b{display:block;font-size:15px}
+.opt small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.radio{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 2px #C3C6D8;flex:none}
+.radio.on{box-shadow:inset 0 0 0 2px var(--navy),inset 0 0 0 6px #fff;background:var(--navy)}
+
+.devcode{border-radius:14px;background:var(--navy-tint);padding:12px 14px;display:flex;align-items:center;gap:12px;box-shadow:inset 0 0 0 1.5px dashed}
+.devcode .code{font-size:20px;font-weight:800;letter-spacing:2px;color:var(--navy)}
+
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;padding:7px 0}
+.dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:13px;font-weight:800}
+.dot.done{background:var(--green);color:#fff}
+.dot.cur{background:#fff;box-shadow:inset 0 0 0 2px var(--orange);color:var(--orange)}
+.or{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);font-weight:700}
+.or:before,.or:after{content:"";flex:1;height:1px;background:var(--line)}
+.halo{width:96px;height:96px;border-radius:50%;background:var(--orange-soft);display:grid;place-items:center;color:var(--orange);margin:0 auto;box-shadow:0 0 0 12px #FEF6F3}
+
+.homehead{background:linear-gradient(160deg,#2E377A 0%,var(--navy) 55%,var(--navy-d) 100%);padding-bottom:40px;border-radius:0 0 28px 28px;flex:none}
+.hh{display:flex;align-items:center;gap:12px;padding:10px 18px 0;color:#fff}
+.hh img{width:46px;height:46px;border-radius:50%;background:#fff}
+.hello{font-size:19px;font-weight:800;line-height:1.3}
+.hello-sub{font-size:13px;font-weight:600;color:#C2C6E6}
+.cont{display:flex;gap:12px;align-items:center}
+.play{width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 6px 14px -6px var(--orange)}
+.play svg{fill:#fff;stroke:none}
+.dept{display:flex;align-items:center;gap:12px;padding:12px 14px}
+.ring{--p:0;width:44px;height:44px;border-radius:50%;background:conic-gradient(var(--orange) calc(var(--p)*1%),#E7E8F0 0);display:grid;place-items:center;flex:none}
+.ring span{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--navy)}
+.locked{background:#FAFAFC}
+.locked .tt{color:#8E91AA}
+
+.lvl-head{display:flex;align-items:center;gap:10px}
+.lesson{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:14px;font-weight:700}
+.lesson .ck{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:12px;font-weight:800}
+.ck.done{background:var(--green-soft);color:var(--green)}
+.ck.now{background:var(--orange);color:#fff}
+.ck.todo{background:#EEEFF4;color:var(--muted)}
+.lesson.now{background:var(--orange-soft);margin:0 -14px;padding:9px 14px}
+
+.reader{flex:1;overflow:hidden;background:#fff;padding:18px 20px}
+.reader h1{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.reader p{font-size:15.5px;line-height:1.75;color:#2B2E4A}
+.formula{margin:14px 0;border-radius:14px;background:var(--navy-tint);padding:12px 14px;font-size:15px;font-weight:700;line-height:1.9}
+.formula .k{color:var(--orange)}
+.ex{display:flex;gap:10px;align-items:flex-start;font-size:15px;padding:6px 0;line-height:1.6}
+.ex .bul{width:6px;height:6px;border-radius:50%;background:var(--orange);margin-top:10px;flex:none}
+.note{margin-top:14px;border-radius:14px;background:var(--amber-soft);padding:11px 13px;font-size:13.5px;font-weight:700;color:#5E3F05;line-height:1.7;border-inline-start:4px solid #E3A21A}
+.readbar{height:4px;background:#ECEDF3;flex:none}
+.readbar span{display:block;height:100%;width:45%;background:var(--orange)}
+.lfoot{flex:none;background:#fff;box-shadow:0 -1px 0 var(--line);padding:12px 14px 16px;display:flex;gap:10px;align-items:center}
+
+.q{font-size:20px;font-weight:800;line-height:1.5;color:var(--text)}
+.ans{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:inset 0 0 0 1.5px var(--line);font-size:16px;font-weight:700}
+.ans .L{width:30px;height:30px;border-radius:9px;background:#EEEFF4;display:grid;place-items:center;font-size:13px;font-weight:800;color:var(--muted);flex:none}
+.ans.wrong{background:var(--red-soft);box-shadow:inset 0 0 0 2px var(--red)}
+.ans.wrong .L{background:var(--red);color:#fff}
+.ans.right{background:var(--green-soft);box-shadow:inset 0 0 0 2px var(--green)}
+.ans.right .L{background:var(--green);color:#fff}
+.explain{border-radius:14px;background:var(--navy-tint);padding:12px 14px;font-size:13.5px;font-weight:600;line-height:1.75}
+.explain b{color:var(--navy);display:flex;gap:6px;align-items:center;font-size:14px;margin-bottom:2px}
+
+.fcard{flex:1;border-radius:24px;background:#fff;box-shadow:0 18px 36px -18px rgba(26,32,72,.35),0 0 0 1px var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative;padding:20px}
+.fcard .word{font-size:38px;font-weight:800;color:var(--navy)}
+.fcard .mean{font-size:28px;font-weight:800;color:var(--orange)}
+.fcard .exs{font-size:14px;color:var(--muted);font-weight:600;text-align:center}
+.fcard .spk{position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:50%;background:var(--navy-soft);color:var(--navy);display:grid;place-items:center}
+.fcard .flip{position:absolute;top:18px;right:18px}
+.stack{position:relative;flex:1;display:flex}
+.stack:before,.stack:after{content:"";position:absolute;left:14px;right:14px;bottom:-8px;height:40px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px var(--line);z-index:0}
+.stack:after{left:28px;right:28px;bottom:-16px;opacity:.6}
+.stack .fcard{z-index:1}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:#fff;border-radius:16px;padding:12px 10px;box-shadow:0 0 0 1px var(--line);text-align:center}
+.stat .v{font-size:22px;font-weight:800;color:var(--navy);line-height:1.2}
+.stat .l{font-size:11.5px;font-weight:700;color:var(--muted)}
+.bars{display:flex;align-items:flex-end;gap:12px;height:96px;padding:0 4px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bar i{display:block;width:100%;border-radius:8px 8px 4px 4px;background:var(--navy-soft)}
+.bar.today i{background:var(--orange)}
+.bar.has i{background:var(--navy)}
+.bar span{font-size:11px;font-weight:700;color:var(--muted)}
+
+/* admin */
+.pin{background:linear-gradient(170deg,#2E377A,var(--navy) 50%,var(--navy-d));color:#fff}
+.pin .top{display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:34px}
+.pin .top img{width:92px;height:92px;border-radius:50%;background:#fff;margin-bottom:8px}
+.pin h2{font-size:21px;font-weight:800}
+.pin p{font-size:13.5px;color:#C2C6E6;font-weight:600}
+.dots{direction:ltr;display:flex;gap:16px;justify-content:center;margin:28px 0 8px}
+.dots i{width:15px;height:15px;border-radius:50%;box-shadow:inset 0 0 0 2px #8D93C7}
+.dots i.f{background:#fff;box-shadow:none}
+.keys{display:grid;grid-template-columns:repeat(3,72px);gap:16px 30px;justify-content:center;direction:ltr;margin-top:26px}
+.key{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:27px;font-weight:700}
+.key.clear{background:transparent}
+.admintag{display:inline-flex;align-items:center;gap:6px;background:rgba(228,69,26,.16);color:#FFB69F;font-size:12px;font-weight:800;padding:3px 12px;border-radius:99px}
+
+.dash-head{background:var(--navy);color:#fff;padding:0 0 26px;flex:none;border-radius:0 0 26px 26px}
+.big-action{display:flex;align-items:center;gap:12px;background:var(--orange);color:#fff;border-radius:18px;padding:14px;box-shadow:0 12px 24px -14px var(--orange)}
+.big-action .ico{background:rgba(255,255,255,.2);color:#fff;width:46px;height:46px}
+.big-action b{font-size:17px;display:block;line-height:1.3}
+.big-action small{font-size:12.5px;font-weight:600;opacity:.9}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{background:#fff;border-radius:16px;padding:11px 13px;box-shadow:0 0 0 1px var(--line);display:flex;align-items:center;gap:10px}
+.kpi .v{font-size:22px;font-weight:800;line-height:1.1}
+.kpi .l{font-size:11.5px;font-weight:700;color:var(--muted)}
+
+.parsed .kv{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;padding:5px 0}
+.parsed .kv span:first-child{color:var(--muted);font-weight:600}
+.parsed .kv span:last-child{font-weight:700}
+.tree{display:flex;flex-direction:column}
+.tn{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:14px;font-weight:700}
+.tn.l1{padding-inline-start:26px} .tn.l2{padding-inline-start:52px}
+.cb{width:22px;height:22px;border-radius:7px;box-shadow:inset 0 0 0 2px #C3C6D8;display:grid;place-items:center;flex:none;color:#fff}
+.cb.on{background:var(--navy);box-shadow:none}
+.cb.part{background:var(--navy);box-shadow:none}
+.cb.part:after{content:"";width:10px;height:2.5px;border-radius:2px;background:#fff}
+.req{font-size:11px;font-weight:800;color:var(--orange);background:var(--orange-soft);padding:1px 8px;border-radius:99px}
+
+.search{height:46px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--muted);font-size:14px;font-weight:600}
+.srow{display:flex;align-items:center;gap:12px;padding:11px 14px;background:#fff}
+.srow+.srow{border-top:1px solid var(--line)}
+.srow .tt{font-size:14.5px;font-weight:700;line-height:1.35}
+.srow .ss{font-size:12px;color:var(--muted);font-weight:600;line-height:1.4}
+.list{border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+
+.tl{display:flex;gap:12px}
+.tl .rail{display:flex;flex-direction:column;align-items:center}
+.tl .rail i{width:12px;height:12px;border-radius:50%;background:var(--orange);margin-top:6px;flex:none}
+.tl .rail i.old{background:#C3C6D8}
+.tl .rail b{flex:1;width:2px;background:var(--line);margin:4px 0}
+
+.set .row2{display:flex;align-items:center;gap:12px;padding:12px 0}
+.set .row2+.row2{border-top:1px solid var(--line)}
+.set .tt{font-size:14.5px;font-weight:700;line-height:1.35}
+.set .ss{font-size:12px;color:var(--muted);font-weight:600;line-height:1.45}
+.sw{width:44px;height:26px;border-radius:99px;background:var(--navy);position:relative;flex:none}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff}
+.grp{font-size:12.5px;font-weight:800;color:var(--muted);margin:2px 4px -6px}
+</style>
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v12"/></symbol>
+  <symbol id="chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M8 16v-3M13 16V8M18 16v-6"/></symbol>
+  <symbol id="sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="back" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="chev" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="cap" viewBox="0 0 24 24"><path d="M22 9 12 4 2 9l10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.4 3.3z"/><path d="M9 9.2c.3 2 2.3 4.2 4.8 4.9l1.1-1.1 1.7.8-.3 1.5c-3.6.3-7.7-3.8-7.5-7.4l1.5-.3.8 1.7z"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14.5 8.5l2 2"/></symbol>
+  <symbol id="paste" viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></symbol>
+  <symbol id="pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-6 1 1 1.5 2 1.5 3 1-2 1.5-4 1.5-7z"/></symbol>
+  <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="alert" viewBox="0 0 24 24"><path d="M10.3 4 2.5 18a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 4a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+  <symbol id="finger" viewBox="0 0 24 24"><path d="M6.5 7.5A7 7 0 0 1 19 12v1.5"/><path d="M4.5 11.5v1A10 10 0 0 0 6 18"/><path d="M9 9.5A4 4 0 0 1 16 12v2a11 11 0 0 1-1.5 5.5"/><path d="M12 12v2.5a12 12 0 0 1-2.2 6.5"/><path d="M8 13.5a14 14 0 0 1-1 5"/></symbol>
+  <symbol id="del" viewBox="0 0 24 24"><path d="M21 5H9l-6 7 6 7h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1z"/><path d="m17 9-6 6M11 9l6 6"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="cloud" viewBox="0 0 24 24"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8"/><path d="M12 12v8M9 15l3-3 3 3"/></symbol>
+  <symbol id="restore" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 8v4l3 2"/></symbol>
+  <symbol id="renew" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7L20 8.5"/><path d="M20 3.5v5h-5"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="book" viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2z"/><path d="M12 6v14"/></symbol>
+  <symbol id="list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="flip" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></symbol>
+  <symbol id="sig" viewBox="0 0 24 24"><rect x="2" y="15" width="3.5" height="6" rx="1"/><rect x="7.5" y="11" width="3.5" height="10" rx="1"/><rect x="13" y="7" width="3.5" height="14" rx="1"/><rect x="18.5" y="3" width="3.5" height="18" rx="1"/></symbol>
+  <symbol id="bat" viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2.5"/><rect x="21" y="10" width="1.8" height="4" rx=".8"/></symbol>
+</svg>
+
+<!-- ======================================================= -->
+<!-- GROUP 1 — student: onboarding & activation                -->
+<!-- ======================================================= -->
+<section class="group" id="g1">
+  <div class="ghead">
+    <img src="logo-512.png" alt="">
+    <div><h1>تطبيق الطالب · التسجيل والتفعيل</h1><p>من أول فتح للتطبيق حتى وصول كود التفعيل عبر واتساب</p></div>
+  </div>
+  <div class="row">
+
+    <!-- 1. Welcome -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>9:41</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="body" style="padding:26px 22px 22px;justify-content:space-between">
+        <div class="hero">
+          <img src="logo-512.png" alt="">
+          <h1>معهد الرؤية المستقبلية</h1>
+          <div class="hs">للحاسوب واللغات</div>
+          <div class="tag">تطبيق المذاكرة والمراجعة</div>
+        </div>
+        <div>
+          <div class="sec" style="margin-bottom:10px;font-size:14px">اختر لغة التطبيق <span class="ltr muted small" style="font-weight:700">Choose language</span></div>
+          <div class="opt on"><span class="lg">ع</span><div class="grow"><b>العربية</b><small>الواجهة من اليمين إلى اليسار</small></div><span class="radio on"></span></div>
+          <div class="opt"><span class="lg ltr" style="font-size:14px">En</span><div class="grow"><b class="ltr" style="text-align:right">English</b><small class="ltr" style="text-align:right">Left-to-right interface</small></div><span class="radio"></span></div>
+        </div>
+        <div>
+          <div class="btn btn-primary">متابعة</div>
+          <div class="small muted" style="text-align:center;margin-top:10px;font-weight:600">الإصدار <span class="ltr">1.0.0</span></div>
+        </div>
+      </div>
+    </div></div><div class="caption"><span class="n">1</span>الترحيب واختيار اللغة</div></div>
+
+    <!-- 2. Registration -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>9:42</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><span class="ib"><svg class="i"><use href="#back"/></svg></span><div class="t"><h2>طلب التفعيل</h2></div></div>
+      <div class="body" style="gap:13px">
+        <p class="small muted" style="font-weight:600;line-height:1.7">أدخل بياناتك، وسيصل طلبك إلى إدارة المعهد عبر واتساب لإصدار كود التفعيل.</p>
+        <div class="field"><label>الاسم الكامل</label><div class="input focus"><svg class="i"><use href="#user"/></svg>أحمد محمد عبدالله</div></div>
+        <div class="field"><label>رقم الهاتف</label><div class="input"><svg class="i"><use href="#phone"/></svg><span class="ltr">0912 345 678</span></div></div>
+        <div class="field"><label>المستوى الذي تدرس فيه</label><div class="input"><svg class="i"><use href="#cap"/></svg><span class="grow">اللغة الإنجليزية · المستوى الأول</span><svg class="i"><use href="#down"/></svg></div></div>
+        <div class="devcode" style="box-shadow:none;border:1.5px dashed #B9BDDA">
+          <span class="ico solid"><svg class="i"><use href="#shield"/></svg></span>
+          <div class="grow"><div class="small muted" style="font-weight:700">رمز جهازك</div><div class="code ltr" style="text-align:right">7K3Q-9XM2</div></div>
+        </div>
+        <p class="small muted" style="font-weight:600;line-height:1.6;margin-top:-4px">يُرسل الرمز تلقائياً مع الطلب، ويُربط التفعيل بهذا الهاتف فقط.</p>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:6px">
+          <div class="btn btn-wa"><svg class="i"><use href="#chat"/></svg>اطلب التفعيل عبر واتساب</div>
+          <div class="btn btn-ghost" style="height:40px;font-size:14px">لديّ كود تفعيل بالفعل</div>
+        </div>
+      </div>
+    </div></div><div class="caption"><span class="n">2</span>بيانات الطالب وطلب التفعيل</div></div>
+
+    <!-- 3. Waiting for activation -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>9:43</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><span class="ib"><svg class="i"><use href="#back"/></svg></span><div class="t"><h2>تفعيل التطبيق</h2></div></div>
+      <div class="body" style="gap:14px;padding-top:14px">
+        <div class="halo"><svg class="i xl"><use href="#key"/></svg></div>
+        <div style="text-align:center;margin-top:6px">
+          <div style="font-size:19px;font-weight:800">بانتظار كود التفعيل</div>
+          <p class="small muted" style="font-weight:600;line-height:1.7;margin-top:4px">عندما يصلك رد الإدارة في واتساب، اضغط على الرابط وسيُفعَّل التطبيق تلقائياً.</p>
+        </div>
+        <div class="card steps">
+          <div class="step"><span class="dot done"><svg class="i sm"><use href="#check"/></svg></span>إدخال البيانات</div>
+          <div class="step"><span class="dot done"><svg class="i sm"><use href="#check"/></svg></span>إرسال الطلب عبر واتساب</div>
+          <div class="step"><span class="dot cur">3</span>استلام كود التفعيل من الإدارة</div>
+        </div>
+        <div class="or">أو أدخل الكود يدوياً</div>
+        <div class="input"><span class="muted grow">الصق كود التفعيل هنا</span><svg class="i"><use href="#paste"/></svg></div>
+        <div class="btn btn-primary">تفعيل</div>
+        <div class="btn btn-ghost" style="height:34px;font-size:13.5px;margin-top:-6px"><svg class="i sm"><use href="#renew"/></svg>إعادة إرسال الطلب</div>
+      </div>
+    </div></div><div class="caption"><span class="n">3</span>انتظار الكود وإدخاله</div></div>
+
+  </div>
+  <div class="gfoot"><svg class="i sm"><use href="#info"/></svg>تصميم مبدئي — الأسماء والمحتوى المعروض تجريبية</div>
+</section>
+
+<!-- ======================================================= -->
+<!-- GROUP 2 — student: studying                               -->
+<!-- ======================================================= -->
+<section class="group" id="g2">
+  <div class="ghead">
+    <img src="logo-512.png" alt="">
+    <div><h1>تطبيق الطالب · المذاكرة</h1><p>الرئيسية، ثم الدورة ومستوياتها، ثم قراءة الدرس</p></div>
+  </div>
+  <div class="row">
+
+    <!-- 4. Home -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="homehead">
+        <div class="sb light"><span>10:15</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+        <div class="hh">
+          <img src="logo-512.png" alt="">
+          <div class="grow"><div class="hello">مرحباً، أحمد</div><div class="hello-sub">ماذا ستراجع اليوم؟</div></div>
+          <span class="ib" style="background:rgba(255,255,255,.12)"><svg class="i"><use href="#search"/></svg></span>
+        </div>
+      </div>
+      <div class="body" style="margin-top:-30px;gap:12px">
+        <div class="card cont">
+          <div class="grow">
+            <div class="small" style="color:var(--orange);font-weight:800">تابع من حيث توقفت</div>
+            <div class="ltr" style="text-align:right;font-size:17px;font-weight:800;line-height:1.4">Present Simple</div>
+            <div class="small muted" style="font-weight:600">الإنجليزية · المستوى الأول · الدرس 4</div>
+            <div class="progress" style="margin-top:8px"><span style="width:45%"></span></div>
+          </div>
+          <span class="play"><svg class="i"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="alert amber">
+          <svg class="i"><use href="#clock"/></svg>
+          <div class="grow" style="line-height:1.45">ينتهي «المستوى الأول» بعد 5 أيام</div>
+          <span class="btn sm btn-amber" style="height:32px">تجديد</span>
+        </div>
+        <div class="sec">الأقسام</div>
+        <div class="card dept">
+          <span class="ico orange"><svg class="i"><use href="#globe"/></svg></span>
+          <div class="grow"><div style="font-weight:800;font-size:15px">اللغات</div><div class="small muted" style="font-weight:600">دورة واحدة مفعّلة · 6 من 10 دروس</div></div>
+          <div class="ring" style="--p:60"><span>60%</span></div>
+        </div>
+        <div class="card dept locked">
+          <span class="ico gray"><svg class="i"><use href="#monitor"/></svg></span>
+          <div class="grow"><div class="tt" style="font-weight:800;font-size:15px">الحاسوب</div><div class="small muted" style="font-weight:600">غير مفعّل</div></div>
+          <span class="ico gray" style="background:transparent"><svg class="i"><use href="#lock"/></svg></span>
+        </div>
+        <div class="card dept locked">
+          <span class="ico gray"><svg class="i"><use href="#cap"/></svg></span>
+          <div class="grow"><div class="tt" style="font-weight:800;font-size:15px">التقوية</div><div class="small muted" style="font-weight:600">غير مفعّل</div></div>
+          <span class="ico gray" style="background:transparent"><svg class="i"><use href="#lock"/></svg></span>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="it on"><span class="pill"><svg class="i"><use href="#home"/></svg></span>الرئيسية</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#cards"/></svg></span>المراجعة</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#chart"/></svg></span>تقدّمي</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#sliders"/></svg></span>الإعدادات</div>
+      </div>
+    </div></div><div class="caption"><span class="n">4</span>الصفحة الرئيسية</div></div>
+
+    <!-- 5. Course -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="ab navy" style="height:auto;flex-direction:column;align-items:stretch;padding:0 10px 14px;gap:0">
+        <div class="sb light" style="padding:4px 14px 0"><span>10:16</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+        <div style="display:flex;align-items:center;gap:6px;height:54px">
+          <span class="ib"><svg class="i"><use href="#back"/></svg></span>
+          <div class="t"><h2>اللغة الإنجليزية</h2><div class="sub">قسم اللغات · 3 مستويات</div></div>
+        </div>
+      </div>
+      <div class="body" style="padding-top:14px;gap:12px">
+        <div class="card" style="padding-bottom:6px">
+          <div class="lvl-head">
+            <div class="grow"><div style="font-size:16px;font-weight:800">المستوى الأول</div><div class="small muted" style="font-weight:600">مفعّل حتى 3 نوفمبر 2026</div></div>
+            <span class="badge b-green"><svg class="i sm"><use href="#check"/></svg>مفعّل</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin:10px 0 6px"><div class="progress grow"><span style="width:60%"></span></div><span class="small" style="font-weight:800;color:var(--navy)">6/10</span></div>
+          <div class="lesson"><span class="ck done"><svg class="i sm"><use href="#check"/></svg></span><span class="ltr grow" style="text-align:right">The Alphabet</span></div>
+          <div class="lesson"><span class="ck done"><svg class="i sm"><use href="#check"/></svg></span><span class="ltr grow" style="text-align:right">Greetings</span></div>
+          <div class="lesson"><span class="ck done"><svg class="i sm"><use href="#check"/></svg></span><span class="ltr grow" style="text-align:right">Numbers 1–100</span></div>
+          <div class="lesson now"><span class="ck now">4</span><span class="ltr grow" style="text-align:right">Present Simple</span><span class="badge b-amber" style="background:#fff">قيد القراءة</span></div>
+          <div class="lesson"><span class="ck todo">5</span><span class="ltr grow" style="text-align:right">Daily Routine</span></div>
+          <div class="lesson"><span class="ck todo"><svg class="i sm"><use href="#target"/></svg></span><span class="grow">اختبار المستوى الأول</span><svg class="i sm muted"><use href="#chev"/></svg></div>
+        </div>
+        <div class="card locked" style="display:flex;align-items:center;gap:12px">
+          <span class="ico gray"><svg class="i"><use href="#lock"/></svg></span>
+          <div class="grow"><div class="tt" style="font-weight:800;font-size:15px">المستوى الثاني</div><div class="small muted" style="font-weight:600">غير مفعّل · 12 درساً</div></div>
+          <span class="btn sm btn-outline">اطلب التفعيل</span>
+        </div>
+        <div class="card locked" style="display:flex;align-items:center;gap:12px">
+          <span class="ico gray"><svg class="i"><use href="#lock"/></svg></span>
+          <div class="grow"><div class="tt" style="font-weight:800;font-size:15px">المستوى الثالث</div><div class="small muted" style="font-weight:600">غير مفعّل · 12 درساً</div></div>
+          <span class="btn sm btn-outline">اطلب التفعيل</span>
+        </div>
+      </div>
+    </div></div><div class="caption"><span class="n">5</span>الدورة ومستوياتها</div></div>
+
+    <!-- 6. Lesson reader -->
+    <div class="device"><div class="phone"><div class="screen" style="background:#fff">
+      <div class="sb"><span>10:18</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab">
+        <span class="ib"><svg class="i"><use href="#back"/></svg></span>
+        <div class="t"><h2 style="font-size:16px">الدرس 4 من 10</h2><div class="sub">الإنجليزية · المستوى الأول</div></div>
+        <span class="ib"><svg class="i"><use href="#pen"/></svg></span>
+        <span class="ib" style="color:var(--orange)"><svg class="i" style="fill:var(--orange)"><use href="#bookmark"/></svg></span>
+      </div>
+      <div class="readbar"><span></span></div>
+      <div class="reader ltr" style="text-align:left">
+        <h1>Present Simple</h1>
+        <p>We use the present simple for <b>habits</b>, <b>routines</b> and <b>facts</b>.</p>
+        <div class="formula">
+          I / You / We / They + <span class="k">verb</span><br>
+          He / She / It + <span class="k">verb + s</span>
+        </div>
+        <div class="ex"><span class="bul"></span><span>She <b style="color:var(--orange)">works</b> in a bank.</span></div>
+        <div class="ex"><span class="bul"></span><span>They <b style="color:var(--orange)">play</b> football every Friday.</span></div>
+        <div class="ex"><span class="bul"></span><span>Water <b style="color:var(--orange)">boils</b> at 100°C.</span></div>
+        <div class="note" dir="rtl" style="text-align:right">ملاحظة: نضيف <span class="ltr">s</span> إلى الفعل فقط مع <span class="ltr">he / she / it</span>، مثل: <span class="ltr">he plays</span>.</div>
+      </div>
+      <div class="lfoot">
+        <span class="ib" style="background:var(--navy-tint);color:var(--navy)"><svg class="i"><use href="#back"/></svg></span>
+        <div class="btn btn-accent grow" style="height:48px"><svg class="i"><use href="#target"/></svg>اختبر نفسك</div>
+        <span class="ib" style="background:var(--navy-tint);color:var(--navy)"><svg class="i" style="transform:scaleX(-1)"><use href="#back"/></svg></span>
+      </div>
+    </div></div><div class="caption"><span class="n">6</span>قراءة الدرس</div></div>
+
+  </div>
+  <div class="gfoot"><svg class="i sm"><use href="#info"/></svg>محتوى الدرس بالإنجليزية يُعرض من اليسار إلى اليمين حتى داخل الواجهة العربية</div>
+</section>
+
+<!-- ======================================================= -->
+<!-- GROUP 3 — student: review & progress                      -->
+<!-- ======================================================= -->
+<section class="group" id="g3">
+  <div class="ghead">
+    <img src="logo-512.png" alt="">
+    <div><h1>تطبيق الطالب · المراجعة والتقدّم</h1><p>اختبارات بتصحيح فوري، بطاقات حفظ، ومتابعة نقاط الضعف</p></div>
+  </div>
+  <div class="row">
+
+    <!-- 7. Quiz -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>10:25</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab">
+        <span class="ib"><svg class="i"><use href="#x"/></svg></span>
+        <div class="t"><h2 style="font-size:16px">اختبار: Present Simple</h2></div>
+        <span class="badge b-navy" style="margin-inline-end:6px">3 / 10</span>
+      </div>
+      <div style="padding:0 16px"><div class="progress"><span style="width:30%"></span></div></div>
+      <div class="body" style="padding-top:18px;gap:11px">
+        <div class="small muted" style="font-weight:700">اختر الإجابة الصحيحة</div>
+        <div class="q ltr" style="text-align:left">She ______ to school every day.</div>
+        <div class="ans wrong ltr"><span class="L">A</span><span class="grow">go</span><svg class="i" style="color:var(--red)"><use href="#x"/></svg></div>
+        <div class="ans right ltr"><span class="L">B</span><span class="grow">goes</span><svg class="i" style="color:var(--green)"><use href="#check"/></svg></div>
+        <div class="ans ltr"><span class="L">C</span><span class="grow">going</span></div>
+        <div class="ans ltr"><span class="L">D</span><span class="grow">gone</span></div>
+        <div class="explain">
+          <b><svg class="i sm"><use href="#info"/></svg>الشرح</b>
+          مع الضمير <span class="ltr">She</span> نضيف <span class="ltr">es</span> للفعل <span class="ltr">go</span> في المضارع البسيط، فيصبح <span class="ltr" style="font-weight:800;color:var(--green)">goes</span>.
+        </div>
+        <div class="btn btn-primary" style="margin-top:auto">السؤال التالي</div>
+      </div>
+    </div></div><div class="caption"><span class="n">7</span>اختبار بتصحيح فوري وشرح</div></div>
+
+    <!-- 8. Flashcards -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>10:31</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab">
+        <span class="ib"><svg class="i"><use href="#back"/></svg></span>
+        <div class="t"><h2>بطاقات الحفظ</h2><div class="sub">المستوى الأول · المفردات</div></div>
+      </div>
+      <div class="body" style="gap:14px">
+        <div style="display:flex;align-items:center;gap:10px"><div class="progress grow navy"><span style="width:40%"></span></div><span class="small" style="font-weight:800;color:var(--navy)">8 من 20</span></div>
+        <div class="stack">
+          <div class="fcard">
+            <span class="spk"><svg class="i"><use href="#speaker"/></svg></span>
+            <span class="flip badge b-gray"><svg class="i sm"><use href="#flip"/></svg>مقلوبة</span>
+            <div class="word ltr">Library</div>
+            <div style="width:60px;height:3px;border-radius:3px;background:var(--line);margin:6px 0"></div>
+            <div class="mean">مكتبة</div>
+            <div class="exs ltr" style="margin-top:8px">I study at the <b>library</b> every evening.</div>
+          </div>
+        </div>
+        <div class="small muted" style="text-align:center;font-weight:600;margin-top:10px">اضغط على البطاقة لقلبها</div>
+        <div style="display:flex;gap:10px">
+          <div class="btn" style="background:var(--orange-soft);color:var(--orange)"><svg class="i"><use href="#renew"/></svg>لم أحفظها</div>
+          <div class="btn" style="background:var(--green);color:#fff"><svg class="i"><use href="#check"/></svg>أعرفها</div>
+        </div>
+        <div class="alert info" style="font-size:12.5px;font-weight:600"><svg class="i sm"><use href="#info"/></svg>البطاقات التي لم تحفظها تعود إليك أكثر حتى تثبت.</div>
+      </div>
+    </div></div><div class="caption"><span class="n">8</span>بطاقات الحفظ</div></div>
+
+    <!-- 9. Progress -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>10:40</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><div class="t" style="padding-inline-start:8px"><h2>تقدّمي</h2></div></div>
+      <div class="body" style="gap:12px">
+        <div class="stats">
+          <div class="stat"><div class="v">6<span class="small muted">/10</span></div><div class="l">دروس مكتملة</div></div>
+          <div class="stat"><div class="v" style="color:var(--green)">78%</div><div class="l">متوسط الاختبارات</div></div>
+          <div class="stat"><div class="v" style="color:var(--orange);display:flex;justify-content:center;align-items:center;gap:2px">5<svg class="i sm" style="color:var(--orange)"><use href="#flame"/></svg></div><div class="l">أيام متتالية</div></div>
+        </div>
+        <div class="card">
+          <div class="sec" style="margin-bottom:10px">نشاطك هذا الأسبوع <span class="small muted" style="font-weight:600">بالدقائق</span></div>
+          <div class="bars">
+            <div class="bar has"><i style="height:40%"></i><span>س</span></div>
+            <div class="bar has"><i style="height:65%"></i><span>ح</span></div>
+            <div class="bar"><i style="height:8%"></i><span>ن</span></div>
+            <div class="bar has"><i style="height:52%"></i><span>ث</span></div>
+            <div class="bar has"><i style="height:80%"></i><span>ر</span></div>
+            <div class="bar today"><i style="height:60%"></i><span style="color:var(--orange)">خ</span></div>
+            <div class="bar"><i style="height:4%"></i><span>ج</span></div>
+          </div>
+        </div>
+        <div class="card" style="padding-top:10px;padding-bottom:4px">
+          <div class="sec">نقاط تحتاج مراجعة</div>
+          <div class="li"><span class="ico orange"><svg class="i"><use href="#target"/></svg></span><div class="grow"><div class="tt ltr" style="text-align:right">Present Simple</div><div class="ss">3 أخطاء متكررة</div></div><span class="btn sm btn-outline" style="height:32px">راجع</span></div>
+          <div class="li"><span class="ico orange"><svg class="i"><use href="#target"/></svg></span><div class="grow"><div class="tt ltr" style="text-align:right">Numbers 11–20</div><div class="ss">خطآن</div></div><span class="btn sm btn-outline" style="height:32px">راجع</span></div>
+        </div>
+        <div class="card" style="padding:12px 14px">
+          <div class="sec" style="font-size:14px;margin-bottom:6px">تفعيلاتي</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700"><span class="grow">الإنجليزية · المستوى الأول</span><span class="badge b-amber">حتى 3 نوفمبر</span></div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="it"><span class="pill"><svg class="i"><use href="#home"/></svg></span>الرئيسية</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#cards"/></svg></span>المراجعة</div>
+        <div class="it on"><span class="pill"><svg class="i"><use href="#chart"/></svg></span>تقدّمي</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#sliders"/></svg></span>الإعدادات</div>
+      </div>
+    </div></div><div class="caption"><span class="n">9</span>متابعة التقدّم</div></div>
+
+  </div>
+  <div class="gfoot"><svg class="i sm"><use href="#info"/></svg>كل البيانات محفوظة على هاتف الطالب ولا تحتاج إنترنت</div>
+</section>
+
+<!-- ======================================================= -->
+<!-- GROUP 4 — admin: lock, dashboard, new activation          -->
+<!-- ======================================================= -->
+<section class="group" id="g4">
+  <div class="ghead">
+    <img src="logo-512.png" alt="">
+    <div><h1>تطبيق الإدارة · إصدار الأكواد</h1><p>قفل الدخول، لوحة الإدارة، وإصدار كود تفعيل من رسالة واتساب</p></div>
+  </div>
+  <div class="row">
+
+    <!-- A1. PIN lock -->
+    <div class="device"><div class="phone"><div class="screen pin">
+      <div class="sb light"><span>11:02</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="top">
+        <img src="logo-512.png" alt="">
+        <span class="admintag"><svg class="i sm"><use href="#shield"/></svg>تطبيق الإدارة</span>
+        <h2>أدخل رمز الدخول</h2>
+        <p>أو استخدم بصمة الهاتف</p>
+      </div>
+      <div class="dots"><i class="f"></i><i class="f"></i><i></i><i></i></div>
+      <div class="keys">
+        <div class="key">1</div><div class="key">2</div><div class="key">3</div>
+        <div class="key">4</div><div class="key">5</div><div class="key">6</div>
+        <div class="key">7</div><div class="key">8</div><div class="key">9</div>
+        <div class="key clear"><svg class="i lg"><use href="#finger"/></svg></div><div class="key">0</div><div class="key clear"><svg class="i lg"><use href="#del"/></svg></div>
+      </div>
+    </div></div><div class="caption"><span class="n">A1</span>قفل تطبيق الإدارة</div></div>
+
+    <!-- A2. Dashboard -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="dash-head">
+        <div class="sb light"><span>11:03</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+        <div class="hh" style="padding-top:8px">
+          <img src="logo-512.png" alt="">
+          <div class="grow"><div class="hello" style="font-size:18px">لوحة الإدارة</div><div class="hello-sub">الخميس، 29 أكتوبر 2026</div></div>
+        </div>
+      </div>
+      <div class="body" style="margin-top:-14px;gap:12px">
+        <div class="big-action">
+          <span class="ico"><svg class="i lg"><use href="#paste"/></svg></span>
+          <div class="grow"><b>تفعيل جديد</b><small>الصق رسالة الطالب من واتساب</small></div>
+          <svg class="i"><use href="#chev"/></svg>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><span class="ico navy"><svg class="i"><use href="#users"/></svg></span><div><div class="v">128</div><div class="l">طالب مفعّل</div></div></div>
+          <div class="kpi"><span class="ico" style="background:var(--amber-soft);color:var(--amber)"><svg class="i"><use href="#clock"/></svg></span><div><div class="v" style="color:var(--amber)">9</div><div class="l">تنتهي قريباً</div></div></div>
+          <div class="kpi"><span class="ico" style="background:var(--red-soft);color:var(--red)"><svg class="i"><use href="#lock"/></svg></span><div><div class="v" style="color:var(--red)">14</div><div class="l">منتهية</div></div></div>
+          <div class="kpi"><span class="ico green"><svg class="i"><use href="#key"/></svg></span><div><div class="v" style="color:var(--green)">37</div><div class="l">كوداً هذا الشهر</div></div></div>
+        </div>
+        <div class="card" style="padding-top:10px;padding-bottom:2px">
+          <div class="sec">تنتهي قريباً <a>عرض الكل</a></div>
+          <div class="li"><span class="av" style="background:var(--navy-soft);color:var(--navy)">أ</span><div class="grow"><div class="tt">أحمد محمد عبدالله</div><div class="ss">الإنجليزية · المستوى الأول</div></div><span class="badge b-amber">5 أيام</span></div>
+          <div class="li"><span class="av" style="background:var(--orange-soft);color:var(--orange)">س</span><div class="grow"><div class="tt">سارة عثمان</div><div class="ss">الحاسوب · أساسيات الحاسوب</div></div><span class="badge b-amber">يومان</span></div>
+        </div>
+        <div class="alert amber" style="margin-top:auto">
+          <svg class="i"><use href="#cloud"/></svg>
+          <div class="grow" style="line-height:1.45">آخر نسخة احتياطية قبل 12 يوماً</div>
+          <span class="btn sm btn-amber" style="height:32px">نسخ الآن</span>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="it on"><span class="pill"><svg class="i"><use href="#home"/></svg></span>الرئيسية</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#key"/></svg></span>تفعيل جديد</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#users"/></svg></span>الطلاب</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#sliders"/></svg></span>الإعدادات</div>
+      </div>
+    </div></div><div class="caption"><span class="n">A2</span>لوحة الإدارة</div></div>
+
+    <!-- A3. New activation -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>11:05</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><span class="ib"><svg class="i"><use href="#back"/></svg></span><div class="t"><h2>تفعيل جديد</h2></div></div>
+      <div class="body" style="gap:10px;padding-top:0">
+        <div class="card parsed" style="padding:10px 14px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span class="sec grow" style="font-size:14px">بيانات الطالب</span><span class="badge b-navy"><svg class="i sm"><use href="#chat"/></svg>قُرئت من رسالة واتساب</span></div>
+          <div class="kv"><span>الاسم</span><span>مصعب عبدالرحمن</span></div>
+          <div class="kv"><span>الهاتف</span><span class="ltr">0923 456 789</span></div>
+          <div class="kv"><span>رمز الجهاز</span><span class="ltr" style="letter-spacing:1px">P4WD-2HJ8</span></div>
+          <div class="alert green" style="padding:7px 10px;margin-top:6px;font-size:12.5px"><svg class="i sm"><use href="#check"/></svg>جهاز جديد · لم يُفعَّل من قبل</div>
+        </div>
+        <div class="card" style="padding:10px 14px 6px">
+          <div class="sec" style="font-size:14px;margin-bottom:2px">ما الذي يُفتح للطالب؟</div>
+          <div class="tree">
+            <div class="tn"><span class="cb"></span><svg class="i sm muted"><use href="#monitor"/></svg>الحاسوب</div>
+            <div class="tn"><span class="cb part"></span><svg class="i sm muted"><use href="#globe"/></svg>اللغات</div>
+            <div class="tn l1"><span class="cb part"></span>اللغة الإنجليزية</div>
+            <div class="tn l2"><span class="cb on"><svg class="i sm" style="stroke-width:3"><use href="#check"/></svg></span><span class="grow">المستوى الأول</span><span class="req">طلبه الطالب</span></div>
+            <div class="tn l2"><span class="cb"></span>المستوى الثاني</div>
+            <div class="tn l2"><span class="cb"></span>المستوى الثالث</div>
+            <div class="tn"><span class="cb"></span><svg class="i sm muted"><use href="#cap"/></svg>التقوية</div>
+          </div>
+        </div>
+        <div class="card" style="padding:10px 14px">
+          <div class="sec" style="font-size:14px;margin-bottom:8px">مدة التفعيل</div>
+          <div class="chips"><span class="chip">شهر</span><span class="chip on">شهران</span><span class="chip">3 أشهر</span><span class="chip"><svg class="i sm"><use href="#cal"/></svg>مخصص</span></div>
+          <div class="small muted" style="margin-top:8px;font-weight:700">ينتهي في: <span style="color:var(--navy)">29 ديسمبر 2026</span></div>
+        </div>
+        <div class="btn btn-wa" style="margin-top:auto"><svg class="i"><use href="#send"/></svg>إصدار الكود وإرساله عبر واتساب</div>
+      </div>
+    </div></div><div class="caption"><span class="n">A3</span>إصدار كود التفعيل</div></div>
+
+  </div>
+  <div class="gfoot"><svg class="i sm"><use href="#info"/></svg>الصلاحيات قابلة للاختيار على أي مستوى: وحدة، دورة، عدة دورات، قسم كامل، أو كل الأقسام</div>
+</section>
+
+<!-- ======================================================= -->
+<!-- GROUP 5 — admin: students log & settings                  -->
+<!-- ======================================================= -->
+<section class="group" id="g5">
+  <div class="ghead">
+    <img src="logo-512.png" alt="">
+    <div><h1>تطبيق الإدارة · السجل والإعدادات</h1><p>سجل الطلاب المفعَّلين، تفاصيل كل طالب، والنسخ الاحتياطي</p></div>
+  </div>
+  <div class="row">
+
+    <!-- A4. Students list -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>11:10</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><div class="t" style="padding-inline-start:8px"><h2>الطلاب <span class="small muted">(151)</span></h2></div></div>
+      <div class="body" style="gap:12px;padding-top:0">
+        <div class="search"><svg class="i"><use href="#search"/></svg>ابحث بالاسم أو رقم الهاتف</div>
+        <div class="chips" style="flex-wrap:nowrap"><span class="chip on">الكل</span><span class="chip">فعّال 128</span><span class="chip">قريباً 9</span><span class="chip">منتهٍ 14</span></div>
+        <div class="list">
+          <div class="srow"><span class="av" style="background:var(--navy-soft);color:var(--navy)">أ</span><div class="grow"><div class="tt">أحمد محمد عبدالله</div><div class="ss">الإنجليزية · المستوى الأول</div></div><span class="badge b-amber">5 أيام</span></div>
+          <div class="srow"><span class="av" style="background:var(--green-soft);color:var(--green)">ف</span><div class="grow"><div class="tt">فاطمة الطيب</div><div class="ss">قسم اللغات كاملاً</div></div><span class="badge b-green">فعّال</span></div>
+          <div class="srow"><span class="av" style="background:var(--red-soft);color:var(--red)">م</span><div class="grow"><div class="tt">محمد الأمين</div><div class="ss">التقوية · الرياضيات</div></div><span class="badge b-red">منتهٍ</span></div>
+          <div class="srow"><span class="av" style="background:var(--orange-soft);color:var(--orange)">س</span><div class="grow"><div class="tt">سارة عثمان</div><div class="ss">الحاسوب · أساسيات الحاسوب</div></div><span class="badge b-amber">يومان</span></div>
+          <div class="srow"><span class="av" style="background:var(--green-soft);color:var(--green)">ع</span><div class="grow"><div class="tt">عمر حسن</div><div class="ss">الحاسوب + اللغات (دورتان)</div></div><span class="badge b-green">فعّال</span></div>
+          <div class="srow"><span class="av" style="background:var(--green-soft);color:var(--green)">م</span><div class="grow"><div class="tt">مصعب عبدالرحمن</div><div class="ss">الإنجليزية · المستوى الأول</div></div><span class="badge b-green">جديد</span></div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="it"><span class="pill"><svg class="i"><use href="#home"/></svg></span>الرئيسية</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#key"/></svg></span>تفعيل جديد</div>
+        <div class="it on"><span class="pill"><svg class="i"><use href="#users"/></svg></span>الطلاب</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#sliders"/></svg></span>الإعدادات</div>
+      </div>
+    </div></div><div class="caption"><span class="n">A4</span>سجل الطلاب</div></div>
+
+    <!-- A5. Student detail -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>11:11</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><span class="ib"><svg class="i"><use href="#back"/></svg></span><div class="t"><h2>سجل الطالب</h2></div></div>
+      <div class="body" style="gap:12px;padding-top:0">
+        <div class="card" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:16px">
+          <span class="av" style="width:58px;height:58px;font-size:22px;background:var(--navy);color:#fff">أ</span>
+          <div style="font-size:17px;font-weight:800;margin-top:6px">أحمد محمد عبدالله</div>
+          <div class="small muted ltr" style="font-weight:700">0912 345 678</div>
+          <div style="display:flex;gap:8px;margin-top:8px"><span class="badge b-navy">رمز الجهاز <span class="ltr">7K3Q-9XM2</span></span><span class="badge b-gray">منذ 3 سبتمبر</span></div>
+        </div>
+        <div class="card" style="padding:12px 14px">
+          <div class="sec" style="margin-bottom:10px">التفعيلات</div>
+          <div class="tl">
+            <div class="rail"><i></i><b></b></div>
+            <div class="grow" style="padding-bottom:12px">
+              <div style="display:flex;gap:6px;align-items:center"><span class="grow" style="font-weight:800;font-size:14px">الإنجليزية · المستوى الأول</span><span class="badge b-amber">5 أيام</span></div>
+              <div class="small muted" style="font-weight:600">3 أكتوبر ← 3 نوفمبر 2026 · مدة شهر</div>
+            </div>
+          </div>
+          <div class="tl">
+            <div class="rail"><i class="old"></i></div>
+            <div class="grow">
+              <div style="display:flex;gap:6px;align-items:center"><span class="grow muted" style="font-weight:800;font-size:14px">الإنجليزية · المستوى التمهيدي</span><span class="badge b-gray">انتهى</span></div>
+              <div class="small muted" style="font-weight:600">3 سبتمبر ← 3 أكتوبر 2026 · مدة شهر</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:auto">
+          <div class="btn btn-primary"><svg class="i"><use href="#renew"/></svg>تجديد المستوى الأول</div>
+          <div class="btn btn-outline"><svg class="i"><use href="#plus"/></svg>فتح محتوى إضافي</div>
+          <div class="btn btn-ghost" style="height:40px;font-size:14px"><svg class="i sm"><use href="#chat"/></svg>إعادة إرسال آخر كود عبر واتساب</div>
+        </div>
+      </div>
+    </div></div><div class="caption"><span class="n">A5</span>تفاصيل الطالب والتجديد</div></div>
+
+    <!-- A6. Settings -->
+    <div class="device"><div class="phone"><div class="screen">
+      <div class="sb"><span>11:14</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
+      <div class="ab"><div class="t" style="padding-inline-start:8px"><h2>الإعدادات</h2></div></div>
+      <div class="body set" style="gap:12px;padding-top:0">
+        <div class="grp">النسخ الاحتياطي</div>
+        <div class="card" style="padding:2px 14px">
+          <div class="row2"><span class="ico navy"><svg class="i"><use href="#cloud"/></svg></span><div class="grow"><div class="tt">إنشاء نسخة احتياطية</div><div class="ss">السجل + مفتاح الختم، مشفّرة بكلمة سر</div></div><svg class="i sm muted"><use href="#chev"/></svg></div>
+          <div class="row2"><span class="ico navy"><svg class="i"><use href="#restore"/></svg></span><div class="grow"><div class="tt">استعادة من نسخة احتياطية</div><div class="ss">عند تغيير هاتف الإدارة</div></div><svg class="i sm muted"><use href="#chev"/></svg></div>
+        </div>
+        <div class="grp">واتساب</div>
+        <div class="card" style="padding:2px 14px">
+          <div class="row2"><span class="ico green"><svg class="i"><use href="#chat"/></svg></span><div class="grow"><div class="tt">رقم طلبات التفعيل</div><div class="ss ltr" style="text-align:right">+249 91 200 0000</div></div><span class="btn sm btn-outline" style="height:32px">تغيير</span></div>
+          <div class="alert info" style="font-size:12px;font-weight:600;margin-bottom:12px;line-height:1.6;align-items:flex-start"><svg class="i sm" style="margin-top:2px"><use href="#info"/></svg>عند تغيير الرقم، يحمل كل كود جديد الرقم الجديد، فيتحدّث عند الطلاب المفعَّلين تلقائياً.</div>
+        </div>
+        <div class="grp">الأمان</div>
+        <div class="card" style="padding:2px 14px">
+          <div class="row2"><span class="ico navy"><svg class="i"><use href="#finger"/></svg></span><div class="grow"><div class="tt">الدخول بالبصمة</div></div><span class="sw"></span></div>
+          <div class="row2"><span class="ico navy"><svg class="i"><use href="#lock"/></svg></span><div class="grow"><div class="tt">تغيير رمز الدخول</div></div><svg class="i sm muted"><use href="#chev"/></svg></div>
+          <div class="row2"><span class="ico orange"><svg class="i"><use href="#key"/></svg></span><div class="grow"><div class="tt">مفتاح الختم</div><div class="ss">محفوظ ومشفّر على هذا الهاتف</div></div><span class="badge b-green"><svg class="i sm"><use href="#check"/></svg>سليم</span></div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="it"><span class="pill"><svg class="i"><use href="#home"/></svg></span>الرئيسية</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#key"/></svg></span>تفعيل جديد</div>
+        <div class="it"><span class="pill"><svg class="i"><use href="#users"/></svg></span>الطلاب</div>
+        <div class="it on"><span class="pill"><svg class="i"><use href="#sliders"/></svg></span>الإعدادات</div>
+      </div>
+    </div></div><div class="caption"><span class="n">A6</span>الإعدادات والنسخ الاحتياطي</div></div>
+
+  </div>
+  <div class="gfoot"><svg class="i sm"><use href="#info"/></svg>تطبيق الإدارة على هاتف واحد، دون مستخدمين أو صلاحيات، ويعمل دون إنترنت</div>
+</section>
+
+</body>
+</html>
