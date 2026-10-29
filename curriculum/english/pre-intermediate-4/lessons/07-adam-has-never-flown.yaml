@@ -1,0 +1,55 @@
+lesson: 7
+unit: 3
+kind: story
+title: Adam Has Never Flown
+subtitle: Adam wants to be a pilot, but he has never been on a plane. Read the story, then read Adam's story after his first flight.
+icon: plane
+goals: [Talk about life experiences, "Ask: Have you ever…?", Say when something happened]
+story:
+  - Adam wants to be a pilot. He [has read] a lot of books about planes, and he [has watched] hundreds of videos. He knows the names of all the big airports in the world. But there is one problem. Adam [has never been] on a plane!
+  - "His friends ask him questions. \"[Have] you ever [flown]?\" \"No, I [haven't].\" \"[Have] you ever [been] to an airport?\" \"Yes, I [have]. I [have seen] the planes from the window.\" Omar laughs. \"A pilot who [has never flown]!\""
+  - "Then one day, Adam's uncle calls from Port Sudan. \"Adam, I [have bought] you a ticket. You are going to fly to Port Sudan next week!\" Adam can't believe it."
+  - "Now Adam is at the airport. He [has checked in], and he [has found] his seat by the window. The plane is moving. Adam is excited and a little nervous. He looks out of the window and smiles. \"Finally,\" he says. \"I'm flying!\""
+questions:
+  - ["What does Adam want to be?", "A pilot."]
+  - ["Has he read a lot of books about planes?", "Yes, he has."]
+  - ["Has he watched videos about planes?", "Yes, he has. Hundreds!"]
+  - ["Has Adam ever been on a plane?", "No, he hasn't."]
+  - ["Has he ever been to an airport?", "Yes, he has."]
+  - ["What has he seen from the window?", "The planes."]
+  - ["Who laughs at him?", "Omar."]
+  - ["Who calls Adam?", "His uncle, from Port Sudan."]
+  - ["What has his uncle bought?", "A ticket for Adam."]
+  - ["Where is Adam going to fly?", "To Port Sudan."]
+  - ["Has Adam found his seat?", "Yes, he has. It's by the window."]
+  - ["How does Adam feel?", "Excited, and a little nervous."]
+pov:
+  intro: Now it is after the flight. Adam tells when everything happened.
+  speaker: Adam
+  text:
+    - I always wanted to be a pilot. When I was a child, I [read] books about planes, and last year I [watched] hundreds of videos. But I [wasn't] on a plane, not once.
+    - "Last month, my uncle [called] from Port Sudan. \"I [bought] you a ticket!\" he said. I couldn't believe it."
+    - Last Tuesday, I [went] to the airport. I [checked in] and [found] my seat by the window. When the plane [took off], I [looked] out of the window and [smiled].
+    - "Now I can say it: I [have flown]! And one day, I'm going to fly the plane myself."
+learn:
+  title: You learned the [present perfect].
+  intro: We use it for experiences in our life until now, when we don't say when. When we say when, we use the past simple.
+  wide: true
+  table:
+    - ["Present perfect: we don't say when", "Past simple: we say when"]
+    - ["I [have seen] the planes.", "I [saw] the planes yesterday."]
+    - ["His uncle [has bought] a ticket.", "His uncle [bought] it last month."]
+    - ["Sara [has never been] to Kassala.", "Sara [went] to Port Sudan in 2020."]
+    - ["[Have] you ever [flown]?  Yes, I [have].", "When [did] you [fly]?  Last Tuesday."]
+  notes:
+    - {title: "have / has + [past participle]", text: "I have seen, he has bought, they have flown."}
+    - {title: "[ever] in questions, [never] for no", text: "Have you ever flown? I have never flown."}
+    - {title: "Some verbs change: [been · flown · seen]", text: "be → been, fly → flown, see → seen, buy → bought"}
+  ask: ["Have you ever been on a plane?", "Yes, I have.  /  No, I haven't."]
+words:
+  - {word: airports, meaning: places where planes arrive and leave}
+  - {word: ticket, meaning: a paper or code that lets you travel}
+  - {word: believe, meaning: think that something is true}
+  - {word: checked in, meaning: gave your name and bag at the airport before a flight}
+  - {word: seat, meaning: a place to sit}
+  - {word: finally, meaning: after a long time}

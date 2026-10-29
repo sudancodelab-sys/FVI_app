@@ -1,0 +1,22 @@
+# Pre-Intermediate 4 level metadata (P5 internally, CEFR A2.2).
+# The last level of the Pre-Intermediate stage.
+name: Pre-Intermediate 4
+chip: PRE-INTERMEDIATE 4
+stage: Pre-Intermediate
+cefr: A2.2
+tagline: Promises, rules, life experiences, and the next step
+subtitle: Stories · Topics · Conversations
+story_words: [130, 210]
+# Longer lessons: the story, the reading and the "What did you learn?" box
+# may continue on the next page.
+split_boxes: true
+units:
+  1: What Will Happen?
+  2: Rules and Advice
+  3: Have You Ever…?
+  4: If…
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}
