@@ -32,31 +32,49 @@
 } %}
 {%- if book %}
 <div class="page cover">
-  <div class="cover-top">
-    <img src="{{ assets }}/logo-512.png" alt="">
-    <div><b>Future Vision Institute</b><span>English Programme</span></div>
-  </div>
-  <div class="cover-mid">
-    <span class="stage">{{ level.stage }} Stage</span>
-    <h1>{{ level.name }}</h1>
-    <p>{{ level.subtitle }}</p>
-  </div>
-  {#- Inspired by the logo: an open book, a figure rising from it, and the star it reaches for. #}
-  <svg class="cover-art" viewBox="0 0 200 156" aria-hidden="true">
-    <circle cx="100" cy="84" r="68" class="ring-out"/>
-    <circle cx="100" cy="84" r="62" class="ring"/>
-    {#- Three stacked pages per side; outer pages are taller and fan out a little. #}
-    {%- for k in range(3) %}
-    {%- set x = 26 + k * 15 %}{% set top = 54 + k * 11 %}{% set low = 108 + k * 3 %}{% set spine = 141 - k * 8 %}
-    <path class="page-l" d="M{{ x }} {{ top }} L{{ x + 5 }} {{ low }} Q{{ x + 9 }} {{ spine - 4 }} 97 {{ spine }}"/>
-    <path class="page-r" d="M{{ 200 - x }} {{ top }} L{{ 195 - x }} {{ low }} Q{{ 191 - x }} {{ spine - 4 }} 103 {{ spine }}"/>
+  {%- set c = level.course %}
+  <div class="strip" aria-hidden="true">
+    {%- for st in c.stages %}
+    <div class="strip-stage">{% for name in st.levels %}<i class="{{ 'now' if name == level.name }}"></i>{% endfor %}</div>
     {%- endfor %}
-    <path class="figure" d="M100 132 L74 66 Q88 74 100 75 Q121 70 139 26 L146 30 Q133 92 100 132 Z"/>
-    <circle class="figure" cx="80" cy="48" r="10.5"/>
-    <text x="101" y="102" class="fvi">FVI</text>
-    <path class="star" d="M152 8 l2.6 6.4 6.9.5-5.3 4.4 1.7 6.7-5.9-3.7-5.9 3.7 1.7-6.7-5.3-4.4 6.9-.5z"/>
-  </svg>
-  <div class="cover-foot">Student Book</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-brand">
+      <img src="{{ assets }}/logo-512.png" alt="">
+      <div><b>Future Vision Institute</b><span>{{ c.institute_line }}</span></div>
+    </div>
+    <div class="level-card">
+      <span class="lbl">Level</span>
+      <h1 class="{{ 'long' if level.name|length > 10 }}">{{ level.name }}</h1>
+      <span class="bar"></span>
+      <p>{{ level.tagline }}</p>
+      <span class="stage">{{ level.stage }} Stage</span>
+      {%- if level.cefr %}
+      <div class="cefr"><b>{{ level.cefr }}</b><small>CEFR</small></div>
+      {%- endif %}
+      {#- Drawn from the logo: an open book, a figure rising from it, and its star. #}
+      <svg class="card-art" viewBox="0 0 200 156" aria-hidden="true">
+        <circle cx="100" cy="84" r="68" class="ring-out"/>
+        <circle cx="100" cy="84" r="62" class="ring"/>
+        {%- for k in range(3) %}
+        {%- set x = 26 + k * 15 %}{% set top = 54 + k * 11 %}{% set low = 108 + k * 3 %}{% set spine = 141 - k * 8 %}
+        <path class="page-l" d="M{{ x }} {{ top }} L{{ x + 5 }} {{ low }} Q{{ x + 9 }} {{ spine - 4 }} 97 {{ spine }}"/>
+        <path class="page-r" d="M{{ 200 - x }} {{ top }} L{{ 195 - x }} {{ low }} Q{{ 191 - x }} {{ spine - 4 }} 103 {{ spine }}"/>
+        {%- endfor %}
+        <path class="figure" d="M100 132 L74 66 Q88 74 100 75 Q121 70 139 26 L146 30 Q133 92 100 132 Z"/>
+        <circle class="figure" cx="80" cy="48" r="10.5"/>
+        <text x="101" y="102" class="fvi">FVI</text>
+        <path class="star" d="M152 8 l2.6 6.4 6.9.5-5.3 4.4 1.7 6.7-5.9-3.7-5.9 3.7 1.7-6.7-5.3-4.4 6.9-.5z"/>
+      </svg>
+    </div>
+    <div class="cover-course"><b>{{ c.course }}</b><span>Student Book</span></div>
+    <div class="cover-fields">
+      {%- for f in ['Student Name', 'Teacher', 'Group / Time', 'Month'] %}
+      <div><b>{{ f }}</b><i></i></div>
+      {%- endfor %}
+    </div>
+    <div class="cover-slogan"><span>{{ c.slogan }}</span></div>
+  </div>
 </div>
 <div class="page toc">
   {{ head('Contents') }}

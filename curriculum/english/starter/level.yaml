@@ -11,3 +11,6 @@ cast:
   Adam: {initial: A, color: a}
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
+tagline: Learn the sounds of English and start speaking
+# Starter has no CEFR equivalent, so the cover shows no CEFR circle.
+cefr:

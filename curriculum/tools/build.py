@@ -298,6 +298,7 @@ def normalize(lesson):
 
 def load(level_dir):
     level = yaml.safe_load((level_dir / 'level.yaml').read_text(encoding='utf-8'))
+    level['course'] = yaml.safe_load((level_dir.parent / 'course.yaml').read_text(encoding='utf-8'))
     lessons = [yaml.safe_load(p.read_text(encoding='utf-8'))
                for p in sorted((level_dir / 'phonics').glob('*.yaml'))]
     lessons = [normalize(l) for l in lessons]

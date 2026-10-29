@@ -232,24 +232,43 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .av.c{background:var(--green)}
 .line .av.c{font-size:6pt;letter-spacing:-.2px}
 
-/* cover: light, in the logo's colours, with art drawn from the logo */
-.page.cover{padding:0;background:#fff;color:var(--navy);align-items:center;text-align:center}
-.cover-top{margin-top:20mm;display:flex;align-items:center;gap:4mm;text-align:left}
-.cover-top img{width:20mm;height:20mm}
-.cover-top b{display:block;font-size:13pt;font-weight:700}
-.cover-top span{font-size:9.5pt;color:var(--muted)}
-.cover-mid{margin-top:24mm;display:flex;flex-direction:column;align-items:center}
-.cover-mid .stage{font-size:9.5pt;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:1.6mm 5mm;border-radius:99px}
-.cover-mid h1{font-size:62pt;font-weight:800;letter-spacing:1px;line-height:1.1;margin-top:5mm;color:var(--navy)}
-.cover-mid p{font-size:13pt;color:var(--muted);margin-top:1.5mm;letter-spacing:.5px}
-.cover-art{width:165mm;margin-top:auto;margin-bottom:5mm}
-.cover-art .ring-out{fill:none;stroke:var(--navy-soft);stroke-width:.8}
-.cover-art .ring{fill:var(--navy-tint);stroke:var(--navy-soft);stroke-width:1.2}
-.cover-art .page-l,.cover-art .page-r{fill:none;stroke:var(--orange);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-.cover-art .figure{fill:var(--navy)}
-.cover-art .star{fill:var(--orange)}
-.cover-art .fvi{fill:#fff;font-family:Lexend,sans-serif;font-size:11px;font-weight:700;text-anchor:middle;letter-spacing:.5px}
-.cover-foot{width:100%;padding:6mm 0 8mm;border-top:1.5mm solid var(--orange);font-size:10pt;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);background:var(--navy-tint)}
+/* cover: light, in the logo's colours, with the level details the institute needs */
+.page.cover{padding:0;background:#fff;color:var(--navy);flex-direction:row}
+.strip{width:24mm;padding:20mm 0 22mm 9mm;display:flex;flex-direction:column;gap:5mm;flex:none}
+.strip-stage{display:flex;flex-direction:column;gap:2mm}
+.strip i{display:block;width:8mm;height:18mm;border-radius:2mm;border:1.4px solid var(--navy-soft);background:#fff}
+.strip i.now{background:var(--orange);border-color:var(--orange)}
+.cover-body{flex:1;padding:18mm 16mm 12mm 6mm;display:flex;flex-direction:column}
+.cover-brand{display:flex;align-items:center;gap:4mm}
+.cover-brand img{width:22mm;height:22mm}
+.cover-brand b{display:block;font-size:17pt;font-weight:800;letter-spacing:.3px}
+.cover-brand span{display:block;font-size:8.5pt;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:.5mm}
+.level-card{position:relative;margin-top:10mm;border:1.6px solid var(--navy);border-radius:6mm;background:var(--navy-tint);padding:12mm 11mm 10mm;min-height:142mm;overflow:hidden}
+.level-card .lbl{font-size:13pt;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--navy)}
+.level-card h1{font-size:64pt;font-weight:800;line-height:1.05;margin-top:3mm;color:var(--navy)}
+.level-card h1.long{font-size:40pt;max-width:120mm}
+.level-card .bar{display:block;width:20mm;height:1.6mm;border-radius:1mm;background:var(--orange);margin:5mm 0 4mm}
+.level-card p{font-size:13pt;font-weight:600;line-height:1.45;max-width:85mm}
+.level-card .stage{display:inline-block;margin-top:5mm;font-size:8.5pt;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:1.4mm 4mm;border-radius:99px}
+.level-card .cefr{position:absolute;top:8mm;right:8mm;width:26mm;height:26mm;border-radius:50%;background:var(--orange);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 2mm var(--orange-soft)}
+.level-card .cefr b{font-size:17pt;font-weight:800;line-height:1.1}
+.level-card .cefr small{font-size:7pt;font-weight:700;letter-spacing:1.5px}
+.card-art{position:absolute;right:-7mm;bottom:-5mm;width:96mm}
+.card-art .ring{fill:#fff;stroke:var(--navy-soft);stroke-width:1.2}
+.card-art .ring-out{fill:none;stroke:var(--navy-soft);stroke-width:.8}
+.card-art .page-l,.card-art .page-r{fill:none;stroke:var(--orange);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.card-art .figure{fill:var(--navy)}
+.card-art .star{fill:var(--orange)}
+.card-art .fvi{fill:#fff;font-family:Lexend,sans-serif;font-size:11px;font-weight:700;text-anchor:middle;letter-spacing:.5px}
+.cover-course{display:flex;justify-content:space-between;align-items:baseline;margin-top:11mm}
+.cover-course b{font-size:15pt;font-weight:700;color:var(--navy)}
+.cover-course span{font-size:9.5pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.cover-fields{margin-top:9mm;display:flex;flex-direction:column;gap:9mm}
+.cover-fields div{display:grid;grid-template-columns:38mm 1fr;align-items:end}
+.cover-fields b{font-size:11pt;font-weight:700}
+.cover-fields i{display:block;border-bottom:1.3px solid #B9BDD6;height:5mm}
+.cover-slogan{margin-top:auto;display:flex;align-items:center;gap:5mm;font-size:9pt;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy)}
+.cover-slogan:before,.cover-slogan:after{content:"";flex:1;height:1.3px;background:var(--orange)}
 
 /* contents */
 .toc-title{font-size:26pt;font-weight:800;color:var(--navy);margin:6mm 0 2mm}
