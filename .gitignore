@@ -11,3 +11,7 @@ coverage/
 *.keystore
 key.properties
 keys/prod/
+
+# Python
+__pycache__/
+*.pyc
