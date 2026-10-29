@@ -29,7 +29,60 @@
   'users': '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
   'home': '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
   'briefcase': '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+  'pin': '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  'phone': '<path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/>',
+  'clock': '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  'calendar': '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  'basket': '<path d="M3 9h18l-2 11H5z"/><path d="M8 9l4-6 4 6M9 13v4M15 13v4"/>',
+  'bus': '<rect x="4" y="3" width="16" height="15" rx="2"/><path d="M4 11h16M7 18v3M17 18v3M7.5 14.5h1M15.5 14.5h1"/>',
+  'cup': '<path d="M4 8h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 2v3M12 2v3"/>',
+  'bank': '<path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/>',
+  'plus': '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/>',
+  'sunrise': '<path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 4v3M4.9 9.9l1.4 1.4M19.1 9.9l-1.4 1.4"/>',
+  'bowl': '<path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 7c0-1.5 1-1.5 1-3M12 7c0-1.5 1-1.5 1-3M16 7c0-1.5 1-1.5 1-3"/>',
+  'tv': '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M9 3l3 3 3-3"/>',
+  'moon': '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
 } %}
+{#- The start of a lesson in the levels after Starter: what kind of lesson,
+    its title, and what the student will be able to do. #}
+{%- macro lesson_start(l) %}
+    <div class="lstart" data-lesson="{{ l.lesson }}" data-title="{{ l.title }}" data-toc="lesson-{{ l.lesson }}" data-unit="{{ l.unit }}">
+      <div class="hero">
+        <div class="tile icon k-{{ l.kind }}"><svg viewBox="0 0 24 24">{{ icons[l.icon]|safe }}</svg></div>
+        <div>
+          <span class="kind k-{{ l.kind }}">{{ kind_label[l.kind] }} · Lesson {{ l.lesson }}</span>
+          <h1>{{ l.title }}</h1>
+          <p>{{ l.subtitle }}</p>
+          <div class="goal">{% for g in l.goals %}<span>{{ g }}</span>{% endfor %}</div>
+        </div>
+      </div>
+      {%- if l.timeline %}
+      <div class="day" aria-hidden="true">
+        {%- for s in l.timeline %}
+        <div><i><svg viewBox="0 0 24 24">{{ icons[s.icon]|safe }}</svg></i><b>{{ s.time }}</b><small>{{ s.label }}</small></div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+{%- endmacro %}
+{%- macro qa(l, num) %}
+    <div class="sec qa" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">{{ num }}</span>Questions and answers <small>Answer fast. Short answers are fine.</small></h2>
+      {%- for q, a in l.questions %}
+      <div class="q"><span class="n">{{ loop.index }}</span><div><b>{{ q }}</b><span>{{ a }}</span></div></div>
+      {%- endfor %}
+    </div>
+{%- endmacro %}
+{%- macro new_words(l, num) %}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">{{ num }}</span>New words</h2>
+      <div class="words">
+        {%- for w in l.words %}
+        <div class="word"><b>{{ w.word }}</b>{{ w.meaning }}</div>
+        {%- endfor %}
+      </div>
+    </div>
+{%- endmacro %}
 {%- if book %}
 {%- set c = level.course %}
 {%- set parts = level.name.rsplit(' ', 1) %}
@@ -81,8 +134,8 @@
   {%- for part, entries in contents %}
   <div class="toc-part">
     <h2>{{ part }}</h2>
-    {%- for ref, n, title in entries %}
-    <div class="toc-row"><span class="toc-n">{{ n }}</span><span class="toc-t">{{ title }}</span><span class="toc-dots"></span><span class="toc-p" data-toc-ref="{{ ref }}"></span></div>
+    {%- for ref, n, title, kind in entries %}
+    <div class="toc-row"><span class="toc-n">{{ n }}</span><span class="toc-t">{{ title }}{% if kind %}<small class="kind k-{{ kind|lower }}">{{ kind }}</small>{% endif %}</span><span class="toc-dots"></span><span class="toc-p" data-toc-ref="{{ ref }}"></span></div>
     {%- endfor %}
   </div>
   {%- endfor %}
@@ -90,7 +143,102 @@
 </div>
 {%- endif %}
 {%- for p in pages %}{% set l = p.lesson %}
-{%- if l.kind == 'speaking' %}
+{%- if l.kind == 'story' %}
+{%- set c = level.cast[l.pov.speaker] %}
+<div class="page stream" data-title="{{ l.title }}" data-part="Unit {{ l.unit }}" data-tighten>
+  {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
+  <div class="flow">
+    {{ lesson_start(l) }}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>The story</h2>
+      <div class="story">{% for para in l.story %}<p>{{ para|mark }}</p>{% endfor %}</div>
+    </div>
+    {{ qa(l, 2) }}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">3</span>Point of view <small>{{ l.pov.intro }}</small></h2>
+      <div class="story pov">
+        <span class="av {{ c.color }}">{{ c.initial }}</span>
+        <div>{% for para in l.pov.text %}<p>{{ para|mark }}</p>{% endfor %}</div>
+      </div>
+    </div>
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">4</span>What did you learn?</h2>
+      {%- set cols = l.learn.table[0]|length %}
+      <div class="learn">
+        <h3>{{ l.learn.title|mark('em') }}</h3>
+        <p>{{ l.learn.intro }}</p>
+        <div class="learn-body{{ ' wide' if cols > 2 }}">
+          <div class="forms c{{ cols }}">
+            {%- for row in l.learn.table %}
+            <div>{% for cell in row %}<span>{{ cell|mark('em') }}</span>{% endfor %}</div>
+            {%- endfor %}
+          </div>
+          <div class="notes">
+            {%- for n in l.learn.notes %}
+            <div><b>{{ n.title|mark('em') }}</b>{{ n.text }}</div>
+            {%- endfor %}
+          </div>
+        </div>
+        <div class="ask"><b>Questions</b><span>{{ l.learn.ask[0] }}</span><i>{{ l.learn.ask[1] }}</i></div>
+      </div>
+    </div>
+    {{ new_words(l, 5) }}
+  </div>
+  {{ foot(l.title, 'Unit ' ~ l.unit) }}
+</div>
+{%- elif l.kind == 'topic' %}
+{%- set ns = namespace(n=1) %}
+<div class="page stream" data-title="{{ l.title }}" data-part="Unit {{ l.unit }}" data-tighten>
+  {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
+  <div class="flow">
+    {{ lesson_start(l) }}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>Read</h2>
+      <div class="story topic">{% for para in l.text %}<p>{{ para|mark('k') }}</p>{% endfor %}</div>
+    </div>
+    {%- for g in l.facts %}
+    {%- set ns.n = ns.n + 1 %}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">{{ ns.n }}</span>{{ g.title }}</h2>
+      <div class="facts n{{ g['items']|length }}">
+        {%- for it in g['items'] %}
+        <div class="fact{{ ' mark' if it.mark }}{{ ' icon' if it.icon }}">{% if it.icon %}<i><svg viewBox="0 0 24 24">{{ icons[it.icon]|safe }}</svg></i>{% endif %}<b>{{ it.term }}</b><span>{{ it.text }}</span></div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+    {{ qa(l, ns.n + 1) }}
+    {{ new_words(l, ns.n + 2) }}
+  </div>
+  {{ foot(l.title, 'Unit ' ~ l.unit) }}
+</div>
+{%- elif l.kind == 'conversation' %}
+<div class="page stream" data-title="{{ l.title }}" data-part="Unit {{ l.unit }}" data-tighten>
+  {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
+  <div class="flow">
+    {{ lesson_start(l) }}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>Read the conversation</h2>
+      <div class="scene">{{ l.scene }}</div>
+      <div class="script">
+        {%- for who, text in l.conversation %}{% set c = level.cast[who] %}
+        <div class="line"><span class="av {{ c.color }}">{{ c.initial }}</span><span class="who">{{ who|upper }}</span><span>{{ text }}</span></div>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">2</span>Useful phrases</h2>
+      <div class="phrases">
+        {%- for ph in l.phrases %}
+        <div class="ph"><h3>{{ ph.title }}</h3><p>{% for line in ph.lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}{% if ph.reply %}<br><span class="reply">— {{ ph.reply }}</span>{% endif %}</p></div>
+        {%- endfor %}
+      </div>
+    </div>
+    {{ new_words(l, 3) }}
+  </div>
+  {{ foot(l.title, 'Unit ' ~ l.unit) }}
+</div>
+{%- elif l.kind == 'speaking' %}
 <div class="page fit" data-title="{{ l.title }}" data-toc="speaking-{{ l.lesson }}">
   {{ head('Speaking · Lesson ' ~ l.lesson) }}
   <div class="hero">

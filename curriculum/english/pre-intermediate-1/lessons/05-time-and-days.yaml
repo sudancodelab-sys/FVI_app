@@ -1,0 +1,41 @@
+lesson: 5
+unit: 2
+kind: topic
+title: Time and Days
+subtitle: The days of the week, the weekend in Sudan, and how to say the time.
+icon: clock
+goals: [Say the days of the week, Say the time, Talk about your week]
+text:
+  - There are seven days in a [week]. In Sudan, the [weekend] is Friday and Saturday. Most people work and study from Sunday to Thursday.
+  - Adam goes to the institute five days a week. His class starts at eight [o'clock] and ends at one o'clock. On Friday, he stays at home with his family.
+  - How do we say the time? We say the [hour] first, then the minutes. 8:00 is eight o'clock, and 8:30 is eight thirty.
+facts:
+  - title: The days of the week
+    items:
+      - {term: Sun, text: Sunday}
+      - {term: Mon, text: Monday}
+      - {term: Tue, text: Tuesday}
+      - {term: Wed, text: Wednesday}
+      - {term: Thu, text: Thursday}
+      - {term: Fri, text: "Friday · weekend", mark: true}
+      - {term: Sat, text: "Saturday · weekend", mark: true}
+  - title: Say the time
+    items:
+      - {term: "8:00", text: eight o'clock}
+      - {term: "8:15", text: eight fifteen}
+      - {term: "8:30", text: eight thirty}
+      - {term: "8:45", text: eight forty-five}
+questions:
+  - ["How many days are there in a week?", "Seven."]
+  - ["What is the weekend in Sudan?", "Friday and Saturday."]
+  - ["When does Adam's class start?", "At eight o'clock."]
+  - ["When does it end?", "At one o'clock."]
+  - ["How do we say 8:30?", "Eight thirty."]
+  - ["Where is Adam on Friday?", "At home, with his family."]
+words:
+  - {word: week, meaning: seven days}
+  - {word: weekend, meaning: the days with no work and no school}
+  - {word: most, meaning: almost all}
+  - {word: ends, meaning: stops; finishes}
+  - {word: hour, meaning: sixty minutes}
+  - {word: o'clock, meaning: "at an exact hour: eight o'clock"}

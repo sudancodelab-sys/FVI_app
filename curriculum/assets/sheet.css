@@ -349,3 +349,52 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .lstart .tile.two span,.lstart .tile .abc-tile{font-size:19pt}
 .lstart .hero h1{font-size:22pt}
 .lstart .hero p{font-size:10pt;margin-top:1mm}
+
+/* ---------- levels after Starter: stories, topics, conversations ---------- */
+.av.d{background:var(--amber)}
+.line .av.d{font-size:7.5pt}
+.tile.icon.k-topic{background:var(--navy)}
+.tile.icon.k-conversation{background:var(--green)}
+.lstart .tile.icon svg{width:11mm;height:11mm}
+.hero .kind{display:block;font-size:8pt;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange);margin-bottom:.8mm}
+.hero .kind.k-topic{color:var(--navy)}
+.hero .kind.k-conversation{color:var(--green)}
+.lstart .day{margin:1mm 0 0}
+.qa > h2{grid-column:1 / -1}
+.story.topic .k{font-weight:700;color:var(--navy);text-decoration:underline 1.5px var(--orange);text-underline-offset:3px}
+.story.topic{border-left-color:var(--navy)}
+.forms.c3 div{grid-template-columns:repeat(3,1fr)}
+.forms div:first-child span{text-transform:uppercase}
+.learn-body.wide{grid-template-columns:1fr;gap:4mm}
+.learn-body.wide .notes{flex-direction:row}
+.learn-body.wide .notes div{flex:1}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm}
+.facts.n4{grid-template-columns:repeat(4,1fr)}
+.facts.n7{grid-template-columns:repeat(7,1fr);gap:2mm}
+.fact{border:1.2px solid var(--line);border-radius:3mm;padding:2.5mm 3mm;display:flex;flex-direction:column;gap:.5mm}
+.fact.icon{display:grid;grid-template-columns:9mm 1fr;column-gap:2.5mm;align-items:center}
+.fact.icon i{grid-row:1 / 3;width:9mm;height:9mm;border-radius:50%;background:var(--orange-soft);display:grid;place-items:center}
+.fact.icon i svg{width:5mm;height:5mm;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fact b{font-size:12pt;font-weight:700;color:var(--navy);line-height:1.2}
+.fact span{font-size:9pt;color:var(--muted);line-height:1.35}
+.facts.n7 .fact{align-items:center;text-align:center;padding:2.5mm 1mm}
+.fact.mark{background:var(--orange-soft);border-color:#F6C9B8}
+.fact.mark b{color:var(--orange)}
+.toc-t small.kind{margin-left:2.5mm;font-size:7.5pt;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--orange)}
+.toc-t small.kind.k-topic{color:var(--navy)}
+.toc-t small.kind.k-conversation{color:var(--green)}
+
+/* a page that tightens its spacing to take the next block (paginate.js) */
+.page.stream.dense .story p{line-height:1.5}
+.page.stream.dense .story{padding:4mm 5.5mm}
+.page.stream.dense .q{padding:1.2mm 0}
+.page.stream.dense .learn{padding:4mm 5.5mm 4.5mm}
+.page.stream.dense .forms div span{padding:.9mm 4mm}
+.page.stream.dense .ask{margin-top:3mm;padding-top:2.5mm}
+.page.stream.dense .words{gap:1.5mm 6mm}
+.page.stream.dense .line{padding:1mm 4mm}
+.page.stream.dense .lstart .hero{margin:3.5mm 0 2.5mm}
+.page.stream.denser .sec{margin-top:3mm}
+.page.stream.denser .story p{line-height:1.42}
+.page.stream.denser .q{padding:.9mm 0}
+.page.stream.denser .line{padding:.8mm 4mm}

@@ -1,0 +1,63 @@
+lesson: 4
+unit: 2
+kind: story
+title: Adam's Day
+subtitle: A short story about a normal day. Read it, answer the questions, then read it again from Adam's point of view.
+icon: book
+goals: [Talk about your day, Answer quick questions, Tell a story about you]
+timeline:
+  - {icon: sunrise, time: "6:00", label: wakes up}
+  - {icon: book, time: "8:00", label: English class}
+  - {icon: bowl, time: "1:00", label: lunch at home}
+  - {icon: tv, time: Evening, label: "homework, football"}
+  - {icon: moon, time: "10:00", label: bed}
+story:
+  - Adam [lives] in Khartoum. He is a student at Future Vision Institute.
+  - Every day, Adam [wakes] up at six o'clock. He [drinks] tea with milk, and he [eats] bread and beans. Then he [takes] the bus to the institute.
+  - His English class [starts] at eight. Adam [likes] his class. He [reads], he [listens], and he [speaks] a lot. Mr. Ali is his teacher.
+  - At one o'clock, Adam [goes] home. He [has] lunch with his family. In the evening, he [does] his homework and [watches] football on TV. He [goes] to bed at ten.
+questions:
+  - ["Where does Adam live?", "In Khartoum."]
+  - ["Is Adam a teacher?", "No, he isn't. He's a student."]
+  - ["Does Adam wake up at six?", "Yes, he does."]
+  - ["Does he wake up at nine?", "No, he doesn't. He wakes up at six."]
+  - ["Does he drink coffee or tea?", "Tea. He drinks tea with milk."]
+  - ["What does he eat?", "Bread and beans."]
+  - ["How does he go to the institute?", "He takes the bus."]
+  - ["When does his class start?", "At eight."]
+  - ["Does Adam like his class?", "Yes, he does. He likes it a lot."]
+  - ["Who is his teacher?", "Mr. Ali."]
+  - ["What does he watch on TV?", "Football. He watches football."]
+  - ["When does he go to bed?", "At ten."]
+pov:
+  intro: Now Adam tells the story.
+  speaker: Adam
+  text:
+    - I [live] in Khartoum. I'm a student at Future Vision Institute.
+    - Every day, I [wake] up at six o'clock. I [drink] tea with milk, and I [eat] bread and beans. Then I [take] the bus to the institute.
+    - My English class [starts] at eight. I [like] my class. I [read], I [listen], and I [speak] a lot. Mr. Ali is my teacher.
+    - At one o'clock, I [go] home. I [have] lunch with my family. In the evening, I [do] my homework and [watch] football on TV. I [go] to bed at ten.
+learn:
+  title: You learned the [present simple].
+  intro: We use it for things we do every day, again and again.
+  table:
+    - ["I · you · we · they", "he · she · it"]
+    - ["live", "live[s]"]
+    - ["wake up", "wake[s] up"]
+    - ["drink", "drink[s]"]
+    - ["watch", "watch[es]"]
+    - ["go", "go[es]"]
+    - ["do", "do[es]"]
+    - ["have", "[has]"]
+  notes:
+    - {title: "he · she · it → add [-s]", text: "Adam wakes up. My class starts at eight."}
+    - {title: "-ch · -sh · -o → add [-es]", text: "He watches TV. He goes home."}
+    - {title: "have → [has]", text: "He has lunch with his family."}
+  ask: ["Does he wake up at six?", "Yes, he does.  /  No, he doesn't."]
+words:
+  - {word: wake up, meaning: stop sleeping}
+  - {word: beans, meaning: small seeds we cook; a popular breakfast}
+  - {word: take the bus, meaning: go somewhere by bus}
+  - {word: homework, meaning: school work you do at home}
+  - {word: evening, meaning: the time after the afternoon, before night}
+  - {word: a lot, meaning: very much}

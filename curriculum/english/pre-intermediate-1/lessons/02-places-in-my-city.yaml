@@ -1,0 +1,36 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Places in My City
+subtitle: The places we go every day, and where they are.
+icon: pin
+goals: [Name places in a city, Say where a place is]
+# [ ] marks the key words of the topic.
+text:
+  - This is Khartoum. It is Adam's city. It is big and busy, and there are many places in it.
+  - The [market] is in the city center. It is open every day, and it is always busy. The [bus station] is near the market. There are buses to every part of the city.
+  - There is a small [café] near the institute. The tea there is very good. The [bank] is next to the [hospital]. The hospital is big and clean.
+  - And where is the [institute]? It is on a quiet street, near the café.
+facts:
+  - title: Places
+    items:
+      - {icon: basket, term: market, text: a place for food and clothes}
+      - {icon: bus, term: bus station, text: a place for buses}
+      - {icon: cup, term: café, text: a place for tea and coffee}
+      - {icon: bank, term: bank, text: a place for money}
+      - {icon: plus, term: hospital, text: a place for doctors and sick people}
+      - {icon: book, term: institute, text: a place for students}
+questions:
+  - ["Is Adam's city big?", "Yes, it is. It's big and busy."]
+  - ["Where is the market?", "In the city center."]
+  - ["Is the bus station near the market?", "Yes, it is."]
+  - ["Where is the café?", "Near the institute."]
+  - ["What is next to the hospital?", "The bank."]
+  - ["Is the institute on a busy street?", "No, it isn't. It's on a quiet street."]
+words:
+  - {word: busy, meaning: full of people and cars}
+  - {word: center, meaning: the middle of a place}
+  - {word: near, meaning: not far}
+  - {word: next to, meaning: at the side of}
+  - {word: clean, meaning: not dirty}
+  - {word: quiet, meaning: with very little noise}

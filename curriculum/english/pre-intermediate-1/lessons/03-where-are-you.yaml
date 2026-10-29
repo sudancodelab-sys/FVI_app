@@ -1,0 +1,31 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: Where Are You?
+subtitle: On the phone, asking and saying where you are
+icon: phone
+goals: [Start and end a call, Ask where someone is, Say where a place is]
+scene: After class, Omar is in the city center. He calls Adam on the phone.
+conversation:
+  - [Omar, "Hello, Adam? It's Omar."]
+  - [Adam, "Hi, Omar! Where are you?"]
+  - [Omar, "I'm in the city center. I'm at the market."]
+  - [Adam, "Oh, I'm near the market, too. I'm at the bus station."]
+  - [Omar, "Great! Is there a café near you?"]
+  - [Adam, "Yes, there is. It's next to the bank."]
+  - [Omar, "Is it a big café?"]
+  - [Adam, "No, it isn't. It's small, but the tea is very good."]
+  - [Omar, "Perfect. See you there in ten minutes!"]
+  - [Adam, "See you!"]
+phrases:
+  - {title: Start a call, lines: ["Hello, Adam? It's Omar."], reply: "Hi, Omar!"}
+  - {title: Ask where, lines: ["Where are you?"], reply: "I'm at the market."}
+  - {title: Ask about a place, lines: ["Is there a café near you?"], reply: "Yes, there is."}
+  - {title: Say where it is, lines: ["It's next to the bank.", "It's near the market."]}
+  - {title: Make a plan, lines: ["See you there in ten minutes!"]}
+  - {title: End a call, lines: ["See you!  ·  Bye!"]}
+words:
+  - {word: call, meaning: talk to someone on the phone}
+  - {word: perfect, meaning: very good; just right}
+  - {word: minutes, meaning: a minute is sixty seconds}
+  - {word: there, meaning: in that place}

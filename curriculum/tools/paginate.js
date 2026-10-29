@@ -8,12 +8,13 @@ window.fviReady = (async () => {
   await document.fonts.ready;
   const overflows = (page) => page.scrollHeight > page.clientHeight + 1;
   const flowOf = (page) => page.querySelector('.flow');
-  // A section may split between its letter teams or its rule boxes. One with
-  // other content (a grid of sound cards) keeps that content and may hand on
-  // every box; a plain list keeps at least its first one.
-  const items = (sec) => sec.querySelectorAll(':scope > .team, :scope > .rule');
+  // A section may split between its letter teams, its rule boxes or its
+  // questions. One with other content (a grid of sound cards) keeps that
+  // content and may hand on every box; a plain list keeps at least its first.
+  const ITEM = '.team, .rule, .q';
+  const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => ([...sec.children].some((el) =>
-    !el.matches('h2, .partbar, .team, .rule')) ? 0 : 1);
+    !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1);
   const canSplit = (sec) => items(sec).length > minKeep(sec);
   document.querySelectorAll('.sec').forEach((sec, i) => { sec.dataset.sid = i; });
 
@@ -28,6 +29,7 @@ window.fviReady = (async () => {
     const next = document.createElement('div');
     next.className = 'page cont' + (page.classList.contains('stream') ? ' stream' : '');
     next.dataset.part = page.dataset.part || '';
+    if (page.hasAttribute('data-tighten')) next.setAttribute('data-tighten', '');
     next.append(page.querySelector('.head').cloneNode(true));
     const label = document.createElement('div');
     label.className = 'contd';
@@ -49,6 +51,7 @@ window.fviReady = (async () => {
     tail.dataset.sid = sec.dataset.sid;
     tail.dataset.lesson = sec.dataset.lesson;
     const heading = sec.querySelector('h2').cloneNode(true);
+    heading.querySelectorAll('small').forEach((el) => el.remove());
     if (!sec.dataset.tailOf) heading.append(' (continued)');
     tail.append(heading);
     flowOf(next).prepend(tail);
@@ -109,6 +112,15 @@ window.fviReady = (async () => {
   // put back together) when even the smallest part does not fit.
   const fitBySplitting = (page, sec, next) => {
     if (!overflows(page)) return true;
+    // Tighter spacing first, so the block can stay whole (pages that allow it).
+    const added = [];
+    for (const step of page.hasAttribute('data-tighten') ? ['dense', 'denser'] : []) {
+      if (page.classList.contains(step)) continue;
+      page.classList.add(step);
+      added.push(step);
+      if (!overflows(page)) return true;
+    }
+    added.forEach((step) => page.classList.remove(step));
     if (!canSplit(sec)) return false;
     const tail = newTail(sec, next);
     while (overflows(page) && items(sec).length > minKeep(sec)) {
@@ -169,13 +181,19 @@ window.fviReady = (async () => {
   }
   streamPages().forEach(relabel);  // the last page may have lost its start too
 
-  // Each stream page names the lessons it holds.
+  // Each stream page names the lessons it holds, and their units when the
+  // level has units.
+  const unitOf = {};
+  document.querySelectorAll('.lstart[data-unit]').forEach((el) => { unitOf[el.dataset.lesson] = el.dataset.unit; });
+  const span = (word, list) => (list.length > 1
+    ? `${word}s ${list[0]}–${list[list.length - 1]}` : `${word} ${list[0]}`);
   streamPages().forEach((page) => {
     const lessons = [...new Set([...flowOf(page).children].map((el) => el.dataset.lesson))];
-    const nums = lessons.length > 1 ? `Lessons ${lessons[0]}–${lessons[lessons.length - 1]}` : `Lesson ${lessons[0]}`;
-    page.querySelector('.where small').textContent = `${page.dataset.part} · ${nums}`;
+    const units = [...new Set(lessons.map((n) => unitOf[n]).filter(Boolean))];
+    const part = units.length ? span('Unit', units) : page.dataset.part;
+    page.querySelector('.where small').textContent = `${part} · ${span('Lesson', lessons)}`;
     const foot = page.querySelector('.foot span');
-    foot.lastChild.textContent = ` · ${page.dataset.part} · ` + lessons.map((n) => titles[n]).join(' · ');
+    foot.lastChild.textContent = ` · ${part} · ` + lessons.map((n) => titles[n]).join(' · ');
   });
 
   // Page numbers count every page (the cover too, though it shows none).

@@ -3,12 +3,15 @@
 
 Usage:
     python3 curriculum/tools/build.py english/starter --lessons 1-6 --out starter-batch-1
+    python3 curriculum/tools/build.py english/pre-intermediate-1 --book --out pi1-book
     python3 curriculum/tools/build.py english/starter --check
 
-Lesson content lives in YAML (one file per lesson). Example words use a tiny
-markup: c[a]t highlights the letters being taught, mak{e} marks a silent
-letter. Every build first checks the content against the curriculum rules
-(GUIDELINES.md) and stops on any error.
+Lesson content lives in YAML (one file per lesson). Starter has phonics/ and
+speaking/ folders; later levels have one lessons/ folder of stories, topics
+and conversations. Example words use a tiny markup: c[a]t highlights the
+letters being taught, mak{e} marks a silent letter. In stories, [is] colors
+the grammar the story teaches. Every build first checks the content against
+the curriculum rules (GUIDELINES.md) and stops on any error.
 """
 import argparse
 import html
@@ -43,6 +46,21 @@ def marked(word):
 def marked_in_order(word):
     """{k}[n]ow -> 'kn': every marked letter, in reading order."""
     return ''.join(m.group(1) or m.group(2) for m in _MARK.finditer(word))
+
+
+_BRACKETS = re.compile(r'\[([^\]]+)\]')
+
+
+def render_text(text, how='v'):
+    """Running text: [is] -> <span class="v">is</span>, or <em>is</em>."""
+    out, pos = [], 0
+    for m in _BRACKETS.finditer(text):
+        out.append(html.escape(text[pos:m.start()]))
+        inner = html.escape(m.group(1))
+        out.append(f'<em>{inner}</em>' if how == 'em' else f'<span class="{how}">{inner}</span>')
+        pos = m.end()
+    out.append(html.escape(text[pos:]))
+    return ''.join(out)
 
 
 def render_word(word):
@@ -267,6 +285,70 @@ def check_speaking(level, speaking, wordlists, report):
                 report.error(where, f'new word "{w["word"]}" is not used in the lesson')
 
 
+_KINDS = ('story', 'topic', 'conversation')
+
+
+def _words_in(text):
+    return re.findall(r"[A-Za-z']+", text)
+
+
+def check_lessons(level, lessons, wordlists, report):
+    """Stories, topics and conversations of the levels after Starter."""
+    cast = level.get('cast', {})
+    sexual = set(wordlists.get('sexual', []))
+    sounding = set(wordlists.get('arabic_sounding', []))
+    units = level.get('units', {})
+    for lesson in lessons:
+        n, kind = lesson['lesson'], lesson.get('kind')
+        where = f'lesson {n}'
+        if kind not in _KINDS:
+            report.error(where, f'kind must be one of {", ".join(_KINDS)}, got {kind!r}')
+            continue
+        where = f'{kind} lesson {n}'
+        if lesson.get('unit') not in units:
+            report.error(where, f'unit {lesson.get("unit")!r} is not in level.yaml units')
+        for text in _strings(lesson):
+            if text.count('[') != text.count(']'):
+                report.error(where, f'unbalanced [ ] in "{text}"')
+        speakers = []
+        if kind == 'story':
+            words = len(_words_in(plain(' '.join(lesson['story']))))
+            if not 70 <= words <= 140:
+                report.warn(where, f'story has {words} words; this level aims at about 100')
+            if len(lesson['questions']) != 12:
+                report.error(where, f'{len(lesson["questions"])} questions; a story has 12')
+            speakers.append(lesson['pov']['speaker'])
+            widths = {len(row) for row in lesson['learn']['table']}
+            if len(widths) != 1:
+                report.error(where, 'the rows of the grammar table differ in length')
+            if not lesson['story'] or not any('[' in para for para in lesson['story']):
+                report.error(where, 'the story marks no grammar with [ ]')
+        elif kind == 'topic':
+            if not 4 <= len(lesson['questions']) <= 8:
+                report.error(where, f'{len(lesson["questions"])} questions; a topic has 4 to 8')
+        else:
+            if len(lesson['conversation']) > 10:
+                report.error(where, f'{len(lesson["conversation"])} lines; a conversation holds 10')
+            if len(lesson['phrases']) > 6:
+                report.error(where, 'more than 6 phrase boxes')
+            speakers += [who for who, _ in lesson['conversation']]
+        for who in speakers:
+            if who not in cast:
+                report.error(where, f'"{who}" is not in the level cast ({", ".join(cast)})')
+        if len(lesson['words']) > 6:
+            report.error(where, 'more than 6 new words')
+        # Everything the student reads, without the new-words box itself.
+        body = plain(' '.join(_strings({k: v for k, v in lesson.items() if k != 'words'})))
+        for token in _words_in(body):
+            if token.lower() in sexual:
+                report.error(where, f'"{token}" is banned (sexual)')
+        for w in lesson['words']:
+            if w['word'].lower() in sounding:
+                report.error(where, f'new word "{w["word"]}" is banned (sounds like a rude Arabic word)')
+            if not re.search(r'\b' + re.escape(w['word'].lower()) + r'\b', body.lower()):
+                report.error(where, f'new word "{w["word"]}" is not used in the lesson')
+
+
 # ---------------------------------------------------------------- build
 
 _RELIABILITY = {
@@ -312,10 +394,47 @@ def load(level_dir):
     return level, lessons, speaking
 
 
-def build_html(level, phonics, speaking, selected, out_html, book=False):
+def load_lessons(level_dir):
+    """The lessons/ folder of a level after Starter."""
+    lessons = [yaml.safe_load(p.read_text(encoding='utf-8'))
+               for p in sorted((level_dir / 'lessons').glob('*.yaml'))]
+    lessons.sort(key=lambda l: l['lesson'])
+    numbers = [l['lesson'] for l in lessons]
+    if numbers != list(range(1, len(lessons) + 1)):
+        sys.exit(f'lesson numbers must run 1..n without gaps, got {numbers}')
+    return lessons
+
+
+_KIND_LABEL = {'story': 'Story', 'topic': 'Topic', 'conversation': 'Conversation'}
+
+
+def stage_contents(level, lessons):
+    """Table of contents of a level after Starter: lessons grouped by unit."""
+    contents = []
+    for unit, name in level['units'].items():
+        entries = [(f'lesson-{l["lesson"]}', l['lesson'], l['title'], _KIND_LABEL[l['kind']])
+                   for l in lessons if l['unit'] == unit]
+        if entries:
+            contents.append((f'Unit {unit} — {name}', entries))
+    return contents
+
+
+def render_html(level, pages, contents, out_html, book=False):
+    from markupsafe import Markup
     env = Environment(loader=FileSystemLoader(ROOT / 'templates'), autoescape=True)
-    env.filters['word'] = lambda w: __import__('markupsafe').Markup(render_word(w))
+    env.filters['word'] = lambda w: Markup(render_word(w))
+    env.filters['mark'] = lambda text, how='v': Markup(render_text(text, how))
     env.globals['reliability'] = _RELIABILITY
+    env.globals['kind_label'] = _KIND_LABEL
+    assets = os.path.relpath(ROOT / 'assets', out_html.parent)
+    paginate = (TOOLS / 'paginate.js').read_text(encoding='utf-8')
+    doc = env.get_template('book.html.j2').render(
+        level=level, pages=pages, assets=assets, paginate_js=paginate,
+        book=book, contents=contents)
+    out_html.write_text(doc, encoding='utf-8')
+
+
+def build_html(level, phonics, speaking, selected, out_html, book=False):
     taught, pages = [], []
     for lesson in phonics:
         if lesson.get('kind') != 'intro':
@@ -324,16 +443,11 @@ def build_html(level, phonics, speaking, selected, out_html, book=False):
             pages.append({'lesson': lesson, 'taught': list(taught)})
     pages += [{'lesson': l} for l in speaking if l in selected]
     contents = [
-        ('Part 1 — Phonics', [(f'phonics-{l["lesson"]}', l['lesson'], l['title']) for l in phonics]
-                             + [('chart', '', l['chart_title']) for l in phonics if l.get('chart')]),
-        ('Part 2 — Speaking', [(f'speaking-{l["lesson"]}', l['lesson'], l['title']) for l in speaking]),
+        ('Part 1 — Phonics', [(f'phonics-{l["lesson"]}', l['lesson'], l['title'], '') for l in phonics]
+                             + [('chart', '', l['chart_title'], '') for l in phonics if l.get('chart')]),
+        ('Part 2 — Speaking', [(f'speaking-{l["lesson"]}', l['lesson'], l['title'], '') for l in speaking]),
     ]
-    assets = os.path.relpath(ROOT / 'assets', out_html.parent)
-    paginate = (TOOLS / 'paginate.js').read_text(encoding='utf-8')
-    doc = env.get_template('book.html.j2').render(
-        level=level, pages=pages, assets=assets, paginate_js=paginate,
-        book=book, contents=contents)
-    out_html.write_text(doc, encoding='utf-8')
+    render_html(level, pages, contents, out_html, book)
 
 
 def parse_range(text):
@@ -354,31 +468,48 @@ def main():
     args = ap.parse_args()
 
     level_dir = ROOT / args.level
-    level, phonics, speaking = load(level_dir)
     wordlists = yaml.safe_load((ROOT / 'wordlists.yaml').read_text(encoding='utf-8'))
-    report = check_level(level, phonics, wordlists)
-    check_speaking(level, speaking, wordlists, report)
-    check_no_arabic(phonics + speaking, report)
+    staged = (level_dir / 'lessons').is_dir()
+    if staged:
+        level = yaml.safe_load((level_dir / 'level.yaml').read_text(encoding='utf-8'))
+        level['course'] = yaml.safe_load((level_dir.parent / 'course.yaml').read_text(encoding='utf-8'))
+        lessons = load_lessons(level_dir)
+        report = Report()
+        check_lessons(level, lessons, wordlists, report)
+        check_no_arabic(lessons, report)
+        phonics, speaking = [], []
+    else:
+        level, phonics, speaking = load(level_dir)
+        report = check_level(level, phonics, wordlists)
+        check_speaking(level, speaking, wordlists, report)
+        check_no_arabic(phonics + speaking, report)
     for w in report.warnings:
         print('warning:', w)
     for e in report.errors:
         print('ERROR:', e)
     if report.errors:
         sys.exit(f'{len(report.errors)} error(s); nothing was built.')
-    print(f'checks passed ({len(phonics)} phonics + {len(speaking)} speaking lessons, '
-          f'{len(report.warnings)} warnings)')
+    count = (f'{len(lessons)} lessons' if staged
+             else f'{len(phonics)} phonics + {len(speaking)} speaking lessons')
+    print(f'checks passed ({count}, {len(report.warnings)} warnings)')
     if args.check:
         return
 
-    if args.book:
+    wanted = None if args.book else parse_range(args.lessons)
+    if staged:
+        selected = [l for l in lessons if not wanted or l['lesson'] in wanted]
+    elif args.book:
         selected = phonics + speaking
     else:
         pool = phonics if args.part == 'phonics' else speaking
-        wanted = parse_range(args.lessons)
         selected = [l for l in pool if not wanted or l['lesson'] in wanted]
     out = level_dir / 'dist' / (args.out or 'book')
     out.parent.mkdir(exist_ok=True)
-    build_html(level, phonics, speaking, selected, out.with_suffix('.html'), book=args.book)
+    if staged:
+        render_html(level, [{'lesson': l} for l in selected], stage_contents(level, lessons),
+                    out.with_suffix('.html'), args.book)
+    else:
+        build_html(level, phonics, speaking, selected, out.with_suffix('.html'), book=args.book)
     subprocess.run(['node', str(TOOLS / 'render.js'), str(out.with_suffix('.html')),
                     str(out.with_suffix('.pdf'))], check=True)
 

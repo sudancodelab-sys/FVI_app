@@ -1,0 +1,29 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: Are You Free on Friday?
+subtitle: Making a plan with a friend
+icon: calendar
+goals: [Ask if someone is free, Say a day and a time, Agree on a place]
+scene: After class, Adam and Omar drink tea in the institute café.
+conversation:
+  - [Adam, "Omar, are you free on Friday?"]
+  - [Omar, "Yes, I am. Why?"]
+  - [Adam, "We play football every Friday. Come with us!"]
+  - [Omar, "Great idea! What time?"]
+  - [Adam, "At five o'clock."]
+  - [Omar, "Where is the football field?"]
+  - [Adam, "It's near the bus station, next to the school."]
+  - [Omar, "OK. Friday at five. See you there!"]
+phrases:
+  - {title: Ask if someone is free, lines: ["Are you free on Friday?"], reply: "Yes, I am."}
+  - {title: Invite a friend, lines: ["Come with us!"], reply: "Great idea!"}
+  - {title: Ask the time, lines: ["What time?"], reply: "At five o'clock."}
+  - {title: Ask the place, lines: ["Where is the football field?"], reply: "It's near the bus station."}
+  - {title: Day and time, lines: ["on Friday  ·  at five o'clock"]}
+  - {title: Agree, lines: ["OK. See you there!"]}
+words:
+  - {word: free, meaning: not busy}
+  - {word: every, meaning: all of them, one after the other}
+  - {word: idea, meaning: a plan or a thought}
+  - {word: field, meaning: a big open place for sports}

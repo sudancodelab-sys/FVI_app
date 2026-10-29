@@ -1,0 +1,55 @@
+lesson: 1
+unit: 1
+kind: story
+title: The New Student
+subtitle: A new level, a new student. Read the story, answer the questions, then read it again from Omar's point of view.
+icon: users
+goals: [Say who people are, Say where people are from, Say how people feel]
+# [ ] marks the grammar the story teaches. The student sees it in color
+# but is told what it is only at the end of the lesson.
+story:
+  - Today [is] the first day of a new level. Adam and Sara [are] in the class. They [are] happy.
+  - There [is] a new student. His name [is] Omar. He [is] from Port Sudan. He [isn't] from Khartoum. Port Sudan [is] a city on the Red Sea. It [is] hot, but it [is] beautiful.
+  - Omar [is] nineteen. He [is] friendly, but he [is] a little nervous. It [is] his first day, and the students [aren't] his friends yet.
+  - Mr. Ali [is] the teacher. He [is] kind and funny. "Welcome to the class, Omar!" Adam and Sara [are] friendly, too. Now Omar [isn't] nervous. He [is] happy.
+questions:
+  - ["Is it the first day of a new level?", "Yes, it is."]
+  - ["Are Adam and Sara in the class?", "Yes, they are."]
+  - ["Who is the new student?", "Omar."]
+  - ["Is Omar from Khartoum?", "No, he isn't. He's from Port Sudan."]
+  - ["Where is Port Sudan?", "On the Red Sea."]
+  - ["Is Port Sudan cold or hot?", "Hot. It's hot, but it's beautiful."]
+  - ["How old is Omar?", "He's nineteen."]
+  - ["Is Omar nervous?", "Yes, he is. It's his first day."]
+  - ["Are the students his friends?", "No, they aren't. Not yet."]
+  - ["Who is the teacher?", "Mr. Ali."]
+  - ["Is Mr. Ali kind?", "Yes, he is. He's kind and funny."]
+  - ["Is Omar nervous now?", "No, he isn't. He's happy."]
+pov:
+  intro: Now Omar tells the story.
+  speaker: Omar
+  text:
+    - Today [is] the first day of a new level. I [am] a new student. My name [is] Omar. I['m] from Port Sudan. I['m not] from Khartoum. Port Sudan [is] a city on the Red Sea. It [is] hot, but it [is] beautiful.
+    - I['m] nineteen. I['m] friendly, but I['m] a little nervous. The students [aren't] my friends yet.
+    - Mr. Ali [is] our teacher. He [is] kind and funny. Adam and Sara [are] friendly, too. Now I['m not] nervous. I['m] happy.
+learn:
+  title: You learned the verb [be].
+  intro: We use it to say who people are, where they are from, and how they feel.
+  table:
+    - ["I", "he · she · it", "you · we · they"]
+    - ["[am]", "[is]", "[are]"]
+    - ["I['m]", "he['s]", "they['re]"]
+    - ["I['m not]", "he [isn't]", "they [aren't]"]
+    - ["[Am] I …?", "[Is] he …?", "[Are] you …?"]
+  notes:
+    - {title: "Short forms: ['m · 's · 're]", text: "We usually speak with short forms: I'm, he's, they're."}
+    - {title: "Not: [isn't · aren't]", text: "He isn't from Khartoum. They aren't his friends."}
+    - {title: "Questions: [be] comes first", text: "He is nineteen. → Is he nineteen?"}
+  ask: ["Is he from Khartoum?", "Yes, he is.  /  No, he isn't."]
+words:
+  - {word: level, meaning: a stage in learning; Starter is the first level}
+  - {word: city, meaning: a big town}
+  - {word: beautiful, meaning: very nice to look at}
+  - {word: friendly, meaning: kind and nice to other people}
+  - {word: nervous, meaning: a little afraid of something new}
+  - {word: yet, meaning: until now}

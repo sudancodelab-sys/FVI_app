@@ -25,9 +25,11 @@ cd packages/fvi_core && dart test
 الحالة:
 - الخطوة 1 من خطة العمل (الأساس المشترك) مكتملة ومختبرة.
 - مستوى Starter من منهج الإنجليزية معتمد من المعهد: 20 درس صوتيات و6 دروس مخاطبة، في كتاب من 36 صفحة.
+- مستوى Pre-Intermediate 1: الخطة معتمدة، والوحدتان 1 و2 (6 دروس) بانتظار المراجعة.
 
 لبناء كتاب المستوى (يحتاج Python مع PyYAML وJinja2 وcmudict، وNode مع Playwright):
 
 ```bash
 python3 curriculum/tools/build.py english/starter --book --out starter-book
+python3 curriculum/tools/build.py english/pre-intermediate-1 --book --out pi1-batch-1
 ```

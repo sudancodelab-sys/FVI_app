@@ -1,0 +1,20 @@
+# Pre-Intermediate 1 level metadata (P2 internally, CEFR A1.1).
+name: Pre-Intermediate 1
+chip: PRE-INTERMEDIATE 1
+stage: Pre-Intermediate
+cefr: A1.1
+tagline: Short stories, everyday English and your first grammar
+subtitle: Stories · Topics · Conversations
+# Each unit: a story that brings in the grammar, then a topic and a
+# conversation that use it.
+units:
+  1: People and Places
+  2: Every Day
+  3: Food
+  4: Skills and Shopping
+# The Starter characters continue; Omar joins the class in lesson 1.
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}
