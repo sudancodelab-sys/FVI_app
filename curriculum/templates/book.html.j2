@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ level.name }}</title>
+<link rel="stylesheet" href="{{ assets }}/sheet.css">
+</head>
+<body>
+{%- macro head(where) %}
+  <div class="head">
+    <img src="{{ assets }}/logo-512.png" alt="">
+    <div class="brand"><b>Future Vision Institute</b><span>English Programme</span></div>
+    <div class="where"><span class="chip">{{ level.chip }}</span><small>{{ where }}</small></div>
+  </div>
+{%- endmacro %}
+{%- macro foot(title) %}
+  <div class="foot">
+    <span><b>{{ level.name }}</b> · Phonics · {{ title }}</span>
+    <span>Future Vision Institute</span>
+    <span class="pg"></span>
+  </div>
+{%- endmacro %}
+{%- macro badge(key) %}{% set b = reliability[key] %}<span class="rel {{ b[1] }}">{{ b[0] }}</span>{% endmacro %}
+
+{%- for p in pages %}{% set l = p.lesson %}
+{%- if l.kind == 'intro' %}
+<div class="page" data-title="{{ l.title }}">
+  {{ head('Phonics · Lesson ' ~ l.lesson) }}
+  <div class="hero">
+    <div class="tile"><span class="abc-tile">A<em>–</em>Z</span></div>
+    <div>
+      <h1>{{ l.title }}</h1>
+      <p>{{ l.intro }}</p>
+      <div class="tags">{% for t in l.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="sec">
+      <h2><span class="num">1</span>26 letters</h2>
+      <div class="alpha">
+        {%- for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
+        <span class="{{ 'v' if c in 'AEIOU' else 'c' }}">{{ c }}<small>{{ c|lower }}</small></span>
+        {%- endfor %}
+      </div>
+      <div class="alpha-key">
+        <span><i class="v"></i><b>Vowels (5):</b> A &nbsp;E &nbsp;I &nbsp;O &nbsp;U</span>
+        <span><i class="c"></i><b>Consonants (21):</b> all the other letters</span>
+      </div>
+      <p class="aside">{{ l.y_note.text }} &nbsp;<b>{{ l.y_note.examples|join(' · ') }}</b></p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="num">2</span>A letter has a name and a sound</h2>
+      <p class="lead">We say the <b>name</b> when we spell a word. We say the <b>sound</b> when we read.</p>
+      <div class="names">
+        {%- for n in l.names %}
+        <div class="nrow">
+          <span class="ntile">{{ n.letter }}</span>
+          <span class="ncell"><small>Name</small><b class="ipa">/{{ n.name }}/</b></span>
+          <span class="ncell"><small>Sound</small><b class="ipa">/{{ n.sound }}/</b></span>
+          <span class="ncell word"><small>As in</small><b>{{ n.word|word }}</b></span>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2><span class="num">3</span>More sounds than letters</h2>
+      <div class="rule plain"><p>English has <b>26 letters</b> but about <b>40 sounds</b>. So one letter can have more than one sound,
+        and two letters can work together to make one sound. You will learn them step by step.</p></div>
+    </div>
+
+    <div class="sec">
+      <h2><span class="num">4</span>Sound symbols</h2>
+      <p class="lead">A sound symbol shows how we <b>say</b> a sound, not how we write it. We write it between two lines.</p>
+      <div class="symbols">
+        <div><b class="ipa">/æ/</b><span>the sound of A in c<span class="hl">a</span>t</span></div>
+        <div><b class="ipa">/iː/</b><span>the mark <b class="ipa lmark">ː</b> means a long sound</span></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2><span class="num">5</span>How to read this book</h2>
+      <div class="legend-list">
+        <div><span class="lw">c<span class="hl">a</span>t</span><span>Orange letters are the letters we are learning.</span></div>
+        <div><span class="lw">mak<span class="sil">e</span></span><span>Grey letters are silent. We do not say them.</span></div>
+        <div>{{ badge('always') }}<span>The rule never changes.</span></div>
+        <div>{{ badge('usually') }}<span>The rule has a few exceptions.</span></div>
+        <div>{{ badge('varies') }}<span>There is no rule. Learn each word.</span></div>
+      </div>
+    </div>
+  </div>
+  {{ foot(l.title) }}
+</div>
+{%- else %}
+{%- set vowel = l.letters[0] in 'AEIOU' %}
+<div class="page" data-title="{{ l.title }}">
+  {{ head('Phonics · Lesson ' ~ l.lesson) }}
+  <div class="abc">
+    <span class="lbl">Letters learned</span>
+    {%- for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
+    <i class="{{ 'now' if c in l.letters else ('done' if c in p.taught else '') }}">{{ c }}</i>
+    {%- endfor %}
+  </div>
+  <div class="hero">
+    <div class="tile{{ ' two' if l.letters|length > 1 }}"><span>{% for c in l.letters %}{{ c }}<em>{{ c|lower }}</em>{% if not loop.last %} {% endif %}{% endfor %}</span></div>
+    <div>
+      <h1>{{ l.title }}</h1>
+      <p>{{ l.intro }}</p>
+      <div class="tags"><span class="tag">{{ 'Vowel' if vowel else 'Consonant' }}</span><span class="tag n">{{ l.sounds|length }} sound{{ 's' if l.sounds|length > 1 }}</span></div>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="sec">
+      <h2><span class="num">1</span>The sounds of {{ l.letters|join(' and ') }}</h2>
+      <div class="sounds n{{ l.sounds|length }}">
+        {%- for s in l.sounds %}
+        <div class="sound">
+          <div class="sym ipa">/{{ s.ipa }}/</div>
+          <div class="name">{{ s.name }}</div>
+          <ul>{% for ex in s.examples %}<li>{{ ex|word }}</li>{% endfor %}</ul>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+
+    {%- set si = l.silent %}
+    <div class="sec">
+      <h2><span class="num">2</span>When is {{ l.letters|join(' or ') }} silent?</h2>
+      {%- if si.none %}
+      <div class="rule plain"><p>{{ si.none }}</p></div>
+      {%- else %}
+      <div class="rule">
+        <div class="txt">
+          <p><b>{{ si.rule }}</b>{% if si.detail %}<br>{{ si.detail }}{% endif %}</p>
+          <div class="ex">{% for ex in si.examples %}<span>{{ ex|word }}</span>{% endfor %}</div>
+          <div class="legend">Grey letter = silent</div>
+        </div>
+        <div class="side">
+          {{ badge(si.reliability) }}
+          {%- if si.note %}<p>{{ si.note }}<br><b class="plainb">{{ si.note_examples|join(' · ') }}</b></p>{% endif %}
+        </div>
+      </div>
+      {%- endif %}
+    </div>
+
+    {%- if l.teams %}
+    <div class="sec">
+      <h2><span class="num">3</span>{{ l.letters|join(' and ') }} with other letters</h2>
+      {%- for t in l.teams %}
+      <div class="team">
+        <div class="pair">{{ t.letters }}</div>
+        <div class="rows">
+          {%- for s in t.sounds %}
+          <div class="r"><span class="sym ipa">/{{ s.ipa }}/</span><span class="w">{% for ex in s.examples %}<span>{{ ex|word }}</span>{% endfor %}</span></div>
+          {%- endfor %}
+          {%- if t.note %}<div class="tnote">{{ t.note }}</div>{% endif %}
+        </div>
+        {{ badge(t.reliability) }}
+      </div>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+  {{ foot(l.title) }}
+</div>
+{%- endif %}
+{%- endfor %}
+<script>{{ paginate_js|safe }}</script>
+</body>
+</html>

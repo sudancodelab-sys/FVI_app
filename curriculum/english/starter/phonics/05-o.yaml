@@ -1,0 +1,38 @@
+lesson: 5
+letters: [O]
+title: The Letter O
+intro: O is a vowel. It has five main sounds.
+sounds:
+  - ipa: ɑː
+    name: Short O — American English
+    examples: ["h[o]t", "b[o]x", "st[o]p"]
+  - ipa: oʊ
+    name: Long O — it says its name
+    examples: ["g[o]", "n[o]", "h[o]tel"]
+  - ipa: ʌ
+    name: Like the U in "cup"
+    examples: ["m[o]ney", "m[o]nth", "fr[o]nt"]
+  - ipa: uː
+    name: A long "oo" sound
+    examples: ["d[o]", "t[o]", "int[o]"]
+  - ipa: ə
+    name: Weak O — a soft, short sound
+    examples: ["t[o]day", "lem[o]n", "sec[o]nd"]
+silent:
+  rule: O is silent in a few words.
+  examples: ["pe{o}ple", "le{o}pard"]
+  reliability: few
+teams:
+  - letters: oa
+    reliability: almost
+    sounds:
+      - {ipa: oʊ, examples: ["b[oa]t", "c[oa]t", "r[oa]d"]}
+  - letters: oi
+    reliability: almost
+    sounds:
+      - {ipa: ɔɪ, examples: ["[oi]l", "c[oi]n", "b[oi]l"]}
+  - letters: oo
+    reliability: varies
+    sounds:
+      - {ipa: uː, examples: ["f[oo]d", "m[oo]n", "t[oo]"]}
+      - {ipa: ʊ, examples: ["b[oo]k", "g[oo]d", "l[oo]k"]}

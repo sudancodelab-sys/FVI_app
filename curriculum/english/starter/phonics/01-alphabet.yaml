@@ -1,0 +1,13 @@
+lesson: 1
+kind: intro
+title: The English Alphabet
+intro: English has 26 letters and about 40 sounds. This lesson shows how they work.
+tags: [Introduction]
+y_note:
+  text: Y is a consonant, but sometimes it sounds like a vowel.
+  examples: [my, happy]
+names:
+  # letter, its name, its sound, a word that starts with the sound
+  - {letter: B, name: biː, sound: b, word: "[b]ag"}
+  - {letter: M, name: em, sound: m, word: "[m]ap"}
+  - {letter: S, name: es, sound: s, word: "[s]un"}

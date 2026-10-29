@@ -1,0 +1,31 @@
+lesson: 3
+letters: [E]
+title: The Letter E
+intro: E is the most common letter in English. It has three main sounds.
+sounds:
+  - ipa: e
+    name: Short E
+    examples: ["b[e]d", "p[e]n", "t[e]n"]
+  - ipa: iː
+    name: Long E — it says its name
+    examples: ["m[e]", "w[e]", "[e]ven"]
+  - ipa: ə
+    name: Weak E — a soft, short sound
+    examples: ["op[e]n", "probl[e]m", "mom[e]nt"]
+silent:
+  rule: At the end of a word, E is usually silent.
+  detail: It often helps the vowel before it say its name.
+  examples: ["mak{e}", "hom{e}", "tim{e}"]
+  reliability: usually
+  note: "Short words with only one vowel say the E:"
+  note_examples: [me, we, be]
+teams:
+  - letters: ee
+    reliability: almost
+    sounds:
+      - {ipa: iː, examples: ["s[ee]", "tr[ee]", "gr[ee]n"]}
+  - letters: ea
+    reliability: varies
+    sounds:
+      - {ipa: iː, examples: ["t[ea]", "s[ea]", "[ea]t"]}
+      - {ipa: e, examples: ["br[ea]d", "h[ea]d"]}

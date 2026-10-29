@@ -1,0 +1,30 @@
+lesson: 4
+letters: [I]
+title: The Letter I
+intro: I is a vowel. It has four main sounds.
+sounds:
+  - ipa: ɪ
+    name: Short I
+    examples: ["s[i]t", "p[i]n", "b[i]g"]
+  - ipa: aɪ
+    name: Long I — it says its name
+    examples: ["h[i]", "k[i]nd", "t[i]ger"]
+  - ipa: iː
+    name: Like long E — in words from other languages
+    examples: ["sk[i]", "p[i]zza", "v[i]sa"]
+  - ipa: ə
+    name: Weak I — a soft, short sound
+    examples: ["penc[i]l", "an[i]mal", "fam[i]ly"]
+silent:
+  none: I is almost never silent on its own.
+teams:
+  - letters: ai
+    reliability: usually
+    sounds:
+      - {ipa: eɪ, examples: ["r[ai]n", "w[ai]t", "p[ai]nt"]}
+    note: "A few words are different: said · again"
+  - letters: ie
+    reliability: varies
+    sounds:
+      - {ipa: iː, examples: ["f[ie]ld", "ch[ie]f", "br[ie]f"]}
+      - {ipa: aɪ, examples: ["p[ie]", "t[ie]"]}

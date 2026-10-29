@@ -1,0 +1,43 @@
+lesson: 6
+letters: [U]
+title: The Letter U
+intro: U is the last of the five vowels. It has five main sounds.
+sounds:
+  - ipa: ʌ
+    name: Short U
+    examples: ["c[u]p", "b[u]s", "s[u]n"]
+  - ipa: juː
+    name: Long U — it says its name
+    examples: ["m[u]sic", "men[u]", "[u]nit"]
+  - ipa: uː
+    name: A long "oo" sound
+    examples: ["fl[u]", "s[u]per", "tr[u]th"]
+  - ipa: ʊ
+    name: A short "oo" sound
+    examples: ["p[u]t", "p[u]sh", "f[u]ll"]
+  - ipa: ə
+    name: Weak U — a soft, short sound
+    examples: ["foc[u]s", "min[u]s", "alb[u]m"]
+silent:
+  none: U is almost never silent on its own.
+teams:
+  - letters: au
+    reliability: usually
+    sounds:
+      - {ipa: ɑː, examples: ["[Au]gust", "[au]thor", "l[au]ndry"]}
+    note: "A few words are different: laugh"
+  - letters: ou
+    reliability: varies
+    sounds:
+      - {ipa: aʊ, examples: ["[ou]t", "l[ou]d", "cl[ou]d"]}
+      - {ipa: uː, examples: ["y[ou]", "s[ou]p", "gr[ou]p"]}
+      - {ipa: ʌ, examples: ["c[ou]ntry", "y[ou]ng", "t[ou]ch"]}
+  - letters: ue
+    reliability: almost
+    sounds:
+      - {ipa: uː, examples: ["bl[ue]", "tr[ue]", "gl[ue]"]}
+  - letters: ui
+    reliability: varies
+    sounds:
+      - {ipa: uː, examples: ["fr[ui]t", "s[ui]t"]}
+    note: "Other words are different: build · guide"

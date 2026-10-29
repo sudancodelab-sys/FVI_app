@@ -1,0 +1,71 @@
+# Words that must never be used as examples. Checked automatically on every build.
+# Teachers: add any word you find unsuitable; the build will then refuse it.
+
+# Sound like a rude word in Arabic (criterion 2 of the example rules).
+arabic_sounding:
+  - kiss
+  - cuss
+  - air
+  - ear
+  - tease
+  - tees
+  - neck
+  - nick
+  - knick
+  - zip
+  - zebra
+  - arse
+  - ass
+  - kalb
+
+# Related to sex (criterion 1).
+sexual:
+  - sex
+  - sexy
+  - kiss
+  - lover
+  - naked
+  - bra
+
+# Words tied to male or female. Not used as phonics examples (criterion 1);
+# speaking lessons may need some of them (e.g. the family lesson).
+gendered:
+  - man
+  - men
+  - woman
+  - women
+  - boy
+  - girl
+  - he
+  - she
+  - him
+  - his
+  - her
+  - hers
+  - king
+  - queen
+  - prince
+  - princess
+  - lady
+  - gentleman
+  - mother
+  - father
+  - mom
+  - dad
+  - mama
+  - papa
+  - brother
+  - sister
+  - son
+  - daughter
+  - wife
+  - husband
+  - bride
+  - groom
+  - aunt
+  - uncle
+  - niece
+  - nephew
+  - guy
+  - grandma
+  - grandpa

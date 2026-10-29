@@ -1,0 +1,19 @@
+lesson: 2
+letters: [A]
+title: The Letter A
+intro: A is the first letter of the alphabet. It is a vowel with four main sounds.
+sounds:
+  - ipa: æ
+    name: Short A
+    examples: ["c[a]t", "m[a]p", "b[a]g"]
+  - ipa: eɪ
+    name: Long A — it says its name
+    examples: ["b[a]by", "p[a]per", "r[a]dio"]
+  - ipa: ɑː
+    name: Open A — open your mouth
+    examples: ["w[a]nt", "w[a]sh", "p[a]sta"]
+  - ipa: ə
+    name: Weak A — a soft, short sound
+    examples: ["[a]bout", "[a]gain", "sof[a]"]
+silent:
+  none: A is almost never silent on its own.
