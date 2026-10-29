@@ -1,0 +1,55 @@
+lesson: 1
+unit: 1
+kind: story
+title: The Longest Line
+subtitle: Omar has been standing in a line since six in the morning. Read the story, then read Omar's story the next day.
+icon: clock
+goals: [Say how long something has been happening, Describe what people have been doing, Compare it with a finished action]
+story:
+  - It is eleven o'clock in the morning, and Omar is standing in a very long line outside a government office. He needs a new ID card, because his old one has been in the washing machine! He [has been waiting] here since six o'clock this morning. That's five hours.
+  - The sun [has been shining] all morning, and everyone is hot and tired. The old man in front of Omar [has been reading] the same newspaper for two hours. Two women behind him [have been talking] about weddings since seven. A boy [has been selling] cold water up and down the line, and he [has been making] a lot of money.
+  - "Omar calls Adam. \"What [have] you [been doing] all morning?\" Adam asks. \"Standing,\" says Omar. \"Just standing. My legs hurt. I [have been standing] here so long that I know everyone's life story!\" Adam laughs. \"Are you sure you're in the right line?\" \"Of course I'm sure. It's the longest line here, so it's the right one.\""
+  - "At twelve o'clock, Omar finally reaches the window. The clerk looks at him. \"ID cards? No, this line is for passports. ID cards are inside, in room three. There's no line there.\" Omar's mouth falls open. He walks inside. Room three is empty, and in five minutes he has a new ID card. When he comes out, the old man is still reading his newspaper. \"Where [have] you [been]?\" he asks. Omar smiles. \"Learning a lesson!\""
+questions:
+  - ["Where is Omar standing?", "In a long line outside a government office."]
+  - ["Why does he need a new ID card?", "His old one has been in the washing machine."]
+  - ["How long has he been waiting?", "Since six o'clock. Five hours."]
+  - ["What has the old man been doing?", "Reading the same newspaper for two hours."]
+  - ["What have the two women been talking about?", "Weddings."]
+  - ["What has the boy been selling?", "Cold water."]
+  - ["Has the boy been making money?", "Yes, a lot."]
+  - ["What has Omar been doing all morning?", "Standing."]
+  - ["Why does Omar think he is in the right line?", "Because it's the longest line."]
+  - ["What is the line for?", "Passports."]
+  - ["Where are the ID cards?", "Inside, in room three."]
+  - ["How long does it take to get the new card?", "Five minutes."]
+pov:
+  intro: Now Omar tells it the next day, when it is finished.
+  speaker: Omar
+  text:
+    - Yesterday, I [waited] in a very long line outside a government office. I needed a new ID card, because my old one had been in the washing machine! I [stood] there from six o'clock until twelve.
+    - The sun [shone] all morning. The old man in front of me [read] the same newspaper for two hours, and the women behind me [talked] about weddings all morning. A boy [sold] cold water and [made] a lot of money.
+    - At twelve, I finally [reached] the window. That line was for passports! The ID cards were inside, in room three, and there was no line at all. In five minutes, I [had] my new card.
+    - "So what did I learn? The longest line is not always the right one. Now, when people tell me, \"I [have been waiting] for hours,\" I ask them, \"Are you in the right line?\""
+learn:
+  title: You learned the [present perfect continuous].
+  intro: We use it for an action that started in the past and is still happening now, often to say how long.
+  wide: true
+  table:
+    - ["Still happening now", "Finished: past simple"]
+    - ["He [has been waiting] since six.", "He [waited] for five hours."]
+    - ["The sun [has been shining] all morning.", "The sun [shone] all morning."]
+    - ["They [have been talking] for hours.", "They [talked] for hours."]
+    - ["What [have] you [been doing]?", "What [did] you [do]?"]
+  notes:
+    - {title: "have / has + been + [-ing]", text: "I have been waiting. She has been reading."}
+    - {title: "[for] a length, [since] a start", text: "for five hours · since six o'clock"}
+    - {title: "Some verbs don't take [-ing]", text: "know, like, want: I have known him for years."}
+  ask: ["How long have you been studying English?", "I've been studying it for three years."]
+words:
+  - {word: line, meaning: people waiting one behind another}
+  - {word: government, meaning: the people who run a country}
+  - {word: washing machine, meaning: a machine that washes clothes}
+  - {word: newspaper, meaning: news printed on paper}
+  - {word: reaches, meaning: gets to}
+  - {word: passports, meaning: the small books you need to travel to other countries}

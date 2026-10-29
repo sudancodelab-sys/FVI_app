@@ -1,0 +1,38 @@
+lesson: 13
+unit: 5
+kind: science
+title: Gum Arabic
+subtitle: The tree from Sudan that is in your sweets, your drinks, and your medicine.
+icon: tree
+goals: [Explain how a product is made, Use -ing forms as subjects, Talk about Sudan's place in the world]
+text:
+  - Have you ever eaten a sweet, had a soft drink, or taken a pill? Then you have probably used something from Sudan, [gum arabic].
+  - Gum arabic is a natural gum from the [acacia] tree, which grows across the dry lands of Africa. Sudan is the biggest producer in the world. In some years, it has produced more than half of all the gum arabic on Earth, mostly from the Kordofan and Darfur regions.
+  - Collecting the gum is slow work. In the dry season, farmers make small cuts in the bark of the trees. This is called [tapping]. Over the next weeks, a thick liquid comes out of the cuts and slowly becomes hard in the sun. Then the farmers start picking the hard pieces, which look like small yellow stones, by hand.
+  - The gum is sold to companies all over the world. It is used to keep drinks mixed, to make sweets soft, to cover pills, and even to make ink and paint.
+  - The acacia tree also helps the land. Its roots stop the sand from moving, and it can grow where other trees can't. So planting acacia trees is good for farmers and for the environment.
+facts:
+  - title: From tree to world
+    steps: true
+    items:
+      - {icon: tool, term: tapping, text: farmers cut the bark}
+      - {icon: sun, term: drying, text: the gum becomes hard}
+      - {icon: basket, term: picking, text: pieces are picked by hand}
+      - {icon: ship, term: selling, text: sent all over the world}
+did_you_know: The "gum arabic belt" is a long line of acacia trees across Africa, south of the Sahara, from Senegal in the west to Sudan in the east.
+questions:
+  - ["Where does gum arabic come from?", "From the acacia tree."]
+  - ["Which country is the biggest producer?", "Sudan."]
+  - ["Where in Sudan does most of the gum come from?", "Kordofan and Darfur."]
+  - ["What is tapping?", "Making small cuts in the bark of the trees."]
+  - ["What happens to the liquid in the sun?", "It slowly becomes hard."]
+  - ["How are the pieces picked?", "By hand."]
+  - ["What is gum arabic used for?", "Drinks, sweets, pills, ink, and paint."]
+  - ["How does the acacia tree help the land?", "Its roots stop the sand from moving."]
+words:
+  - {word: natural, meaning: from nature, not made by people}
+  - {word: producer, meaning: a country or company that makes something}
+  - {word: regions, meaning: large areas of a country}
+  - {word: bark, meaning: the hard outside of a tree}
+  - {word: roots, meaning: the parts of a plant under the ground}
+  - {word: environment, meaning: "the air, water, and land around us"}

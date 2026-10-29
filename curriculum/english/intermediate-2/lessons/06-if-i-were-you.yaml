@@ -1,0 +1,31 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: If I Were You…
+subtitle: Asking for and giving advice about a big decision
+icon: users
+goals: [Ask for advice, Give advice with If I were you, Talk about possible results]
+scene: Omar has a big decision to make. He talks to Adam in the café.
+conversation:
+  - [Omar, "Adam, I need some advice. The university has offered me a place in computer science."]
+  - [Adam, "That's great news! So what's the problem?"]
+  - [Omar, "If I went to university, I would have to stop working at the shop. And I need the money."]
+  - [Adam, "Hmm. Can you study part-time?"]
+  - [Omar, "Maybe. But if I did that, it would take six years, not four."]
+  - [Adam, "If I were you, I'd talk to Mr. Kamal first. He may let you work fewer hours."]
+  - [Omar, "That's a good idea. What would you do if he said no?"]
+  - [Adam, "I'd still go to university. A degree would help you open your own company one day."]
+  - [Omar, "You're right. I'll talk to him tomorrow."]
+  - [Adam, "Good luck! And if you need help with math, call Sara, not me!"]
+phrases:
+  - {title: Ask for advice, lines: ["I need some advice."]}
+  - {title: Explain the problem, lines: ["If I went to university, I would have to stop working."]}
+  - {title: Give advice, lines: ["If I were you, I'd talk to Mr. Kamal."]}
+  - {title: Ask "what if", lines: ["What would you do if he said no?"]}
+  - {title: Agree, lines: ["You're right."]}
+  - {title: Wish good luck, lines: ["Good luck!"]}
+words:
+  - {word: advice, meaning: what you tell someone they should do}
+  - {word: offered, meaning: said that someone can have something}
+  - {word: fewer, meaning: not as many}
+  - {word: degree, meaning: what you get when you finish university}

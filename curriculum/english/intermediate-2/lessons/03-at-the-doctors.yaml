@@ -1,0 +1,33 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: At the Doctor's
+subtitle: Describing how you feel and for how long
+icon: plus
+goals: [Describe symptoms, Say how long you have felt like this, Understand the doctor's advice]
+scene: Adam hasn't been feeling well. He visits a doctor at the health center.
+conversation:
+  - [Doctor, "Good morning, Adam. What seems to be the problem?"]
+  - [Adam, "I've been feeling tired, and I have a sore throat."]
+  - [Doctor, "How long have you been feeling like this?"]
+  - [Adam, "For about four days. And I've been coughing a lot at night."]
+  - [Doctor, "Have you had a fever?"]
+  - [Adam, "Yes, a little. Since Tuesday."]
+  - [Doctor, "Let me look at your throat. Hmm, it's red. Have you been drinking enough water?"]
+  - [Adam, "Not really. I've been studying a lot for my exams."]
+  - [Doctor, "It's a throat infection. Take this medicine three times a day, drink a lot of water, and rest for a few days."]
+  - [Adam, "Thank you, Doctor. I'll take a break from studying."]
+phrases:
+  - {title: The doctor asks, lines: ["What seems to be the problem?"]}
+  - {title: Say how you feel, lines: ["I've been feeling tired."]}
+  - {title: Say how long, lines: ["How long have you been feeling like this?"], reply: "For about four days."}
+  - {title: Describe it, lines: ["I've been coughing a lot at night."]}
+  - {title: Answer, lines: ["Have you had a fever?"], reply: "Yes, a little."}
+  - {title: Understand advice, lines: ["Take this medicine three times a day."]}
+words:
+  - {word: sore throat, meaning: pain inside your neck when you swallow}
+  - {word: coughing, meaning: pushing air out of your throat with a noise}
+  - {word: fever, meaning: a body temperature that is too high}
+  - {word: infection, meaning: an illness caused by very small living things}
+  - {word: medicine, meaning: something you take to get better}
+  - {word: rest, meaning: stop working and relax}

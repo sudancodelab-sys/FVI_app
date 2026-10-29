@@ -1,0 +1,32 @@
+lesson: 8
+unit: 3
+kind: conversation
+title: Passing On a Message
+subtitle: Telling people what was said in a meeting
+icon: phone
+goals: [Report what someone said, Report questions and orders, Check that news is true]
+scene: Omar has had a meeting with Mr. Kamal. Back at the new shop, a worker asks him about it.
+conversation:
+  - [Worker, "How was the meeting, Omar? What did Mr. Kamal say?"]
+  - [Omar, "He said that the shop had done very well this month."]
+  - [Worker, "Great! Did he say anything about the new screens?"]
+  - [Omar, "Yes. He said that they would arrive on Thursday."]
+  - [Worker, "And did he ask about the broken laptop?"]
+  - [Omar, "He asked if we had fixed it yet. I told him we were waiting for a part."]
+  - [Worker, "What else did he say?"]
+  - [Omar, "He told us to be extra careful with customers' data. And he said that everyone would get a bonus!"]
+  - [Worker, "A bonus? Did he really say that?"]
+  - [Omar, "He did! He said that we had all worked very hard."]
+phrases:
+  - {title: Ask about a meeting, lines: ["What did Mr. Kamal say?"]}
+  - {title: Report news, lines: ["He said that the shop had done very well."]}
+  - {title: Report the future, lines: ["He said that they would arrive on Thursday."]}
+  - {title: Report a question, lines: ["He asked if we had fixed it yet."]}
+  - {title: Report an order, lines: ["He told us to be extra careful."]}
+  - {title: Check, lines: ["Did he really say that?"], reply: "He did!"}
+words:
+  - {word: meeting, meaning: a time when people meet to talk about work}
+  - {word: part, meaning: one piece of a machine}
+  - {word: extra, meaning: more than usual}
+  - {word: data, meaning: information on a computer or a phone}
+  - {word: bonus, meaning: extra money for good work}

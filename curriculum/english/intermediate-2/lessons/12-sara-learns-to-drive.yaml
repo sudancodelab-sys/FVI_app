@@ -1,0 +1,55 @@
+lesson: 12
+unit: 5
+kind: story
+title: Sara Learns to Drive
+subtitle: Sara decides to learn to drive, and her father offers to teach her. Read the story, then read it from her father's point of view.
+icon: car
+goals: [Talk about learning something new, Use -ing and to after verbs, Tell how you kept trying]
+story:
+  - Sara has always [enjoyed solving] problems, but there was one problem she couldn't solve. She couldn't drive. Her university is far from her home, and she was [tired of waiting] for buses. So last month, she [decided to learn].
+  - "Her father, an engineer, [offered to teach] her. \"Driving is like engineering,\" he said. \"You [need to think] before you act.\" On the first day, Sara [forgot to look] in the mirror. On the second day, she [forgot to use] the brake! Her father [stopped smiling] for a moment."
+  - Sara didn't give up. She [kept practicing] every Friday morning, when the streets were quiet. She [practiced parking] behind the house, between two old chairs, and she watched videos [about changing] gears. Slowly, she [stopped feeling] nervous, and she [started to enjoy] it.
+  - "Last week, Sara passed her driving test on the first try. \"I [want to thank] my teacher,\" she said, and she hugged her father. That evening, she [offered to drive] the whole family to the river. Lina was excited, and her mother was a little nervous. And her father? He [pretended to read] a newspaper in the back seat, but he couldn't [stop smiling]."
+questions:
+  - ["What has Sara always enjoyed?", "Solving problems."]
+  - ["Why did she decide to learn to drive?", "She was tired of waiting for buses."]
+  - ["Who offered to teach her?", "Her father."]
+  - ["What did he say driving is like?", "Engineering."]
+  - ["What did Sara forget to do on the first day?", "To look in the mirror."]
+  - ["What did she forget on the second day?", "To use the brake!"]
+  - ["When did she keep practicing?", "Every Friday morning."]
+  - ["Where did she practice parking?", "Behind the house, between two old chairs."]
+  - ["What did she watch videos about?", "Changing gears."]
+  - ["When did she pass her driving test?", "Last week, on the first try."]
+  - ["What did she offer to do that evening?", "To drive the whole family to the river."]
+  - ["What did her father pretend to do?", "To read a newspaper in the back seat."]
+pov:
+  intro: Now Sara's father tells it.
+  speaker: Father
+  text:
+    - "My daughter Sara has always [enjoyed solving] problems. Last month, she [decided to learn] to drive, and I [offered to teach] her. \"You [need to think] before you act,\" I told her."
+    - On the first day, she [forgot to look] in the mirror. On the second day, she [forgot to use] the brake! I [stopped smiling] for a moment, I must say.
+    - But she [kept practicing] every Friday. She [practiced parking] between two old chairs behind the house, and she watched videos [about changing] gears. Slowly, she [stopped feeling] nervous and [started to enjoy] it.
+    - Last week, she passed her test on the first try. That evening, she drove us all to the river. I [pretended to read] a newspaper in the back seat, but I couldn't [stop smiling].
+learn:
+  title: You learned [verb + -ing] and [verb + to].
+  intro: After some verbs we use the -ing form. After others we use to + verb. Learn each verb with its partner.
+  wide: true
+  table:
+    - ["verb + -ing", "verb + to + verb"]
+    - ["enjoy [solving]", "decide [to learn]"]
+    - ["keep [practicing]", "offer [to teach]"]
+    - ["stop [smiling]", "forget [to look]"]
+    - ["be tired of [waiting]", "pretend [to read]"]
+  notes:
+    - {title: "[-ing] after enjoy, keep, stop, finish", text: "She kept practicing."}
+    - {title: "[to] after decide, offer, want, need, forget", text: "She decided to learn."}
+    - {title: "After about, of, at: [-ing]", text: "videos about changing gears · tired of waiting"}
+  ask: ["What do you enjoy doing on the weekend?", "I enjoy playing football."]
+words:
+  - {word: mirror, meaning: glass where you can see yourself}
+  - {word: brake, meaning: the part of a car that stops it}
+  - {word: give up, meaning: stop trying}
+  - {word: gears, meaning: the parts of a car that change its speed}
+  - {word: try, meaning: "here: one time that you do a test"}
+  - {word: pretended, meaning: acted as if something was true}

@@ -1,0 +1,54 @@
+lesson: 9
+unit: 4
+kind: story
+title: It Must Be a Ghost!
+subtitle: Strange sounds in Omar's shop late at night. Read the story, then read it from Adam's point of view.
+icon: alarm
+goals: [Guess what something is, Say how sure you are, Use must, might and can't]
+story:
+  - "It is late on Thursday night. Omar has closed the new shop, and he is walking home when he remembers his keys. He goes back. Inside, the shop is dark and quiet. Then he hears it, a strange, high sound. Beep… beep… beep. It is coming from the back room."
+  - "Omar's heart starts to beat fast. He calls Adam. \"There's someone in the shop!\" \"It [can't be] a person,\" Adam says. \"You locked the door, didn't you?\" \"Yes, I did.\" \"Then it [might be] a cat. Cats sometimes come in through windows.\" \"Cats don't go beep,\" says Omar. \"It [must be] something electronic.\""
+  - "Adam arrives ten minutes later with a flashlight. They stand at the door of the back room. The sound stops. Then it starts again, louder. \"Maybe it's a ghost,\" Adam whispers. \"It [can't be] a ghost,\" Omar whispers back, but his voice is shaking. \"It [could be] the alarm. Or it [might be] one of the phones on the shelf.\""
+  - "Omar opens the door slowly and turns on the light. On the shelf, there are twenty phones waiting for repair. One of them is shining and beeping. Omar picks it up. The screen says, \"11:00 p.m. Time to take your medicine, Grandma!\" The two friends look at each other and laugh so hard they can't stand up. \"It [must be] Mrs. Fatima's phone,\" says Omar. \"She brought it in yesterday. I'll call her tomorrow and remind her!\""
+questions:
+  - ["When does Omar go back to the shop?", "Late on Thursday night."]
+  - ["Why does he go back?", "He remembers his keys."]
+  - ["What does he hear?", "A strange, high sound: beep, beep, beep."]
+  - ["Why can't it be a person?", "Because Omar locked the door."]
+  - ["What does Adam think it might be?", "A cat."]
+  - ["Why can't it be a cat?", "Cats don't go beep."]
+  - ["What does Adam bring?", "A flashlight."]
+  - ["What does Adam whisper?", "Maybe it's a ghost."]
+  - ["What does Omar think it could be?", "The alarm, or one of the phones on the shelf."]
+  - ["How many phones are on the shelf?", "Twenty."]
+  - ["What does the phone's screen say?", "Time to take your medicine, Grandma!"]
+  - ["Whose phone must it be?", "Mrs. Fatima's."]
+pov:
+  intro: Now Adam tells it, and how he guessed.
+  speaker: Adam
+  text:
+    - "It's late on Thursday, and Omar calls me. He's scared. \"There's someone in the shop!\" It [can't be] a person, I think. He locked the door. It [might be] a cat. But cats don't go beep. So it [must be] something electronic."
+    - "I get my flashlight and go to the shop. We stand at the door of the back room. The beeping stops, then it starts again, louder. \"Maybe it's a ghost,\" I whisper. \"It [can't be] a ghost,\" Omar says, but his voice is shaking. \"It [could be] the alarm.\""
+    - "Omar opens the door and turns on the light. One of the phones on the shelf is beeping. The screen says, \"Time to take your medicine, Grandma!\""
+    - We laugh so hard we can't stand up. It [must be] Mrs. Fatima's phone. Some ghost!
+learn:
+  title: You learned [must], [might] and [can't] for guessing.
+  intro: We use them when we are not completely sure, to show how sure we are.
+  wide: true
+  table:
+    - ["How sure?", "Example"]
+    - ["Almost sure: yes", "It [must be] something electronic."]
+    - ["Maybe", "It [might be] a cat.  ·  It [could be] the alarm."]
+    - ["Almost sure: no", "It [can't be] a person. The door is locked."]
+  notes:
+    - {title: "modal + [be] or another verb", text: "It must be. She might know."}
+    - {title: "[must] for yes, [can't] for no", text: "Not: it mustn't be a person."}
+    - {title: "[might · could] mean maybe", text: "It might be a cat. It could be the alarm."}
+  ask: ["Whose phone is it?", "It must be Mrs. Fatima's."]
+words:
+  - {word: beep, meaning: a short high sound from a machine}
+  - {word: electronic, meaning: working with electricity and computer parts}
+  - {word: ghost, meaning: the spirit of a dead person that some people believe in}
+  - {word: whispers, meaning: speaks very quietly}
+  - {word: shaking, meaning: moving quickly from side to side}
+  - {word: remind, meaning: help someone remember}

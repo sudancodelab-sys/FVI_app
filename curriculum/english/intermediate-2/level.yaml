@@ -20,3 +20,8 @@ cast:
   Mr. Ali: {initial: MA, color: c}
   Omar: {initial: O, color: d}
   Huda: {initial: H, color: e}
+  Hamza: {initial: HA, color: e}
+  # People in one scene only.
+  Doctor: {initial: DR, color: e}
+  Worker: {initial: W, color: e}
+  Father: {initial: F, color: e}

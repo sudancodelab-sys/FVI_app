@@ -1,0 +1,55 @@
+lesson: 4
+unit: 2
+kind: story
+title: If I Were the Teacher
+subtitle: Hamza doesn't like homework, so he imagines a different school. Read the story, then read it from Hamza's point of view.
+icon: pencil
+goals: [Imagine a different situation, Use if and would, Talk about what you would change]
+story:
+  - "Hamza is eight years old, and he doesn't like school very much. One evening, he is sitting at the kitchen table with his homework. He has been looking at the same math problem for twenty minutes. \"If I [were] the teacher,\" he says, \"there [wouldn't be] any homework.\""
+  - "Adam smiles. \"Really? What else [would] you [change]?\" Hamza thinks. \"If I [were] the teacher, school [would start] at ten o'clock, not seven. We [would play] football every morning. And if a student [got] a bad grade, I [would give] him a cookie to feel better.\""
+  - "\"And if the students [didn't listen]?\" Adam asks. \"I [would] never [shout],\" says Hamza. \"I [would tell] them a funny story, and they [would listen].\" \"What [would] you [do] if the principal [came] to your class?\" \"If the principal [came], I [would ask] him to play football with us!\""
+  - "Their mother is listening at the door. \"That sounds like a wonderful school, Hamza,\" she says. \"But if you [were] the teacher, you [would need] to know the answer to that math problem.\" Hamza looks at his homework. Then he looks at Adam. \"Adam, if you [helped] me, I [would finish] faster.\" Adam laughs. \"And if I [helped] you every night, you [would] never [learn]!\" But he sits down and helps him anyway."
+questions:
+  - ["How old is Hamza?", "Eight."]
+  - ["Does he like school?", "Not very much."]
+  - ["How long has he been looking at the math problem?", "For twenty minutes."]
+  - ["What wouldn't there be if Hamza were the teacher?", "Any homework."]
+  - ["What time would school start?", "At ten o'clock."]
+  - ["What would they do every morning?", "Play football."]
+  - ["What would he give a student who got a bad grade?", "A cookie."]
+  - ["Would he shout if the students didn't listen?", "No, he wouldn't. He would tell them a funny story."]
+  - ["What would he ask the principal?", "To play football with them."]
+  - ["Who is listening at the door?", "Their mother."]
+  - ["What would Hamza need to know if he were the teacher?", "The answer to the math problem."]
+  - ["Does Adam help him in the end?", "Yes, he does."]
+pov:
+  intro: Now Hamza tells it.
+  speaker: Hamza
+  text:
+    - I'm eight, and I don't like homework. Tonight, I've been looking at the same math problem for twenty minutes. If I [were] the teacher, there [wouldn't be] any homework!
+    - If I [were] the teacher, school [would start] at ten o'clock, and we [would play] football every morning. If a student [got] a bad grade, I [would give] him a cookie.
+    - I [would] never [shout]. If the students [didn't listen], I [would tell] them a funny story. And if the principal [came] to my class, I [would ask] him to play football with us!
+    - Mom says that if I [were] the teacher, I [would need] to know the answer to my math problem. OK, maybe she's right. But if I [were] Adam, I [would help] my little brother every night!
+learn:
+  title: You learned the [second conditional].
+  intro: We use it for situations that are not real now, or not likely. We imagine them.
+  wide: true
+  table:
+    - ["If + past", "would + verb"]
+    - ["If I [were] the teacher,", "there [wouldn't be] any homework."]
+    - ["If a student [got] a bad grade,", "I [would give] him a cookie."]
+    - ["If the principal [came],", "I [would ask] him to play."]
+    - ["If you [helped] me,", "I [would finish] faster."]
+  notes:
+    - {title: "Not real: the [past] after if", text: "If I were the teacher (but I'm not)."}
+    - {title: "[were] for everyone", text: "If I were, if he were, if she were."}
+    - {title: "[First] or [second]?", text: "Possible: If I study, I'll pass. Imagined: If I were the teacher, I'd…"}
+  ask: ["What would you do if you were the teacher?", "If I were the teacher, I'd tell funny stories."]
+words:
+  - {word: math, meaning: the study of numbers}
+  - {word: grade, meaning: a number or letter that shows how good your work is}
+  - {word: shout, meaning: speak very loudly}
+  - {word: principal, meaning: the head of a school}
+  - {word: wonderful, meaning: very, very good}
+  - {word: anyway, meaning: even so}

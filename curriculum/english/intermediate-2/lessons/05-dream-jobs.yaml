@@ -1,0 +1,35 @@
+lesson: 5
+unit: 2
+kind: topic
+title: Dream Jobs
+subtitle: Four students answer one question. If you could choose any job, what would it be?
+icon: briefcase
+goals: [Talk about dream jobs, Imagine with if and would, Give reasons for your choice]
+text:
+  - "We asked four students at Future Vision Institute one question. \"If you could choose any job in the world, what would it be?\" Here are their answers."
+  - "[Adam], 20: \"I would be a pilot, of course! If I flew for an airline, I would see a new city every week. And I would fly my grandfather to Port Sudan for free.\""
+  - "[Huda], 19: \"If I could choose, I would be a teacher, like Mr. Ali. I would teach in the village where my mother grew up, because there aren't enough teachers there.\""
+  - "[Omar], 21: \"I'm already a manager, but if I had more money, I would open my own company. It would repair phones and computers in every city in Sudan.\""
+  - "[Sara], 19: \"I would be an engineer who builds bridges. If Sudan had more bridges, people wouldn't wait for hours to cross the Nile.\""
+  - What about you? If you had the chance, what would you do, and what would you need to learn to get there? The first step is often closer than you think.
+facts:
+  - title: Their dream jobs
+    items:
+      - {icon: plane, term: Adam, text: a pilot}
+      - {icon: book, term: Huda, text: a village teacher}
+      - {icon: tool, term: Omar, text: his own company}
+      - {icon: bridge, term: Sara, text: an engineer who builds bridges}
+questions:
+  - ["What question did they ask the students?", "If you could choose any job in the world, what would it be?"]
+  - ["What would Adam see if he flew for an airline?", "A new city every week."]
+  - ["Where would Huda teach?", "In the village where her mother grew up."]
+  - ["What would Omar do if he had more money?", "Open his own company."]
+  - ["What would Sara build?", "Bridges."]
+  - ["Why does Sudan need more bridges, says Sara?", "So people wouldn't wait for hours to cross the Nile."]
+words:
+  - {word: choose, meaning: decide which one you want}
+  - {word: airline, meaning: a company that flies planes}
+  - {word: grew up, meaning: lived as a child until she was an adult}
+  - {word: chance, meaning: a time when something is possible}
+  - {word: step, meaning: one of many actions you do to reach a goal}
+  - {word: closer, meaning: nearer}

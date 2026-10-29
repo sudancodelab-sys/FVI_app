@@ -1,0 +1,33 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Helping Others
+subtitle: Sara has been volunteering at a children's hospital. Why do so many young people volunteer?
+icon: heart
+goals: [Talk about volunteering, Say how long you have been doing something, Give reasons]
+text:
+  - For the last three months, Sara has been volunteering at a children's hospital in Khartoum every Friday morning. She isn't a doctor or a nurse. She reads stories, plays games, and helps the children with their homework.
+  - A [volunteer] is someone who gives their time to help others without pay. Many young Sudanese people have been volunteering in recent years. They clean streets, teach children to read, give out food in Ramadan, and help families after floods.
+  - "Why do people volunteer? Some want to give back to their [community]. Others want to learn new [skills] or meet new people. And many say it simply makes them happy. \"I've been feeling much better since I started,\" Sara says. \"When a sick child laughs, it's the best feeling in the world.\""
+  - Volunteering can also help your future. Employers often like to see it on a [résumé], because it shows that you are responsible and good at working in a team. You don't need a lot of time. One hour a week can change someone's day. What have you been doing to help others?
+facts:
+  - title: Ways to help
+    items:
+      - {icon: book, term: teach, text: help children read}
+      - {icon: basket, term: share food, text: in Ramadan}
+      - {icon: wave, term: after floods, text: help families clean and rebuild}
+      - {icon: heart, term: hospitals, text: read and play with sick children}
+questions:
+  - ["How long has Sara been volunteering?", "For three months."]
+  - ["What does she do at the hospital?", "She reads stories, plays games, and helps the children with their homework."]
+  - ["What is a volunteer?", "Someone who gives their time to help others without pay."]
+  - ["What have young Sudanese people been doing?", "Cleaning streets, teaching children, giving out food, and helping after floods."]
+  - ["Why do employers like to see volunteering on a résumé?", "It shows that you are responsible and good at working in a team."]
+  - ["How much time do you need?", "One hour a week can change someone's day."]
+words:
+  - {word: volunteering, meaning: doing work for free to help others}
+  - {word: floods, meaning: water that covers land that is usually dry}
+  - {word: community, meaning: the people who live in a place}
+  - {word: employers, meaning: people or companies that give jobs}
+  - {word: résumé, meaning: a list of your education and your jobs}
+  - {word: responsible, meaning: someone you can trust to do the right thing}

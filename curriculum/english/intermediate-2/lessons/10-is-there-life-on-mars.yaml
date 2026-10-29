@@ -1,0 +1,37 @@
+lesson: 10
+unit: 4
+kind: science
+title: Is There Life on Mars?
+subtitle: What scientists know about the red planet, and what they think is possible.
+icon: planet
+goals: [Explain what scientists know, Say what is possible with might and could, Use can't for what is almost impossible]
+text:
+  - For hundreds of years, people have looked at the red planet in the night sky and asked the same question. Is there life on [Mars]?
+  - Mars is the fourth planet from the sun. It is much colder than the Earth, about minus sixty degrees on most days, and its air is very thin. Today, there is no liquid water on its surface. So life there can't be easy.
+  - But scientists have found some exciting clues. Robots called [rovers], like Curiosity and Perseverance, have been exploring Mars for years. They have found dry riverbeds and rocks that formed in water. This means that Mars had rivers and lakes billions of years ago.
+  - Where there was water, there could also be life, very small living things called [microbes]. They might still live deep under the ground, where it is warmer and there could be ice.
+  - Perseverance has been collecting rock samples since 2021. In the future, these samples could come back to Earth, where scientists can study them in labs. If they found even one tiny microbe, it would be one of the biggest discoveries in history.
+facts:
+  - title: Mars in numbers
+    items:
+      - {icon: sun, term: 4th, text: planet from the sun}
+      - {icon: cloud, term: "−60°", text: on most days}
+      - {icon: drop, term: no water, text: "on the surface, today"}
+      - {icon: car, term: rovers, text: exploring since 2012}
+did_you_know: A day on Mars is only about 40 minutes longer than a day on Earth, but a year on Mars is 687 Earth days.
+questions:
+  - ["Which planet from the sun is Mars?", "The fourth."]
+  - ["Is Mars colder or warmer than the Earth?", "Much colder, about minus sixty degrees on most days."]
+  - ["Is there liquid water on Mars today?", "No, there isn't."]
+  - ["What have the rovers found?", "Dry riverbeds and rocks that formed in water."]
+  - ["What does this mean?", "Mars had rivers and lakes billions of years ago."]
+  - ["Where might microbes still live?", "Deep under the ground."]
+  - ["What has Perseverance been doing since 2021?", "Collecting rock samples."]
+  - ["What would happen if scientists found one tiny microbe?", "It would be one of the biggest discoveries in history."]
+words:
+  - {word: planet, meaning: a large round object that goes around a sun}
+  - {word: surface, meaning: the outside or top of something}
+  - {word: exploring, meaning: traveling around a place to learn about it}
+  - {word: microbes, meaning: living things too small to see}
+  - {word: samples, meaning: small pieces that are taken to study}
+  - {word: discoveries, meaning: things that are found for the first time}

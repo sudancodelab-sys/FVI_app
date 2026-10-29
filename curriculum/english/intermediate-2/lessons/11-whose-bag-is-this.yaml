@@ -1,0 +1,31 @@
+lesson: 11
+unit: 4
+kind: conversation
+title: Whose Bag Is This?
+subtitle: Guessing who something belongs to
+icon: bag
+goals: [Ask who something belongs to, Guess with must, might and can't, Use clues]
+scene: After class, Mr. Ali finds a bag under a desk. Sara and Huda are still in the room.
+conversation:
+  - [Mr. Ali, "Someone has left a bag under this desk. Whose is it?"]
+  - [Sara, "It can't be mine. My bag is here."]
+  - [Huda, "Is there a name on it?"]
+  - [Mr. Ali, "No name. But there's a football in it, and a book about planes."]
+  - [Sara, "A book about planes? It must be Adam's!"]
+  - [Huda, "But Omar plays football, too. It might be his."]
+  - [Mr. Ali, "There's also a phone charger and a receipt from a phone shop."]
+  - [Sara, "Hmm. That could be Omar's. He works at a phone shop."]
+  - [Huda, "Wait, there's a sandwich in paper. It says, \"For Adam. Love, Mom.\""]
+  - [Sara, "Then it must be Adam's. Mystery solved!"]
+phrases:
+  - {title: Ask who it belongs to, lines: ["Whose is it?"]}
+  - {title: Say no, lines: ["It can't be mine."]}
+  - {title: Say almost yes, lines: ["It must be Adam's!"]}
+  - {title: Say maybe, lines: ["It might be his.  ·  That could be Omar's."]}
+  - {title: Look for clues, lines: ["Is there a name on it?"]}
+  - {title: Finish, lines: ["Mystery solved!"]}
+words:
+  - {word: whose, meaning: of which person}
+  - {word: mine, meaning: the one that belongs to me}
+  - {word: charger, meaning: a cable that gives power to a phone}
+  - {word: solved, meaning: found the answer to}
