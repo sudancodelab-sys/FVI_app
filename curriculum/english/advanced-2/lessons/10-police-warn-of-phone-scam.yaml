@@ -1,0 +1,49 @@
+lesson: 10
+unit: 4
+kind: news
+title: Police Warn of Phone Scam
+subtitle: Read a news report about a crime, and notice how reporters use verbs like warn, admit, and deny.
+icon: news
+goals: [Read a crime report, "Find who, what, where, when, and why", Notice reporting verbs in the news]
+paper: The Daily Nile
+date: Monday, March 9
+headline: Police Warn Public About Text Message Scam
+standfirst: Criminals are sending messages that look as if they come from banks, and dozens of people have already lost money.
+byline: By our crime reporter
+text:
+  - "Police in Khartoum have [warned] the public [not to share] bank codes with anyone, after dozens of people lost money to a new text message scam this month."
+  - "The messages look as if they come from a real bank. They tell people that they have won a prize, or that their account will be closed, and they ask them to send a secret code. \"It sounded ((too good to be true)), and it was,\" said one victim, a teacher who lost two months' salary. She [admitted sending] the code without thinking."
+  - "A police spokesperson [explained that] the criminals often call after sending the message, pretending to be bank staff. \"They are polite, they know your name, and they sound very professional,\" she said. \"That's why so many people ((fall for)) it.\""
+  - "Banks have [promised to return] money to some of the victims, but they have [advised] customers [to check] every message carefully. \"We will never ask you for a code by phone or text,\" said a manager at one bank."
+  - "One man was arrested last week, but he [denied being] part of the group. Police have [asked] anyone who receives a strange message [to report] it, and they have [suggested calling] the bank directly, using the number on the back of the card."
+quote:
+  after: 2
+  text: It sounded too good to be true, and it was.
+  by: A teacher who lost two months' salary
+facts:
+  - title: The five key facts
+    style: ws
+    items:
+      - {term: "Who?", text: criminals pretending to be bank staff}
+      - {term: "What?", text: a text message scam}
+      - {term: "Where?", text: Khartoum}
+      - {term: "When?", text: this month}
+      - {term: "Why?", text: to steal money with secret bank codes}
+questions:
+  - ["What have police warned the public not to do?", "Share bank codes with anyone."]
+  - ["What do the messages tell people?", "That they have won a prize, or that their account will be closed."]
+  - ["What did the teacher admit?", "Sending the code without thinking."]
+  - ["How do the criminals sound on the phone?", "Polite and very professional."]
+  - ["What have the banks promised?", "To return money to some of the victims."]
+  - ["What did the arrested man deny?", "Being part of the group."]
+  - ["What have police suggested?", "Calling the bank directly, using the number on the back of the card."]
+idioms:
+  - {expr: too good to be true, type: idiom, meaning: so good that it is probably not real, example: "A new phone for only ten pounds? It's too good to be true."}
+  - {expr: fall for something, type: phrase, meaning: to believe a trick or a lie, example: "He told me the shop was giving away free cars, but I didn't fall for it."}
+words:
+  - {word: scam, meaning: a clever trick to steal money}
+  - {word: prize, meaning: something you get when you win}
+  - {word: victim, meaning: a person who is hurt or cheated by a crime}
+  - {word: spokesperson, meaning: a person who speaks to the public for a group}
+  - {word: criminals, meaning: people who break the law}
+  - {word: arrested, meaning: taken away by the police}

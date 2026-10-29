@@ -1,0 +1,51 @@
+lesson: 8
+unit: 3
+kind: podcast
+title: Starting Your Own Business
+subtitle: Sara and Adam talk to a guest they know very well, Omar, about his first six months as a business owner.
+icon: mic
+goals: [Follow a podcast interview, Talk about starting a business, Use have and get something done]
+show: The Future Vision Podcast
+episode: 18
+scene: "Hosts: Sara and Adam · Guest: Omar, who started a phone repair and app company"
+before:
+  - Would you like to start your own business one day? What kind?
+  - What do you think is the hardest part of starting a business?
+script:
+  - ["00:05", Adam, "Welcome back to The Future Vision Podcast. I'm Adam."]
+  - ["00:08", Sara, "And I'm Sara. Today's guest is someone we know very well. He started his own company six months ago. Welcome, Omar!"]
+  - ["00:16", Omar, "Thanks. It's strange to be on this side of the microphone."]
+  - ["00:20", Adam, "So, Omar, why did you decide to ((be your own boss))?"]
+  - ["00:24", Omar, "I worked for a big company for a year, and I loved it. That's where I ((learned the ropes)). But I always wanted to build something of my own."]
+  - ["00:35", Sara, "What was the hardest part at the beginning?"]
+  - ["00:38", Omar, "Doing everything! At first, I tried to do it all myself. Now I [have] my accounts [done] by an accountant, and I [had] our logo [designed] by a student at the art college."]
+  - ["00:52", Adam, "Why didn't you design it yourself?"]
+  - ["00:54", Omar, "Have you seen my office walls? I learned that it's cheaper to [get] things [done] by experts than to do them badly."]
+  - ["01:05", Sara, "How did you find your first customers?"]
+  - ["01:08", Omar, "Mostly through friends and family. One happy customer tells five others. I also [had] a simple website [made], so people can book repairs online."]
+  - ["01:22", Adam, "What advice would you give a student who wants to start a business?"]
+  - ["01:26", Omar, "Start small, and keep your costs low. Don't rent a big office on the first day. And find people you trust, because you can't do everything alone."]
+  - ["01:40", Sara, "And what's next for the company?"]
+  - ["01:43", Omar, "We're building an app that helps farmers [get] their phones [repaired] without traveling to the city. We're testing it next month."]
+  - ["01:55", Adam, "That's exciting. Omar, thank you for coming."]
+  - ["01:58", Omar, "Thank you for having me."]
+  - ["02:01", Sara, "That's all for this week. Next week, we're talking about sleep, and why students never get enough. See you then!"]
+questions:
+  - ["When did Omar start his company?", "Six months ago."]
+  - ["Where did he learn the ropes?", "At a big company, where he worked for a year."]
+  - ["Who does his accounts now?", "An accountant."]
+  - ["Who designed the logo?", "A student at the art college."]
+  - ["What did Omar learn about getting things done?", "It's cheaper to get things done by experts than to do them badly."]
+  - ["How did he find his first customers?", "Mostly through friends and family."]
+  - ["What advice does he give students?", "Start small, keep your costs low, and find people you trust."]
+  - ["What is the company building?", "An app that helps farmers get their phones repaired without traveling to the city."]
+idioms:
+  - {expr: be your own boss, type: phrase, meaning: to work for yourself and not for a company, example: "My uncle left his job to be his own boss. Now he has a small shop."}
+  - {expr: learn the ropes, type: idiom, meaning: to learn the basic things you need to know to do a job, example: "In my first month at the bank, I was still learning the ropes."}
+words:
+  - {word: microphone, meaning: a machine that you speak into to record your voice}
+  - {word: accounts, meaning: the records of the money a business gets and spends}
+  - {word: accountant, meaning: a person whose job is to keep accounts}
+  - {word: logo, meaning: the small picture that a company uses as its sign}
+  - {word: experts, meaning: people who know a lot about something}
+  - {word: costs, meaning: the money you have to spend}

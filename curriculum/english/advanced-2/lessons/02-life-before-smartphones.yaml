@@ -1,0 +1,39 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Life Before Smartphones
+subtitle: How people called, found their way, and kept in touch before the phone in your pocket, and what we have got used to.
+icon: phone
+goals: [Compare life then and now, Use used to and be used to, Talk about technology in your life]
+text:
+  - "Today, most of us check our phones more than fifty times a day, and it is hard to imagine life without them. But only twenty years ago, things were very different. How did people live before [smartphones]?"
+  - "First, people used to remember things. Most people knew dozens of phone numbers by heart. To call someone, they used a [landline], a phone connected to the wall. If nobody was home, they simply tried again later."
+  - "To find their way in a new city, people used paper [maps], or they stopped and asked for directions. Getting lost was normal, and sometimes it led to an adventure."
+  - "To ((keep in touch)) with family in another country, people wrote [letters], and a letter could take two or three weeks to arrive. A phone call abroad was so expensive that many families made one only ((once in a blue moon)), on Eid or for very important news."
+  - "Photos were different too. A [film] camera could take only thirty-six pictures, and you didn't see them until they were printed in a shop. So people took photos of special moments only."
+  - "Today, we are used to answers in seconds, maps that speak, and video calls that cost nothing. Most of this is wonderful. But some experts say that we should sometimes put our phones away, because the people who lived before smartphones were better at one thing. They knew how to be bored."
+facts:
+  - title: Then and now
+    items:
+      - {icon: phone, term: Numbers, text: "then remembered · now saved"}
+      - {icon: pin, term: Directions, text: "then paper maps · now GPS"}
+      - {icon: mail, term: Family abroad, text: "then letters · now video calls"}
+      - {icon: image, term: Photos, text: "then 36 on a film · now thousands"}
+questions:
+  - ["How many times a day do most of us check our phones?", "More than fifty."]
+  - ["What is a landline?", "A phone connected to the wall."]
+  - ["How did people find their way in a new city?", "With paper maps, or by asking for directions."]
+  - ["How long could a letter take to arrive?", "Two or three weeks."]
+  - ["Why did families call abroad only once in a blue moon?", "Because calls were very expensive."]
+  - ["How many pictures could a film camera take?", "Thirty-six."]
+  - ["What were people before smartphones better at?", "Being bored."]
+idioms:
+  - {expr: keep in touch, type: phrase, meaning: to stay in contact with someone by writing or calling, example: "After she moved to Cairo, we kept in touch by phone."}
+  - {expr: once in a blue moon, type: idiom, meaning: very rarely, example: "My uncle lives far away, so we see him only once in a blue moon."}
+words:
+  - {word: dozens, meaning: "many, in groups of twelve"}
+  - {word: by heart, meaning: from memory}
+  - {word: directions, meaning: information about how to get to a place}
+  - {word: abroad, meaning: in or to another country}
+  - {word: printed, meaning: put onto paper by a machine}
+  - {word: bored, meaning: tired because nothing interesting is happening}

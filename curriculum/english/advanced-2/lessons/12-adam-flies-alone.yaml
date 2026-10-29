@@ -1,0 +1,62 @@
+lesson: 12
+unit: 5
+kind: story
+title: Adam Flies Alone
+subtitle: Six months after his first lesson, Adam is told that today he will fly with nobody next to him. Read the story, then read it from his instructor's point of view.
+icon: star
+goals: [Give emphasis to what matters most, Use what clauses and it was … that, Describe an important moment]
+story:
+  - "Six months after his first lesson, Adam arrived at the flying school on a calm Tuesday morning. Captain Nour was waiting by the plane, as usual. But this time, she didn't climb in. \"Today,\" she said, \"you're going up alone.\""
+  - "Adam had imagined this moment a thousand times, but now that it had come, he had ((butterflies in his stomach)). \"Are you sure?\" he asked. Captain Nour smiled. \"[What you need now is] confidence, not more lessons. [It's] your hands [that] know how to fly, not mine.\""
+  - "He did his checks slowly and carefully, twice. Then he called the tower, and the voice on the radio said, \"Cleared for take-off.\" The plane rolled down the runway, faster and faster, and then the ground fell away."
+  - "The first thing he noticed was the silence. There was nobody next to him, and no calm voice saying, \"Gently.\" For a moment, his hands shook. Then he remembered the years of saving, the long nights reading about planes, and his grandfather's favorite words. \"((Where there's a will, there's a way)).\" He took a deep breath and ((pulled himself together))."
+  - "He flew one circle around the airfield. The Nile was shining below, just like on his first day, but this time, the sky was all his. When he landed, Captain Nour was clapping. Behind her, holding a sign that said WELL DONE, CAPTAIN ADAM, were Sara, Omar, and Huda. This time, Omar had checked every letter."
+  - "That evening, at the café, Sara asked him how it felt. Adam thought for a moment. \"[What I remember most is] the silence,\" he said. \"[It was] at that moment [that] I understood I was really a pilot.\""
+  - "\"And how did you know we would be there?\" asked Huda. \"I didn't,\" said Adam. \"But I think I know who told you. [It was] my grandfather, [wasn't it?]\" Sara smiled. \"Captain Nour told him yesterday, and he couldn't keep the secret for an hour.\""
+questions:
+  - ["When did Adam fly alone?", "Six months after his first lesson."]
+  - ["What did Captain Nour say?", "Today, you're going up alone."]
+  - ["How did Adam feel?", "He had butterflies in his stomach."]
+  - ["What did Captain Nour say he needed now?", "Confidence, not more lessons."]
+  - ["How many times did he do his checks?", "Twice."]
+  - ["What did the voice on the radio say?", "Cleared for take-off."]
+  - ["What was the first thing he noticed?", "The silence."]
+  - ["What were his grandfather's favorite words?", "Where there's a will, there's a way."]
+  - ["What did the sign say?", "WELL DONE, CAPTAIN ADAM."]
+  - ["What does Adam remember most?", "The silence."]
+  - ["When did he understand that he was really a pilot?", "At that moment, in the silence."]
+  - ["Who told the friends to come?", "Adam's grandfather."]
+pov:
+  intro: Now Captain Nour tells it.
+  speaker: Captain Nour
+  text:
+    - "[What I love most about my job is] the day a student flies alone. I have seen it many times, and it still makes me nervous."
+    - "Adam was ready weeks ago, but he didn't know it. [It was] his confidence [that] needed more time, not his flying. So last Tuesday, I simply told him that he was going alone."
+    - "From the ground, I watched every second. His take-off was good, and his landing was even better. [What surprised me was] how calm he looked when he climbed out."
+    - "Of course, I had told his grandfather the day before. [It was] the only secret I have ever shared with a student's family, and I don't regret it."
+learn:
+  title: You learned [cleft sentences].
+  intro: We use them to give emphasis, to point at the most important part of what we say.
+  wide: true
+  table:
+    - ["Normal sentence", "With emphasis"]
+    - ["I remember the silence most.", "[What I remember most is] the silence."]
+    - ["You need confidence now.", "[What you need now is] confidence."]
+    - ["I understood it at that moment.", "[It was at that moment that] I understood."]
+    - ["My grandfather told you.", "[It was] my grandfather [who] told you."]
+  notes:
+    - {title: "[What] … [is / was] …", text: "What I need is a holiday. What surprised me was his calm."}
+    - {title: "[It is / It was] … [that / who] …", text: "It was Sara who found the answer."}
+    - {title: "Say it: [stress] the key words", text: "It was MY grandfather who told you."}
+  ask: ["What do you like most about learning English?", "What I like most is the stories."]
+idioms:
+  - {expr: have butterflies in your stomach, type: idiom, meaning: to feel very nervous before you do something, example: "I always have butterflies in my stomach before an exam."}
+  - {expr: "Where there's a will, there's a way.", type: proverb, meaning: "If you really want to do something, you will find a way to do it.", example: "He had no money for university, so he worked and saved. Where there's a will, there's a way."}
+  - {expr: pull yourself together, type: phrase, meaning: to control your feelings and become calm again, example: "She was crying, but she pulled herself together and finished her speech."}
+words:
+  - {word: calm, meaning: quiet and not nervous}
+  - {word: confidence, meaning: the feeling that you can do something well}
+  - {word: tower, meaning: the tall building at an airport where people tell pilots what to do}
+  - {word: cleared, meaning: allowed to do something}
+  - {word: airfield, meaning: a small airport}
+  - {word: regret, meaning: feel sorry about something you did}

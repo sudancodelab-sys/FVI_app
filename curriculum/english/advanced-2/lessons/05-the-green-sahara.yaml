@@ -1,0 +1,40 @@
+lesson: 5
+unit: 2
+kind: science
+title: The Green Sahara
+subtitle: Thousands of years ago, the biggest hot desert in the world was full of lakes, rivers, and animals. What changed?
+icon: sun
+goals: [Explain how a place changed over time, Talk about evidence from the past, Use if with a different past and a different present]
+text:
+  - "Today, the [Sahara] is the largest hot desert in the world. It covers most of North Africa, including much of northern Sudan. But about 10,000 years ago, it looked completely different. It was green."
+  - "Scientists call this time the African Humid Period. For thousands of years, heavy summer rains reached far into the desert. There were grasslands, trees, and huge lakes, and hippos, giraffes, and elephants lived where there is only sand today."
+  - "How do we know? The people who lived there left [rock art], paintings and carvings on the rocks that show cattle, giraffes, and even people swimming. In Sudan, scientists have found that [Wadi Howar], a dry valley in the northwest, was once a long river that carried water toward the Nile. Some call it the Yellow Nile. But the rock art and the old riverbeds are only ((the tip of the iceberg)). Under the sand, there are old villages, tools, and fish bones."
+  - "So what changed? The answer is in space. The Earth slowly [wobbles] as it turns, like a spinning top. Over thousands of years, this changed how much summer sunlight reached North Africa. With less sunlight, the summer rains moved south, the lakes and rivers ((dried up)), and about 5,000 years ago, the desert returned."
+  - "Many people moved toward the Nile, where there was still water. Some historians believe that if the Sahara had stayed green, life in the Nile Valley would be very different today. And the Earth is still wobbling, so in thousands of years, the Sahara may be green again."
+facts:
+  - title: How the green Sahara became a desert
+    steps: true
+    items:
+      - {term: Wobble, text: the Earth slowly tilts in a new way}
+      - {term: Less sun, text: summers in North Africa get weaker}
+      - {term: Less rain, text: the summer rains move south}
+      - {term: Desert, text: lakes and rivers dry up}
+did_you_know: The Sahara is almost as big as the United States, but only about a quarter of it is sand. The rest is rock, stones, and mountains.
+questions:
+  - ["How long ago was the Sahara green?", "About 10,000 years ago."]
+  - ["Which animals lived there?", "Hippos, giraffes, and elephants."]
+  - ["What does the rock art show?", "Cattle, giraffes, and even people swimming."]
+  - ["What was Wadi Howar?", "A long river that carried water toward the Nile."]
+  - ["Why did the summer rains move south?", "The Earth's wobble changed how much summer sunlight reached North Africa."]
+  - ["When did the desert return?", "About 5,000 years ago."]
+  - ["Where did many people move?", "Toward the Nile, where there was still water."]
+idioms:
+  - {expr: the tip of the iceberg, type: idiom, meaning: a small part of something much bigger that you can't see yet, example: "The money he lost is only the tip of the iceberg. His whole business is in trouble."}
+  - {expr: dry up, type: phrase, meaning: to lose all its water, example: "In the hot summer, the small river near our village dries up."}
+words:
+  - {word: covers, meaning: is spread over a place}
+  - {word: humid, meaning: with a lot of water in the air}
+  - {word: carvings, meaning: pictures cut into stone or wood}
+  - {word: cattle, meaning: cows that people keep for milk and meat}
+  - {word: valley, meaning: low land between hills or mountains}
+  - {word: historians, meaning: people who study the past}

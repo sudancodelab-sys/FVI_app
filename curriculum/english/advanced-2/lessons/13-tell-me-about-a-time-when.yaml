@@ -1,0 +1,36 @@
+lesson: 13
+unit: 5
+kind: conversation
+title: Tell Me About a Time When…
+subtitle: Answering harder interview questions with examples from your life
+icon: briefcase
+goals: [Answer questions with real examples, Give emphasis to your strengths, Talk about a mistake and what you learned]
+scene: Adam has an interview for a cadet program at an airline. Ms. Salma, a senior captain, is interviewing him.
+conversation:
+  - [Ms. Salma, "Good morning, Adam. Thank you for coming. Let's start. Why do you want to fly for an airline?"]
+  - [Adam, "What I love most about flying is the responsibility. In a plane, every decision matters, and I want a job where people can trust me."]
+  - [Ms. Salma, "Tell me about a time when you had to ((think on your feet))."]
+  - [Adam, "Last month, during a training flight, my radio stopped working. It was then that I remembered the light signals from the tower. I followed them, and I landed safely."]
+  - [Ms. Salma, "That's impressive. How do you ((work under pressure))?"]
+  - [Adam, "I stay calm and follow my checklist. What helps me most is planning. If I've prepared well, I don't panic."]
+  - [Ms. Salma, "Tell me about a time when you made a mistake."]
+  - [Adam, "In my third lesson, I forgot one check before take-off, and my instructor noticed. It was that day that I started writing every check on a card. I've never forgotten one since."]
+  - [Ms. Salma, "Good. One last question. Why should we choose you?"]
+  - [Adam, "Because I'm careful, I'm calm, and I never stop learning. And it's the pilots who never stop learning who become the best captains."]
+phrases:
+  - {title: Say why you want the job, lines: ["What I love most about flying is the responsibility."]}
+  - {title: "Answer: Tell me about a time when…", lines: ["Last month, during a training flight, my radio stopped working."]}
+  - {title: Say what you did, lines: ["It was then that I remembered the light signals."]}
+  - {title: Talk about pressure, lines: ["I stay calm and follow my checklist."]}
+  - {title: Learn from a mistake, lines: ["It was that day that I started writing every check on a card."]}
+  - {title: Sell yourself, lines: ["I'm careful, I'm calm, and I never stop learning."]}
+idioms:
+  - {expr: think on your feet, type: idiom, meaning: "to make good decisions quickly, without time to plan", example: "When the lights went out during her talk, she had to think on her feet."}
+  - {expr: work under pressure, type: phrase, meaning: to do your work well when you have very little time or a lot of stress, example: "Nurses often have to work under pressure."}
+words:
+  - {word: cadet, meaning: a young person who is training for a job such as pilot}
+  - {word: responsibility, meaning: a duty to take care of something or someone}
+  - {word: signals, meaning: lights or sounds that give a message}
+  - {word: impressive, meaning: "very good, in a way that you admire"}
+  - {word: checklist, meaning: a list of things you must check or do}
+  - {word: panic, meaning: suddenly feel so afraid that you can't think clearly}

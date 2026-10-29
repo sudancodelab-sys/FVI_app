@@ -23,3 +23,11 @@ cast:
   Omar: {initial: O, color: d}
   Huda: {initial: H, color: e}
   # Guests and one-scene roles.
+  Mrs. Karim: {initial: MK, color: c}
+  Dr. Amira: {initial: DA, color: e}
+  Mr. Hassan: {initial: MH, color: c}
+  Agent: {initial: AG, color: e}
+  Tarig: {initial: T, color: c}
+  Mona: {initial: MO, color: e}
+  Captain Nour: {initial: CN, color: e}
+  Ms. Salma: {initial: MS, color: c}

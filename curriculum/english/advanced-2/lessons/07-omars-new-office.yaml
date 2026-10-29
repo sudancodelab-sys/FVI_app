@@ -1,0 +1,62 @@
+lesson: 7
+unit: 3
+kind: story
+title: Omar's New Office
+subtitle: Omar wants a professional office in one week. He has the walls painted, a sign made, and the internet installed, and everything goes wrong. Read the story, then read it from Sara's point of view.
+icon: tool
+goals: [Say what other people do for you, Use have and get something done, Tell a funny story about a bad week]
+story:
+  - "After a year at Dr. Idris's company, Omar finally started his own business, a small company that repairs phones and builds apps. He rented a room above a shop in the market and decided to make it look professional. \"It'll be ((a piece of cake)),\" he told Adam. \"I'll [have] everything [done] in a week.\""
+  - "On Monday, he [had] the walls [painted] blue. When he came back in the evening, they were bright green. \"Blue was finished,\" the painter explained. \"Green is nicer.\""
+  - "On Tuesday, he [got] a sign [made] for the door. It said OMAR'S TECNOLOGY. \"Where's the H?\" Omar asked. \"Letters are expensive,\" said the sign maker. \"Nobody will notice.\""
+  - "On Wednesday, he [had] the internet [installed]. The man worked for three hours, drank four cups of tea, and left. The internet worked for exactly twenty minutes."
+  - "By Thursday, Omar was tired of waiting for other people. \"((If you want something done right, do it yourself)),\" he said, and he bought a can of blue paint. Two hours later, the walls were blue and green, and so were Omar, the floor, and the window."
+  - "That evening, Sara came to see the office. She looked at the walls, the sign, and Omar's blue hair, and she tried not to laugh. \"Maybe you just need the right people,\" she said. The next day, she called her cousin, a painter who never changed colors. Huda's brother [got] the sign [fixed] in an hour, and Adam's uncle [had] the internet [checked] by a friend who really knew what he was doing."
+  - "A week later, the office looked perfect. Omar ((sorted out)) the last problem himself, a door that wouldn't close, and he opened the business on Sunday. His first customer was Mr. Ali, who wanted to [have] his phone [repaired]. \"Don't worry,\" Omar said. \"I'll do this one myself.\""
+questions:
+  - ["What does Omar's company do?", "It repairs phones and builds apps."]
+  - ["Where did he rent a room?", "Above a shop in the market."]
+  - ["What did Omar tell Adam?", "That it would be a piece of cake, and he would have everything done in a week."]
+  - ["What color did Omar want the walls?", "Blue."]
+  - ["What color were they when he came back?", "Bright green."]
+  - ["What was wrong with the sign?", "The H was missing. It said TECNOLOGY."]
+  - ["How long did the internet work?", "For exactly twenty minutes."]
+  - ["What happened when Omar painted the walls himself?", "The walls were blue and green, and so were Omar, the floor, and the window."]
+  - ["What did Sara say?", "Maybe he just needed the right people."]
+  - ["Who got the sign fixed?", "Huda's brother."]
+  - ["What problem did Omar sort out himself?", "A door that wouldn't close."]
+  - ["Who was his first customer?", "Mr. Ali."]
+pov:
+  intro: Now Sara tells it.
+  speaker: Sara
+  text:
+    - "Omar called me on Thursday night. \"Come and see my office,\" he said. He sounded very tired."
+    - "When I arrived, the walls were blue and green, the sign on the door said TECNOLOGY, and Omar had blue paint in his hair. He told me that he [had had] the walls [painted], [got] a sign [made], and [had] the internet [installed], and that everything had gone wrong."
+    - "So I made three phone calls. By Saturday, we [had] everything [fixed] by people who knew what they were doing."
+    - "Omar says that he learned a lesson about business that week. I think he learned a lesson about paint."
+learn:
+  title: You learned the causative, [have] or [get] something [done].
+  intro: We use it when another person does a job for us. We say what was done, not who did it.
+  wide: true
+  table:
+    - ["have / get + thing + past participle", "What it means"]
+    - ["He [had] the walls [painted].", "A painter painted them for him."]
+    - ["He [got] a sign [made].", "Someone made it for him."]
+    - ["He [had] the internet [installed].", "A technician installed it."]
+    - ["I want to [have] my phone [repaired].", "I want someone to repair it."]
+  notes:
+    - {title: "[get] is less formal", text: "I got my hair cut. I had my hair cut."}
+    - {title: "Who did it? Add [by]", text: "We had everything fixed by people who knew the job."}
+    - {title: "Bad things [too]", text: "He had his phone stolen. He didn't want that!"}
+  ask: ["What do you have done instead of doing it yourself?", "I have my hair cut every month."]
+idioms:
+  - {expr: a piece of cake, type: idiom, meaning: something that is very easy to do, example: "The test was a piece of cake. I finished in ten minutes."}
+  - {expr: "If you want something done right, do it yourself.", type: proverb, meaning: "Other people may not do a job as well as you want, so sometimes it is better to do it yourself.", example: "My brother never cleans the car properly. If you want something done right, do it yourself."}
+  - {expr: sort out, type: phrase, meaning: to solve a problem or put something right, example: "There's a problem with my bank card, but I'll sort it out tomorrow."}
+words:
+  - {word: business, meaning: a company that sells things or services}
+  - {word: rented, meaning: paid money to use a place for some time}
+  - {word: professional, meaning: "done well, like the work of an expert"}
+  - {word: painter, meaning: a person whose job is to paint walls and buildings}
+  - {word: notice, meaning: see something and pay attention to it}
+  - {word: exactly, meaning: "no more and no less"}

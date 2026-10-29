@@ -1,0 +1,61 @@
+lesson: 4
+unit: 2
+kind: story
+title: The Road Not Taken
+subtitle: Thirty years ago, Mr. Ali said no to a job that would have made him rich. Read the story, then read it from the point of view of a girl in his class.
+icon: signpost
+goals: [Imagine a different present, Use mixed conditionals, Talk about big decisions]
+story:
+  - "Thirty years ago, Mr. Ali was in his first year as a teacher at a small school in Khartoum, and he loved it. Then one day, a letter arrived from a bank in Dubai. They were offering him a job as a translator, with a salary ten times bigger than his. He was ((at a crossroads))."
+  - "His friends told him to go. His father told him to go. Even the head teacher said, \"Ali, an offer like this won't come again.\""
+  - "But that week, a quiet girl in his class, who had never answered a question, put up her hand. \"Teacher, what does future mean?\" she asked. Mr. Ali explained, and he saw her face change. That night, he wrote to the bank and ((turned down)) the job."
+  - "Last week, his students asked him about it. \"Do you ever wish you had gone?\" asked Omar. Mr. Ali smiled. \"Sometimes. [If I had taken] that job, I [would be] rich now. I [would be living] in a big apartment by the sea, and I [would have] a much nicer car.\""
+  - "\"So why didn't you go?\" asked Adam. \"[If I had gone] to Dubai,\" said Mr. Ali, \"I [wouldn't know] any of you. Huda [wouldn't be] a teacher, because nobody would have pushed her to apply. And that quiet girl? You know her. Her name is Dr. Amira Salih. She was a guest on your podcast.\""
+  - "The room went silent. Then Sara asked, \"But don't you ever wonder?\" \"Of course,\" said Mr. Ali. \"((The grass is always greener on the other side)). But when I look at my side, I see thirty years of students. [If I were] rich, I [wouldn't be] this happy.\""
+questions:
+  - ["What was Mr. Ali doing thirty years ago?", "He was in his first year as a teacher."]
+  - ["Where did the letter come from?", "From a bank in Dubai."]
+  - ["What job were they offering him?", "A job as a translator."]
+  - ["How big was the salary?", "Ten times bigger than his."]
+  - ["What did his friends and his father tell him?", "To go."]
+  - ["What did the quiet girl ask?", "What future means."]
+  - ["What did Mr. Ali do that night?", "He wrote to the bank and turned down the job."]
+  - ["What would he be now if he had taken the job?", "Rich."]
+  - ["Where would he be living?", "In a big apartment by the sea."]
+  - ["Why wouldn't Huda be a teacher?", "Because nobody would have pushed her to apply."]
+  - ["Who was the quiet girl?", "Dr. Amira Salih."]
+  - ["What does Mr. Ali see when he looks at his side?", "Thirty years of students."]
+pov:
+  intro: Now Dr. Amira tells it.
+  speaker: Dr. Amira
+  text:
+    - "When I was nine, I was the quietest girl in the class. I never answered a question, because I was afraid of being wrong."
+    - "Then one day, a young teacher wrote the word future on the board. I didn't know what it meant, and for the first time, I put up my hand. He explained it so kindly that I went home and told my mother I wanted to study the future. Today, that's my job."
+    - "Years later, I learned that he had a job offer in Dubai that same week, and he said no. [If he had left], I [might not be] a scientist today. I [might] still [be] afraid of my own questions."
+    - "Last month, I visited his class to say thank you. He pretended that he didn't remember me. But he did."
+learn:
+  title: You learned [mixed conditionals].
+  intro: We use them when a different past would change the present. The if part is about the past, and the result is about now.
+  wide: true
+  table:
+    - ["A different past", "A different now"]
+    - ["[If I had taken] that job,", "I [would be] rich now."]
+    - ["[If I had gone] to Dubai,", "I [wouldn't know] any of you."]
+    - ["[If he had left],", "I [might not be] a scientist today."]
+    - ["[If I hadn't studied] English,", "I [wouldn't be] a teacher."]
+  notes:
+    - {title: "If + [had done], would + [do]", text: "If I had studied medicine, I would be a doctor now."}
+    - {title: "The other way: [now] and [past]", text: "If I were braver, I would have taken the job."}
+    - {title: "[might] or [could] for maybe", text: "She might not be a scientist today."}
+  ask: ["How would your life be different if you had grown up in another country?", "If I had grown up in Japan, I would speak Japanese."]
+idioms:
+  - {expr: be at a crossroads, type: idiom, meaning: to be at a time when you must make an important decision, example: "After school, I was at a crossroads. Should I work or go to university?"}
+  - {expr: turn down, type: phrase, meaning: to say no to an offer, example: "She turned down the job because it was too far from home."}
+  - {expr: "The grass is always greener on the other side.", type: proverb, meaning: "Other people's lives always seem better than ours, even when they are not.", example: "My friend wants my job, and I want his. The grass is always greener on the other side."}
+words:
+  - {word: translator, meaning: a person who changes words from one language into another}
+  - {word: salary, meaning: the money you get every month for your job}
+  - {word: apply, meaning: ask for a job or a place at a school in writing}
+  - {word: silent, meaning: with no sound at all}
+  - {word: wonder, meaning: think about something and want to know more}
+  - {word: pretended, meaning: acted as if something was true when it was not}

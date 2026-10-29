@@ -1,0 +1,36 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: Looking for an Apartment
+subtitle: Calling about an apartment to rent
+icon: home
+goals: [Ask about an apartment, Talk about what you are used to, Ask to visit before you decide]
+scene: Adam wants to live closer to the flying school. He calls Mr. Hassan, who has an apartment to rent.
+conversation:
+  - [Mr. Hassan, "Hello, Hassan speaking."]
+  - [Adam, "Hello. I'm calling about the apartment near the flying school. Is it still available?"]
+  - [Mr. Hassan, "Yes. It's a one-bedroom apartment on the second floor, with a small kitchen and a balcony. It's very quiet, too."]
+  - [Adam, "That sounds good. I'm not used to living alone, so I'd like somewhere near shops. Is there a market nearby?"]
+  - [Mr. Hassan, "There's one five minutes away. The rent is paid monthly, but I ask for two months in advance."]
+  - [Adam, "Two months in advance? Apartments near the school really ((cost an arm and a leg))."]
+  - [Mr. Hassan, "I understand. But water is included, and the furniture is new. You won't need to buy anything."]
+  - [Adam, "That helps. Can I come and see it before I decide?"]
+  - [Mr. Hassan, "Of course. Come tomorrow at five. Then you can ((sleep on it)) and call me the next day."]
+  - [Adam, "Perfect. Thank you, Mr. Hassan. See you tomorrow."]
+phrases:
+  - {title: Ask if it is free, lines: ["Is it still available?"]}
+  - {title: Say what you are used to, lines: ["I'm not used to living alone."]}
+  - {title: Ask about the area, lines: ["Is there a market nearby?"]}
+  - {title: React to the price, lines: ["Two months in advance?"]}
+  - {title: Ask to visit, lines: ["Can I come and see it before I decide?"]}
+  - {title: End the call, lines: ["Thank you. See you tomorrow."]}
+idioms:
+  - {expr: cost an arm and a leg, type: idiom, meaning: to be very expensive, example: "I love that car, but it costs an arm and a leg."}
+  - {expr: sleep on it, type: phrase, meaning: to wait until the next day before you make a decision, example: "It's a big decision. Let me sleep on it, and I'll call you tomorrow."}
+words:
+  - {word: available, meaning: free for someone to take or use}
+  - {word: nearby, meaning: not far away}
+  - {word: monthly, meaning: once a month}
+  - {word: in advance, meaning: before the time you need it}
+  - {word: included, meaning: part of the price}
+  - {word: furniture, meaning: "beds, chairs, tables, and other things in a home"}

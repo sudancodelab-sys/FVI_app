@@ -1,0 +1,36 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: My Flight Has Been Canceled
+subtitle: Finding a solution at the airline desk
+icon: plane
+goals: [Explain a travel problem, Talk about a different past and present, Ask for better options]
+scene: Sara is at Khartoum airport. Her flight to Cairo has been canceled, and she is speaking at a conference there this afternoon. She goes to the airline desk.
+conversation:
+  - [Agent, "Good morning. How can I help you?"]
+  - [Sara, "Good morning. My flight to Cairo at ten has been canceled, and I'm speaking at a conference there this afternoon."]
+  - [Agent, "I'm very sorry. There's a problem with the plane. Everyone on that flight is ((in the same boat)), I'm afraid."]
+  - [Sara, "If I had booked the earlier flight, I would be in Cairo now. What are my options?"]
+  - [Agent, "There's a flight at four this afternoon, or one tomorrow at seven in the morning."]
+  - [Sara, "My talk is at five, so four is too late. Is there anything earlier, on another airline?"]
+  - [Agent, "Let me check. Yes, there's one seat on a flight at one. We'll pay for the change, and you'll get a meal voucher."]
+  - [Sara, "That's wonderful. I'll arrive just in time."]
+  - [Agent, "((Look on the bright side)). If you hadn't come to the desk so early, that seat would be gone now."]
+  - [Sara, "That's true. Thank you so much for your help."]
+phrases:
+  - {title: Explain the problem, lines: ["My flight has been canceled."]}
+  - {title: Say why it matters, lines: ["I'm speaking at a conference this afternoon."]}
+  - {title: Imagine a different past, lines: ["If I had booked the earlier flight, I would be in Cairo now."]}
+  - {title: Ask for options, lines: ["What are my options?"]}
+  - {title: Ask for something better, lines: ["Is there anything earlier, on another airline?"]}
+  - {title: Thank someone, lines: ["Thank you so much for your help."]}
+idioms:
+  - {expr: be in the same boat, type: idiom, meaning: to be in the same difficult situation as other people, example: "Don't worry about the exam. We're all in the same boat."}
+  - {expr: look on the bright side, type: phrase, meaning: to see the good part of a bad situation, example: "You missed the bus, but look on the bright side. You got some exercise!"}
+words:
+  - {word: canceled, meaning: stopped so that it will not happen}
+  - {word: booked, meaning: paid for a seat or a room before you use it}
+  - {word: options, meaning: things you can choose from}
+  - {word: airline, meaning: a company that flies planes for passengers}
+  - {word: voucher, meaning: a paper you can use instead of money}
+  - {word: just in time, meaning: "at the last moment, but not late"}

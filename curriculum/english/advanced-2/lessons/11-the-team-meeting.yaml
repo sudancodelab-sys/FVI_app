@@ -1,0 +1,36 @@
+lesson: 11
+unit: 4
+kind: conversation
+title: The Team Meeting
+subtitle: Making suggestions, disagreeing politely, and agreeing on a plan
+icon: users
+goals: [Make and answer suggestions, Disagree politely, Sum up what people said]
+scene: Sara leads a meeting with two engineers from her team, Tarig and Mona. Two more villages have asked for solar pumps.
+conversation:
+  - [Sara, "OK, everyone. The pump near Kassala is working well, and two more villages have asked for one. We need a plan. Any ideas?"]
+  - [Tarig, "I suggest starting with the bigger village. More people need the water there."]
+  - [Mona, "I see your point, but the road to that village is closed in the rainy season. If we start there, we could lose two months."]
+  - [Tarig, "That's true. I hadn't thought of that."]
+  - [Sara, "What if we start with the smaller village now and do the bigger one after the rains?"]
+  - [Mona, "That makes sense. But we'll need more solar panels, and the budget is tight."]
+  - [Tarig, "Could we ask the university for help? They promised to support projects like ours."]
+  - [Sara, "Good idea. Mona, could you ((come up with)) a list of everything we need by Thursday?"]
+  - [Mona, "Sure. I'll send it to everyone on Thursday morning."]
+  - [Sara, "Great. So, Tarig suggested asking the university, Mona agreed to make the list, and we'll start with the small village. Are we all ((on the same page))?"]
+phrases:
+  - {title: Open the meeting, lines: ["We need a plan. Any ideas?"]}
+  - {title: Make a suggestion, lines: ["I suggest starting with the bigger village.", "What if we start with the smaller village?"]}
+  - {title: Disagree politely, lines: ["I see your point, but…"]}
+  - {title: Agree, lines: ["That's true.", "That makes sense."]}
+  - {title: Give someone a task, lines: ["Could you come up with a list by Thursday?"]}
+  - {title: Sum up, lines: ["So, Tarig suggested asking the university, and Mona agreed to make the list."]}
+idioms:
+  - {expr: come up with, type: phrase, meaning: "to think of an idea, a plan, or an answer", example: "We need to come up with a name for our new shop."}
+  - {expr: be on the same page, type: idiom, meaning: to agree about a plan and understand it in the same way, example: "Before we start, let's make sure we're all on the same page."}
+words:
+  - {word: rainy season, meaning: the months of the year when it rains a lot}
+  - {word: makes sense, meaning: is a good idea that is easy to understand}
+  - {word: budget, meaning: the money you can spend on something}
+  - {word: tight, meaning: "with only a little money, not enough for everything"}
+  - {word: support, meaning: help someone or something}
+  - {word: projects, meaning: pieces of planned work}

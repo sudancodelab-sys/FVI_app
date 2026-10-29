@@ -1,0 +1,62 @@
+lesson: 1
+unit: 1
+kind: story
+title: Miss Huda's First Month
+subtitle: Huda got the job. Now she has to get used to early mornings and thirty children. Read the story, then read it from the head teacher's point of view.
+icon: pencil
+goals: [Talk about past habits with used to, Say what feels normal with be used to, Describe a change with get used to]
+story:
+  - "Huda got the job. Two weeks after her interview with Mrs. Karim, she started work as a teaching assistant at a primary school in Omdurman. On her first morning, her alarm rang at five, and she almost threw her phone across the room. At university, she [used to sleep] until eight. Now she had to be at school before seven."
+  - "The first week was hard. Huda [wasn't used to standing] all day, and she [wasn't used to] the noise. When she tried to read the class a story, half of the thirty children talked, and the other half asked to go to the bathroom. By Thursday, she felt like ((a fish out of water)). \"Maybe I'm not made for this,\" she told Sara on the phone."
+  - "\"Of course you are,\" said Sara. \"You [used to be] shy, remember? You [didn't use to speak] in class at all. And now you're a teacher. Give it time.\""
+  - "In the second week, Huda watched Mrs. Karim carefully. She noticed that the head teacher never shouted. Instead, she clapped three times, and the room went quiet. Huda tried it. The first time, nobody listened. The fifth time, half the class clapped back. By the end of the week, everyone did."
+  - "Slowly, Huda [got used to] the early mornings. She [got used to] eating her breakfast in two minutes and answering forty questions an hour. She even began to ((get the hang of)) the old photocopier, which jammed every time someone looked at it."
+  - "On the last day of her first month, a small boy called Yassin, who [used to hide] under his desk, stood up and read a whole page aloud. When he finished, the class clapped. Huda had to look out of the window for a moment."
+  - "That evening, she called Sara again. \"I'm finally [used to] it,\" she said. \"Well, almost.\" Sara laughed. \"See? ((Rome wasn't built in a day)).\""
+questions:
+  - ["Where did Huda start work?", "At a primary school in Omdurman."]
+  - ["What time did her alarm ring?", "At five."]
+  - ["Until what time did she use to sleep at university?", "Until eight."]
+  - ["What wasn't she used to in the first week?", "Standing all day, and the noise."]
+  - ["How did she feel by Thursday?", "Like a fish out of water."]
+  - ["What did Sara remind her?", "That she used to be shy and didn't use to speak in class."]
+  - ["What did Mrs. Karim do instead of shouting?", "She clapped three times."]
+  - ["What happened the fifth time Huda clapped?", "Half the class clapped back."]
+  - ["What did Huda slowly get used to?", "The early mornings, eating breakfast in two minutes, and answering forty questions an hour."]
+  - ["What was wrong with the photocopier?", "It jammed every time someone looked at it."]
+  - ["What did Yassin use to do?", "Hide under his desk."]
+  - ["What did Yassin do on the last day of the month?", "He stood up and read a whole page aloud."]
+pov:
+  intro: Now Mrs. Karim tells it.
+  speaker: Mrs. Karim
+  text:
+    - "When Huda started at our school, I could see that she [wasn't used to] young children. Her voice was too quiet, and she [was used to] students who listened. In her first week, the class didn't hear a word she said."
+    - "But she watched and learned. She noticed that I never shout, and she started to clap like me. Teachers [used to shout] a lot when I was young, but I have never believed in it."
+    - "By the end of the month, she [had gotten used to] everything, the noise, the early mornings, and even our terrible photocopier."
+    - "I knew she would be a good teacher on the day Yassin read aloud. That boy [used to hide] under his desk, and Huda had sat with him every day for a month. I think they are both a little braver now."
+learn:
+  title: You learned [used to], [be used to], and [get used to].
+  intro: They look similar, but they mean different things. Used to is about the past. Be used to and get used to are about what feels normal.
+  wide: true
+  table:
+    - ["Form", "Meaning", "Example"]
+    - ["[used to] + verb", "a habit in the past, not now", "She [used to sleep] until eight."]
+    - ["[didn't use to] + verb", "not a habit in the past", "She [didn't use to speak] in class."]
+    - ["[be used to] + noun / -ing", "it feels normal now", "She [is used to] the noise now."]
+    - ["[get used to] + noun / -ing", "it is becoming normal", "She [got used to] getting up early."]
+  notes:
+    - {title: "[used to] has no present", text: "For now, say: I usually get up at five. Not: I use to get up."}
+    - {title: "After [be / get used to]: -ing", text: "I'm used to getting up early. Not: I'm used to get up."}
+    - {title: "Say it: [yoost-tuh]", text: "In used to, the s sounds like s, not z."}
+  ask: ["What did you use to do as a child that you don't do now?", "I used to play football every afternoon."]
+idioms:
+  - {expr: feel like a fish out of water, type: idiom, meaning: to feel uncomfortable because a place or situation is new to you, example: "On my first day at the new school, I felt like a fish out of water."}
+  - {expr: get the hang of something, type: phrase, meaning: "to learn how to do something, usually after some practice", example: "Driving was difficult at first, but I soon got the hang of it."}
+  - {expr: "Rome wasn't built in a day.", type: proverb, meaning: "Important things take time, so be patient.", example: "You won't speak perfect English in a month. Rome wasn't built in a day."}
+words:
+  - {word: shy, meaning: nervous and quiet with other people}
+  - {word: clapped, meaning: hit your hands together to make a noise}
+  - {word: photocopier, meaning: a machine that makes copies of papers}
+  - {word: jammed, meaning: got stuck and stopped working}
+  - {word: aloud, meaning: in a voice that other people can hear}
+  - {word: braver, meaning: less afraid than before}
