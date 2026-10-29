@@ -265,9 +265,13 @@ def _strings(value):
 
 
 def check_no_arabic(lessons, report):
-    """Guidelines: no Arabic on any sheet."""
+    """Guidelines: no Arabic on any sheet. The Arabic grammar note in
+    learn.ar is shown in the app only, never on a sheet."""
     for lesson in lessons:
-        for text in _strings(lesson):
+        sheet = dict(lesson)
+        if isinstance(lesson.get('learn'), dict):
+            sheet['learn'] = {k: v for k, v in lesson['learn'].items() if k != 'ar'}
+        for text in _strings(sheet):
             if _ARABIC.search(text):
                 report.error(f'{lesson.get("kind", "phonics")} lesson {lesson["lesson"]}',
                              f'contains Arabic text: "{text}"')
@@ -370,6 +374,7 @@ def check_lessons(level, lessons, wordlists, report):
             if who not in cast:
                 report.error(where, f'"{who}" is not in the level cast ({", ".join(cast)})')
         check_idioms(level, lesson, where, report)
+        check_arabic_note(level, lesson, where, report)
         if len(lesson['words']) > 6:
             report.error(where, 'more than 6 new words')
         check_cut_text(level, lesson['words'] + lesson.get('idioms', []), where, report)
@@ -388,6 +393,24 @@ def check_lessons(level, lessons, wordlists, report):
                 report.error(where, f'new word "{w["word"]}" is banned (sounds like a rude Arabic word)')
             if not re.search(r'\b' + re.escape(w['word'].lower()) + r'\b', body.lower()):
                 report.error(where, f'new word "{w["word"]}" is not used in the lesson')
+
+
+def check_arabic_note(level, lesson, where, report):
+    """In the levels with arabic_notes: true (Pre-Intermediate 1 to 4), a
+    grammar lesson may carry learn.ar: a short explanation in Arabic for
+    the app, with a summary and a few points."""
+    note = (lesson.get('learn') or {}).get('ar')
+    if note is None:
+        return
+    if not level.get('arabic_notes'):
+        report.error(where, 'an Arabic grammar note belongs to the levels with arabic_notes: true only')
+        return
+    if set(note) - {'summary', 'points'} or not note.get('summary') or not note.get('points'):
+        report.error(where, 'learn.ar needs a summary and points, nothing else')
+        return
+    for text in [note['summary']] + list(note['points']):
+        if not isinstance(text, str) or not _ARABIC.search(text):
+            report.error(where, f'learn.ar should be written in Arabic: "{text}"')
 
 
 def check_idioms(level, lesson, where, report):

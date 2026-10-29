@@ -22,3 +22,5 @@ cast:
   # People in one scene only.
   Seller: {initial: SE, color: e}
   Waiter: {initial: W, color: e}
+# Grammar lessons may carry an Arabic note (learn.ar), shown in the app only.
+arabic_notes: true

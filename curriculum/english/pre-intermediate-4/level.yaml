@@ -24,3 +24,5 @@ cast:
   Mrs. Hassan: {initial: MH, color: e}
   Shopkeeper: {initial: SK, color: e}
   Agent: {initial: AG, color: e}
+# Grammar lessons may carry an Arabic note (learn.ar), shown in the app only.
+arabic_notes: true
