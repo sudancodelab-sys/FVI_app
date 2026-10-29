@@ -94,6 +94,8 @@
 </div>
 {%- else %}
 {%- set vowel = l.letters[0] in 'AEIOU' %}
+{%- set multi = l.parts|length > 1 %}
+{%- set ns = namespace(n=0) %}
 <div class="page" data-title="{{ l.title }}">
   {{ head('Phonics · Lesson ' ~ l.lesson) }}
   <div class="abc">
@@ -103,18 +105,27 @@
     {%- endfor %}
   </div>
   <div class="hero">
-    <div class="tile{{ ' two' if l.letters|length > 1 }}"><span>{% for c in l.letters %}{{ c }}<em>{{ c|lower }}</em>{% if not loop.last %} {% endif %}{% endfor %}</span></div>
+    <div class="tile{{ ' two' if multi }}"><span>{% for c in l.letters %}{{ c }}<em>{{ c|lower }}</em>{% if not loop.last %} {% endif %}{% endfor %}</span></div>
     <div>
       <h1>{{ l.title }}</h1>
       <p>{{ l.intro }}</p>
-      <div class="tags"><span class="tag">{{ 'Vowel' if vowel else 'Consonant' }}</span><span class="tag n">{{ l.sounds|length }} sound{{ 's' if l.sounds|length > 1 }}</span></div>
+      <div class="tags">
+        {%- if multi %}<span class="tag">Consonants</span><span class="tag n">{{ l.parts|length }} letters</span>
+        {%- else %}{% set n = l.parts[0].sounds|length %}<span class="tag">{{ 'Vowel' if vowel else 'Consonant' }}</span><span class="tag n">{{ n }} sound{{ 's' if n > 1 }}</span>{% endif %}
+      </div>
     </div>
   </div>
   <div class="flow">
+  {%- for part in l.parts %}
+    {%- set X = part.letter|upper %}
     <div class="sec">
-      <h2><span class="num">1</span>The sounds of {{ l.letters|join(' and ') }}</h2>
-      <div class="sounds n{{ l.sounds|length }}">
-        {%- for s in l.sounds %}
+      {%- if multi %}
+      <div class="partbar"><span class="ptile">{{ X }}<em>{{ X|lower }}</em></span><b>The Letter {{ X }}</b>{% if part.intro %}<span>{{ part.intro }}</span>{% endif %}</div>
+      {%- endif %}
+      {%- set ns.n = ns.n + 1 %}
+      <h2><span class="num">{{ ns.n }}</span>The sound{{ 's' if part.sounds|length > 1 }} of {{ X }}</h2>
+      <div class="sounds n{{ part.sounds|length }}">
+        {%- for s in part.sounds %}
         <div class="sound">
           <div class="sym ipa">/{{ s.ipa }}/</div>
           <div class="name">{{ s.name }}</div>
@@ -122,37 +133,52 @@
         </div>
         {%- endfor %}
       </div>
+      {%- for r in part.rules %}
+      <div class="rule after">
+        <div class="txt">
+          <p><b>{{ r.text }}</b>{% if r.detail %}<br>{{ r.detail }}{% endif %}</p>
+          {%- if r.examples %}<div class="ex">{% for ex in r.examples %}<span>{{ ex|word }}</span>{% endfor %}</div>{% endif %}
+        </div>
+        <div class="side">
+          {{ badge(r.reliability) }}
+          {%- if r.note %}<p>{{ r.note }}{% if r.note_examples %}<br><b class="plainb">{{ r.note_examples|join(' · ') }}</b>{% endif %}</p>{% endif %}
+        </div>
+      </div>
+      {%- endfor %}
     </div>
 
-    {%- set si = l.silent %}
     <div class="sec">
-      <h2><span class="num">2</span>When is {{ l.letters|join(' or ') }} silent?</h2>
+      {%- set ns.n = ns.n + 1 %}
+      <h2><span class="num">{{ ns.n }}</span>When is {{ X }} silent?</h2>
+      {%- for si in part.silent %}
       {%- if si.none %}
       <div class="rule plain"><p>{{ si.none }}</p></div>
       {%- else %}
-      <div class="rule">
+      <div class="rule{{ ' after' if not loop.first }}">
         <div class="txt">
           <p><b>{{ si.rule }}</b>{% if si.detail %}<br>{{ si.detail }}{% endif %}</p>
           <div class="ex">{% for ex in si.examples %}<span>{{ ex|word }}</span>{% endfor %}</div>
-          <div class="legend">Grey letter = silent</div>
+          {%- if loop.first %}<div class="legend">Grey letter = silent</div>{% endif %}
         </div>
         <div class="side">
           {{ badge(si.reliability) }}
-          {%- if si.note %}<p>{{ si.note }}<br><b class="plainb">{{ si.note_examples|join(' · ') }}</b></p>{% endif %}
+          {%- if si.note %}<p>{{ si.note }}{% if si.note_examples %}<br><b class="plainb">{{ si.note_examples|join(' · ') }}</b>{% endif %}</p>{% endif %}
         </div>
       </div>
       {%- endif %}
+      {%- endfor %}
     </div>
 
-    {%- if l.teams %}
+    {%- if part.teams %}
     <div class="sec">
-      <h2><span class="num">3</span>{{ l.letters|join(' and ') }} with other letters</h2>
-      {%- for t in l.teams %}
+      {%- set ns.n = ns.n + 1 %}
+      <h2><span class="num">{{ ns.n }}</span>{{ X }} with other letters</h2>
+      {%- for t in part.teams %}
       <div class="team">
         <div class="pair">{{ t.letters }}</div>
         <div class="rows">
           {%- for s in t.sounds %}
-          <div class="r"><span class="sym ipa">/{{ s.ipa }}/</span><span class="w">{% for ex in s.examples %}<span>{{ ex|word }}</span>{% endfor %}</span></div>
+          <div class="r"><span class="sym ipa{{ ' mute' if not s.ipa }}">{{ ('/' ~ s.ipa ~ '/') if s.ipa else 'silent' }}</span><span class="w">{% for ex in s.examples %}<span>{{ ex|word }}</span>{% endfor %}</span></div>
           {%- endfor %}
           {%- if t.note %}<div class="tnote">{{ t.note }}</div>{% endif %}
         </div>
@@ -161,6 +187,7 @@
       {%- endfor %}
     </div>
     {%- endif %}
+  {%- endfor %}
   </div>
   {{ foot(l.title) }}
 </div>

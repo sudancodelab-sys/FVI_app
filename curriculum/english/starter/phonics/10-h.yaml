@@ -1,0 +1,30 @@
+lesson: 10
+letters: [H]
+title: The Letter H
+intro: H is a consonant. It is just a breath — and it makes new sounds with other letters.
+sounds:
+  - ipa: h
+    name: A soft breath out
+    examples: ["[h]at", "[h]and", "[h]elp"]
+silent:
+  rule: H is silent at the start of a few words.
+  examples: ["{h}our", "{h}onest", "{h}erb"]
+  reliability: few
+teams:
+  - letters: ch
+    reliability: varies
+    sounds:
+      - {ipa: tʃ, examples: ["[ch]ip", "lun[ch]", "mu[ch]"]}
+      - {ipa: k, examples: ["s[ch]ool", "e[ch]o"]}
+      - {ipa: ʃ, examples: ["[ch]ef", "ma[ch]ine"]}
+    note: "Most words say /tʃ/."
+  - letters: igh
+    reliability: always
+    sounds:
+      - {ipa: aɪ, examples: ["h[igh]", "l[igh]t", "n[igh]t"]}
+    note: "The GH is silent."
+  - letters: gh
+    reliability: varies
+    sounds:
+      - {examples: ["ei{gh}t", "wei{gh}t", "cau{gh}t"]}
+      - {ipa: f, examples: ["lau[gh]"]}

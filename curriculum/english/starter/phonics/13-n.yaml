@@ -1,0 +1,35 @@
+lesson: 13
+letters: [N]
+title: The Letter N
+intro: N is a consonant with one sound. With G and K it makes new sounds.
+sounds:
+  - ipa: n
+    name: Tongue up, air through your nose
+    examples: ["[n]et", "[n]ut", "fu[n]"]
+silent:
+  rule: After M at the end of a word, N is silent.
+  examples: ["autum{n}", "colum{n}"]
+  reliability: always
+teams:
+  - letters: ng
+    reliability: always
+    sounds:
+      - {ipa: ŋ, examples: ["lo[ng]", "so[ng]", "ri[ng]"]}
+  - letters: nk
+    reliability: always
+    sounds:
+      - {ipa: ŋk, examples: ["ba[nk]", "pi[nk]", "dri[nk]"]}
+  - letters: kn
+    reliability: always
+    sounds:
+      - {ipa: n, examples: ["{k}[n]ow", "{k}[n]ee", "{k}[n]ife"]}
+    note: "At the start of a word, the K is silent."
+  - letters: gn
+    reliability: usually
+    sounds:
+      - {ipa: n, examples: ["si{g}[n]", "desi{g}[n]", "forei{g}[n]"]}
+    note: "The G is silent. But: signal · signature"
+  - letters: nn
+    reliability: always
+    sounds:
+      - {ipa: n, examples: ["di[nn]er", "su[nn]y", "fu[nn]y"]}

@@ -1,0 +1,32 @@
+lesson: 9
+letters: [G]
+title: The Letter G
+intro: G is a consonant. Like C, it has a hard sound and a soft sound.
+sounds:
+  - ipa: ɡ
+    name: Hard G
+    examples: ["[g]as", "[g]old", "fla[g]"]
+  - ipa: dʒ
+    name: Soft G
+    examples: ["[g]iant", "ma[g]ic", "a[g]ent"]
+rules:
+  - text: Before E or I, G often says /dʒ/.
+    reliability: varies
+    note: "Many words are different:"
+    note_examples: [get, give, gift]
+silent:
+  none: G is almost never silent on its own.
+teams:
+  - letters: gu
+    reliability: usually
+    sounds:
+      - {ipa: ɡ, examples: ["[g]{u}ess", "[g]{u}ide", "[g]{u}itar"]}
+    note: "The U is silent."
+  - letters: dge
+    reliability: always
+    sounds:
+      - {ipa: dʒ, examples: ["e[dge]", "ba[dge]", "bri[dge]"]}
+  - letters: gg
+    reliability: almost
+    sounds:
+      - {ipa: ɡ, examples: ["bi[gg]er", "fo[gg]y", "lu[gg]age"]}

@@ -1,0 +1,26 @@
+lesson: 11
+title: The Letters J and K
+intro: J and K have one sound each.
+parts:
+  - letter: J
+    intro: one sound
+    sounds:
+      - ipa: dʒ
+        name: Like soft G
+        examples: ["[j]ob", "[j]am", "[j]ump"]
+    silent:
+      none: J is never silent.
+  - letter: K
+    intro: one sound
+    sounds:
+      - ipa: k
+        name: Like hard C
+        examples: ["[k]id", "[k]it", "[k]eep"]
+    silent:
+      none: K is silent in some words. You will learn them with the letter N.
+    teams:
+      - letters: ck
+        reliability: always
+        sounds:
+          - {ipa: k, examples: ["ba[ck]", "du[ck]", "si[ck]"]}
+        note: "CK comes after a short vowel."

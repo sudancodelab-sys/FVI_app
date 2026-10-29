@@ -1,0 +1,40 @@
+lesson: 7
+title: The Letters B and C
+intro: Now we start the consonants. B has one sound. C has two.
+parts:
+  - letter: B
+    intro: one sound
+    sounds:
+      - ipa: b
+        name: Close your lips, then open them
+        examples: ["[b]ell", "[b]and", "ca[b]"]
+    silent:
+      none: B is almost never silent on its own.
+    teams:
+      - letters: bb
+        reliability: always
+        sounds:
+          - {ipa: b, examples: ["ra[bb]it", "ho[bb]y", "ri[bb]on"]}
+        note: "Two same letters together make one sound."
+  - letter: C
+    intro: two sounds — hard and soft
+    sounds:
+      - ipa: k
+        name: Hard C
+        examples: ["[c]amp", "[c]olor", "[c]opy"]
+      - ipa: s
+        name: Soft C
+        examples: ["[c]ity", "[c]enter", "[c]ell"]
+    rules:
+      - text: Before E or I, C says /s/.
+        detail: Before other letters, C says /k/.
+        reliability: almost
+    silent:
+      none: C is almost never silent on its own.
+    teams:
+      - letters: cc
+        reliability: usually
+        sounds:
+          - {ipa: k, examples: ["so[cc]er", "a[cc]ount", "o[cc]ur"]}
+          - {ipa: ks, examples: ["a[cc]ept", "su[cc]ess", "a[cc]ent"]}
+        note: "Before E or I, CC says /ks/."

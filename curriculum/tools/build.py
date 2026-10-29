@@ -40,6 +40,11 @@ def marked(word):
             [m.group(2) for m in _MARK.finditer(word) if m.group(2)])
 
 
+def marked_in_order(word):
+    """{k}[n]ow -> 'kn': every marked letter, in reading order."""
+    return ''.join(m.group(1) or m.group(2) for m in _MARK.finditer(word))
+
+
 def render_word(word):
     out, pos = [], 0
     for m in _MARK.finditer(word):
@@ -140,7 +145,7 @@ def check_level(level, lessons, wordlists):
     order = level['letter_order']
     taught, seen = set(), {}
 
-    def check_word(where, word, target_letters=None, ipa=None):
+    def check_word(where, word, ipa=None, highlight=None, marks=None, silent=None):
         w = plain(word)
         key = w.lower()
         if key in banned:
@@ -152,9 +157,13 @@ def check_level(level, lessons, wordlists):
         if ipa and not has_sound(cmu[key], ipa):
             got = ' | '.join(''.join(to_ipa(p)).replace('ɪ0', 'ɪ') for p in cmu[key])
             report.error(where, f'"{w}" does not contain /{ipa}/ (US: {got})')
-        hl, _ = marked(word)
-        if target_letters is not None and ''.join(hl).lower() != target_letters:
-            report.error(where, f'"{word}" should highlight "{target_letters}"')
+        hl, sil = marked(word)
+        if highlight is not None and ''.join(hl).lower() != highlight:
+            report.error(where, f'"{word}" should highlight "{highlight}"')
+        if marks is not None and marked_in_order(word).lower() != marks:
+            report.error(where, f'"{word}" should mark the letters "{marks}"')
+        if silent is not None and ''.join(sil).lower() != silent:
+            report.error(where, f'"{word}" should show "{silent}" as silent')
         if len(w) > 7:
             report.warn(where, f'"{w}" is long ({len(w)} letters)')
         seen.setdefault(key, []).append(where)
@@ -163,30 +172,32 @@ def check_level(level, lessons, wordlists):
         n = lesson['lesson']
         if lesson.get('kind') == 'intro':
             continue
-        letters = [l.upper() for l in lesson['letters']]
-        taught |= set(letters)
-        for s in lesson.get('sounds', []):
-            where = f'lesson {n} /{s["ipa"]}/'
-            sound_units(s['ipa'])
-            if len(s['examples']) != 3:
-                report.error(where, 'needs exactly 3 examples')
-            for ex in s['examples']:
-                check_word(where, ex, letters[0].lower() if len(letters) == 1 else None, s['ipa'])
-        silent = lesson.get('silent', {})
-        for ex in silent.get('examples', []):
-            check_word(f'lesson {n} silent', ex)
-        for team in lesson.get('teams', []):
-            t = team['letters'].lower()
-            where = f'lesson {n} "{t}"'
-            missing = sorted(set(t.upper()) - taught)
-            if missing:
-                report.error(where, f'uses letters not taught yet: {missing}')
-            last = max(order.index(c) for c in t.upper())
-            if order[last] not in letters:
-                report.error(where, f'belongs with its last-taught letter, {order[last]}')
-            for s in team['sounds']:
+        for part in lesson['parts']:
+            letter = part['letter'].upper()
+            taught.add(letter)
+            for s in part['sounds']:
+                where = f'lesson {n} {letter} /{s["ipa"]}/'
+                sound_units(s['ipa'])
+                if len(s['examples']) != 3:
+                    report.error(where, 'needs exactly 3 examples')
                 for ex in s['examples']:
-                    check_word(f'{where} /{s["ipa"]}/', ex, t, s['ipa'])
+                    check_word(where, ex, s['ipa'], highlight=letter.lower())
+            for si in part['silent']:
+                for ex in si.get('examples', []):
+                    check_word(f'lesson {n} {letter} silent', ex, silent=letter.lower())
+            for team in part['teams']:
+                t = team['letters'].lower()
+                where = f'lesson {n} "{t}"'
+                missing = sorted(set(t.upper()) - taught)
+                if missing:
+                    report.error(where, f'uses letters not taught yet: {missing}')
+                last = order[max(order.index(c) for c in t.upper())]
+                if last != letter:
+                    report.error(where, f'belongs with its last-taught letter, {last}')
+                for s in team['sounds']:
+                    ipa = s.get('ipa')
+                    for ex in s['examples']:
+                        check_word(f'{where} /{ipa or "silent"}/', ex, ipa, marks=t)
 
     for word, places in seen.items():
         if len(places) > 1:
@@ -205,10 +216,29 @@ _RELIABILITY = {
 }
 
 
+def normalize(lesson):
+    """A phonics lesson is a list of parts, one per letter. Single-letter
+    lessons may write the part's fields at the top level instead."""
+    if lesson.get('kind') == 'intro':
+        return lesson
+    if 'parts' not in lesson:
+        lesson['parts'] = [dict(letter=lesson['letters'][0],
+                                **{k: lesson[k] for k in ('sounds', 'rules', 'silent', 'teams')
+                                   if k in lesson})]
+    for part in lesson['parts']:
+        silent = part.get('silent', [])
+        part['silent'] = silent if isinstance(silent, list) else [silent]
+        for key in ('sounds', 'rules', 'teams'):
+            part.setdefault(key, [])
+    lesson['letters'] = [p['letter'].upper() for p in lesson['parts']]
+    return lesson
+
+
 def load(level_dir, lesson_range):
     level = yaml.safe_load((level_dir / 'level.yaml').read_text(encoding='utf-8'))
     lessons = [yaml.safe_load(p.read_text(encoding='utf-8'))
                for p in sorted((level_dir / 'phonics').glob('*.yaml'))]
+    lessons = [normalize(l) for l in lessons]
     lessons.sort(key=lambda l: l['lesson'])
     numbers = [l['lesson'] for l in lessons]
     if numbers != list(range(1, len(lessons) + 1)):

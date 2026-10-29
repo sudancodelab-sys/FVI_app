@@ -1,0 +1,40 @@
+lesson: 8
+title: The Letters D and F
+intro: D and F have one sound each. D also helps us read the past.
+parts:
+  - letter: D
+    intro: one sound
+    sounds:
+      - ipa: d
+        name: Tongue behind your top teeth
+        examples: ["[d]esk", "[d]og", "re[d]"]
+    silent:
+      rule: D is silent in a few words.
+      examples: ["We{d}nesday"]
+      reliability: few
+    teams:
+      - letters: ed
+        reliability: always
+        sounds:
+          - {ipa: t, examples: ["jump[ed]", "help[ed]", "wash[ed]"]}
+          - {ipa: d, examples: ["play[ed]", "open[ed]", "call[ed]"]}
+          - {ipa: ɪd, examples: ["want[ed]", "need[ed]", "end[ed]"]}
+        note: "At the end of a word. After T or D, ED says /ɪd/."
+  - letter: F
+    intro: one sound
+    sounds:
+      - ipa: f
+        name: Top teeth on your bottom lip
+        examples: ["[f]an", "gi[f]t", "so[f]t"]
+    rules:
+      - text: One very common word is different.
+        examples: ["o[f]"]
+        reliability: few
+        note: "In of, F says /v/."
+    silent:
+      none: F is almost never silent.
+    teams:
+      - letters: ff
+        reliability: always
+        sounds:
+          - {ipa: f, examples: ["o[ff]", "co[ff]ee", "sta[ff]"]}

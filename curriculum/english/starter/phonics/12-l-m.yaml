@@ -1,0 +1,45 @@
+lesson: 12
+title: The Letters L and M
+intro: L and M have one sound each. L is silent in some letter groups.
+parts:
+  - letter: L
+    intro: one sound
+    sounds:
+      - ipa: l
+        name: Tongue up behind your top teeth
+        examples: ["[l]amp", "[l]eg", "be[l]t"]
+    silent:
+      - rule: In ALK and ALF, L is silent.
+        examples: ["ta{l}k", "wa{l}k", "ha{l}f"]
+        reliability: usually
+      - rule: In OULD, L is silent.
+        examples: ["cou{l}d", "wou{l}d", "shou{l}d"]
+        reliability: always
+    teams:
+      - letters: ll
+        reliability: always
+        sounds:
+          - {ipa: l, examples: ["te[ll]", "wi[ll]", "he[ll]o"]}
+      - letters: le
+        reliability: always
+        sounds:
+          - {ipa: əl, examples: ["tab[le]", "app[le]", "litt[le]"]}
+        note: "At the end of a word."
+  - letter: M
+    intro: one sound
+    sounds:
+      - ipa: m
+        name: Close your lips and hum
+        examples: ["[m]ilk", "[m]ug", "dru[m]"]
+    silent:
+      none: M is almost never silent.
+    teams:
+      - letters: mb
+        reliability: always
+        sounds:
+          - {ipa: m, examples: ["cli[m]{b}", "co[m]{b}", "thu[m]{b}"]}
+        note: "At the end of a word, the B is silent."
+      - letters: mm
+        reliability: always
+        sounds:
+          - {ipa: m, examples: ["su[mm]er", "ha[mm]er", "co[mm]on"]}
