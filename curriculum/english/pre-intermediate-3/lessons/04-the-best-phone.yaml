@@ -1,0 +1,54 @@
+lesson: 4
+unit: 2
+kind: story
+title: The Best Phone
+subtitle: Omar wants a new phone. Which one is the best? Read the story, then read Omar's story of that day.
+icon: phone
+goals: [Compare two things, Say which one is the best, Give reasons for a choice]
+story:
+  - "Omar's phone is old. It is [slower] than his friends' phones, and its camera is bad. \"I need a new phone,\" he says. So on Saturday, he goes to the phone shop with Adam."
+  - "The seller shows them three phones. \"This red phone is [cheaper than] the others, but it is [smaller]. This black phone is [bigger], and its camera is [better]. And this gold phone is [the most expensive]. It is [the fastest] and [the best] phone in the shop.\""
+  - Omar looks at the prices. The red phone is cheap, but the screen is too small. The black phone is nice, but it is [more expensive than] his plan. The gold phone is [the most beautiful], but it costs more than his money for three months!
+  - "Then Omar has an idea. He goes home, opens his old phone, and changes the battery and the screen. Now it is [faster] than before, and it works well. \"Do you need a new phone?\" Adam asks. Omar smiles. \"No. My old phone is [the best] phone for me!\""
+questions:
+  - ["Is Omar's phone new or old?", "Old."]
+  - ["Is it faster or slower than his friends' phones?", "Slower."]
+  - ["Where does Omar go on Saturday?", "To the phone shop, with Adam."]
+  - ["Which phone is the cheapest?", "The red phone."]
+  - ["Is the red phone bigger than the others?", "No, it isn't. It's smaller."]
+  - ["Which phone has a better camera, the red one or the black one?", "The black one."]
+  - ["Which phone is the most expensive?", "The gold phone."]
+  - ["Is the gold phone the fastest?", "Yes, it is. It's the fastest and the best."]
+  - ["Why doesn't Omar buy the red phone?", "The screen is too small."]
+  - ["Why doesn't he buy the gold phone?", "It costs more than his money for three months."]
+  - ["What does Omar change in his old phone?", "The battery and the screen."]
+  - ["Which phone is the best for Omar?", "His old phone!"]
+pov:
+  intro: Now Omar tells the story of last Saturday.
+  speaker: Omar
+  text:
+    - My phone was old. It was [slower] than my friends' phones, and its camera was bad. So last Saturday, I went to the phone shop with Adam.
+    - The seller showed us three phones. The red phone was [cheaper than] the others, but it was [smaller]. The black phone was [bigger], and its camera was [better]. The gold phone was [the most expensive]. It was [the fastest] and [the best] phone in the shop.
+    - But the red phone's screen was too small, the black phone was [more expensive than] my plan, and the gold phone cost more than my money for three months!
+    - Then I had an idea. I went home, opened my old phone, and changed the battery and the screen. Now it is [faster] than before. My old phone is [the best] phone for me!
+learn:
+  title: You learned [comparatives] and [superlatives].
+  intro: We use them to compare two things (cheaper than), or to say which one is first in a group (the cheapest).
+  table:
+    - ["Word", "Two things", "The first of all"]
+    - ["cheap", "cheap[er] than", "the cheap[est]"]
+    - ["big", "big[ger] than", "the big[gest]"]
+    - ["expensive", "[more] expensive than", "[the most] expensive"]
+    - ["good", "[better] than", "[the best]"]
+  notes:
+    - {title: "Short words: [-er · -est]", text: "cheap → cheaper → the cheapest"}
+    - {title: "Long words: [more · the most]", text: "expensive → more expensive → the most expensive"}
+    - {title: "Different: [better · the best]", text: "good → better → the best. bad → worse → the worst"}
+  ask: ["Which phone is the best?", "The gold one. It's the fastest."]
+words:
+  - {word: slower, meaning: not as fast}
+  - {word: camera, meaning: the part of a phone that takes photos}
+  - {word: screen, meaning: the glass part of a phone that you look at}
+  - {word: costs, meaning: has a price of}
+  - {word: battery, meaning: the part that gives a phone its power}
+  - {word: works, meaning: does what it should do}

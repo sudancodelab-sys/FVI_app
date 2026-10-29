@@ -55,6 +55,10 @@
   'ball': '<circle cx="12" cy="12" r="9"/><path d="M12 7.5l4 2.9-1.5 4.6h-5L8 10.4z"/>',
   'image': '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 8"/>',
   'pill': '<rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-40 12 12)"/><path d="M9.7 9.3l4.6 5.4"/>',
+  'shirt': '<path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z"/>',
+  'mountain': '<path d="M2 20 9 8l4 6 3-4 6 10z"/>',
+  'ship': '<path d="M3 15h18l-3 5H6z"/><path d="M6 15V9h12v6M12 9V4"/>',
+  'bulb': '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/>',
 } %}
 {#- The start of a lesson in the levels after Starter: what kind of lesson,
     its title, and what the student will be able to do. #}
@@ -162,10 +166,21 @@
   {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
   <div class="flow">
     {{ lesson_start(l) }}
+    {%- if level.split_boxes %}
+    {#- Paragraphs sit directly in the section, joined into one box, so a long
+        story can continue on the next page. #}
+    <div class="sec reading" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>The story</h2>
+      {%- for para in l.story %}
+      <p class="para">{{ para|mark }}</p>
+      {%- endfor %}
+    </div>
+    {%- else %}
     <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">1</span>The story</h2>
       <div class="story">{% for para in l.story %}<p>{{ para|mark }}</p>{% endfor %}</div>
     </div>
+    {%- endif %}
     {{ qa(l, 2) }}
     <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">3</span>Point of view <small>{{ l.pov.intro }}</small></h2>
@@ -174,12 +189,12 @@
         <div>{% for para in l.pov.text %}<p>{{ para|mark }}</p>{% endfor %}</div>
       </div>
     </div>
-    {#- From levels with split_learn, the box comes in two parts that join
+    {#- From levels with split_boxes, the box comes in two parts that join
         into one: when a page runs out, the second part (notes and question)
         continues on the next page. Earlier levels keep their single box. #}
     {%- set cols = l.learn.table[0]|length %}
     {%- set wide = cols > 2 or l.learn.wide %}
-    {%- set split = level.split_learn %}
+    {%- set split = level.split_boxes %}
     {%- set notes %}
           <div class="notes">
             {%- for n in l.learn.notes %}
@@ -222,10 +237,19 @@
   {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
   <div class="flow">
     {{ lesson_start(l) }}
+    {%- if level.split_boxes %}
+    <div class="sec reading topic" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>Read</h2>
+      {%- for para in l.text %}
+      <p class="para">{{ para|mark('k') }}</p>
+      {%- endfor %}
+    </div>
+    {%- else %}
     <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">1</span>Read</h2>
       <div class="story topic">{% for para in l.text %}<p>{{ para|mark('k') }}</p>{% endfor %}</div>
     </div>
+    {%- endif %}
     {%- for g in l.facts %}
     {%- set ns.n = ns.n + 1 %}
     <div class="sec" data-lesson="{{ l.lesson }}">

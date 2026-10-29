@@ -1,0 +1,55 @@
+lesson: 7
+unit: 3
+kind: story
+title: The Guests Are Coming
+subtitle: Guests are coming for tea, and the kitchen is almost empty. Read the story, then read Sara's story of that day.
+icon: cup
+goals: [Talk about food at home, Use some and any, Ask How much and How many]
+story:
+  - "It is Friday, and Sara's family is waiting for guests. Her aunt and uncle are coming for tea at five o'clock, with their four children. Sara's mother looks in the kitchen. \"Is there [any] sugar?\" she asks."
+  - "Sara opens the cupboard. \"There is [some] sugar, but not [much]. There isn't [any] milk. And there aren't [many] cups. We have only six!\" Her mother is worried. \"We need [a lot of] things!\""
+  - "So Sara takes her bag and goes to the shop. She buys [a lot of] sugar, two bottles of milk, [some] bread, and ten paper cups. Then she buys [some] cookies for the children. She looks in her bag. \"How [much] money do I have now? Not [much]!\""
+  - "At five o'clock, the guests arrive. Everybody drinks tea with [a lot of] sugar, and the children eat all the cookies. \"There aren't [any] cookies left!\" Lina says. Sara laughs. \"Next time, I'm going to buy [more]!\""
+questions:
+  - ["Who is coming for tea?", "Sara's aunt and uncle, with their four children."]
+  - ["What time are they coming?", "At five o'clock."]
+  - ["Is there any sugar?", "Yes, there is some, but not much."]
+  - ["Is there any milk?", "No, there isn't."]
+  - ["How many cups are there?", "Only six."]
+  - ["Where does Sara go?", "To the shop."]
+  - ["How much sugar does she buy?", "A lot of sugar."]
+  - ["How many bottles of milk does she buy?", "Two."]
+  - ["How many paper cups does she buy?", "Ten."]
+  - ["Does she have much money after shopping?", "No, she doesn't."]
+  - ["Who eats all the cookies?", "The children."]
+  - ["Are there any cookies left?", "No, there aren't."]
+pov:
+  intro: Now Sara tells the story of last Friday.
+  speaker: Sara
+  text:
+    - "Last Friday, my aunt and uncle came for tea at five o'clock, with their four children. My mother looked in the kitchen. \"Is there [any] sugar?\" she asked."
+    - "I opened the cupboard. There was [some] sugar, but not [much]. There wasn't [any] milk, and there weren't [many] cups. We had only six! \"We need [a lot of] things!\" my mother said."
+    - So I went to the shop. I bought [a lot of] sugar, two bottles of milk, [some] bread, ten paper cups, and [some] cookies for the children. After that, I didn't have [much] money!
+    - "At five o'clock, the guests arrived. Everybody drank tea with [a lot of] sugar, and the children ate all the cookies. \"There aren't [any] cookies left!\" Lina said. Next time, I'm going to buy [more]!"
+learn:
+  title: You learned [some], [any], [much] and [many].
+  intro: Some things we can count, like cups and cookies. Some things we can't count, like sugar, milk, and money.
+  table:
+    - ["", "We can count: cups", "We can't count: sugar"]
+    - ["Yes", "There are [some] cups.", "There is [some] sugar."]
+    - ["Not", "There aren't [any] cups.", "There isn't [any] milk."]
+    - ["Questions", "Are there [any] cups?", "Is there [any] milk?"]
+    - ["How …?", "How [many] cups?", "How [much] sugar?"]
+    - ["A big amount", "[a lot of] cups", "[a lot of] sugar"]
+  notes:
+    - {title: "[some] for yes, [any] for not and questions", text: "There is some bread. Is there any milk?"}
+    - {title: "[many] if we can count, [much] if we can't", text: "How many cups? How much money?"}
+    - {title: "[a lot of] for both", text: "a lot of cups, a lot of sugar"}
+  ask: ["Is there any sugar?", "Yes, there is some.  /  No, there isn't any."]
+words:
+  - {word: guests, meaning: people who visit your home}
+  - {word: cupboard, meaning: a small closet for cups and food}
+  - {word: worried, meaning: afraid that something bad can happen}
+  - {word: bottles, meaning: "a bottle holds water, milk, or juice"}
+  - {word: arrive, meaning: come to a place}
+  - {word: left, meaning: still there after the others are gone}

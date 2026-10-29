@@ -1,0 +1,41 @@
+lesson: 8
+unit: 3
+kind: topic
+title: Things in My Home
+subtitle: The rooms of a home, the things in them, and where they are.
+icon: home
+goals: [Name rooms and furniture, Say where things are, Describe your home]
+text:
+  - This is Sara's home. It has a [living room], a [kitchen], a [bathroom], and three [bedrooms]. There is also a small garden with some trees.
+  - In the living room, there is a big sofa and some chairs. The TV is on a table between the two windows. There aren't any pictures on the walls, but there are a lot of family photos on a shelf.
+  - In Sara's bedroom, there is a bed, a desk, and a closet. Her books are on the desk, and her shoes are under the bed. Her phone is next to her bed, of course!
+  - How many rooms are there in your home? What is in your bedroom?
+facts:
+  - title: Rooms
+    items:
+      - {term: living room, text: we sit and watch TV}
+      - {term: kitchen, text: we cook}
+      - {term: bathroom, text: we wash}
+      - {term: bedroom, text: we sleep}
+  - title: Where is it?
+    items:
+      - {term: "on", text: "on the desk"}
+      - {term: under, text: "under the bed"}
+      - {term: next to, text: "next to the bed"}
+      - {term: between, text: "between the windows"}
+      - {term: "in", text: "in the closet"}
+      - {term: behind, text: "behind the door"}
+questions:
+  - ["How many bedrooms are there?", "Three."]
+  - ["Is there a garden?", "Yes, there is. It's small, with some trees."]
+  - ["Where is the TV?", "On a table between the two windows."]
+  - ["Are there any pictures on the walls?", "No, there aren't."]
+  - ["Where are Sara's books?", "On the desk."]
+  - ["Where are her shoes?", "Under the bed."]
+words:
+  - {word: sofa, meaning: a long soft seat for two or three people}
+  - {word: between, meaning: in the middle of two things}
+  - {word: walls, meaning: the sides of a room}
+  - {word: shelf, meaning: a long board on a wall to put things on}
+  - {word: desk, meaning: a table for study or work}
+  - {word: closet, meaning: a small room or cupboard for clothes}

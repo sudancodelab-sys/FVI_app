@@ -27,6 +27,7 @@ cd packages/fvi_core && dart test
 - مستوى Starter من منهج الإنجليزية معتمد من المعهد: 20 درس صوتيات و6 دروس مخاطبة، في كتاب من 36 صفحة.
 - مستوى Pre-Intermediate 1 معتمد من المعهد: 12 درساً في 4 وحدات، في كتاب من 21 صفحة.
 - مستوى Pre-Intermediate 2 معتمد من المعهد: 12 درساً في 4 وحدات، في كتاب من 22 صفحة.
+- مستوى Pre-Intermediate 3: كتاب كامل من 23 صفحة (12 درساً في 4 وحدات)، بانتظار المراجعة.
 
 لبناء كتاب المستوى (يحتاج Python مع PyYAML وJinja2 وcmudict، وNode مع Playwright):
 
@@ -34,4 +35,5 @@ cd packages/fvi_core && dart test
 python3 curriculum/tools/build.py english/starter --book --out starter-book
 python3 curriculum/tools/build.py english/pre-intermediate-1 --book --out pi1-book
 python3 curriculum/tools/build.py english/pre-intermediate-2 --book --out pi2-book
+python3 curriculum/tools/build.py english/pre-intermediate-3 --book --out pi3-book
 ```

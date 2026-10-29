@@ -1,0 +1,37 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Holidays in Sudan
+subtitle: The big holidays of the year, what people do, and this year's plans.
+icon: calendar
+goals: [Name the holidays, Say what people do on them, Talk about holiday plans]
+text:
+  - Sudan has many holidays. The two biggest are [Eid al-Fitr] and [Eid al-Adha]. Eid al-Fitr comes at the end of Ramadan, the month of fasting. Eid al-Adha comes about two months later.
+  - On Eid, people wear new clothes, visit their families, and eat a lot of cookies and sweets. Children get money and gifts. Sudan also has [Independence Day] on January 1. On this day in 1956, Sudan became independent.
+  - This year, Sara's family is going to celebrate Eid at home. Her mother is going to bake cookies, and her uncles are going to come for lunch. Omar is going to travel to Port Sudan to see his family. He is going to be on the bus for about twelve hours!
+facts:
+  - title: The holidays
+    items:
+      - {icon: moon, term: Eid al-Fitr, text: "after Ramadan · new clothes and sweets"}
+      - {icon: moon, term: Eid al-Adha, text: "about two months later · family and food"}
+      - {icon: calendar, term: Independence Day, text: "January 1 · since 1956"}
+  - title: What people do
+    items:
+      - {term: visit, text: family and friends}
+      - {term: wear, text: new clothes}
+      - {term: give, text: gifts and money to children}
+      - {term: eat, text: cookies and sweets}
+questions:
+  - ["What are the two biggest holidays?", "Eid al-Fitr and Eid al-Adha."]
+  - ["When does Eid al-Fitr come?", "At the end of Ramadan."]
+  - ["What do children get on Eid?", "Money and gifts."]
+  - ["When is Independence Day?", "On January 1."]
+  - ["Where is Sara's family going to celebrate Eid?", "At home."]
+  - ["How long is Omar going to be on the bus?", "About twelve hours."]
+words:
+  - {word: holidays, meaning: special days with no work and no school}
+  - {word: fasting, meaning: not eating or drinking during the day}
+  - {word: gifts, meaning: things you give to someone}
+  - {word: became, meaning: the past of become}
+  - {word: independent, meaning: free; not ruled by another country}
+  - {word: celebrate, meaning: do something special on a happy day}

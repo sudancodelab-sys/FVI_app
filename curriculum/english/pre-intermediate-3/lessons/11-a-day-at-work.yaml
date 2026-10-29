@@ -1,0 +1,33 @@
+lesson: 11
+unit: 4
+kind: topic
+title: A Day at Work
+subtitle: Adam's father drives a bus. This is his day, and one strange day.
+icon: bus
+goals: [Talk about a job, Say what a workday is like, Tell about a strange day]
+text:
+  - Adam's father, Mr. Hassan, is a [bus driver]. He drives the green bus from the bus station to the big market.
+  - His day starts early. He wakes up at five o'clock, and he starts work at six. He drives the same road ten times a day. He knows many of his [passengers], and they always say hello. At seven in the evening, he goes home, tired but happy.
+  - His [job] is not easy. The roads are busy, the summer is very hot, and he can't stop for lunch when he wants. But he likes his job, because he helps people every day.
+  - "Last Tuesday was a strange day. Mr. Hassan was driving near the hospital when a woman stood up. \"Please stop!\" she said. \"My son is sick!\" He drove them to the hospital door. A week later, the woman came to the bus station with a big box of cookies for him."
+facts:
+  - title: His workday
+    items:
+      - {term: "5:00", text: wakes up}
+      - {term: "6:00", text: starts work}
+      - {term: ten trips, text: from the station to the market}
+      - {term: "7:00", text: "in the evening · goes home"}
+questions:
+  - ["What is Mr. Hassan's job?", "He's a bus driver."]
+  - ["Which bus does he drive?", "The green bus, from the bus station to the market."]
+  - ["What time does he start work?", "At six o'clock."]
+  - ["Why does he like his job?", "Because he helps people every day."]
+  - ["What was he doing when the woman stood up?", "He was driving near the hospital."]
+  - ["What did the woman bring him later?", "A big box of cookies."]
+words:
+  - {word: passengers, meaning: people who travel on a bus}
+  - {word: road, meaning: a way for cars between places}
+  - {word: tired, meaning: needing rest}
+  - {word: easy, meaning: not difficult}
+  - {word: strange, meaning: not normal; surprising}
+  - {word: stood up, meaning: the past of stand up}

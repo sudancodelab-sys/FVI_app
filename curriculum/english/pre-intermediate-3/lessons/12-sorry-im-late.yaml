@@ -1,0 +1,32 @@
+lesson: 12
+unit: 4
+kind: conversation
+title: Sorry I'm Late!
+subtitle: Coming in late, saying sorry, and good manners in class
+icon: clock
+goals: [Ask to come in, Say sorry and give a reason, Borrow something politely]
+scene: Class started at eight. At 8:20, Adam knocks on the classroom door.
+conversation:
+  - [Adam, "Excuse me, Mr. Ali. May I come in?"]
+  - [Mr. Ali, "Yes, come in, Adam. You're late."]
+  - [Adam, "I'm sorry. I was waiting for the bus when it broke down."]
+  - [Mr. Ali, "Oh no. Was it your father's bus?"]
+  - [Adam, "No, it wasn't! It was a different bus. I walked the rest of the way."]
+  - [Mr. Ali, "OK. Please sit down quietly. We were reading the story on page twelve."]
+  - [Adam, "Thank you. Can I borrow a pen, please? I left mine at home."]
+  - [Sara, "Here you are."]
+  - [Adam, "Thanks, Sara."]
+  - [Mr. Ali, "Next time, try to leave home earlier, Adam."]
+phrases:
+  - {title: Ask to come in, lines: ["May I come in?"], reply: "Yes, come in."}
+  - {title: Say sorry, lines: ["I'm sorry I'm late."]}
+  - {title: Give a reason, lines: ["I was waiting for the bus when it broke down."]}
+  - {title: Borrow something, lines: ["Can I borrow a pen, please?"], reply: "Here you are."}
+  - {title: A class rule, lines: ["Please sit down quietly."]}
+  - {title: Give advice, lines: ["Try to leave home earlier."]}
+words:
+  - {word: broke down, meaning: "stopped working (a car or a bus)"}
+  - {word: the rest, meaning: the part that is left}
+  - {word: quietly, meaning: with very little noise}
+  - {word: borrow, meaning: take something and give it back later}
+  - {word: earlier, meaning: at a time before}

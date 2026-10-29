@@ -1,0 +1,32 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: Do You Have a Bigger Size?
+subtitle: Buying clothes and comparing them
+icon: shirt
+goals: [Ask for another size, Compare two things, Decide what to buy]
+scene: Adam needs a shirt for his cousin's wedding. He goes to a clothes shop with Omar.
+conversation:
+  - [Seller, "Hello. Can I help you?"]
+  - [Adam, "Yes, please. I'm looking for a shirt for a wedding."]
+  - [Seller, "How about this blue one? It's very popular."]
+  - [Adam, "It's nice, but it's too small. Do you have a bigger size?"]
+  - [Seller, "Yes. Here's a large. Try it on."]
+  - [Adam, "It's better. But it's more expensive than the white one."]
+  - [Seller, "The white one is cheaper, but the blue one is better quality."]
+  - [Omar, "The blue one looks better on you, Adam."]
+  - [Adam, "OK, I'm going to take the blue one."]
+  - [Seller, "Great choice!"]
+phrases:
+  - {title: Say what you want, lines: ["I'm looking for a shirt."]}
+  - {title: Ask for another size, lines: ["Do you have a bigger size?"], reply: "Here's a large."}
+  - {title: Try it, lines: ["Try it on."]}
+  - {title: Compare, lines: ["It's more expensive than the white one."]}
+  - {title: Give an opinion, lines: ["The blue one looks better on you."]}
+  - {title: Decide, lines: ["I'm going to take the blue one."]}
+words:
+  - {word: popular, meaning: liked by many people}
+  - {word: size, meaning: "how big something is: small, medium, large"}
+  - {word: try it on, meaning: put on clothes to see if they are good for you}
+  - {word: quality, meaning: how good something is}
+  - {word: choice, meaning: the thing you choose}

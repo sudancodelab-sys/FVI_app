@@ -1,0 +1,32 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: What Are You Going to Do?
+subtitle: Talking about plans after the course
+icon: chat
+goals: [Ask about plans, Talk about your future, Give a reason]
+scene: It is the last week of the course. Adam and Sara talk about their plans.
+conversation:
+  - [Sara, "The course is almost finished! What are you going to do next?"]
+  - [Adam, "I'm going to take the next level. And I'm going to start a computer course here, too."]
+  - [Sara, "A computer course? That's a great idea."]
+  - [Adam, "Yes. Pilots need good English and good computer skills!"]
+  - [Sara, "So you're still going to be a pilot?"]
+  - [Adam, "Of course! What about you? Are you going to study engineering?"]
+  - [Sara, "Yes, I am. I'm going to apply to the university next year."]
+  - [Adam, "Are you going to continue English, too?"]
+  - [Sara, "Definitely. Engineers need English, too!"]
+  - [Adam, "Then see you in the next level!"]
+phrases:
+  - {title: Ask about plans, lines: ["What are you going to do next?"], reply: "I'm going to take the next level."}
+  - {title: Ask about a dream, lines: ["Are you still going to be a pilot?"], reply: "Of course!"}
+  - {title: Ask back, lines: ["What about you?"]}
+  - {title: Give a reason, lines: ["Pilots need good English."]}
+  - {title: Say yes strongly, lines: ["Definitely."]}
+  - {title: Say goodbye, lines: ["See you in the next level!"]}
+words:
+  - {word: skills, meaning: things you can do well}
+  - {word: engineering, meaning: the study and work of engineers}
+  - {word: apply, meaning: ask in writing to join a school or a job}
+  - {word: university, meaning: a place to study after school}
+  - {word: definitely, meaning: yes, for sure}

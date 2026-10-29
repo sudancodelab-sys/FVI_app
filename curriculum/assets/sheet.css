@@ -416,3 +416,14 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .learn.more .notes div{flex:1}
 .learn.more .notes + .ask{margin-top:4mm}
 .lsec > h2 + .learn.more > .ask:first-child{border-top:none;padding-top:0;margin-top:0}
+
+/* a reading box made of paragraphs that join into one (split_boxes levels) */
+.reading > .para{background:var(--navy-tint);border-left:1.2mm solid var(--orange);padding:0 6mm 2.5mm;font-size:12pt;line-height:1.62}
+.reading > h2 + .para{padding-top:5mm;border-radius:0 4mm 0 0}
+.reading > .para:last-child{padding-bottom:5mm;border-radius:0 0 4mm 0}
+.reading > h2 + .para:last-child{border-radius:0 4mm 4mm 0}
+.reading .v{color:var(--orange);font-weight:600}
+.reading.topic > .para{border-left-color:var(--navy)}
+.reading.topic .k{font-weight:700;color:var(--navy);text-decoration:underline 1.5px var(--orange);text-underline-offset:3px}
+.page.stream.dense .reading > .para{line-height:1.5}
+.page.stream.denser .reading > .para{line-height:1.42}

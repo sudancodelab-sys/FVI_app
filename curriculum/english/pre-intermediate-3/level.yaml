@@ -6,8 +6,9 @@ cefr: A2.1
 tagline: Plans, comparisons and stories from everyday life
 subtitle: Stories · Topics · Conversations
 story_words: [120, 190]
-# Longer lessons: the "What did you learn?" box may continue on the next page.
-split_learn: true
+# Longer lessons: the story, the reading and the "What did you learn?" box
+# may continue on the next page.
+split_boxes: true
 units:
   1: Plans
   2: Bigger and Better
@@ -18,3 +19,6 @@ cast:
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
   Omar: {initial: O, color: d}
+  # People in one scene only.
+  Seller: {initial: SE, color: e}
+  Waiter: {initial: W, color: e}

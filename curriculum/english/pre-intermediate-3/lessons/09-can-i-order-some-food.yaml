@@ -1,0 +1,31 @@
+lesson: 9
+unit: 3
+kind: conversation
+title: Can I Order Some Food?
+subtitle: Ordering food on the phone
+icon: bowl
+goals: [Order food on the phone, Say how many, Ask the price and the time]
+scene: Omar and Adam are studying at Omar's apartment. They are hungry, so Omar calls a restaurant.
+conversation:
+  - [Waiter, "Hello, Nile Restaurant. Can I help you?"]
+  - [Omar, "Hi. Can I order some food for delivery, please?"]
+  - [Waiter, "Of course. What would you like?"]
+  - [Omar, "Two chicken sandwiches and some fries, please."]
+  - [Waiter, "How many sandwiches? Two?"]
+  - [Omar, "Actually, four. My friend is very hungry!"]
+  - [Waiter, "No problem. Any drinks?"]
+  - [Omar, "Yes, two bottles of water and some juice. How much is it?"]
+  - [Waiter, "Twelve thousand pounds. It's going to take about thirty minutes."]
+  - [Omar, "Great, thank you!"]
+phrases:
+  - {title: Order, lines: ["Can I order some food for delivery?"], reply: "Of course."}
+  - {title: Say what you want, lines: ["Two chicken sandwiches and some fries, please."]}
+  - {title: Check the number, lines: ["How many sandwiches?"], reply: "Four."}
+  - {title: Ask about drinks, lines: ["Any drinks?"], reply: "Some juice, please."}
+  - {title: Ask the price, lines: ["How much is it?"], reply: "Twelve thousand pounds."}
+  - {title: Ask the time, lines: ["How long is it going to take?"], reply: "About thirty minutes."}
+words:
+  - {word: order, meaning: ask for food in a restaurant or shop}
+  - {word: delivery, meaning: bringing things to your home}
+  - {word: fries, meaning: thin pieces of potato cooked in oil}
+  - {word: actually, meaning: "in fact; we say it to change what we said"}

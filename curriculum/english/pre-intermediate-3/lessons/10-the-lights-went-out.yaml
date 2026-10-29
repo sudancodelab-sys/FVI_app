@@ -1,0 +1,54 @@
+lesson: 10
+unit: 4
+kind: story
+title: The Lights Went Out
+subtitle: Last night, everyone at Adam's home was busy. Then the lights went out. Read the story, then read it again as it happens.
+icon: bulb
+goals: [Say what was happening, Use when and while, Tell a story about a night]
+story:
+  - Last night at eight o'clock, Adam's family was at home, and everybody [was doing] something. Adam [was studying] for his English test in his room. His mother [was cooking] dinner, and his father [was watching] the news on TV.
+  - Hamza and his brother [were playing] a game on the computer. Their sister [was talking] to her friend on the phone. And the cat [was sleeping] on the sofa.
+  - "Suddenly, the lights went out. The TV stopped, the computer stopped, and the fan stopped. It was dark and very hot. \"Oh no!\" said Hamza. \"I [was winning]!\""
+  - "Adam's father found a flashlight. [While] his mother [was looking] for candles, Adam went outside. All the neighbors were outside, too. They [were sitting] in the street and [talking] under the stars. Nobody was watching TV, and nobody was playing on a phone. \"This is nice,\" Adam thought. \"Maybe we need more nights like this!\""
+questions:
+  - ["What time did the lights go out?", "At eight o'clock."]
+  - ["What was Adam doing?", "He was studying for his English test."]
+  - ["Was his mother cooking or reading?", "Cooking. She was cooking dinner."]
+  - ["What was his father watching?", "The news on TV."]
+  - ["What were Hamza and his brother doing?", "They were playing a game on the computer."]
+  - ["Who was talking on the phone?", "Adam's sister."]
+  - ["Where was the cat sleeping?", "On the sofa."]
+  - ["What happened suddenly?", "The lights went out."]
+  - ["Why was Hamza unhappy?", "He was winning the game."]
+  - ["What was his mother looking for?", "Candles."]
+  - ["What were the neighbors doing?", "They were sitting in the street and talking."]
+  - ["Did Adam like the night?", "Yes, he did. He thought it was nice."]
+pov:
+  intro: Now Adam tells it as it happens.
+  speaker: Adam
+  text:
+    - It's eight o'clock at night. I['m studying] for my English test. My mother [is cooking] dinner, and my father [is watching] the news.
+    - Hamza and my brother [are playing] a game on the computer. My sister [is talking] on the phone, and the cat [is sleeping] on the sofa.
+    - "Suddenly, the lights go out! It's dark and very hot. \"Oh no!\" says Hamza. \"I [was winning]!\""
+    - "[While] my mother [is looking] for candles, I go outside. All the neighbors [are sitting] in the street and [talking] under the stars. This is nice!"
+learn:
+  title: You learned the [past continuous].
+  intro: We use it for something that was happening at a time in the past, often when something short happened.
+  wide: true
+  table:
+    - ["Happening at that time", "Then something happened"]
+    - ["Adam [was studying]…", "…when the lights [went] out."]
+    - ["They [were playing] a game…", "…when the computer [stopped]."]
+    - ["[While] his mother [was looking] for candles,", "Adam [went] outside."]
+  notes:
+    - {title: "I · he · she · it → [was] + -ing", text: "He was sleeping."}
+    - {title: "you · we · they → [were] + -ing", text: "They were playing."}
+    - {title: "[when] and [while]", text: "The long action: was …ing. The short action: past simple."}
+  ask: ["What were you doing at eight o'clock last night?", "I was studying."]
+words:
+  - {word: suddenly, meaning: quickly and with no warning}
+  - {word: fan, meaning: a machine that moves air to make you cool}
+  - {word: dark, meaning: with no light}
+  - {word: flashlight, meaning: a small light you hold in your hand}
+  - {word: candles, meaning: sticks of wax that give light when they burn}
+  - {word: neighbors, meaning: people who live near you}

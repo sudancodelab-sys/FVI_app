@@ -1,0 +1,33 @@
+lesson: 5
+unit: 2
+kind: topic
+title: Cities of Sudan
+subtitle: Four cities, and what makes each one special.
+icon: mountain
+goals: [Name cities of Sudan, Compare places, Say what a place is famous for]
+text:
+  - Sudan is a big country with many cities. [Khartoum] is the capital. It is where the Blue Nile and the White Nile meet. Across the river is [Omdurman], the biggest city in Sudan.
+  - "[Port Sudan] is on the Red Sea, about twelve hours from Khartoum by bus. It is hotter and more humid than Khartoum in summer, and it has the busiest port in the country."
+  - "[Kassala] is in the east, near the mountains. Many people think it is the most beautiful city in Sudan. It is famous for its green gardens and its fruit, like bananas and oranges."
+  - Which city is the best? Every city is different, and every city has something special.
+facts:
+  - title: Four cities
+    items:
+      - {icon: pin, term: Khartoum, text: "the capital · where the two Niles meet"}
+      - {icon: users, term: Omdurman, text: "across the river · the biggest city"}
+      - {icon: ship, term: Port Sudan, text: "on the Red Sea · the busiest port"}
+      - {icon: mountain, term: Kassala, text: "near the mountains · gardens and fruit"}
+questions:
+  - ["What is the capital of Sudan?", "Khartoum."]
+  - ["Which city is the biggest?", "Omdurman."]
+  - ["Where is Port Sudan?", "On the Red Sea."]
+  - ["Is Port Sudan cooler than Khartoum in summer?", "No, it isn't. It's hotter and more humid."]
+  - ["Which city is near the mountains?", "Kassala."]
+  - ["What is Kassala famous for?", "Its green gardens and its fruit."]
+words:
+  - {word: capital, meaning: the most important city of a country}
+  - {word: meet, meaning: come together}
+  - {word: across, meaning: on the other side of}
+  - {word: port, meaning: a place where ships stop}
+  - {word: famous, meaning: known by many people}
+  - {word: special, meaning: different, and better than usual}
