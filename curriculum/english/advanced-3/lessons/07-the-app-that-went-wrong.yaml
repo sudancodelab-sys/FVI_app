@@ -1,0 +1,63 @@
+lesson: 7
+unit: 3
+kind: story
+title: The App That Went Wrong
+subtitle: Omar's new app for farmers goes live and sends the wrong prices to everyone. Read the story, then read it from the point of view of his youngest engineer.
+icon: phone
+goals: [Use conditionals without if, Talk about mistakes and responsibility, Tell a story about a crisis at work]
+story:
+  - "For six months, Omar's team had been building FarmPrice, an app that tells farmers the latest prices in the big markets, so that nobody can cheat them. [Should] the price of onions [rise] in Omdurman, a farmer two hundred kilometers away [will know] within minutes."
+  - "The launch was planned for Monday. On Sunday night, Amir, the youngest engineer, asked for one more week of testing. Omar said no. The radio had already announced the launch, and three hundred farmers were waiting. ((Look before you leap)), Amir thought, but he said nothing."
+  - "At nine o'clock on Monday, FarmPrice went live. By ten, the phones were ringing. A farmer in Gezira had sold his tomatoes for half their price, because the app said that the market price had fallen. Another had driven to Khartoum to sell onions at a price that didn't exist. By lunchtime, the news had ((spread like wildfire)) on social media."
+  - "Omar couldn't find the problem, and neither could his team. Then, at four o'clock, he got a message from Huda. \"My students think they've found your mistake,\" it said. Huda had been using the app in her class to teach numbers and prices, and a nine-year-old girl had noticed that it was mixing up the price of one kilo with the price of a whole box."
+  - "The team fixed it in twenty minutes. [Had] they [tested] the app for one more week, they [would have found] the mistake themselves. [Were it not for] a class of nine-year-olds, it [might have taken] days."
+  - "That evening, Omar did the hardest thing he had ever done in business. He went on the radio and ((owned up to)) the mistake. \"[Had I listened] to my youngest engineer,\" he said, \"this [would never have happened]. [Should] any farmer [have lost] money today, my company will pay it back.\""
+  - "A month later, FarmPrice had five thousand users, more than Omar had ever hoped for. \"People forgive mistakes,\" Mr. Ali told him. \"What they don't forgive is hiding them.\" And at Huda's school, a nine-year-old girl now has a certificate on her wall. It says Chief Tester."
+questions:
+  - ["What does FarmPrice do?", "It tells farmers the latest prices in the big markets."]
+  - ["When was the launch planned?", "For Monday."]
+  - ["What did Amir ask for?", "One more week of testing."]
+  - ["Why did Omar say no?", "The radio had already announced the launch, and three hundred farmers were waiting."]
+  - ["What happened to the farmer in Gezira?", "He sold his tomatoes for half their price."]
+  - ["How did the news travel?", "It spread like wildfire on social media."]
+  - ["Who sent Omar a message at four o'clock?", "Huda."]
+  - ["What had a nine-year-old girl noticed?", "The app was mixing up the price of one kilo with the price of a whole box."]
+  - ["How long did it take to fix the mistake?", "Twenty minutes."]
+  - ["What did Omar do on the radio?", "He owned up to the mistake."]
+  - ["What did he promise?", "That his company would pay back any farmer who had lost money."]
+  - ["What does the girl's certificate say?", "Chief Tester."]
+pov:
+  intro: Now Amir tells it.
+  speaker: Amir
+  text:
+    - "On Sunday night, I asked Omar for one more week. [Had he said] yes, we [would have found] the mistake ourselves. But the radio had already announced the launch, and [were I] in his place, I might have done the same."
+    - "On Monday, I watched our phones ring all day. Every call was a farmer who had lost money because of our app, and I felt sick."
+    - "When Huda's message arrived, I read it three times. A child had found in one afternoon what six engineers had missed for six months."
+    - "What I will remember most, though, is Omar on the radio. He didn't blame me, and he didn't blame the code. He said that it was his decision. [Should] I ever [start] my own company, I will try to be that kind of boss."
+learn:
+  title: You learned [conditionals without if].
+  intro: In formal English, we can drop if and put had, should, or were first. The meaning doesn't change.
+  wide: true
+  table:
+    - ["With if", "Without if"]
+    - ["If they had tested it, …", "[Had they tested] it, …"]
+    - ["If I had listened, …", "[Had I listened], …"]
+    - ["If any farmer has lost money, …", "[Should any farmer have lost] money, …"]
+    - ["If I were in his place, …", "[Were I] in his place, …"]
+    - ["If it weren't for the children, …", "[Were it not for] the children, …"]
+  notes:
+    - {title: "[Had] = if + past perfect", text: "Had I known, I would have come."}
+    - {title: "[Should] = if, for a possible future", text: "Should you need help, call me."}
+    - {title: "[Were] = if + were", text: "Were I you, I would wait."}
+  ask: ["What would you have done, had you been Omar?", "Had I been Omar, I would have waited one more week."]
+idioms:
+  - {expr: "Look before you leap.", type: proverb, meaning: "Think carefully about the results before you do something.", example: "Don't sign the contract today. Read it first. Look before you leap."}
+  - {expr: spread like wildfire, type: idiom, meaning: to travel very quickly from person to person, example: "The news of the free concert spread like wildfire."}
+  - {expr: own up to, type: phrase, meaning: to admit that you did something wrong, example: "Nobody owned up to breaking the window."}
+words:
+  - {word: cheat, meaning: get something from someone in a way that is not honest}
+  - {word: launch, meaning: the day a new product is first offered to people}
+  - {word: announced, meaning: told everyone in public}
+  - {word: users, meaning: people who use a product or a service}
+  - {word: certificate, meaning: an official paper that says you have done something}
+  - {word: blame, meaning: say that someone is responsible for something bad}

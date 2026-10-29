@@ -1,0 +1,36 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: Questions From the Audience
+subtitle: Answering questions clearly and honestly after a talk
+icon: users
+goals: [Welcome and answer questions, Say that you will check a fact, Close a question time politely]
+scene: After her talk in Cairo, Sara takes questions from the audience. Dr. Kamal, a professor of engineering, and Rania, a journalist, ask her questions.
+conversation:
+  - [Dr. Kamal, "Thank you for a wonderful talk. How much does one pump cost, and who pays for it?"]
+  - [Sara, "That's a great question. The whole system cost less than a small car. This time, the money came from our university and a local business."]
+  - [Dr. Kamal, "And what happens when something breaks? Who repairs it?"]
+  - [Sara, "We trained two young people from the village to look after it. Having learned the basics, they can fix most problems themselves."]
+  - [Rania, "Could this work in other countries, too?"]
+  - [Sara, "I believe so, especially where there's a lot of sun and the water isn't too deep. But I'd rather not guess the numbers. Let me ((get back to you)) on that after I check."]
+  - [Rania, "Of course. And what was the hardest part of the project?"]
+  - [Sara, "Honestly, it wasn't the engineering. It was listening. We had to understand what the village needed before we built anything."]
+  - [Dr. Kamal, "That's certainly ((food for thought)) for all of us engineers."]
+  - [Sara, "Thank you. If there are no more questions, I'll be outside if anyone would like to talk."]
+phrases:
+  - {title: Welcome a question, lines: ["That's a great question."]}
+  - {title: Give a clear answer, lines: ["The whole system cost less than a small car."]}
+  - {title: Say that you will check, lines: ["Let me get back to you on that after I check."]}
+  - {title: Be careful with facts, lines: ["I'd rather not guess the numbers."]}
+  - {title: Answer honestly, lines: ["Honestly, it wasn't the engineering. It was listening."]}
+  - {title: Close the questions, lines: ["If there are no more questions, I'll be outside."]}
+idioms:
+  - {expr: get back to someone, type: phrase, meaning: "to answer someone later, when you have more information", example: "I don't know the price yet, but I'll get back to you tomorrow."}
+  - {expr: food for thought, type: idiom, meaning: an idea that makes you think carefully, example: "His talk about saving water gave us all food for thought."}
+words:
+  - {word: local, meaning: from the area near you}
+  - {word: trained, meaning: taught someone the skills for a job}
+  - {word: basics, meaning: the simplest and most important things to know}
+  - {word: engineering, meaning: the work of designing and building machines and structures}
+  - {word: honestly, meaning: telling the truth}
+  - {word: certainly, meaning: without any doubt}

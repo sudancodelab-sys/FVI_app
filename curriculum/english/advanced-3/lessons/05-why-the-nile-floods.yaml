@@ -1,0 +1,40 @@
+lesson: 5
+unit: 2
+kind: science
+title: Why the Nile Floods
+subtitle: How rain on mountains far away fills a river in one of the driest places on Earth, and why the flood is both a gift and a danger.
+icon: wave
+goals: [Explain a natural process, Use inversion in formal writing, Talk about the good and bad sides of nature]
+text:
+  - "Every summer, the Nile rises. For thousands of years, the people along its banks have waited for this flood, and feared it. But why does a river in one of the driest parts of the world flood at all?"
+  - "The answer lies far to the south and east, in the [Ethiopian Highlands]. From June to September, monsoon winds carry heavy rain from the Indian Ocean to these mountains. The water rushes down into the [Blue Nile], which starts at Lake Tana, and into other rivers like the Atbara. Only in these months does the Blue Nile become a giant."
+  - "The [White Nile], which comes from the great lakes of East Africa, is very different. Its water travels slowly through huge swamps in South Sudan, where much of it is lost to the sun. Rarely does it rise quickly. The two rivers meet at Khartoum, and in the flood season, most of the water that reaches Egypt comes from Ethiopia."
+  - "For farmers, the flood has always been ((a double-edged sword)). It leaves behind [silt], a rich, dark soil that makes the fields green, and people in ancient times even built stone steps to measure the river and predict the harvest. But the flood can also destroy. In 2020, the Blue Nile at Khartoum reached its highest level in more than a hundred years, and thousands of homes were ((swept away))."
+  - "Today, dams like the Roseires Dam in Sudan and the Aswan High Dam in Egypt control much of the flood. They store water and make electricity. But no dam can control the rain. As the climate changes, scientists warn that heavy floods may come more often, so cities along the river need better plans, stronger homes, and early warnings."
+facts:
+  - title: Where the flood water comes from
+    items:
+      - {icon: rain, term: June to September, text: monsoon rain on the Ethiopian Highlands}
+      - {icon: wave, term: Blue Nile, text: brings most of the flood water}
+      - {icon: drop, term: White Nile, text: "slower, loses water in the swamps"}
+      - {icon: pin, term: Khartoum, text: where the two rivers meet}
+did_you_know: After they meet at Khartoum, the Blue Nile and the White Nile flow side by side for a while, and from the bridges you can see their two different colors.
+questions:
+  - ["Where does the flood water come from?", "The Ethiopian Highlands."]
+  - ["When does the heavy rain fall?", "From June to September."]
+  - ["Where does the Blue Nile start?", "At Lake Tana."]
+  - ["Why does the White Nile rarely rise quickly?", "Its water travels through huge swamps, where much of it is lost to the sun."]
+  - ["Where do the two rivers meet?", "At Khartoum."]
+  - ["What is silt?", "A rich, dark soil that the flood leaves behind."]
+  - ["What happened in 2020?", "The Blue Nile at Khartoum reached its highest level in more than a hundred years."]
+  - ["What do dams do?", "They store water, make electricity, and control much of the flood."]
+idioms:
+  - {expr: a double-edged sword, type: idiom, meaning: something that has both good and bad results, example: "Social media is a double-edged sword. It connects us, but it also wastes our time."}
+  - {expr: be swept away, type: phrase, meaning: to be carried away by fast water or wind, example: "During the storm, several boats were swept away."}
+words:
+  - {word: banks, meaning: the land along the sides of a river}
+  - {word: monsoon, meaning: a wind that brings heavy rain in summer}
+  - {word: swamps, meaning: "areas of soft, wet land"}
+  - {word: predict, meaning: say what will happen in the future}
+  - {word: harvest, meaning: the time when farmers collect their crops}
+  - {word: warnings, meaning: messages that tell people about a danger}

@@ -24,3 +24,11 @@ cast:
   Huda: {initial: H, color: e}
   # Guests and one-scene roles.
   Mona: {initial: MO, color: e}
+  Rania: {initial: R, color: e}
+  Dr. Kamal: {initial: DK, color: c}
+  Dr. Malik: {initial: DM, color: c}
+  Amir: {initial: AM, color: e}
+  Grandfather: {initial: G, color: e}
+  Ms. Layla: {initial: ML, color: c}
+  Dr. Nabil: {initial: DN, color: d}
+  Dr. Amira: {initial: DA, color: c}

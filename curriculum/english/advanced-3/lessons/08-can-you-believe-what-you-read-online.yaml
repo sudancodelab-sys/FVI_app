@@ -1,0 +1,49 @@
+lesson: 8
+unit: 3
+kind: podcast
+title: Can You Believe What You Read Online?
+subtitle: A newspaper reporter explains why fake news spreads so fast, and how to check a story before you share it.
+icon: mic
+goals: [Follow a podcast discussion, Talk about fake news, Use should and had without if]
+show: The Future Vision Podcast
+episode: 24
+scene: "Hosts: Sara and Adam · Guest: Rania Hamid, a reporter at The Daily Nile"
+before:
+  - Have you ever shared something online and then found out that it wasn't true?
+  - How do you decide whether a news story is real?
+script:
+  - ["00:05", Sara, "Welcome to The Future Vision Podcast. I'm Sara."]
+  - ["00:08", Adam, "And I'm Adam. Today we're talking about fake news. Our guest is Rania Hamid, a reporter at The Daily Nile. Welcome, Rania!"]
+  - ["00:16", Rania, "Thank you. Actually, Sara and I have met before, at a conference in Cairo."]
+  - ["00:21", Sara, "The one where I lost my laptop! So, Rania, why does fake news spread so fast?"]
+  - ["00:27", Rania, "Because it's designed to make us feel something, like fear, anger, or surprise. A shocking story can ((go viral)) in an hour, long before anyone checks it."]
+  - ["00:39", Adam, "Last month, my uncle sent me a message saying that bananas cure headaches. He'd shared it with forty people."]
+  - ["00:47", Rania, "That's a perfect example. [Had he checked] one good source, he [would have found] that it wasn't true."]
+  - ["00:55", Sara, "So what should we do?"]
+  - ["00:57", Rania, "Three things. First, look at the source. Who wrote it, and when? Second, [should you see] a shocking headline, read the whole article before you share it. And third, ((take it with a pinch of salt)) if no other news website is reporting it."]
+  - ["01:16", Adam, "What about photos and videos? They look so real."]
+  - ["01:20", Rania, "They can be old, or changed with software. [Were I] a student today, I'd learn how to search for a photo online and see where it first appeared."]
+  - ["01:33", Sara, "Have you ever been fooled yourself?"]
+  - ["01:36", Rania, "Once, early in my career. I almost published a story about a lion in a Khartoum market. Luckily, my editor asked me to find one person who had actually seen it. Nobody had."]
+  - ["01:50", Adam, "A lion in the market! I would have shared that."]
+  - ["01:53", Rania, "That's exactly the problem. The best stories are often the ones we should check twice."]
+  - ["02:00", Sara, "Rania, thank you so much. That's all for today. Next week, we're talking about the future of farming. See you then!"]
+questions:
+  - ["Who is the guest?", "Rania Hamid, a reporter at The Daily Nile."]
+  - ["Where had Sara and Rania met before?", "At a conference in Cairo."]
+  - ["Why does fake news spread so fast?", "It's designed to make us feel something, like fear, anger, or surprise."]
+  - ["What did Adam's uncle share?", "A message saying that bananas cure headaches."]
+  - ["What should you do if you see a shocking headline?", "Read the whole article before you share it."]
+  - ["What would Rania learn if she were a student today?", "How to search for a photo online and see where it first appeared."]
+  - ["What story did Rania almost publish?", "A story about a lion in a Khartoum market."]
+  - ["Which stories should we check twice?", "The best stories."]
+idioms:
+  - {expr: go viral, type: phrase, meaning: to be shared very quickly by a lot of people online, example: "Her video of the cat went viral, and a million people watched it."}
+  - {expr: take something with a pinch of salt, type: idiom, meaning: to not completely believe something, example: "He says he met a famous actor, but I take his stories with a pinch of salt."}
+words:
+  - {word: fake, meaning: not real or true}
+  - {word: shocking, meaning: very surprising in a bad way}
+  - {word: source, meaning: the place or person that information comes from}
+  - {word: cure, meaning: make an illness go away}
+  - {word: fooled, meaning: tricked into believing something false}
+  - {word: published, meaning: printed or put online for people to read}

@@ -1,0 +1,63 @@
+lesson: 1
+unit: 1
+kind: story
+title: The Talk in Cairo
+subtitle: Sara arrives in Cairo to give the most important talk of her life, but her laptop is still on the plane. Read the story, then read it from the point of view of a journalist in the audience.
+icon: bulb
+goals: [Join ideas with participle clauses, Tell a story in a formal style, Talk about turning a problem into a chance]
+story:
+  - "[Having landed] in Cairo at two in the afternoon, Sara took a taxi straight to the conference center. Her talk on solar water pumps was at five, and she had spent three weeks preparing it. Everything was on her laptop, forty slides, photos of the village, and a short video of the pump."
+  - "[Arriving] at her hotel, she opened her bag to check her notes. Her laptop wasn't there. ((Her heart sank)). [Thinking] back, she could see it clearly, in the seat pocket on the plane, exactly where she had left it."
+  - "She called the airline. The plane had already left for Dubai. [Not knowing] what else to do, she called Omar. \"Do you have a copy of the slides?\" she asked. \"No,\" he said. \"But you don't need slides. You need the story. You were there.\""
+  - "[Left] with only a pen and a notebook, Sara sat in a café near the conference center and wrote five words on a page. Water. Walk. Sun. Flood. People. [Encouraged] by Omar, she decided to ((make the most of)) it."
+  - "At five o'clock, she walked onto the stage. The screen behind her was empty. \"I was going to show you forty slides,\" she began, \"but my laptop is flying to Dubai without me.\" The audience laughed, and she relaxed."
+  - "Then she told them a story. She told them about the women who used to walk two hours a day for water, and about the morning the pump started. She told them about the night the river rose, when the batteries from the pump lit the school. [Speaking] without slides, she looked at the audience, not at a screen, and the audience looked back."
+  - "When she finished, there was a moment of silence, and then the whole room stood up and clapped. [Asked] later by a journalist about her missing laptop, Sara smiled. \"((Every cloud has a silver lining)),\" she said. \"With my slides, I would have talked to a screen. Without them, I talked to people.\""
+questions:
+  - ["When did Sara land in Cairo?", "At two in the afternoon."]
+  - ["What was her talk about?", "Solar water pumps."]
+  - ["How long had she spent preparing it?", "Three weeks."]
+  - ["What did she find when she opened her bag?", "Her laptop wasn't there."]
+  - ["Where had she left the laptop?", "In the seat pocket on the plane."]
+  - ["Where was the plane going?", "To Dubai."]
+  - ["What did Omar say she needed?", "The story, not slides."]
+  - ["What five words did she write?", "Water, walk, sun, flood, and people."]
+  - ["How did she begin her talk?", "\"I was going to show you forty slides, but my laptop is flying to Dubai without me.\""]
+  - ["What did she tell the audience about?", "The women who walked for water, the morning the pump started, and the night the river rose."]
+  - ["What did the audience do when she finished?", "They stood up and clapped."]
+  - ["Why does Sara think losing the laptop was good?", "Without her slides, she talked to people, not to a screen."]
+pov:
+  intro: Now Rania, a journalist, tells it.
+  speaker: Rania
+  text:
+    - "I have reported on conferences for ten years, and most talks are the same. [Having seen] hundreds of slides, I usually sit at the back and check my phone."
+    - "That afternoon, a young engineer walked onto the stage with nothing in her hands. [Seeing] the empty screen, I expected a disaster. Instead, she made us laugh in the first ten seconds."
+    - "[Listening] to her, I forgot to take notes. She talked about real people, and she spoke as if she were telling the story to friends."
+    - "[Asked] by my editor which talk was the best of the conference, I didn't need to think. It was the one with no slides at all."
+learn:
+  title: You learned [participle clauses].
+  intro: They make sentences shorter and more formal. The subject of the clause is the same as the subject of the main sentence.
+  wide: true
+  table:
+    - ["Participle clause", "What it means"]
+    - ["[Having landed], she took a taxi.", "After she had landed, …"]
+    - ["[Arriving] at her hotel, she…", "When she arrived at her hotel, …"]
+    - ["[Not knowing] what to do, she…", "Because she didn't know what to do, …"]
+    - ["[Left] with only a pen, she…", "Because she was left with only a pen, …"]
+    - ["[Asked] about her laptop, she…", "When she was asked about it, …"]
+  notes:
+    - {title: "[-ing]: active, at the same time", text: "Speaking without slides, she looked at the audience."}
+    - {title: "[Having] + past participle: before", text: "Having seen hundreds of talks, I sat at the back."}
+    - {title: "Past participle: [passive]", text: "Encouraged by Omar, she decided to try."}
+  ask: ["What do you usually do, having finished a long day?", "Having finished work, I usually drink tea with my family."]
+idioms:
+  - {expr: your heart sinks, type: idiom, meaning: you suddenly feel sad or worried, example: "When I saw the long line at the bank, my heart sank."}
+  - {expr: make the most of something, type: phrase, meaning: "to use a situation as well as you can, even when it is not perfect", example: "It rained all week, but we made the most of it and visited the museums."}
+  - {expr: "Every cloud has a silver lining.", type: proverb, meaning: "Something good can come from even a bad situation.", example: "I lost my job, but I found a better one. Every cloud has a silver lining."}
+words:
+  - {word: slides, meaning: pages that are shown on a screen during a talk}
+  - {word: stage, meaning: the raised place where a speaker stands}
+  - {word: audience, meaning: the people who watch or listen to a talk}
+  - {word: relaxed, meaning: became calm and less nervous}
+  - {word: journalist, meaning: a person who writes news for a newspaper or website}
+  - {word: editor, meaning: the person who decides what a newspaper prints}

@@ -1,0 +1,36 @@
+lesson: 11
+unit: 4
+kind: conversation
+title: Negotiating a Job Offer
+subtitle: Asking politely for better terms before you sign
+icon: briefcase
+goals: [Discuss the terms of a job offer, Make polite requests, Agree on a compromise]
+scene: Before he signs his contract, Adam talks to Ms. Layla, the head of training at the airline in the Gulf.
+conversation:
+  - [Ms. Layla, "Adam, we're very happy that you want to accept our offer. Do you have any questions before you sign?"]
+  - [Adam, "Thank you. I'm excited to join you. There are just two things I'd like to discuss, if that's all right."]
+  - [Ms. Layla, "Of course. Go ahead."]
+  - [Adam, "The first is the start date. The offer says September 1, but my final exams finish on September 10. Would you be open to a start date of October 1?"]
+  - [Ms. Layla, "Our training course begins in September, so that's difficult. Could you start on September 15? You would join the course one week late."]
+  - [Adam, "That works for me. Thank you for ((meeting me halfway))."]
+  - [Ms. Layla, "And the second thing?"]
+  - [Adam, "The contract is for three years, but I'd rather sign for five. After that, I'd like to know whether I could leave without paying back the cost of my training."]
+  - [Ms. Layla, "That's an unusual question, but a fair one. If you stay five years, we pay for all of your training. I'll put that in writing, and then ((the ball is in your court))."]
+  - [Adam, "Then I'm ready to sign. Thank you, Ms. Layla."]
+phrases:
+  - {title: Say you have questions, lines: ["There are just two things I'd like to discuss, if that's all right."]}
+  - {title: Make a request, lines: ["Would you be open to a start date of October 1?"]}
+  - {title: Accept a compromise, lines: ["That works for me."]}
+  - {title: Say what you prefer, lines: ["I'd rather sign for five years."]}
+  - {title: Ask about a condition, lines: ["I'd like to know whether I could leave without paying back the cost."]}
+  - {title: Close the deal, lines: ["Then I'm ready to sign."]}
+idioms:
+  - {expr: meet someone halfway, type: phrase, meaning: "to agree to part of what someone wants, so that you both get something", example: "I wanted 100 pounds and he offered 60, so we met halfway at 80."}
+  - {expr: the ball is in your court, type: idiom, meaning: it is your turn to decide or act, example: "I've sent you my best price. Now the ball is in your court."}
+words:
+  - {word: accept, meaning: say yes to something that is offered}
+  - {word: sign, meaning: write your name on a paper to show you agree}
+  - {word: discuss, meaning: talk about something with someone}
+  - {word: contract, meaning: a written agreement between people or companies}
+  - {word: unusual, meaning: different from what is normal}
+  - {word: fair, meaning: right and reasonable}

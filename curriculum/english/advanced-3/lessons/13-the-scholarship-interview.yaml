@@ -1,0 +1,36 @@
+lesson: 13
+unit: 5
+kind: conversation
+title: The Scholarship Interview
+subtitle: Answering a panel's questions about your plans for study
+icon: pencil
+goals: [Explain your reasons for further study, Describe a research plan, Answer a difficult question calmly]
+scene: Huda has an interview for a scholarship to study a master's degree in education. Dr. Nabil and Dr. Amira are on the panel.
+conversation:
+  - [Dr. Nabil, "Good afternoon, Huda. Please sit down. Why do you want to study for a master's degree in education?"]
+  - [Huda, "Having taught for two years, I've realized how much I still don't know. I'd like to be given the chance to learn how children really learn, and bring it back to my school."]
+  - [Dr. Amira, "What has been the most difficult part of your teaching so far?"]
+  - [Huda, "Children who are afraid to speak. What I've learned is that they don't need to be pushed. They need to be noticed."]
+  - [Dr. Nabil, "And what would you research, were you given the scholarship?"]
+  - [Huda, "How stories help shy children speak a new language. I've seen it happen in my own class, but I'd like to prove it properly."]
+  - [Dr. Amira, "Some people say that research in education changes nothing in real classrooms. What do you think?"]
+  - [Huda, "I understand why they say that, and I try to ((keep an open mind)). But had I not tried new ideas, a boy in my class would still be hiding under his desk."]
+  - [Dr. Nabil, "Thank you, Huda. We'll let you know within two weeks."]
+  - [Huda, "Thank you for your time. Studying here would be ((a dream come true))."]
+phrases:
+  - {title: Explain your reason, lines: ["Having taught for two years, I've realized how much I still don't know."]}
+  - {title: Say what you would like, lines: ["I'd like to be given the chance to learn."]}
+  - {title: Share what you have learned, lines: ["What I've learned is that they need to be noticed."]}
+  - {title: Describe your plan, lines: ["I'd like to prove it properly."]}
+  - {title: Answer a difficult question, lines: ["I understand why they say that, but…"]}
+  - {title: End warmly, lines: ["Studying here would be a dream come true."]}
+idioms:
+  - {expr: keep an open mind, type: phrase, meaning: to be ready to listen to new ideas before you decide, example: "I didn't like fish, but I kept an open mind and tried it."}
+  - {expr: a dream come true, type: idiom, meaning: something that you have wanted for a very long time, example: "Visiting Japan was a dream come true for my brother."}
+words:
+  - {word: scholarship, meaning: money that is given to a student to pay for study}
+  - {word: master's degree, meaning: a university degree that you study for after your first degree}
+  - {word: panel, meaning: a small group of people who ask questions and make a decision}
+  - {word: realized, meaning: understood something for the first time}
+  - {word: research, meaning: careful study to find out new facts}
+  - {word: properly, meaning: in the correct way}

@@ -1,0 +1,36 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: Asking for More Time
+subtitle: Making a formal request and agreeing on a compromise
+icon: calendar
+goals: [Make a formal request, Explain your reasons, Accept a compromise]
+scene: After the flood, Sara is late with her final report. She goes to see her professor, Dr. Malik.
+conversation:
+  - [Sara, "Good morning, Dr. Malik. Do you have a moment?"]
+  - [Dr. Malik, "Of course, Sara. Come in. How is the village after the flood?"]
+  - [Sara, "Everyone is safe, thank you. But that's actually why I'm here. I was wondering whether it would be possible to have more time for my final report."]
+  - [Dr. Malik, "I see. The deadline is this Thursday. How much time do you need?"]
+  - [Sara, "Would two weeks be acceptable? I spent five days helping in the village, and I've ((fallen behind)) with my data."]
+  - [Dr. Malik, "Two weeks is a lot. Could you finish in ten days if I gave you the data from last year's project?"]
+  - [Sara, "That would really help. Not only would I save time, but I could also compare the two years."]
+  - [Dr. Malik, "Then ten days it is. Send me a short plan by Sunday, so I know you're on track."]
+  - [Sara, "Thank you so much. That's ((a weight off my shoulders))."]
+  - [Dr. Malik, "You did something important in that village, Sara. Now go and write about it."]
+phrases:
+  - {title: Ask for a moment, lines: ["Do you have a moment?"]}
+  - {title: Make a formal request, lines: ["I was wondering whether it would be possible to have more time."]}
+  - {title: Explain the reason, lines: ["I spent five days helping in the village."]}
+  - {title: Suggest an amount, lines: ["Would two weeks be acceptable?"]}
+  - {title: Accept a compromise, lines: ["That would really help."]}
+  - {title: Thank someone warmly, lines: ["Thank you so much."]}
+idioms:
+  - {expr: fall behind, type: phrase, meaning: to do less than you should by a certain time, example: "I was sick for a week, and I fell behind with my homework."}
+  - {expr: a weight off your shoulders, type: idiom, meaning: the feeling of relief when a worry goes away, example: "When I paid back the money, it was a weight off my shoulders."}
+words:
+  - {word: report, meaning: a piece of writing about what you have studied or found}
+  - {word: deadline, meaning: the last day or time to finish something}
+  - {word: acceptable, meaning: good enough to agree to}
+  - {word: data, meaning: facts and numbers that you collect}
+  - {word: compare, meaning: look at two things to see how they are different}
+  - {word: on track, meaning: doing what you planned to do}

@@ -1,0 +1,63 @@
+lesson: 9
+unit: 4
+kind: story
+title: Two Offers
+subtitle: Adam gets two job offers on the same day, one far away and one at home. Read the story, then read it from his grandfather's point of view.
+icon: plane
+goals: [Talk about wishes and regrets, Say what you would rather someone did, Talk about a difficult choice]
+story:
+  - "On the same Tuesday, Adam received two emails. The first was from a large airline in the Gulf. They were offering him a place as a junior pilot, with a salary five times bigger than anything in Sudan, and the chance to fly some of the biggest planes in the world. The second was from Sudan's national airline. The salary was small, and the planes were old, but the job was in Khartoum."
+  - "\"It's ((the chance of a lifetime)),\" said Omar. \"If you don't go, I'll go for you.\" Sara wasn't so sure. \"[I'd rather you stayed],\" she said honestly. \"But [I'd rather] you [were] happy there than unhappy here.\""
+  - "For a week, Adam couldn't sleep. Every night, he sat at his desk and tried to ((weigh up)) the two offers on a piece of paper. Money, planes, and experience on one side. Family, friends, and the Nile on the other. \"[I wish] I [could be] in two places at once,\" he told Huda. \"[If only] someone [would make] the decision for me.\""
+  - "Finally, he went to see Mr. Ali. He knew the story of the bank job in Dubai, and he expected his old teacher to tell him to stay. Instead, Mr. Ali surprised him. \"My choice was right for me,\" he said. \"It doesn't have to be right for you. [It's time] you [stopped] asking other people and [asked] yourself.\""
+  - "Then Adam went to his grandparents' house. His grandfather listened quietly. \"When I left for Cairo in 1975,\" he said, \"I [wished] every day that I [hadn't gone]. But I came back a better engineer, and your grandmother waited. ((Home is where the heart is)), Adam. If your heart is here, it will bring you back.\""
+  - "That night, Adam made his decision. He would fly in the Gulf for five years, learn everything he could, and then come home to fly for Sudan. He called the national airline and asked if they would hold a place for him. \"[We'd rather] you [started] now,\" the manager said. \"But we'll be waiting.\""
+  - "At the airport, his grandmother gave him a small envelope. Inside was the letter from 1975. \"Keep it,\" she said. \"It reminds us that some people are worth coming back for.\""
+questions:
+  - ["How many emails did Adam receive?", "Two."]
+  - ["What was the first offer?", "A place as a junior pilot at a large airline in the Gulf."]
+  - ["What was good about the second offer?", "The job was in Khartoum."]
+  - ["What did Omar say?", "It's the chance of a lifetime."]
+  - ["What did Sara say?", "She'd rather he stayed, but she'd rather he was happy there than unhappy here."]
+  - ["What did Adam write on one side of the paper?", "Money, planes, and experience."]
+  - ["What did Adam wish?", "That he could be in two places at once."]
+  - ["What did he expect Mr. Ali to tell him?", "To stay."]
+  - ["What did Mr. Ali tell him?", "It was time he stopped asking other people and asked himself."]
+  - ["What did his grandfather say about home?", "Home is where the heart is."]
+  - ["What did Adam decide?", "To fly in the Gulf for five years and then come home to fly for Sudan."]
+  - ["What did his grandmother give him at the airport?", "The letter from 1975."]
+pov:
+  intro: Now Adam's grandfather tells it.
+  speaker: Grandfather
+  text:
+    - "When Adam came to see me, he looked exactly like I did in 1975, young, excited, and afraid. He [wished] someone [would tell] him what to do."
+    - "I didn't tell him. [I'd rather] he [made] his own mistakes than lived with mine. But I told him the truth. Leaving was the hardest thing I ever did, and it was also the best."
+    - "[I wish] I [had written] more letters home when I was in Cairo. I hope Adam writes more than I did."
+    - "When Amna gave him the letter at the airport, I had to look away. [It's high time] I [stopped] crying at airports. I am seventy-one years old."
+learn:
+  title: You learned [wish], [if only], [would rather], and [it's time].
+  intro: We use them to talk about what we want to be different. After them, we often use a past form, even when we mean now.
+  wide: true
+  table:
+    - ["Form", "Example"]
+    - ["[I wish] + past: about now", "I wish I [could be] in two places."]
+    - ["[I wish] + past perfect: a regret", "I wish I [had written] more letters."]
+    - ["[If only] … [would]", "If only someone [would decide] for me!"]
+    - ["[I'd rather] + person + past", "I'd rather you [stayed]."]
+    - ["[It's time] + person + past", "It's time you [stopped] asking others."]
+  notes:
+    - {title: "A past form with a [present] meaning", text: "I'd rather you stayed means: I want you to stay now."}
+    - {title: "[I'd rather] + verb, for yourself", text: "I'd rather fly for Sudan. I'd rather you flew for Sudan."}
+    - {title: "[It's high time] is stronger", text: "It's high time we left. We are very late."}
+  ask: ["What do you wish you could change about your city?", "I wish there were more parks."]
+idioms:
+  - {expr: the chance of a lifetime, type: idiom, meaning: a very good opportunity that you will probably never get again, example: "Studying at that famous school was the chance of a lifetime."}
+  - {expr: weigh up, type: phrase, meaning: to think carefully about the good and bad sides before you decide, example: "Before buying the car, she weighed up the price and the cost of the fuel."}
+  - {expr: "Home is where the heart is.", type: proverb, meaning: "Your real home is the place where the people you love are.", example: "She has lived in three countries, but she always says that home is where the heart is."}
+words:
+  - {word: junior, meaning: at a low level in a job because you are new}
+  - {word: national, meaning: belonging to the whole country}
+  - {word: experience, meaning: knowledge and skill that you get from doing something}
+  - {word: hold, meaning: keep something for someone until later}
+  - {word: reminds, meaning: makes someone remember something}
+  - {word: worth, meaning: good or important enough for something}

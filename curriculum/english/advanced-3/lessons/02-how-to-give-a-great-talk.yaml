@@ -1,0 +1,40 @@
+lesson: 2
+unit: 1
+kind: topic
+title: How to Give a Great Talk
+subtitle: Most people are afraid of speaking in public. A few simple steps can make any talk better.
+icon: chat
+goals: [Talk about public speaking, Give advice in a clear order, Use participle clauses in advice]
+text:
+  - "Many people say that they are more afraid of [public speaking] than of spiders, snakes, or flying. Their hearts beat fast, their hands shake, and their minds go blank. But giving a good talk is a skill, and like any skill, it can be learned."
+  - "Start with your [audience]. Who are they, and what do they need to know? Having answered that question, choose one main message. A talk with ten messages is remembered for none of them."
+  - "Next, build your talk around a [story]. People forget numbers and lists, but they remember stories, especially true ones about real people. Begin with something that will ((break the ice)), a question, a surprising fact, or a little humor, and then ((get to the point)) quickly."
+  - "Use [slides] carefully. A slide should show a picture or a few words, not a page of text. If the audience is reading, they are not listening. And always be ready to speak without them, because technology fails more often than you think."
+  - "Finally, practice aloud, not just in your head. Record yourself on your phone and time your talk. Speak more slowly than feels natural, and pause after important points. Look at people, not at the screen or the floor."
+  - "Being nervous is normal, even for experienced speakers. The trick is not to stop the fear but to use it. Having prepared well, you will find that a little fear gives you energy instead of taking it away."
+facts:
+  - title: Four steps to a great talk
+    steps: true
+    items:
+      - {term: Audience, text: "who are they, and what do they need?"}
+      - {term: Message, text: choose one main idea}
+      - {term: Story, text: build the talk around real people}
+      - {term: Practice, text: "aloud, with a timer"}
+questions:
+  - ["What are many people more afraid of than spiders?", "Public speaking."]
+  - ["What should you think about first?", "Your audience."]
+  - ["Why should a talk have only one main message?", "A talk with ten messages is remembered for none of them."]
+  - ["Why should you build a talk around a story?", "People forget numbers and lists, but they remember stories."]
+  - ["What should a slide show?", "A picture or a few words."]
+  - ["How should you practice?", "Aloud, recording yourself and timing the talk."]
+  - ["What does a little fear give you?", "Energy."]
+idioms:
+  - {expr: break the ice, type: idiom, meaning: to say or do something that helps people relax at the start, example: "Our teacher broke the ice on the first day with a funny game."}
+  - {expr: get to the point, type: phrase, meaning: to talk about the most important thing without wasting time, example: "We only have five minutes, so please get to the point."}
+words:
+  - {word: blank, meaning: "empty, with no ideas"}
+  - {word: skill, meaning: something you can do well because you have learned it}
+  - {word: humor, meaning: the quality of being funny}
+  - {word: pause, meaning: stop for a short time}
+  - {word: experienced, meaning: having done something many times}
+  - {word: energy, meaning: the power and strength to do things}

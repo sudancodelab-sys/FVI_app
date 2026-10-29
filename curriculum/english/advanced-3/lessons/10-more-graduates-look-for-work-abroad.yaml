@@ -1,0 +1,49 @@
+lesson: 10
+unit: 4
+kind: news
+title: More Graduates Look for Work Abroad
+subtitle: Read a news report about young people leaving to work in other countries, and the ones who plan to come back.
+icon: news
+goals: [Read an education report, "Find who, what, where, when, and why", "Notice it's time and would rather in formal English"]
+paper: The Daily Nile
+date: Sunday, June 14
+headline: More Young Graduates Look for Work Abroad
+standfirst: A new survey shows that four in ten graduates plan to leave the country, but many say that they would rather come home later.
+byline: By our education reporter
+text:
+  - "Four in ten young graduates are planning to work abroad, according to a new survey of two thousand students in their final year. Most of them hope to find jobs in the Gulf, in Europe, or in other African countries."
+  - "The main reason, the survey found, is money. Many graduates say that salaries at home are too low to ((make ends meet)), especially in medicine, engineering, and technology. \"I love my country,\" said one medical student, \"but I have to think about my family.\""
+  - "Experts have long warned about the ((brain drain)), the loss of skilled people to other countries. \"Every doctor who leaves is a hospital that waits longer,\" said a professor of medicine. \"[It is time] the government [made] it easier for young people to stay.\""
+  - "But the survey also found some good news. More than half of the graduates who plan to leave say that they [would rather come] back within ten years, bringing new skills and experience with them. Some companies are already trying to attract them home. One airline, for example, has started to hold places for young pilots who train abroad."
+  - "\"Leaving is not always a loss,\" said a young engineer who returned last year after five years in Germany. \"I learned things there that I could never have learned here. Now I'm teaching them to others.\""
+quote:
+  after: 3
+  text: Every doctor who leaves is a hospital that waits longer.
+  by: A professor of medicine
+facts:
+  - title: The five key facts
+    style: ws
+    items:
+      - {term: "Who?", text: young graduates in their final year}
+      - {term: "What?", text: four in ten plan to work abroad}
+      - {term: "Where?", text: "the Gulf, Europe, and other African countries"}
+      - {term: "When?", text: a new survey this year}
+      - {term: "Why?", text: low salaries at home}
+questions:
+  - ["How many graduates plan to work abroad?", "Four in ten."]
+  - ["Where do most of them hope to work?", "In the Gulf, in Europe, or in other African countries."]
+  - ["What is the main reason?", "Money. Salaries at home are too low."]
+  - ["What is the brain drain?", "The loss of skilled people to other countries."]
+  - ["What does the professor say it is time for?", "For the government to make it easier for young people to stay."]
+  - ["What would more than half of them rather do?", "Come back within ten years."]
+  - ["What has one airline started to do?", "Hold places for young pilots who train abroad."]
+idioms:
+  - {expr: make ends meet, type: idiom, meaning: to have just enough money for the things you need, example: "With prices so high, many families find it hard to make ends meet."}
+  - {expr: brain drain, type: phrase, meaning: when many educated or skilled people leave their country to work in another, example: "The country lost many of its doctors to the brain drain."}
+words:
+  - {word: graduates, meaning: people who have finished university}
+  - {word: survey, meaning: a set of questions that many people answer}
+  - {word: skilled, meaning: trained to do a job well}
+  - {word: attract, meaning: make someone want to come}
+  - {word: loss, meaning: the act of losing something or someone}
+  - {word: returned, meaning: came back}

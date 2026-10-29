@@ -33,7 +33,7 @@ cd packages/fvi_core && dart test
 - مستوى Intermediate 2 معتمد من المعهد: 13 درساً في 5 وحدات، في كتاب من 29 صفحة. وبه تكتمل المرحلة المتوسطة.
 - مستوى Advanced 1 معتمد من المعهد: 13 درساً في 5 وحدات، منها خبر صحفي وبودكاست، في كتاب من 31 صفحة.
 - مستوى Advanced 2 معتمد من المعهد: 13 درساً في 5 وحدات، و31 تعبيراً ومثلاً، في كتاب من 36 صفحة.
-- مستوى Advanced 3: الخطة والصفحة التجريبية بانتظار الموافقة.
+- مستوى Advanced 3: كتاب كامل من 38 صفحة (13 درساً في 5 وحدات، و31 تعبيراً ومثلاً)، بانتظار المراجعة. وهو آخر مستوى في المنهج.
 
 لبناء كتاب المستوى (يحتاج Python مع PyYAML وJinja2 وcmudict، وNode مع Playwright):
 
@@ -47,4 +47,5 @@ python3 curriculum/tools/build.py english/intermediate-1 --book --out int1-book
 python3 curriculum/tools/build.py english/intermediate-2 --book --out int2-book
 python3 curriculum/tools/build.py english/advanced-1 --book --out adv1-book
 python3 curriculum/tools/build.py english/advanced-2 --book --out adv2-book
+python3 curriculum/tools/build.py english/advanced-3 --book --out adv3-book
 ```

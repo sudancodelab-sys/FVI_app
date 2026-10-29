@@ -1,0 +1,63 @@
+lesson: 12
+unit: 5
+kind: story
+title: The Last Lesson
+subtitle: After thirty years, Mr. Ali is teaching his last class. He hates being thanked, so his students find another way. Read the story, then read it from Mr. Ali's point of view.
+icon: book
+goals: [Use advanced passive forms, Talk about memories and endings, Say thank you in a meaningful way]
+story:
+  - "After thirty years, Mr. Ali's last day at the institute had come. He had asked for no party and no speeches, because Mr. Ali [hates being thanked]. \"Teachers [are paid] to teach,\" he always said. \"They don't need [to be thanked] for it.\""
+  - "So his students decided not to thank him, not with words, anyway. For two months, Huda and Sara had been secretly contacting people who [had been taught] by him over the years. They found more than two hundred."
+  - "On the last day, Mr. Ali walked into his classroom at eight o'clock, as usual, and stopped. The room was full. Doctors, farmers, engineers, shop owners, and teachers were sitting at the desks, and more were standing along the walls. On the board, someone had written one word. Future."
+  - "\"[Having been taught] by you,\" said Dr. Amira, standing up, \"we wanted to give you one more lesson. Today, you're the student.\" And one by one, they told him what they had learned from him. Not grammar, but other things. To ask questions. To be patient. To stop for people by the road. Omar said that one, and everyone laughed."
+  - "Mr. Ali tried to speak, but he had ((a lump in his throat)). Then Adam, who [had been given] three days off by his new airline, stood up with a box. Inside were the letters that the class had written to their future selves. \"You were supposed to post these in ten years,\" he said. \"But we'd like you to read them now.\""
+  - "Mr. Ali read them all, slowly, while the room waited. Then he put them back in the box. \"Every one of you has become what you wrote,\" he said quietly. \"I [expected to be given] a cake today, not this.\""
+  - "When he finally left the building, his students walked with him to the gate. \"Will you miss it?\" asked Sara. Mr. Ali smiled. \"When I ((look back on)) these thirty years, I will remember faces, not lessons. ((All good things must come to an end)). But that doesn't mean they stop being good.\""
+questions:
+  - ["How long had Mr. Ali been teaching at the institute?", "Thirty years."]
+  - ["What had he asked for?", "No party and no speeches."]
+  - ["Why doesn't he like being thanked?", "He says that teachers are paid to teach."]
+  - ["What had Huda and Sara been doing for two months?", "Secretly contacting people who had been taught by him."]
+  - ["How many did they find?", "More than two hundred."]
+  - ["What did Mr. Ali see when he walked into his classroom?", "The room was full of his old students."]
+  - ["What word was written on the board?", "Future."]
+  - ["What did Dr. Amira say?", "Today, you're the student."]
+  - ["What did Omar say he had learned?", "To stop for people by the road."]
+  - ["What was inside Adam's box?", "The letters that the class had written to their future selves."]
+  - ["What did Mr. Ali expect to be given?", "A cake."]
+  - ["What will he remember when he looks back on these years?", "Faces, not lessons."]
+pov:
+  intro: Now Mr. Ali tells it.
+  speaker: Mr. Ali
+  text:
+    - "I [don't like being surprised], and I [hate being thanked]. My students know both of these things, so of course they did both."
+    - "When I opened the door that morning, I saw thirty years of faces. Some of them I had taught as children, and now they [were being called] doctor and engineer by their own students."
+    - "[Having been told] for thirty years that teaching is a small job, I learned that day that it is not. Every person in that room [had been changed] by something small, a question, a word on a board, a little patience."
+    - "I am told that I will [be given] a pension and a quiet life. I would rather [be given] a new class. But perhaps it is time I learned something new myself."
+learn:
+  title: You learned [advanced passive forms].
+  intro: The passive can come after verbs and in other forms, not only after is and was.
+  wide: true
+  table:
+    - ["Form", "Example"]
+    - ["[being] + past participle", "He hates [being thanked]."]
+    - ["[to be] + past participle", "They don't need [to be thanked]."]
+    - ["[having been] + past participle", "[Having been taught] by you, we…"]
+    - ["[had been] + past participle", "People who [had been taught] by him came."]
+    - ["[was / were being] + past participle", "They [were being called] doctor."]
+  notes:
+    - {title: "After [like, hate, enjoy]: being", text: "I don't like being surprised."}
+    - {title: "After [want, expect, need]: to be", text: "I expected to be given a cake."}
+    - {title: "Who did it? Add [by]", text: "They had been taught by Mr. Ali."}
+  ask: ["Do you like being given advice?", "I like being given advice by my parents."]
+idioms:
+  - {expr: have a lump in your throat, type: idiom, meaning: to feel that you are going to cry, example: "When my sister got married, I had a lump in my throat."}
+  - {expr: look back on something, type: phrase, meaning: to think about something that happened in the past, example: "When I look back on my school days, I remember my friends most."}
+  - {expr: "All good things must come to an end.", type: proverb, meaning: "Even the best times in life don't last forever.", example: "The holiday was wonderful, but all good things must come to an end."}
+words:
+  - {word: speeches, meaning: formal talks to a group of people}
+  - {word: secretly, meaning: without other people knowing}
+  - {word: contacting, meaning: calling or writing to someone}
+  - {word: owners, meaning: people who have something that belongs to them}
+  - {word: patience, meaning: the ability to wait or try again without getting angry}
+  - {word: pension, meaning: money that you get every month after you stop working}
