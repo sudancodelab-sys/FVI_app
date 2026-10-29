@@ -1,0 +1,26 @@
+# Advanced 3 level metadata (P10 internally, CEFR C1.1).
+# The last level of the course: the English of talks, debates and public life.
+name: Advanced 3
+chip: ADVANCED 3
+stage: Advanced
+cefr: C1.1
+tagline: The English of talks, decisions, and public life
+subtitle: Stories · News · Podcasts · Conversations
+story_words: [300, 420]
+split_boxes: true
+# Every lesson teaches idioms, proverbs and phrases (Advanced 2 on).
+idioms: true
+units:
+  1: Having Arrived…
+  2: Never Have I Seen…
+  3: Had We Known…
+  4: I'd Rather You Stayed
+  5: Being Remembered
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}
+  Huda: {initial: H, color: e}
+  # Guests and one-scene roles.
+  Mona: {initial: MO, color: e}

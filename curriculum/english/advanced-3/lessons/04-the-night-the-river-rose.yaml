@@ -1,0 +1,63 @@
+lesson: 4
+unit: 2
+kind: story
+title: The Night the River Rose
+subtitle: A sudden flood cuts off the village where Sara's team built its solar pump. Read the story, then read it from the point of view of an engineer on her team.
+icon: rain
+goals: [Give emphasis with inversion, Tell a dramatic story, Describe how people work together in a crisis]
+story:
+  - "Sara had visited the village near Kassala many times since her team built the solar pump, but she had never seen the sky like this. [Never had] the old men of the village [seen] so much rain in one afternoon. By evening, the Gash River, which is dry for most of the year, had become a brown, roaring wall of water."
+  - "[Not only did] the river [rise] faster than anyone expected, but the road to Kassala was also ((cut off)) within an hour. Fifty families lived on the low side of the village, close to the water. Sara, Tarig, and Mona ran from house to house, telling people to move to the school, which stood on higher ground."
+  - "[Hardly had] the last family [reached] the school [when] the water poured into the empty streets behind them. Two hundred people were crowded into four classrooms, most of them wet and frightened. Then a woman ran to Sara. \"My father needs his heart medicine,\" she said, \"and it's in our house.\" The house was already under water."
+  - "Sara called the one person she knew who could get medicine through a flood. Omar's company had spent a year testing drones that carry medicine to villages. \"Give me two hours,\" he said. \"Keep your phone on.\""
+  - "[Only then did] Sara [realize] how tired she was, but there was no time to rest. Mona kept the children calm with games and stories. Tarig connected the batteries from the pump to the school, so the classrooms had light all night. The women cooked rice in the yard, and the men carried clean water from the pump's tank. Everyone had a job. \"((Many hands make light work)),\" said one of the old men."
+  - "At two in the morning, they heard a soft buzzing above the school. A small drone came down out of the darkness and landed in the yard with a box. Inside were the medicine, some bandages, and a note. From Omar's Technology. With an H this time. Sara laughed for the first time that night."
+  - "By the next afternoon, the water had gone down, and a Red Crescent truck arrived. [Never before had] the village [felt] so close. \"You were ((a ray of hope)) for us,\" the woman told Sara. Sara shook her head and pointed at the people in the yard. \"No,\" she said. \"We all were.\""
+questions:
+  - ["Where was Sara?", "In the village near Kassala, where her team had built the solar pump."]
+  - ["What had the old men never seen?", "So much rain in one afternoon."]
+  - ["What did the Gash River become?", "A brown, roaring wall of water."]
+  - ["What happened to the road to Kassala?", "It was cut off within an hour."]
+  - ["Where did the families go?", "To the school, which stood on higher ground."]
+  - ["What happened as soon as the last family reached the school?", "The water poured into the empty streets behind them."]
+  - ["What did the woman's father need?", "His heart medicine."]
+  - ["Who did Sara call?", "Omar."]
+  - ["How did the classrooms have light all night?", "Tarig connected the batteries from the pump to the school."]
+  - ["When did the drone arrive?", "At two in the morning."]
+  - ["What did the note say?", "From Omar's Technology. With an H this time."]
+  - ["What did Sara say when the woman thanked her?", "\"We all were.\""]
+pov:
+  intro: Now Mona tells it.
+  speaker: Mona
+  text:
+    - "I have worked on many projects, but [never have I been] as frightened as I was that night. The rain didn't stop for six hours, and the river rose faster than any of us expected."
+    - "My job was the children. More than eighty of them were in one classroom, terrified of the noise, so we played games and sang until they fell asleep. [Not once did] they [stop] asking about their homes."
+    - "[Little did] we [know] that Omar was already on his way. When his drone landed in the yard, the children who were still awake started cheering, and the ones who were asleep woke up."
+    - "[Only later did] I [understand] what we had done. Nobody had been hurt, and every family had a dry place to sleep."
+learn:
+  title: You learned [inversion] for emphasis.
+  intro: After a negative or limiting word at the start of a sentence, the auxiliary verb comes before the subject, as in a question. It sounds formal and dramatic.
+  wide: true
+  table:
+    - ["Normal word order", "With inversion"]
+    - ["The village had never seen such rain.", "[Never had] the village [seen] such rain."]
+    - ["The river rose, and the road closed too.", "[Not only did] the river [rise], but…"]
+    - ["As soon as they arrived, the water came.", "[Hardly had] they [arrived] [when] it came."]
+    - ["She realized it only then.", "[Only then did] she [realize] it."]
+    - ["We didn't know he was coming.", "[Little did] we [know] he was coming."]
+  notes:
+    - {title: "Word + [auxiliary] + subject", text: "Never have I seen… Rarely do we hear… Not once did they stop…"}
+    - {title: "Past simple: add [did]", text: "The river rose. Not only did the river rise…"}
+    - {title: "Use it [carefully]", text: "It is dramatic. In everyday speech, normal word order is better."}
+  ask: ["What have you never seen in your life?", "Never have I seen snow."]
+idioms:
+  - {expr: cut off, type: phrase, meaning: "separated from other places, so that people can't reach you", example: "After the storm, the village was cut off for three days."}
+  - {expr: "Many hands make light work.", type: proverb, meaning: "A job is easier and faster when many people help.", example: "Let's all clean the classroom together. Many hands make light work."}
+  - {expr: a ray of hope, type: idiom, meaning: a small sign that things will get better, example: "The doctor's words gave the family a ray of hope."}
+words:
+  - {word: roaring, meaning: "making a very loud, deep noise"}
+  - {word: poured, meaning: flowed quickly and in large amounts}
+  - {word: crowded, meaning: with too many people in a small space}
+  - {word: bandages, meaning: long pieces of cloth that you put around a wound}
+  - {word: buzzing, meaning: a low noise like the sound of a bee}
+  - {word: terrified, meaning: "very, very frightened"}
