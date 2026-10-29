@@ -57,11 +57,11 @@ learn:
   ar:
     summary: "نستعمل المضارع البسيط للأشياء التي نفعلها كل يوم أو بشكل متكرر، مثل العادات والروتين اليومي."
     points:
-      - "مع I وyou وwe وthey يبقى الفعل كما هو: I wake up at six."
-      - "مع he وshe وit نضيف s إلى الفعل: Adam wakes up at six."
-      - "إذا انتهى الفعل بـ ch أو sh أو o نضيف es: watch ← watches، وgo ← goes."
-      - "الفعل have يصبح has مع he وshe وit: He has lunch with his family."
-      - "للسؤال نبدأ بـ Do أو Does، ويعود الفعل بلا s: Does he wake up at six?"
+      - ["مع I · you · we · they يبقى الفعل كما هو.", "I [wake] up at six."]
+      - ["مع he · she · it نضيف s إلى الفعل.", "Adam [wakes] up at six."]
+      - ["إذا انتهى الفعل بـ ch أو sh أو o نضيف es.", "He [watches] TV. He [goes] home."]
+      - ["الفعل have يصبح has مع he · she · it.", "He [has] lunch with his family."]
+      - ["للسؤال نبدأ بـ Do أو Does، ويعود الفعل بلا s.", "[Does] he [wake] up at six?"]
 words:
   - {word: wake up, meaning: stop sleeping}
   - {word: beans, meaning: small seeds we cook; a popular breakfast}

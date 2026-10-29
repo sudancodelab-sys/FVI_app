@@ -47,14 +47,14 @@ learn:
     - {title: "Questions: [be] comes first", text: "He is nineteen. → Is he nineteen?"}
   ask: ["Is he from Khartoum?", "Yes, he is.  /  No, he isn't."]
   ar:
-    summary: "الفعل be معناه «يكون». في العربية نقول «أنا طالب» بلا فعل، أما في الإنجليزية فلا بد منه: I am a student."
+    summary: "الفعل be معناه «يكون». في العربية نقول «أنا طالب» بلا فعل، أما في الإنجليزية فلا بد منه."
     points:
-      - "مع I نستعمل am: I am Adam."
-      - "مع he وshe وit نستعمل is: Omar is from Port Sudan."
-      - "مع you وwe وthey نستعمل are: They are friends."
-      - "في الكلام نختصر غالباً: I'm وhe's وthey're."
-      - "للنفي نضيف not: He isn't from Khartoum. They aren't late."
-      - "للسؤال نبدأ بالفعل: He is nineteen. ← Is he nineteen?"
+      - ["مع I نستعمل am.", "I [am] Adam."]
+      - ["مع he · she · it نستعمل is.", "Omar [is] from Port Sudan."]
+      - ["مع you · we · they نستعمل are.", "They [are] friends."]
+      - ["في الكلام نختصره غالباً.", "I['m] Adam. He['s] nineteen. They['re] friends."]
+      - ["للنفي نضيف not بعده.", "He [isn't] from Khartoum. They [aren't] late."]
+      - ["للسؤال نبدأ به قبل الفاعل.", "[Is] he nineteen?"]
 words:
   - {word: level, meaning: a stage in learning; Starter is the first level}
   - {word: city, meaning: a big town}

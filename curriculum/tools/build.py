@@ -398,7 +398,9 @@ def check_lessons(level, lessons, wordlists, report):
 def check_arabic_note(level, lesson, where, report):
     """In the levels with arabic_notes: true (Pre-Intermediate 1 to 4), a
     grammar lesson may carry learn.ar: a short explanation in Arabic for
-    the app, with a summary and a few points."""
+    the app, with a summary and a few points. A point is Arabic only, or a
+    pair: the Arabic explanation and its English example, which the app
+    shows on its own line, left to right, so the two never mix."""
     note = (lesson.get('learn') or {}).get('ar')
     if note is None:
         return
@@ -408,9 +410,13 @@ def check_arabic_note(level, lesson, where, report):
     if set(note) - {'summary', 'points'} or not note.get('summary') or not note.get('points'):
         report.error(where, 'learn.ar needs a summary and points, nothing else')
         return
-    for text in [note['summary']] + list(note['points']):
+    for point in [note['summary']] + list(note['points']):
+        text, example = (point, None) if isinstance(point, str) else (point + [None, None])[:2]
         if not isinstance(text, str) or not _ARABIC.search(text):
             report.error(where, f'learn.ar should be written in Arabic: "{text}"')
+        if not isinstance(point, str) and (len(point) != 2 or not isinstance(example, str)
+                                            or _ARABIC.search(example)):
+            report.error(where, f'a learn.ar point is [Arabic, English example]: {point}')
 
 
 def check_idioms(level, lesson, where, report):

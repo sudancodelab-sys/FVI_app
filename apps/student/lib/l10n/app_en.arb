@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "appTitle": "Future Vision Institute",
+  "courseEnglish": "English",
+  "courseEnglishSub": "Languages · {count} levels on the CEFR scale",
+  "lessonsCount": "{count} lessons",
+  "unitN": "Unit {n}",
+  "lessonNofM": "Lesson {n} of {m}",
+  "listenAll": "Listen to the whole lesson",
+  "stopListening": "Stop",
+  "inArabic": "Explained in Arabic",
+  "audioMissing": "The audio for this part has not been added yet.",
+  "nextLesson": "Next lesson",
+  "previousLesson": "Previous lesson",
+  "phonicsPart": "Part 1: Phonics",
+  "speakingPart": "Part 2: Speaking",
+  "play": "Listen",
+  "stagePreIntermediate": "Pre-Intermediate",
+  "stageIntermediate": "Intermediate",
+  "stageAdvanced": "Advanced"
+}

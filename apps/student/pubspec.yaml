@@ -1,0 +1,49 @@
+name: fvi_student
+description: The student app of Future Vision Institute. The English course, offline, with audio.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  just_audio: ^0.10.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    # Written by curriculum/tools/export_app.py; not committed.
+    - assets/content/
+  fonts:
+    # Arabic and the interface.
+    - family: Cairo
+      fonts:
+        - {asset: assets/fonts/Cairo-Regular.ttf, weight: 400}
+        - {asset: assets/fonts/Cairo-SemiBold.ttf, weight: 600}
+        - {asset: assets/fonts/Cairo-Bold.ttf, weight: 700}
+        - {asset: assets/fonts/Cairo-ExtraBold.ttf, weight: 800}
+    # English lesson text, as in the books.
+    - family: Lexend
+      fonts:
+        - {asset: assets/fonts/Lexend-Regular.ttf, weight: 400}
+        - {asset: assets/fonts/Lexend-SemiBold.ttf, weight: 600}
+        - {asset: assets/fonts/Lexend-Bold.ttf, weight: 700}
+        - {asset: assets/fonts/Lexend-ExtraBold.ttf, weight: 800}
+    # The IPA symbols of the Starter sound lessons.
+    - family: NotoSansIPA
+      fonts:
+        - {asset: assets/fonts/NotoSansIPA-Regular.ttf, weight: 400}
+        - {asset: assets/fonts/NotoSansIPA-Bold.ttf, weight: 700}

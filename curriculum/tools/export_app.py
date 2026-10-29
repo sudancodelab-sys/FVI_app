@@ -233,13 +233,19 @@ def main():
     levels = args.levels or [f'english/{s}' for s in slugs.values()]
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
+    index = []
     for lv in levels:
         data = export_level(lv)
         path = out_dir / f'{data["slug"]}.json'
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding='utf-8')
+        index.append({k: data[k] for k in ('slug', 'id', 'order', 'name', 'cefr', 'stage')}
+                     | {'lessons': len(data.get('lessons', [])) or len(data['phonics']) + len(data['speaking'])})
         items = list(audio_items(data))
         print(f'{path.relative_to(out_dir.parent.parent) if out_dir.is_relative_to(ROOT.parent) else path}: '
               f'{len(data.get("lessons", data.get("phonics", [])))} lessons, {len(items)} audio items')
+    if not args.levels:
+        index.sort(key=lambda l: l['order'])
+        (out_dir / 'index.json').write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding='utf-8')
 
 
 if __name__ == '__main__':
