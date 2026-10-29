@@ -12,3 +12,5 @@ stages:
     levels: [Intermediate 1, Intermediate 2]
   - name: Advanced
     levels: [Advanced 1, Advanced 2, Advanced 3]
+# Cover layout for every level: a (panel) or b (band and track).
+cover_style: a
