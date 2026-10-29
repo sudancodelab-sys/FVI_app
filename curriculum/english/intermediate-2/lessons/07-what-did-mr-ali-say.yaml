@@ -1,0 +1,55 @@
+lesson: 7
+unit: 3
+kind: story
+title: What Did Mr. Ali Say?
+subtitle: A message about a test travels from student to student, and it changes on the way. Read the story, then read the exact words people said.
+icon: chat
+goals: [Report what people said, Use said and told, Pass on a message correctly]
+story:
+  - On Wednesday, Mr. Ali was sick, so a new teacher, Ms. Nadia, came to class instead. At the end of the lesson, she gave the students a message from Mr. Ali. She [said that] there [would be] a short test on Sunday. She [said that] it [would be] about the stories from Units 1 and 2, and she [told] the students [to bring] a pencil.
+  - "After class, Adam called Omar, who had been absent that day. \"Ms. Nadia [said that] the test [was] on Sunday,\" he said. \"She [told us that] it [was] about Units 1 and 2.\" Then Omar called Huda. \"Adam [said that] the test [was] on Sunday, about Unit 2.\""
+  - "Huda sent a message to the class group. \"Omar [says] there's a test on Sunday about Unit 2, or maybe Monday?\" Then someone wrote, \"I heard that there [was] no test!\" By Saturday night, nobody knew what was true. Some students [said that] the test [had been] canceled. Others [said that] it [was] on Monday."
+  - "On Sunday morning, Mr. Ali came back. Half of the students had pencils, and the other half looked very surprised. \"What's wrong?\" Mr. Ali asked. Sara explained what everyone [had said]. Mr. Ali laughed. \"This is a perfect lesson,\" he said. \"Today, there is no test. Today, we are going to learn reported speech!\""
+questions:
+  - ["Why didn't Mr. Ali come on Wednesday?", "He was sick."]
+  - ["Who came instead?", "A new teacher, Ms. Nadia."]
+  - ["What did she say about the test?", "She said that there would be a short test on Sunday."]
+  - ["What did she say it would be about?", "The stories from Units 1 and 2."]
+  - ["What did she tell the students to bring?", "A pencil."]
+  - ["Who did Adam call?", "Omar, who had been absent."]
+  - ["What did Omar tell Huda?", "That the test was on Sunday, about Unit 2."]
+  - ["Where did Huda send a message?", "To the class group."]
+  - ["What did someone write?", "That there was no test."]
+  - ["What did some students say on Saturday night?", "That the test had been canceled."]
+  - ["How many students had pencils on Sunday?", "Half of them."]
+  - ["What did Mr. Ali say they were going to learn?", "Reported speech!"]
+pov:
+  intro: Now Sara gives the exact words that people said.
+  speaker: Sara
+  text:
+    - "On Wednesday, Ms. Nadia said, \"There [will be] a short test on Sunday. It [is] about the stories from Units 1 and 2. [Bring] a pencil, please.\""
+    - "After class, Adam told Omar, \"The test [is] on Sunday. It['s] about Units 1 and 2.\" And Omar told Huda, \"Adam says the test [is] on Sunday, about Unit 2.\""
+    - "Huda wrote in our group, \"Omar says there's a test on Sunday about Unit 2, or maybe Monday?\" Then someone wrote, \"There['s] no test!\" And others wrote, \"The test [has been] canceled!\""
+    - "On Sunday, Mr. Ali laughed. \"Today, there [is] no test. Today, we [are going to] learn reported speech!\""
+learn:
+  title: You learned [reported speech].
+  intro: We use it to tell other people what someone said. The verb usually moves one step back into the past.
+  wide: true
+  table:
+    - ["What she said", "What we report"]
+    - ["\"There [will] be a test.\"", "She said that there [would] be a test."]
+    - ["\"The test [is] on Sunday.\"", "He said that the test [was] on Sunday."]
+    - ["\"The test [has been] canceled.\"", "They said that the test [had been] canceled."]
+    - ["\"Bring a pencil.\"", "She told us [to bring] a pencil."]
+  notes:
+    - {title: "One step back: [is → was · will → would]", text: "has been → had been, can → could"}
+    - {title: "[said] … or [told] + a person", text: "She said that… · She told us that…"}
+    - {title: "Orders: [told … to]", text: "She told us to bring a pencil."}
+  ask: ["What did the teacher say?", "She said that the test would be on Sunday."]
+words:
+  - {word: instead, meaning: in the place of someone or something}
+  - {word: heard, meaning: the past of hear}
+  - {word: "true", meaning: correct; real}
+  - {word: canceled, meaning: stopped; it will not happen}
+  - {word: half, meaning: one of two equal parts}
+  - {word: explained, meaning: said how or why something happened}

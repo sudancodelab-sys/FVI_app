@@ -1,0 +1,22 @@
+# Intermediate 2 level metadata (P7 internally, CEFR B1.2).
+# The last level of the Intermediate stage.
+name: Intermediate 2
+chip: INTERMEDIATE 2
+stage: Intermediate
+cefr: B1.2
+tagline: Real conversations, big ideas, and science that matters
+subtitle: Stories · Topics · Science · Conversations
+story_words: [190, 290]
+split_boxes: true
+units:
+  1: How Long Have You Been…?
+  2: What Would You Do?
+  3: She Said That…
+  4: It Must Be…
+  5: Love Doing, Decide to Do
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}
+  Huda: {initial: H, color: e}

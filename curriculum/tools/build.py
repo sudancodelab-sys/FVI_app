@@ -338,6 +338,11 @@ def check_lessons(level, lessons, wordlists, report):
                 report.error(where, f'"{who}" is not in the level cast ({", ".join(cast)})')
         if len(lesson['words']) > 6:
             report.error(where, 'more than 6 new words')
+        bad = [w['word'] for w in lesson['words'] if not isinstance(w['word'], str)]
+        if bad:
+            # YAML reads true, no, on, off as booleans unless they are quoted.
+            report.error(where, f'new words {bad} are not text; put them in quotes in the YAML')
+            continue
         # Everything the student reads, without the new-words box itself.
         body = plain(' '.join(_strings({k: v for k, v in lesson.items() if k != 'words'})))
         for token in _words_in(body):
