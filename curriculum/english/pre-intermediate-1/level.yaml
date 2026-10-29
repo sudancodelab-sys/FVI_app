@@ -18,3 +18,6 @@ cast:
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
   Omar: {initial: O, color: d}
+  # People in one scene only.
+  Waiter: {initial: W, color: e}
+  Seller: {initial: SE, color: e}

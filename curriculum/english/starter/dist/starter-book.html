@@ -2920,13 +2920,16 @@ window.fviReady = (async () => {
   await document.fonts.ready;
   const overflows = (page) => page.scrollHeight > page.clientHeight + 1;
   const flowOf = (page) => page.querySelector('.flow');
-  // A section may split between its letter teams, its rule boxes or its
-  // questions. One with other content (a grid of sound cards) keeps that
-  // content and may hand on every box; a plain list keeps at least its first.
-  const ITEM = '.team, .rule, .q';
+  // A section may split between its letter teams, rule boxes, questions or
+  // conversation lines. One with other content (a grid of sound cards) keeps
+  // that content and may hand on every box; a list keeps at least its first
+  // item, and a conversation its first three lines.
+  const ITEM = '.team, .rule, .q, .line';
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
-  const minKeep = (sec) => ([...sec.children].some((el) =>
-    !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1);
+  const minKeep = (sec) => {
+    if (sec.querySelector(':scope > .line')) return 3;
+    return [...sec.children].some((el) => !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1;
+  };
   const canSplit = (sec) => items(sec).length > minKeep(sec);
   document.querySelectorAll('.sec').forEach((sec, i) => { sec.dataset.sid = i; });
 
@@ -2957,7 +2960,7 @@ window.fviReady = (async () => {
   // An empty "(continued)" part of `sec` at the start of `next`.
   const newTail = (sec, next) => {
     const tail = document.createElement('div');
-    tail.className = 'sec';
+    tail.className = sec.className;  // keeps a grid of questions a grid
     // Every part of a section shares its id, so any part can take the next one back.
     tail.dataset.tailOf = sec.dataset.sid;
     tail.dataset.sid = sec.dataset.sid;

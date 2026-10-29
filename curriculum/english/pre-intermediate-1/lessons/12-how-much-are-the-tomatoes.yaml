@@ -1,0 +1,31 @@
+lesson: 12
+unit: 4
+kind: conversation
+title: How Much Are the Tomatoes?
+subtitle: Buying food at the market
+icon: basket
+goals: [Ask the price, Ask for an amount, Ask for a lower price]
+scene: On Saturday morning, Omar is at the market. He needs tomatoes and eggs for his lunch.
+conversation:
+  - [Omar, "Good morning. How much are the tomatoes?"]
+  - [Seller, "Two thousand pounds a kilo."]
+  - [Omar, "Can I have two kilos, please?"]
+  - [Seller, "Sure. Anything else?"]
+  - [Omar, "Ten eggs, please. How much are they?"]
+  - [Seller, "Ten eggs are two thousand."]
+  - [Omar, "So that's six thousand. Can you make it five thousand five hundred?"]
+  - [Seller, "Hmm. OK, five thousand five hundred, for a good customer!"]
+  - [Omar, "Thank you! Here you are."]
+  - [Seller, "Thank you. See you next time!"]
+phrases:
+  - {title: Ask the price, lines: ["How much are the tomatoes?"], reply: "Two thousand a kilo."}
+  - {title: Ask for an amount, lines: ["Can I have two kilos, please?"], reply: "Sure."}
+  - {title: Count things, lines: ["Ten eggs, please."]}
+  - {title: Add it up, lines: ["So that's six thousand."]}
+  - {title: Ask for a lower price, lines: ["Can you make it five thousand five hundred?"], reply: "OK!"}
+  - {title: Say goodbye, lines: ["See you next time!"]}
+words:
+  - {word: tomatoes, meaning: red vegetables for salad and cooking}
+  - {word: make it, meaning: change the price to}
+  - {word: customer, meaning: a person who buys from a shop}
+  - {word: next time, meaning: the time we meet again}

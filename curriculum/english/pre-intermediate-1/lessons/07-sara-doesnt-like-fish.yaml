@@ -1,0 +1,55 @@
+lesson: 7
+unit: 3
+kind: story
+title: Sara Doesn't Like Fish
+subtitle: Every Friday, Sara's family eats fish. Sara doesn't. Read the story, then read it again from Sara's point of view.
+icon: fish
+goals: [Say what you like and don't like, Ask with Do and Does, Answer Yes I do and No I don't]
+story:
+  - Sara lives with her family. Every Friday, her mother cooks fish for lunch. Her father likes fish. Her little sister, Lina, likes fish, too. But Sara [doesn't like] fish. She [doesn't eat] it.
+  - "\"[Do] you [want] some fish, Sara?\" her mother asks. \"No, thank you,\" Sara says. \"I [don't like] fish.\" So Sara eats rice and salad."
+  - One Friday, her mother [doesn't cook] fish. She cooks chicken. Sara is happy. But her father [doesn't eat] much, and Lina [doesn't smile]. They [don't like] Friday without fish!
+  - The next Friday, Sara cooks lunch. She makes fish with lemon and rice. Her family loves it. And Sara? She eats a little fish, and she likes it!
+questions:
+  - ["Does Sara's mother cook fish every Friday?", "Yes, she does."]
+  - ["Does Sara's father like fish?", "Yes, he does."]
+  - ["Does Lina like fish?", "Yes, she does."]
+  - ["Does Sara like fish?", "No, she doesn't."]
+  - ["Does Sara eat fish or rice?", "Rice. She eats rice and salad."]
+  - ["What does Sara say to her mother?", "\"No, thank you. I don't like fish.\""]
+  - ["What does her mother cook one Friday?", "Chicken."]
+  - ["Is Sara happy?", "Yes, she is."]
+  - ["Does Lina smile?", "No, she doesn't."]
+  - ["Who cooks lunch the next Friday?", "Sara."]
+  - ["What does she make?", "Fish with lemon and rice."]
+  - ["Does Sara like the fish?", "Yes, she does!"]
+pov:
+  intro: Now Sara tells the story.
+  speaker: Sara
+  text:
+    - I live with my family. Every Friday, my mother cooks fish for lunch. My father likes fish, and my little sister, Lina, likes fish, too. But I [don't like] fish. I [don't eat] it.
+    - "\"[Do] you [want] some fish, Sara?\" my mother asks. \"No, thank you. I [don't like] fish.\" So I eat rice and salad."
+    - One Friday, my mother [doesn't cook] fish. She cooks chicken. I'm happy. But my father [doesn't eat] much, and Lina [doesn't smile]. They [don't like] Friday without fish!
+    - The next Friday, I cook lunch. I make fish with lemon and rice. My family loves it. And me? I eat a little fish, and I like it!
+learn:
+  title: You learned [don't] and [doesn't].
+  intro: We use them to say no in the present simple. To ask, we start with Do or Does.
+  wide: true
+  table:
+    - ["I · you · we · they", "he · she · it"]
+    - ["I like fish.", "She like[s] fish."]
+    - ["I [don't] like fish.", "She [doesn't] like fish."]
+    - ["[Do] you like fish?", "[Does] she like fish?"]
+    - ["Yes, I [do].  /  No, I [don't].", "Yes, she [does].  /  No, she [doesn't]."]
+  notes:
+    - {title: "don't = [do not]", text: "We usually say don't and doesn't."}
+    - {title: "After doesn't: no [-s]", text: "She doesn't like fish. Not: doesn't likes."}
+    - {title: "Questions start with [Do / Does]", text: "Do you want some fish? Does Lina like fish?"}
+  ask: ["Does Sara like fish?", "Yes, she does.  /  No, she doesn't."]
+words:
+  - {word: cook, meaning: make food hot and ready to eat}
+  - {word: rice, meaning: small white seeds we cook and eat}
+  - {word: salad, meaning: cold vegetables, cut into small pieces}
+  - {word: smile, meaning: make a happy face}
+  - {word: without, meaning: not with}
+  - {word: next, meaning: the one after this one}

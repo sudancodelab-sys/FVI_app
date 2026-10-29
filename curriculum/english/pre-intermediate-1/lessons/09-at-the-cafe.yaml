@@ -1,0 +1,31 @@
+lesson: 9
+unit: 3
+kind: conversation
+title: At the Café
+subtitle: Ordering a drink and paying
+icon: cup
+goals: [Order a drink, Ask what they have, Ask the price and pay]
+scene: Adam and Omar meet at the small café near the institute.
+conversation:
+  - [Waiter, "Good afternoon. What would you like?"]
+  - [Omar, "Can I have a tea with milk, please?"]
+  - [Waiter, "Sure. And you?"]
+  - [Adam, "Do you have orange juice?"]
+  - [Waiter, "Yes, we do. It's fresh."]
+  - [Adam, "Great! An orange juice, please."]
+  - [Waiter, "Anything else?"]
+  - [Omar, "No, thank you. How much is that?"]
+  - [Waiter, "Fifteen hundred pounds, please."]
+  - [Adam, "Here you are. Thank you!"]
+phrases:
+  - {title: Order, lines: ["Can I have a tea, please?"], reply: "Sure."}
+  - {title: Ask what they have, lines: ["Do you have orange juice?"], reply: "Yes, we do."}
+  - {title: Say how you like it, lines: ["with milk  ·  without sugar"]}
+  - {title: Answer the waiter, lines: ["Anything else?"], reply: "No, thank you."}
+  - {title: Ask the price, lines: ["How much is that?"], reply: "Fifteen hundred pounds."}
+  - {title: Pay, lines: ["Here you are."]}
+words:
+  - {word: juice, meaning: a drink made from fruit}
+  - {word: fresh, meaning: new; just made}
+  - {word: else, meaning: more; other}
+  - {word: pounds, meaning: the money of Sudan}

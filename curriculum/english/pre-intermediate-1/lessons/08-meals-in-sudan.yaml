@@ -1,0 +1,40 @@
+lesson: 8
+unit: 3
+kind: topic
+title: Meals in Sudan
+subtitle: When we eat, what we eat, and the things in the kitchen.
+icon: bowl
+goals: [Talk about meals, Name things in the kitchen, Say what people like]
+text:
+  - In Sudan, people eat three meals a day. [Breakfast] is often late, at about ten o'clock. Many people eat beans with bread, oil, and cheese.
+  - "[Lunch] is the big meal of the day. People eat it at home, at about three or four o'clock, after work and school. [Dinner] is small and late. Some people only drink tea with milk."
+  - Do Sudanese people like sweet tea? Yes, they do! Many people don't drink tea without sugar.
+  - In the [kitchen], we cook rice in a [pot] and eggs in a [pan]. We put food on a [plate], and we eat with a [spoon] or with bread.
+facts:
+  - title: Three meals
+    items:
+      - {icon: sunrise, term: breakfast, text: "about 10:00 · beans and bread"}
+      - {icon: bowl, term: lunch, text: "about 3:00 · the big meal"}
+      - {icon: moon, term: dinner, text: "late · a small meal"}
+  - title: In the kitchen
+    items:
+      - {term: pot, text: for rice and soup}
+      - {term: pan, text: for eggs}
+      - {term: plate, text: we put food on it}
+      - {term: spoon, text: for rice and soup}
+      - {term: fork, text: for salad and meat}
+      - {term: cup, text: for tea and coffee}
+questions:
+  - ["How many meals do people eat in Sudan?", "Three: breakfast, lunch, and dinner."]
+  - ["When is breakfast?", "At about ten o'clock."]
+  - ["What do many people eat for breakfast?", "Beans with bread, oil, and cheese."]
+  - ["What is the big meal of the day?", "Lunch."]
+  - ["Do people eat a big dinner?", "No, they don't. Dinner is small."]
+  - ["Do Sudanese people like sweet tea?", "Yes, they do!"]
+words:
+  - {word: meal, meaning: "breakfast, lunch, or dinner"}
+  - {word: often, meaning: many times}
+  - {word: about, meaning: "not exactly: about ten o'clock"}
+  - {word: sweet, meaning: with a lot of sugar}
+  - {word: sugar, meaning: we put it in tea to make it sweet}
+  - {word: kitchen, meaning: the room where we cook}

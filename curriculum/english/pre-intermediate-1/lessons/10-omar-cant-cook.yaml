@@ -1,0 +1,54 @@
+lesson: 10
+unit: 4
+kind: story
+title: Omar Can't Cook
+subtitle: Omar can do many things, but not one important thing. Read the story, then read it again from Omar's point of view.
+icon: pot
+goals: [Say what you can do, Say what you can't do, Ask with Can you]
+story:
+  - Omar lives in a small apartment near the institute. His family is in Port Sudan. Omar [can do] many things. He [can play] football very well. He [can speak] Arabic and English. He [can fix] phones, too.
+  - But Omar [can't cook]. He [can make] tea, but he [can't make] lunch. Every day, he eats sandwiches. He is tired of sandwiches!
+  - "One evening, he calls his mother. \"[Can] you [help] me, Mom? I [can't cook]!\" His mother laughs. \"Of course I [can]. Take a pot, some rice, water, and salt.\" Omar listens and writes."
+  - "Now Omar [can cook] rice. He [can't cook] fish yet, but he [can make] rice and eggs. He invites Adam for lunch. \"Your rice is good!\" Adam says. Omar smiles. \"Next week: fish!\""
+questions:
+  - ["Where does Omar live?", "In a small apartment near the institute."]
+  - ["Where is his family?", "In Port Sudan."]
+  - ["Can Omar play football?", "Yes, he can. He can play very well."]
+  - ["Can he speak English?", "Yes, he can. He can speak Arabic and English."]
+  - ["Can he fix phones?", "Yes, he can."]
+  - ["Can Omar cook?", "No, he can't."]
+  - ["Can he make tea?", "Yes, he can."]
+  - ["What does he eat every day?", "Sandwiches."]
+  - ["Who does he call?", "His mother."]
+  - ["Can Omar cook rice now?", "Yes, he can."]
+  - ["Can he cook fish?", "No, he can't. Not yet."]
+  - ["Who comes for lunch?", "Adam."]
+pov:
+  intro: Now Omar tells the story.
+  speaker: Omar
+  text:
+    - I live in a small apartment near the institute. My family is in Port Sudan. I [can do] many things. I [can play] football very well. I [can speak] Arabic and English. I [can fix] phones, too.
+    - But I [can't cook]. I [can make] tea, but I [can't make] lunch. Every day, I eat sandwiches. I'm tired of sandwiches!
+    - "One evening, I call my mother. \"[Can] you [help] me, Mom? I [can't cook]!\" She laughs. \"Of course I [can].\" I listen and write."
+    - "Now I [can cook] rice. I [can't cook] fish yet, but I [can make] rice and eggs. Adam comes for lunch. \"Your rice is good!\" he says. \"Next week: fish!\""
+learn:
+  title: You learned [can] and [can't].
+  intro: We use them to say what we are able to do, and what we are not able to do.
+  wide: true
+  table:
+    - ["can", "can't"]
+    - ["I [can] cook rice.", "I [can't] cook fish."]
+    - ["He [can] play football.", "He [can't] cook."]
+    - ["They [can] speak English.", "They [can't] fix cars."]
+  notes:
+    - {title: "[can] is the same for everyone", text: "I can, he can, they can. Not: he cans."}
+    - {title: "After can: the [verb] only", text: "He can cook. Not: can to cook."}
+    - {title: "can't = [cannot]", text: "We usually say can't."}
+  ask: ["Can you cook?", "Yes, I can.  /  No, I can't."]
+words:
+  - {word: apartment, meaning: a home in a big building}
+  - {word: fix, meaning: make something work again}
+  - {word: tired of, meaning: bored with something because you have it too much}
+  - {word: laughs, meaning: makes a happy sound because something is funny}
+  - {word: of course, meaning: "yes, sure"}
+  - {word: invites, meaning: asks someone to come}

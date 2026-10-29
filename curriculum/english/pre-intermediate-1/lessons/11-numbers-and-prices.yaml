@@ -1,0 +1,44 @@
+lesson: 11
+unit: 4
+kind: topic
+title: Numbers and Prices
+subtitle: Big numbers, prices, and how we buy things at the market.
+icon: tag
+goals: [Say big numbers, Ask the price, Ask How much and How many]
+text:
+  - Numbers are everywhere, in prices, phone numbers, and times. We count in tens like this, and then we put two numbers together. We say 25 as twenty-five, and 150 as one hundred fifty.
+  - At the market, prices are in Sudanese [pounds]. We ask about the price with [How much]. How much is it? How much are the oranges?
+  - We buy fruit and vegetables by the [kilo]. For things we can count, like eggs and oranges, we ask [How many]. How many eggs do you want?
+facts:
+  - title: Count in tens
+    items:
+      - {term: "10", text: ten}
+      - {term: "20", text: twenty}
+      - {term: "30", text: thirty}
+      - {term: "40", text: forty}
+      - {term: "50", text: fifty}
+      - {term: "60", text: sixty}
+      - {term: "70", text: seventy}
+      - {term: "80", text: eighty}
+      - {term: "90", text: ninety}
+      - {term: "100", text: one hundred}
+  - title: Big numbers
+    items:
+      - {term: "150", text: one hundred fifty}
+      - {term: "500", text: five hundred}
+      - {term: "1,000", text: one thousand}
+      - {term: "2,500", text: two thousand five hundred}
+questions:
+  - ["How do we say 25?", "Twenty-five."]
+  - ["How do we say 150?", "One hundred fifty."]
+  - ["What is the money of Sudan?", "The Sudanese pound."]
+  - ["What do we ask about a price?", "How much is it?"]
+  - ["How do we buy vegetables?", "By the kilo."]
+  - ["What do we ask for things we can count?", "How many?"]
+words:
+  - {word: price, meaning: how much money something costs}
+  - {word: count, meaning: "say numbers in order: one, two, three"}
+  - {word: buy, meaning: get something for money}
+  - {word: fruit, meaning: "oranges, bananas, mangoes, and more"}
+  - {word: vegetables, meaning: "tomatoes, onions, potatoes, and more"}
+  - {word: kilo, meaning: a weight of one thousand grams}
