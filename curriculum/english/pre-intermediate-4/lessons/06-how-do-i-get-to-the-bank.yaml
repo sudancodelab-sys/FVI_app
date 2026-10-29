@@ -1,0 +1,33 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: How Do I Get to the Bank?
+subtitle: Asking for and giving directions in the street
+icon: pin
+goals: [Ask the way, Understand directions, Thank someone for help]
+scene: Omar needs to send money to his family in Port Sudan. He is looking for the bank near the hospital.
+conversation:
+  - [Omar, "Excuse me. How do I get to the bank?"]
+  - [Shopkeeper, "Which bank? There are two."]
+  - [Omar, "The big one, near the hospital."]
+  - [Shopkeeper, "Oh, that's not far. Go straight down this street."]
+  - [Omar, "Straight down this street. OK."]
+  - [Shopkeeper, "Then turn left at the traffic lights. You have to cross the bridge."]
+  - [Omar, "Turn left, then cross the bridge. Can I walk there?"]
+  - [Shopkeeper, "Yes, it's fifteen minutes on foot. But it's very hot, so you should take a rickshaw."]
+  - [Omar, "Thank you very much!"]
+  - [Shopkeeper, "You're welcome. The bank is on the right, next to the hospital."]
+phrases:
+  - {title: Ask the way, lines: ["How do I get to the bank?"]}
+  - {title: Go straight, lines: ["Go straight down this street."]}
+  - {title: Turn, lines: ["Turn left at the traffic lights."]}
+  - {title: Cross, lines: ["You have to cross the bridge."]}
+  - {title: Give advice, lines: ["You should take a rickshaw."]}
+  - {title: Say where it is, lines: ["It's on the right, next to the hospital."]}
+words:
+  - {word: straight, meaning: in one line, without turning}
+  - {word: turn left, meaning: go to the left side}
+  - {word: traffic lights, meaning: red, yellow, and green lights for cars}
+  - {word: cross, meaning: go from one side to the other}
+  - {word: bridge, meaning: a road over a river}
+  - {word: on foot, meaning: walking}

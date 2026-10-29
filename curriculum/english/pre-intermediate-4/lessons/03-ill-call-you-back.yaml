@@ -1,0 +1,30 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: I'll Call You Back
+subtitle: Calling a friend's home and leaving a message
+icon: phone
+goals: [Ask for someone on the phone, Leave a message, Offer and promise to help]
+scene: Sara calls Adam's home. His mother answers the phone.
+conversation:
+  - [Mrs. Hassan, "Hello?"]
+  - [Sara, "Hello, Mrs. Hassan. It's Sara, Adam's friend. Can I speak to Adam, please?"]
+  - [Mrs. Hassan, "Hi, Sara. I'm sorry, he isn't here. He's at the market."]
+  - [Sara, "Oh. Can I leave a message?"]
+  - [Mrs. Hassan, "Of course. I'll write it down."]
+  - [Sara, "Please tell him the test is on Sunday, not Monday."]
+  - [Mrs. Hassan, "Sunday, not Monday. OK, I'll tell him when he comes home."]
+  - [Sara, "Thank you. And can he call me back tonight?"]
+  - [Mrs. Hassan, "Sure. I'll ask him to call you back."]
+  - [Sara, "Thanks a lot. Goodbye!"]
+phrases:
+  - {title: Ask for someone, lines: ["Can I speak to Adam, please?"], reply: "I'm sorry, he isn't here."}
+  - {title: Leave a message, lines: ["Can I leave a message?"], reply: "Of course."}
+  - {title: Give the message, lines: ["Please tell him the test is on Sunday."]}
+  - {title: Offer, lines: ["I'll write it down."]}
+  - {title: Promise, lines: ["I'll tell him when he comes home."]}
+  - {title: Ask for a call, lines: ["Can he call me back?"], reply: "Sure."}
+words:
+  - {word: leave a message, meaning: give information for someone who isn't there}
+  - {word: write it down, meaning: write it on paper so you don't forget}
+  - {word: call you back, meaning: call you again later}

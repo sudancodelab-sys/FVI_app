@@ -20,3 +20,7 @@ cast:
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
   Omar: {initial: O, color: d}
+  # People in one scene only.
+  Mrs. Hassan: {initial: MH, color: e}
+  Shopkeeper: {initial: SK, color: e}
+  Agent: {initial: AG, color: e}

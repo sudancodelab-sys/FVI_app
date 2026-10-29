@@ -1,0 +1,31 @@
+lesson: 12
+unit: 4
+kind: conversation
+title: We'll Celebrate!
+subtitle: Good news, plans to celebrate, and the next level
+icon: star
+goals: [Share good news, Make plans with if, Talk about the next level]
+scene: After class, the three friends talk about their results.
+conversation:
+  - [Sara, "We all passed! I can't believe it."]
+  - [Omar, "Thanks to you two! You helped me so much."]
+  - [Adam, "We have to celebrate!"]
+  - [Sara, "Good idea. If you're free on Friday, we'll go to the café by the river."]
+  - [Omar, "I'm free. And if it rains, I'll bring the umbrellas this time!"]
+  - [Adam, "Ha! And this time, check the weather in Khartoum, not London!"]
+  - [Sara, "What about Intermediate 1? Are you going to join?"]
+  - [Omar, "Of course. If we're all in the same class, it will be great."]
+  - [Adam, "Mr. Ali says it will be harder. There will be science topics, too."]
+  - [Sara, "Then we'll study together again. See you on Friday!"]
+phrases:
+  - {title: Share good news, lines: ["We all passed!"]}
+  - {title: Thank your friends, lines: ["Thanks to you two!"]}
+  - {title: Suggest a plan, lines: ["If you're free on Friday, we'll go to the café."]}
+  - {title: Make a promise, lines: ["If it rains, I'll bring the umbrellas."]}
+  - {title: Ask about the future, lines: ["Are you going to join Intermediate 1?"], reply: "Of course."}
+  - {title: Agree, lines: ["Then we'll study together again."]}
+words:
+  - {word: passed, meaning: did well in a test}
+  - {word: thanks to, meaning: because of the help of}
+  - {word: join, meaning: become part of a group}
+  - {word: harder, meaning: more difficult}

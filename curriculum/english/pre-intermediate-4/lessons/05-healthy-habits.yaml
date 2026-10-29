@@ -1,0 +1,33 @@
+lesson: 5
+unit: 2
+kind: topic
+title: Healthy Habits
+subtitle: Sleep, water, food and moving your body, and what doctors say we should do.
+icon: heart
+goals: [Talk about healthy habits, Give advice, Say what is necessary and what is not]
+text:
+  - Good [habits] keep us healthy. Doctors say we should [sleep] seven or eight hours every night. Many students sleep less, and they feel tired in class.
+  - In a hot country like Sudan, we should drink a lot of [water], about two liters a day, or more in summer. We shouldn't wait until we are thirsty.
+  - We should eat [fruit and vegetables] every day, and we shouldn't eat too much sugar. Sweet tea is delicious, but four cups a day with a lot of sugar is not good for us.
+  - We also have to [move] our bodies. You don't have to go to a gym. You can walk to the shop, play football with friends, or take the stairs. Thirty minutes a day is enough. And one more habit, put your phone down an hour before bed. Your eyes and your brain will thank you!
+facts:
+  - title: Every day
+    items:
+      - {icon: moon, term: sleep, text: "7 to 8 hours"}
+      - {icon: cup, term: water, text: "about 2 liters"}
+      - {icon: basket, term: fruit and vegetables, text: every day}
+      - {icon: ball, term: move, text: "30 minutes"}
+questions:
+  - ["How many hours should we sleep?", "Seven or eight hours."]
+  - ["How much water should we drink?", "About two liters a day, or more in summer."]
+  - ["Should we wait until we are thirsty?", "No, we shouldn't."]
+  - ["Is a lot of sweet tea good for us?", "No, it isn't."]
+  - ["Do we have to go to a gym?", "No, we don't. We can walk or play football."]
+  - ["When should we put the phone down?", "An hour before bed."]
+words:
+  - {word: habits, meaning: things you do again and again}
+  - {word: healthy, meaning: well; not sick}
+  - {word: thirsty, meaning: needing to drink}
+  - {word: delicious, meaning: tasting very good}
+  - {word: gym, meaning: a place with machines for exercise}
+  - {word: brain, meaning: the part of your head that thinks}

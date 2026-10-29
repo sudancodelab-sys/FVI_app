@@ -1,0 +1,33 @@
+lesson: 8
+unit: 3
+kind: topic
+title: The Pyramids of Sudan
+subtitle: Sudan has more pyramids than Egypt. Have you ever seen them?
+icon: pyramid
+goals: [Talk about a famous place, Use the present perfect for experiences, Talk about history]
+text:
+  - When people think of pyramids, they usually think of Egypt. But Sudan has more pyramids than Egypt, more than two hundred!
+  - The most famous ones are at [Meroe], about two hundred kilometers north of Khartoum. Meroe was the capital of the Kingdom of [Kush] more than two thousand years ago. The kings and queens of Kush built their pyramids there.
+  - The pyramids of Meroe are smaller than the pyramids in Egypt, and they are steeper. Many of them have small temples next to them.
+  - Thousands of tourists have visited Meroe, and scientists have studied it for many years. In 2011, it became a [World Heritage Site]. Have you ever seen the pyramids of Meroe? Many Sudanese people have never visited them. Maybe you will be the first in your family!
+facts:
+  - title: Meroe in numbers
+    items:
+      - {icon: pyramid, term: "200+", text: pyramids in Sudan}
+      - {icon: pin, term: "200 km", text: north of Khartoum}
+      - {icon: clock, term: "2,000+", text: years old}
+      - {icon: calendar, term: "2011", text: a World Heritage Site}
+questions:
+  - ["Which country has more pyramids, Sudan or Egypt?", "Sudan. It has more than two hundred."]
+  - ["Where are the most famous pyramids in Sudan?", "At Meroe."]
+  - ["How far is Meroe from Khartoum?", "About two hundred kilometers."]
+  - ["Who built the pyramids?", "The kings and queens of Kush."]
+  - ["Are they bigger than the pyramids in Egypt?", "No, they aren't. They are smaller and steeper."]
+  - ["Have many tourists visited Meroe?", "Yes, they have. Thousands have visited it."]
+words:
+  - {word: kingdom, meaning: a country with a king or a queen}
+  - {word: built, meaning: the past of build}
+  - {word: steeper, meaning: going up more quickly}
+  - {word: temples, meaning: old buildings where people prayed}
+  - {word: tourists, meaning: people who travel to visit places}
+  - {word: scientists, meaning: people who study the world in a careful way}

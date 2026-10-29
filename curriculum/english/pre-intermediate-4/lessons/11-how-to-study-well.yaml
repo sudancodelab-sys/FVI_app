@@ -1,0 +1,35 @@
+lesson: 11
+unit: 4
+kind: topic
+title: How to Study Well
+subtitle: Five ideas from teachers and scientists, and what will happen if you try them.
+icon: bulb
+goals: [Give tips for studying, Use if and will, Talk about your study habits]
+text:
+  - Good students don't only study hard. They study well. Here are some ideas from teachers and scientists.
+  - "[Study a little every day.] If you study for thirty minutes every day, you will remember more than after five hours the night before a test."
+  - "[Sleep well.] Your brain saves new information when you sleep. If you sleep less than six hours, you won't remember your lessons well."
+  - "[Say it out loud.] If you read the stories out loud, you will learn the pronunciation, too. And if you teach a friend, you will understand it better."
+  - "[Turn off your phone.] If your phone is next to you, you will look at it every few minutes. [Take breaks.] Study for twenty-five minutes, then rest for five. If you do this, your brain will stay fresh."
+facts:
+  - title: Five ideas
+    items:
+      - {term: "30 minutes", text: every day}
+      - {term: sleep, text: more than six hours}
+      - {term: out loud, text: "read, and teach a friend"}
+      - {term: phone off, text: no messages while you study}
+      - {term: "25 + 5", text: "study, then rest"}
+questions:
+  - ["Is it better to study every day or the night before a test?", "Every day."]
+  - ["What does your brain do when you sleep?", "It saves new information."]
+  - ["What will happen if you sleep less than six hours?", "You won't remember your lessons well."]
+  - ["What will you learn if you read out loud?", "The pronunciation."]
+  - ["What will happen if your phone is next to you?", "You will look at it every few minutes."]
+  - ["How long should you study before a break?", "Twenty-five minutes."]
+words:
+  - {word: information, meaning: facts and news about something}
+  - {word: out loud, meaning: so other people can hear}
+  - {word: pronunciation, meaning: how we say a word}
+  - {word: understand, meaning: know what something means}
+  - {word: breaks, meaning: short times to rest}
+  - {word: fresh, meaning: new and full of energy}

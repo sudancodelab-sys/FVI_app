@@ -1,0 +1,55 @@
+lesson: 10
+unit: 4
+kind: story
+title: The Big Test
+subtitle: The last test of the Pre-Intermediate stage is coming, and Omar is worried. Read the story, then read it from Omar's point of view.
+icon: pencil
+goals: [Talk about a possible future, Use if and will, Give and get help]
+story:
+  - "The Pre-Intermediate final test is next Sunday. Everybody is studying, but Omar is worried. \"If I [fail] the test, I [will have] to repeat the level,\" he says. \"And if I [repeat] the level, I [won't be] in your class!\""
+  - "Sara has an idea. \"If we [study] together every evening, we [will] all [pass].\" Adam agrees. \"If you [come] to my house, my mother [will make] tea and cake!\" So every evening, the three friends study at Adam's house."
+  - "They read the old stories again. They ask each other questions, like Mr. Ali in class. \"If I [ask] you a question, you have to answer fast!\" Sara says. Omar learns a lot, and he even starts to enjoy it."
+  - "On Sunday, Omar sits down in the test room. He reads the first question and smiles. He knows the answer. A week later, Mr. Ali comes into class with the results. \"Omar, ninety-one. Sara, ninety-four. Adam, ninety-two. Congratulations! If you [keep] working like this, you [will do] great in Intermediate 1!\""
+questions:
+  - ["When is the final test?", "Next Sunday."]
+  - ["Who is worried?", "Omar."]
+  - ["What will happen if Omar fails?", "He will have to repeat the level."]
+  - ["What is Sara's idea?", "To study together every evening."]
+  - ["What will Adam's mother do if they come?", "She will make tea and cake."]
+  - ["Where do the friends study?", "At Adam's house."]
+  - ["What do they do?", "They read the old stories again and ask each other questions."]
+  - ["Does Omar start to enjoy studying?", "Yes, he does."]
+  - ["Why does Omar smile in the test room?", "He knows the answer to the first question."]
+  - ["What is Omar's result?", "Ninety-one."]
+  - ["Who has the best result?", "Sara, with ninety-four."]
+  - ["What will happen if they keep working like this?", "They will do great in Intermediate 1."]
+pov:
+  intro: Now Omar tells the story.
+  speaker: Omar
+  text:
+    - The final test is next Sunday, and I'm worried. If I [fail] the test, I['ll have] to repeat the level. And if I [repeat] the level, I [won't be] in my friends' class!
+    - "Then Sara has an idea. \"If we [study] together every evening, we['ll] all [pass].\" And Adam says, \"If you [come] to my house, my mother['ll make] tea and cake!\""
+    - So every evening, we read the old stories again and ask each other questions. I learn a lot, and I even start to enjoy it.
+    - On Sunday, I read the first question and smile. I know the answer! A week later, Mr. Ali has the results, and I have ninety-one. If I [keep] working like this, I['ll do] great in Intermediate 1!
+learn:
+  title: You learned the [first conditional].
+  intro: "We use it to talk about a possible future: if one thing happens, another thing will happen."
+  wide: true
+  table:
+    - ["If + present", "will + verb"]
+    - ["If I [fail] the test,", "I [will have] to repeat the level."]
+    - ["If we [study] together,", "we [will] all [pass]."]
+    - ["If you [come] to my house,", "my mother [will make] tea."]
+    - ["If it [doesn't rain],", "we [won't need] umbrellas."]
+  notes:
+    - {title: "After if: the [present]", text: "If I study. Not: if I will study."}
+    - {title: "Then: [will · won't] + verb", text: "we will pass, we won't fail"}
+    - {title: "Two orders, the [same] meaning", text: "If we study, we'll pass. = We'll pass if we study."}
+  ask: ["What will you do if you pass?", "If I pass, I'll go to the next level."]
+words:
+  - {word: final, meaning: the last}
+  - {word: fail, meaning: not pass a test}
+  - {word: repeat, meaning: do again}
+  - {word: agrees, meaning: thinks the same}
+  - {word: enjoy, meaning: like doing something}
+  - {word: results, meaning: the numbers you get in a test}

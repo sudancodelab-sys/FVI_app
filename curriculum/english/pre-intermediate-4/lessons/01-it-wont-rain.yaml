@@ -1,0 +1,55 @@
+lesson: 1
+unit: 1
+kind: story
+title: It Won't Rain!
+subtitle: Omar is sure about the weather for the picnic. Read the story, then read Omar's side of it.
+icon: rain
+goals: [Say what you think will happen, Make a promise, Offer to do something]
+story:
+  - "It is August, the rainy season. Adam, Sara, and Omar are planning a picnic by the Nile on Friday. Sara looks at the sky. \"I think it [will rain] on Friday,\" she says."
+  - "Omar shows them his phone. \"Look at my weather app. It [won't rain]. Friday [will be] sunny and hot. I promise!\" Adam isn't sure. \"[Will] we [need] umbrellas?\" \"No, you [won't],\" Omar says. \"Trust me. It [will be] a perfect day.\""
+  - "On Friday, the friends meet by the river. Sara brings sandwiches, Adam brings juice, and Omar brings a big bag of fruit. The sky is blue, and the sun is hot. \"You see?\" Omar says. \"I told you!\""
+  - "Then, at four o'clock, the sky turns dark. A strong wind comes, and big drops of rain start to fall. In two minutes, everybody is wet. Sara laughs. \"Your app was wrong, Omar!\" Omar looks at his phone. \"Oh no. My app shows the weather in London!\" \"Don't worry,\" Adam says. \"Next time, I['ll check] the weather. And I['ll bring] umbrellas!\""
+questions:
+  - ["What season is it?", "The rainy season."]
+  - ["What are the friends planning?", "A picnic by the Nile."]
+  - ["What does Sara think?", "She thinks it will rain."]
+  - ["Does Omar think it will rain?", "No, he doesn't. He says it won't rain."]
+  - ["What does Omar promise?", "Friday will be sunny and hot."]
+  - ["Will they need umbrellas, says Omar?", "No, they won't."]
+  - ["What does Sara bring?", "Sandwiches."]
+  - ["Who brings fruit?", "Omar."]
+  - ["What happens at four o'clock?", "The sky turns dark, and it starts to rain."]
+  - ["Why was Omar's app wrong?", "It showed the weather in London!"]
+  - ["Who will check the weather next time?", "Adam."]
+  - ["What will Adam bring next time?", "Umbrellas."]
+pov:
+  intro: Now Omar tells his side of the story.
+  speaker: Omar
+  text:
+    - It's August, the rainy season, and my friends and I are planning a picnic by the Nile. Sara thinks it [will rain]. But look at my weather app! It [won't rain]. Friday [will be] sunny and hot. I promise!
+    - "\"[Will] we [need] umbrellas?\" Adam asks. \"No, you [won't]. Trust me. It [will be] a perfect day.\""
+    - On Friday, the sky is blue, and the sun is hot. "You see?" I say. Then, at four o'clock, the sky turns dark, and the rain comes. Everybody is wet!
+    - I look at my phone. Oh no. My app shows the weather in London! Next time, I['ll check] the city first. And I['ll listen] to Sara!
+learn:
+  title: You learned [will] and [won't].
+  intro: We use them to say what we think about the future, to promise, and to decide or offer something at the moment we speak.
+  wide: true
+  table:
+    - ["We use will to…", "Example"]
+    - ["say what we think will happen", "I think it [will rain] on Friday."]
+    - ["promise", "It [will be] a perfect day. I promise!"]
+    - ["decide now, or offer help", "Next time, I['ll bring] umbrellas!"]
+    - ["say no, or ask", "It [won't rain].  ·  [Will] we [need] umbrellas?"]
+  notes:
+    - {title: "will + [verb], the same for everyone", text: "I will, she will, they will."}
+    - {title: "Short forms: ['ll · won't]", text: "I'll = I will. won't = will not."}
+    - {title: "[going to] or [will]?", text: "A plan: I'm going to travel. A quick decision: I'll help you!"}
+  ask: ["Will it rain tomorrow?", "Yes, it will.  /  No, it won't."]
+words:
+  - {word: picnic, meaning: "a meal outside, in a park or by a river"}
+  - {word: app, meaning: a program on a phone}
+  - {word: promise, meaning: say that you will really do something}
+  - {word: trust, meaning: believe that someone is right or honest}
+  - {word: drops, meaning: small round pieces of water}
+  - {word: wet, meaning: covered with water}

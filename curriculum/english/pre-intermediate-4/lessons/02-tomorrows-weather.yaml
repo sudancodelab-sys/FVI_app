@@ -1,0 +1,31 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Tomorrow's Weather
+subtitle: How to understand a weather forecast, and what to do with it.
+icon: sun
+goals: [Understand a weather forecast, Say what the weather will be like, Plan your day]
+text:
+  - Every evening, the TV news and many phone apps give the [weather forecast]. The forecast tells us what the weather will be like tomorrow and in the next few days.
+  - Here is the forecast for tomorrow. In Khartoum, it will be sunny and very hot, with a [high] of forty-two degrees. In Port Sudan, it will be hot and humid, but there won't be any rain. In Kassala, there will be clouds in the morning, and there will be storms in the afternoon.
+  - The [temperature] at night will be lower, about twenty-eight degrees in Khartoum. Forecasts are not always right, but they help us plan our day. When the forecast says "rain," take an umbrella. When it says "very hot," drink a lot of water and stay out of the sun at noon.
+facts:
+  - title: Tomorrow
+    items:
+      - {icon: sun, term: Khartoum, text: "sunny · high of 42°"}
+      - {icon: cloud, term: Port Sudan, text: "hot and humid · no rain"}
+      - {icon: rain, term: Kassala, text: "clouds, then storms"}
+questions:
+  - ["What does the weather forecast tell us?", "What the weather will be like tomorrow and in the next few days."]
+  - ["What will the weather be like in Khartoum tomorrow?", "Sunny and very hot."]
+  - ["What will the high be in Khartoum?", "Forty-two degrees."]
+  - ["Will there be any rain in Port Sudan?", "No, there won't."]
+  - ["When will there be storms in Kassala?", "In the afternoon."]
+  - ["What do you take when the forecast says rain?", "An umbrella."]
+words:
+  - {word: forecast, meaning: what experts think the weather will be}
+  - {word: few, meaning: a small number}
+  - {word: high, meaning: the hottest temperature of the day}
+  - {word: temperature, meaning: how hot or cold something is}
+  - {word: plan, meaning: decide what you will do}
+  - {word: noon, meaning: twelve o'clock in the middle of the day}

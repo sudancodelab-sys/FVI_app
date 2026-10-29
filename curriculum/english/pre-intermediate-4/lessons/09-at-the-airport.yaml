@@ -1,0 +1,33 @@
+lesson: 9
+unit: 3
+kind: conversation
+title: At the Airport
+subtitle: Checking in for a flight
+icon: plane
+goals: [Check in for a flight, Answer questions about your bag, Find your seat and gate]
+scene: Adam is at the airport for his first flight. He goes to the check-in desk.
+conversation:
+  - [Agent, "Good morning. Where are you flying today?"]
+  - [Adam, "To Port Sudan."]
+  - [Agent, "Can I see your ticket and your ID, please?"]
+  - [Adam, "Here you are."]
+  - [Agent, "Thank you. Have you packed your bag yourself?"]
+  - [Adam, "Yes, I have."]
+  - [Agent, "Have you put any liquids in your carry-on bag?"]
+  - [Adam, "No, I haven't. Just a book and my phone."]
+  - [Agent, "Great. Here's your boarding pass. Your seat is 12A, by the window. Gate 3."]
+  - [Adam, "By the window! Thank you so much!"]
+phrases:
+  - {title: Show your papers, lines: ["Can I see your ticket and your ID?"], reply: "Here you are."}
+  - {title: A security question, lines: ["Have you packed your bag yourself?"], reply: "Yes, I have."}
+  - {title: Another question, lines: ["Have you put any liquids in your bag?"], reply: "No, I haven't."}
+  - {title: Get your pass, lines: ["Here's your boarding pass."]}
+  - {title: Your seat, lines: ["Your seat is 12A, by the window."]}
+  - {title: Your gate, lines: ["Gate 3."]}
+words:
+  - {word: ID, meaning: a card that shows who you are}
+  - {word: packed, meaning: put things in a bag for a trip}
+  - {word: liquids, meaning: "water, juice, and other things that flow"}
+  - {word: carry-on bag, meaning: the small bag you take on the plane}
+  - {word: boarding pass, meaning: the paper you need to get on the plane}
+  - {word: gate, meaning: the door to the plane at the airport}

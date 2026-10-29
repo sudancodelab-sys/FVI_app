@@ -1,0 +1,55 @@
+lesson: 4
+unit: 2
+kind: story
+title: Omar's New Job
+subtitle: Omar works at a phone repair shop now, and there are rules. Read the story, then read it from Omar's point of view.
+icon: tool
+goals: [Talk about rules, Say what is not necessary, Give advice]
+story:
+  - Omar has a new part-time job. He works at a phone repair shop near the market, three evenings a week. On his first day, the owner, Mr. Kamal, explains the rules.
+  - "\"You [have to] be here at five o'clock, and you [have to] stay until nine. You [don't have to] wear a suit. A clean shirt is fine. And you [don't have to] work on Fridays.\" Omar smiles. Friday is football day!"
+  - "\"You [should] be polite to every customer, even when they are angry. And you [shouldn't] use your phone when you are working. Customers [have to] wait, so you [should] work quickly, but carefully.\""
+  - "On Omar's first evening, a woman comes in with a broken screen. She is in a hurry. \"Can you fix it today? I [have to] call my son tonight!\" Omar works quickly but carefully, and in forty minutes, the phone works. The woman is very happy. \"He [should] get a raise!\" she tells Mr. Kamal. Mr. Kamal laughs. \"He [has to] work here for more than one day first!\""
+questions:
+  - ["Where does Omar work?", "At a phone repair shop near the market."]
+  - ["How many evenings a week does he work?", "Three."]
+  - ["What time does he have to be at the shop?", "At five o'clock."]
+  - ["Does he have to wear a suit?", "No, he doesn't. A clean shirt is fine."]
+  - ["Does he have to work on Fridays?", "No, he doesn't."]
+  - ["Why is Omar happy about that?", "Friday is football day!"]
+  - ["How should he be with customers?", "Polite, even when they are angry."]
+  - ["Should he use his phone at work?", "No, he shouldn't."]
+  - ["What is wrong with the woman's phone?", "It has a broken screen."]
+  - ["Why is she in a hurry?", "She has to call her son tonight."]
+  - ["How long does Omar need?", "Forty minutes."]
+  - ["What does Mr. Kamal say about a raise?", "Omar has to work there for more than one day first!"]
+pov:
+  intro: Now Omar tells his story.
+  speaker: Omar
+  text:
+    - I have a new part-time job! I work at a phone repair shop near the market, three evenings a week. On my first day, the owner, Mr. Kamal, explained the rules.
+    - I [have to] be at the shop at five o'clock, and I [have to] stay until nine. I [don't have to] wear a suit, and I [don't have to] work on Fridays. Great! Friday is football day.
+    - I [should] be polite to every customer, even angry ones, and I [shouldn't] use my phone at work. Customers [have to] wait, so I [should] work quickly, but carefully.
+    - "On my first evening, a woman came in with a broken screen. She [had to] call her son that night, and I fixed it in forty minutes! \"He [should] get a raise!\" she said. Mr. Kamal laughed. \"He [has to] work here for more than one day first!\""
+learn:
+  title: You learned [have to] and [should].
+  intro: "have to: it is a rule, it is necessary. should: it is a good idea, it is advice."
+  wide: true
+  table:
+    - ["A rule: necessary", "Advice: a good idea"]
+    - ["I [have to] be here at five.", "You [should] be polite."]
+    - ["He [has to] stay until nine.", "He [should] work carefully."]
+    - ["You [don't have to] wear a suit.", "You [shouldn't] use your phone."]
+    - ["[Do] I [have to] work on Friday?", "[Should] I call him?"]
+  notes:
+    - {title: "he · she · it → [has to]", text: "Omar has to be there at five."}
+    - {title: "[don't have to] = not necessary", text: "You don't have to wear a suit. You can if you want."}
+    - {title: "should + [verb], the same for everyone", text: "I should, she should, they should."}
+  ask: ["Do you have to work on Fridays?", "No, I don't. Friday is my day off."]
+words:
+  - {word: part-time, meaning: for only some hours of the week}
+  - {word: repair, meaning: fixing something that is broken}
+  - {word: owner, meaning: the person a shop or a thing belongs to}
+  - {word: polite, meaning: speaking and acting in a kind and correct way}
+  - {word: in a hurry, meaning: needing to do something fast}
+  - {word: raise, meaning: more money for your work}
