@@ -1,0 +1,31 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: Which Bus Goes to the Market?
+subtitle: At the bus station, asking the way and the fare
+icon: pin
+goals: [Ask which bus to take, Ask the fare, Ask how long a trip takes]
+scene: Sara is at the bus station. She wants to go to the big market.
+conversation:
+  - [Sara, "Excuse me. Is this bus going to the market?"]
+  - [Driver, "No, it isn't. This bus is going to the hospital."]
+  - [Sara, "Oh. Which bus goes to the market?"]
+  - [Driver, "The green bus. Look, it's coming now!"]
+  - [Sara, "Thank you! How much is it?"]
+  - [Driver, "Five hundred pounds."]
+  - [Sara, "And how long does it take?"]
+  - [Driver, "About twenty minutes."]
+  - [Sara, "Great. Thanks for your help!"]
+  - [Driver, "You're welcome."]
+phrases:
+  - {title: Start politely, lines: ["Excuse me."]}
+  - {title: Check the bus, lines: ["Is this bus going to the market?"], reply: "No, it isn't."}
+  - {title: Ask which one, lines: ["Which bus goes to the market?"], reply: "The green bus."}
+  - {title: Ask the fare, lines: ["How much is it?"], reply: "Five hundred pounds."}
+  - {title: Ask the time, lines: ["How long does it take?"], reply: "About twenty minutes."}
+  - {title: Say thank you, lines: ["Thanks for your help!"], reply: "You're welcome."}
+words:
+  - {word: which, meaning: what one of two or more}
+  - {word: how long, meaning: how much time}
+  - {word: take, meaning: "here: need (time). It takes twenty minutes."}
+  - {word: help, meaning: what you do to make things easy for someone}

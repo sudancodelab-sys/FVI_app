@@ -1,0 +1,31 @@
+lesson: 12
+unit: 4
+kind: conversation
+title: At the Pharmacy
+subtitle: Saying what is wrong and getting help
+icon: pill
+goals: [Say what is wrong, Answer questions about the past, Understand simple advice]
+scene: Sara has a headache. After class, she goes to the pharmacy near the institute.
+conversation:
+  - [Pharmacist, "Good afternoon. Can I help you?"]
+  - [Sara, "Yes, please. I have a bad headache."]
+  - [Pharmacist, "I'm sorry. When did it start?"]
+  - [Sara, "It started this morning."]
+  - [Pharmacist, "Did you take anything?"]
+  - [Sara, "No, I didn't."]
+  - [Pharmacist, "Did you drink enough water today?"]
+  - [Sara, "Not really. It was very hot, and I was busy."]
+  - [Pharmacist, "Take one of these pills now, and drink a lot of water. Feel better soon!"]
+  - [Sara, "Thank you very much!"]
+phrases:
+  - {title: Offer help, lines: ["Can I help you?"], reply: "Yes, please."}
+  - {title: Say what is wrong, lines: ["I have a bad headache."]}
+  - {title: Ask when, lines: ["When did it start?"], reply: "This morning."}
+  - {title: Ask about medicine, lines: ["Did you take anything?"], reply: "No, I didn't."}
+  - {title: Give advice, lines: ["Drink a lot of water."]}
+  - {title: Wish someone well, lines: ["Feel better soon!"], reply: "Thank you!"}
+words:
+  - {word: headache, meaning: a pain in your head}
+  - {word: pharmacy, meaning: a shop that sells medicine}
+  - {word: pills, meaning: small pieces of medicine that you swallow}
+  - {word: enough, meaning: as much as you need}

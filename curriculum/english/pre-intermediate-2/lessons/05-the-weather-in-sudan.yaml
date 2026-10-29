@@ -1,0 +1,39 @@
+lesson: 5
+unit: 2
+kind: topic
+title: The Weather in Sudan
+subtitle: Three seasons, and what the weather was like yesterday.
+icon: sun
+goals: [Name the seasons, Describe the weather, Say what the weather was like]
+text:
+  - Sudan is a hot country. The [summer] is from April to June. It is very hot, often more than forty degrees.
+  - The [rainy season] is from July to September. There are big storms, and the Nile is high. The [winter] is from December to February. It is not cold, but the mornings are cool and nice.
+  - What was the weather like yesterday? In Khartoum, it was sunny and very hot. In Port Sudan, it was hot and humid. There were no clouds in the sky.
+facts:
+  - title: Three seasons
+    items:
+      - {icon: sun, term: summer, text: "April to June · very hot"}
+      - {icon: rain, term: rainy season, text: "July to September · storms"}
+      - {icon: cloud, term: winter, text: "December to February · cool mornings"}
+  - title: Weather words
+    items:
+      - {term: sunny, text: a lot of sun}
+      - {term: cloudy, text: a lot of clouds}
+      - {term: rainy, text: rain is falling}
+      - {term: windy, text: a lot of wind}
+      - {term: humid, text: hot and wet air}
+      - {term: cool, text: a little cold}
+questions:
+  - ["When is the summer in Sudan?", "From April to June."]
+  - ["Is the summer hot?", "Yes, it is. It's very hot."]
+  - ["When is the rainy season?", "From July to September."]
+  - ["Is the winter cold?", "No, it isn't. But the mornings are cool."]
+  - ["What was the weather like in Khartoum yesterday?", "It was sunny and very hot."]
+  - ["Were there clouds in the sky?", "No, there weren't."]
+words:
+  - {word: weather, meaning: "how hot, cold, rainy, or windy it is"}
+  - {word: country, meaning: "a land with its own people, like Sudan or Egypt"}
+  - {word: degrees, meaning: "we measure heat in degrees: 40 degrees is very hot"}
+  - {word: season, meaning: "a part of the year: summer, winter"}
+  - {word: storms, meaning: strong wind and rain}
+  - {word: sky, meaning: "the space above us, where the sun is"}

@@ -1,0 +1,32 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Getting Around
+subtitle: Buses, minibuses, rickshaws and taxis, and a busy bus station.
+icon: bus
+goals: [Name ways to travel, Say what is good about each one, Describe a busy place]
+text:
+  - How do people get around in the city? Many people take the [bus]. Buses are cheap, but they are often full. A [minibus] is small and fast, and it stops when you ask.
+  - A [rickshaw] has three wheels. It is great for short trips, and the driver can take you to the door. A [taxi] is more expensive, but it is comfortable.
+  - "Look at the [bus station] now. It is very busy. People are waiting for their buses, the drivers are calling \"Market! Market!\", and a man is selling cold water and juice."
+facts:
+  - title: Ways to get around
+    items:
+      - {icon: bus, term: bus, text: "big · cheap · often full"}
+      - {icon: van, term: minibus, text: "small · fast"}
+      - {icon: rickshaw, term: rickshaw, text: "three wheels · short trips"}
+      - {icon: car, term: taxi, text: "expensive · comfortable"}
+questions:
+  - ["Are buses cheap or expensive?", "Cheap. But they are often full."]
+  - ["When does a minibus stop?", "When you ask."]
+  - ["How many wheels does a rickshaw have?", "Three."]
+  - ["Is a taxi cheap?", "No, it isn't. It's more expensive."]
+  - ["Is the bus station busy now?", "Yes, it is. It's very busy."]
+  - ["What is the man selling?", "Cold water and juice."]
+words:
+  - {word: get around, meaning: go from place to place}
+  - {word: cheap, meaning: not expensive}
+  - {word: full, meaning: with no more space}
+  - {word: wheels, meaning: the round parts that turn under a car}
+  - {word: trips, meaning: "a trip is a short journey: home, work, the market"}
+  - {word: comfortable, meaning: nice and easy to sit in}

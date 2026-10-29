@@ -1,0 +1,31 @@
+lesson: 9
+unit: 3
+kind: conversation
+title: Come In!
+subtitle: Visiting a friend's family at home
+icon: home
+goals: [Welcome a guest, Meet a friend's family, Offer and accept a drink]
+scene: On Friday afternoon, Omar visits Adam's family for the first time.
+conversation:
+  - [Adam, "Omar! Welcome! Please come in."]
+  - [Omar, "Thank you. Your house is beautiful."]
+  - [Adam, "Thanks. Omar, this is my mother."]
+  - [Mrs. Hassan, "Welcome, Omar. Please sit down."]
+  - [Omar, "Nice to meet you. I brought some dates for you."]
+  - [Mrs. Hassan, "Oh, thank you! That's very kind. Would you like some tea?"]
+  - [Omar, "Yes, please. With milk, no sugar."]
+  - [Adam, "My mother made a cake this morning, too!"]
+  - [Omar, "Wow, I love cake!"]
+  - [Mrs. Hassan, "Make yourself at home, Omar."]
+phrases:
+  - {title: Welcome a guest, lines: ["Please come in."], reply: "Thank you."}
+  - {title: Introduce someone, lines: ["This is my mother."], reply: "Nice to meet you."}
+  - {title: Offer a seat, lines: ["Please sit down."]}
+  - {title: Give a gift, lines: ["I brought some dates for you."], reply: "That's very kind."}
+  - {title: Offer a drink, lines: ["Would you like some tea?"], reply: "Yes, please."}
+  - {title: Make a guest comfortable, lines: ["Make yourself at home."]}
+words:
+  - {word: brought, meaning: the past of bring (come with something)}
+  - {word: dates, meaning: sweet brown fruit from palm trees}
+  - {word: made, meaning: the past of make}
+  - {word: at home, meaning: "comfortable, as in your own house"}

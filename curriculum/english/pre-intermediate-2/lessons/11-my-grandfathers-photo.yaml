@@ -1,0 +1,38 @@
+lesson: 11
+unit: 4
+kind: topic
+title: My Grandfather's Photo
+subtitle: Describing people, then and now.
+icon: image
+goals: [Describe people, Say how people looked before, Compare then and now]
+text:
+  - This is an old photo of Adam's grandfather. It is from 1975. In the photo, he was young and [tall]. He had black [hair] and a [mustache]. He was thin, and he had a big smile.
+  - Now Adam's grandfather is seventy-five. He is not tall now, and his hair is [white]. He has a [beard], and he wears [glasses]. But he still has the same big smile.
+  - How do we describe people? We talk about their height (tall, short), their hair (black, white, curly, straight), their eyes (brown, black), and their age (young, old).
+facts:
+  - title: Then and now
+    items:
+      - {icon: image, term: "In 1975", text: "young · tall · black hair · a mustache"}
+      - {icon: users, term: Now, text: "seventy-five · white hair · a beard · glasses"}
+  - title: Words for people
+    items:
+      - {term: tall, text: "↔ short"}
+      - {term: young, text: "↔ old"}
+      - {term: thin, text: "↔ heavy"}
+      - {term: curly hair, text: "↔ straight hair"}
+      - {term: a beard, text: hair on the face and chin}
+      - {term: glasses, text: they help you see}
+questions:
+  - ["Is the photo old or new?", "Old. It's from 1975."]
+  - ["Was his grandfather tall in the photo?", "Yes, he was."]
+  - ["Did he have black hair?", "Yes, he did."]
+  - ["Did he have a beard in the photo?", "No, he didn't. He had a mustache."]
+  - ["Is his hair black now?", "No, it isn't. It's white."]
+  - ["Does he still have a big smile?", "Yes, he does."]
+words:
+  - {word: mustache, meaning: hair above the mouth}
+  - {word: thin, meaning: not fat}
+  - {word: wears, meaning: "has something on his body: clothes, glasses"}
+  - {word: still, meaning: the same as before}
+  - {word: describe, meaning: say what someone or something is like}
+  - {word: age, meaning: how old you are}

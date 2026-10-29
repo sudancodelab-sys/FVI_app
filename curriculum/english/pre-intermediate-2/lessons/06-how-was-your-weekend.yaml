@@ -1,0 +1,31 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: How Was Your Weekend?
+subtitle: Talking with a friend about the weekend
+icon: chat
+goals: [Ask about the weekend, Say where you were, React to news]
+scene: On Sunday morning, Sara and Adam talk before class.
+conversation:
+  - [Sara, "Good morning, Adam! How was your weekend?"]
+  - [Adam, "It was great, thanks. I was at my uncle's farm."]
+  - [Sara, "A farm? Where is it?"]
+  - [Adam, "It's near the Nile, about an hour from the city."]
+  - [Sara, "Were there animals?"]
+  - [Adam, "Yes, there were cows, goats, and a lot of chickens! And you?"]
+  - [Sara, "It was busy! My cousin's wedding was on Friday."]
+  - [Adam, "Wow! Was it big?"]
+  - [Sara, "Very big. There were three hundred people, and the music was great."]
+  - [Adam, "That sounds fun!"]
+phrases:
+  - {title: Ask about the weekend, lines: ["How was your weekend?"], reply: "It was great, thanks."}
+  - {title: Say where you were, lines: ["I was at my uncle's farm."]}
+  - {title: Ask about it, lines: ["Were there animals?"], reply: "Yes, there were."}
+  - {title: Ask back, lines: ["And you?"]}
+  - {title: Describe it, lines: ["It was busy.  ·  It was quiet."]}
+  - {title: React, lines: ["Wow!  ·  That sounds fun!"]}
+words:
+  - {word: farm, meaning: land where people grow food and keep animals}
+  - {word: cousin, meaning: the child of your uncle or aunt}
+  - {word: wedding, meaning: the day two people get married}
+  - {word: sounds, meaning: "seems, from what you hear: That sounds fun!"}

@@ -1,0 +1,59 @@
+lesson: 1
+unit: 1
+kind: story
+title: Omar Is Late
+subtitle: It is 7:50, and Omar is running. Read the story, then read it again from Omar's point of view.
+icon: alarm
+goals: [Say what is happening now, "Ask: What are you doing?", Tell a story as it happens]
+timeline:
+  - {icon: alarm, time: "7:50", label: Omar is running}
+  - {icon: rickshaw, time: "7:52", label: a rickshaw is coming}
+  - {icon: clock, time: "7:58", label: he is looking at his watch}
+  - {icon: home, time: "8:00", label: the door is closed}
+  - {icon: moon, time: Friday!, label: Adam is sleeping}
+story:
+  - It is 7:50 in the morning. Omar [is running] down the street. His bag [is jumping] on his back. He is late for class!
+  - "A rickshaw [is coming]. \"Stop, please!\" The driver [is smiling]. \"Where [are] you [going]?\" \"To Future Vision Institute. Quickly, please!\" Now the rickshaw [is flying] through the streets. Omar [is looking] at his watch. It is 7:58."
+  - The rickshaw stops at the institute. Omar [is paying] the driver, and he [is running] to the door. But the door is closed. There are no students. It is very quiet.
+  - "Omar calls Adam. \"Adam! Where are you? What [are] you [doing]?\" Adam is in bed. \"I['m sleeping], Omar. Today is Friday!\""
+questions:
+  - ["What time is it?", "It's 7:50."]
+  - ["What is Omar doing?", "He's running down the street."]
+  - ["Is he late for class?", "Yes, he is."]
+  - ["What is coming?", "A rickshaw."]
+  - ["Is the driver smiling?", "Yes, he is."]
+  - ["Where is Omar going?", "To Future Vision Institute."]
+  - ["What is Omar looking at?", "His watch."]
+  - ["Is the door of the institute open?", "No, it isn't. It's closed."]
+  - ["Are there students there?", "No, there aren't."]
+  - ["Who does Omar call?", "Adam."]
+  - ["What is Adam doing?", "He's sleeping."]
+  - ["Why is the institute closed?", "Because today is Friday!"]
+pov:
+  intro: Now Omar tells the story.
+  speaker: Omar
+  text:
+    - It's 7:50 in the morning. I['m running] down the street. My bag [is jumping] on my back. I'm late for class!
+    - "A rickshaw [is coming]. \"Stop, please!\" The driver [is smiling]. \"Where [are] you [going]?\" \"To Future Vision Institute. Quickly, please!\" Now we [are flying] through the streets. I['m looking] at my watch. It's 7:58."
+    - The rickshaw stops at the institute. I['m paying] the driver, and I['m running] to the door. But the door is closed. There are no students.
+    - "I call Adam. \"Adam! What [are] you [doing]?\" \"I['m sleeping], Omar. Today is Friday!\""
+learn:
+  title: You learned the [present continuous].
+  intro: We use it for things that are happening now, at this moment.
+  table:
+    - ["I", "he · she · it", "you · we · they"]
+    - ["I [am] runn[ing].", "He [is] runn[ing].", "We [are] runn[ing]."]
+    - ["I['m not] sleep[ing].", "She [isn't] sleep[ing].", "They [aren't] sleep[ing]."]
+    - ["[Am] I late?", "[Is] he smil[ing]?", "What [are] you do[ing]?"]
+  notes:
+    - {title: "be + verb + [-ing]", text: "He is running. They are sleeping."}
+    - {title: "Now, at [this moment]", text: "Look! A rickshaw is coming."}
+    - {title: "run → run[ning] · smile → smil[ing]", text: "Some verbs double the last letter. Others lose the e."}
+  ask: ["What are you doing?", "I'm reading.  /  I'm studying."]
+words:
+  - {word: late, meaning: after the right time}
+  - {word: rickshaw, meaning: a small taxi with three wheels}
+  - {word: driver, meaning: a person who drives a car or a bus}
+  - {word: quickly, meaning: fast}
+  - {word: watch, meaning: a small clock you wear on your arm}
+  - {word: closed, meaning: not open}

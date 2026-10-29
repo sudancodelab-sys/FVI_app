@@ -1,0 +1,35 @@
+lesson: 8
+unit: 3
+kind: topic
+title: On My Phone
+subtitle: Messages, photos, groups and social media, and what we did online yesterday.
+icon: phone
+goals: [Talk about your phone, Use words for social media, Say what you did online]
+text:
+  - Today, almost everyone has a phone. We send [messages] to our friends and family, we make calls, and we take [photos] and [videos].
+  - Many people use [social media]. We chat in [groups] with our class or our family, and we share news, photos, and videos.
+  - "Yesterday, Sara [posted] a photo of her cousin's wedding. Her friends liked it, and many people wrote nice [comments]. Omar sent a voice message to Adam: \"Great match on Friday!\""
+  - But be careful. Never share your [password], and don't stay on your phone all night!
+facts:
+  - title: Phone words
+    items:
+      - {term: message, text: words you send on the phone}
+      - {term: post, text: put a photo or words online}
+      - {term: share, text: send to other people}
+      - {term: like, text: show that you enjoy a post}
+      - {term: comment, text: words under a post}
+      - {term: password, text: a secret word for your phone or app}
+questions:
+  - ["Does almost everyone have a phone today?", "Yes, they do."]
+  - ["What do we share in groups?", "News, photos, and videos."]
+  - ["What was in Sara's photo?", "Her cousin's wedding."]
+  - ["Who liked Sara's photo?", "Her friends."]
+  - ["Who sent a voice message?", "Omar."]
+  - ["Is it OK to share your password?", "No, it isn't. Never share it."]
+words:
+  - {word: almost, meaning: nearly; not all but very close}
+  - {word: videos, meaning: moving pictures you make with a phone or camera}
+  - {word: news, meaning: new information about something}
+  - {word: voice, meaning: the sound you make when you speak}
+  - {word: careful, meaning: thinking about what you do so nothing bad happens}
+  - {word: never, meaning: not at any time}

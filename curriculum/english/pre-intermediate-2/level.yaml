@@ -17,3 +17,7 @@ cast:
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
   Omar: {initial: O, color: d}
+  # People in one scene only.
+  Driver: {initial: D, color: e}
+  Mrs. Hassan: {initial: MH, color: e}
+  Pharmacist: {initial: P, color: e}

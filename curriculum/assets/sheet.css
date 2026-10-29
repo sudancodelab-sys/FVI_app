@@ -372,6 +372,7 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .learn-body.wide .notes div{flex:1}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm}
 .facts.n4{grid-template-columns:repeat(4,1fr)}
+.facts.n2{grid-template-columns:repeat(2,1fr)}
 .facts.n7{grid-template-columns:repeat(7,1fr);gap:2mm}
 .facts.n10{grid-template-columns:repeat(5,1fr)}
 .facts.n10 .fact,.facts.n4 .fact:not(.icon){align-items:flex-start}

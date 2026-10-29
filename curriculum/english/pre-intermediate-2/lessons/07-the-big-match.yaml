@@ -1,0 +1,54 @@
+lesson: 7
+unit: 3
+kind: story
+title: The Big Match
+subtitle: Omar's first match with Adam's team. Read the story, then read it again from Omar's point of view.
+icon: ball
+goals: [Tell what happened, Use past verbs, Talk about a game]
+story:
+  - Last Friday, Adam's team [played] a big match against the Blue Stars. Omar [played], too. It was his first match with the team.
+  - "The match [started] at five o'clock. The Blue Stars were very good. After ten minutes, they [scored] a goal. Then they [scored] again. At half time, the coach [talked] to the team. \"Don't stop. You can win!\""
+  - In the second half, Adam [ran] fast and [scored] a goal. Then Omar [got] the ball and [scored], too. Two–two! Everybody [jumped] and [shouted].
+  - One minute before the end, Omar [saw] the ball near the goal. He [kicked] it very hard, and goal! Adam's team [won], three–two. After the match, they [went] to a café and [had] tea and cake. Omar was the star of the day.
+questions:
+  - ["Who played a big match last Friday?", "Adam's team."]
+  - ["Who was the other team?", "The Blue Stars."]
+  - ["Was it Omar's first match with the team?", "Yes, it was."]
+  - ["What time was the match?", "At five o'clock."]
+  - ["Who scored first?", "The Blue Stars."]
+  - ["Who talked to the team at half time?", "The coach."]
+  - ["Who scored the first goal for Adam's team?", "Adam."]
+  - ["Who scored next?", "Omar."]
+  - ["Who jumped and shouted?", "Everybody."]
+  - ["Who scored the last goal?", "Omar!"]
+  - ["Who won?", "Adam's team, three–two."]
+  - ["Where were they after the match?", "At a café. They had tea and cake."]
+pov:
+  intro: Now Omar tells the story.
+  speaker: Omar
+  text:
+    - Last Friday, my team [played] a big match against the Blue Stars. It was my first match with the team.
+    - "The match [started] at five o'clock. The Blue Stars were very good. After ten minutes, they [scored] a goal. Then they [scored] again. At half time, the coach [talked] to us. \"Don't stop. You can win!\""
+    - In the second half, Adam [ran] fast and [scored] a goal. Then I [got] the ball and [scored], too. Two–two! Everybody [jumped] and [shouted].
+    - One minute before the end, I [saw] the ball near the goal. I [kicked] it very hard, and goal! We [won], three–two. After the match, we [went] to a café and [had] tea and cake. What a day!
+learn:
+  title: You learned the [past simple].
+  intro: We use it for things that happened and finished before now, like yesterday or last Friday.
+  wide: true
+  table:
+    - ["Most verbs: add -ed", "Some verbs change"]
+    - ["play → play[ed]  ·  start → start[ed]", "run → [ran]  ·  get → [got]"]
+    - ["talk → talk[ed]  ·  kick → kick[ed]", "see → [saw]  ·  win → [won]"]
+    - ["score → score[d]  ·  smile → smile[d]", "go → [went]  ·  have → [had]"]
+  notes:
+    - {title: "The [same] for everyone", text: "I played, he played, they played."}
+    - {title: "Ends in -e: add only [-d]", text: "score → scored, smile → smiled"}
+    - {title: "Learn the verbs that [change]", text: "go → went, have → had, see → saw"}
+  ask: ["Who scored the last goal?", "Omar scored it!"]
+words:
+  - {word: team, meaning: a group of players who play together}
+  - {word: match, meaning: a game between two teams}
+  - {word: against, meaning: on the other side in a game}
+  - {word: goal, meaning: a point in football}
+  - {word: coach, meaning: the person who trains a team}
+  - {word: half time, meaning: the short stop in the middle of a match}

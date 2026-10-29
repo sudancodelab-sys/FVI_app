@@ -1,0 +1,55 @@
+lesson: 10
+unit: 4
+kind: story
+title: Did Omar Cook Fish?
+subtitle: Last level, Omar said "Next week, fish!" Did he do it? Read the story, then read it again from Omar's point of view.
+icon: fish
+goals: [Say what you didn't do, "Ask: Did you…?", "Answer: Yes, I did. / No, I didn't."]
+story:
+  - "Last week, Omar wanted to cook fish. He went to the market and bought a big fish. But he [didn't know] how to cook it, and he [didn't call] his mother. \"I can do it,\" he said."
+  - He [didn't clean] the fish well, and he [didn't use] much oil. He put it in a hot pan and [didn't watch] it. He was on his phone!
+  - "Soon the kitchen was full of smoke. Adam came in. \"[Did] you [burn] the fish?\" \"Yes, I [did],\" Omar said. \"Can we eat it?\" \"No, we can't!\""
+  - "So they [didn't eat] fish. They ate sandwiches again. The next day, Omar called his mother. \"[Did] you [watch] the pan?\" she asked. \"No, I [didn't].\" She laughed. \"Next time, put down your phone!\""
+questions:
+  - ["Did Omar want to cook fish?", "Yes, he did."]
+  - ["Did he buy a small fish?", "No, he didn't. He bought a big fish."]
+  - ["Did he know how to cook it?", "No, he didn't."]
+  - ["Did he call his mother?", "No, he didn't."]
+  - ["Did he use much oil?", "No, he didn't."]
+  - ["Did he watch the pan?", "No, he didn't. He was on his phone."]
+  - ["What was the kitchen full of?", "Smoke."]
+  - ["Who came in?", "Adam."]
+  - ["Did Omar burn the fish?", "Yes, he did."]
+  - ["Did they eat the fish?", "No, they didn't."]
+  - ["What did they eat?", "Sandwiches, again."]
+  - ["What did his mother say?", "\"Next time, put down your phone!\""]
+pov:
+  intro: Now Omar tells the story.
+  speaker: Omar
+  text:
+    - "Last week, I wanted to cook fish. I went to the market and bought a big fish. But I [didn't know] how to cook it, and I [didn't call] my mother. \"I can do it,\" I said."
+    - I [didn't clean] the fish well, and I [didn't use] much oil. I put it in a hot pan and [didn't watch] it. I was on my phone!
+    - "Soon the kitchen was full of smoke. Adam came in. \"[Did] you [burn] the fish?\" \"Yes, I [did].\""
+    - "So we [didn't eat] fish. We ate sandwiches again. The next day, I called my mother. \"[Did] you [watch] the pan?\" \"No, I [didn't].\" She laughed. \"Next time, put down your phone!\""
+learn:
+  title: You learned [didn't] and [Did].
+  intro: In the past simple, we say no with didn't and ask with Did. After them, the verb goes back to its first form.
+  wide: true
+  table:
+    - ["Past", "Not  ·  Questions"]
+    - ["He [bought] a big fish.", "He [didn't buy] a small fish."]
+    - ["They [ate] sandwiches.", "They [didn't eat] fish."]
+    - ["He [burned] the fish.", "[Did] he [burn] the fish?  Yes, he [did]."]
+    - ["She [laughed].", "[Did] she [laugh]?  Yes, she [did]."]
+  notes:
+    - {title: "didn't = [did not]", text: "We usually say didn't."}
+    - {title: "After didn't and Did: the [first form]", text: "He didn't eat. Not: didn't ate."}
+    - {title: "The [same] for everyone", text: "I didn't, she didn't, they didn't."}
+  ask: ["Did you cook yesterday?", "Yes, I did.  /  No, I didn't."]
+words:
+  - {word: bought, meaning: the past of buy}
+  - {word: oil, meaning: a yellow liquid we cook with}
+  - {word: smoke, meaning: the gray cloud that comes from fire}
+  - {word: burn, meaning: cook too much, so the food is black}
+  - {word: soon, meaning: after a short time}
+  - {word: put down, meaning: put something on a table or the floor}
