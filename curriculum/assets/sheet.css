@@ -152,11 +152,15 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 
 /* ---------- generated books ---------- */
 .flow{display:block}
-.contd{font-size:10pt;font-weight:600;color:var(--muted);margin:5mm 0 1mm}
+.contd{font-size:10pt;font-weight:600;color:var(--muted);margin:4mm 0 .5mm}
 .sounds.n4{grid-template-columns:repeat(4,1fr);gap:3mm}
 .sounds.n4 .sound{padding:3.5mm 3.5mm 3mm}
 .sounds.n4 .sound li{font-size:13pt}
-.sounds.n5{grid-template-columns:repeat(3,1fr)}
+.sounds.n5{grid-template-columns:repeat(5,1fr);gap:2.5mm}
+.sounds.n5 .sound{padding:3mm 3mm 2.5mm}
+.sounds.n5 .sound .sym{font-size:18pt}
+.sounds.n5 .sound .name{font-size:7.5pt;line-height:1.35;margin:1.2mm 0 2mm}
+.sounds.n5 .sound li{font-size:12.5pt;line-height:1.7}
 .rule.plain{display:block}
 .rule.plain p{font-size:11pt;line-height:1.65}
 .plainb{color:var(--text);font-weight:500}
@@ -334,3 +338,14 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .ask b{font-size:8pt;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--orange)}
 .ask span{font-weight:600;color:var(--navy)}
 .ask i{font-style:normal;color:var(--muted)}
+
+/* lessons that run on: a lesson starting under the end of the one before */
+.lstart{display:flow-root}
+.flow > .lstart:not(:first-child){margin-top:5mm;border-top:1.5px dashed #D5D8E6}
+.flow > .lstart:not(:first-child) .abc{margin-top:3.5mm}
+.lstart .hero{margin:4.5mm 0 3mm;gap:6mm}
+.lstart .tile{width:22mm;height:22mm;border-radius:5mm}
+.lstart .tile span{font-size:30pt}
+.lstart .tile.two span,.lstart .tile .abc-tile{font-size:19pt}
+.lstart .hero h1{font-size:22pt}
+.lstart .hero p{font-size:10pt;margin-top:1mm}

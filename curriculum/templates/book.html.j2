@@ -102,7 +102,7 @@
     </div>
   </div>
   <div class="flow">
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">1</span>Read the conversation</h2>
       <div class="scene">{{ l.scene }}</div>
       <div class="script">
@@ -111,7 +111,7 @@
         {%- endfor %}
       </div>
     </div>
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">2</span>Useful phrases</h2>
       <div class="phrases">
         {%- for ph in l.phrases %}
@@ -119,7 +119,7 @@
         {%- endfor %}
       </div>
     </div>
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">3</span>New words</h2>
       <div class="words">
         {%- for w in l.words %}
@@ -131,18 +131,20 @@
   {{ foot(l.title, 'Speaking') }}
 </div>
 {%- elif l.kind == 'intro' %}
-<div class="page" data-title="{{ l.title }}" data-toc="phonics-{{ l.lesson }}">
+<div class="page stream" data-title="{{ l.title }}" data-part="Phonics">
   {{ head('Phonics · Lesson ' ~ l.lesson) }}
-  <div class="hero">
-    <div class="tile"><span class="abc-tile">A<em>–</em>Z</span></div>
-    <div>
-      <h1>{{ l.title }}</h1>
-      <p>{{ l.intro }}</p>
-      <div class="tags">{% for t in l.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
-    </div>
-  </div>
   <div class="flow">
-    <div class="sec">
+    <div class="lstart" data-lesson="{{ l.lesson }}" data-title="{{ l.title }}" data-toc="phonics-{{ l.lesson }}">
+      <div class="hero">
+        <div class="tile"><span class="abc-tile">A<em>–</em>Z</span></div>
+        <div>
+          <h1>{{ l.title }}</h1>
+          <p>{{ l.intro }}</p>
+          <div class="tags">{% for t in l.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+        </div>
+      </div>
+    </div>
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">1</span>26 letters</h2>
       <div class="alpha">
         {%- for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
@@ -156,7 +158,7 @@
       <p class="aside">{{ l.y_note.text }} &nbsp;<b>{{ l.y_note.examples|join(' · ') }}</b></p>
     </div>
 
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">2</span>A letter has a name and a sound</h2>
       <p class="lead">We say the <b>name</b> when we spell a word. We say the <b>sound</b> when we read.</p>
       <div class="names">
@@ -171,13 +173,13 @@
       </div>
     </div>
 
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">3</span>More sounds than letters</h2>
       <div class="rule plain"><p>English has <b>26 letters</b> but about <b>40 sounds</b>. So one letter can have more than one sound,
         and two letters can work together to make one sound. You will learn them step by step.</p></div>
     </div>
 
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">4</span>Sound symbols</h2>
       <p class="lead">A sound symbol shows how we <b>say</b> a sound, not how we write it. We write it between two lines.</p>
       <div class="symbols">
@@ -186,7 +188,7 @@
       </div>
     </div>
 
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">5</span>How to read this book</h2>
       <div class="legend-list">
         <div><span class="lw">c<span class="hl">a</span>t</span><span>Orange letters are the letters we are learning.</span></div>
@@ -203,8 +205,10 @@
 {%- set vowel = l.letters[0] in 'AEIOU' %}
 {%- set multi = l.parts|length > 1 %}
 {%- set ns = namespace(n=0) %}
-<div class="page" data-title="{{ l.title }}" data-toc="phonics-{{ l.lesson }}">
+<div class="page stream" data-title="{{ l.title }}" data-part="Phonics">
   {{ head('Phonics · Lesson ' ~ l.lesson) }}
+  <div class="flow">
+  <div class="lstart" data-lesson="{{ l.lesson }}" data-title="{{ l.title }}" data-toc="phonics-{{ l.lesson }}">
   <div class="abc">
     <span class="lbl">Letters learned</span>
     {%- for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
@@ -222,10 +226,10 @@
       </div>
     </div>
   </div>
-  <div class="flow">
+  </div>
   {%- for part in l.parts %}
     {%- set X = part.letter|upper %}
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       {%- if multi %}
       <div class="partbar"><span class="ptile">{{ X }}<em>{{ X|lower }}</em></span><b>The Letter {{ X }}</b>{% if part.intro %}<span>{{ part.intro }}</span>{% endif %}</div>
       {%- endif %}
@@ -254,7 +258,7 @@
       {%- endfor %}
     </div>
 
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       {%- set ns.n = ns.n + 1 %}
       <h2><span class="num">{{ ns.n }}</span>When is {{ X }} silent?</h2>
       {%- for si in part.silent %}
@@ -277,7 +281,7 @@
     </div>
 
     {%- if part.teams %}
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       {%- set ns.n = ns.n + 1 %}
       <h2><span class="num">{{ ns.n }}</span>{{ X }} with other letters</h2>
       {%- for t in part.teams %}
@@ -310,7 +314,7 @@
   </div>
   <div class="flow">
     {%- for g in l.chart %}
-    <div class="sec">
+    <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">{{ loop.index }}</span>{{ g.title }}</h2>
       <div class="chart">
         {%- for it in g['items'] %}
