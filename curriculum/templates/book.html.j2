@@ -191,6 +191,31 @@
   </div>
   {{ foot(l.title) }}
 </div>
+{%- if l.chart %}
+<div class="page" data-title="{{ l.chart_title }}">
+  {{ head('Phonics · Lesson ' ~ l.lesson) }}
+  <div class="hero chart-hero">
+    <div class="tile"><span class="abc-tile ipa">/ə/</span></div>
+    <div>
+      <h1>{{ l.chart_title }}</h1>
+      <p>{{ l.chart_intro }}</p>
+    </div>
+  </div>
+  <div class="flow">
+    {%- for g in l.chart %}
+    <div class="sec">
+      <h2><span class="num">{{ loop.index }}</span>{{ g.title }}</h2>
+      <div class="chart">
+        {%- for it in g['items'] %}
+        <div><b class="ipa">/{{ it.ipa }}/</b><span>{{ it.word|word }}</span></div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+  {{ foot(l.chart_title) }}
+</div>
+{%- endif %}
 {%- endif %}
 {%- endfor %}
 <script>{{ paginate_js|safe }}</script>

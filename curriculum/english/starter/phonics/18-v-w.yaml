@@ -1,0 +1,51 @@
+lesson: 18
+title: The Letters V and W
+intro: V and W have one sound each. W makes new sounds with other letters.
+parts:
+  - letter: V
+    intro: one sound
+    sounds:
+      - ipa: v
+        name: Top teeth on your bottom lip, voice on
+        examples: ["[v]an", "[v]est", "se[v]en"]
+    rules:
+      - text: English words almost never end in V. We add a silent E.
+        examples: ["ha[v]{e}", "gi[v]{e}", "li[v]{e}"]
+        reliability: almost
+    silent:
+      none: V is never silent.
+  - letter: W
+    intro: one sound
+    sounds:
+      - ipa: w
+        name: Round your lips like a small O
+        examples: ["[w]et", "[w]in", "[w]eb"]
+    silent:
+      rule: W is silent in a few words.
+      examples: ["t{w}o", "ans{w}er"]
+      reliability: few
+    teams:
+      - letters: wh
+        reliability: usually
+        sounds:
+          - {ipa: w, examples: ["[wh]at", "[wh]en", "[wh]ite"]}
+        note: "But: who · whole say /h/."
+      - letters: wr
+        reliability: always
+        sounds:
+          - {ipa: r, examples: ["{w}[r]ite", "{w}[r]ong", "{w}[r]ap"]}
+        note: "At the start of a word, the W is silent."
+      - letters: aw
+        reliability: almost
+        sounds:
+          - {ipa: ɑː, examples: ["s[aw]", "dr[aw]", "l[aw]"]}
+      - letters: ew
+        reliability: usually
+        sounds:
+          - {ipa: uː, examples: ["n[ew]", "gr[ew]", "fl[ew]"]}
+        note: "Sometimes /juː/: few"
+      - letters: ow
+        reliability: varies
+        sounds:
+          - {ipa: oʊ, examples: ["sn[ow]", "sl[ow]", "gr[ow]"]}
+          - {ipa: aʊ, examples: ["n[ow]", "c[ow]", "t[ow]n"]}

@@ -1,0 +1,43 @@
+lesson: 14
+title: The Letters P and Q
+intro: P has one sound. Q almost always comes with U.
+parts:
+  - letter: P
+    intro: one sound
+    sounds:
+      - ipa: p
+        name: Close your lips, then let the air pop out
+        examples: ["[p]an", "[p]ot", "ca[p]"]
+    silent:
+      rule: P is silent in a few words.
+      examples: ["recei{p}t", "cu{p}board"]
+      reliability: few
+    teams:
+      - letters: ph
+        reliability: almost
+        sounds:
+          - {ipa: f, examples: ["[ph]one", "[ph]oto", "gra[ph]"]}
+      - letters: pp
+        reliability: always
+        sounds:
+          - {ipa: p, examples: ["su[pp]er", "pe[pp]er", "co[pp]er"]}
+  - letter: Q
+    intro: always with U
+    sounds:
+      - ipa: kw
+        name: Q and U together
+        highlight: qu
+        examples: ["[qu]ick", "[qu]iet", "[qu]estion"]
+    rules:
+      - text: In English words, Q is almost always followed by U.
+        reliability: almost
+        note: "Names from other languages can be different:"
+        note_examples: [Iraq, Qatar]
+    silent:
+      none: Q is never silent.
+    teams:
+      - letters: que
+        reliability: always
+        sounds:
+          - {ipa: k, examples: ["uni[que]", "anti[que]"]}
+        note: "At the end of a word."

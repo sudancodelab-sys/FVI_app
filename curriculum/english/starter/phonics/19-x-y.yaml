@@ -1,0 +1,53 @@
+lesson: 19
+title: The Letters X and Y
+intro: X makes two sounds at once. Y can be a consonant or a vowel.
+parts:
+  - letter: X
+    intro: two sounds together
+    sounds:
+      - ipa: ks
+        name: Two sounds together — /k/ and /s/
+        examples: ["si[x]", "fo[x]", "ta[x]i"]
+      - ipa: ɡz
+        name: Two sounds together — /ɡ/ and /z/
+        examples: ["e[x]am", "e[x]act", "e[x]ample"]
+    silent:
+      none: X is almost never silent.
+  - letter: Y
+    intro: a consonant and a vowel
+    sounds:
+      - ipa: j
+        name: At the start of a word
+        examples: ["[y]es", "[y]ellow", "[y]ard"]
+      - ipa: aɪ
+        name: Long I — end of a short word
+        examples: ["m[y]", "fl[y]", "wh[y]"]
+      - ipa: i
+        name: Like E — end of a long word
+        examples: ["happ[y]", "cand[y]", "luck[y]"]
+      - ipa: ɪ
+        name: Like short I
+        examples: ["m[y]th", "s[y]stem", "s[y]mbol"]
+    rules:
+      - text: After C or G, Y works like E or I.
+        detail: C says /s/ and G says /dʒ/.
+        examples: ["fan[cy]", "[cy]cle", "[gy]m", "ener[gy]"]
+        reliability: usually
+    silent:
+      none: Y is almost never silent on its own.
+    teams:
+      - letters: ay
+        reliability: almost
+        sounds:
+          - {ipa: eɪ, examples: ["d[ay]", "pl[ay]", "s[ay]"]}
+        note: "But: says"
+      - letters: ey
+        reliability: varies
+        sounds:
+          - {ipa: i, examples: ["vall[ey]", "hon[ey]", "turk[ey]"]}
+          - {ipa: iː, examples: ["k[ey]"]}
+          - {ipa: eɪ, examples: ["th[ey]", "ob[ey]"]}
+      - letters: oy
+        reliability: always
+        sounds:
+          - {ipa: ɔɪ, examples: ["t[oy]", "j[oy]", "enj[oy]"]}

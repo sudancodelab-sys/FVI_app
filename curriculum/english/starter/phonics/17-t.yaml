@@ -1,0 +1,44 @@
+lesson: 17
+letters: [T]
+title: The Letter T
+intro: T is a consonant. American English has a special T between vowels.
+sounds:
+  - ipa: t
+    name: Tongue behind your top teeth, then a puff of air
+    examples: ["[t]op", "[t]ent", "ba[t]"]
+rules:
+  - text: Between two vowels, the American T sounds like a quick, soft D.
+    examples: ["wa[t]er", "la[t]er", "da[t]a"]
+    reliability: usually
+silent:
+  rule: In STEN and STLE, T is silent.
+  examples: ["lis{t}en", "fas{t}en", "cas{t}le"]
+  reliability: usually
+teams:
+  - letters: th
+    reliability: varies
+    sounds:
+      - {ipa: θ, examples: ["[th]ink", "[th]ree", "ma[th]"]}
+      - {ipa: ð, examples: ["[th]is", "[th]at", "[th]em"]}
+  - letters: tch
+    reliability: always
+    sounds:
+      - {ipa: tʃ, examples: ["wa[tch]", "ca[tch]", "ki[tch]en"]}
+  - letters: tion
+    reliability: almost
+    sounds:
+      - {ipa: ʃən, examples: ["sta[tion]", "na[tion]", "ac[tion]"]}
+    note: "One common word is different: question"
+  - letters: ture
+    reliability: always
+    sounds:
+      - {ipa: tʃɚ, examples: ["pic[ture]", "fu[ture]", "na[ture]"]}
+  - letters: tt
+    reliability: always
+    sounds:
+      - {ipa: t, examples: ["le[tt]er", "be[tt]er", "bo[tt]om"]}
+  - letters: bt
+    reliability: always
+    sounds:
+      - {ipa: t, examples: ["dou{b}[t]", "de{b}[t]"]}
+    note: "The B is silent."

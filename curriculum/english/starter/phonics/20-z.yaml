@@ -1,0 +1,71 @@
+lesson: 20
+letters: [Z]
+title: The Letter Z
+intro: Z is the last letter of the alphabet. It has one sound.
+sounds:
+  - ipa: z
+    name: Like /s/ with your voice on
+    examples: ["[z]oo", "[z]ero", "la[z]y"]
+silent:
+  none: Z is never silent.
+teams:
+  - letters: zz
+    reliability: almost
+    sounds:
+      - {ipa: z, examples: ["bu[zz]", "ja[zz]", "fi[zz]"]}
+    note: "One common word is different: pizza says /ts/."
+chart_title: All the Sounds of American English
+chart_intro: Every sound you learned in this book, with a word you know.
+chart:
+  - title: Short vowels
+    items:
+      - {ipa: æ, word: "c[a]t"}
+      - {ipa: e, word: "b[e]d"}
+      - {ipa: ɪ, word: "s[i]t"}
+      - {ipa: ɑː, word: "h[o]t"}
+      - {ipa: ʌ, word: "c[u]p"}
+      - {ipa: ʊ, word: "b[oo]k"}
+      - {ipa: ə, word: "[a]bout"}
+  - title: Long vowels and two-part vowels
+    items:
+      - {ipa: iː, word: "m[e]"}
+      - {ipa: eɪ, word: "d[ay]"}
+      - {ipa: aɪ, word: "m[y]"}
+      - {ipa: oʊ, word: "g[o]"}
+      - {ipa: uː, word: "f[oo]d"}
+      - {ipa: aʊ, word: "[ou]t"}
+      - {ipa: ɔɪ, word: "[oi]l"}
+  - title: Vowels with R
+    items:
+      - {ipa: ɑːr, word: "c[ar]"}
+      - {ipa: ɔːr, word: "f[or]"}
+      - {ipa: ɝː, word: "b[ir]d"}
+      - {ipa: ɚ, word: "wat[er]"}
+      - {ipa: er, word: "h[air]"}
+      - {ipa: ɪr, word: "n[ear]"}
+  - title: Consonants
+    items:
+      - {ipa: p, word: "[p]an"}
+      - {ipa: b, word: "[b]ell"}
+      - {ipa: t, word: "[t]op"}
+      - {ipa: d, word: "[d]esk"}
+      - {ipa: k, word: "[k]id"}
+      - {ipa: ɡ, word: "[g]as"}
+      - {ipa: f, word: "[f]an"}
+      - {ipa: v, word: "[v]an"}
+      - {ipa: θ, word: "[th]ink"}
+      - {ipa: ð, word: "[th]is"}
+      - {ipa: s, word: "[s]alt"}
+      - {ipa: z, word: "[z]oo"}
+      - {ipa: ʃ, word: "fi[sh]"}
+      - {ipa: ʒ, word: "vi[s]ion"}
+      - {ipa: tʃ, word: "[ch]ip"}
+      - {ipa: dʒ, word: "[j]ob"}
+      - {ipa: m, word: "[m]ilk"}
+      - {ipa: n, word: "[n]et"}
+      - {ipa: ŋ, word: "ri[ng]"}
+      - {ipa: h, word: "[h]at"}
+      - {ipa: l, word: "[l]amp"}
+      - {ipa: r, word: "[r]un"}
+      - {ipa: w, word: "[w]et"}
+      - {ipa: j, word: "[y]es"}

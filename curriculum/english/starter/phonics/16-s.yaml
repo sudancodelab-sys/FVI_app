@@ -1,0 +1,45 @@
+lesson: 16
+letters: [S]
+title: The Letter S
+intro: S is a consonant with two sounds. With H it makes a new sound.
+sounds:
+  - ipa: s
+    name: Air hisses out, like a snake
+    examples: ["[s]alt", "[s]and", "plu[s]"]
+  - ipa: z
+    name: Like /s/ with your voice on
+    examples: ["i[s]", "ha[s]", "ea[s]y"]
+rules:
+  - text: At the end of a word, S can say /s/ or /z/.
+    examples: ["cat[s]", "book[s]", "dog[s]", "pen[s]"]
+    reliability: always
+    note: "After P, T, K or F: /s/. After other sounds: /z/."
+silent:
+  rule: S is silent in a few words.
+  examples: ["i{s}land"]
+  reliability: few
+teams:
+  - letters: sh
+    reliability: always
+    sounds:
+      - {ipa: ʃ, examples: ["fi[sh]", "[sh]op", "ca[sh]"]}
+  - letters: ss
+    reliability: almost
+    sounds:
+      - {ipa: s, examples: ["cla[ss]", "gla[ss]", "dre[ss]"]}
+  - letters: sc
+    reliability: usually
+    sounds:
+      - {ipa: s, examples: ["[sc]ience", "[sc]ene", "[sc]ent"]}
+      - {ipa: sk, examples: ["[sc]arf", "[sc]an"]}
+    note: "Before E or I, SC says /s/."
+  - letters: sion
+    reliability: varies
+    sounds:
+      - {ipa: ʒən, examples: ["vi[sion]", "fu[sion]", "deci[sion]"]}
+      - {ipa: ʃən, examples: ["ten[sion]", "man[sion]", "pen[sion]"]}
+  - letters: es
+    reliability: always
+    sounds:
+      - {ipa: ɪz, examples: ["box[es]", "bus[es]", "dish[es]"]}
+    note: "After S, X, SH or CH, the plural ending ES says /ɪz/."

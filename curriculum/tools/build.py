@@ -112,13 +112,20 @@ def sound_units(ipa):
     return units
 
 
+def _same(got, want, next_want):
+    if got in _EQUIVALENT.get(want, {want}):
+        return True
+    # Cambridge writes the vowel of "near" as /ɪr/; CMU writes it as IY + R.
+    return want == 'ɪ' and next_want == 'r' and got == 'iː'
+
+
 def has_sound(prons, ipa):
     want = sound_units(ipa)
     for pron in prons:
         got = to_ipa(pron)
         for start in range(len(got) - len(want) + 1):
-            if all(g in _EQUIVALENT.get(w, {w}) for g, w in
-                   zip(got[start:start + len(want)], want)):
+            if all(_same(got[start + i], w, want[i + 1] if i + 1 < len(want) else None)
+                   for i, w in enumerate(want)):
                 return True
     return False
 
@@ -181,7 +188,7 @@ def check_level(level, lessons, wordlists):
                 if len(s['examples']) != 3:
                     report.error(where, 'needs exactly 3 examples')
                 for ex in s['examples']:
-                    check_word(where, ex, s['ipa'], highlight=letter.lower())
+                    check_word(where, ex, s['ipa'], highlight=s.get('highlight', letter).lower())
             for si in part['silent']:
                 for ex in si.get('examples', []):
                     check_word(f'lesson {n} {letter} silent', ex, silent=letter.lower())
@@ -199,7 +206,13 @@ def check_level(level, lessons, wordlists):
                     for ex in s['examples']:
                         check_word(f'{where} /{ipa or "silent"}/', ex, ipa, marks=t)
 
+        for group in lesson.get('chart', []):
+            for item in group['items']:
+                sound_units(item['ipa'])
+                check_word(f'lesson {n} chart /{item["ipa"]}/', item['word'], item['ipa'])
+
     for word, places in seen.items():
+        places = [p for p in places if ' chart ' not in p]  # the chart reuses words on purpose
         if len(places) > 1:
             report.warn(places[-1], f'"{word}" is used more than once ({", ".join(places)})')
     return report

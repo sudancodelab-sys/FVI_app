@@ -1,0 +1,63 @@
+lesson: 15
+letters: [R]
+title: The Letter R
+intro: R is a consonant. In American English we always say it, and it changes the vowel before it.
+sounds:
+  - ipa: r
+    name: Round your lips; your tongue does not touch the top
+    examples: ["[r]un", "[r]ock", "[r]est"]
+rules:
+  - text: In American English, we always say the R — even at the end of a word.
+    examples: ["ca[r]", "fa[r]", "wate[r]"]
+    reliability: always
+silent:
+  none: R is never silent in American English.
+teams:
+  - letters: ar
+    reliability: usually
+    sounds:
+      - {ipa: ɑːr, examples: ["c[ar]", "p[ar]k", "f[ar]m"]}
+    note: "After W it is different: war · warm"
+  - letters: or
+    reliability: usually
+    sounds:
+      - {ipa: ɔːr, examples: ["f[or]", "c[or]n", "f[or]k"]}
+    note: "After W it is different: word · work"
+  - letters: er
+    reliability: usually
+    sounds:
+      - {ipa: ɝː, examples: ["t[er]m", "v[er]b", "p[er]son"]}
+      - {ipa: ɚ, examples: ["wat[er]", "teach[er]", "numb[er]"]}
+    note: "At the end of a word, ER is weak: /ɚ/."
+  - letters: ir
+    reliability: almost
+    sounds:
+      - {ipa: ɝː, examples: ["b[ir]d", "f[ir]st", "sh[ir]t"]}
+  - letters: ur
+    reliability: almost
+    sounds:
+      - {ipa: ɝː, examples: ["t[ur]n", "b[ur]n", "f[ur]"]}
+    note: "ER, IR and UR often sound the same."
+  - letters: air
+    reliability: always
+    sounds:
+      - {ipa: er, examples: ["h[air]", "ch[air]", "f[air]"]}
+  - letters: are
+    reliability: almost
+    sounds:
+      - {ipa: er, examples: ["c[are]", "sh[are]", "sc[are]"]}
+    note: "One very common word is different: are /ɑːr/"
+  - letters: ear
+    reliability: varies
+    sounds:
+      - {ipa: ɪr, examples: ["n[ear]", "h[ear]", "cl[ear]"]}
+      - {ipa: er, examples: ["b[ear]", "w[ear]", "p[ear]"]}
+      - {ipa: ɝː, examples: ["l[ear]n", "[ear]th", "[ear]ly"]}
+  - letters: eer
+    reliability: always
+    sounds:
+      - {ipa: ɪr, examples: ["d[eer]", "ch[eer]", "car[eer]"]}
+  - letters: rr
+    reliability: always
+    sounds:
+      - {ipa: r, examples: ["ca[rr]y", "so[rr]y", "mi[rr]or"]}
