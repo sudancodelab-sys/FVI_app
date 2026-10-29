@@ -34,15 +34,28 @@
 <div class="page cover">
   <div class="cover-top">
     <img src="{{ assets }}/logo-512.png" alt="">
-    <b>Future Vision Institute</b>
-    <span>English Programme</span>
+    <div><b>Future Vision Institute</b><span>English Programme</span></div>
   </div>
   <div class="cover-mid">
     <span class="stage">{{ level.stage }} Stage</span>
     <h1>{{ level.name }}</h1>
     <p>{{ level.subtitle }}</p>
   </div>
-  <div class="cover-letters">{% for c in 'AaBbCcDdEe' %}<span>{{ c }}</span>{% endfor %}</div>
+  {#- Inspired by the logo: an open book, a figure rising from it, and the star it reaches for. #}
+  <svg class="cover-art" viewBox="0 0 200 156" aria-hidden="true">
+    <circle cx="100" cy="84" r="68" class="ring-out"/>
+    <circle cx="100" cy="84" r="62" class="ring"/>
+    {#- Three stacked pages per side; outer pages are taller and fan out a little. #}
+    {%- for k in range(3) %}
+    {%- set x = 26 + k * 15 %}{% set top = 54 + k * 11 %}{% set low = 108 + k * 3 %}{% set spine = 141 - k * 8 %}
+    <path class="page-l" d="M{{ x }} {{ top }} L{{ x + 5 }} {{ low }} Q{{ x + 9 }} {{ spine - 4 }} 97 {{ spine }}"/>
+    <path class="page-r" d="M{{ 200 - x }} {{ top }} L{{ 195 - x }} {{ low }} Q{{ 191 - x }} {{ spine - 4 }} 103 {{ spine }}"/>
+    {%- endfor %}
+    <path class="figure" d="M100 132 L74 66 Q88 74 100 75 Q121 70 139 26 L146 30 Q133 92 100 132 Z"/>
+    <circle class="figure" cx="80" cy="48" r="10.5"/>
+    <text x="101" y="102" class="fvi">FVI</text>
+    <path class="star" d="M152 8 l2.6 6.4 6.9.5-5.3 4.4 1.7 6.7-5.9-3.7-5.9 3.7 1.7-6.7-5.3-4.4 6.9-.5z"/>
+  </svg>
   <div class="cover-foot">Student Book</div>
 </div>
 <div class="page toc">
