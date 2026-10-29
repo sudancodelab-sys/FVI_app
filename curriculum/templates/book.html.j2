@@ -32,89 +32,62 @@
 } %}
 {%- if book %}
 {%- set c = level.course %}
-{%- set style = level.cover_style or c.cover_style or 'a' %}
-{%- macro star(cls) %}<svg class="{{ cls }}" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l3.1 7.2 7.8.6-6 5.1 1.9 7.6L12 17.9 5.2 22l1.9-7.6-6-5.1 7.8-.6z"/></svg>{% endmacro %}
-{%- macro pages_motif(cls) %}
-<svg class="{{ cls }}" viewBox="0 0 200 120" aria-hidden="true">
-  {%- for k in range(3) %}{% set x = 26 + k * 15 %}{% set top = 24 + k * 11 %}{% set low = 78 + k * 3 %}{% set spine = 111 - k * 8 %}
-  <path d="M{{ x }} {{ top }} L{{ x + 5 }} {{ low }} Q{{ x + 9 }} {{ spine - 4 }} 97 {{ spine }}"/>
-  <path d="M{{ 200 - x }} {{ top }} L{{ 195 - x }} {{ low }} Q{{ 191 - x }} {{ spine - 4 }} 103 {{ spine }}"/>
-  {%- endfor %}
-</svg>
-{%- endmacro %}
-{%- macro book_star(cls) %}
-<svg class="{{ cls }}" viewBox="0 0 200 150" aria-hidden="true">
-  <path class="st" d="M100 4l5.6 13 14.1 1.1-10.8 9.2 3.4 13.7L100 33.6 87.7 41l3.4-13.7-10.8-9.2 14.1-1.1z"/>
-  {%- for k in range(3) %}{% set x = 26 + k * 15 %}{% set top = 54 + k * 11 %}{% set low = 108 + k * 3 %}{% set spine = 141 - k * 8 %}
-  <path class="pg" d="M{{ x }} {{ top }} L{{ x + 5 }} {{ low }} Q{{ x + 9 }} {{ spine - 4 }} 97 {{ spine }}"/>
-  <path class="pg" d="M{{ 200 - x }} {{ top }} L{{ 195 - x }} {{ low }} Q{{ 191 - x }} {{ spine - 4 }} 103 {{ spine }}"/>
-  {%- endfor %}
-</svg>
-{%- endmacro %}
-{%- if style == 'a' %}
-<div class="page cover cover-a">
-  <div class="cv-brand">
-    <img src="{{ assets }}/logo-512.png" alt="">
-    <div><b>Future Vision Institute</b><span>{{ c.institute_line }}</span><em>{{ c.slogan }}</em></div>
-  </div>
-  <div class="cv-row">
-    <div class="strip" aria-hidden="true">
-      {%- for st in c.stages %}
-      <div class="strip-stage">{% for name in st.levels %}<i class="{{ 'now' if name == level.name }}"></i>{% endfor %}</div>
-      {%- endfor %}
+{%- set parts = level.name.rsplit(' ', 1) %}
+{%- set numbered = parts|length == 2 and parts[1].isdigit() %}
+<div class="page cover cover-seal">
+  <div class="cs-top">
+    <div class="cs-brand">
+      <img src="{{ assets }}/logo-512.png" alt="">
+      <div><b>Future Vision Institute</b><span>{{ c.institute_line }}</span><em>{{ c.slogan }}</em></div>
     </div>
-    <div class="cv-main">
-      <div class="level-card">
-        <span class="lbl">Level</span>
-        <h1 class="{{ 'long' if level.name|length > 10 }}">{{ level.name }}</h1>
-        <span class="bar"></span>
-        <p>{{ level.tagline }}</p>
-        <span class="stage">{{ level.stage }} Stage</span>
-        {%- if level.cefr %}<div class="cefr"><b>{{ level.cefr }}</b><small>CEFR</small></div>
-        {%- else %}{{ star('card-star') }}{% endif %}
-        {{ pages_motif('card-pages') }}
-      </div>
-      <div class="cover-course"><b>{{ c.course }}</b><span>Student Book</span></div>
-      <div class="cover-fields">
-        {%- for f in ['Student Name', 'Teacher', 'Group / Time', 'Month'] %}
-        <div><b>{{ f }}</b><i></i></div>
+    <span class="cs-book">Student Book</span>
+  </div>
+
+  {#- The level as a seal, like the circular FVI logo: words around a ring,
+      the star at the edge, and the curves of the open book at the bottom. #}
+  <div class="cs-seal">
+    <svg class="cs-ring" viewBox="0 0 140 140" aria-hidden="true">
+      <defs><path id="cs-path" d="M70 70 m-62.5 0 a62.5 62.5 0 1 1 125 0 a62.5 62.5 0 1 1 -125 0"/></defs>
+      <circle cx="70" cy="70" r="68.5" class="r-out"/>
+      <circle cx="70" cy="70" r="57" class="r-in"/>
+      <text class="r-text"><textPath href="#cs-path" textLength="388" lengthAdjust="spacing">{{ c.course|upper }} ✦ STUDENT BOOK ✦ {{ level.stage|upper }} STAGE ✦</textPath></text>
+      <path class="r-star" d="M97 26l2.6 6 6.5.5-5 4.2 1.6 6.3L97 39.6l-5.6 3.4 1.6-6.3-5-4.2 6.5-.5z"/>
+      <g class="r-book" transform="translate(38 76) scale(.32)">
+        {%- for k in range(3) %}{% set x = 26 + k * 15 %}{% set top = 54 + k * 11 %}{% set low = 108 + k * 3 %}{% set spine = 141 - k * 8 %}
+        <path d="M{{ x }} {{ top }} L{{ x + 5 }} {{ low }} Q{{ x + 9 }} {{ spine - 4 }} 97 {{ spine }}"/>
+        <path d="M{{ 200 - x }} {{ top }} L{{ 195 - x }} {{ low }} Q{{ 191 - x }} {{ spine - 4 }} 103 {{ spine }}"/>
         {%- endfor %}
-      </div>
+      </g>
+    </svg>
+    <div class="cs-inner">
+      <span class="lbl">Level</span>
+      {%- if numbered %}
+      <span class="cs-stage-name">{{ parts[0] }}</span>
+      <b class="cs-num">{{ parts[1] }}</b>
+      {%- else %}
+      <b class="cs-name">{{ level.name }}</b>
+      {%- endif %}
+      {%- if level.cefr %}<span class="cs-cefr">{{ level.cefr }} <small>CEFR</small></span>{% endif %}
     </div>
   </div>
-</div>
-{%- else %}
-<div class="page cover cover-b">
-  <div class="cb-band">
-    <img src="{{ assets }}/logo-512.png" alt="">
-    <div class="cb-name"><b>Future Vision Institute</b><span>{{ c.institute_line }}</span><em>{{ c.slogan }}</em></div>
-    <span class="cb-book">Student Book</span>
-  </div>
-  <div class="cb-hero">
-    {{ book_star('cb-art') }}
-    {%- if level.cefr %}<div class="cefr"><b>{{ level.cefr }}</b><small>CEFR</small></div>{% endif %}
-    <span class="lbl">Level</span>
-    <h1 class="{{ 'long' if level.name|length > 10 }}">{{ level.name }}</h1>
-    <span class="bar"></span>
-    <p>{{ level.tagline }}</p>
-    <span class="stage">{{ level.stage }} Stage</span>
-  </div>
-  <div class="cb-track" aria-hidden="true">
+
+  <p class="cs-tagline">{{ level.tagline }}</p>
+  <div class="cs-track" aria-hidden="true">
     {%- for st in c.stages %}
-    <div class="cb-stage" style="flex:{{ st.levels|length }}">
-      <div class="cb-bars">{% for name in st.levels %}<i class="{{ 'now' if name == level.name }}"></i>{% endfor %}</div>
+    <div class="cs-group">
+      <div>{% for name in st.levels %}<i class="{{ 'now' if name == level.name }}"></i>{% endfor %}</div>
       <small class="{{ 'now' if level.name in st.levels }}">{{ st.name }}</small>
     </div>
     {%- endfor %}
   </div>
-  <div class="cb-fields">
+
+  <div class="cs-fields">
     {%- for f in ['Student Name', 'Teacher', 'Group / Time', 'Month'] %}
     <div class="{{ 'wide' if loop.first }}"><b>{{ f }}</b><i></i></div>
     {%- endfor %}
   </div>
-  <div class="cb-foot">{{ c.course }}</div>
+  <div class="cs-foot"><span></span></div>
 </div>
-{%- endif %}
 <div class="page toc">
   {{ head('Contents') }}
   <h1 class="toc-title">Contents</h1>
