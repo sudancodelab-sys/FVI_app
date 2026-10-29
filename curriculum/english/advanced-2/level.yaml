@@ -1,0 +1,23 @@
+# Advanced 2 level metadata (P9 internally, CEFR B2.2).
+# The end of B2: the English of meetings, interviews and the news.
+name: Advanced 2
+chip: ADVANCED 2
+stage: Advanced
+cefr: B2.2
+tagline: Confident English for meetings, interviews, and the news
+subtitle: Stories · News · Podcasts · Conversations
+story_words: [260, 380]
+split_boxes: true
+units:
+  1: Getting Used to It
+  2: If Things Had Been Different
+  3: Getting Things Done
+  4: He Denied Everything
+  5: What I Remember Most
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}
+  Huda: {initial: H, color: e}
+  # Guests and one-scene roles.
