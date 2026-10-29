@@ -34,70 +34,46 @@
 {%- set c = level.course %}
 {%- set parts = level.name.rsplit(' ', 1) %}
 {%- set numbered = parts|length == 2 and parts[1].isdigit() %}
-<div class="page cover cover-scene">
-  <div class="sc-top">
-    <div class="sc-brand">
-      <img src="{{ assets }}/logo-512.png" alt="">
-      <div><b>Future Vision Institute</b><span>{{ c.institute_line }}</span></div>
-    </div>
-    <span class="sc-book">Student Book</span>
+<div class="page cover">
+  {#- Every level of the course, the first at the bottom; this book's level is filled. #}
+  <div class="cv-strip" aria-hidden="true">
+    {%- for st in c.stages|reverse %}
+    {%- set si = loop.revindex0 %}
+    {%- for name in st.levels|reverse %}<i class="s{{ si }}{{ ' now' if name == level.name }}"></i>{% endfor %}
+    {%- endfor %}
   </div>
-
-  {#- A motivational picture: sunrise over the mountains, a path to the summit flag. #}
-  <svg class="sc-art" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <linearGradient id="sc-sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#EEF1FB"/><stop offset="1" stop-color="#FFF4EE"/>
-      </linearGradient>
-    </defs>
-    <rect width="360" height="200" fill="url(#sc-sky)"/>
-    <g class="ln">
-      <g class="sun">
-        <circle cx="262" cy="86" r="30"/>
-        <path d="M262 42v-10M262 140v-10M218 86h-10M316 86h-10M231 55l-7-7M300 124l-7-7M293 55l7-7M231 117l-7 7"/>
-      </g>
-      <path class="cloud" d="M44 60a10 10 0 0 1 19-3 8 8 0 0 1 13 6H38a6 6 0 0 1 6-3z"/>
-      <path class="cloud" d="M128 36a8 8 0 0 1 15-2 6.5 6.5 0 0 1 10 5h-30a5 5 0 0 1 5-3z"/>
-      <path class="bird" d="M196 44q4-4 8 0q4-4 8 0M180 58q3-3 6 0q3-3 6 0"/>
-      <path class="far" d="M-5 152 58 100l38 26 50-42 44 38 46-30 52 38 40-22 42 28v70H-5z"/>
-      <path class="near" d="M-5 205v-28l74-34 42 20 96-90 76 78 82-30v84z"/>
-      <path class="snow" d="M192 88l9 7 7-7 8 8 8-9"/>
-      <path class="trail" d="M150 205c18-14-8-24 18-38s30-20 26-40 10-28 12-50"/>
-      <path class="pole" d="M207 73V40"/>
-      <path class="flag" d="M207 40l24 7-24 8z"/>
-    </g>
-  </svg>
-
-  <div class="sc-level">
-    <div>
-      <span class="lbl">Level</span>
-      {%- if numbered %}
-      <span class="sc-stage-name">{{ parts[0] }}</span>
-      <h1 class="sc-name">{{ parts[1] }}</h1>
-      {%- else %}
-      <h1 class="sc-name">{{ level.name }}</h1>
+  <div class="cv-brand">
+    <img src="{{ assets }}/logo-512.png" alt="">
+    <div><b>Future Vision</b><span>{{ c.institute_line }}</span></div>
+  </div>
+  <div class="cv-box">
+    <div class="cv-top">
+      <div>
+        <span class="lbl">Level</span>
+        {%- if numbered %}
+        <div class="cv-num">{{ parts[1] }}</div>
+        {%- else %}
+        {#- Levels without a number (Starter) show the star from the logo. #}
+        <svg class="cv-num cv-star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6l12.6 30.6 33 2.6-25.2 21.5 7.8 32.2L50 75.6 21.8 92.9l7.8-32.2L4.4 39.2l33-2.6z"/></svg>
+        {%- endif %}
+      </div>
+      {%- if level.cefr %}
+      {%- set cf = level.cefr.split('-', 1) if level.cefr.startswith('Pre-') else ['', level.cefr] %}
+      <div class="cefr">{% if cf[0] %}<small class="pre">{{ cf[0] }}</small>{% endif %}<b>{{ cf[1] }}</b><small>CEFR</small></div>
       {%- endif %}
-      <span class="bar"></span>
-      <p>{{ level.tagline }}</p>
     </div>
-    {%- if level.cefr %}<div class="cefr sc-cefr"><b>{{ level.cefr }}</b><small>CEFR</small></div>{% endif %}
+    {%- set title = parts[0] if numbered else level.name %}
+    <h1 class="cv-name{{ ' long' if title|length > 10 }}">{{ title }}</h1>
+    <span class="bar"></span>
+    <p class="cv-tag">{{ level.tagline }}</p>
   </div>
-
-  <div class="sc-track" aria-hidden="true">
-    {%- for st in c.stages %}
-    <div class="cs-group">
-      <div>{% for name in st.levels %}<i class="{{ 'now' if name == level.name }}"></i>{% endfor %}</div>
-      <small class="{{ 'now' if level.name in st.levels }}">{{ st.name }}</small>
-    </div>
-    {%- endfor %}
-  </div>
-
-  <div class="cs-fields">
+  <div class="cv-course"><b>{{ c.course }}</b><span>Student Book</span></div>
+  <div class="cv-fields">
     {%- for f in ['Student Name', 'Teacher', 'Group / Time', 'Month'] %}
-    <div class="{{ 'wide' if loop.first }}"><b>{{ f }}</b><i></i></div>
+    <div><b>{{ f }}</b><i></i></div>
     {%- endfor %}
   </div>
-  <div class="sc-foot"><b>{{ c.course }}</b></div>
+  <div class="cv-foot"><i></i><span>{{ level.subtitle }}</span><i></i></div>
 </div>
 <div class="page toc">
   {{ head('Contents') }}

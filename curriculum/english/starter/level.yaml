@@ -1,4 +1,4 @@
-# Starter level metadata (P1 internally; no CEFR circle).
+# Starter level metadata (P1 internally).
 name: Starter
 chip: STARTER
 # Teaching order of the letters: vowels first, then consonants A-Z.
@@ -12,5 +12,5 @@ cast:
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
 tagline: Learn the sounds of English and start speaking
-# Starter has no CEFR equivalent, so the cover shows no CEFR circle.
-cefr:
+# Starter comes before A1, which the CEFR calls Pre-A1.
+cefr: Pre-A1
