@@ -1,0 +1,20 @@
+# Pre-Intermediate 3 level metadata (P4 internally, CEFR A2.1).
+name: Pre-Intermediate 3
+chip: PRE-INTERMEDIATE 3
+stage: Pre-Intermediate
+cefr: A2.1
+tagline: Plans, comparisons and stories from everyday life
+subtitle: Stories · Topics · Conversations
+story_words: [120, 190]
+# Longer lessons: the "What did you learn?" box may continue on the next page.
+split_learn: true
+units:
+  1: Plans
+  2: Bigger and Better
+  3: At Home
+  4: What Were You Doing?
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}

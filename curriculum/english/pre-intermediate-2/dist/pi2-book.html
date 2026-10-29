@@ -964,11 +964,11 @@ window.fviReady = (async () => {
   await document.fonts.ready;
   const overflows = (page) => page.scrollHeight > page.clientHeight + 1;
   const flowOf = (page) => page.querySelector('.flow');
-  // A section may split between its letter teams, rule boxes, questions or
-  // conversation lines. One with other content (a grid of sound cards) keeps
+  // A section may split between its letter teams, rule boxes, questions,
+  // conversation lines or the two parts of a "What did you learn?" box. One with other content (a grid of sound cards) keeps
   // that content and may hand on every box; a list keeps at least its first
   // item, and a conversation its first three lines.
-  const ITEM = '.team, .rule, .q, .line';
+  const ITEM = '.team, .rule, .q, .line, .lsec > .learn';
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => {
     if (sec.querySelector(':scope > .line')) return 3;

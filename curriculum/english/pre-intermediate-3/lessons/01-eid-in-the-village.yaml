@@ -1,0 +1,53 @@
+lesson: 1
+unit: 1
+kind: story
+title: Eid in the Village
+subtitle: Adam's family has big plans for Eid. Read the plan, then read what really happened.
+icon: moon
+goals: [Talk about plans, "Ask: What are you going to do?", Tell what happened after]
+story:
+  - Next week is Eid. Adam's family [is going to travel] to his grandfather's village. It is a small village near the Nile, about three hours from Khartoum.
+  - They [are going to take] the bus early in the morning. Tonight, Adam's mother [is going to bake] Eid cookies, and his father [is going to buy] new clothes for the children. Adam [is going to wear] a new white shirt.
+  - In the village, they [are going to visit] all their uncles, aunts, and cousins. Adam's grandfather [is going to sit] under the big tree and tell old stories, and the children [are going to play] football by the river.
+  - "But there is one problem. Adam's little brother, Hamza, is very excited. \"I['m going to eat] one hundred cookies!\" he says. His mother laughs. \"You [aren't going to eat] one hundred, Hamza. You [are going to eat] two!\""
+questions:
+  - ["When is Eid?", "Next week."]
+  - ["Where is Adam's family going to travel?", "To his grandfather's village."]
+  - ["Is the village big or small?", "Small. It's near the Nile."]
+  - ["How far is it from Khartoum?", "About three hours."]
+  - ["Are they going to take a bus or a taxi?", "A bus, early in the morning."]
+  - ["What is Adam's mother going to bake?", "Eid cookies."]
+  - ["Who is going to buy new clothes?", "Adam's father."]
+  - ["What is Adam going to wear?", "A new white shirt."]
+  - ["Who are they going to visit?", "Their uncles, aunts, and cousins."]
+  - ["What is his grandfather going to do?", "Sit under the big tree and tell old stories."]
+  - ["Where are the children going to play football?", "By the river."]
+  - ["Is Hamza going to eat one hundred cookies?", "No, he isn't. He's going to eat two!"]
+pov:
+  intro: Now it is after Eid. Adam tells what happened.
+  speaker: Adam
+  text:
+    - Last week was Eid. My family [traveled] to my grandfather's village near the Nile. We [took] the bus early in the morning, and the trip [was] three hours long.
+    - The night before, my mother [baked] Eid cookies, and my father [bought] new clothes for us. I [wore] a new white shirt.
+    - In the village, we [visited] all our uncles, aunts, and cousins. My grandfather [sat] under the big tree and [told] old stories, and we [played] football by the river.
+    - And Hamza? He [ate] two cookies, then three, then ten! My mother [wasn't] happy, but Hamza [was]!
+learn:
+  title: You learned [be going to].
+  intro: We use it for plans, things we decided to do in the future. After the plan happens, we use the past simple.
+  table:
+    - ["I", "he · she · it", "you · we · they"]
+    - ["I['m going to] travel.", "He['s going to] bake.", "We['re going to] play."]
+    - ["I['m not going to] go.", "She [isn't going to] cook.", "They [aren't going to] stay."]
+    - ["[Am] I [going to] win?", "[Is] he [going to] come?", "What [are] you [going to] do?"]
+  notes:
+    - {title: "be + going to + [verb]", text: "We're going to visit our cousins."}
+    - {title: "For [plans]", text: "tonight, tomorrow, next week, next year"}
+    - {title: "Plan → [past]", text: "Before Eid: we're going to travel. After Eid: we traveled."}
+  ask: ["What are you going to do this weekend?", "I'm going to visit my family."]
+words:
+  - {word: village, meaning: a very small town in the country}
+  - {word: bake, meaning: "cook in an oven: bread, cakes, cookies"}
+  - {word: cookies, meaning: small sweet cakes}
+  - {word: aunts, meaning: your father's or mother's sisters}
+  - {word: river, meaning: "a long line of moving water, like the Nile"}
+  - {word: excited, meaning: very happy about something that is coming}

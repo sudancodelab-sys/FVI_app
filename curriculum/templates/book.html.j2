@@ -174,26 +174,43 @@
         <div>{% for para in l.pov.text %}<p>{{ para|mark }}</p>{% endfor %}</div>
       </div>
     </div>
-    <div class="sec" data-lesson="{{ l.lesson }}">
-      <h2><span class="num">4</span>What did you learn?</h2>
-      {%- set cols = l.learn.table[0]|length %}
-      <div class="learn">
-        <h3>{{ l.learn.title|mark('em') }}</h3>
-        <p>{{ l.learn.intro }}</p>
-        <div class="learn-body{{ ' wide' if cols > 2 or l.learn.wide }}">
-          <div class="forms c{{ cols }}">
-            {%- for row in l.learn.table %}
-            <div>{% for cell in row %}<span>{{ cell|mark('em') }}</span>{% endfor %}</div>
-            {%- endfor %}
-          </div>
+    {#- From levels with split_learn, the box comes in two parts that join
+        into one: when a page runs out, the second part (notes and question)
+        continues on the next page. Earlier levels keep their single box. #}
+    {%- set cols = l.learn.table[0]|length %}
+    {%- set wide = cols > 2 or l.learn.wide %}
+    {%- set split = level.split_learn %}
+    {%- set notes %}
           <div class="notes">
             {%- for n in l.learn.notes %}
             <div><b>{{ n.title|mark('em') }}</b>{{ n.text }}</div>
             {%- endfor %}
           </div>
-        </div>
+    {%- endset %}
+    {%- set ask %}
         <div class="ask"><b>Questions</b><span>{{ l.learn.ask[0] }}</span><i>{{ l.learn.ask[1] }}</i></div>
+    {%- endset %}
+    <div class="sec{{ ' lsec' if split }}" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">4</span>What did you learn?</h2>
+      <div class="learn">
+        <h3>{{ l.learn.title|mark('em') }}</h3>
+        <p>{{ l.learn.intro }}</p>
+        <div class="learn-body{{ ' wide' if wide }}">
+          <div class="forms c{{ cols }}">
+            {%- for row in l.learn.table %}
+            <div>{% for cell in row %}<span>{{ cell|mark('em') }}</span>{% endfor %}</div>
+            {%- endfor %}
+          </div>
+          {%- if not (split and wide) %}{{ notes }}{% endif %}
+        </div>
+        {%- if not split %}{{ ask }}{% endif %}
       </div>
+      {%- if split %}
+      <div class="learn more">
+        {%- if wide %}{{ notes }}{% endif %}
+        {{- ask }}
+      </div>
+      {%- endif %}
     </div>
     {{ new_words(l, 5) }}
   </div>

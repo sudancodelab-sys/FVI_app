@@ -407,3 +407,12 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .convo > :is(h2, .scene) + .line{border-top:1.2px solid var(--line);border-radius:4mm 4mm 0 0}
 .convo > .line:last-child{border-bottom:1.2px solid var(--line);border-radius:0 0 4mm 4mm}
 .convo > :is(h2, .scene) + .line:last-child{border-radius:4mm}
+
+/* the "What did you learn?" box in two parts that join into one */
+.lsec > .learn:not(:last-child){border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0;padding-bottom:0}
+.lsec > .learn + .learn{border-top:none;border-top-left-radius:0;border-top-right-radius:0;padding-top:4mm}
+.learn.more{background:#fff}
+.learn.more .notes{flex-direction:row}
+.learn.more .notes div{flex:1}
+.learn.more .notes + .ask{margin-top:4mm}
+.lsec > h2 + .learn.more > .ask:first-child{border-top:none;padding-top:0;margin-top:0}
