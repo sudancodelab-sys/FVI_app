@@ -232,46 +232,39 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .av.c{background:var(--green)}
 .line .av.c{font-size:6pt;letter-spacing:-.2px}
 
-/* cover: a seal, like the circular FVI logo; light, in the logo's colours */
-.page.cover{background:#fff;color:var(--navy);padding:13mm 15mm 0;align-items:center}
-.cover .lbl{font-size:11pt;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--navy)}
-.cover .cefr{position:absolute;width:26mm;height:26mm;border-radius:50%;background:var(--orange);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 2mm #fff}
-.cover .cefr b{font-size:17pt;font-weight:800;line-height:1.1}
+/* cover: logo and name, a motivational picture, then the level */
+.page.cover{background:#fff;color:var(--navy);padding:12mm 15mm 0}
+.cover .lbl{font-size:10.5pt;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--orange)}
+.cover .bar{display:block;width:20mm;height:1.6mm;border-radius:1mm;background:var(--orange)}
+.cover .cefr{width:28mm;height:28mm;border-radius:50%;background:var(--orange);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 2.2mm #FFE3D4;flex:none}
+.cover .cefr b{font-size:18pt;font-weight:800;line-height:1.1}
 .cover .cefr small{font-size:7pt;font-weight:700;letter-spacing:1.5px}
-.cs-top{align-self:stretch;display:flex;justify-content:space-between;align-items:flex-start}
-.cs-brand{display:flex;align-items:center;gap:4mm}
-.cs-brand img{width:24mm;height:24mm}
-.cs-brand b{display:block;font-size:16pt;font-weight:800;letter-spacing:.3px}
-.cs-brand span{display:block;font-size:8pt;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:.4mm}
-.cs-brand em{display:block;font-style:normal;font-size:8.5pt;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);margin-top:1.2mm}
-.cs-book{font-size:9pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-top:3mm;padding:1.4mm 4mm;border:1.3px solid var(--navy);border-radius:99px}
-.cs-seal{position:relative;width:140mm;height:140mm;margin-top:11mm}
-.cs-ring{position:absolute;inset:0;width:100%;height:100%}
-.cs-ring .r-out{fill:#fff;stroke:var(--navy);stroke-width:1.1}
-.cs-ring .r-in{fill:var(--navy-tint);stroke:var(--navy);stroke-width:1.1}
-.cs-ring .r-text{font-family:Lexend,sans-serif;font-size:5.6px;font-weight:700;fill:var(--navy);letter-spacing:.6px}
-.cs-ring .r-book path{fill:none;stroke:var(--orange);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
-.cs-ring .r-star{fill:var(--orange)}
-.cs-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:30mm}
-.cs-name{font-size:52pt;font-weight:800;line-height:1.05;margin-top:2mm}
-.cs-stage-name{font-size:17pt;font-weight:700;margin-top:2mm}
-.cs-num{font-size:72pt;font-weight:800;line-height:1;color:var(--navy)}
-.cs-cefr{margin-top:2mm;font-size:12pt;font-weight:800;color:#fff;background:var(--orange);padding:1mm 4.5mm;border-radius:99px}
-.cs-cefr small{font-size:7pt;letter-spacing:1.2px;font-weight:700}
-.cs-tagline{font-size:14pt;font-weight:600;text-align:center;max-width:140mm;line-height:1.45;margin-top:7mm}
-.cs-track{display:flex;gap:6mm;margin-top:7mm}
-.cs-group{display:flex;flex-direction:column;align-items:center;gap:1.5mm}
+.sc-top{display:flex;justify-content:space-between;align-items:center}
+.sc-brand{display:flex;align-items:center;gap:4mm}
+.sc-brand img{width:22mm;height:22mm}
+.sc-brand b{display:block;font-size:17pt;font-weight:800;letter-spacing:.3px}
+.sc-brand span{display:block;font-size:8pt;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:.5mm}
+.sc-book{font-size:9pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--navy);padding:1.8mm 4.5mm;border-radius:99px}
+.sc-art{display:block;width:100%;height:104mm;margin-top:8mm;border-radius:6mm;box-shadow:0 4mm 10mm -6mm rgba(38,46,98,.45)}
+.sc-level{display:flex;justify-content:space-between;align-items:center;margin-top:9mm}
+.sc-name{font-size:56pt;font-weight:800;line-height:1.02;margin-top:2mm;color:var(--navy)}
+.sc-stage-name{display:block;font-size:20pt;font-weight:700;margin-top:2mm}
+.sc-level .bar{margin:4mm 0 3.5mm}
+.sc-level p{font-size:13.5pt;font-weight:600;line-height:1.45}
+.sc-track{display:flex;gap:6mm;margin-top:7mm}
+.cs-group{display:flex;flex-direction:column;align-items:flex-start;gap:1.5mm}
 .cs-group div{display:flex;gap:1.8mm}
 .cs-group i{width:4mm;height:4mm;border-radius:50%;border:1.3px solid var(--navy-soft);background:#fff}
 .cs-group i.now{background:var(--orange);border-color:var(--orange)}
 .cs-group small{font-size:6.8pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .cs-group small.now{color:var(--orange)}
-.cs-fields{align-self:stretch;margin-top:10mm;display:grid;grid-template-columns:1fr 1fr;gap:7.5mm 10mm;padding:6mm 7mm 7mm;border-radius:5mm;background:var(--navy-tint)}
+.cs-fields{margin-top:8mm;display:grid;grid-template-columns:1fr 1fr;gap:7mm 10mm;padding:6mm 7mm 7mm;border-radius:5mm;background:var(--navy-tint)}
 .cs-fields div{display:grid;grid-template-columns:auto 1fr;gap:3mm;align-items:end}
 .cs-fields div.wide{grid-column:1 / 3}
 .cs-fields b{font-size:10.5pt;font-weight:700}
 .cs-fields i{display:block;border-bottom:1.3px solid #AEB3CF;height:5mm}
-.cs-foot{margin-top:auto;align-self:stretch;margin-left:-15mm;margin-right:-15mm;height:5mm;background:linear-gradient(90deg,var(--navy) 0 70%,var(--orange) 70% 100%)}
+.sc-foot{margin:auto -15mm 0;padding:5mm 15mm;display:flex;align-items:center;background:var(--navy);color:#fff;border-top:1.5mm solid var(--orange)}
+.sc-foot b{font-size:11pt;font-weight:700;letter-spacing:.5px}
 
 /* contents */
 .toc-title{font-size:26pt;font-weight:800;color:var(--navy);margin:6mm 0 2mm}

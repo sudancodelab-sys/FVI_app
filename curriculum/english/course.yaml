@@ -1,8 +1,6 @@
 # Shared by every level of the English course (covers, level strip).
 course: Future Vision English Course
 institute_line: Institute for Computer & Languages
-# Temporary — waiting for the institute's official slogan.
-slogan: A Clear Vision · A Bright Future
 # Order of the levels, grouped by stage. The cover strip highlights the
 # current level without showing any numbers.
 stages:
