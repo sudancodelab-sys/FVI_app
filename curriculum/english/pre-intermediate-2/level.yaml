@@ -1,0 +1,19 @@
+# Pre-Intermediate 2 level metadata (P3 internally, CEFR A1.2).
+name: Pre-Intermediate 2
+chip: PRE-INTERMEDIATE 2
+stage: Pre-Intermediate
+cefr: A1.2
+tagline: Stories about today and yesterday, and more everyday English
+subtitle: Stories · Topics · Conversations
+# Stories are a little longer than in Pre-Intermediate 1.
+story_words: [90, 160]
+units:
+  1: Right Now
+  2: Yesterday
+  3: A Day to Remember
+  4: Did You…?
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}

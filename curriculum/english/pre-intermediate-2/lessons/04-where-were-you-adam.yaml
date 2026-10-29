@@ -1,0 +1,54 @@
+lesson: 4
+unit: 2
+kind: story
+title: Where Were You, Adam?
+subtitle: Adam was not in class yesterday. Read the story in the past, then read it again as it happens today.
+icon: plus
+goals: [Talk about yesterday, "Ask: Where were you?", Say where you were]
+story:
+  - Yesterday [was] Monday. Sara and Omar [were] in class, but Adam [wasn't] there. His chair [was] empty. Mr. Ali [was] surprised, because Adam is never absent.
+  - "In the evening, Omar [was] on the phone with Adam. \"Where [were] you today, Adam? [Were] you sick?\" \"No, I [wasn't]. I [was] at the hospital with my grandfather. He [was] sick.\""
+  - "\"Oh no! [Was] it bad?\" \"Yes, it [was]. We [were] at the hospital all day. My mother and my uncle [were] there, too. The doctors [were] very kind.\""
+  - "Today Adam is back in class. His grandfather is at home now, and he is OK. \"Welcome back, Adam!\" Sara and Omar are happy, and Mr. Ali is happy, too."
+questions:
+  - ["Was yesterday Monday?", "Yes, it was."]
+  - ["Were Sara and Omar in class?", "Yes, they were."]
+  - ["Was Adam in class?", "No, he wasn't."]
+  - ["Was his chair empty?", "Yes, it was."]
+  - ["Was Mr. Ali surprised or happy?", "Surprised. Adam is never absent."]
+  - ["Where was Omar in the evening?", "On the phone with Adam."]
+  - ["Was Adam sick?", "No, he wasn't."]
+  - ["Where was Adam?", "At the hospital."]
+  - ["Who was sick?", "His grandfather."]
+  - ["Were they at the hospital all day?", "Yes, they were."]
+  - ["Were the doctors kind?", "Yes, they were. They were very kind."]
+  - ["Where is his grandfather now?", "At home. He's OK now."]
+pov:
+  intro: Now the same story happens today.
+  speaker: Omar
+  text:
+    - Today [is] Monday. Sara and I [are] in class, but Adam [isn't] here. His chair [is] empty. Mr. Ali [is] surprised, because Adam is never absent.
+    - "In the evening, I['m] on the phone with Adam. \"Where [are] you, Adam? [Are] you sick?\" \"No, I['m not]. I['m] at the hospital with my grandfather. He [is] sick.\""
+    - "\"Oh no! [Is] it bad?\" \"Yes, it [is]. We [are] here all day. My mother and my uncle [are] here, too. The doctors [are] very kind.\""
+learn:
+  title: You learned [was] and [were].
+  intro: They are the past of am, is and are. We use them for yesterday, last week, and other times before now.
+  wide: true
+  table:
+    - ["Now", "Before now"]
+    - ["I [am] at home.  ·  He [is] sick.", "I [was] at home.  ·  He [was] sick."]
+    - ["We [are] at the hospital.", "We [were] at the hospital."]
+    - ["He [isn't] here.  ·  They [aren't] here.", "He [wasn't] here.  ·  They [weren't] here."]
+    - ["[Is] it bad?  ·  [Are] you sick?", "[Was] it bad?  ·  [Were] you sick?"]
+  notes:
+    - {title: "I · he · she · it → [was]", text: "I was at home. It was bad."}
+    - {title: "you · we · they → [were]", text: "We were at the hospital all day."}
+    - {title: "Not: [wasn't · weren't]", text: "Adam wasn't in class. They weren't at home."}
+  ask: ["Were you in class yesterday?", "Yes, I was.  /  No, I wasn't."]
+words:
+  - {word: yesterday, meaning: the day before today}
+  - {word: empty, meaning: with nothing and no one in it}
+  - {word: surprised, meaning: feeling that something is not what you expected}
+  - {word: absent, meaning: not here; not at school or work}
+  - {word: all day, meaning: from morning to evening}
+  - {word: back, meaning: here again}

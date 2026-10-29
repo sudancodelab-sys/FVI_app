@@ -313,8 +313,9 @@ def check_lessons(level, lessons, wordlists, report):
         speakers = []
         if kind == 'story':
             words = len(_words_in(plain(' '.join(lesson['story']))))
-            if not 70 <= words <= 140:
-                report.warn(where, f'story has {words} words; this level aims at about 100')
+            low, high = level.get('story_words', (70, 140))
+            if not low <= words <= high:
+                report.warn(where, f'story has {words} words; this level aims at {low} to {high}')
             if len(lesson['questions']) != 12:
                 report.error(where, f'{len(lesson["questions"])} questions; a story has 12')
             speakers.append(lesson['pov']['speaker'])
@@ -400,8 +401,8 @@ def load_lessons(level_dir):
                for p in sorted((level_dir / 'lessons').glob('*.yaml'))]
     lessons.sort(key=lambda l: l['lesson'])
     numbers = [l['lesson'] for l in lessons]
-    if numbers != list(range(1, len(lessons) + 1)):
-        sys.exit(f'lesson numbers must run 1..n without gaps, got {numbers}')
+    if len(set(numbers)) != len(numbers):
+        sys.exit(f'two lessons share a number: {numbers}')
     return lessons
 
 
@@ -475,6 +476,11 @@ def main():
         level['course'] = yaml.safe_load((level_dir.parent / 'course.yaml').read_text(encoding='utf-8'))
         lessons = load_lessons(level_dir)
         report = Report()
+        numbers = [l['lesson'] for l in lessons]
+        if numbers != list(range(1, len(lessons) + 1)):
+            # Fine while a level is being written (a sample lesson), never in a book.
+            (report.error if args.book else report.warn)(
+                'level', f'lessons do not run 1..n without gaps: {numbers}')
         check_lessons(level, lessons, wordlists, report)
         check_no_arabic(lessons, report)
         phonics, speaking = [], []
