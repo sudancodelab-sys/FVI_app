@@ -1,0 +1,15 @@
+name: fvi_core
+description: Shared core for the FVI apps — content keys, activation requests and codes, content encryption.
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  cryptography: ^2.9.0
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: ^1.33.0

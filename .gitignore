@@ -1,0 +1,13 @@
+# Dart / Flutter
+.dart_tool/
+build/
+*.iml
+.idea/
+.vscode/
+coverage/
+
+# Never commit production secrets
+*.jks
+*.keystore
+key.properties
+keys/prod/
