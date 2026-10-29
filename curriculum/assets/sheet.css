@@ -244,8 +244,19 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .sc-brand img{width:22mm;height:22mm}
 .sc-brand b{display:block;font-size:17pt;font-weight:800;letter-spacing:.3px}
 .sc-brand span{display:block;font-size:8pt;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:.5mm}
-.sc-book{font-size:9pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--navy);padding:1.8mm 4.5mm;border-radius:99px}
-.sc-art{display:block;width:100%;height:104mm;margin-top:8mm;border-radius:6mm;box-shadow:0 4mm 10mm -6mm rgba(38,46,98,.45)}
+.sc-book{font-size:9pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);border:1.4px solid var(--navy);padding:1.6mm 4.5mm;border-radius:99px}
+.sc-art{display:block;width:100%;height:104mm;margin-top:8mm;border-radius:6mm;border:1.4px solid var(--navy-soft)}
+.sc-art .ln *{stroke:var(--navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sc-art .sun circle{fill:#FFE6D9;stroke:var(--orange)}
+.sc-art .sun path{fill:none;stroke:var(--orange)}
+.sc-art .cloud{fill:#fff}
+.sc-art .bird{fill:none}
+.sc-art .far{fill:#E6E9F8}
+.sc-art .near{fill:#fff}
+.sc-art .snow{fill:none}
+.sc-art .trail{fill:none;stroke:var(--orange);stroke-dasharray:5 5}
+.sc-art .pole{fill:none}
+.sc-art .flag{fill:var(--orange);stroke:var(--orange)}
 .sc-level{display:flex;justify-content:space-between;align-items:center;margin-top:9mm}
 .sc-name{font-size:56pt;font-weight:800;line-height:1.02;margin-top:2mm;color:var(--navy)}
 .sc-stage-name{display:block;font-size:20pt;font-weight:700;margin-top:2mm}
@@ -263,7 +274,7 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .cs-fields div.wide{grid-column:1 / 3}
 .cs-fields b{font-size:10.5pt;font-weight:700}
 .cs-fields i{display:block;border-bottom:1.3px solid #AEB3CF;height:5mm}
-.sc-foot{margin:auto -15mm 0;padding:5mm 15mm;display:flex;align-items:center;background:var(--navy);color:#fff;border-top:1.5mm solid var(--orange)}
+.sc-foot{margin:auto -15mm 0;padding:5mm 15mm;display:flex;align-items:center;background:var(--navy-tint);color:var(--navy);border-top:1.2mm solid var(--orange)}
 .sc-foot b{font-size:11pt;font-weight:700;letter-spacing:.5px}
 
 /* contents */
