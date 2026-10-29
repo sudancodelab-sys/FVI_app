@@ -1,0 +1,33 @@
+lesson: 5
+unit: 2
+kind: conversation
+title: I'm So Sorry
+subtitle: Apologizing to a customer and putting a mistake right
+icon: chat
+goals: [Apologize properly, Explain what went wrong, Offer a solution]
+scene: A customer has come back to Omar's phone shop. Her phone was repaired yesterday, but now her photos are gone.
+conversation:
+  - [Customer, "Excuse me. I picked up my phone yesterday, but all my photos are gone!"]
+  - [Omar, "Oh no. I'm so sorry. Let me look at it."]
+  - [Customer, "Those were photos of my daughter's wedding. They're very important to me."]
+  - [Omar, "I completely understand. I think my colleague reset the phone by mistake. If he had checked first, this wouldn't have happened."]
+  - [Customer, "So are they lost forever?"]
+  - [Omar, "Not necessarily. Did you have a backup, maybe online?"]
+  - [Customer, "I don't know. My son set up the phone for me."]
+  - [Omar, "Let me check. Yes! Your photos were saved to your online account. I can bring them all back now."]
+  - [Customer, "Oh, thank goodness! If you hadn't found them, I would have cried all week."]
+  - [Omar, "Again, I apologize. There's no charge for the repair, and we'll be more careful in the future."]
+phrases:
+  - {title: Apologize, lines: ["I'm so sorry."]}
+  - {title: Show you understand, lines: ["I completely understand."]}
+  - {title: Explain the mistake, lines: ["My colleague reset the phone by mistake."]}
+  - {title: Say what should have happened, lines: ["If he had checked first, this wouldn't have happened."]}
+  - {title: Offer a solution, lines: ["There's no charge for the repair."]}
+  - {title: Promise, lines: ["We'll be more careful in the future."]}
+words:
+  - {word: colleague, meaning: a person you work with}
+  - {word: reset, meaning: return a machine to how it was when it was new}
+  - {word: by mistake, meaning: not on purpose}
+  - {word: necessarily, meaning: in every case}
+  - {word: backup, meaning: a copy you keep in case the first one is lost}
+  - {word: charge, meaning: the price you pay for a service}

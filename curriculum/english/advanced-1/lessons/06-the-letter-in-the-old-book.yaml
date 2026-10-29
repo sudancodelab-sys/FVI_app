@@ -1,0 +1,57 @@
+lesson: 6
+unit: 3
+kind: story
+title: The Letter in the Old Book
+subtitle: Huda finds a letter from 1975 inside a library book. Who wrote it, and why was it never sent? Read the story, then read it from the writer's point of view.
+icon: mail
+goals: [Guess what happened in the past, Use must have and can't have, Explain how sure you are]
+story:
+  - "Huda works part-time at the university library. One quiet afternoon, she was putting old books back on the shelves when an envelope fell out of a book about planes. The paper was yellow, and the stamp showed a picture of the Nile. The date on the letter was March 12, 1975."
+  - "\"Dear Amna,\" it began. \"Tomorrow I leave for Cairo to study engineering. I wanted to say this to you in person, but I couldn't find the courage. Will you wait for me?\" It was signed only with the letter Y."
+  - "Huda read it again and again. \"He [must have been] very young,\" she thought. \"And he [must have loved] her very much.\" But the letter had never been posted. \"Amna [can't have read] it, or it wouldn't still be here. He [might have forgotten] it in the book. Or he [might have changed] his mind.\""
+  - "That evening, she showed the letter to Adam and Sara at the café. Adam went quiet. He looked at the handwriting for a long time. \"This [must be] a mistake,\" he said slowly. \"My grandfather's name is Yousif. He studied engineering in Cairo. And my grandmother's name is Amna.\""
+  - "The next day, Adam took the letter to his grandparents' house. His grandfather put on his glasses and read it. Then he laughed until he had tears in his eyes. \"I wrote this the night before I left! I [must have left] it in the library book. I looked for it everywhere.\" His grandmother smiled. \"So that's why you never asked me. For four years, I thought you [must have forgotten] me.\""
+  - "\"But in the end, you waited,\" said Adam. \"Yes,\" said his grandmother, holding the letter. \"Fifty years late, but I finally got it.\""
+questions:
+  - ["Where does Huda work?", "At the university library."]
+  - ["What fell out of the book?", "An envelope."]
+  - ["What was the book about?", "Planes."]
+  - ["What was the date on the letter?", "March 12, 1975."]
+  - ["Where was the writer going to study?", "In Cairo."]
+  - ["How was the letter signed?", "Only with the letter Y."]
+  - ["Why did Huda think Amna can't have read it?", "Because it was still in the book. It had never been posted."]
+  - ["Who did Huda show the letter to?", "Adam and Sara."]
+  - ["What is the name of Adam's grandfather?", "Yousif."]
+  - ["What did his grandfather do when he read the letter?", "He laughed until he had tears in his eyes."]
+  - ["What had his grandmother thought for four years?", "That he must have forgotten her."]
+  - ["How late did she get the letter?", "Fifty years late."]
+pov:
+  intro: Now Adam's grandfather tells it.
+  speaker: Grandfather
+  text:
+    - In March 1975, the night before I left for Cairo, I wrote a letter to Amna, the girl I loved. I was too shy to speak to her, so I put everything on paper.
+    - The next morning, I couldn't find it anywhere. I [must have left] it in the library book I had been reading. I thought that she [must have read] it and said no, because she never wrote to me.
+    - For four years, I was afraid to ask her. When I came back, I finally found the courage. She said yes, and we have been married for forty-six years.
+    - Last week, my grandson came to the house with that same letter. A young woman at the library had found it. I laughed and cried at the same time. Amna [can't have known] how I felt in 1975. Now, at last, she does.
+learn:
+  title: You learned [modals for the past].
+  intro: We use them to guess about the past from what we know now, and to show how sure we are.
+  wide: true
+  table:
+    - ["How sure?", "Example"]
+    - ["Almost 100% yes: [must have]", "He [must have loved] her very much."]
+    - ["Maybe: [might have · could have]", "He [might have forgotten] it in the book."]
+    - ["Almost 100% no: [can't have · couldn't have]", "Amna [can't have read] it."]
+    - ["Now, not the past: [must be]", "This [must be] a mistake."]
+  notes:
+    - {title: "modal + have + [past participle]", text: "must have left, might have changed, can't have known"}
+    - {title: "Not [mustn't have]", text: "For no, say can't have. Not mustn't have."}
+    - {title: "Say it [fast]", text: "must have sounds like \"must-uv\" when we speak fast."}
+  ask: ["Your friend didn't come to class yesterday. Why not?", "He might have been sick."]
+words:
+  - {word: shelves, meaning: flat boards on a wall for books}
+  - {word: envelope, meaning: a paper cover for a letter}
+  - {word: stamp, meaning: a small paper you put on a letter to pay for posting it}
+  - {word: courage, meaning: the ability to do something that frightens you}
+  - {word: handwriting, meaning: the way a person writes with a pen}
+  - {word: married, meaning: being husband and wife}

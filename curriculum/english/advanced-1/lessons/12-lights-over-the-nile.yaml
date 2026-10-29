@@ -1,0 +1,58 @@
+lesson: 12
+unit: 5
+kind: story
+title: Lights Over the Nile
+subtitle: Strange lights appear over the river at night, and everyone has a theory. Read the story, then read it from the point of view of the person who knows the truth.
+icon: drone
+goals: [Report what people say and believe, Use it is said that and is believed to, Tell a mystery story]
+story:
+  - "It started on a Thursday in October. At about ten at night, people on the bridge in Khartoum saw three small lights moving slowly over the Nile. They went up, stopped, turned, and then disappeared behind the trees on the island."
+  - "By the next morning, everyone was talking about them. A video of the lights had been shared thousands of times. On the radio, a man said, \"[It is said that] the lights have been seen before, many years ago.\" A woman at the market told Sara that they [were believed to be] the spirits of fishermen. A taxi driver was sure they were a secret plane from another country."
+  - "The newspapers loved the story. \"MYSTERY LIGHTS OVER THE NILE,\" one headline said. \"The lights [are thought to be] some kind of aircraft,\" the article explained, \"but their origin [is not known].\" Another paper wrote that the lights [were reported to have] appeared over the river every night that week."
+  - "Adam was fascinated. \"Planes don't stop in the air,\" he said. \"Whatever it is, it isn't a plane.\" Sara was more practical. \"Let's go and look,\" she said."
+  - "So on Sunday night, the friends waited on the bridge. At ten o'clock exactly, the lights rose from the island. Sara looked through her binoculars, and then she began to laugh. \"I know those lights,\" she said. \"And I know whose they are.\""
+  - "On the island, standing behind the trees with a controller in his hands, was Omar. He and the engineers at his company [had been testing] a new delivery drone at night, when the sky was quiet. When the friends found him, he looked embarrassed. \"I've seen the videos,\" he admitted. \"Apparently, I'm a ghost, a spy, and a fisherman.\""
+  - "The next day, the company explained everything on the radio. But the story didn't completely die. Even now, [it is said that] on some nights, if you stand on the bridge at ten, you can still see the lights."
+questions:
+  - ["When did the story start?", "On a Thursday in October, at about ten at night."]
+  - ["How many lights did people see?", "Three."]
+  - ["Where did the lights disappear?", "Behind the trees on the island."]
+  - ["What did the man on the radio say?", "It is said that the lights have been seen before."]
+  - ["What did the woman at the market believe?", "That the lights were the spirits of fishermen."]
+  - ["What was the taxi driver sure of?", "That they were a secret plane from another country."]
+  - ["Why did Adam say it wasn't a plane?", "Because planes don't stop in the air."]
+  - ["What did Sara suggest?", "Going to look."]
+  - ["What did Sara use to look at the lights?", "Binoculars."]
+  - ["Who was on the island?", "Omar."]
+  - ["What had he been testing?", "A new delivery drone."]
+  - ["What is still said about the bridge?", "That on some nights at ten, you can still see the lights."]
+pov:
+  intro: Now Omar tells it.
+  speaker: Omar
+  text:
+    - Our company is building a drone that can deliver medicine to villages. We decided to test it at night over the island, because the sky is quiet and nobody would see us. That was the plan, anyway.
+    - The next morning, my phone was full of videos of my drone. [It was said to be] a secret plane. It [was believed to be] the spirits of fishermen. One newspaper wrote that the lights [were thought to be] some kind of aircraft. Well, that part was true.
+    - On Sunday night, while I was flying it, I heard a laugh behind the trees. It was Sara, of course, with Adam and Huda. I have never been so embarrassed in my life.
+    - We explained everything on the radio, but nobody wants a mystery to end. These days, [it is said that] the lights still appear. I'm not saying anything. But I sometimes test the drone on Thursdays.
+learn:
+  title: You learned the [passive with reporting verbs].
+  intro: We use it to report what many people say, think, or believe, when we don't know who said it first or when it isn't important.
+  wide: true
+  table:
+    - ["It + passive + that…", "Subject + passive + to…"]
+    - ["[It is said that] the lights are spirits.", "The lights [are said to be] spirits."]
+    - ["[It is believed that] they are a secret plane.", "They [are believed to be] a secret plane."]
+    - ["[It is thought that] it is an aircraft.", "It [is thought to be] an aircraft."]
+    - ["[It was reported that] they appeared every night.", "They [were reported to have appeared] every night."]
+  notes:
+    - {title: "Common verbs: [say · think · believe · report · expect · know]", text: "It is expected that prices will rise."}
+    - {title: "About the past: [to have + past participle]", text: "He is said to have built the bridge."}
+    - {title: "Often in [news] and [formal] English", text: "Look for it in the newspaper and on the radio."}
+  ask: ["What is said about your city or village?", "It is said that the old house is haunted."]
+words:
+  - {word: spirits, meaning: the part of a person that some believe lives on after death}
+  - {word: aircraft, meaning: a plane or another machine that flies}
+  - {word: origin, meaning: where something comes from}
+  - {word: fascinated, meaning: very interested}
+  - {word: binoculars, meaning: an instrument for seeing things far away}
+  - {word: embarrassed, meaning: feeling shy and uncomfortable because of something you did}

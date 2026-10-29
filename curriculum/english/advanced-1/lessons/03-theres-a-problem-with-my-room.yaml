@@ -1,0 +1,33 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: There's a Problem With My Room
+subtitle: Making a polite complaint at a hotel
+icon: bed
+goals: [Make a polite complaint, Explain what had been happening, Choose between solutions]
+scene: Sara is staying at a hotel in Port Sudan for an engineering conference. She calls the reception desk.
+conversation:
+  - [Clerk, "Good evening, reception. How can I help you?"]
+  - [Sara, "Hello. I'm in room 214. I'm afraid there's a problem with my room."]
+  - [Clerk, "I'm sorry to hear that. What seems to be the problem?"]
+  - [Sara, "The air conditioning isn't working. It had been making a strange noise all afternoon, and now it has stopped completely."]
+  - [Clerk, "I apologize. Have you tried the remote control?"]
+  - [Sara, "Yes, I had been trying for twenty minutes before I called. And the room is very hot."]
+  - [Clerk, "I understand. I can send someone to repair it, or I can move you to another room."]
+  - [Sara, "I'd prefer to move, please. I have an early meeting tomorrow, and I need to sleep."]
+  - [Clerk, "Of course. Room 305 is ready. Someone will bring you the key in five minutes, and breakfast is free tomorrow, to say sorry."]
+  - [Sara, "That's very kind. Thank you for your help."]
+phrases:
+  - {title: Start politely, lines: ["I'm afraid there's a problem with my room."]}
+  - {title: Describe the problem, lines: ["The air conditioning isn't working."]}
+  - {title: Say what had been happening, lines: ["It had been making a strange noise all afternoon."]}
+  - {title: Say what you tried, lines: ["I had been trying for twenty minutes before I called."]}
+  - {title: Choose a solution, lines: ["I'd prefer to move, please."]}
+  - {title: Accept an apology, lines: ["That's very kind. Thank you for your help."]}
+words:
+  - {word: conference, meaning: a large meeting for people who do the same kind of work}
+  - {word: reception, meaning: the desk near the door of a hotel}
+  - {word: air conditioning, meaning: a machine that makes the air cool}
+  - {word: apologize, meaning: say sorry}
+  - {word: remote control, meaning: a small device that controls a machine from a distance}
+  - {word: prefer, meaning: like one thing more than another}

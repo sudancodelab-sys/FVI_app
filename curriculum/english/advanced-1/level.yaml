@@ -22,3 +22,10 @@ cast:
   Huda: {initial: H, color: e}
   # Guests and one-scene roles.
   Dr. Amira: {initial: DA, color: e}
+  Captain Nour: {initial: CN, color: e}
+  Clerk: {initial: CL, color: e}
+  Dr. Idris: {initial: DI, color: e}
+  Customer: {initial: C, color: e}
+  Grandfather: {initial: G, color: e}
+  Agent: {initial: AG, color: e}
+  Mrs. Karim: {initial: MK, color: c}

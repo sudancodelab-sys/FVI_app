@@ -1,0 +1,58 @@
+lesson: 9
+unit: 4
+kind: story
+title: Letters to Our Future Selves
+subtitle: Mr. Ali asks his students to write to the people they will be in ten years. Read the story, then read it from Mr. Ali's point of view.
+icon: clock
+goals: [Talk about the future in progress, Say what will be finished by a time, Write about your plans and dreams]
+story:
+  - "On the last day of the course, Mr. Ali came into the classroom with a box. \"Today,\" he said, \"you are going to write a letter. Not to me, and not to your family. You're going to write to yourself, the person you will be in ten years.\" He explained that he would keep the letters in the box and post them to the students in exactly ten years."
+  - "Everyone laughed, but then the room went quiet. Ten years felt like a very long time."
+  - "Adam wrote first. \"Dear Adam, by the time you read this, you [will have finished] your training, and you [will have flown] hundreds of hours. I hope you [will be flying] big planes between Khartoum and the rest of the world. Please don't forget the first time you saw the Nile from the sky.\""
+  - "Sara wrote about water. \"In ten years, I [will be working] as an engineer, I hope in Kassala or Darfur. By then, our team [will have built] pumps in fifty villages. And I [will] still [be arguing] with Adam about everything.\""
+  - "Omar's letter was short. \"Dear Omar, I don't know where you [will be living], but I know you [will have started] your own company. Don't forget who helped you, and always stop for people by the road.\""
+  - "Huda wrote slowly and carefully. \"Dear Huda, by now you [will have been] a teacher for eight years. You [will be standing] in front of a class, just like Mr. Ali. I hope your students [will be] as lucky as you were.\""
+  - "When they had finished, Mr. Ali collected the letters and closed the box. \"In ten years,\" he said, smiling, \"I [will be sitting] at home, drinking tea and waiting for the postman to bring me your answers.\""
+questions:
+  - ["What did Mr. Ali bring into the classroom?", "A box."]
+  - ["Who were the students going to write to?", "To themselves, the person they will be in ten years."]
+  - ["When will the students get their letters?", "In exactly ten years."]
+  - ["What did the room do after everyone laughed?", "It went quiet."]
+  - ["What will Adam have finished by the time he reads the letter?", "His training."]
+  - ["Where does Adam hope he will be flying?", "Between Khartoum and the rest of the world."]
+  - ["Where does Sara hope she will be working?", "In Kassala or Darfur."]
+  - ["How many villages will her team have built pumps in?", "Fifty."]
+  - ["What will Omar have started?", "His own company."]
+  - ["What advice does Omar give himself?", "Always stop for people by the road."]
+  - ["How long will Huda have been a teacher?", "For eight years."]
+  - ["What will Mr. Ali be doing in ten years?", "Sitting at home, drinking tea and waiting for the postman."]
+pov:
+  intro: Now Mr. Ali tells it.
+  speaker: Mr. Ali
+  text:
+    - Every year, on the last day of the course, I ask my students to write a letter to themselves. I keep the letters in a box and post them ten years later.
+    - This year, Adam wrote that he [will have finished] his pilot training and [will be flying] big planes. Sara believes her team [will have built] pumps in fifty villages, and I believe her.
+    - Omar is sure he [will have started] his own company. Huda wrote that she [will be standing] in front of a class, like me. That made me very proud.
+    - In ten years, I [will have been] a teacher for forty years. I [will be sitting] at home with my tea, and I [will be waiting] for the postman, because every year, some of my students write back.
+learn:
+  title: You learned the [future continuous] and the [future perfect].
+  intro: We use the future continuous for an action in progress at a time in the future, and the future perfect for an action that will be finished before that time.
+  wide: true
+  table:
+    - ["In progress then: [will be + -ing]", "Finished before then: [will have + past participle]"]
+    - ["I [will be flying] big planes.", "I [will have finished] my training."]
+    - ["I [will be working] as an engineer.", "Our team [will have built] fifty pumps."]
+    - ["Where [will] you [be living]?", "[Will] you [have started] a company?"]
+    - ["This time next year, I [will be studying].", "By next year, I [will have passed] my exams."]
+  notes:
+    - {title: "With [by]", text: "By 2035, by then, by the time you read this, use the future perfect."}
+    - {title: "How long: [will have been]", text: "By now, you will have been a teacher for eight years."}
+    - {title: "Short forms: [I'll be · I'll have]", text: "I'll be working. I'll have finished."}
+  ask: ["What will you be doing this time next year?", "I'll be studying at university."]
+words:
+  - {word: future selves, meaning: the people we will be later in life}
+  - {word: training, meaning: learning the skills for a job}
+  - {word: arguing, meaning: speaking angrily with someone because you don't agree}
+  - {word: carefully, meaning: with a lot of attention}
+  - {word: proud, meaning: happy because of what someone has done}
+  - {word: postman, meaning: a person who brings letters to your home}

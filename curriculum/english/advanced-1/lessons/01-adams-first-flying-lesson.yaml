@@ -1,0 +1,55 @@
+lesson: 1
+unit: 1
+kind: story
+title: Adam's First Flying Lesson
+subtitle: After years of dreaming and saving, Adam finally sits in a cockpit. Read the story, then read it from his instructor's point of view.
+icon: plane
+goals: [Say what had been happening before a moment in the past, Explain a result, Tell a story about a big day]
+story:
+  - For as long as he could remember, Adam had wanted to fly. By the time he was twenty, he [had been reading] about planes for ten years, he [had been watching] flight videos every night, and, for the last two years, he [had been saving] every pound he could. He [had been working] at his uncle's shop on weekends, and he [had been taking] fewer rickshaws and walking more.
+  - "Last Saturday, it finally happened. Adam arrived at the small flying school outside the city at seven in the morning. He was nervous. He [had been lying] awake since four, going over the instructions in his head. His instructor, Captain Nour, was waiting by a small white plane. \"You look tired,\" she said. \"Did you sleep?\" \"Not really,\" Adam admitted. \"I [had been dreaming] about this day for so long that I couldn't close my eyes.\""
+  - "Captain Nour explained everything, the controls, the radio, and the checks they had to do before take-off. Then they climbed in. When the engine started, the whole plane shook. Adam held the controls with both hands. \"Gently,\" said Captain Nour. \"The plane wants to fly. Just let it.\""
+  - "They rolled down the runway, faster and faster, and then, suddenly, the ground fell away beneath them. Adam looked down. The Nile was shining in the morning sun, and the city looked like a map. He [had been imagining] this moment for half his life, but nothing had prepared him for how beautiful it was. When they landed thirty minutes later, his legs were shaking. Captain Nour smiled. \"Not bad for a first flight. Same time next week?\" Adam couldn't speak. He just nodded, grinning from ear to ear."
+questions:
+  - ["How long had Adam been reading about planes by the time he was twenty?", "For ten years."]
+  - ["What had he been doing for the last two years?", "Saving every pound he could."]
+  - ["Where had he been working on weekends?", "At his uncle's shop."]
+  - ["What time did he arrive at the flying school?", "At seven in the morning."]
+  - ["Why was Adam tired?", "He had been lying awake since four."]
+  - ["Who was his instructor?", "Captain Nour."]
+  - ["Why couldn't he sleep?", "He had been dreaming about this day for so long."]
+  - ["What happened when the engine started?", "The whole plane shook."]
+  - ["What did Captain Nour tell him?", "\"Gently. The plane wants to fly. Just let it.\""]
+  - ["What did the Nile look like from above?", "It was shining in the morning sun."]
+  - ["How long was the flight?", "Thirty minutes."]
+  - ["How did Adam answer \"Same time next week?\"", "He nodded, grinning from ear to ear."]
+pov:
+  intro: Now Captain Nour tells it.
+  speaker: Captain Nour
+  text:
+    - Last Saturday, a young man called Adam came for his first lesson. I could see that he had wanted this for years. He told me that he [had been saving] for two years and [had been working] at his uncle's shop every weekend.
+    - He looked tired. He [had been lying] awake since four o'clock, he said, because he [had been dreaming] about this day for so long. I have seen that look many times.
+    - "When the engine started, he held the controls so tightly that his hands went white. \"Gently,\" I told him. \"The plane wants to fly.\""
+    - After take-off, he went completely quiet. He looked down at the Nile as if he [had been waiting] his whole life to see it from the sky. When we landed, his legs were shaking, but his smile was enormous. I think he will make a good pilot.
+learn:
+  title: You learned the [past perfect continuous].
+  intro: We use it for an action that was continuing up to a moment in the past, often to explain a result or to say how long.
+  wide: true
+  table:
+    - ["Continuing before that moment", "The moment in the past"]
+    - ["He [had been saving] for two years", "when he finally [booked] his lesson."]
+    - ["He [had been lying] awake since four,", "so he [was] tired."]
+    - ["He [had been dreaming] about it for years,", "and at last it [happened]."]
+    - ["How long [had] he [been waiting]?", "Since he [was] a child."]
+  notes:
+    - {title: "had + been + [-ing]", text: "I had been waiting. They had been working."}
+    - {title: "Continuing or [finished]?", text: "He had been saving (continuing). He had saved 2,000 pounds (finished)."}
+    - {title: "It often explains a [result]", text: "He was tired because he had been lying awake."}
+  ask: ["What had you been doing before you started this course?", "I had been working in a shop."]
+words:
+  - {word: admitted, meaning: said that something was true, although it was not easy to say}
+  - {word: instructor, meaning: a person who teaches a practical skill}
+  - {word: controls, meaning: the parts you use to drive or fly a machine}
+  - {word: runway, meaning: the long road where planes take off and land}
+  - {word: beneath, meaning: under}
+  - {word: grinning, meaning: smiling widely}

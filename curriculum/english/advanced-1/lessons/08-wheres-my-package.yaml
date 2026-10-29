@@ -1,0 +1,32 @@
+lesson: 8
+unit: 3
+kind: conversation
+title: Where's My Package?
+subtitle: Calling a delivery company about a lost package
+icon: box
+goals: [Explain a problem on the phone, Guess what might have happened, Ask for a clear next step]
+scene: Sara ordered a new laptop online. The website says it was delivered yesterday, but she never received it. She calls the delivery company.
+conversation:
+  - [Agent, "Good morning, Speed Delivery. How can I help?"]
+  - [Sara, "Hello. I'm calling about a package. The website says it was delivered yesterday, but I never got it. The tracking number is SD 4 5 1 2 9."]
+  - [Agent, "I'm sorry about that. Let me check. It says the driver left it at 3:15 yesterday afternoon. Were you at home?"]
+  - [Sara, "No, I was at the university. Could he have left it with a neighbor?"]
+  - [Agent, "He might have. Or it might have gone to the wrong address. Let me check the photo. Is your door green?"]
+  - [Sara, "No, it's white! He must have delivered it to the wrong house."]
+  - [Agent, "I see. I'll contact the driver now and ask him to collect it. Can we deliver it again tomorrow morning?"]
+  - [Sara, "Yes, please. And can he call me before he comes?"]
+  - [Agent, "Of course. You'll get a call before ten. I apologize again for the trouble."]
+phrases:
+  - {title: Explain the problem, lines: ["The website says it was delivered, but I never got it."]}
+  - {title: Give information, lines: ["The tracking number is SD 4 5 1 2 9."]}
+  - {title: Guess politely, lines: ["Could he have left it with a neighbor?"]}
+  - {title: Be sure, lines: ["He must have delivered it to the wrong house."]}
+  - {title: Ask for the next step, lines: ["Can we deliver it again tomorrow morning?"]}
+  - {title: Make a request, lines: ["Can he call me before he comes?"]}
+words:
+  - {word: package, meaning: something that is wrapped and sent by post}
+  - {word: delivered, meaning: taken to a person or place}
+  - {word: tracking number, meaning: a number that shows where a package is}
+  - {word: neighbor, meaning: a person who lives next to you}
+  - {word: collect, meaning: go and get something}
+  - {word: trouble, meaning: problems or worry}

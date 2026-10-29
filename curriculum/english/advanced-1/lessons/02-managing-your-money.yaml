@@ -1,0 +1,33 @@
+lesson: 2
+unit: 1
+kind: topic
+title: Managing Your Money
+subtitle: Budgets, needs and wants, saving, and debt. A few habits that make a big difference.
+icon: wallet
+goals: [Talk about money and budgets, Separate needs from wants, Give advice about saving]
+text:
+  - For many students, money is a constant worry. Prices keep rising, and it is easy to reach the end of the month with an empty wallet. The good news is that a few simple habits can make a big difference.
+  - The first step is to make a [budget], a simple plan of how much money comes in and how much goes out. Write down your [income], from a part-time job, your family, or a scholarship. Then write down your [expenses], such as transport, food, phone credit, and books. Many people are surprised when they see how much they spend on small things, like snacks and taxis.
+  - Next, divide your expenses into needs and wants. Needs are things you can't live without, such as food, rent, and transport to work or university. Wants are nice but not necessary, like new shoes, a better phone, or eating out. Many experts suggest a simple rule. Spend about fifty percent of your income on needs and thirty percent on wants, and save the other twenty percent.
+  - "[Saving] is easier if you do it first. On the day you get paid, put some money aside before you spend anything. Even a small amount grows over time. Omar, who manages a phone shop, says, \"I had been saving for six months before I noticed. Then one day, I had enough for a laptop.\""
+  - Finally, be careful with [debt]. Borrowing money from friends or shops can feel easy, but paying it back can be hard. If you have to borrow, make a clear plan to repay it.
+facts:
+  - title: The 50 / 30 / 20 rule
+    items:
+      - {term: "50%", text: "needs · food, rent, transport"}
+      - {term: "30%", text: "wants · clothes, eating out"}
+      - {term: "20%", text: saving}
+questions:
+  - ["What is a budget?", "A simple plan of how much money comes in and how much goes out."]
+  - ["What are expenses? Give two examples.", "The money you spend, for example on transport and food."]
+  - ["What is the difference between needs and wants?", "Needs are things you can't live without. Wants are nice but not necessary."]
+  - ["What does the 50 / 30 / 20 rule suggest?", "Spend 50% on needs and 30% on wants, and save 20%."]
+  - ["When is the best time to save?", "On the day you get paid, before you spend anything."]
+  - ["What should you do if you have to borrow money?", "Make a clear plan to repay it."]
+words:
+  - {word: constant, meaning: happening all the time}
+  - {word: wallet, meaning: a small case for money and cards}
+  - {word: scholarship, meaning: money that is given to a student to pay for study}
+  - {word: rent, meaning: the money you pay to live in a home}
+  - {word: aside, meaning: away, to keep for later}
+  - {word: repay, meaning: pay back}

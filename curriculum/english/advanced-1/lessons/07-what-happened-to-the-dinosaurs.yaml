@@ -1,0 +1,38 @@
+lesson: 7
+unit: 3
+kind: science
+title: What Happened to the Dinosaurs?
+subtitle: The clues that tell scientists what must have happened sixty-six million years ago.
+icon: comet
+goals: [Explain scientific evidence, Guess about the past with must have and might have, Describe a chain of events]
+text:
+  - For more than 150 million years, [dinosaurs] ruled the Earth. Then, about sixty-six million years ago, they disappeared, together with about three quarters of all life on the planet. For a long time, nobody knew why. Today, most scientists agree on the answer, and it came from space.
+  - "The first clue was found in 1980. A father and son, Luis and Walter Alvarez, were studying rocks in Italy. In a thin layer of clay from exactly that time, they found a lot of [iridium], a metal that is rare on Earth but common in rocks from space. They had an idea. A huge rock from space, an [asteroid], must have hit the Earth."
+  - "But if an asteroid had hit the Earth, it must have left a giant hole, a [crater]. Where was it? Ten years later, scientists found it under the sea and land near Chicxulub, in Mexico. It is about 180 kilometers wide. The asteroid that made it must have been about ten kilometers across, as big as a city."
+  - The impact must have been terrible. It caused fires, huge waves, and enormous clouds of dust. The dust blocked the sun for months, maybe years. Without sunlight, plants died, then the animals that ate plants, and then the animals that ate them.
+  - Some scientists think that giant volcanoes in India might have made things worse at the same time. But not everything died. Small animals survived, and so did some dinosaurs. The birds outside your window are their great-great-grandchildren.
+facts:
+  - title: A chain of events
+    steps: true
+    items:
+      - {term: Impact, text: a 10 km asteroid hits Mexico}
+      - {term: Dust, text: clouds block the sun}
+      - {term: Cold, text: plants stop growing}
+      - {term: Hunger, text: big animals die out}
+did_you_know: Birds are living dinosaurs. A chicken is closer to Tyrannosaurus rex than a crocodile is.
+questions:
+  - ["How long did dinosaurs rule the Earth?", "For more than 150 million years."]
+  - ["When did they disappear?", "About sixty-six million years ago."]
+  - ["What did Luis and Walter Alvarez find in 1980?", "A lot of iridium in a thin layer of clay."]
+  - ["Why was the iridium an important clue?", "It is rare on Earth but common in rocks from space."]
+  - ["Where is the crater?", "Near Chicxulub, in Mexico."]
+  - ["How big must the asteroid have been?", "About ten kilometers across, as big as a city."]
+  - ["Why did plants die?", "The dust blocked the sun for months, maybe years."]
+  - ["Which living animals are related to dinosaurs?", "Birds."]
+words:
+  - {word: ruled, meaning: controlled or were the most powerful}
+  - {word: layer, meaning: one level of something that lies over another}
+  - {word: rare, meaning: not found very often}
+  - {word: impact, meaning: the moment when one thing hits another}
+  - {word: volcanoes, meaning: mountains that send out fire and hot rock}
+  - {word: survived, meaning: stayed alive after something dangerous}

@@ -1,0 +1,33 @@
+lesson: 11
+unit: 4
+kind: conversation
+title: The Job Interview
+subtitle: Answering the classic questions in a job interview
+icon: briefcase
+goals: [Introduce yourself in an interview, Talk about your strengths and weaknesses, Describe your plans for the future]
+scene: Huda has an interview for a job as a teaching assistant at a primary school. Mrs. Karim, the head teacher, is interviewing her.
+conversation:
+  - [Mrs. Karim, "Good morning, Huda. Please have a seat. Can you tell me a little about yourself?"]
+  - [Huda, "Of course. I'm in my final year of a degree in education, and I've been helping at an English course for two years."]
+  - [Mrs. Karim, "Why do you want to work with children?"]
+  - [Huda, "I love seeing the moment when a child finally understands something. It's the best feeling in the world."]
+  - [Mrs. Karim, "What would you say are your strengths and weaknesses?"]
+  - [Huda, "I'm patient, and I'm good at explaining things in different ways. If one way doesn't work, I try another. My weakness is that I sometimes spend too long preparing, but I'm learning to plan my time better."]
+  - [Mrs. Karim, "Where do you see yourself in five years?"]
+  - [Huda, "In five years, I'll have finished my teacher training, and I'll be teaching my own class, I hope here. Could I ask what a typical day looks like for a teaching assistant?"]
+  - [Mrs. Karim, "Good question. You'll be working with small groups in the morning and helping in the library after lunch. Thank you, Huda. We'll let you know by Thursday."]
+  - [Huda, "Thank you for your time. I look forward to hearing from you."]
+phrases:
+  - {title: Talk about yourself, lines: ["I'm in my final year of a degree in education."]}
+  - {title: Say why you want the job, lines: ["I love seeing the moment when a child finally understands."]}
+  - {title: Give a strength with an example, lines: ["I'm patient. If one way doesn't work, I try another."]}
+  - {title: Turn a weakness into progress, lines: ["I'm learning to plan my time better."]}
+  - {title: Talk about the future, lines: ["In five years, I'll have finished my teacher training."]}
+  - {title: Ask a question and end politely, lines: ["Could I ask what a typical day looks like?", "I look forward to hearing from you."]}
+words:
+  - {word: interview, meaning: a meeting where someone asks you questions to decide if you can do a job}
+  - {word: assistant, meaning: a person who helps someone in their work}
+  - {word: degree, meaning: what you get when you finish university}
+  - {word: strengths, meaning: things you are good at}
+  - {word: weaknesses, meaning: things you are not good at}
+  - {word: typical, meaning: usual, normal}

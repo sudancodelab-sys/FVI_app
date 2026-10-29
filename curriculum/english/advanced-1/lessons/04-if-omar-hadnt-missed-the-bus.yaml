@@ -1,0 +1,55 @@
+lesson: 4
+unit: 2
+kind: story
+title: If Omar Hadn't Missed the Bus
+subtitle: One bad morning, a chain of small events, and a new future. Read the story, then read it from the point of view of the man Omar helped.
+icon: bus
+goals: [Imagine a different past, Use the third conditional, Talk about regrets and luck]
+story:
+  - "Last March, Omar woke up late. His phone battery had died in the night, so the alarm hadn't rung. He ran to the bus stop, but he was too late. The bus was already disappearing down the road. \"Great,\" he thought. \"Now I'll be late for my exam.\""
+  - "He decided to walk to the next stop. On the way, he passed an old man who was standing next to a car with its hood open. The man looked worried. Omar stopped. \"Can I help?\" The engine had stopped, and the man had no idea why. Omar looked inside, found a loose cable, and fixed it in two minutes. The man thanked him and offered him a ride to the university."
+  - "In the car, they talked. The man asked Omar about his studies and his work at the phone shop. Then he gave Omar his card. His name was Dr. Idris Mahmoud, and he was the director of a big technology company. \"We're looking for young people who can solve problems,\" he said. \"Call me after your exams.\""
+  - "Three months later, Omar started an internship at the company. Now, when he tells the story, he always laughs. \"If my battery [hadn't died], I [wouldn't have missed] the bus. If I [hadn't missed] the bus, I [wouldn't have walked] past that car. And if I [hadn't stopped] to help, I [would never have met] Dr. Idris.\" Adam always adds, \"And if you [had been] on time, you [would] still [be fixing] phones!\""
+questions:
+  - ["Why didn't Omar's alarm ring?", "His phone battery had died in the night."]
+  - ["Did he catch the bus?", "No, he didn't. It was already disappearing down the road."]
+  - ["What did he decide to do?", "Walk to the next stop."]
+  - ["Who did he see on the way?", "An old man next to a car with its hood open."]
+  - ["What was wrong with the car?", "There was a loose cable."]
+  - ["How long did it take Omar to fix it?", "Two minutes."]
+  - ["What did the man offer him?", "A ride to the university."]
+  - ["Who was the man?", "Dr. Idris Mahmoud, the director of a big technology company."]
+  - ["What kind of people is his company looking for?", "Young people who can solve problems."]
+  - ["What happened three months later?", "Omar started an internship at the company."]
+  - ["What would have happened if Omar hadn't stopped to help?", "He would never have met Dr. Idris."]
+  - ["What does Adam always add?", "If Omar had been on time, he would still be fixing phones!"]
+pov:
+  intro: Now Dr. Idris tells it.
+  speaker: Dr. Idris
+  text:
+    - Last March, my car broke down on the way to the office. I was standing by the road, feeling helpless, when a young man stopped and asked if he could help. He found a loose cable and fixed it in two minutes.
+    - I offered him a ride, and we talked. He had missed his bus that morning, he said. If he [hadn't missed] it, he [wouldn't have been] walking past my car.
+    - I was impressed. He was polite, practical, and calm. So I gave him my card. Three months later, he joined our company as an intern, and he is one of the best we have ever had.
+    - I often think about that morning. If my car [hadn't broken] down, I [would never have found] Omar. Sometimes the worst mornings bring the best people.
+learn:
+  title: You learned the [third conditional].
+  intro: We use it to imagine a different past, what would have happened if something had been different.
+  wide: true
+  table:
+    - ["If + had + past participle", "would have + past participle"]
+    - ["If my battery [hadn't died],", "I [wouldn't have missed] the bus."]
+    - ["If I [hadn't missed] the bus,", "I [wouldn't have walked] past that car."]
+    - ["If I [hadn't stopped] to help,", "I [would never have met] Dr. Idris."]
+    - ["If his car [hadn't broken] down,", "he [wouldn't have found] Omar."]
+  notes:
+    - {title: "For a [past] that didn't happen", text: "It's too late to change it. We only imagine it."}
+    - {title: "Short forms: [I'd have · wouldn't have]", text: "I'd have = I would have."}
+    - {title: "Regrets: [I wish I had…]", text: "I wish I had set two alarms!"}
+  ask: ["What would you have done if you had missed the bus?", "I would have taken a rickshaw."]
+words:
+  - {word: hood, meaning: the metal cover over a car's engine}
+  - {word: loose, meaning: not fixed firmly}
+  - {word: ride, meaning: a trip in someone's car}
+  - {word: director, meaning: the person who manages a company}
+  - {word: internship, meaning: a period of work where you learn a job}
+  - {word: impressed, meaning: thinking that someone is very good at something}
