@@ -2659,7 +2659,7 @@
       <h2><span class="num">3</span>New words</h2>
       <div class="words">
         <div class="word"><b>full name</b>your first name and your family name</div>
-        <div class="word"><b>spell</b>say the letters of a word</div>
+        <div class="word"><b>spell</b>say the letters of a word, one by one</div>
         <div class="word"><b>from</b>shows your home country or city</div>
         <div class="word"><b>phone number</b>the numbers you call to talk to someone</div>
       </div>
@@ -2779,7 +2779,7 @@
         <div class="word"><b>brother</b>a boy or man with the same parents as you</div>
         <div class="word"><b>sister</b>a girl or woman with the same parents as you</div>
         <div class="word"><b>parents</b>your mother and your father</div>
-        <div class="word"><b>family</b>parents</div>
+        <div class="word"><b>family</b>parents, children, brothers and sisters</div>
       </div>
     </div>
   </div>
@@ -2838,8 +2838,8 @@
         <div class="word"><b>bedroom</b>a room where you sleep</div>
         <div class="word"><b>kitchen</b>a room where you cook</div>
         <div class="word"><b>living room</b>a room where the family sits together</div>
-        <div class="word"><b>balcony</b>a small place outside an apartment</div>
-        <div class="word"><b>garden</b>a place with grass</div>
+        <div class="word"><b>balcony</b>a small place outside an apartment, with a wall or rail</div>
+        <div class="word"><b>garden</b>a place with grass, plants or trees next to a house</div>
       </div>
     </div>
   </div>
@@ -2896,7 +2896,7 @@
       <div class="words">
         <div class="word"><b>engineer</b>a person who designs and builds things</div>
         <div class="word"><b>doctor</b>a person who helps sick people get better</div>
-        <div class="word"><b>driver</b>a person whose job is to drive a car</div>
+        <div class="word"><b>driver</b>a person whose job is to drive a car, bus or truck</div>
         <div class="word"><b>pilot</b>a person who flies a plane</div>
         <div class="word"><b>company</b>a business where many people work</div>
         <div class="word"><b>hospital</b>a place where doctors help sick people</div>
@@ -2920,14 +2920,16 @@ window.fviReady = (async () => {
   await document.fonts.ready;
   const overflows = (page) => page.scrollHeight > page.clientHeight + 1;
   const flowOf = (page) => page.querySelector('.flow');
-  // A section may split between its letter teams, rule boxes, questions or
-  // conversation lines. One with other content (a grid of sound cards) keeps
+  // A section may split between its letter teams, rule boxes, questions,
+  // conversation lines, reading paragraphs or the two parts of a "What did
+  // you learn?" box. One with other content (a grid of sound cards) keeps
   // that content and may hand on every box; a list keeps at least its first
   // item, and a conversation its first three lines.
-  const ITEM = '.team, .rule, .q, .line';
+  const ITEM = '.team, .rule, .q, .line, .lsec > .learn, .para';
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => {
     if (sec.querySelector(':scope > .line')) return 3;
+    if (sec.querySelector(':scope > .para')) return 1;  // a heading never stays alone
     return [...sec.children].some((el) => !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1;
   };
   const canSplit = (sec) => items(sec).length > minKeep(sec);

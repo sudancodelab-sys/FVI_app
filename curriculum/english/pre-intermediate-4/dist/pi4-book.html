@@ -497,9 +497,9 @@
     <div class="sec" data-lesson="6">
       <h2><span class="num">3</span>New words</h2>
       <div class="words">
-        <div class="word"><b>straight</b>in one line</div>
+        <div class="word"><b>straight</b>in one line, without turning</div>
         <div class="word"><b>turn left</b>go to the left side</div>
-        <div class="word"><b>traffic lights</b>red</div>
+        <div class="word"><b>traffic lights</b>red, yellow, and green lights for cars</div>
         <div class="word"><b>cross</b>go from one side to the other</div>
         <div class="word"><b>bridge</b>a road over a river</div>
         <div class="word"><b>on foot</b>walking</div>
@@ -982,6 +982,7 @@ window.fviReady = (async () => {
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => {
     if (sec.querySelector(':scope > .line')) return 3;
+    if (sec.querySelector(':scope > .para')) return 1;  // a heading never stays alone
     return [...sec.children].some((el) => !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1;
   };
   const canSplit = (sec) => items(sec).length > minKeep(sec);

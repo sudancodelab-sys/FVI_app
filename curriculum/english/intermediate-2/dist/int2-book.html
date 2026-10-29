@@ -379,7 +379,7 @@
         <div class="word"><b>grade</b>a number or letter that shows how good your work is</div>
         <div class="word"><b>shout</b>speak very loudly</div>
         <div class="word"><b>principal</b>the head of a school</div>
-        <div class="word"><b>wonderful</b>very</div>
+        <div class="word"><b>wonderful</b>very, very good</div>
         <div class="word"><b>anyway</b>even so</div>
       </div>
     </div>
@@ -1058,7 +1058,7 @@
     <div class="sec" data-lesson="13">
       <h2><span class="num">4</span>New words</h2>
       <div class="words">
-        <div class="word"><b>natural</b>from nature</div>
+        <div class="word"><b>natural</b>from nature, not made by people</div>
         <div class="word"><b>producer</b>a country or company that makes something</div>
         <div class="word"><b>regions</b>large areas of a country</div>
         <div class="word"><b>bark</b>the hard outside of a tree</div>
@@ -1093,6 +1093,7 @@ window.fviReady = (async () => {
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => {
     if (sec.querySelector(':scope > .line')) return 3;
+    if (sec.querySelector(':scope > .para')) return 1;  // a heading never stays alone
     return [...sec.children].some((el) => !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1;
   };
   const canSplit = (sec) => items(sec).length > minKeep(sec);

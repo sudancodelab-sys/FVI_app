@@ -24,6 +24,6 @@ phrases:
   - {title: Agree, lines: ["OK. See you there!"]}
 words:
   - {word: free, meaning: not busy}
-  - {word: every, meaning: all of them, one after the other}
+  - {word: every, meaning: "all of them, one after the other"}
   - {word: idea, meaning: a plan or a thought}
   - {word: field, meaning: a big open place for sports}

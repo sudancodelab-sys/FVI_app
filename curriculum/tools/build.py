@@ -302,10 +302,8 @@ def check_speaking(level, speaking, wordlists, report):
 
 def check_cut_text(level, entries, where, report):
     """{word: x, meaning: a long, narrow room} ends the meaning at the comma,
-    and {meaning: for sure} without quotes can turn into true. An error from
-    the levels with idioms: true; the books approved before that only warn,
-    so they still build as approved."""
-    say = report.error if level.get('idioms') else report.warn
+    and {meaning: yes, for sure} without quotes can turn into true."""
+    say = report.error
     for w in entries:
         name = w.get('word') or w.get('expr')
         if set(w) - {'word', 'meaning', 'expr', 'type', 'example'}:

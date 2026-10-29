@@ -23,6 +23,6 @@ phrases:
   - {title: Welcome someone, lines: ["Welcome to the class!"]}
 words:
   - {word: full name, meaning: your first name and your family name}
-  - {word: spell, meaning: say the letters of a word, one by one}
+  - {word: spell, meaning: "say the letters of a word, one by one"}
   - {word: from, meaning: shows your home country or city}
   - {word: phone number, meaning: the numbers you call to talk to someone}

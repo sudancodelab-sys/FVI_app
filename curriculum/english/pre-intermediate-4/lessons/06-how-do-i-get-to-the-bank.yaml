@@ -25,9 +25,9 @@ phrases:
   - {title: Give advice, lines: ["You should take a rickshaw."]}
   - {title: Say where it is, lines: ["It's on the right, next to the hospital."]}
 words:
-  - {word: straight, meaning: in one line, without turning}
+  - {word: straight, meaning: "in one line, without turning"}
   - {word: turn left, meaning: go to the left side}
-  - {word: traffic lights, meaning: red, yellow, and green lights for cars}
+  - {word: traffic lights, meaning: "red, yellow, and green lights for cars"}
   - {word: cross, meaning: go from one side to the other}
   - {word: bridge, meaning: a road over a river}
   - {word: on foot, meaning: walking}

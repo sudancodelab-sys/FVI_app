@@ -23,7 +23,7 @@ phrases:
 words:
   - {word: engineer, meaning: a person who designs and builds things}
   - {word: doctor, meaning: a person who helps sick people get better}
-  - {word: driver, meaning: a person whose job is to drive a car, bus or truck}
+  - {word: driver, meaning: "a person whose job is to drive a car, bus or truck"}
   - {word: pilot, meaning: a person who flies a plane}
   - {word: company, meaning: a business where many people work}
   - {word: hospital, meaning: a place where doctors help sick people}

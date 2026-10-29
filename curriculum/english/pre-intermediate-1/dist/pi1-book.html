@@ -372,7 +372,7 @@
         <div class="word"><b>beans</b>small seeds we cook; a popular breakfast</div>
         <div class="word"><b>take the bus</b>go somewhere by bus</div>
         <div class="word"><b>homework</b>school work you do at home</div>
-        <div class="word"><b>evening</b>the time after the afternoon</div>
+        <div class="word"><b>evening</b>the time after the afternoon, before night</div>
         <div class="word"><b>a lot</b>very much</div>
       </div>
     </div>
@@ -507,7 +507,7 @@
       <h2><span class="num">3</span>New words</h2>
       <div class="words">
         <div class="word"><b>free</b>not busy</div>
-        <div class="word"><b>every</b>all of them</div>
+        <div class="word"><b>every</b>all of them, one after the other</div>
         <div class="word"><b>idea</b>a plan or a thought</div>
         <div class="word"><b>field</b>a big open place for sports</div>
       </div>
@@ -595,7 +595,7 @@
       <div class="words">
         <div class="word"><b>cook</b>make food hot and ready to eat</div>
         <div class="word"><b>rice</b>small white seeds we cook and eat</div>
-        <div class="word"><b>salad</b>cold vegetables</div>
+        <div class="word"><b>salad</b>cold vegetables, cut into small pieces</div>
         <div class="word"><b>smile</b>make a happy face</div>
         <div class="word"><b>without</b>not with</div>
         <div class="word"><b>next</b>the one after this one</div>
@@ -993,6 +993,7 @@ window.fviReady = (async () => {
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => {
     if (sec.querySelector(':scope > .line')) return 3;
+    if (sec.querySelector(':scope > .para')) return 1;  // a heading never stays alone
     return [...sec.children].some((el) => !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1;
   };
   const canSplit = (sec) => items(sec).length > minKeep(sec);

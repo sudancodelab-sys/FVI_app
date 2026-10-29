@@ -47,7 +47,7 @@ learn:
     - {title: "It often explains a [result]", text: "He was tired because he had been lying awake."}
   ask: ["What had you been doing before you started this course?", "I had been working in a shop."]
 words:
-  - {word: admitted, meaning: said that something was true, although it was not easy to say}
+  - {word: admitted, meaning: "said that something was true, although it was not easy to say"}
   - {word: instructor, meaning: a person who teaches a practical skill}
   - {word: controls, meaning: the parts you use to drive or fly a machine}
   - {word: runway, meaning: the long road where planes take off and land}

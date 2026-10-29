@@ -25,4 +25,4 @@ words:
   - {word: brother, meaning: a boy or man with the same parents as you}
   - {word: sister, meaning: a girl or woman with the same parents as you}
   - {word: parents, meaning: your mother and your father}
-  - {word: family, meaning: parents, children, brothers and sisters}
+  - {word: family, meaning: "parents, children, brothers and sisters"}

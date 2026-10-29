@@ -25,5 +25,5 @@ words:
   - {word: bedroom, meaning: a room where you sleep}
   - {word: kitchen, meaning: a room where you cook}
   - {word: living room, meaning: a room where the family sits together}
-  - {word: balcony, meaning: a small place outside an apartment, with a wall or rail}
-  - {word: garden, meaning: a place with grass, plants or trees next to a house}
+  - {word: balcony, meaning: "a small place outside an apartment, with a wall or rail"}
+  - {word: garden, meaning: "a place with grass, plants or trees next to a house"}
