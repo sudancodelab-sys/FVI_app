@@ -8,11 +8,11 @@ goals: [Report what people said with reporting verbs, Use the right pattern afte
 story:
   - It was almost Mr. Ali's sixtieth birthday, and his students had planned a surprise. On Wednesday afternoon, Huda bought a big chocolate cake from the best bakery in town and hid it in the fridge in the teachers' room. The party was going to be on Thursday morning, before the first class, and everyone [promised to keep] it a secret.
   - "On Thursday, Huda opened the fridge. The cake was gone. \"Somebody has taken it!\" she cried. Within minutes, the whole class was in the teachers' room, and everyone was looking at everyone else."
-  - "Omar looked at Adam. \"You were here late last night,\" he said. Adam [denied going] anywhere near the fridge. \"I was only printing the birthday card,\" he said. Then Sara [accused Omar of eating] it, because there was chocolate on his shirt. Omar [admitted eating] chocolate, but only a chocolate bar from the shop. \"I [refuse to be] blamed for a crime I didn't commit,\" he said dramatically."
+  - "Omar looked at Adam. \"You were here late last night,\" he said. Adam [denied going] anywhere near the fridge. \"I was only printing the birthday card,\" he said. Then Sara [accused Omar of eating] it, because there was chocolate on his shirt. \"You've been ((caught red-handed))!\" she said. Omar [admitted eating] chocolate, but only a chocolate bar from the shop. \"I [refuse to be] blamed for a crime I didn't commit,\" he said dramatically."
   - "Huda was close to tears. Sara, practical as always, [suggested checking] the security camera in the corridor. The guard [agreed to show] them the video, but he [warned them not to expect] much. \"That camera is older than I am,\" he said."
-  - "They watched in silence. At 9:40 the night before, a figure walked into the teachers' room and came out carrying a large white box. The picture wasn't clear, but the walk was. Everyone knew that slow, careful walk. It was Mr. Ali."
+  - "They watched in silence. At 9:40 the night before, a figure walked into the teachers' room and came out carrying a large white box. The picture wasn't clear, but the walk was. Everyone knew that slow, careful walk. The thief ((turned out)) to be Mr. Ali himself."
   - "At that moment, the door opened, and Mr. Ali came in, carrying the box. \"Good morning,\" he said. \"I found this in the fridge last night. There was no name on it, and the cleaners empty the fridge on Thursdays, so I took it home to keep it safe.\" Then he opened the box and read the words on top: Happy Birthday, Mr. Ali. He laughed so much that he had to sit down."
-  - "He [apologized for spoiling] the surprise, and the students [insisted on having] the party anyway. As for Omar, everyone agreed that he still owed them a chocolate bar."
+  - "He [apologized for spoiling] the surprise, and the students [insisted on having] the party anyway. \"Well,\" said Mr. Ali, \"((don't judge a book by its cover)). I looked like a thief, and so did Omar.\" As for Omar, everyone agreed that he still owed them a chocolate bar."
 questions:
   - ["Whose birthday was it?", "Mr. Ali's. It was almost his sixtieth."]
   - ["Where did Huda hide the cake?", "In the fridge in the teachers' room."]
@@ -50,10 +50,14 @@ learn:
     - {title: "Negative: [not] before to or -ing", text: "He warned them not to expect much. He admitted not knowing."}
     - {title: "They say [more] than said", text: "\"It wasn't me!\" He denied doing it. \"I'll help.\" He offered to help."}
   ask: ["What have you promised to do this week?", "I've promised to help my brother with his homework."]
+idioms:
+  - {expr: be caught red-handed, type: idiom, meaning: to be found while you are doing something wrong, example: The boy was caught red-handed with his hand in the cookie jar.}
+  - {expr: turn out, type: phrase, meaning: "to be found to be true in the end, often as a surprise", example: The exam turned out to be easier than we expected.}
+  - {expr: "Don't judge a book by its cover.", type: proverb, meaning: Don't decide what someone or something is like only from the way they look., example: "The restaurant looked old, but the food was wonderful. Don't judge a book by its cover."}
 words:
   - {word: bakery, meaning: a shop that makes and sells bread and cakes}
   - {word: blamed, meaning: "said to be the person who did something wrong"}
-  - {word: dramatically, meaning: in a way that is meant to impress people, like an actor}
-  - {word: corridor, meaning: a long, narrow passage inside a building}
+  - {word: dramatically, meaning: "in a way that is meant to impress people, like an actor"}
+  - {word: corridor, meaning: "a long, narrow passage inside a building"}
   - {word: figure, meaning: the shape of a person you can't see clearly}
   - {word: owed, meaning: had to give something back to someone}

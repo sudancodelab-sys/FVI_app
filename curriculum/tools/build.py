@@ -33,8 +33,8 @@ _MARK = re.compile(r'\[([^\]]+)\]|\{([^}]+)\}')
 
 
 def plain(word):
-    """c[a]t -> cat"""
-    return _MARK.sub(lambda m: m.group(1) or m.group(2), word)
+    """c[a]t -> cat, ((on time)) -> on time"""
+    return _MARK.sub(lambda m: m.group(1) or m.group(2), _IDIOM.sub(r'\1', word))
 
 
 def marked(word):
@@ -49,15 +49,29 @@ def marked_in_order(word):
 
 
 _BRACKETS = re.compile(r'\[([^\]]+)\]')
+# ((spill the beans)): an idiom, proverb or phrase, explained in its own box.
+_IDIOM = re.compile(r'\(\(([^()]+)\)\)')
+_IDIOM_TYPES = ('idiom', 'proverb', 'phrase')
 
 
 def render_text(text, how='v'):
-    """Running text: [is] -> <span class="v">is</span>, or <em>is</em>."""
+    """Running text: [is] -> <span class="v">is</span>, or <em>is</em>;
+    ((break the ice)) -> <span class="i">break the ice</span>."""
     out, pos = [], 0
     for m in _BRACKETS.finditer(text):
-        out.append(html.escape(text[pos:m.start()]))
+        out.append(_render_idioms(text[pos:m.start()]))
         inner = html.escape(m.group(1))
         out.append(f'<em>{inner}</em>' if how == 'em' else f'<span class="{how}">{inner}</span>')
+        pos = m.end()
+    out.append(_render_idioms(text[pos:]))
+    return ''.join(out)
+
+
+def _render_idioms(text):
+    out, pos = [], 0
+    for m in _IDIOM.finditer(text):
+        out.append(html.escape(text[pos:m.start()]))
+        out.append(f'<span class="i">{html.escape(m.group(1))}</span>')
         pos = m.end()
     out.append(html.escape(text[pos:]))
     return ''.join(out)
@@ -283,6 +297,21 @@ def check_speaking(level, speaking, wordlists, report):
         for w in lesson['words']:
             if w['word'].lower() not in text.lower():
                 report.error(where, f'new word "{w["word"]}" is not used in the lesson')
+        check_cut_text(level, lesson['words'], where, report)
+
+
+def check_cut_text(level, entries, where, report):
+    """{word: x, meaning: a long, narrow room} ends the meaning at the comma,
+    and {meaning: for sure} without quotes can turn into true. An error from
+    the levels with idioms: true; the books approved before that only warn,
+    so they still build as approved."""
+    say = report.error if level.get('idioms') else report.warn
+    for w in entries:
+        name = w.get('word') or w.get('expr')
+        if set(w) - {'word', 'meaning', 'expr', 'type', 'example'}:
+            say(where, f'"{name}": the meaning stops at a comma; put it in quotes in the YAML')
+        elif any(not isinstance(w.get(k), str) for k in ('meaning', 'example') if k in w):
+            say(where, f'"{name}": the meaning is not text; put it in quotes in the YAML')
 
 
 _KINDS = ('story', 'topic', 'science', 'news', 'podcast', 'conversation')
@@ -342,8 +371,10 @@ def check_lessons(level, lessons, wordlists, report):
         for who in speakers:
             if who not in cast:
                 report.error(where, f'"{who}" is not in the level cast ({", ".join(cast)})')
+        check_idioms(level, lesson, where, report)
         if len(lesson['words']) > 6:
             report.error(where, 'more than 6 new words')
+        check_cut_text(level, lesson['words'] + lesson.get('idioms', []), where, report)
         bad = [w['word'] for w in lesson['words'] if not isinstance(w['word'], str)]
         if bad:
             # YAML reads true, no, on, off as booleans unless they are quoted.
@@ -359,6 +390,44 @@ def check_lessons(level, lessons, wordlists, report):
                 report.error(where, f'new word "{w["word"]}" is banned (sounds like a rude Arabic word)')
             if not re.search(r'\b' + re.escape(w['word'].lower()) + r'\b', body.lower()):
                 report.error(where, f'new word "{w["word"]}" is not used in the lesson')
+
+
+def check_idioms(level, lesson, where, report):
+    """From the levels with idioms: true, every lesson teaches idioms,
+    proverbs and phrases: a story three, one of them a proverb, and every
+    other lesson two. Each one is marked ((like this)) where it is used,
+    in the same order as its box."""
+    entries = lesson.get('idioms', [])
+    for text in _strings(lesson):
+        if text.count('((') != text.count('))'):
+            report.error(where, f'unbalanced (( )) in "{text}"')
+    body = ' '.join(_strings({k: v for k, v in lesson.items() if k not in ('idioms', 'words')}))
+    used = _IDIOM.findall(body)
+    if not level.get('idioms'):
+        if entries or used:
+            report.error(where, 'idioms are taught from the levels with idioms: true only')
+        return
+    want = 3 if lesson['kind'] == 'story' else 2
+    if len(entries) != want:
+        report.error(where, f'{len(entries)} idioms; a {lesson["kind"]} has {want}')
+    for e in entries:
+        missing = [k for k in ('expr', 'type', 'meaning', 'example') if not e.get(k)]
+        if missing:
+            report.error(where, f'idiom {e.get("expr")!r} needs {", ".join(missing)}')
+        if e.get('type') not in _IDIOM_TYPES:
+            report.error(where, f'idiom {e.get("expr")!r}: type must be one of {", ".join(_IDIOM_TYPES)}')
+    if lesson['kind'] == 'story' and sum(e.get('type') == 'proverb' for e in entries) != 1:
+        report.error(where, 'a story teaches exactly one proverb')
+    if len(used) != len(entries):
+        report.error(where, f'{len(used)} (( )) marks in the lesson for {len(entries)} idioms')
+        return
+    # The mark may be a changed form (turned out for turn out); it must
+    # still share the start of a word of four letters or more with the
+    # idiom in the box.
+    for e, u in zip(entries, used):
+        key = {w[:4].lower() for w in _words_in(str(e.get('expr', ''))) if len(w) >= 4}
+        if key and not key & {w[:4].lower() for w in _words_in(u)}:
+            report.error(where, f'(({u})) does not match the idiom "{e.get("expr")}" in its place in the box')
 
 
 # ---------------------------------------------------------------- build

@@ -8,6 +8,8 @@ tagline: Confident English for meetings, interviews, and the news
 subtitle: Stories · News · Podcasts · Conversations
 story_words: [260, 380]
 split_boxes: true
+# Every lesson teaches idioms, proverbs and phrases (Advanced 2 on).
+idioms: true
 units:
   1: Getting Used to It
   2: If Things Had Been Different

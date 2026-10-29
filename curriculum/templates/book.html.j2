@@ -118,6 +118,20 @@
       {%- endfor %}
     </div>
 {%- endmacro %}
+{#- Idioms, proverbs and phrases, from the levels with idioms: true. Each
+    one is marked in the lesson where it is used. #}
+{%- macro idioms_box(l, num) %}
+    {%- if l.idioms %}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">{{ num }}</span>Idioms, proverbs and phrases</h2>
+      <div class="idioms n{{ l.idioms|length }}">
+        {%- for e in l.idioms %}
+        <div class="idm {{ e.type }}"><span class="it">{{ e.type }}</span><b>{{ e.expr }}</b><p>{{ e.meaning }}</p><i>{{ e.example }}</i></div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endif %}
+{%- endmacro %}
 {%- macro new_words(l, num) %}
     <div class="sec" data-lesson="{{ l.lesson }}">
       <h2><span class="num">{{ num }}</span>New words</h2>
@@ -255,7 +269,8 @@
       </div>
       {%- endif %}
     </div>
-    {{ new_words(l, 5) }}
+    {{- idioms_box(l, 5) }}
+    {{ new_words(l, 6 if l.idioms else 5) }}
   </div>
   {{ foot(l.title, 'Unit ' ~ l.unit) }}
 </div>
@@ -292,7 +307,8 @@
     </div>
     {%- endfor %}
     {{ qa(l, ns.n + 1) }}
-    {{ new_words(l, ns.n + 2) }}
+    {{- idioms_box(l, ns.n + 2) }}
+    {{ new_words(l, ns.n + (3 if l.idioms else 2)) }}
   </div>
   {{ foot(l.title, 'Unit ' ~ l.unit) }}
 </div>
@@ -314,7 +330,8 @@
       {%- endfor %}
     </div>
     {{ qa(l, 3) }}
-    {{ new_words(l, 4) }}
+    {{- idioms_box(l, 4) }}
+    {{ new_words(l, 5 if l.idioms else 4) }}
   </div>
   {{ foot(l.title, 'Unit ' ~ l.unit) }}
 </div>
@@ -354,7 +371,8 @@
     </div>
     {%- endif %}
     {{ qa(l, ns.n + 1) }}
-    {{ new_words(l, ns.n + 2) }}
+    {{- idioms_box(l, ns.n + 2) }}
+    {{ new_words(l, ns.n + (3 if l.idioms else 2)) }}
   </div>
   {{ foot(l.title, 'Unit ' ~ l.unit) }}
 </div>
@@ -369,7 +387,7 @@
       <h2><span class="num">1</span>Read the conversation</h2>
       <div class="scene">{{ l.scene }}</div>
       {%- for who, text in l.conversation %}{% set c = level.cast[who] %}
-      <div class="line"><span class="av {{ c.color }}">{{ c.initial }}</span><span class="who">{{ who|upper }}</span><span>{{ text }}</span></div>
+      <div class="line"><span class="av {{ c.color }}">{{ c.initial }}</span><span class="who">{{ who|upper }}</span><span>{{ text|mark if l.idioms else text }}</span></div>
       {%- endfor %}
     </div>
     <div class="sec" data-lesson="{{ l.lesson }}">
@@ -380,7 +398,8 @@
         {%- endfor %}
       </div>
     </div>
-    {{ new_words(l, 3) }}
+    {{- idioms_box(l, 3) }}
+    {{ new_words(l, 4 if l.idioms else 3) }}
   </div>
   {{ foot(l.title, 'Unit ' ~ l.unit) }}
 </div>
