@@ -1,0 +1,21 @@
+# Intermediate 1 level metadata (P6 internally, CEFR B1.1).
+# The first level of the Intermediate stage: science topics come in.
+name: Intermediate 1
+chip: INTERMEDIATE 1
+stage: Intermediate
+cefr: B1.1
+tagline: Longer stories, science topics, and English for real life
+subtitle: Stories · Topics · Science · Conversations
+story_words: [180, 270]
+split_boxes: true
+units:
+  1: Up to Now
+  2: Then and Now
+  3: What Had Happened?
+  4: People and Things
+  5: How It's Done
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}

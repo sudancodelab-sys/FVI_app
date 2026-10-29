@@ -427,3 +427,24 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .reading.topic .k{font-weight:700;color:var(--navy);text-decoration:underline 1.5px var(--orange);text-underline-offset:3px}
 .page.stream.dense .reading > .para{line-height:1.5}
 .page.stream.denser .reading > .para{line-height:1.42}
+
+/* science topics (Intermediate stage on) */
+.tile.icon.k-science{background:#0E7C86}
+.hero .kind.k-science{color:#0E7C86}
+.toc-t small.kind.k-science{color:#0E7C86}
+.reading.science > .para{border-left-color:#0E7C86}
+.reading.science .k{color:#0B5E66;text-decoration-color:#0E7C86}
+.facts.steps .fact{position:relative}
+.facts.steps .fact b em{font-style:normal;display:inline-grid;place-items:center;width:5mm;height:5mm;border-radius:50%;background:#0E7C86;color:#fff;font-size:7.5pt;margin-right:1.5mm;vertical-align:1px}
+.facts.steps .fact:not(:last-child):after{content:"";position:absolute;right:-2.3mm;top:50%;width:2mm;height:2mm;border-top:1.5px solid #0E7C86;border-right:1.5px solid #0E7C86;transform:translateY(-50%) rotate(45deg);background:var(--bg, #fff)}
+.facts.steps .fact.icon i{background:#E3F3F4}
+.facts.steps .fact.icon i svg{stroke:#0E7C86}
+.dyk{display:flex;gap:4mm;align-items:baseline;border-radius:4mm;background:#E3F3F4;padding:3.5mm 5mm;border:1.2px dashed #8CC9CE}
+.dyk b{flex:none;font-size:9pt;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#0B5E66}
+.dyk p{font-size:10.5pt;line-height:1.5;color:var(--text)}
+.facts.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:3.6mm}
+.facts.steps .fact.icon{display:flex;flex-direction:column;align-items:flex-start;gap:1mm;padding:3mm 3mm 3.2mm}
+.facts.steps .fact.icon i{margin-bottom:1mm}
+.facts.steps .fact b{font-size:11pt;white-space:nowrap;display:flex;align-items:center}
+.facts.steps .fact b em{flex:none}
+.facts.steps .fact:not(:last-child):after{right:-2.9mm}

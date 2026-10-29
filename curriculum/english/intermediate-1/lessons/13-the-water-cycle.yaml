@@ -1,0 +1,39 @@
+lesson: 13
+unit: 5
+kind: science
+title: The Water Cycle
+subtitle: Where does rain come from? Follow the journey of water from the sea to the sky and back.
+icon: drop
+goals: [Explain a process in steps, Use the passive to describe science, Connect science to life in Sudan]
+text:
+  - Have you ever wondered where rain comes from? The answer is the [water cycle], the journey that water makes again and again between the sea, the sky, and the land.
+  - "First comes [evaporation]. Every day, water in seas, rivers, and lakes is heated by the sun. When it gets warm, it turns into a gas called water vapor, which rises into the air."
+  - "Next comes [condensation]. High in the sky, the air is much colder. The water vapor is cooled, and it changes back into very small drops of water. Millions of these drops are joined together, and clouds are formed."
+  - "Then comes [precipitation]. When the drops become too big and heavy, they fall to the ground as rain. In very cold places, the water falls as snow."
+  - "Last comes [collection]. The rainwater is collected in rivers, lakes, and under the ground. Some of it is used by plants, animals, and people. The rest flows back to the sea, and the cycle starts again."
+  - In Sudan, most rain falls between July and September. A lot of this water is carried by the Blue Nile from the mountains of Ethiopia, and it is used by farmers all along the river.
+facts:
+  - title: The four steps
+    steps: true
+    items:
+      - {icon: sun, term: evaporation, text: water is heated and rises}
+      - {icon: cloud, term: condensation, text: vapor is cooled; clouds are formed}
+      - {icon: rain, term: precipitation, text: water falls as rain}
+      - {icon: wave, term: collection, text: water is collected in rivers and seas}
+did_you_know: The water in your glass may be millions of years old. It has been through the water cycle many, many times!
+questions:
+  - ["What is the water cycle?", "The journey that water makes again and again between the sea, the sky, and the land."]
+  - ["What happens when water is heated by the sun?", "It turns into water vapor and rises into the air."]
+  - ["Why does the vapor change back into drops?", "Because the air high in the sky is colder."]
+  - ["How are clouds formed?", "Millions of small drops are joined together."]
+  - ["When does water fall as rain?", "When the drops become too big and heavy."]
+  - ["Where is rainwater collected?", "In rivers, lakes, and under the ground."]
+  - ["When does most rain fall in Sudan?", "Between July and September."]
+  - ["Who uses the water of the Blue Nile?", "Farmers all along the river."]
+words:
+  - {word: cycle, meaning: something that happens again and again in the same order}
+  - {word: journey, meaning: a trip from one place to another}
+  - {word: vapor, meaning: water as a gas in the air}
+  - {word: rises, meaning: goes up}
+  - {word: formed, meaning: made}
+  - {word: flows, meaning: moves like water in a river}

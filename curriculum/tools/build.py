@@ -285,7 +285,7 @@ def check_speaking(level, speaking, wordlists, report):
                 report.error(where, f'new word "{w["word"]}" is not used in the lesson')
 
 
-_KINDS = ('story', 'topic', 'conversation')
+_KINDS = ('story', 'topic', 'science', 'conversation')
 
 
 def _words_in(text):
@@ -324,7 +324,7 @@ def check_lessons(level, lessons, wordlists, report):
                 report.error(where, 'the rows of the grammar table differ in length')
             if not lesson['story'] or not any('[' in para for para in lesson['story']):
                 report.error(where, 'the story marks no grammar with [ ]')
-        elif kind == 'topic':
+        elif kind in ('topic', 'science'):
             if not 4 <= len(lesson['questions']) <= 8:
                 report.error(where, f'{len(lesson["questions"])} questions; a topic has 4 to 8')
         else:
@@ -406,7 +406,7 @@ def load_lessons(level_dir):
     return lessons
 
 
-_KIND_LABEL = {'story': 'Story', 'topic': 'Topic', 'conversation': 'Conversation'}
+_KIND_LABEL = {'story': 'Story', 'topic': 'Topic', 'science': 'Science', 'conversation': 'Conversation'}
 
 
 def stage_contents(level, lessons):
