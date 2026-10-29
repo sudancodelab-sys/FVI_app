@@ -449,3 +449,34 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .facts.steps .fact b em{flex:none}
 .facts.steps .fact:not(:last-child):after{right:-2.9mm}
 .cv-foot span.long{letter-spacing:1.1mm;white-space:nowrap}
+
+/* news and podcast lessons (Advanced stage on) */
+.tile.icon.k-news{background:#5B4BB7}
+.hero .kind.k-news,.toc-t small.kind.k-news{color:#5B4BB7}
+.tile.icon.k-podcast{background:#B83280}
+.hero .kind.k-podcast,.toc-t small.kind.k-podcast{color:#B83280}
+.reading.news > :not(h2){border:1.2px solid var(--line);border-top:none;border-bottom:none;background:#fff;padding:0 7mm;margin:0}
+.reading.news > h2 + *{border-top:1.2px solid var(--line);border-radius:3mm 3mm 0 0;padding-top:4mm}
+.reading.news > :last-child{border-bottom:1.2px solid var(--line);border-radius:0 0 3mm 3mm;padding-bottom:5mm}
+.reading.news > .paper{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:2mm !important}
+.reading.news > .paper b{font-size:13pt;font-weight:800;letter-spacing:.5px;color:var(--navy);text-transform:uppercase}
+.reading.news > .paper span{font-size:8.5pt;color:var(--muted)}
+.reading.news > .headline{font-size:19pt;font-weight:800;line-height:1.2;color:var(--text);padding-top:4mm;position:relative}
+.reading.news > .headline:before{content:"";position:absolute;left:7mm;right:7mm;top:0;border-top:3px double #C9CCDD}
+.reading.news > .stand{font-size:12pt;font-weight:600;line-height:1.5;color:var(--navy);padding-top:2.5mm}
+.reading.news > .byline{font-size:8.5pt;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:#5B4BB7;padding-top:2mm;padding-bottom:3mm}
+.reading.news > .para{font-size:11pt;line-height:1.6;padding-bottom:2.2mm}
+.reading.news > .para.quote{font-size:13pt;font-weight:700;font-style:italic;color:#5B4BB7;padding:1mm 7mm 3mm 11mm;position:relative}
+.reading.news > .para.quote:before{content:"";position:absolute;left:7mm;top:1.5mm;bottom:3.5mm;width:1.2mm;border-radius:1mm;background:#5B4BB7}
+.reading.news > .para.quote span{display:block;margin-top:1mm;font-size:8.5pt;font-style:normal;font-weight:600;letter-spacing:.5px;color:var(--muted);text-transform:uppercase}
+.reading.news .k{font-weight:700;color:var(--navy)}
+.facts.ws{grid-template-columns:repeat(5,minmax(0,1fr));gap:2mm}
+.facts.ws .fact b{color:#5B4BB7}
+.before{border-radius:4mm;background:#FCEBF4;padding:3.5mm 5mm;display:flex;flex-direction:column;gap:1.5mm}
+.before p{font-size:11pt;font-weight:500;color:var(--text);padding-left:5mm;position:relative}
+.before p:before{content:"?";position:absolute;left:0;font-weight:800;color:#B83280}
+.convo.pod > .pline{grid-template-columns:10mm 7mm 21mm 1fr;align-items:start;line-height:1.45}
+.convo.pod > .pline .t{font-size:8pt;font-weight:600;color:#B83280;font-variant-numeric:tabular-nums;padding-top:.8mm}
+.convo.pod > .pline .who{padding-top:.9mm}
+.convo.pod > .pline .av{margin-top:.2mm}
+.convo .v{color:var(--orange);font-weight:600}

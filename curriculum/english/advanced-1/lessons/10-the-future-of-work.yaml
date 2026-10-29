@@ -1,0 +1,45 @@
+lesson: 10
+unit: 4
+kind: podcast
+title: The Future of Work
+subtitle: Sara and Adam ask an expert what work will look like in ten years, and how students can get ready.
+icon: mic
+goals: [Follow a podcast, Talk about the future of jobs, Use will be doing and will have done]
+show: The Future Vision Podcast
+episode: 12
+scene: "Hosts: Sara and Adam · Guest: Dr. Amira Salih, who studies technology and jobs"
+before:
+  - What jobs do you think computers will do in ten years?
+  - What do you think you will be doing in ten years?
+script:
+  - ["00:05", Sara, "Welcome to The Future Vision Podcast! I'm Sara."]
+  - ["00:08", Adam, "And I'm Adam. Today we're talking about the future of work. Our guest is Dr. Amira Salih, who studies technology and jobs. Welcome!"]
+  - ["00:20", Dr. Amira, "Thank you. It's great to be here."]
+  - ["00:23", Sara, "Let's start with a big question. What will work look like in ten years?"]
+  - ["00:30", Dr. Amira, "Well, by 2035, computers [will have taken over] many simple tasks, like typing and checking numbers. But people [will] still [be doing] the jobs that need creativity and care."]
+  - ["00:46", Adam, "Such as?"]
+  - ["00:48", Dr. Amira, "Teachers, nurses, engineers, designers. In ten years, a teacher [won't be grading] homework by hand. Software [will be doing] that. But she [will] still [be explaining], listening, and encouraging her students."]
+  - ["01:09", Sara, "So what should students be doing now to prepare?"]
+  - ["01:13", Dr. Amira, "Three things. First, learn to use technology, don't fear it. Second, keep learning. By the time you're thirty, you['ll] probably [have changed] jobs two or three times. And third, practice working in teams. Machines are fast, but they aren't good with people."]
+  - ["01:38", Adam, "I'm training to be a pilot. Will planes be flying themselves?"]
+  - ["01:43", Dr. Amira, "Some small ones already do! But passengers [will be expecting] a human in the cockpit for many years. I think your job is safe, Adam."]
+  - ["01:56", Adam, "That's good news. My grandfather will be happy."]
+  - ["01:59", Sara, "Dr. Amira, one last question. What [will] you [be doing] in ten years?"]
+  - ["02:04", Dr. Amira, "Probably talking on podcasts about the next ten years!"]
+  - ["02:09", Sara, "Thank you so much. That's all for today. Next week, we['ll be talking] about money and young people. See you then!"]
+questions:
+  - ["Who is the guest?", "Dr. Amira Salih, who studies technology and jobs."]
+  - ["What will computers have taken over by 2035?", "Many simple tasks, like typing and checking numbers."]
+  - ["What jobs will people still be doing?", "The jobs that need creativity and care."]
+  - ["What won't a teacher be doing in ten years?", "Grading homework by hand."]
+  - ["What are Dr. Amira's three ideas for students?", "Learn to use technology, keep learning, and practice working in teams."]
+  - ["How many times will people probably have changed jobs by thirty?", "Two or three times."]
+  - ["Will planes be flying themselves?", "Some small ones already do, but passengers will still expect a human pilot."]
+  - ["What will the podcast be talking about next week?", "Money and young people."]
+words:
+  - {word: tasks, meaning: pieces of work you have to do}
+  - {word: creativity, meaning: the ability to make new things and ideas}
+  - {word: software, meaning: the programs that a computer uses}
+  - {word: encouraging, meaning: helping someone feel that they can do it}
+  - {word: prepare, meaning: get ready}
+  - {word: cockpit, meaning: the part of a plane where the pilot sits}

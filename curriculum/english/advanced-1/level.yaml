@@ -1,0 +1,24 @@
+# Advanced 1 level metadata (P8 internally, CEFR B2.1).
+# The first level of the Advanced stage: news and podcasts come in.
+name: Advanced 1
+chip: ADVANCED 1
+stage: Advanced
+cefr: B2.1
+tagline: Real news, real podcasts, and the English of work and study
+subtitle: Stories · News · Podcasts · Conversations
+story_words: [230, 340]
+split_boxes: true
+units:
+  1: What Had Been Happening?
+  2: If Only…
+  3: It Must Have Been…
+  4: This Time Next Year
+  5: It Is Said That…
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}
+  Omar: {initial: O, color: d}
+  Huda: {initial: H, color: e}
+  # Guests and one-scene roles.
+  Dr. Amira: {initial: DA, color: e}

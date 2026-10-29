@@ -285,7 +285,7 @@ def check_speaking(level, speaking, wordlists, report):
                 report.error(where, f'new word "{w["word"]}" is not used in the lesson')
 
 
-_KINDS = ('story', 'topic', 'science', 'conversation')
+_KINDS = ('story', 'topic', 'science', 'news', 'podcast', 'conversation')
 
 
 def _words_in(text):
@@ -324,9 +324,15 @@ def check_lessons(level, lessons, wordlists, report):
                 report.error(where, 'the rows of the grammar table differ in length')
             if not lesson['story'] or not any('[' in para for para in lesson['story']):
                 report.error(where, 'the story marks no grammar with [ ]')
-        elif kind in ('topic', 'science'):
+        elif kind in ('topic', 'science', 'news', 'podcast'):
             if not 4 <= len(lesson['questions']) <= 8:
                 report.error(where, f'{len(lesson["questions"])} questions; a topic has 4 to 8')
+            if kind == 'news' and not lesson.get('headline'):
+                report.error(where, 'a news lesson needs a headline')
+            if kind == 'podcast':
+                if len(lesson['script']) > 20:
+                    report.error(where, f'{len(lesson["script"])} lines; a podcast holds 20')
+                speakers += [who for _, who, _ in lesson['script']]
         else:
             if len(lesson['conversation']) > 10:
                 report.error(where, f'{len(lesson["conversation"])} lines; a conversation holds 10')
@@ -411,7 +417,8 @@ def load_lessons(level_dir):
     return lessons
 
 
-_KIND_LABEL = {'story': 'Story', 'topic': 'Topic', 'science': 'Science', 'conversation': 'Conversation'}
+_KIND_LABEL = {'story': 'Story', 'topic': 'Topic', 'science': 'Science', 'news': 'News',
+               'podcast': 'Podcast', 'conversation': 'Conversation'}
 
 
 def stage_contents(level, lessons):
@@ -457,10 +464,14 @@ def build_html(level, phonics, speaking, selected, out_html, book=False):
 
 
 def parse_range(text):
+    """'1-6' or '10,13' or '1-3,7' -> the lesson numbers."""
     if not text:
         return None
-    a, _, b = text.partition('-')
-    return range(int(a), int(b or a) + 1)
+    numbers = set()
+    for piece in text.split(','):
+        a, _, b = piece.partition('-')
+        numbers.update(range(int(a), int(b or a) + 1))
+    return numbers
 
 
 def main():

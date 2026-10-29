@@ -77,6 +77,8 @@
   'bridge': '<path d="M2 16h20M4 16v4M20 16v4M4 16c3-6 13-6 16 0M9 12.6V16M15 12.6V16"/>',
   'planet': '<circle cx="12" cy="12" r="6"/><path d="M3.5 15.5c-2 2.5 3 3.5 9 1.5s10.5-6 8.5-8.5c-.7-.9-2.3-1.1-4.3-.8"/>',
   'bag': '<path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
+  'news': '<rect x="3" y="4" width="15" height="16" rx="1"/><path d="M18 8h3v10a2 2 0 0 1-4 0M6 8h9M6 12h9M6 16h5"/>',
+  'mic': '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/>',
   'bulb': '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/>',
 } %}
 {#- The start of a lesson in the levels after Starter: what kind of lesson,
@@ -247,6 +249,65 @@
       {%- endif %}
     </div>
     {{ new_words(l, 5) }}
+  </div>
+  {{ foot(l.title, 'Unit ' ~ l.unit) }}
+</div>
+{%- elif l.kind == 'news' %}
+<div class="page stream" data-title="{{ l.title }}" data-part="Unit {{ l.unit }}" data-tighten>
+  {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
+  <div class="flow">
+    {{ lesson_start(l) }}
+    {#- A newspaper page: its parts join into one box, and the article may
+        continue on the next page between paragraphs. #}
+    <div class="sec reading news" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>Read the article</h2>
+      <div class="paper"><b>{{ l.paper }}</b><span>{{ l.date }}</span></div>
+      <h3 class="headline">{{ l.headline }}</h3>
+      <p class="stand">{{ l.standfirst }}</p>
+      <p class="byline">{{ l.byline }}</p>
+      {%- for para in l.text %}
+      <p class="para">{{ para|mark('k') }}</p>
+      {%- if l.quote and loop.index == l.quote.after %}
+      <p class="para quote">“{{ l.quote.text }}”<span>{{ l.quote.by }}</span></p>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+    {%- set ns = namespace(n=1) %}
+    {%- for g in l.facts %}
+    {%- set ns.n = ns.n + 1 %}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">{{ ns.n }}</span>{{ g.title }}</h2>
+      <div class="facts n{{ g['items']|length }}{{ ' ' ~ g.style if g.style }}">
+        {%- for it in g['items'] %}
+        <div class="fact"><b>{{ it.term }}</b><span>{{ it.text }}</span></div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+    {{ qa(l, ns.n + 1) }}
+    {{ new_words(l, ns.n + 2) }}
+  </div>
+  {{ foot(l.title, 'Unit ' ~ l.unit) }}
+</div>
+{%- elif l.kind == 'podcast' %}
+<div class="page stream" data-title="{{ l.title }}" data-part="Unit {{ l.unit }}" data-tighten>
+  {{ head('Unit ' ~ l.unit ~ ' · Lesson ' ~ l.lesson) }}
+  <div class="flow">
+    {{ lesson_start(l) }}
+    <div class="sec" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">1</span>Before you listen</h2>
+      <div class="before">{% for q in l.before %}<p>{{ q }}</p>{% endfor %}</div>
+    </div>
+    {#- Every line has its time, so the audio can be matched to it later. #}
+    <div class="sec convo pod" data-lesson="{{ l.lesson }}">
+      <h2><span class="num">2</span>Listen and read <small>{{ l.show }} · Episode {{ l.episode }}</small></h2>
+      <div class="scene">{{ l.scene }}</div>
+      {%- for time, who, text in l.script %}{% set c = level.cast[who] %}
+      <div class="line pline"><span class="t">{{ time }}</span><span class="av {{ c.color }}">{{ c.initial }}</span><span class="who">{{ who|upper }}</span><span>{{ text|mark }}</span></div>
+      {%- endfor %}
+    </div>
+    {{ qa(l, 3) }}
+    {{ new_words(l, 4) }}
   </div>
   {{ foot(l.title, 'Unit ' ~ l.unit) }}
 </div>

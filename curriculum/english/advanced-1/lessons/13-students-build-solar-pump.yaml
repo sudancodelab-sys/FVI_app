@@ -1,0 +1,47 @@
+lesson: 13
+unit: 5
+kind: news
+title: Students Build Solar Pump for Village
+subtitle: Read a real-style news article, and find the five key facts of the story.
+icon: news
+goals: [Read a news article, "Find who, what, where, when, and why", "Understand: It is said that… / is expected to…"]
+paper: The Daily Nile
+date: Thursday, May 7
+headline: Students Build Solar Pump That Brings Water to a Village
+standfirst: A team of young engineers has given a village near Kassala clean water every day, using only the power of the sun.
+byline: By our science reporter
+text:
+  - A village near Kassala has had clean water every day this month, thanks to a solar-powered water pump that was designed and built by a team of five engineering students. The pump [is believed to be] the first of its kind in the area.
+  - Before the pump was installed, women and children in the village had been walking up to two hours a day to bring water from a well. "It used to take my whole morning," said one mother. "Now my children go to school on time."
+  - The pump is powered by six solar panels, and it [is said to bring up] more than ten thousand liters of water a day from deep under the ground. The water is stored in a large tank and cleaned before it is used. [It is reported that] the whole system cost less than a small car.
+  - "The team was led by Sara Osman, a second-year student. \"We had been studying solar energy in class,\" she said, \"but we wanted to see it change real lives.\" The students [are expected to build] two more pumps in nearby villages next year, and other universities [are said to be] interested in the design."
+  - Engineers have welcomed the project. [It is widely agreed that] small, cheap solar systems could bring clean water to thousands of villages across Sudan.
+quote:
+  after: 2
+  text: Now my children go to school on time.
+  by: A mother in the village
+facts:
+  - title: The five key facts
+    style: ws
+    items:
+      - {term: "Who?", text: "five engineering students, led by Sara Osman"}
+      - {term: "What?", text: a solar-powered water pump}
+      - {term: "Where?", text: a village near Kassala}
+      - {term: "When?", text: this month}
+      - {term: "Why?", text: the village had no clean water nearby}
+questions:
+  - ["What did the students build?", "A solar-powered water pump."]
+  - ["Where is the village?", "Near Kassala."]
+  - ["How long had people been walking to get water?", "Up to two hours a day."]
+  - ["How is the pump powered?", "By six solar panels."]
+  - ["How much water is it said to bring up every day?", "More than ten thousand liters."]
+  - ["What is reported about the cost?", "The whole system cost less than a small car."]
+  - ["Who led the team?", "Sara Osman, a second-year student."]
+  - ["What are the students expected to do next year?", "Build two more pumps in nearby villages."]
+words:
+  - {word: installed, meaning: put in place and made ready to use}
+  - {word: well, meaning: a deep hole for getting water from under the ground}
+  - {word: stored, meaning: kept for later}
+  - {word: tank, meaning: a large container for water or other liquids}
+  - {word: led, meaning: "the past of lead: was in charge of"}
+  - {word: widely, meaning: by many people}

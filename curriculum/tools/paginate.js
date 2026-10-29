@@ -17,6 +17,7 @@ window.fviReady = (async () => {
   const items = (sec) => sec.querySelectorAll(':scope > :is(' + ITEM + ')');
   const minKeep = (sec) => {
     if (sec.querySelector(':scope > .line')) return 3;
+    if (sec.querySelector(':scope > .para')) return 1;  // a heading never stays alone
     return [...sec.children].some((el) => !el.matches('h2, .partbar, ' + ITEM)) ? 0 : 1;
   };
   const canSplit = (sec) => items(sec).length > minKeep(sec);
