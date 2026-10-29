@@ -1,0 +1,54 @@
+lesson: 9
+unit: 4
+kind: story
+title: The Mystery Gift
+subtitle: A gift with no name appears on Mr. Ali's desk. Read the story, then read it from the giver's point of view.
+icon: gift
+goals: [Describe people and things, Join two ideas with who and which, Find clues]
+story:
+  - "On Monday morning, Mr. Ali found a small box on his desk. It was in blue paper, and there was a card on top. The card said, \"For the teacher [who] never gets angry. From someone [who] loves English.\" There was no name."
+  - "Mr. Ali opened the box. Inside, there was a beautiful pen [that] had his name on it. \"Who left this?\" he asked. Nobody answered. \"OK,\" said Sara. \"Let's be detectives. The person [who] left it is probably in this class.\""
+  - "The students looked for clues. Omar found the first one, a piece of blue paper [which] was on the floor near the window. \"Who sits by the window?\" he asked. Three students put up their hands. Then Adam looked at the card. The writing was green. \"Who uses a green pen?\""
+  - "Only one of the students [who] sat by the window used a green pen. It was Huda, a quiet girl [who] always helps the others. \"Huda, is it you?\" Huda went red. \"Yes. Mr. Ali is the teacher [who] helped me most when my English was weak.\" Mr. Ali smiled. \"This is the place [where] I have been happiest,\" he said. \"And this is the class [that] I will never forget.\""
+questions:
+  - ["What did Mr. Ali find on his desk?", "A small box in blue paper."]
+  - ["What did the card say?", "\"For the teacher who never gets angry. From someone who loves English.\""]
+  - ["Was there a name on the card?", "No, there wasn't."]
+  - ["What was inside the box?", "A beautiful pen that had his name on it."]
+  - ["Whose idea was it to be detectives?", "Sara's."]
+  - ["What was the first clue?", "A piece of blue paper which was on the floor near the window."]
+  - ["Who found it?", "Omar."]
+  - ["How many students sit by the window?", "Three."]
+  - ["What was the second clue?", "The writing on the card was green."]
+  - ["Who left the gift?", "Huda."]
+  - ["Why did she leave it?", "Mr. Ali is the teacher who helped her most."]
+  - ["What did Mr. Ali say about the class?", "It is the class that he will never forget."]
+pov:
+  intro: Now Huda tells it.
+  speaker: Huda
+  text:
+    - Mr. Ali is the teacher [who] helped me most when my English was weak. So last weekend, I bought a pen [that] had his name on it, and I wrapped it in blue paper.
+    - "On Monday, I came early and put the box on his desk. On the card, I wrote, \"For the teacher [who] never gets angry.\" I used my green pen, [which] was a big mistake!"
+    - The students became detectives. Omar found a piece of the paper [which] had fallen near my seat by the window. Then Adam saw the green writing. Everybody looked at the girl [who] sits by the window and uses a green pen.
+    - "I went red. But Mr. Ali smiled. \"This is the class [that] I will never forget,\" he said."
+learn:
+  title: You learned [who], [which], [that] and [where].
+  intro: We use them to join two ideas, and to say which person, thing, or place we mean.
+  table:
+    - ["Word", "For", "Example"]
+    - ["[who]", "people", "the teacher [who] never gets angry"]
+    - ["[which]", "things", "a piece of paper [which] was on the floor"]
+    - ["[that]", "people or things", "a pen [that] had his name on it"]
+    - ["[where]", "places", "the place [where] I have been happiest"]
+  notes:
+    - {title: "One sentence, not [two]", text: "He is a teacher. He helps everyone. → He is a teacher who helps everyone."}
+    - {title: "[that] can take the place of who or which", text: "the class that I will never forget"}
+    - {title: "No extra [he · she · it]", text: "the pen that had his name. Not: the pen that it had his name."}
+  ask: ["Who is the student who sits by the window?", "It's Huda."]
+words:
+  - {word: detectives, meaning: people who find out who did something}
+  - {word: clues, meaning: things that help you find an answer}
+  - {word: probably, meaning: almost sure}
+  - {word: weak, meaning: not strong}
+  - {word: forget, meaning: not remember}
+  - {word: wrapped, meaning: covered in paper}

@@ -448,3 +448,4 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .facts.steps .fact b{font-size:11pt;white-space:nowrap;display:flex;align-items:center}
 .facts.steps .fact b em{flex:none}
 .facts.steps .fact:not(:last-child):after{right:-2.9mm}
+.cv-foot span.long{letter-spacing:1.1mm;white-space:nowrap}

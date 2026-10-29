@@ -1,0 +1,55 @@
+lesson: 12
+unit: 5
+kind: story
+title: The Great Mango Mystery
+subtitle: Every morning, mangoes disappear from the institute's tree. Read the story, then read Mr. Ali's version, which says who did each thing.
+icon: leaf
+goals: [Say what happens or happened, Use the passive, Say who did something with by]
+story:
+  - In the garden of Future Vision Institute, there is an old mango tree. Every year, hundreds of mangoes [are grown] on it, and they [are shared] by everyone, students, teachers, and the cleaners.
+  - "But this year, something strange happened. Every morning, mangoes [were taken] from the tree. On Sunday, ten mangoes [were taken]. On Monday, fifteen. By Wednesday, the lowest branches were empty. \"Someone is taking our mangoes!\" said Mr. Ali. Adam looked at Omar, and Omar looked at Adam. \"Don't look at me!\" they both said."
+  - A meeting [was held] in the office. A camera [was placed] near the tree, and the gate [was locked] every evening. But the next morning, ten more mangoes [were taken], and the gate was still locked!
+  - "On Thursday, the video [was checked]. Everybody watched the screen. At two in the morning, small dark shapes flew into the tree. They were fruit bats! \"So the mangoes [weren't stolen] by people,\" Omar laughed. \"They [were eaten] by bats!\" Now a net [is put] over the tree every night, and the mangoes [are shared] by everyone again, but not by the bats."
+questions:
+  - ["What is in the garden of the institute?", "An old mango tree."]
+  - ["Who are the mangoes shared by?", "Everyone: students, teachers, and the cleaners."]
+  - ["What happened every morning this year?", "Mangoes were taken from the tree."]
+  - ["How many mangoes were taken on Monday?", "Fifteen."]
+  - ["Where was a meeting held?", "In the office."]
+  - ["Where was a camera placed?", "Near the tree."]
+  - ["Was the gate locked?", "Yes, it was locked every evening."]
+  - ["Were more mangoes taken after that?", "Yes, ten more."]
+  - ["When was the video checked?", "On Thursday."]
+  - ["What was seen in the video?", "Fruit bats flying into the tree."]
+  - ["Were the mangoes stolen by people?", "No, they weren't. They were eaten by bats."]
+  - ["What is put over the tree now?", "A net, every night."]
+pov:
+  intro: Now Mr. Ali tells it, and says who did each thing.
+  speaker: Mr. Ali
+  text:
+    - Every year, our old mango tree [grows] hundreds of mangoes, and everyone [shares] them.
+    - But this year, someone [took] mangoes every morning. By Wednesday, the lowest branches were empty.
+    - We [held] a meeting in the office. Omar [placed] a camera near the tree, and the guard [locked] the gate every evening. But the next morning, more mangoes were gone!
+    - On Thursday, we [checked] the video. Fruit bats [ate] our mangoes! Now the guard [puts] a net over the tree every night, and everyone [shares] the mangoes again.
+learn:
+  title: You learned the [passive].
+  intro: We use it when the action is more important than the person who does it, or when we don't know who does it.
+  wide: true
+  table:
+    - ["Active: who does it", "Passive: what happens"]
+    - ["Everyone [shares] the mangoes.", "The mangoes [are shared] by everyone."]
+    - ["Someone [took] the mangoes.", "The mangoes [were taken]."]
+    - ["Omar [placed] a camera near the tree.", "A camera [was placed] near the tree."]
+    - ["Bats [ate] the mangoes.", "The mangoes [were eaten] by bats."]
+  notes:
+    - {title: "be + [past participle]", text: "is shared, are shared, was taken, were eaten"}
+    - {title: "[by] says who did it", text: "They were eaten by bats."}
+    - {title: "Science uses it [a lot]", text: "Water is heated by the sun. Clouds are formed."}
+  ask: ["Were the mangoes stolen?", "No, they weren't. They were eaten by bats!"]
+words:
+  - {word: branches, meaning: the parts of a tree that grow out like arms}
+  - {word: held, meaning: "the past of hold: held a meeting"}
+  - {word: placed, meaning: put}
+  - {word: locked, meaning: closed with a key}
+  - {word: bats, meaning: small animals that fly at night; fruit bats eat fruit}
+  - {word: net, meaning: material with many small holes}

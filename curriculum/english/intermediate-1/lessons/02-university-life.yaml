@@ -1,0 +1,32 @@
+lesson: 2
+unit: 1
+kind: topic
+title: University Life
+subtitle: Sara has started engineering. What has she learned so far?
+icon: book
+goals: [Talk about university, Compare school and university, Say what you have done so far]
+text:
+  - Three months ago, Sara started her first year at the [Faculty of Engineering]. University life is very different from school, and she has learned a lot already.
+  - First, the timetable. At school, every day was the same. At university, Sara has [lectures] in the morning on some days and [labs] in the afternoon on others. She has already learned to plan her own week.
+  - Second, the work. Her [professors] give a lot of reading, and they don't check homework every day. Students have to study alone. Sara has joined a [study group] with four classmates, and they meet in the library twice a week.
+  - Third, people. Sara has made new friends from all over Sudan, from Kassala, El Obeid, and Port Sudan. Some of them have never lived in a big city before.
+  - "Has it been easy? Not always. She hasn't finished her first project yet, and her first exams are next month. But she is happy. \"I've wanted to be an engineer since I was a child,\" she says. \"Now I'm on my way.\""
+facts:
+  - title: School and university
+    items:
+      - {icon: home, term: School, text: "the same timetable every day · teachers check homework"}
+      - {icon: book, term: University, text: "lectures and labs · students study alone"}
+questions:
+  - ["When did Sara start university?", "Three months ago."]
+  - ["What does she study?", "Engineering."]
+  - ["Has she learned to plan her own week?", "Yes, she already has."]
+  - ["How often does her study group meet?", "Twice a week, in the library."]
+  - ["Where are her new friends from?", "From all over Sudan: Kassala, El Obeid, and Port Sudan."]
+  - ["Has she finished her first project yet?", "No, she hasn't."]
+words:
+  - {word: faculty, meaning: "a part of a university, like engineering or medicine"}
+  - {word: timetable, meaning: a list of the times of your classes}
+  - {word: lectures, meaning: classes where a professor talks to many students}
+  - {word: labs, meaning: rooms for scientific work}
+  - {word: professors, meaning: university teachers}
+  - {word: project, meaning: a big piece of work}

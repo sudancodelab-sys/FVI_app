@@ -1,0 +1,32 @@
+lesson: 8
+unit: 3
+kind: conversation
+title: Our Internet Isn't Working
+subtitle: Calling customer service about a problem
+icon: wifi
+goals: [Explain a problem on the phone, Say what you had already tried, Ask how long it will take]
+scene: The internet at Adam's home has stopped working. He calls the internet company.
+conversation:
+  - [Agent, "Good afternoon, Nile Net. How can I help you?"]
+  - [Adam, "Hi. Our internet isn't working. It had worked perfectly until last night."]
+  - [Agent, "I'm sorry about that. Have you restarted the router?"]
+  - [Adam, "Yes. I had already restarted it twice before I called you."]
+  - [Agent, "OK. What do the lights on the router show?"]
+  - [Adam, "The green light is on, but the red light is flashing."]
+  - [Agent, "Thank you. I can see a problem in your area. Our engineers are fixing it now."]
+  - [Adam, "How long will it take? I have an online class at eight."]
+  - [Agent, "It should work again in about two hours. We're sorry for the trouble."]
+  - [Adam, "OK. Thanks for your help."]
+phrases:
+  - {title: Explain the problem, lines: ["Our internet isn't working."]}
+  - {title: Say what happened before, lines: ["It had worked perfectly until last night."]}
+  - {title: Say what you tried, lines: ["I had already restarted it twice."]}
+  - {title: Describe it, lines: ["The red light is flashing."]}
+  - {title: Ask how long, lines: ["How long will it take?"], reply: "About two hours."}
+  - {title: Answer an apology, lines: ["OK. Thanks for your help."]}
+words:
+  - {word: perfectly, meaning: very well}
+  - {word: restarted, meaning: turned off and on again}
+  - {word: router, meaning: the small machine that brings the internet into your home}
+  - {word: flashing, meaning: going on and off quickly}
+  - {word: area, meaning: a part of a city}

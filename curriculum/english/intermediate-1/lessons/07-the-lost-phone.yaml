@@ -1,0 +1,55 @@
+lesson: 7
+unit: 3
+kind: story
+title: The Lost Phone
+subtitle: Sara left her phone in a rickshaw. Read the story, then read it from the driver's point of view.
+icon: rickshaw
+goals: [Tell a story in the past, Say which thing happened first, Use the past perfect]
+story:
+  - Last Thursday, Sara took a rickshaw from the university to the institute. When she arrived, she paid the driver and ran into class. Mr. Ali [had already started] the lesson. Sara sat down and opened her bag. Her phone wasn't there.
+  - She looked everywhere. She [had put] it in her bag that morning, she was sure. Then she remembered. She [had taken] it out in the rickshaw to check the time, and she [had left] it on the seat! Her face went white. All her photos, her notes, and her university timetable were on that phone.
+  - "\"Don't worry,\" Omar said. \"Let's call it.\" He called Sara's number. Nobody answered. He called again. This time, a man answered. \"Hello? I'm the rickshaw driver. I [had already driven] two kilometers when I saw the phone on the seat. I came back, but you [had already gone] inside!\""
+  - "Ten minutes later, the driver was at the institute door with the phone. Sara thanked him again and again, and she tried to give him some money, but he said no. \"My daughter is a student, too,\" he said. \"I know how important a phone is.\" After he [had left], Mr. Ali smiled. \"Now, Sara. [Had] you [done] your homework before you lost your phone?\""
+questions:
+  - ["How did Sara go to the institute last Thursday?", "By rickshaw."]
+  - ["Had the lesson started when she arrived?", "Yes, it had. Mr. Ali had already started."]
+  - ["What wasn't in her bag?", "Her phone."]
+  - ["Where had she put her phone that morning?", "In her bag."]
+  - ["Why had she taken it out in the rickshaw?", "To check the time."]
+  - ["Where had she left it?", "On the seat of the rickshaw."]
+  - ["Who called Sara's number?", "Omar."]
+  - ["Who answered the second time?", "The rickshaw driver."]
+  - ["How far had the driver gone when he saw the phone?", "Two kilometers."]
+  - ["Did the driver take money from Sara?", "No, he didn't."]
+  - ["Why did he understand?", "His daughter is a student, too."]
+  - ["What did Mr. Ali ask Sara?", "If she had done her homework before she lost her phone!"]
+pov:
+  intro: Now the rickshaw driver tells it.
+  speaker: Driver
+  text:
+    - Last Thursday, I drove a young woman from the university to the institute. She paid and ran inside, because her class [had already started].
+    - I [had already driven] two kilometers when I saw a phone on the back seat. She [had left] it there! I turned around and went back to the institute, but she [had already gone] inside.
+    - "Then the phone rang. A young man was calling. \"This is Sara's phone,\" he said. \"She is in class.\" So I took it to the door."
+    - She thanked me again and again, and she tried to give me money. But I said no. My daughter is a student, too, and I know how important a phone is.
+learn:
+  title: You learned the [past perfect].
+  intro: We use it for something that happened before another thing in the past. It shows which came first.
+  wide: true
+  table:
+    - ["First: past perfect", "Then: past simple"]
+    - ["Mr. Ali [had already started] the lesson", "when Sara [arrived]."]
+    - ["She [had left] her phone on the seat,", "so she [didn't have] it in class."]
+    - ["The driver [had driven] two kilometers", "when he [saw] the phone."]
+    - ["After he [had left],", "Mr. Ali [smiled]."]
+  notes:
+    - {title: "had + [past participle], the same for everyone", text: "I had gone, she had gone, they had gone."}
+    - {title: "[already] means before the other thing", text: "She had already gone inside."}
+    - {title: "Questions: [Had] you…?", text: "Had you done your homework? Yes, I had."}
+  ask: ["Had the lesson started when you arrived?", "Yes, it had.  /  No, it hadn't."]
+words:
+  - {word: arrived, meaning: came to a place}
+  - {word: remembered, meaning: thought of something again}
+  - {word: notes, meaning: short writing that helps you remember}
+  - {word: important, meaning: needed very much; that matters a lot}
+  - {word: thanked, meaning: said thank you}
+  - {word: turned around, meaning: went back the way you came}

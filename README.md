@@ -29,6 +29,7 @@ cd packages/fvi_core && dart test
 - مستوى Pre-Intermediate 2 معتمد من المعهد: 12 درساً في 4 وحدات، في كتاب من 22 صفحة.
 - مستوى Pre-Intermediate 3 معتمد من المعهد: 12 درساً في 4 وحدات، في كتاب من 23 صفحة.
 - مستوى Pre-Intermediate 4 معتمد من المعهد: 12 درساً في 4 وحدات، في كتاب من 23 صفحة. وبه تكتمل مرحلة ما قبل المتوسط.
+- مستوى Intermediate 1: كتاب كامل من 28 صفحة (13 درساً في 5 وحدات، منها درسان علميان)، بانتظار المراجعة.
 
 لبناء كتاب المستوى (يحتاج Python مع PyYAML وJinja2 وcmudict، وNode مع Playwright):
 
@@ -38,4 +39,5 @@ python3 curriculum/tools/build.py english/pre-intermediate-1 --book --out pi1-bo
 python3 curriculum/tools/build.py english/pre-intermediate-2 --book --out pi2-book
 python3 curriculum/tools/build.py english/pre-intermediate-3 --book --out pi3-book
 python3 curriculum/tools/build.py english/pre-intermediate-4 --book --out pi4-book
+python3 curriculum/tools/build.py english/intermediate-1 --book --out int1-book
 ```

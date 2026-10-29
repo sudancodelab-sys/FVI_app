@@ -1,0 +1,33 @@
+lesson: 11
+unit: 4
+kind: conversation
+title: What Do You Think?
+subtitle: Giving opinions, agreeing, and disagreeing politely
+icon: chat
+goals: [Give your opinion, Agree and disagree politely, Change your mind]
+scene: In class, Mr. Ali asks the students a question. Should the institute buy solar panels?
+conversation:
+  - [Mr. Ali, "The institute is thinking about solar panels. What do you think?"]
+  - [Sara, "In my opinion, it's a great idea. We're the class that always loses power in the evening!"]
+  - [Omar, "I agree. And the generator which we use now is very noisy."]
+  - [Adam, "I see your point, but solar panels are expensive. Who will pay for them?"]
+  - [Sara, "That's true, but the institute will save money on fuel in the long run."]
+  - [Omar, "Exactly. And people who see the panels will think the institute is modern."]
+  - [Adam, "OK, you've changed my mind. But who's going to clean them?"]
+  - [Sara, "The students who come late!"]
+  - [Mr. Ali, "Good idea, Sara. Adam, I'm looking at you."]
+  - [Adam, "Hey! That was only once!"]
+phrases:
+  - {title: Ask for an opinion, lines: ["What do you think?"]}
+  - {title: Give your opinion, lines: ["In my opinion, it's a great idea."]}
+  - {title: Agree, lines: ["I agree.  ·  Exactly."]}
+  - {title: Disagree politely, lines: ["I see your point, but…"]}
+  - {title: Accept a point, lines: ["That's true, but…"]}
+  - {title: Change your mind, lines: ["OK, you've changed my mind."]}
+words:
+  - {word: opinion, meaning: what you think about something}
+  - {word: noisy, meaning: making a lot of noise}
+  - {word: fuel, meaning: "what we burn to make power, like gas or oil"}
+  - {word: in the long run, meaning: after a long time}
+  - {word: modern, meaning: new; of today}
+  - {word: changed my mind, meaning: made me think differently}

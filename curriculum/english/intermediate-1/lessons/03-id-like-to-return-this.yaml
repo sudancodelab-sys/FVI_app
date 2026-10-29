@@ -1,0 +1,33 @@
+lesson: 3
+unit: 1
+kind: conversation
+title: I'd Like to Return This
+subtitle: Taking back something that doesn't work
+icon: headphones
+goals: [Explain a problem with something you bought, Ask for a refund, Answer the shop's questions]
+scene: Adam bought some headphones last week, and they have stopped working. He goes back to the shop.
+conversation:
+  - [Assistant, "Good morning. How can I help you?"]
+  - [Adam, "Hi. I bought these headphones here last week, but they've stopped working."]
+  - [Assistant, "I'm sorry to hear that. What's the problem?"]
+  - [Adam, "The left side doesn't work. I've only used them for three days."]
+  - [Assistant, "Do you have the receipt?"]
+  - [Adam, "Yes, here it is."]
+  - [Assistant, "Thank you. Would you like a new pair, or your money back?"]
+  - [Adam, "I'd like a refund, please. I've already found a better pair online."]
+  - [Assistant, "No problem. Here's your money, and here's a new receipt."]
+  - [Adam, "Great. Thanks for your help."]
+phrases:
+  - {title: Explain the problem, lines: ["They've stopped working."]}
+  - {title: Say how long, lines: ["I've only used them for three days."]}
+  - {title: Show the receipt, lines: ["Do you have the receipt?"], reply: "Yes, here it is."}
+  - {title: Choose, lines: ["Would you like a new pair, or your money back?"]}
+  - {title: Ask for a refund, lines: ["I'd like a refund, please."]}
+  - {title: Thank, lines: ["Thanks for your help."]}
+words:
+  - {word: return, meaning: take something back to the shop}
+  - {word: headphones, meaning: something you wear on your ears to listen}
+  - {word: receipt, meaning: the paper you get when you pay}
+  - {word: pair, meaning: two things that are used together}
+  - {word: refund, meaning: money that is given back to you}
+  - {word: online, meaning: on the internet}

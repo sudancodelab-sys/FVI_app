@@ -1,0 +1,55 @@
+lesson: 1
+unit: 1
+kind: story
+title: Six Months at the Shop
+subtitle: Omar has worked at the phone shop for six months. Read the story, then read it from Mr. Kamal's point of view.
+icon: tool
+goals: [Say how long something has continued, Give recent news, Use already and yet]
+story:
+  - Omar [has worked] at Mr. Kamal's phone repair shop [for] six months now. He started in March, so he [has been] there [since] the spring. In that time, he [has fixed] more than four hundred phones. He [has learned] a lot about screens, batteries, and cameras, and customers [have started] to ask for him by name.
+  - "He [has] also [saved] some money. Every month, he puts a little in a box. He [has already saved] enough for a new laptop, but he [hasn't decided] what to buy [yet]. \"A laptop? A motorbike? Or a trip to Port Sudan to see my family?\" he asks Adam. Adam laughs. \"You [have asked] me that question ten times this week!\""
+  - "One evening, Mr. Kamal calls Omar into his small office. Omar is nervous. \"[Have] I [done] something wrong?\" \"No, Omar. You [have done] everything right. I['ve just opened] a second shop near the university, and I need someone to run it. [Have] you ever [thought] about being a manager?\""
+  - "Omar can't speak for a moment. \"Me? A manager? But I'm only a student!\" \"You [have been] my best worker [since] your first day,\" Mr. Kamal says. \"And you can still study in the mornings.\" That night, Omar calls his mother in Port Sudan. \"Mom, I['ve just become] a manager!\" His mother is quiet for a second. Then she laughs. \"And [have] you [learned] to cook fish [yet]?\""
+questions:
+  - ["How long has Omar worked at the shop?", "For six months."]
+  - ["When did he start?", "In March."]
+  - ["How many phones has he fixed?", "More than four hundred."]
+  - ["Has he saved any money?", "Yes, he has."]
+  - ["Has he decided what to buy yet?", "No, he hasn't."]
+  - ["What are his three ideas?", "A laptop, a motorbike, or a trip to Port Sudan."]
+  - ["Why is Omar nervous?", "Mr. Kamal calls him into his office."]
+  - ["Has Omar done something wrong?", "No, he hasn't. He has done everything right."]
+  - ["What has Mr. Kamal just opened?", "A second shop near the university."]
+  - ["What job does Mr. Kamal offer Omar?", "Manager of the new shop."]
+  - ["Can Omar still study?", "Yes, in the mornings."]
+  - ["What does his mother ask?", "If he has learned to cook fish yet!"]
+pov:
+  intro: Now Mr. Kamal tells the story. He says when things happened.
+  speaker: Mr. Kamal
+  text:
+    - Omar [has worked] in my shop [for] six months. He [started] in March, and [since] then he [has fixed] more than four hundred phones. Customers [have started] to ask for him by name.
+    - I know he [has saved] some money, because he talks about it all the time! But he [hasn't decided] what to buy [yet].
+    - "Last month, I [opened] a second shop near the university, and I needed a manager. So yesterday, I [called] Omar into my office. He was nervous. \"[Have] I [done] something wrong?\" he asked."
+    - "\"No,\" I said. \"You [have been] my best worker [since] your first day. Will you run my new shop?\" He couldn't speak for a moment. I think I['ve just made] a very good decision."
+learn:
+  title: You learned [for · since · just · already · yet].
+  intro: We use them with the present perfect, for things that started in the past and continue now, and for recent news.
+  table:
+    - ["Word", "We use it for", "Example"]
+    - ["[for]", "a length of time", "He has worked there [for] six months."]
+    - ["[since]", "the start of a time", "He has been there [since] March."]
+    - ["[just]", "a very short time ago", "I have [just] opened a second shop."]
+    - ["[already]", "sooner than we thought", "He has [already] saved enough."]
+    - ["[yet]", "until now (no and questions)", "He hasn't decided [yet]. Have you learned [yet]?"]
+  notes:
+    - {title: "[for] + a length, [since] + a start", text: "for six months · since March"}
+    - {title: "[just · already] before the participle", text: "I have just opened. He has already saved."}
+    - {title: "[yet] at the end", text: "He hasn't decided yet."}
+  ask: ["How long have you studied English?", "For two years.  /  Since 2024."]
+words:
+  - {word: saved, meaning: kept money for later}
+  - {word: laptop, meaning: a small computer you can carry}
+  - {word: motorbike, meaning: a bike with an engine}
+  - {word: run, meaning: "here: manage a shop or a business"}
+  - {word: manager, meaning: the person who controls a shop or a team}
+  - {word: decision, meaning: what you choose after thinking}

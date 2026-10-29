@@ -1,0 +1,54 @@
+lesson: 4
+unit: 2
+kind: story
+title: When Grandfather Was Young
+subtitle: Adam shows his grandfather a video, and his grandfather tells him how life used to be. Read the story, then read it from Grandfather's point of view.
+icon: tree
+goals: [Talk about past habits, Compare the past and now, Ask about someone's past]
+story:
+  - "Last weekend, Adam visited his grandfather in the village. In the evening, they sat under the big tree, and Adam showed him a video on his phone. His grandfather smiled. \"When I was your age, we [didn't use to] have phones. We [didn't] even [use to] have electricity!\""
+  - "\"So how did you study at night?\" Adam asked. \"We [used to] read by an oil lamp. My brothers and I [used to] sit around it after dinner and do our homework. And every morning, I [used to] walk five kilometers to school, without shoes.\""
+  - "\"Five kilometers? Every day?\" \"Every day. And on the way, we [used to] stop at the river and swim. The teacher [used to] be very angry when we arrived wet!\" Adam laughed. \"[Did] you [use to] get in trouble?\" \"Oh, yes. All the time.\""
+  - "\"What did you [use to] do for fun?\" Adam asked. \"We [used to] play football with a ball made of old cloth, and we [used to] listen to stories from the old men of the village. That was our TV.\" Adam put his phone in his pocket. \"Grandfather, tell me one of those stories.\" His grandfather smiled and began."
+questions:
+  - ["Where did Adam go last weekend?", "To his grandfather's village."]
+  - ["What did Adam show his grandfather?", "A video on his phone."]
+  - ["Did his grandfather use to have a phone?", "No, he didn't."]
+  - ["Did they use to have electricity?", "No, they didn't."]
+  - ["How did they study at night?", "They used to read by an oil lamp."]
+  - ["How far did he use to walk to school?", "Five kilometers."]
+  - ["Did he use to wear shoes to school?", "No, he didn't."]
+  - ["Where did they use to stop on the way?", "At the river, to swim."]
+  - ["Why was the teacher angry?", "Because they arrived wet."]
+  - ["What did they use to play?", "Football, with a ball made of old cloth."]
+  - ["What was their TV?", "Stories from the old men of the village."]
+  - ["What did Adam do with his phone at the end?", "He put it in his pocket."]
+pov:
+  intro: Now Adam's grandfather tells it, and compares then and now.
+  speaker: Grandfather
+  text:
+    - When I was a boy, we [didn't use to] have phones or electricity. At night, my brothers and I [used to] sit around an oil lamp and do our homework.
+    - Every morning, I [used to] walk five kilometers to school, without shoes. On the way, we [used to] stop at the river and swim, and the teacher [used to] be very angry when we arrived wet!
+    - For fun, we [used to] play football with a ball of old cloth, and we [used to] listen to the old men's stories. That was our TV.
+    - Now my grandson [has] a phone with a thousand videos. But last weekend, he put it in his pocket and asked me for a story. That made me very happy.
+learn:
+  title: You learned [used to].
+  intro: We use it for things that happened again and again in the past, or were true in the past, but are not true now.
+  wide: true
+  table:
+    - ["In the past (not now)", "Now"]
+    - ["We [used to] read by an oil lamp.", "We [read] by electric light."]
+    - ["He [used to] walk to school.", "Many children [take] the bus."]
+    - ["We [didn't use to] have phones.", "Almost everybody [has] a phone."]
+  notes:
+    - {title: "used to + [verb], the same for everyone", text: "I used to, she used to, they used to."}
+    - {title: "No and questions: [didn't use to · Did … use to?]", text: "No -d after didn't and Did."}
+    - {title: "Only for the [past]", text: "For now, use the present simple: I walk to school."}
+  ask: ["What did you use to do when you were a child?", "I used to play football every day."]
+words:
+  - {word: electricity, meaning: the power that makes lights and machines work}
+  - {word: lamp, meaning: "a light; an oil lamp burns oil"}
+  - {word: kilometers, meaning: a kilometer is a thousand meters}
+  - {word: trouble, meaning: problems because you did something wrong}
+  - {word: cloth, meaning: material for clothes}
+  - {word: pocket, meaning: a small bag in your clothes}

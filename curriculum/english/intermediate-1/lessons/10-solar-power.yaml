@@ -1,0 +1,38 @@
+lesson: 10
+unit: 4
+kind: science
+title: Solar Power
+subtitle: How solar panels turn sunlight into electricity, and why they are good for Sudan.
+icon: panel
+goals: [Explain how a machine works, Describe things with which and who, Give good and bad points]
+text:
+  - Sudan is one of the sunniest countries in the world. In many places, the sun shines for more than ten hours a day. That is a lot of free [energy], and more and more people are using it with [solar panels].
+  - A solar panel is a flat board which is covered with special [cells]. These cells are made of a material called silicon, which comes from sand. When sunlight hits the cells, it moves tiny parts inside them, and this movement makes [electricity].
+  - The electricity can be used at once, or it can be kept in a [battery] for the night. People who live far from the cities, where there are no power lines, can now have lights, fans, and even TVs.
+  - Solar power has other good points. It is clean, because it doesn't make smoke. It is quiet, unlike the generators that many families use during power cuts. And after you have bought the panels, the sunlight is free.
+  - There are some problems, too. Solar panels are still expensive for many families, and they need cleaning when dust covers them. But scientists who study energy say that one day, the sun will be Sudan's most important source of power.
+facts:
+  - title: How it works
+    steps: true
+    items:
+      - {icon: sun, term: sunlight, text: hits the panel}
+      - {icon: panel, term: cells, text: make electricity}
+      - {icon: battery, term: battery, text: keeps it for the night}
+      - {icon: home, term: home, text: lights and fans work}
+did_you_know: The sunlight that falls on the Earth in one hour has about as much energy as all the people in the world use in a whole year.
+questions:
+  - ["How long does the sun shine in many places in Sudan?", "More than ten hours a day."]
+  - ["What is a solar panel?", "A flat board which is covered with special cells."]
+  - ["What are the cells made of?", "Silicon, which comes from sand."]
+  - ["What happens when sunlight hits the cells?", "It moves tiny parts inside them, and this makes electricity."]
+  - ["Where is the electricity kept for the night?", "In a battery."]
+  - ["Who can now have lights and fans?", "People who live far from the cities, where there are no power lines."]
+  - ["Why is solar power clean?", "Because it doesn't make smoke."]
+  - ["What are two problems with solar panels?", "They are still expensive, and they need cleaning when dust covers them."]
+words:
+  - {word: energy, meaning: power that makes things work}
+  - {word: material, meaning: what something is made of}
+  - {word: tiny, meaning: very small}
+  - {word: generators, meaning: machines that make electricity, usually with fuel}
+  - {word: dust, meaning: very small dry pieces of dirt}
+  - {word: source, meaning: the place where something comes from}

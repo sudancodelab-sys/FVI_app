@@ -1,0 +1,31 @@
+lesson: 6
+unit: 2
+kind: conversation
+title: Opening a Bank Account
+subtitle: At the bank, opening an account for a salary
+icon: bank
+goals: [Open a bank account, Talk about the past and now, Ask how a service works]
+scene: Omar is a manager now. He goes to the bank to open an account for his salary.
+conversation:
+  - [Clerk, "Good morning. How can I help you?"]
+  - [Omar, "I'd like to open a bank account, please."]
+  - [Clerk, "Of course. Have you ever had an account with us?"]
+  - [Omar, "No. I used to keep my money at home, in a box under my bed!"]
+  - [Clerk, "It's safer in the bank. Can I see your ID, please?"]
+  - [Omar, "Here you are. I've just started a new job as a manager."]
+  - [Clerk, "Congratulations! Your salary can come directly into your account."]
+  - [Omar, "Great. Can I use my phone to check my money?"]
+  - [Clerk, "Yes, you can use our app. You'll get your bank card in a week."]
+  - [Omar, "Perfect. No more boxes under the bed!"]
+phrases:
+  - {title: Say what you want, lines: ["I'd like to open a bank account."]}
+  - {title: Talk about the past, lines: ["I used to keep my money at home."]}
+  - {title: Show your ID, lines: ["Can I see your ID, please?"], reply: "Here you are."}
+  - {title: Talk about your job, lines: ["I've just started a new job."]}
+  - {title: Ask about the app, lines: ["Can I use my phone to check my money?"], reply: "Yes, you can."}
+  - {title: Get your card, lines: ["You'll get your bank card in a week."]}
+words:
+  - {word: account, meaning: a place in a bank where your money is kept}
+  - {word: salary, meaning: the money you get every month for your work}
+  - {word: safer, meaning: more safe}
+  - {word: directly, meaning: straight, with nothing in between}

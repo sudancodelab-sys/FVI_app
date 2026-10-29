@@ -19,3 +19,11 @@ cast:
   Sara: {initial: S, color: b}
   Mr. Ali: {initial: MA, color: c}
   Omar: {initial: O, color: d}
+  Huda: {initial: H, color: e}
+  # People in one scene only.
+  Mr. Kamal: {initial: MK, color: e}
+  Grandfather: {initial: G, color: e}
+  Driver: {initial: D, color: e}
+  Assistant: {initial: AS, color: e}
+  Clerk: {initial: CL, color: e}
+  Agent: {initial: AG, color: e}

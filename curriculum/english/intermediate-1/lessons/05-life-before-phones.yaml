@@ -1,0 +1,33 @@
+lesson: 5
+unit: 2
+kind: topic
+title: Life Before Phones
+subtitle: How people used to send news, talk, and listen, before mobile phones.
+icon: radio
+goals: [Talk about life in the past, Compare then and now, Give your opinion about change]
+text:
+  - Today, we can send a message to anyone in the world in one second. But how did people [communicate] before mobile phones?
+  - Many people used to write [letters]. A letter from Khartoum to a village in the north used to take two or three weeks. Families used to wait for the post and read their letters again and again.
+  - Some homes had a [landline], a phone with a wire that stayed in one place. Calls to other cities used to be very expensive, so people used to talk quickly! In villages without phones, people used to go to the post office to make a call.
+  - For news, people used to listen to the [radio]. In the evening, the whole family used to sit together and listen to the news, football matches, and songs.
+  - "Life was slower, but some people miss it. \"We didn't use to look at screens all day,\" says Adam's grandfather. \"We used to look at each other.\""
+facts:
+  - title: Then and now
+    items:
+      - {icon: pencil, term: letters, text: "then: two or three weeks · now: one second"}
+      - {icon: phone, term: landline, text: "then: in one place · now: in your pocket"}
+      - {icon: radio, term: radio, text: "then: news for the whole family · now: apps"}
+questions:
+  - ["How long did a letter to a village use to take?", "Two or three weeks."]
+  - ["What is a landline?", "A phone with a wire that stays in one place."]
+  - ["Why did people use to talk quickly on the phone?", "Calls to other cities were very expensive."]
+  - ["Where did people in villages use to make calls?", "At the post office."]
+  - ["What did families use to listen to in the evening?", "The radio: the news, football matches, and songs."]
+  - ["What does Adam's grandfather miss?", "People used to look at each other, not at screens."]
+words:
+  - {word: communicate, meaning: share information with other people}
+  - {word: mobile, meaning: that you can carry with you}
+  - {word: post, meaning: the letters that are brought to your home}
+  - {word: wire, meaning: a long thin metal line for electricity}
+  - {word: whole, meaning: all of it}
+  - {word: miss, meaning: feel sad because something is not there now}
