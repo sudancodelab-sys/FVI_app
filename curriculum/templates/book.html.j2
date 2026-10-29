@@ -13,18 +13,95 @@
     <div class="where"><span class="chip">{{ level.chip }}</span><small>{{ where }}</small></div>
   </div>
 {%- endmacro %}
-{%- macro foot(title) %}
+{%- macro foot(title, part='Phonics') %}
   <div class="foot">
-    <span><b>{{ level.name }}</b> · Phonics · {{ title }}</span>
+    <span><b>{{ level.name }}</b> · {{ part }} · {{ title }}</span>
     <span>Future Vision Institute</span>
     <span class="pg"></span>
   </div>
 {%- endmacro %}
 {%- macro badge(key) %}{% set b = reliability[key] %}<span class="rel {{ b[1] }}">{{ b[0] }}</span>{% endmacro %}
 
+{%- set icons = {
+  'chat': '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/>',
+  'card': '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14.5 10h4M14.5 13.5h3"/>',
+  'book': '<path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2z"/><path d="M12 6v14"/>',
+  'users': '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
+  'home': '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  'briefcase': '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+} %}
+{%- if book %}
+<div class="page cover">
+  <div class="cover-top">
+    <img src="{{ assets }}/logo-512.png" alt="">
+    <b>Future Vision Institute</b>
+    <span>English Programme</span>
+  </div>
+  <div class="cover-mid">
+    <span class="stage">{{ level.stage }} Stage</span>
+    <h1>{{ level.name }}</h1>
+    <p>{{ level.subtitle }}</p>
+  </div>
+  <div class="cover-letters">{% for c in 'AaBbCcDdEe' %}<span>{{ c }}</span>{% endfor %}</div>
+  <div class="cover-foot">Student Book</div>
+</div>
+<div class="page toc">
+  {{ head('Contents') }}
+  <h1 class="toc-title">Contents</h1>
+  {%- for part, entries in contents %}
+  <div class="toc-part">
+    <h2>{{ part }}</h2>
+    {%- for ref, n, title in entries %}
+    <div class="toc-row"><span class="toc-n">{{ n }}</span><span class="toc-t">{{ title }}</span><span class="toc-dots"></span><span class="toc-p" data-toc-ref="{{ ref }}"></span></div>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+  <div class="foot"><span><b>{{ level.name }}</b> · Contents</span><span>Future Vision Institute</span><span class="pg"></span></div>
+</div>
+{%- endif %}
 {%- for p in pages %}{% set l = p.lesson %}
-{%- if l.kind == 'intro' %}
-<div class="page" data-title="{{ l.title }}">
+{%- if l.kind == 'speaking' %}
+<div class="page fit" data-title="{{ l.title }}" data-toc="speaking-{{ l.lesson }}">
+  {{ head('Speaking · Lesson ' ~ l.lesson) }}
+  <div class="hero">
+    <div class="tile icon"><svg viewBox="0 0 24 24">{{ icons[l.icon]|safe }}</svg></div>
+    <div>
+      <h1>{{ l.title }}</h1>
+      <p>{{ l.subtitle }}</p>
+      <div class="goal">{% for g in l.goals %}<span>{{ g }}</span>{% endfor %}</div>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="sec">
+      <h2><span class="num">1</span>Read the conversation</h2>
+      <div class="scene">{{ l.scene }}</div>
+      <div class="script">
+        {%- for who, text in l.conversation %}{% set c = level.cast[who] %}
+        <div class="line"><span class="av {{ c.color }}">{{ c.initial }}</span><span class="who">{{ who|upper }}</span><span>{{ text }}</span></div>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="sec">
+      <h2><span class="num">2</span>Useful phrases</h2>
+      <div class="phrases">
+        {%- for ph in l.phrases %}
+        <div class="ph"><h3>{{ ph.title }}</h3><p>{% for line in ph.lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}{% if ph.reply %}<br><span class="reply">— {{ ph.reply }}</span>{% endif %}</p></div>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="sec">
+      <h2><span class="num">3</span>New words</h2>
+      <div class="words">
+        {%- for w in l.words %}
+        <div class="word"><b>{{ w.word }}</b>{{ w.meaning }}</div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+  {{ foot(l.title, 'Speaking') }}
+</div>
+{%- elif l.kind == 'intro' %}
+<div class="page" data-title="{{ l.title }}" data-toc="phonics-{{ l.lesson }}">
   {{ head('Phonics · Lesson ' ~ l.lesson) }}
   <div class="hero">
     <div class="tile"><span class="abc-tile">A<em>–</em>Z</span></div>
@@ -96,7 +173,7 @@
 {%- set vowel = l.letters[0] in 'AEIOU' %}
 {%- set multi = l.parts|length > 1 %}
 {%- set ns = namespace(n=0) %}
-<div class="page" data-title="{{ l.title }}">
+<div class="page" data-title="{{ l.title }}" data-toc="phonics-{{ l.lesson }}">
   {{ head('Phonics · Lesson ' ~ l.lesson) }}
   <div class="abc">
     <span class="lbl">Letters learned</span>
@@ -192,7 +269,7 @@
   {{ foot(l.title) }}
 </div>
 {%- if l.chart %}
-<div class="page" data-title="{{ l.chart_title }}">
+<div class="page" data-title="{{ l.chart_title }}" data-toc="chart">
   {{ head('Phonics · Lesson ' ~ l.lesson) }}
   <div class="hero chart-hero">
     <div class="tile"><span class="abc-tile ipa">/ə/</span></div>

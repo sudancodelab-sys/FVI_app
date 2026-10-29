@@ -1,0 +1,28 @@
+lesson: 3
+title: In the Classroom
+subtitle: Classroom language
+icon: book
+goals: [Understand the teacher, Ask for help, Be polite in class]
+scene: Mr. Ali starts the lesson. Adam and Sara sit next to each other.
+conversation:
+  - [Mr. Ali, "Good morning, everyone. Please open your books to page ten."]
+  - [Sara, "Excuse me, Mr. Ali. Can you repeat that, please?"]
+  - [Mr. Ali, "Sure. Open your books to page ten."]
+  - [Adam, "Mr. Ali, how do you say this word?"]
+  - [Mr. Ali, "Light. L - I - G - H - T. Listen and repeat: light."]
+  - [Adam, "Light. Sorry, I don't understand the G and H."]
+  - [Mr. Ali, "No problem. In IGH, the G and H are silent."]
+  - [Adam, "Oh, I see. Thank you!"]
+  - [Mr. Ali, "Very good. Now work in pairs."]
+phrases:
+  - {title: The teacher says, lines: ["Open your books.", "Listen and repeat."]}
+  - {title: Work together, lines: ["Work in pairs."]}
+  - {title: Ask again, lines: ["Can you repeat that, please?"]}
+  - {title: Ask about a word, lines: ["How do you say this word?"]}
+  - {title: Say you need help, lines: ["Sorry, I don't understand."], reply: "No problem."}
+  - {title: Start politely, lines: ["Excuse me, Mr. Ali."]}
+words:
+  - {word: page, meaning: one side of a sheet of paper in a book}
+  - {word: repeat, meaning: say something again}
+  - {word: pairs, meaning: groups of two people}
+  - {word: excuse me, meaning: a polite way to start talking to someone}

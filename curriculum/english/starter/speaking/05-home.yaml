@@ -1,0 +1,29 @@
+lesson: 5
+title: My Home
+subtitle: Talking about where you live
+icon: home
+goals: [Say where you live, Name the rooms, "Use there is and there are"]
+scene: Adam and Sara walk home from the institute.
+conversation:
+  - [Adam, "Where do you live, Sara?"]
+  - [Sara, "I live in an apartment near the institute."]
+  - [Adam, "Is it big?"]
+  - [Sara, "Not very. There are two bedrooms, a living room, a kitchen, and a bathroom."]
+  - [Adam, "Is there a balcony?"]
+  - [Sara, "Yes, there is. I love it! Do you live in an apartment, too?"]
+  - [Adam, "No, I live in a house. There is a small garden."]
+  - [Sara, "That's nice!"]
+phrases:
+  - {title: Ask where, lines: ["Where do you live?"], reply: "I live in an apartment."}
+  - {title: One thing, lines: ["There is a kitchen."]}
+  - {title: Two or more, lines: ["There are two bedrooms."]}
+  - {title: Ask if it is there, lines: ["Is there a garden?"], reply: "Yes, there is. / No, there isn't."}
+  - {title: Describe, lines: ["It's big.  ·  It's small."]}
+  - {title: React, lines: ["That's nice!"]}
+words:
+  - {word: apartment, meaning: a home on one floor of a big building}
+  - {word: bedroom, meaning: a room where you sleep}
+  - {word: kitchen, meaning: a room where you cook}
+  - {word: living room, meaning: a room where the family sits together}
+  - {word: balcony, meaning: a small place outside an apartment, with a wall or rail}
+  - {word: garden, meaning: a place with grass, plants or trees next to a house}

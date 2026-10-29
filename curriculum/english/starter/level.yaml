@@ -4,3 +4,10 @@ chip: STARTER
 # Teaching order of the letters: vowels first, then consonants A-Z.
 # The "Letters learned" strip and the combination rule both follow it.
 letter_order: [A, E, I, O, U, B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z]
+stage: Pre-Intermediate
+subtitle: Phonics · Reading · Speaking
+# The same characters appear in every lesson and continue into later levels.
+cast:
+  Adam: {initial: A, color: a}
+  Sara: {initial: S, color: b}
+  Mr. Ali: {initial: MA, color: c}

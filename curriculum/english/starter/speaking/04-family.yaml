@@ -1,0 +1,28 @@
+lesson: 4
+title: My Family
+subtitle: Talking about your family
+icon: users
+goals: [Talk about your family, Ask about brothers and sisters, Ask how old someone is]
+scene: After class, Adam and Sara drink tea in the institute café.
+conversation:
+  - [Sara, "Do you have brothers or sisters, Adam?"]
+  - [Adam, "Yes. I have two brothers and one sister."]
+  - [Sara, "That's a big family!"]
+  - [Adam, "Yes, it is. And you?"]
+  - [Sara, "I have one sister. Her name is Lina."]
+  - [Adam, "How old is she?"]
+  - [Sara, "She's ten."]
+  - [Adam, "Do you live with your parents?"]
+  - [Sara, "Yes. I live with my mother, my father, and my sister."]
+phrases:
+  - {title: Ask about family, lines: ["Do you have brothers or sisters?"], reply: "Yes, I have two brothers."}
+  - {title: Say no, lines: ["Do you have a sister?"], reply: "No, I don't."}
+  - {title: Give a name, lines: ["Her name is Lina.", "His name is Omar."]}
+  - {title: Ask about age, lines: ["How old is she?"], reply: "She's ten."}
+  - {title: Where you live, lines: ["I live with my parents."]}
+  - {title: React, lines: ["That's a big family!"]}
+words:
+  - {word: brother, meaning: a boy or man with the same parents as you}
+  - {word: sister, meaning: a girl or woman with the same parents as you}
+  - {word: parents, meaning: your mother and your father}
+  - {word: family, meaning: parents, children, brothers and sisters}

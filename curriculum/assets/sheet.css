@@ -227,3 +227,45 @@ body{font-family:Lexend,sans-serif;color:var(--text);-webkit-print-color-adjust:
 .chart-hero .tile{width:24mm;height:24mm;border-radius:5mm}
 .chart-hero .tile .abc-tile{font-size:22pt}
 .chart-hero h1{font-size:22pt}
+
+/* speaking: third character colour */
+.av.c{background:var(--green)}
+.line .av.c{font-size:6pt;letter-spacing:-.2px}
+
+/* cover */
+.page.cover{padding:0;background:var(--navy);color:#fff;justify-content:space-between;align-items:center;text-align:center}
+.cover-top{margin-top:34mm;display:flex;flex-direction:column;align-items:center;gap:2mm}
+.cover-top img{width:46mm;height:46mm;border-radius:50%;background:#fff;padding:1.5mm;margin-bottom:5mm}
+.cover-top b{font-size:17pt;font-weight:700;letter-spacing:.5px}
+.cover-top span{font-size:11pt;color:#C2C6E6}
+.cover-mid{display:flex;flex-direction:column;align-items:center}
+.cover-mid .stage{font-size:10pt;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--orange);padding:1.6mm 5mm;border-radius:99px}
+.cover-mid h1{font-size:64pt;font-weight:800;letter-spacing:2px;line-height:1.1;margin-top:6mm}
+.cover-mid p{font-size:13pt;color:#C2C6E6;margin-top:2mm;letter-spacing:.5px}
+.cover-letters{display:flex;gap:3mm}
+.cover-letters span{width:13mm;height:13mm;border-radius:3mm;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:15pt;font-weight:700;color:#FF9B7A}
+.cover-letters span:nth-child(odd){color:#fff}
+.cover-foot{width:100%;padding:7mm 0;border-top:1.5mm solid var(--orange);font-size:10pt;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#C2C6E6}
+
+/* contents */
+.toc-title{font-size:26pt;font-weight:800;color:var(--navy);margin:6mm 0 2mm}
+.toc-part{margin-top:5mm}
+.toc-part h2{font-size:12pt;font-weight:700;color:var(--orange);margin-bottom:2mm;letter-spacing:.3px}
+.toc-row{display:flex;align-items:baseline;gap:3mm;font-size:10.5pt;padding:1mm 0}
+.toc-n{width:7mm;color:var(--muted);font-weight:600;text-align:right}
+.toc-t{font-weight:500}
+.toc-dots{flex:1;border-bottom:1.5px dotted #C9CCDD;transform:translateY(-1mm)}
+.toc-p{width:8mm;text-align:right;font-weight:700;color:var(--navy)}
+
+/* speaking pages that need tighter spacing to stay on one page */
+.page.dense .hero{margin:5mm 0 3mm;gap:6mm}
+.page.dense .hero .tile{width:22mm;height:22mm;border-radius:5mm}
+.page.dense .hero .tile svg{width:11mm;height:11mm}
+.page.dense .hero h1{font-size:21pt}
+.page.dense .hero p{font-size:10pt;margin-top:1mm}
+.page.dense .line{padding:1.25mm 4mm}
+.page.denser .line{padding:.9mm 4mm;font-size:11pt}
+.page.denser .ph p{font-size:9.5pt}
+.page.denser .sec{margin-top:3.5mm}
+.word{display:grid;grid-template-columns:30mm 1fr;gap:3mm}
+.word b{min-width:0}

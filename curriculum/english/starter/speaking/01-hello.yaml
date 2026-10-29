@@ -1,0 +1,27 @@
+lesson: 1
+title: Hello! Nice to Meet You
+subtitle: Greetings and names
+icon: chat
+goals: [Say hello, Say your name, Ask a name]
+scene: It is the first day at Future Vision Institute. Adam meets Sara at the classroom door.
+conversation:
+  - [Adam, "Hi! I'm Adam."]
+  - [Sara, "Hello, Adam. I'm Sara. Nice to meet you."]
+  - [Adam, "Nice to meet you, too. Are you a new student?"]
+  - [Sara, "Yes, I am. It's my first day."]
+  - [Adam, "It's my first day, too! Is this the Starter class?"]
+  - [Sara, "Yes, it is. Come in."]
+  - [Adam, "Thanks, Sara."]
+  - [Sara, "You're welcome."]
+phrases:
+  - {title: Say hello, lines: ["Hi!  ·  Hello!", "Good morning!"]}
+  - {title: Say your name, lines: ["I'm Adam.", "My name is Adam."]}
+  - {title: Ask a name, lines: ["What's your name?"], reply: "I'm Sara."}
+  - {title: Meet someone, lines: ["Nice to meet you."], reply: "Nice to meet you, too."}
+  - {title: Say thank you, lines: ["Thanks. / Thank you."], reply: "You're welcome."}
+  - {title: Ask a question, lines: ["Are you a new student?"], reply: "Yes, I am."}
+words:
+  - {word: new, meaning: for the first time; not old}
+  - {word: first, meaning: number one; before all the others}
+  - {word: student, meaning: a person who learns at a school}
+  - {word: class, meaning: a group of students who learn together}

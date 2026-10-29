@@ -1,0 +1,28 @@
+lesson: 2
+title: About Me
+subtitle: Where you are from, your phone number, spelling your name
+icon: card
+goals: [Say where you are from, Spell your name, Give your phone number]
+scene: Mr. Ali is writing the names of the new students.
+conversation:
+  - [Mr. Ali, "Good morning. What's your full name, please?"]
+  - [Adam, "My name is Adam Hassan."]
+  - [Mr. Ali, "How do you spell Hassan?"]
+  - [Adam, "H - A - S - S - A - N."]
+  - [Mr. Ali, "Thank you. Where are you from, Adam?"]
+  - [Adam, "I'm from Sudan."]
+  - [Mr. Ali, "What's your phone number?"]
+  - [Adam, "It's 0912 345 678."]
+  - [Mr. Ali, "Great. Welcome to the class, Adam!"]
+phrases:
+  - {title: Your full name, lines: ["My name is Adam Hassan."]}
+  - {title: Spell a word, lines: ["How do you spell that?"], reply: "H - A - S - S - A - N."}
+  - {title: "Where are you from?", lines: ["Where are you from?"], reply: "I'm from Sudan."}
+  - {title: Phone number, lines: ["What's your phone number?"], reply: "It's 0912 345 678."}
+  - {title: Be polite, lines: ["please  ·  thank you"]}
+  - {title: Welcome someone, lines: ["Welcome to the class!"]}
+words:
+  - {word: full name, meaning: your first name and your family name}
+  - {word: spell, meaning: say the letters of a word, one by one}
+  - {word: from, meaning: shows your home country or city}
+  - {word: phone number, meaning: the numbers you call to talk to someone}

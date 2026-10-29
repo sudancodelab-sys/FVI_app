@@ -1,0 +1,29 @@
+lesson: 6
+title: Jobs
+subtitle: Talking about work
+icon: briefcase
+goals: [Ask about jobs, Say what people do, Say what you want to be]
+scene: Adam and Sara talk about their families again.
+conversation:
+  - [Adam, "What does your father do, Sara?"]
+  - [Sara, "He's an engineer. He works for a big company."]
+  - [Adam, "And your mother?"]
+  - [Sara, "She's a doctor. She works in a hospital."]
+  - [Adam, "My father is a driver, and my mother is a teacher."]
+  - [Sara, "Nice! What do you want to be, Adam?"]
+  - [Adam, "I want to be a pilot. And you?"]
+  - [Sara, "I want to be an engineer, like my father."]
+phrases:
+  - {title: Ask about a job, lines: ["What does your father do?"], reply: "He's an engineer."}
+  - {title: A or an, lines: ["a doctor  ·  a teacher", "an engineer"]}
+  - {title: Where people work, lines: ["She works in a hospital."]}
+  - {title: Your future job, lines: ["What do you want to be?"], reply: "I want to be a pilot."}
+  - {title: Compare, lines: ["like my father"]}
+  - {title: Your family, lines: ["My mother is a teacher."]}
+words:
+  - {word: engineer, meaning: a person who designs and builds things}
+  - {word: doctor, meaning: a person who helps sick people get better}
+  - {word: driver, meaning: a person whose job is to drive a car, bus or truck}
+  - {word: pilot, meaning: a person who flies a plane}
+  - {word: company, meaning: a business where many people work}
+  - {word: hospital, meaning: a place where doctors help sick people}

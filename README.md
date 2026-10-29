@@ -22,4 +22,12 @@ dart pub get
 cd packages/fvi_core && dart test
 ```
 
-الحالة: الخطوة 1 من خطة العمل (الأساس المشترك) مكتملة ومختبرة.
+الحالة:
+- الخطوة 1 من خطة العمل (الأساس المشترك) مكتملة ومختبرة.
+- مستوى Starter من منهج الإنجليزية مكتمل كمسودة: 20 درس صوتيات و6 دروس مخاطبة.
+
+لبناء كتاب المستوى (يحتاج Python مع PyYAML وJinja2 وcmudict، وNode مع Playwright):
+
+```bash
+python3 curriculum/tools/build.py english/starter --book --out starter-book
+```

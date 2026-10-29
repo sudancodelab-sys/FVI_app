@@ -9,6 +9,13 @@ window.fviReady = (async () => {
   const items = (sec) => sec.querySelectorAll(':scope > .team');
   document.querySelectorAll('.sec').forEach((sec, i) => { sec.dataset.sid = i; });
 
+  // One-page lessons (.fit) first try tighter spacing before anything moves.
+  document.querySelectorAll('.page.fit').forEach((page) => {
+    for (const step of ['dense', 'denser']) {
+      if (overflows(page)) page.classList.add(step);
+    }
+  });
+
   const continuation = (page) => {
     const next = document.createElement('div');
     next.className = 'page cont';
@@ -65,6 +72,15 @@ window.fviReady = (async () => {
       }
     }
   }
-  document.querySelectorAll('.page .pg').forEach((el, i) => { el.textContent = i + 1; });
+  // Page numbers count every page (the cover too, though it shows none).
+  const pages = [...document.querySelectorAll('.page')];
+  pages.forEach((page, i) => {
+    const pg = page.querySelector('.pg');
+    if (pg) pg.textContent = i + 1;
+  });
+  document.querySelectorAll('[data-toc-ref]').forEach((el) => {
+    const target = document.querySelector(`.page[data-toc="${el.dataset.tocRef}"]`);
+    el.textContent = target ? pages.indexOf(target) + 1 : '';
+  });
   return [...document.querySelectorAll('.page')].filter(overflows).length;
 })();
