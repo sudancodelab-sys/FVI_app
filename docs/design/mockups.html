@@ -71,6 +71,7 @@ svg.i.sm{width:16px;height:16px} svg.i.lg{width:26px;height:26px} svg.i.xl{width
 
 /* controls */
 .btn{flex:none;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;width:100%}
+.btn.grow{flex:1 1 0;width:auto}
 .btn.sm{height:36px;border-radius:10px;font-size:13px;width:auto;padding:0 14px}
 .btn-primary{background:var(--navy);color:#fff}
 .btn-accent{background:var(--orange);color:#fff}
@@ -164,6 +165,10 @@ svg.i.sm{width:16px;height:16px} svg.i.lg{width:26px;height:26px} svg.i.xl{width
 .locked .tt{color:#8E91AA}
 
 .lvl-head{display:flex;align-items:center;gap:10px}
+.cefr{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:800;flex:none;direction:ltr;letter-spacing:.2px}
+.cefr.on{background:var(--orange);color:#fff;box-shadow:0 0 0 4px var(--orange-soft)}
+.cefr.done{background:var(--navy);color:#fff;font-size:11px}
+.cefr.off{background:#fff;color:#9295AE;box-shadow:inset 0 0 0 2px #D9DBE6}
 .lesson{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:14px;font-weight:700}
 .lesson .ck{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:12px;font-weight:800}
 .ck.done{background:var(--green-soft);color:var(--green)}
@@ -467,35 +472,39 @@ svg.i.sm{width:16px;height:16px} svg.i.lg{width:26px;height:26px} svg.i.xl{width
         <div class="sb light" style="padding:4px 14px 0"><span>10:16</span><span class="ic"><svg><use href="#sig"/></svg><svg><use href="#bat"/></svg></span></div>
         <div style="display:flex;align-items:center;gap:6px;height:54px">
           <span class="ib"><svg class="i"><use href="#back"/></svg></span>
-          <div class="t"><h2>اللغة الإنجليزية</h2><div class="sub">قسم اللغات · 3 مستويات</div></div>
+          <div class="t"><h2>اللغة الإنجليزية</h2><div class="sub">قسم اللغات · 11 مستوى وفق إطار CEFR</div></div>
         </div>
       </div>
-      <div class="body" style="padding-top:14px;gap:12px">
-        <div class="card" style="padding-bottom:6px">
+      <div class="body" style="padding-top:14px;gap:10px">
+        <div class="card" style="display:flex;align-items:center;gap:12px;padding:10px 14px">
+          <span class="cefr done">Pre-A1</span>
+          <div class="grow"><div class="ltr" style="text-align:right;font-weight:800;font-size:15px">Starter</div><div class="small muted" style="font-weight:600">الأصوات وطريقة القراءة · مكتمل</div></div>
+          <span class="badge b-green"><svg class="i sm"><use href="#check"/></svg>10/10</span>
+        </div>
+        <div class="card" style="padding-bottom:4px">
           <div class="lvl-head">
-            <div class="grow"><div style="font-size:16px;font-weight:800">المستوى الأول</div><div class="small muted" style="font-weight:600">مفعّل حتى 3 نوفمبر 2026</div></div>
+            <span class="cefr on">A1.1</span>
+            <div class="grow"><div class="ltr" style="text-align:right;font-size:16px;font-weight:800">Level One</div><div class="small muted" style="font-weight:600">مفعّل حتى 3 نوفمبر 2026</div></div>
             <span class="badge b-green"><svg class="i sm"><use href="#check"/></svg>مفعّل</span>
           </div>
-          <div style="display:flex;align-items:center;gap:10px;margin:10px 0 6px"><div class="progress grow"><span style="width:60%"></span></div><span class="small" style="font-weight:800;color:var(--navy)">6/10</span></div>
-          <div class="lesson"><span class="ck done"><svg class="i sm"><use href="#check"/></svg></span><span class="ltr grow" style="text-align:right">The Alphabet</span></div>
-          <div class="lesson"><span class="ck done"><svg class="i sm"><use href="#check"/></svg></span><span class="ltr grow" style="text-align:right">Greetings</span></div>
+          <div style="display:flex;align-items:center;gap:10px;margin:10px 0 4px"><div class="progress grow"><span style="width:60%"></span></div><span class="small" style="font-weight:800;color:var(--navy)">6/10</span></div>
           <div class="lesson"><span class="ck done"><svg class="i sm"><use href="#check"/></svg></span><span class="ltr grow" style="text-align:right">Numbers 1–100</span></div>
           <div class="lesson now"><span class="ck now">4</span><span class="ltr grow" style="text-align:right">Present Simple</span><span class="badge b-amber" style="background:#fff">قيد القراءة</span></div>
           <div class="lesson"><span class="ck todo">5</span><span class="ltr grow" style="text-align:right">Daily Routine</span></div>
-          <div class="lesson"><span class="ck todo"><svg class="i sm"><use href="#target"/></svg></span><span class="grow">اختبار المستوى الأول</span><svg class="i sm muted"><use href="#chev"/></svg></div>
+          <div class="lesson"><span class="ck todo"><svg class="i sm"><use href="#target"/></svg></span><span class="grow">اختبار Level One</span><svg class="i sm muted"><use href="#chev"/></svg></div>
         </div>
-        <div class="card locked" style="display:flex;align-items:center;gap:12px">
-          <span class="ico gray"><svg class="i"><use href="#lock"/></svg></span>
-          <div class="grow"><div class="tt" style="font-weight:800;font-size:15px">المستوى الثاني</div><div class="small muted" style="font-weight:600">غير مفعّل · 12 درساً</div></div>
+        <div class="card locked" style="display:flex;align-items:center;gap:12px;padding:10px 14px">
+          <span class="cefr off">A1.2</span>
+          <div class="grow"><div class="tt ltr" style="text-align:right;font-weight:800;font-size:15px">Level Two</div><div class="small muted" style="font-weight:600">غير مفعّل · 12 درساً</div></div>
           <span class="btn sm btn-outline">اطلب التفعيل</span>
         </div>
-        <div class="card locked" style="display:flex;align-items:center;gap:12px">
-          <span class="ico gray"><svg class="i"><use href="#lock"/></svg></span>
-          <div class="grow"><div class="tt" style="font-weight:800;font-size:15px">المستوى الثالث</div><div class="small muted" style="font-weight:600">غير مفعّل · 12 درساً</div></div>
+        <div class="card locked" style="display:flex;align-items:center;gap:12px;padding:10px 14px">
+          <span class="cefr off">A2.1</span>
+          <div class="grow"><div class="tt ltr" style="text-align:right;font-weight:800;font-size:15px">Level Three</div><div class="small muted" style="font-weight:600">غير مفعّل · 12 درساً</div></div>
           <span class="btn sm btn-outline">اطلب التفعيل</span>
         </div>
       </div>
-    </div></div><div class="caption"><span class="n">5</span>الدورة ومستوياتها</div></div>
+    </div></div><div class="caption"><span class="n">5</span>الدورة ومستوياتها (CEFR)</div></div>
 
     <!-- 6. Lesson reader -->
     <div class="device"><div class="phone"><div class="screen" style="background:#fff">
@@ -585,8 +594,8 @@ svg.i.sm{width:16px;height:16px} svg.i.lg{width:26px;height:26px} svg.i.xl{width
         </div>
         <div class="small muted" style="text-align:center;font-weight:600;margin-top:10px">اضغط على البطاقة لقلبها</div>
         <div style="display:flex;gap:10px">
-          <div class="btn" style="background:var(--orange-soft);color:var(--orange)"><svg class="i"><use href="#renew"/></svg>لم أحفظها</div>
-          <div class="btn" style="background:var(--green);color:#fff"><svg class="i"><use href="#check"/></svg>أعرفها</div>
+          <div class="btn grow" style="background:var(--orange-soft);color:var(--orange)"><svg class="i"><use href="#renew"/></svg>لم أحفظها</div>
+          <div class="btn grow" style="background:var(--green);color:#fff"><svg class="i"><use href="#check"/></svg>أعرفها</div>
         </div>
         <div class="alert info" style="font-size:12.5px;font-weight:600"><svg class="i sm"><use href="#info"/></svg>البطاقات التي لم تحفظها تعود إليك أكثر حتى تثبت.</div>
       </div>
