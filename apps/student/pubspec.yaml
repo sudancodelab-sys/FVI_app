@@ -1,7 +1,7 @@
 name: fvi_student
 description: The student app of Future Vision Institute. The English course, offline, with exercises.
 publish_to: none
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.13.0

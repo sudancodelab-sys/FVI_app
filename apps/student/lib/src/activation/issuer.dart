@@ -17,4 +17,4 @@ List<int> get issuerPublicKey {
 const defaultWhatsappNumber = String.fromEnvironment('FVI_WHATSAPP', defaultValue: '249904011473');
 
 /// The version sent with an activation request; as in pubspec.yaml.
-const appVersion = '0.1.0';
+const appVersion = '1.0.0';

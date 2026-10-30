@@ -1,7 +1,7 @@
 name: fvi_admin
 description: The admin app of Future Vision Institute. Issues activation codes for the student app, offline, on one phone.
 publish_to: none
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.13.0

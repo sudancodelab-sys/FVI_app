@@ -40,7 +40,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 
 - **All ten books are approved:** Starter 36 pages, Pre-Intermediate 1-4 21/22/23/23,
   Intermediate 1-2 28/29, Advanced 1-3 31/36/37. Source in `curriculum/english/<level>/`;
-  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #49).
+  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #50).
 - **The app plan is approved:** `docs/APP-PLAN.md` (ten levels, one player), **except its audio:**
   decision #44 (30 October 2026) stopped the voices. The app is text only, with exercises in
   place of the audio clips. Do not generate audio.
@@ -79,8 +79,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   code without the admin app. The
   sample is the private Artifact page "FVI Activation Sample" (screenshots of a full walk in
   the web build, driven through Flutter's accessibility tree with Playwright).
-- **The admin app** (`apps/admin`, Flutter, Arabic only; **sample sent**; question 101 asks
-  for its approval): screens A1 to A6 of `docs/design/screens/4-admin-activation.png` and
+- **The admin app** (`apps/admin`, Flutter, Arabic only; **approved**, decision #50): screens A1 to A6 of `docs/design/screens/4-admin-activation.png` and
   `5-admin-records.png`. PIN lock (and fingerprint), dashboard, new activation (paste the
   student's message; familiar-device and reinstall alerts; content tree from the student index,
   which `content_builder build` copies to `apps/admin/assets/content/`; 1, 2, 3 months or a date;
@@ -95,9 +94,18 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   keys and the seal-key ceremony are postponed to later versions, so do not bring them up again.
   The "development build" notes are gone from both apps. The code paths for later
   (`FVI_ISSUER_KEY` in the student app, `FVI_PRODUCTION` in the admin app) stay, unused.
-- **Next**, after the admin app's approval (`docs/REQUIREMENTS.md` section 9): the APK builds of
-  both apps (with `keys/dev`; only the APK signing key is secret), and `FLAG_SECURE` where 5.7
-  asks.
+- **The APK files** (decision #50, approved; in progress): both apps go on a private download
+  page as APKs. The Android projects are ready: names "FVI" and "FVI Admin", the FVI icons
+  (white for the student app, navy for the admin app), packages `sd.futurevision.fvi_student`
+  and `sd.futurevision.fvi_admin`, version 1.0.0, no Android backup (activation belongs to the
+  install), WhatsApp links in `<queries>`, and for the admin app `FlutterFragmentActivity`, an
+  AppCompat theme and `USE_BIOMETRIC` (local_auth). Release signing reads
+  `apps/<app>/android/key.properties` (ignored) pointing at `keys/prod/fvi-release.jks`
+  (ignored; alias `fvi`); both apps share the key. The key must survive: once APKs are out, keep
+  it on its own private Artifact page ("FVI Signing Key") and reuse it for every update, or
+  updates will not install over the old app. **Blocked:** `dl.google.com` (the Android SDK) is
+  denied by this environment's network policy; the user was asked to allow it (30 October 2026).
+- **Then:** `FLAG_SECURE` where REQUIREMENTS 5.7 asks (the admin's backup and keys screens).
 
 ## Commands
 
