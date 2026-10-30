@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 91:** …`); the last one asked was 90, so continue from 91.
+  (`**السؤال 92:** …`); the last one asked was 91, so continue from 92.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -49,10 +49,13 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   screen design is approved. No audio yet.
 - **The voices are stopped** (decision #44). The generator (`curriculum/tools/voices.py`), the
   `Speaker` and `docs/VOICES.md` stay in the repo, unused, in case the institute returns to audio.
-- **Next: exercises in the app**, made only from the approved books' content (comprehension
-  questions and answers, new words, idioms, useful phrases); the books stay without exercises
-  (#28). The plan was sent in Arabic (questions 89, 90); waiting for its approval, then a sample
-  lesson, then the play buttons come out of the lesson screens.
+- **Next: exercises in the app**, made only from the approved books' content; the books stay
+  without exercises (#28). The plan is approved (question 89). `curriculum/tools/exercises.py`
+  makes them (1,846 for Pre-Intermediate 1 to Advanced 3: questions, word and idiom meanings,
+  grammar forms as in the story, replies, phrases to put in order). The sample is the private
+  Artifact page "FVI Exercise Sample" (`curriculum/tools/dev/exercise_sample.py`), **waiting for
+  approval** (question 91). Starter's exercises wait for question 90. Then: the exercises in the
+  export and the app, and the play buttons out of the lesson screens.
 - **After the exercises**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK
