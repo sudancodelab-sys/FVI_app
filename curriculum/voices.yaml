@@ -60,3 +60,45 @@ gender:
 # Places and names to check by ear; Kokoro accepts a pronunciation as
 # [word](/IPA/) if one comes out wrong.
 listen_for: [Khartoum, Omdurman, Kassala, Gezira, Port Sudan, Wadi Howar, Gash, Huda, Omar, Tarig, Rania]
+
+# How to say the names the dictionary does not know, or says the English
+# way. In the phonemes of Kokoro (misaki): A = ay, I = eye, O = oh,
+# ˈ before the stressed vowel. "Huda's" takes the same, with its s.
+pronounce:
+  Huda: hˈudə
+  Nour: nˈʊɹ
+  Tarig: tˈɑɹɪɡ
+  Karim: kəɹˈim
+  Kamal: kəmˈɑl
+  Rania: ɹˈɑnjə
+  Amira: əmˈiɹə
+  Amna: ˈɑmnə
+  Amir: əmˈiɹ
+  Hassan: həsˈɑn
+  Idris: ɪdɹˈis
+  Yassin: jæsˈin
+  Salih: sˈɑlɪ
+  Salma: sˈɑlmə
+  Nabil: nəbˈil
+  Malik: mˈɑlɪk
+  Mahmoud: mɑhmˈud
+  Yousif: jˈusɪf
+  Fatima: fˈɑtimə
+  Osman: ˈɑsmɑn
+  Obeid: ObˈAd
+  Kordofan: kˌɔɹdəfˈæn
+  Gezira: ʤəzˈiɹə
+  Atbara: ˈætbəɹə
+  Roseires: ɹusˈAɹɪs
+  Howar: hʊwˈɑɹ
+  Gash: ɡˈɑʃ
+  al-Fitr: ɑl fˈɪtəɹ
+  al-Adha: ɑl ˈɑdhɑ
+  Alvarez: ˈælvəɹɛz
+  Luis: luˈis
+  Chicxulub: ʧˈikʃʊlub
+
+# Written one way, said another (only in the clips; the text stays).
+# Times (7:50) and dates (March 12) are read by the generator itself.
+say_as:
+  "0912 345 678": "oh nine one two, three four five, six seven eight"

@@ -1,0 +1,18 @@
+# The voice generator (curriculum/tools/voices.py), in its own Python 3.12:
+#   python3.12 -m venv ~/.venvs/voices && ~/.venvs/voices/bin/pip install -r curriculum/tools/voices-requirements.txt
+# Not misaki[en]: that extra pulls in PyTorch, which the generator does not need.
+kokoro-onnx==0.6.1
+misaki==0.9.4
+num2words==0.5.14
+spacy==3.8.18
+espeakng-loader==0.2.4
+phonemizer-fork==3.3.2
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+onnx==1.23.2
+onnxruntime==1.31.1
+sherpa-onnx==2.0.1
+soundfile==0.14.0
+numpy==2.5.4
+pyyaml==6.0.3
+jinja2==3.1.6
+cmudict==1.1.3

@@ -120,8 +120,9 @@ def export_lesson(slug, lesson):
     if 'questions' in lesson:
         out['questions'] = [_qa(ids, f'questions.{i}', pair) for i, pair in enumerate(lesson['questions'])]
     if lesson.get('idioms'):
+        # Said as the plan has it: the expression, its meaning, then the example.
         out['idioms'] = [dict(e, **ids.item(f'idioms.{i}', e['expr'], 'teacher',
-                                            say=f'{e["expr"]} {e["example"]}'))
+                                            say=f'{_sentence(e["expr"])} {_sentence(e["meaning"])} {e["example"]}'))
                          for i, e in enumerate(lesson['idioms'])]
     out['words'] = _words(ids, lesson['words'])
     return out
