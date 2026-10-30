@@ -60,6 +60,29 @@ void main() {
     expect(find.text('Who is the new student?'), findsOneWidget);
   });
 
+  testWidgets('a Starter letters exercise shows the sound and the word with its gap', (tester) async {
+    final starter = Lesson({
+      'lesson': 3,
+      'title': 'The Letter E',
+      'exercises': [
+        {'type': 'choice', 'kind': 'letters', 'prompt': '', 'before': 'b', 'after': 'd', 'sound': '/e/ · Short E',
+         'choices': ['ee', 'e', 'a'], 'answer': 1},
+      ],
+    }, position: 3, count: 26);
+    await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: const [L10n.delegate, GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate],
+      supportedLocales: L10n.supportedLocales,
+      home: ExerciseScreen(lesson: starter),
+    ));
+    expect(find.text('Which letters complete the word?'), findsOneWidget);
+    expect(find.text('/e/ · Short E'), findsOneWidget);
+    expect(find.textContaining('b\u2007'), findsOneWidget);
+    await tester.tap(find.text('e'));
+    await tester.pump();
+    expect(find.text('Right!'), findsOneWidget);
+  });
+
   testWidgets('in the Arabic app the instructions are Arabic and the exercise stays English', (tester) async {
     await tester.pumpWidget(app(const Locale('ar')));
     expect(find.text('اختر الجواب الصحيح حسب الدرس'), findsOneWidget);

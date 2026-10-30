@@ -122,4 +122,10 @@ class L10nAr extends L10n {
 
   @override
   String get backToLesson => 'العودة إلى الدرس';
+
+  @override
+  String get howLetters => 'اختر الحروف التي تكمل الكلمة';
+
+  @override
+  String get howSilent => 'أيّ حرف لا يُنطق؟';
 }

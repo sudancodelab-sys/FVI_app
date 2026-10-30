@@ -15,6 +15,8 @@ const _labels = {
   'form': 'GRAMMAR',
   'reply': 'USEFUL PHRASES',
   'order': 'USEFUL PHRASES',
+  'letters': 'SOUNDS AND LETTERS',
+  'silent': 'SILENT LETTERS',
 };
 
 /// The exercises of a lesson, one at a time, as in the approved sample: the
@@ -102,6 +104,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
         'form' => t.howForm,
         'reply' => t.howReply,
         'order' => t.howOrder,
+        'letters' => t.howLetters,
+        'silent' => t.howSilent,
         _ => t.howQuestion,
       };
 
@@ -127,6 +131,11 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
               const SizedBox(height: 10),
               _order(ex),
             ] else ...[
+              if (ex.sound != null) ...[
+                Text(ex.sound!, style: _english.copyWith(fontSize: 15, fontWeight: FontWeight.w700,
+                    color: _color, fontFamilyFallback: Fvi.fallback)),
+                const SizedBox(height: 4),
+              ],
               _prompt(ex),
               if (ex.example != null) ...[
                 const SizedBox(height: 6),
@@ -148,12 +157,13 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
   Widget _prompt(Exercise ex) {
     const style = TextStyle(fontFamily: Fvi.english, fontSize: 20, height: 1.5, fontWeight: FontWeight.w600,
         color: Fvi.text);
-    if (ex.kind != 'form') return Text(ex.prompt, style: style);
+    if (ex.kind != 'form' && ex.kind != 'letters') return Text(ex.prompt, style: style);
     return Text.rich(TextSpan(style: style, children: [
-      TextSpan(text: ex.before.isEmpty ? '' : '${ex.before} '),
+      // A sentence has spaces around its gap; a word (b___d) has none.
+      TextSpan(text: ex.before.isEmpty || ex.kind == 'letters' ? ex.before : '${ex.before} '),
       const TextSpan(text: _gap, style: TextStyle(decoration: TextDecoration.underline,
           decorationColor: Fvi.orange, decorationThickness: 2.5)),
-      TextSpan(text: ex.after.isEmpty ? '' : ' ${ex.after}'),
+      TextSpan(text: ex.after.isEmpty || ex.kind == 'letters' ? ex.after : ' ${ex.after}'),
     ]));
   }
 

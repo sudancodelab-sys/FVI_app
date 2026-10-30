@@ -106,10 +106,11 @@ class Lesson {
 
 /// An exercise of a lesson, made from the lesson by curriculum/tools/exercises.py.
 ///
-/// [kind] is question, meaning, idiom, form, reply or order. An order
-/// exercise gives [words] to put back into [sentence]; the others give
-/// [choices], of which [rightChoice] is the right one. A form exercise is a
-/// sentence of the story with a gap between [before] and [after].
+/// [kind] is question, meaning, idiom, form, reply or order, and in Starter
+/// letters or silent. An order exercise gives [words] to put back into
+/// [sentence]; the others give [choices], of which [rightChoice] is the
+/// right one. A form or letters exercise has a gap between [before] and
+/// [after]; a letters exercise also gives the [sound] of the gap (/e/ · Short E).
 class Exercise {
   Exercise.fromJson(Json json)
       : kind = json['kind'] as String,
@@ -120,7 +121,8 @@ class Exercise {
         sentence = json['type'] == 'order' ? json['answer'] as String : '',
         before = json['before'] as String? ?? '',
         after = json['after'] as String? ?? '',
-        example = json['example'] as String?;
+        example = json['example'] as String?,
+        sound = json['sound'] as String?;
 
   final String kind;
   final String prompt;
@@ -131,6 +133,7 @@ class Exercise {
   final String before;
   final String after;
   final String? example;
+  final String? sound;
 
   bool get isOrder => kind == 'order';
   String get rightText => isOrder ? sentence : choices[rightChoice];

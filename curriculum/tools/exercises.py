@@ -14,6 +14,14 @@ there is no new text to approve:
     reply     a useful phrase of a conversation; its reply among the others
     order     a useful phrase in jumbled words, to put back in order
 
+and in the sound lessons of Starter, from the letters its book marks:
+
+    letters   an example word with its taught letters taken out, and their
+              sound (/e/, Short E); those letters among letters that never
+              make that sound in the book
+    silent    an example word with a silent letter; that letter among the
+              word's sounded consonants
+
 A choice is never one that could also be right: the same words, the same
 first sentence ("Yes, it is." for "Yes, it is. It's big."), or the same form
 with "not" ("isn't" for "is", where only the story tells them apart). The
@@ -36,6 +44,7 @@ import build  # noqa: E402
 
 CHOICES = 4    # the right one and three others
 FORMS = 6      # form exercises in a lesson at most
+LETTERS = 10   # letters exercises in a Starter lesson at most
 ORDER_WORDS = (3, 10)  # a phrase to put in order has this many words
 
 _MARK = re.compile(r'\[([^\]]+)\]')
@@ -150,7 +159,8 @@ def _replies(lesson, rng):
 def _orders(lesson, rng):
     out = []
     for p in lesson.get('phrases') or []:
-        for line in [part.strip() for x in p['lines'] for part in _plain(x['t']).split('·')]:
+        # "Hi! · Hello!" and "Thanks. / Thank you." are two phrases.
+        for line in [part.strip() for x in p['lines'] for part in re.split(r'·| / ', _plain(x['t']))]:
             words = line.split()
             if not ORDER_WORDS[0] <= len(words) <= ORDER_WORDS[1]:
                 continue
@@ -162,14 +172,83 @@ def _orders(lesson, rng):
     return out
 
 
+def _sounds(lesson):
+    """(word, ipa, name) of every example of a Starter sound lesson, in the book's order."""
+    for part in lesson.get('parts') or []:
+        for sound in part.get('sounds') or []:
+            for e in sound['examples']:
+                yield e['t'], sound['ipa'], sound.get('name')
+        for team in part.get('teams') or []:
+            for sound in team['sounds']:
+                if 'ipa' in sound:  # a team with no sound is silent: ei{gh}t
+                    for e in sound['examples']:
+                        yield e['t'], sound['ipa'], None
+
+
+def _letters(level, lesson, rng):
+    makes = {}  # letters -> every sound they make in the book
+    for les in level.get('phonics') or []:
+        for word, ipa, _ in _sounds(les):
+            for m in _MARK.findall(word):
+                makes.setdefault(m.lower(), set()).add(ipa)
+    found = [(w, ipa, name) for w, ipa, name in _sounds(lesson) if len(_MARK.findall(w)) == 1]
+    # One example of every sound first, then the second ones, and so on.
+    seen, order = {}, []
+    for w, ipa, name in found:
+        seen[ipa] = seen.get(ipa, 0) + 1
+        order.append((seen[ipa], len(order), w, ipa, name))
+    here = {_MARK.findall(w)[0].lower() for w, _, _ in found}
+    out = []
+    for *_, word, ipa, name in sorted(order)[:LETTERS]:
+        before, (taught,), after = word.split('[', 1)[0], _MARK.findall(word), word.split(']', 1)[1]
+        # Never letters that can make the same sound: s[ee] could be s[ea].
+        others = [g for g in makes if ipa not in makes[g] and g != taught.lower()]
+        rng.shuffle(others)
+        others.sort(key=lambda g: g not in here)  # the lesson's own letters first
+        ex = _choice('letters', '', taught.lower(), others, rng, fewest=1, before=_plain(before),
+                     after=_plain(after), sound=f'/{ipa}/' + (f' · {name.split(" —")[0]}' if name else ''))
+        if ex:
+            out.append(ex)
+    return out
+
+
+def _silent(lesson, rng):
+    examples = [e['t'] for part in lesson.get('parts') or [] for rule in part.get('silent') or []
+                for e in rule.get('examples') or []]
+    examples += [e['t'] for part in lesson.get('parts') or [] for team in part.get('teams') or []
+                 for sound in team['sounds'] if 'ipa' not in sound for e in sound['examples']]
+    out = []
+    for example in examples:
+        silent = build.marked(example)[1]
+        if len(silent) != 1:
+            continue
+        word = _plain(example)
+        # The word's other consonants, all said; a vowel only when there are too few,
+        # and never a final e (peopl e) or the silent letters again.
+        letters = list(dict.fromkeys(c for c in word.lower() if c.isalpha() and c not in silent[0].lower()))
+        consonants = [c for c in letters if c not in 'aeiou']
+        vowels = [c for c in letters if c in 'aeiou' and not (c == 'e' and word.lower().endswith('e'))]
+        rng.shuffle(consonants)
+        rng.shuffle(vowels)
+        ex = _choice('silent', word, silent[0].lower(), consonants + vowels, rng)
+        if ex:
+            out.append(ex)
+    return out
+
+
 def lesson_exercises(level, lesson):
     """The exercises of one lesson of an exported level (export_app.export_level)."""
-    rng = random.Random(f'{level["slug"]}/{lesson["lesson"]}')
+    lessons = level.get('lessons')
+    # Starter numbers its sound lessons and its speaking lessons apart.
+    seed = f'{level["slug"]}/{lesson["lesson"]}' if lessons else f'{level["slug"]}/{lesson.get("kind")}/{lesson["lesson"]}'
+    rng = random.Random(seed)
+    lessons = lessons or [*level.get('phonics', []), *level.get('speaking', [])]
     words = [(w['word'], w['meaning'], None) for w in lesson.get('words') or []]
     idioms = [(i['expr'], i['meaning'], i.get('example')) for i in lesson.get('idioms') or []]
-    level_words = [w['meaning'] for les in level['lessons'] for w in les.get('words') or []]
-    level_idioms = [i['meaning'] for les in level['lessons'] for i in les.get('idioms') or []]
-    return [*_questions(lesson, rng), *_meanings('meaning', words, level_words, rng), *_forms(lesson, rng),
+    level_words = [w['meaning'] for les in lessons for w in les.get('words') or []]
+    level_idioms = [i['meaning'] for les in lessons for i in les.get('idioms') or []]
+    return [*_letters(level, lesson, rng), *_silent(lesson, rng),
+            *_questions(lesson, rng), *_meanings('meaning', words, level_words, rng), *_forms(lesson, rng),
             *_meanings('idiom', idioms, level_idioms, rng), *_replies(lesson, rng), *_orders(lesson, rng)]
 
 

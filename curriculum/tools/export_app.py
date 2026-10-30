@@ -210,6 +210,8 @@ def export_level(level_path):
         out['letter_order'] = level['letter_order']
         out['phonics'] = [export_phonics(slug, l) for l in phonics]
         out['speaking'] = [export_speaking(slug, l) for l in speaking]
+        for lesson in out['phonics'] + out['speaking']:
+            lesson['exercises'] = exercises.lesson_exercises(out, lesson)
     return out
 
 
@@ -245,7 +247,8 @@ def main():
         index.append({k: data[k] for k in ('slug', 'id', 'order', 'name', 'cefr', 'stage')}
                      | {'lessons': len(data.get('lessons', [])) or len(data['phonics']) + len(data['speaking'])})
         items = list(audio_items(data))
-        drills = sum(len(lesson['exercises']) for lesson in data.get('lessons', []))
+        drills = sum(len(lesson['exercises']) for part in ('lessons', 'phonics', 'speaking')
+                     for lesson in data.get(part, []))
         print(f'{path.relative_to(out_dir.parent.parent) if out_dir.is_relative_to(ROOT.parent) else path}: '
               f'{len(data.get("lessons", data.get("phonics", [])))} lessons, {drills} exercises, {len(items)} audio items')
     if not args.levels:

@@ -300,6 +300,18 @@ abstract class L10n {
   /// In ar, this message translates to:
   /// **'العودة إلى الدرس'**
   String get backToLesson;
+
+  /// No description provided for @howLetters.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر الحروف التي تكمل الكلمة'**
+  String get howLetters;
+
+  /// No description provided for @howSilent.
+  ///
+  /// In ar, this message translates to:
+  /// **'أيّ حرف لا يُنطق؟'**
+  String get howSilent;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

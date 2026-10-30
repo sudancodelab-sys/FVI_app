@@ -122,4 +122,10 @@ class L10nEn extends L10n {
 
   @override
   String get backToLesson => 'Back to the lesson';
+
+  @override
+  String get howLetters => 'Which letters complete the word?';
+
+  @override
+  String get howSilent => 'Which letter is silent?';
 }

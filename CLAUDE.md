@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 94:** …`); the last one asked was 93, so continue from 94.
+  (`**السؤال 95:** …`); the last one asked was 94, so continue from 95.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -46,7 +46,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   place of the audio clips. Do not generate audio.
 - **The student app** (`apps/student`, Flutter): the course, level and lesson screens for
   every kind of lesson, the Arabic note box, and the exercise screen. The screen design is
-  approved. Text only: no play buttons. `flutter test`: 8 tests.
+  approved. Text only: no play buttons. `flutter test`: 9 tests.
 - **The voices are stopped** (decision #44). The generator (`curriculum/tools/voices.py`), the
   `Speaker` and `docs/VOICES.md` stay in the repo, unused, in case the institute returns to audio.
 - **Exercises in the app** (decisions #44, #46, approved): made only from the approved books'
@@ -54,8 +54,14 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   Pre-Intermediate 1 to Advanced 3: questions, word and idiom meanings, grammar forms as in the
   story, replies, phrases to put in order). The books stay without exercises (#28). The
   "Exercises · n" button at the bottom of a lesson opens `exercise_screen.dart`. The approved
-  sample is the private Artifact page "FVI Exercise Sample". **Starter has none yet** (question
-  93: none, or simple letter-to-word matching).
+  sample is the private Artifact page "FVI Exercise Sample".
+- **Starter exercises** (decision #47, asked by the institute): 283, from its book's marks. In the
+  sound lessons, "letters" (b___d with its sound, /e/ · Short E; never a choice that makes that
+  sound anywhere in the book) and "silent" (talk: which letter is silent?); in the speaking
+  lessons, the approved kinds. They are in the export and the app; their sample is the private
+  Artifact page "FVI Starter Exercises" (`exercise_sample.py --starter`), **waiting for approval**
+  (question 94). The approved levels' exercises must stay byte for byte the same: compare the
+  export of the nine levels before and after any change to `exercises.py`.
 - **The app is in English** (decision #45): nothing in Arabic unless the student picks Arabic
   with the button on the course screen (kept with `shared_preferences`); then the interface, the
   exercise instructions and the Arabic grammar notes are Arabic. The button shows "العربية" in

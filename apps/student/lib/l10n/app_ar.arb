@@ -81,5 +81,7 @@
   "exercisesDone": "انتهت تمارين الدرس.",
   "allRight": "كلها صحيحة.",
   "doAgain": "أعد التمارين",
-  "backToLesson": "العودة إلى الدرس"
+  "backToLesson": "العودة إلى الدرس",
+  "howLetters": "اختر الحروف التي تكمل الكلمة",
+  "howSilent": "أيّ حرف لا يُنطق؟"
 }

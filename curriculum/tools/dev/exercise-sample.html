@@ -1,8 +1,8 @@
-<title>FVI Exercise Sample</title>
+<title><!--TITLE--></title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lexend:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lexend:wght@400;500;600&family=Noto+Sans:wght@600&display=swap">
 <style>
 /* Layout: one phone-width column. A note to the institute (Arabic, not part of the app), then the app itself: English unless the student picks Arabic as the app's language, the four sample lessons as tabs, and either one exercise at a time (as a student does them) or every exercise with its answer (to review). Colors and fonts are the app's (lib/src/theme.dart): Lexend for English, Cairo for Arabic. */
 :root {
@@ -94,6 +94,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 .prompt { margin: 0; font-size: 20px; line-height: 1.5; font-weight: 500; }
 .prompt .blank { display: inline-block; min-width: 3.2em; border-bottom: 2.5px solid var(--orange); margin: 0 2px; }
 .example { margin: 0; font-size: 14.5px; color: var(--muted); }
+.sound { margin: 0; font-family: "Lexend", "Noto Sans", sans-serif; font-size: 15px; font-weight: 600; color: var(--k); direction: ltr; text-align: left; }
 .choices { display: grid; gap: 8px; }
 .choice {
   appearance: none; cursor: pointer; text-align: left; background: var(--card); border: 1.5px solid var(--line); border-radius: 12px;
@@ -144,18 +145,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 </style>
 
 <main>
-  <section class="intro" dir="rtl" lang="ar">
-    <div>
-      <div class="eyebrow">معهد الرؤية المستقبلية · تطبيق الطالب</div>
-      <h1>عيّنة التمارين<span>كلها مأخوذة من نصوص الكتب المعتمدة، بلا نص جديد</span></h1>
-    </div>
-    <ul class="facts"><!--FACTS--></ul>
-    <ol class="ask">
-      <li><b>1</b><span>هل أنواع التمارين مناسبة: أسئلة الفهم، ومعاني الكلمات والتعابير، وإكمال الجملة كما في القصة، والرد المناسب، وترتيب الكلمات؟</span></li>
-      <li><b>2</b><span>لغة التطبيق الإنجليزية، ولا تظهر العربية إلا إذا اختارها الطالب لغةً للتطبيق. جرّبوا زر <bdi>English | العربية</bdi> أسفل هذه البطاقة.</span></li>
-    </ol>
-    <p class="note">هذه البطاقة رسالة إليكم وليست من التطبيق. في التطبيق يكون زر التمارين في آخر كل درس، والإجابات هنا لا تُحفظ.</p>
-  </section>
+<!--INTRO-->
 
   <div class="app" id="app">
     <div class="bar-top">
@@ -182,7 +172,8 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
   const UI = {
     en: {
       how: { question: 'Choose the right answer.', meaning: 'What does this word mean?', idiom: 'What does this mean?',
-             form: 'Complete the sentence as in the story.', reply: 'Choose the right reply.', order: 'Put the words in order.' },
+             form: 'Complete the sentence as in the story.', reply: 'Choose the right reply.', order: 'Put the words in order.',
+             letters: 'Which letters complete the word?', silent: 'Which letter is silent?' },
       play: 'Try it', review: 'All exercises', language: 'App language', lesson: 'Lesson', of: 'of', lessons: 'Lessons',
       check: 'Check', next: 'Next', score: 'See your score', right: 'Right!', answer: 'The right answer:',
       done: 'You finished the exercises of this lesson.', allRight: 'All right!',
@@ -190,7 +181,8 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     },
     ar: {
       how: { question: 'اختر الجواب الصحيح حسب الدرس', meaning: 'ما معنى هذه الكلمة؟', idiom: 'ما معنى هذا التعبير؟',
-             form: 'أكمل الجملة كما جاءت في القصة', reply: 'اختر الردّ المناسب', order: 'رتّب الكلمات لتكوّن العبارة' },
+             form: 'أكمل الجملة كما جاءت في القصة', reply: 'اختر الردّ المناسب', order: 'رتّب الكلمات لتكوّن العبارة',
+             letters: 'اختر الحروف التي تكمل الكلمة', silent: 'أيّ حرف لا يُنطق؟' },
       play: 'جرّب', review: 'كل التمارين', language: 'لغة التطبيق', lesson: 'الدرس', of: 'من', lessons: 'الدروس',
       check: 'تحقّق', next: 'التالي', score: 'النتيجة', right: 'صحيح', answer: 'الجواب الصحيح:',
       done: 'انتهت تمارين الدرس.', allRight: 'كلها صحيحة.',
@@ -198,8 +190,9 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     },
   };
   const LABELS = { question: 'Questions', meaning: 'New words', idiom: 'Idioms, proverbs and phrases',
-                   form: 'Grammar', reply: 'Useful phrases', order: 'Useful phrases' };
-  const COLORS = { story: '--orange', topic: '--navy', conversation: '--green' };
+                   form: 'Grammar', reply: 'Useful phrases', order: 'Useful phrases',
+                   letters: 'Sounds and letters', silent: 'Silent letters' };
+  const COLORS = { story: '--orange', topic: '--navy', conversation: '--green', phonics: '--orange', speaking: '--green' };
   const state = { lesson: 0, mode: 'play', lang: 'en', index: 0, right: 0, answered: false };
   const app = document.getElementById('app');
   const view = document.getElementById('view');
@@ -217,7 +210,9 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 
   function promptOf(ex) {
     const p = el('p', 'prompt en');
-    if (ex.kind === 'form') {
+    if (ex.kind === 'letters') {  // a word: no spaces around its gap
+      p.append(ex.before, el('span', 'blank'), ex.after);
+    } else if (ex.kind === 'form') {
       p.append(ex.before ? ex.before + ' ' : '', el('span', 'blank'), ex.after ? ' ' + ex.after : '');
     } else {
       p.textContent = ex.prompt;
@@ -276,6 +271,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     if (ex.kind === 'order') {
       if (ex.prompt) card.append(el('p', 'example en', ex.prompt));
     } else {
+      if (ex.sound) card.append(el('p', 'sound', ex.sound));
       card.append(promptOf(ex));
       if (ex.example) card.append(el('p', 'example en', ex.example));
     }
@@ -376,6 +372,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
         item.append(el('p', 'prompt en', ex.words.join('  /  ')));
         ul.append(el('li', 'ok', ex.answer));
       } else {
+        if (ex.sound) item.append(el('p', 'sound', ex.sound));
         item.append(promptOf(ex));
         if (ex.example) item.append(el('p', 'example en', ex.example));
         ex.choices.forEach((c, i) => ul.append(el('li', i === ex.answer ? 'ok' : '', c)));

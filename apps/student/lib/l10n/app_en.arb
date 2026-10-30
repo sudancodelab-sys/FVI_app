@@ -33,5 +33,7 @@
   "exercisesDone": "You finished the exercises of this lesson.",
   "allRight": "All right!",
   "doAgain": "Do them again",
-  "backToLesson": "Back to the lesson"
+  "backToLesson": "Back to the lesson",
+  "howLetters": "Which letters complete the word?",
+  "howSilent": "Which letter is silent?"
 }
