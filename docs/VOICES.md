@@ -7,6 +7,26 @@ themselves are in `curriculum/voices.yaml`.
 ## Status (30 October 2026)
 
 - Not started: the voice generator and the voice sample.
+- **Gemini works** (checked 30 October, the institute added `GEMINI_API_KEY` to the
+  environment; never write the key in the repo). `generativelanguage.googleapis.com` is open,
+  `huggingface.co` and `ai.google.dev` (Google's docs) are still refused. What was tried:
+  - Text to speech: `gemini-3.8-flash-tts` (newest; once 503 "high demand", then fine; answers
+    `audio/wav`, 24 kHz mono), `gemini-3.8-flash-lite-tts`, `gemini-3.1-flash-tts-preview` and
+    `gemini-2.5-flash-preview-tts` (answer raw `audio/L16` PCM, 24 kHz). Voices are Gemini's
+    (Kore, Charon, ...), not Kokoro's, so `voices.yaml` needs Gemini names if it is chosen.
+    There is no speed setting: the pace is asked for in the prompt.
+  - Two speakers in one request: the 2.5 and 3.1 models take `Sara: ...` lines and
+    `multiSpeakerVoiceConfig`; 3.8 refuses that (400) and needs one text part per line with
+    `"speechMetadata": {"speaker": "Sara"}`.
+  - Speech recognition for the checks: `gemini-3.5-transcribe` (about 2 s a clip; the text is in
+    `parts[].audioTranscription.text`). It heard all five test clips word for word, Khartoum,
+    Omdurman and Port Sudan included. `gemini-2.5-flash` is closed to new users.
+  - The key is on the **free tier**: 3 requests a minute per model (the 429 names
+    `generate_content_free_tier_requests`, limit 3). The daily limit is not known. Audio costs
+    25 tokens a second.
+- **Size of the run:** the export has 4,077 clips (3,987 distinct) and 42,165 words. At one
+  request a clip and 3 a minute, that is about 22 hours of speech requests and 22 more of
+  checks, before any daily limit; the full run needs a paid tier (or grouped requests).
 - **Blocked by the network:** `huggingface.co`, where Kokoro's model and voices are, was refused
   (403) in the session that wrote this, although the institute had allowed it in the
   environment settings. Check first:

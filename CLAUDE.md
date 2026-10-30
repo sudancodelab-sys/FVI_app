@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 85:** …`); the last one asked was 84, so continue from 85.
+  (`**السؤال 87:** …`); the last one asked was 86, so continue from 87.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -47,7 +47,8 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   every kind of lesson, the Arabic note box, the play buttons and the one `Speaker`. The
   screen design is approved. No audio yet.
 - **Next: the voices.** Everything is in `docs/VOICES.md` and `curriculum/voices.yaml`. It
-  was blocked by the network (`huggingface.co`); check it first.
+  was blocked by the network (`huggingface.co`, still refused). A Gemini key is now in the
+  environment and works (free tier, 3 requests a minute); what was tested is in VOICES.md.
 - **After the voices**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK
