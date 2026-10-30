@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 87:** …`); the last one asked was 86, so continue from 87.
+  (`**السؤال 91:** …`); the last one asked was 90, so continue from 91.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -41,17 +41,19 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 - **All ten books are approved:** Starter 36 pages, Pre-Intermediate 1-4 21/22/23/23,
   Intermediate 1-2 28/29, Advanced 1-3 31/36/37. Source in `curriculum/english/<level>/`;
   `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #42).
-- **The app plan is approved:** `docs/APP-PLAN.md` (ten levels, natural voices with a man and a
-  woman in conversations, a speed per level, every clip tied to its text, one player).
+- **The app plan is approved:** `docs/APP-PLAN.md` (ten levels, one player), **except its audio:**
+  decision #44 (30 October 2026) stopped the voices. The app is text only, with exercises in
+  place of the audio clips. Do not generate audio.
 - **The student app** (`apps/student`, Flutter): the course, level and lesson screens for
   every kind of lesson, the Arabic note box, the play buttons and the one `Speaker`. The
   screen design is approved. No audio yet.
-- **The voices:** the generator (`curriculum/tools/voices.py`) works without Hugging Face (the
-  models come from GitHub). The institute **approved the voices** (sample: private Artifact page
-  "FVI Voice Sample"). The first full run found clips missing the start of their first word; the
-  cut is fixed and the full run is being made again (`docs/VOICES.md`, Status). The clips and
-  `manifest.json` go in `apps/student/assets/audio/` once every check passes.
-- **After the voices**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
+- **The voices are stopped** (decision #44). The generator (`curriculum/tools/voices.py`), the
+  `Speaker` and `docs/VOICES.md` stay in the repo, unused, in case the institute returns to audio.
+- **Next: exercises in the app**, made only from the approved books' content (comprehension
+  questions and answers, new words, idioms, useful phrases); the books stay without exercises
+  (#28). The plan was sent in Arabic (questions 89, 90); waiting for its approval, then a sample
+  lesson, then the play buttons come out of the lesson screens.
+- **After the exercises**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK
   build on GitHub Actions, and tests for the `Speaker`.

@@ -6,6 +6,10 @@ themselves are in `curriculum/voices.yaml`.
 
 ## Status (30 October 2026, third session)
 
+- **Stopped.** The institute decided there is no audio in the app (decision #44 in
+  `docs/REQUIREMENTS.md`): the app is text only, with exercises instead. Nothing below is to be
+  run unless the institute asks for audio again. No clip was committed.
+
 - **The institute approved the voices**, the speeds and the names (the sample, the private Artifact
   page "FVI Voice Sample"). Questions 85 and 86 are answered.
 - **The first full run** (3975 files, 83 minutes to make) was stopped while being heard: about 1
