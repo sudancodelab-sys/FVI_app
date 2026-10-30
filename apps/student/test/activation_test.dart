@@ -38,6 +38,7 @@ void main() {
     await a.load();
     await a.saveProfile(const StudentProfile(name: 'Ahmed Mohamed', phone: '0912345678', level: starter));
     expect(a.activated, isFalse);
+    expect(a.whatsappUri('hi').toString(), 'https://wa.me/249904011473?text=hi'); // the institute's number
 
     expect(await a.apply(await codeFor(a)), isNull);
     expect(a.canOpen(starter), isTrue);

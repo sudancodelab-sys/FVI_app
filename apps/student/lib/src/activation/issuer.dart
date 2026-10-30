@@ -13,10 +13,10 @@ List<int> get issuerPublicKey {
   return [for (var i = 0; i < hex.length; i += 2) int.parse(hex.substring(i, i + 2), radix: 16)];
 }
 
-/// The institute's WhatsApp number until a code brings the current one:
-/// `--dart-define=FVI_WHATSAPP=249912345678`. Without it, "Request on
-/// WhatsApp" lets the student choose the chat.
-const defaultWhatsappNumber = String.fromEnvironment('FVI_WHATSAPP');
+/// The institute's WhatsApp number (0904011473, with Sudan's 249 for
+/// wa.me), until a code brings a newer one. A build may pass another with
+/// `--dart-define=FVI_WHATSAPP=<number>`.
+const defaultWhatsappNumber = String.fromEnvironment('FVI_WHATSAPP', defaultValue: '249904011473');
 
 /// The version sent with an activation request; as in pubspec.yaml.
 const appVersion = '0.1.0';

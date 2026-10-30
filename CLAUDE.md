@@ -40,7 +40,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 
 - **All ten books are approved:** Starter 36 pages, Pre-Intermediate 1-4 21/22/23/23,
   Intermediate 1-2 28/29, Advanced 1-3 31/36/37. Source in `curriculum/english/<level>/`;
-  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #46).
+  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #48).
 - **The app plan is approved:** `docs/APP-PLAN.md` (ten levels, one player), **except its audio:**
   decision #44 (30 October 2026) stopped the voices. The app is text only, with exercises in
   place of the audio clips. Do not generate audio.
@@ -66,8 +66,8 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   with the button on the course screen (kept with `shared_preferences`); then the interface, the
   exercise instructions and the Arabic grammar notes are Arabic. The button shows "العربية" in
   its own script.
-- **Activation and encrypted content** (built, **waiting for approval**: question 96; the
-  institute's WhatsApp number is question 97). `tools/content_builder` (Dart) encrypts each level
+- **Activation and encrypted content** (decision #48, **approved**; the institute's WhatsApp is
+  0904011473, in the app as `249904011473` in `lib/src/activation/issuer.dart`). `tools/content_builder` (Dart) encrypts each level
   of the export with its own key (`<slug>.fvc`; `index.json` stays readable for the course list
   and its locks). The app (`lib/src/activation/`, `screens/gate.dart`, `screens/onboarding/`)
   follows `docs/design/screens/1-student-onboarding.png`: welcome and language (English first),
