@@ -27,6 +27,8 @@ flutter:
   assets:
     # Written by curriculum/tools/export_app.py; not committed.
     - assets/content/
+    # Written by curriculum/tools/voices.py: the clips and their manifest.
+    - assets/audio/
   fonts:
     # Arabic and the interface.
     - family: Cairo

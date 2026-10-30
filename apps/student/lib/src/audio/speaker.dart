@@ -24,13 +24,14 @@ class Speaker extends ChangeNotifier {
 
   static const manifestPath = 'assets/audio/manifest.json';
 
-  /// The pause between two clips when a whole lesson is played.
+  /// The pause between two clips when a whole lesson is played. A podcast
+  /// line has none: its clip already runs to the next line's printed time.
   static const gap = Duration(milliseconds: 450);
 
   final AssetBundle _bundle;
   final AudioPlayer _player;
   late final StreamSubscription<ProcessingState> _subscription;
-  Map<String, String>? _files;
+  Map<String, _Clip>? _clips;
 
   List<Spoken> _queue = const [];
   int _index = -1;
@@ -70,15 +71,15 @@ class Speaker extends ChangeNotifier {
     if (generation != _generation) return;
     if (_index >= _queue.length) return _clear();
     final item = _queue[_index];
-    final file = (await _manifest())[item.id];
+    final clip = (await _manifest())[item.id];
     if (generation != _generation) return;
-    if (file == null) {
+    if (clip == null) {
       _clear();
       onMissing?.call(item);
       return;
     }
     try {
-      await _player.setAudioSource(AudioSource.asset(file));
+      await _player.setAudioSource(AudioSource.asset(clip.asset));
       if (generation != _generation) return;
       unawaited(_player.play());
     } on PlayerInterruptedException {
@@ -93,8 +94,10 @@ class Speaker extends ChangeNotifier {
   Future<void> _advance(int generation) async {
     if (generation != _generation || _queue.isEmpty) return;
     if (_index + 1 >= _queue.length) return _clear();
-    await Future<void>.delayed(gap);
-    if (generation != _generation) return;
+    if (!(_clips?[_queue[_index].id]?.timed ?? false)) {
+      await Future<void>.delayed(gap);
+      if (generation != _generation) return;
+    }
     _index++;
     notifyListeners();
     await _start(generation);
@@ -106,16 +109,16 @@ class Speaker extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<Map<String, String>> _manifest() async {
-    if (_files != null) return _files!;
+  Future<Map<String, _Clip>> _manifest() async {
+    if (_clips != null) return _clips!;
     try {
       final json = jsonDecode(await _bundle.loadString(manifestPath)) as Map<String, dynamic>;
-      return _files = {
+      return _clips = {
         for (final e in (json['clips'] as Map<String, dynamic>).entries)
-          e.key: 'assets/audio/${(e.value as Map<String, dynamic>)['file']}',
+          e.key: _Clip.fromJson(e.value as Map<String, dynamic>),
       };
     } on FlutterError {
-      return _files = const {};
+      return _clips = const {};
     }
   }
 
@@ -127,15 +130,23 @@ class Speaker extends ChangeNotifier {
   }
 }
 
+/// One clip of the manifest.
+class _Clip {
+  _Clip.fromJson(Map<String, dynamic> json) : asset = 'assets/audio/${json['file']}', timed = json['slot'] != null;
+
+  final String asset;
+
+  /// A podcast line, padded with silence up to the next line's time.
+  final bool timed;
+}
+
 /// Gives every screen the one [Speaker].
 class SpeakerScope extends InheritedNotifier<Speaker> {
   const SpeakerScope({super.key, required Speaker speaker, required super.child}) : super(notifier: speaker);
 
   /// The speaker, rebuilding [context] whenever the clip changes.
-  static Speaker of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<SpeakerScope>()!.notifier!;
+  static Speaker of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<SpeakerScope>()!.notifier!;
 
   /// The speaker, without rebuilding [context].
-  static Speaker read(BuildContext context) =>
-      context.getInheritedWidgetOfExactType<SpeakerScope>()!.notifier!;
+  static Speaker read(BuildContext context) => context.getInheritedWidgetOfExactType<SpeakerScope>()!.notifier!;
 }

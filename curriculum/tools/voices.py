@@ -134,16 +134,16 @@ def _timed():
 
 _MONTHS = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
            'September', 'October', 'November', 'December')
-_CLOCK = re.compile(r'\b(\d{1,2}):(\d\d)\b')
+_CLOCK = re.compile(r'\b(\d{1,2}):(\d\d)\b(?=(\s*[ap]\.m\.)?)')
 _DATE = re.compile(rf'\b({"|".join(_MONTHS)}) (\d{{1,2}})\b(?!:)')
 _SLASH = re.compile(r'\s+/\s+')
 
 
 def _clock(m):
-    """7:50 -> seven fifty, 8:00 -> eight o'clock, 9:05 -> nine oh five"""
+    """7:50 -> seven fifty, 8:00 -> eight o'clock, 9:05 -> nine oh five, 11:00 p.m. -> eleven p.m."""
     hour, minute = num2words(int(m.group(1))), int(m.group(2))
     if minute == 0:
-        return f"{hour} o'clock"
+        return hour if m.group(3) else f"{hour} o'clock"
     return f'{hour} {"oh " if minute < 10 else ""}{num2words(minute)}'
 
 
@@ -379,6 +379,7 @@ _ABBR = {'mr': 'mister', 'mrs': 'missus', 'ms': 'miz', 'dr': 'doctor', 'ok': 'ok
 def words(text):
     """Text as comparable words: lower case, numbers and times in words."""
     text = _CLOCK.sub(_clock, text).replace('%', ' percent').replace('&', ' and ')
+    text = re.sub(r'\b([ap])\.\s?m\.', r'\1m', text, flags=re.I)  # p.m. -> pm, as Whisper writes it
     text = re.sub(r'(\d),(\d{3})', r'\1\2', text)
     text = re.sub(r'\b(\d+)(st|nd|rd|th)\b', lambda m: num2words(int(m.group(1)), to='ordinal'), text)
     text = re.sub(r'\b(1[1-9]|20)(\d\d)\b', lambda m: num2words(int(m.group(0)), to='year'), text)
@@ -423,8 +424,22 @@ class Ear:
             encoder=str(d / 'small.en-encoder.int8.onnx'), decoder=str(d / 'small.en-decoder.int8.onnx'),
             tokens=str(d / 'small.en-tokens.txt'), language='en', task='transcribe', num_threads=threads)
 
+    LONGEST = 25 * 16000  # Whisper hears 30 s at most
+
     def hear(self, path):
         audio = _decode(path, 16000)
+        parts = []
+        while len(audio) > self.LONGEST:
+            # Cut a long paragraph in its quietest moment between 15 and 25 s.
+            frames = audio[15 * 16000:self.LONGEST]
+            loud = np.sqrt((frames[:len(frames) // 160 * 160].reshape(-1, 160) ** 2).mean(1))
+            cut = 15 * 16000 + int(np.argmin(np.convolve(loud, np.ones(5), 'same'))) * 160
+            parts.append(audio[:cut])
+            audio = audio[cut:]
+        parts.append(audio)
+        return ' '.join(self._hear(p) for p in parts)
+
+    def _hear(self, audio):
         # A second of silence on each side: Whisper hears short clips better.
         quiet = np.zeros(16000, np.float32)
         stream = self.rec.create_stream()
@@ -434,7 +449,11 @@ class Ear:
 
 
 def check_heard(clips, out, cfg, problems, threads, cache, log=print):
-    """Check 3: Whisper hears the text. cache: what was heard before, by file."""
+    """Check 3: Whisper hears the text.
+
+    cache: what was heard before, by file. What is heard is added to the
+    report file as it goes, so a stopped run starts again where it stopped.
+    """
     names = {w.lower() for n in [*cfg.get('listen_for', []), *cfg['cast'], *cfg.get('pronounce', {}),
                                  *[s for g in cfg['gender'].values() for s in g]] for w in n.split()}
     ear = None
@@ -451,6 +470,8 @@ def check_heard(clips, out, cfg, problems, threads, cache, log=print):
                 done = len(heard) - sum(1 for f in heard if f in cache)
                 if done % 25 == 0 or done == len(todo):
                     log(f'  {done}/{len(todo)} clips heard ({time.time() - start:.0f} s)')
+                    REPORT.parent.mkdir(parents=True, exist_ok=True)
+                    REPORT.write_text(json.dumps({'heard': {**cache, **heard}}, ensure_ascii=False), encoding='utf-8')
         ref, got = words(c.text), words(heard[c.file])
         e = errors(ref, got, names)
         c.heard, c.errors = heard[c.file], e
