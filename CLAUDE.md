@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 106:** …`); the last one asked was 105, so continue from 106.
+  (`**السؤال 107:** …`); the last one asked was 106, so continue from 107.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -112,8 +112,14 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   `keys/prod/fvi-release.jks` (ignored) and write `apps/<app>/android/key.properties` (ignored)
   from the README. Never commit it. Without key.properties a release is debug-signed (CI does
   that as a check: `.github/workflows/ci.yml` analyzes, tests and builds both APKs).
-- **Then:** the institute's first install on real phones (question 104), and `FLAG_SECURE`
-  where REQUIREMENTS 5.7 asks (the admin's backup and keys screens; question 105).
+- **First install on real phones: done** (30 October 2026, the institute: "تم بنجاح").
+- **The launch post** (sample sent; question 106 asks for approval): a Facebook image (1080×1350)
+  and a WhatsApp status (1080×1920) with the real app screens, and their captions, on the private
+  Artifact page "FVI Launch Post". Made by `docs/launch-post/make_ad.py` and `render.js` (into
+  `build/launch-post/`); the screens in `docs/launch-post/screens/` come from the student web build
+  in Arabic with every level open (a test code from `content_builder issue` with no `--level`).
+- **Then:** `FLAG_SECURE` where REQUIREMENTS 5.7 asks (the admin's backup and keys screens;
+  question 105, not answered yet).
 
 ## Commands
 
