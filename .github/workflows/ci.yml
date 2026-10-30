@@ -10,12 +10,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
+      # The pub workspace holds the Flutter apps too, so it needs Flutter's pub.
+      - uses: subosito/flutter-action@v2
         with:
-          sdk: 3.13.7
-      - run: dart pub get
+          flutter-version: 3.47.8
+          channel: stable
+      - run: flutter pub get
       - run: dart format --output=none --set-exit-if-changed packages/fvi_core
       - run: dart analyze --fatal-infos
         working-directory: packages/fvi_core
       - run: dart test
         working-directory: packages/fvi_core
+
+  apps:
+    name: ${{ matrix.app }} app — analyze, test & APK
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [student, admin]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.8
+          channel: stable
+      - run: pip install pyyaml jinja2
+      - run: flutter pub get
+      # The levels from the approved books, encrypted with the keys of keys/dev (decision #49).
+      - run: python3 curriculum/tools/export_app.py --out build/content
+      - run: dart run content_builder build
+      - run: flutter analyze
+        working-directory: apps/${{ matrix.app }}
+      - run: flutter test
+        working-directory: apps/${{ matrix.app }}
+      # Signed with the runner's debug key: a check that the app builds, not a release.
+      - run: flutter build apk --release
+        working-directory: apps/${{ matrix.app }}
