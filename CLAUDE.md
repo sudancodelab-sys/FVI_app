@@ -47,8 +47,10 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   every kind of lesson, the Arabic note box, the play buttons and the one `Speaker`. The
   screen design is approved. No audio yet.
 - **The voices:** the generator (`curriculum/tools/voices.py`) works without Hugging Face (the
-  models come from GitHub). The voice sample is on the private Artifact page "FVI Voice Sample",
-  **waiting for approval** (questions 85, 86). Then the full run: `docs/VOICES.md`.
+  models come from GitHub). The institute **approved the voices** (sample: private Artifact page
+  "FVI Voice Sample"). The first full run found clips missing the start of their first word; the
+  cut is fixed and the full run is being made again (`docs/VOICES.md`, Status). The clips and
+  `manifest.json` go in `apps/student/assets/audio/` once every check passes.
 - **After the voices**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK

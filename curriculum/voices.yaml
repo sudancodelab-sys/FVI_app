@@ -57,9 +57,11 @@ gender:
   advanced-3: {Mona: female, Rania: female, Dr. Kamal: male, Dr. Malik: male, Amir: male,
                Ms. Layla: female, Dr. Nabil: male, Dr. Amira: female}
 
-# Places and names to check by ear; Kokoro accepts a pronunciation as
-# [word](/IPA/) if one comes out wrong.
-listen_for: [Khartoum, Omdurman, Kassala, Gezira, Port Sudan, Wadi Howar, Gash, Huda, Omar, Tarig, Rania]
+# Places, names and words Whisper does not know, so it may spell them its
+# own way: the check compares them loosely. Kokoro accepts a pronunciation
+# as [word](/IPA/) if one comes out wrong.
+listen_for: [Khartoum, Omdurman, Kassala, Gezira, Port Sudan, Wadi Howar, Gash, Huda, Omar, Tarig, Rania,
+             Eid, Meroe, Lina, rickshaw]
 
 # How to say the names the dictionary does not know, or says the English
 # way. In the phonemes of Kokoro (misaki): A = ay, I = eye, O = oh,

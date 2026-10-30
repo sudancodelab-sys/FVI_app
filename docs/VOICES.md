@@ -4,12 +4,15 @@ The plan the institute approved is `docs/APP-PLAN.md` (Arabic). This is the
 technical side, written so a new session can start at once. The voices
 themselves are in `curriculum/voices.yaml`.
 
-## Status (30 October 2026, second session)
+## Status (30 October 2026, third session)
 
-- **Done:** the generator `curriculum/tools/voices.py` with its three checks, and the voice sample
-  (`curriculum/tools/dev/voice_sample.py`), sent to the institute on the private Artifact page
-  "FVI Voice Sample" (41 clips, all checks passed). **Waiting for the institute to approve the
-  voices, the speeds and the names' pronunciation (questions 85 and 86) before the full run.**
+- **The institute approved the voices**, the speeds and the names (the sample, the private Artifact
+  page "FVI Voice Sample"). Questions 85 and 86 are answered.
+- **The first full run** (3975 files, 83 minutes to make) was stopped while being heard: about 1
+  clip in 20 had lost the start of its first word (see "What was learned"). The generator now cuts
+  in the quiet before the first word and makes other takes of a clip heard wrong. **Next:** the full
+  run again, then commit `apps/student/assets/audio/` (clips and `manifest.json`) once every check
+  passes. Open: the four podcast lines longer than their printed time (question 87).
 - **Hugging Face is still closed** (403 from the proxy). The generator does not need it any more:
   the same Kokoro v1.0 files are GitHub release assets (kokoro-onnx `model-files-v1.0`), and
   Whisper small.en comes from sherpa-onnx's GitHub releases. `--setup` downloads and checks them
@@ -28,23 +31,40 @@ themselves are in `curriculum/voices.yaml`.
 ### What was learned
 
 - **Kokoro mangles the first sound of a text.** A word alone came out as "Zomar" for Omar,
-  "Lappin'" for up; Whisper heard half the Starter words wrong. Punctuation in front or another
-  style vector did not help. What works: say a lead-in ("Here it is.") first and cut it off. The
-  cut must be exact, so `--setup` makes a copy of the model that also outputs the length of every
-  sound (the duration predictor, `/encoder/Clip_output_0`, as output `duration`, in frames of
-  600 samples); kokoro-onnx then gives timings, and the clip starts in the middle of the pause
-  after the lead-in. With it, every Starter word and short answer is heard right.
-- **Whisper on one word** adds articles ("A cat.") and hears names as words ("cartoon" for
-  Khartoum). Names compare loosely (`listen_for`, `cast`, `pronounce`, the people of `gender`).
+  "Lappin'" for up. Punctuation in front or another style vector did not help. What works: say a
+  lead-in ("Here it is.") first and cut it off. `--setup` makes a copy of the model that also
+  outputs the length of every sound (the duration predictor, `/encoder/Clip_output_0`, as output
+  `duration`, in frames of 600 samples); kokoro-onnx then gives timings.
+- **But the timings run late, and the cut must not trust them.** The sounds come out 30 to 100 ms
+  before their times, and many voices (am_onyx, am_puck, am_eric, am_liam, and often am_michael)
+  run the lead-in straight into the text with no pause at all. The first full run cut in the
+  middle of the timed pause and lost the start of the first word in about 1 clip in 20: "time is
+  it?" for "What time is it?", "tab" for "cab", "prised" for "Surprised". kokoro-onnx's own pause
+  lengthening made it worse: it lengthens the quiet nearest a mark, which can be the stop of the
+  next word (the k of "OK"). Now the generator synthesizes with no added pauses, cuts at the
+  quietest 10 ms between the lead-in's last sound and the text's first (by the timings, which
+  only say where to look), and lengthens a pause only in quiet that starts before the next
+  word's first sound. On 230 flagged clips this fixed 67 and broke none of 80 good ones.
+- **Takes.** "Here it is." ends in z, which can run into an s or sh ("or anything else" for "Sure.
+  Anything else?"). A clip Whisper hears wrong is made again: after "Here you are.", then cut
+  where the hiss of its first sound starts, until one take is heard right (`Voice.TAKES`).
+- **Whisper on one word** hears its vowel a step lower: sit as set, set as sat, bed as bad
+  (8 of 38 Starter words right, even words said right). After "The word is" in the same voice it
+  hears 32 of 38, so a one-word clip is heard after that carrier. It also adds articles ("A cat.")
+  and hears names as words ("cartoon" for Khartoum): names and words it does not know compare
+  loosely (`listen_for`, `cast`, `pronounce`, the people of `gender`), and the comparison accepts
+  what is said the same (two/too, café/cafe, 830 for eight thirty, £1,500 for fifteen hundred
+  pounds).
 - **Clip length:** at speed 1, about 60 ms a sound, 165 ms for each sentence end or comma, plus
   135 ms. The check allows 0.5 to 2 times that (the three test lessons were within 0.7 to 1.45).
 - **Speed:** about 3.5 times faster than real time to make, 2.5 times to hear, on 4 cores: the
   full run (about 5 hours of audio) takes about 3.5 hours; clips already made are kept (named by
   hash), and what Whisper heard is kept in the report, so a second run only does what changed.
-- **Podcasts:** one line is already too long for its printed time: advanced-3/08/script.1
-  (Adam, "And I'm Adam. Today we're talking about fake news…") takes 8.6 s, and the book gives it
-  8 s (00:05 to 00:13). The full run will list every such line; the institute decides (a later
-  time in the book, or a shorter line).
+- **Podcasts:** a line a little long for its printed time gives up its own end silence. Four
+  lines are still longer than their time (measured with the cut above): advanced-1/10/script.11
+  (+0.14 s), advanced-2/08/script.0 (+0.44 s), advanced-3/08/script.0 (+0.06 s) and
+  advanced-3/08/script.1 (+0.52 s). The institute decides (question 87): let the next line start
+  that much late, or a later time in the book, or a shorter line.
 
 ## Generator: `curriculum/tools/voices.py`
 

@@ -33,6 +33,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
 
@@ -55,7 +56,7 @@ CACHE = Path(os.environ.get('FVI_VOICES_CACHE', Path.home() / '.cache' / 'fvi-vo
 RATE = 24000          # Kokoro's sample rate
 HEAD, TAIL = 50, 100  # ms of silence around every clip, so no player cuts a sound
 # Part of every clip's name: another engine makes new clips.
-ENGINE = 'kokoro-v1.0 misaki-0.9.4 lead-in'
+ENGINE = 'kokoro-v1.0 misaki-0.9.4 lead-in cut-in-quiet'
 
 # Hugging Face is closed to the build environment; the same files are on GitHub.
 _GH = 'https://github.com'
@@ -165,42 +166,122 @@ def _possessive(ipa):
     return ipa + ('s' if ipa[-1] in 'ptkfθ' else 'z')
 
 
+_FRAME = RATE // 100     # 10 ms
+_QUIET = 10 ** (-40 / 20)  # a 10 ms this far below the loudest is part of a pause
+_SKIP = set(' ˈˌ"“”()')   # in the timings, but not sounds
+
+
+def _loudness(audio, frame=_FRAME):
+    n = len(audio) // frame
+    loud = np.sqrt((audio[:n * frame].reshape(n, frame) ** 2).mean(1))
+    return loud / loud.max()
+
+
+def _quiet_runs(audio):
+    """The pauses of the audio, as (first, last + 1) in 10 ms."""
+    quiet = np.concatenate([[False], _loudness(audio) <= _QUIET, [False]])
+    edges = np.flatnonzero(np.diff(quiet.astype(np.int8)))
+    return list(zip(edges[::2], edges[1::2]))
+
+
 class Voice:
     """Kokoro, with misaki's American English G2P and the fixes of voices.yaml.
 
     Kokoro says the first sound of a text badly: a word on its own often
     comes out with a sound in front ("Zomar" for Omar). So every text is
-    said after a lead-in sentence, which is cut off at the pause between
-    them, where the model's own sound lengths put it.
+    said after a lead-in sentence and cut from it at the quietest 10 ms
+    between the lead-in's last sound and the text's first. The model's sound
+    lengths only say where to look: its sounds come out a little before
+    their times, so a cut at a time itself takes the start of the next word
+    ("time is it?" for "What time is it?", "tab" for "cab").
+
+    "Here it is." ends in a z, which can run into an s or sh. A clip the
+    speech check hears wrong is made again in other takes: after
+    "Here you are.", or cut where the hiss of its first sound starts.
     """
 
-    LEAD_IN = 'Here it is.'
+    LEAD_INS = ('Here it is.', 'Here you are.')
+    TAKES = ((0, 'quiet'), (1, 'quiet'), (1, 'hiss'), (0, 'hiss'))  # (lead-in, cut)
 
     def __init__(self, cfg):
         from kokoro_onnx import Kokoro
+        from kokoro_onnx.chunker import CLAUSE_MARKS, SENTENCE_MARKS
         from kokoro_onnx.trim import trim
         from misaki import en, espeak
         self.g2p = en.G2P(trf=False, british=False, fallback=espeak.EspeakFallback(british=False))
         self.kokoro = Kokoro(str(_timed()), str(CACHE / 'voices-v1.0.bin'))
         self.trim = trim
+        self.marks = {**{m: 'sentence' for m in SENTENCE_MARKS}, **{m: 'clause' for m in CLAUSE_MARKS}}
         pron = cfg.get('pronounce', {})
         self.fixes = [(re.compile(rf"\b{re.escape(w)}('s)?\b"), ipa) for w, ipa in pron.items()]
-        self.lead_in = self.g2p(self.LEAD_IN)[0] + ' '
+        self.lead_ins = [self.g2p(t)[0] + ' ' for t in self.LEAD_INS]
 
     def phonemes(self, text):
         for pattern, ipa in self.fixes:
             text = pattern.sub(lambda m: f'[{m.group(0)}](/{_possessive(ipa) if m.group(1) else ipa}/)', text)
         return self.g2p(text)[0]
 
-    def speak(self, phonemes, voice, speed):
-        # Slower levels pause a little longer between sentences, too.
-        audio, rate, sounds = self.kokoro.create_timed(self.lead_in + phonemes, voice=voice, speed=speed,
-                                                       is_phonemes=True, sentence_pause=0.25 / speed,
-                                                       clause_pause=0.1 / speed)
+    def speak(self, phonemes, voice, speed, take=0):
+        lead, how = self.TAKES[take]
+        lead_in = self.lead_ins[lead]
+        audio, rate, sounds = self.kokoro.create_timed(lead_in + phonemes, voice=voice, speed=speed,
+                                                       is_phonemes=True, sentence_pause=0, clause_pause=0)
         assert rate == RATE
-        gap = sounds[len(self.kokoro.tokenizer.known(self.lead_in)) - 1]  # the space after the lead-in
-        audio, _ = self.trim(audio[int((gap.start + gap.end) / 2 * RATE):])
+        k = len(self.kokoro.tokenizer.known(lead_in)) - 2  # the lead-in's full stop
+        assert sounds[k].phoneme == '.', sounds[k]
+        # Slower levels pause a little longer between sentences, too.
+        audio = self._pauses(audio, sounds, k, self._cut(audio, sounds, k, how), 0.25 / speed, 0.1 / speed)
+        audio, _ = self.trim(audio)
         return audio.astype(np.float32)
+
+    def _first_sound(self, sounds, i):
+        """The first sound said after sounds[i]."""
+        return next((t for t in sounds[i + 1:] if t.phoneme not in _SKIP and t.phoneme not in self.marks), None)
+
+    def _cut(self, audio, sounds, k, how):
+        """Where the text starts: a sample between the lead-in's last sound and the text's first."""
+        last, first = sounds[k - 1], self._first_sound(sounds, k)
+        if how == 'quiet':
+            lo, hi = int(last.start * RATE) // _FRAME, int(first.start * RATE) // _FRAME
+            return (lo + int(np.argmin(_loudness(audio)[lo:hi + 1]))) * _FRAME
+        # 'hiss': 10 ms before the sound above 3.5 kHz comes within 12 dB of its loudest
+        step = _FRAME // 2
+        n = len(audio) // step
+        spectrum = np.abs(np.fft.rfft(audio[:n * step].reshape(n, step) * np.hanning(step), axis=1)) ** 2
+        hiss = spectrum[:, np.fft.rfftfreq(step, 1 / RATE) >= 3500].sum(1)
+        lo, hi = int(last.start * RATE) // step, int(first.end * RATE) // step
+        window = hiss[lo:hi + 1]
+        return max(0, lo + int(np.argmax(window >= window.max() / 16)) - 2) * step
+
+    def _pauses(self, audio, sounds, k, cut, sentence, clause):
+        """The audio from `cut`, with the pause after each mark of the text as long as its level wants.
+
+        As kokoro-onnx does, a pause is lengthened in its middle, never cut
+        into a sound. But only quiet that starts before the next word's
+        first sound (by its time, which runs late) is the pause: quiet after
+        it is a stop in that word, the k of "OK".
+        """
+        runs = _quiet_runs(audio)
+        parts, last = [], cut
+        for i in range(k + 1, len(sounds)):
+            want = {'sentence': sentence, 'clause': clause}.get(self.marks.get(sounds[i].phoneme), 0)
+            after = self._first_sound(sounds, i)
+            if not want or after is None:
+                continue
+            lo = int(sounds[i].start * RATE) // _FRAME - 15
+            hi = int(after.start * RATE) // _FRAME
+            at = int(sounds[i].end * RATE) // _FRAME
+            near = [(s, e) for s, e in runs if e > lo and s <= hi]
+            if not near:
+                continue  # the model ran straight on
+            s, e = min(near, key=lambda r: (max(r[0] - at, at - r[1] + 1, 0), r[0] - r[1]))
+            missing = want - (e - s) / 100
+            middle = (s + e) // 2 * _FRAME
+            if missing <= 0 or middle <= last:
+                continue
+            parts += [audio[last:middle], np.zeros(int(missing * RATE), np.float32)]
+            last = middle
+        return np.concatenate([*parts, audio[last:]])
 
 
 # ---------------------------------------------------------------- who says it
@@ -244,12 +325,15 @@ class Clip:
     def __init__(self, aid, text, voice, speed, slot=None):
         self.id, self.text, self.voice, self.speed = aid, text, voice, speed
         self.slot = slot  # podcast lines: ms until the next line starts
+        self.take = 0     # Voice.TAKES
         self.phonemes = None
         self.ms = self.speech_ms = None
+        self.heard = self.errors = None
 
     @property
     def file(self):
-        key = '\0'.join([ENGINE, self.voice, f'{self.speed:.2f}', self.phonemes, str(self.slot or '')])
+        key = '\0'.join([ENGINE, self.voice, f'{self.speed:.2f}', self.phonemes, str(self.slot or ''),
+                         *([str(self.take)] if self.take else [])])
         return hashlib.sha1(key.encode('utf-8')).hexdigest()[:16] + '.ogg'
 
 
@@ -307,14 +391,16 @@ def make(clips, voice, out, log=print):
     todo = {c.file: c for c in clips if not (out / c.file).exists()}
     start = time.time()
     for n, c in enumerate(todo.values(), 1):
-        audio = voice.speak(c.phonemes, c.voice, c.speed)
+        audio = voice.speak(c.phonemes, c.voice, c.speed, c.take)
         pad = np.zeros(RATE * HEAD // 1000, np.float32), np.zeros(RATE * TAIL // 1000, np.float32)
         audio = np.concatenate([pad[0], audio, pad[1]])
         if c.slot:
-            # Silence until the next line's time; a line too long for it is
+            # Silence until the next line's time. A line a little long for it
+            # gives up its own silence at the end; a line still too long is
             # left as it is, and check 2 reports it.
-            spare = RATE * c.slot // 1000 - len(audio)
-            audio = np.concatenate([audio, np.zeros(max(0, spare), np.float32)])
+            slot = RATE * c.slot // 1000
+            audio = audio[:max(slot, len(audio) - len(pad[1]))]
+            audio = np.concatenate([audio, np.zeros(max(0, slot - len(audio)), np.float32)])
         _encode(audio, out / c.file)
         if n % 25 == 0 or n == len(todo):
             log(f'  {n}/{len(todo)} clips made ({time.time() - start:.0f} s)')
@@ -374,23 +460,44 @@ def check_lengths(clips, problems, low=0.5, high=2.0):
 
 
 _ABBR = {'mr': 'mister', 'mrs': 'missus', 'ms': 'miz', 'dr': 'doctor', 'ok': 'okay', 'tv': 'tv'}
+# Words that sound the same, so Whisper may write one for the other.
+_SAME = {w: g.split()[0] for g in (
+    'to too two', 'by buy bye', 'right write', 'flu flew', 'wait weight', 'here hear', 'where wear',
+    'pair pear', 'dear deer', 'hi high', 'no know', 'see sea c', 'tea t', 'be bee b', 'for four', 'why y',
+    'you u', 'are r', 'eight ate', 'one won', 'sell cell', 'sent cent scent', 'cash cache', 'band banned',
+    'wood would', 'new knew', 'night knight', 'meet meat', 'week weak', 'sun son', 'our hour',
+    'there their', 'use used', 'pie pi') for w in g.split()}
+_DIGITS = re.compile(r'(?<![\d:.,])(?:0\d+(?:[- ]\d+)*|\d+(?:-\d+){2,})\b')  # a phone number, said digit by digit
+_HEARD_CLOCK = re.compile(r'\b([1-9]|1[0-2])([0-5][1-9]|[1-5]0)\b')  # 830: Whisper's eight thirty
 
 
-def words(text):
-    """Text as comparable words: lower case, numbers and times in words."""
+def _number(n):
+    return num2words(n).replace(' and ', ' ')  # one hundred fifty, as Americans say it
+
+
+def words(text, clock=False):
+    """Text as comparable words: lower case, no accents, numbers and times in words.
+
+    clock: read 830 as eight thirty, as Whisper writes a time it hears.
+    """
+    text = re.sub(r'[–—]', ' ', text.replace('’', "'"))
+    text = re.sub(r'£\s?([\d,]+)', r'\1 pounds', text).replace('$', ' dollars ')
+    text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode()  # café -> cafe
+    text = _DIGITS.sub(lambda m: ' '.join('oh' if d == '0' else _number(int(d)) for d in re.sub(r'\D', '', m[0])), text)
+    if clock:
+        text = _HEARD_CLOCK.sub(lambda m: f'{_number(int(m[1]))} {"oh " if m[2] < "10" else ""}{_number(int(m[2]))}', text)
     text = _CLOCK.sub(_clock, text).replace('%', ' percent').replace('&', ' and ')
     text = re.sub(r'\b([ap])\.\s?m\.', r'\1m', text, flags=re.I)  # p.m. -> pm, as Whisper writes it
     text = re.sub(r'(\d),(\d{3})', r'\1\2', text)
     text = re.sub(r'\b(\d+)(st|nd|rd|th)\b', lambda m: num2words(int(m.group(1)), to='ordinal'), text)
     text = re.sub(r'\b(1[1-9]|20)(\d\d)\b', lambda m: num2words(int(m.group(0)), to='year'), text)
-    text = re.sub(r'\d+', lambda m: num2words(int(m.group(0))), text)
-    text = text.lower().replace('’', "'")
+    text = re.sub(r'\d+', lambda m: _number(int(m.group(0))), text)
     out = []
-    for w in re.findall(r"[a-z']+", re.sub(r'[-–—]', ' ', text)):
+    for w in re.findall(r"[a-z']+", re.sub(r'-', ' ', text.lower())):
         w = w.strip("'")
         if w.endswith("'s") and w[:-2] in _ABBR:
             w = w[:-2]
-        out.extend(_ABBR.get(w, w).split())
+        out.extend(_SAME.get(x, x) for x in _ABBR.get(w, w).split())
     return out
 
 
@@ -399,7 +506,7 @@ def errors(ref, heard, names):
     def same(a, b):
         if a == b:
             return True
-        return a in names and SequenceMatcher(None, a, b).ratio() >= 0.5
+        return a.removesuffix("'s") in names and SequenceMatcher(None, a, b).ratio() >= 0.5
     prev = list(range(len(heard) + 1))
     for i, a in enumerate(ref, 1):
         cur = [i]
@@ -414,6 +521,17 @@ def allowed(n):
     return n // 10
 
 
+CARRIER = 'The word is'
+
+
+def mistakes(text, heard, names, framed=False):
+    """Word edits from the text to what Whisper heard, reading its numbers both ways."""
+    ref = words(CARRIER) * framed + words(text)
+    if ''.join(ref) == ''.join(words(heard)):
+        return 0  # "mini bus" for minibus, "Hassan" spelled out
+    return min(errors(ref, words(heard, clock), names) for clock in (False, True))
+
+
 class Ear:
     """Whisper small.en, through sherpa-onnx."""
 
@@ -426,8 +544,8 @@ class Ear:
 
     LONGEST = 25 * 16000  # Whisper hears 30 s at most
 
-    def hear(self, path):
-        audio = _decode(path, 16000)
+    def hear(self, audio):
+        """What Whisper hears in audio at 16 kHz."""
         parts = []
         while len(audio) > self.LONGEST:
             # Cut a long paragraph in its quietest moment between 15 and 25 s.
@@ -448,37 +566,95 @@ class Ear:
         return stream.result.text.strip()
 
 
-def check_heard(clips, out, cfg, problems, threads, cache, log=print):
+def _resample(audio, rate):
+    out = subprocess.run(['ffmpeg', '-v', 'error', '-f', 'f32le', '-ar', str(RATE), '-ac', '1', '-i', 'pipe:',
+                          '-f', 'f32le', '-ar', str(rate), 'pipe:'],
+                         input=audio.astype('<f4').tobytes(), capture_output=True, check=True).stdout
+    return np.frombuffer(out, dtype='<f4')
+
+
+class Listener:
     """Check 3: Whisper hears the text.
 
-    cache: what was heard before, by file. What is heard is added to the
-    report file as it goes, so a stopped run starts again where it stopped.
+    A word on its own is heard after "The word is" in its own voice: alone,
+    Whisper hears its vowel a step lower (sit as set, set as sat, 8 of 38
+    Starter words right), after the carrier as it is said (32 of 38).
+
+    What is heard is kept by file in the report, and saved as it goes, so a
+    stopped run starts again where it stopped.
     """
-    names = {w.lower() for n in [*cfg.get('listen_for', []), *cfg['cast'], *cfg.get('pronounce', {}),
-                                 *[s for g in cfg['gender'].values() for s in g]] for w in n.split()}
-    ear = None
-    heard = {}
+
+    def __init__(self, cfg, voice, out, threads, heard):
+        self.names = {w.lower() for n in [*cfg.get('listen_for', []), *cfg['cast'], *cfg.get('pronounce', {}),
+                                          *[s for g in cfg['gender'].values() for s in g]] for w in n.split()}
+        self.voice, self.out, self.threads = voice, out, threads
+        self.heard = dict(heard)
+        self.ear = None
+        self.carriers = {}
+        self.new = 0
+
+    @staticmethod
+    def framed(c):
+        return len(words(c.text)) == 1
+
+    def key(self, c):
+        return f'{CARRIER} {c.file}' if self.framed(c) else c.file
+
+    def hear(self, c):
+        """Sets c.heard and c.errors; True when Whisper had to listen."""
+        key, new = self.key(c), False
+        if key not in self.heard:
+            audio = _decode(self.out / c.file, RATE)
+            if self.framed(c):
+                if (c.voice, c.speed) not in self.carriers:
+                    said = self.voice.speak(self.voice.phonemes(CARRIER), c.voice, c.speed)
+                    self.carriers[c.voice, c.speed] = np.concatenate([said, np.zeros(RATE * 15 // 100, np.float32)])
+                audio = np.concatenate([self.carriers[c.voice, c.speed], audio])
+            self.ear = self.ear or Ear(self.threads)
+            self.heard[key] = self.ear.hear(_resample(audio, 16000))
+            self.new, new = self.new + 1, True
+            if self.new % 25 == 0:
+                REPORT.parent.mkdir(parents=True, exist_ok=True)
+                REPORT.write_text(json.dumps({'heard': self.heard}, ensure_ascii=False), encoding='utf-8')
+        c.heard = self.heard[key]
+        c.errors = mistakes(c.text, c.heard, self.names, self.framed(c))
+        return new
+
+    @staticmethod
+    def wrong(c):
+        return c.errors > allowed(len(words(c.text)))
+
+
+def check_heard(clips, listener, log=print):
+    todo = len({listener.key(c) for c in clips} - listener.heard.keys())
     start = time.time()
-    todo = [c for c in clips if c.file not in cache]
-    for n, c in enumerate(clips):
-        if c.file not in heard:
-            if c.file in cache:
-                heard[c.file] = cache[c.file]
-            else:
-                ear = ear or Ear(threads)
-                heard[c.file] = ear.hear(out / c.file)
-                done = len(heard) - sum(1 for f in heard if f in cache)
-                if done % 25 == 0 or done == len(todo):
-                    log(f'  {done}/{len(todo)} clips heard ({time.time() - start:.0f} s)')
-                    REPORT.parent.mkdir(parents=True, exist_ok=True)
-                    REPORT.write_text(json.dumps({'heard': {**cache, **heard}}, ensure_ascii=False), encoding='utf-8')
-        ref, got = words(c.text), words(heard[c.file])
-        e = errors(ref, got, names)
-        c.heard, c.errors = heard[c.file], e
-        if e > allowed(len(ref)):
-            problems.append({'id': c.id, 'check': 'heard', 'text': c.text, 'heard': heard[c.file],
-                             'detail': f'{e} of {len(ref)} words differ'})
-    return heard
+    for c in clips:
+        if listener.hear(c) and (listener.new % 25 == 0 or listener.new == todo):
+            log(f'  {listener.new}/{todo} clips heard ({time.time() - start:.0f} s)')
+
+
+def retake(clips, voice, listener, out, log=print):
+    """Makes every clip Whisper heard wrong again, in the other takes, until one is heard right.
+
+    If none is, the clip keeps its best take, and the report lists it.
+    """
+    wrong = [c for c in clips if listener.wrong(c)]
+    if wrong:
+        log(f'  {len(wrong)} clip(s) heard wrong: making other takes')
+    quiet = lambda *a: None  # noqa: E731
+    for c in wrong:
+        tried = [(c.errors, c.take)]
+        for take in range(1, len(Voice.TAKES)):
+            c.take = take
+            make([c], voice, out, quiet)
+            listener.hear(c)
+            if not listener.wrong(c):
+                break
+            tried.append((c.errors, take))
+        else:
+            c.take = min(tried)[1]
+            make([c], voice, out, quiet)
+            listener.hear(c)
 
 
 # ---------------------------------------------------------------- main
@@ -487,11 +663,18 @@ def run(clips, items, out, cfg, listen=True, threads=4, log=print):
     """Makes and checks the clips; returns the report."""
     problems = []
     check_items(clips, items, problems)
-    make(clips, Voice(cfg), out, log)
-    check_lengths(clips, problems)
+    voice = Voice(cfg)
+    make(clips, voice, out, log)
     old = json.loads(REPORT.read_text(encoding='utf-8')) if REPORT.exists() else {}
-    cache = old.get('heard', {})
-    heard = check_heard(clips, out, cfg, problems, threads, cache, log) if listen else {}
+    listener = Listener(cfg, voice, out, threads, old.get('heard', {}))
+    if listen:
+        check_heard(clips, listener, log)
+        retake(clips, voice, listener, out, log)
+    check_lengths(clips, problems)
+    for c in clips:
+        if listen and listener.wrong(c):
+            problems.append({'id': c.id, 'check': 'heard', 'text': c.text, 'heard': c.heard,
+                             'detail': f'{c.errors} of {len(words(c.text))} words differ'})
     files = {c.file for c in clips}
     report = {
         'summary': {'items': len(items), 'clips': len(clips), 'files': len(files),
@@ -499,7 +682,7 @@ def run(clips, items, out, cfg, listen=True, threads=4, log=print):
                     'megabytes': round(sum((out / f).stat().st_size for f in files) / 1e6, 1),
                     'listened': listen, 'problems': len(problems)},
         'problems': problems,
-        'heard': {**cache, **heard},
+        'heard': listener.heard,
     }
     return report
 
