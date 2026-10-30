@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 85:** …`); the last one asked was 84, so continue from 85.
+  (`**السؤال 87:** …`); the last one asked was 86, so continue from 87.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -46,8 +46,9 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 - **The student app** (`apps/student`, Flutter): the course, level and lesson screens for
   every kind of lesson, the Arabic note box, the play buttons and the one `Speaker`. The
   screen design is approved. No audio yet.
-- **Next: the voices.** Everything is in `docs/VOICES.md` and `curriculum/voices.yaml`. It
-  was blocked by the network (`huggingface.co`); check it first.
+- **The voices:** the generator (`curriculum/tools/voices.py`) works without Hugging Face (the
+  models come from GitHub). The voice sample is on the private Artifact page "FVI Voice Sample",
+  **waiting for approval** (questions 85, 86). Then the full run: `docs/VOICES.md`.
 - **After the voices**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK
@@ -67,6 +68,12 @@ export PATH=/opt/sdk/flutter/bin:$PATH && flutter config --no-analytics
 flutter pub get                                  # at the repo root (pub workspace)
 (cd packages/fvi_core && dart test)              # 54 tests
 (cd apps/student && flutter analyze && flutter build web --release --no-web-resources-cdn)
+
+# The voices: their own Python 3.12 venv (docs/VOICES.md)
+python3.12 -m venv ~/.venvs/voices && ~/.venvs/voices/bin/pip install -r curriculum/tools/voices-requirements.txt
+~/.venvs/voices/bin/python curriculum/tools/voices.py --setup        # models into ~/.cache/fvi-voices
+~/.venvs/voices/bin/python curriculum/tools/voices.py                # every clip, checked
+~/.venvs/voices/bin/python curriculum/tools/dev/voice_sample.py      # the sample page
 ```
 
 Preview the web build with `python3 -m http.server 8123` in `apps/student/build/web` and
