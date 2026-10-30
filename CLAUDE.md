@@ -55,12 +55,12 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   story, replies, phrases to put in order). The books stay without exercises (#28). The
   "Exercises · n" button at the bottom of a lesson opens `exercise_screen.dart`. The approved
   sample is the private Artifact page "FVI Exercise Sample".
-- **Starter exercises** (decision #47, asked by the institute): 283, from its book's marks. In the
+- **Starter exercises** (decision #47, approved): 283, from its book's marks. In the
   sound lessons, "letters" (b___d with its sound, /e/ · Short E; never a choice that makes that
   sound anywhere in the book) and "silent" (talk: which letter is silent?); in the speaking
-  lessons, the approved kinds. They are in the export and the app; their sample is the private
-  Artifact page "FVI Starter Exercises" (`exercise_sample.py --starter`), **waiting for approval**
-  (question 94). The approved levels' exercises must stay byte for byte the same: compare the
+  lessons, the approved kinds. They are in the export and the app, and **approved** (question
+  94); their sample is the private Artifact page "FVI Starter Exercises"
+  (`exercise_sample.py --starter`). The approved levels' exercises must stay byte for byte the same: compare the
   export of the nine levels before and after any change to `exercises.py`.
 - **The app is in English** (decision #45): nothing in Arabic unless the student picks Arabic
   with the button on the course screen (kept with `shared_preferences`); then the interface, the
