@@ -49,6 +49,17 @@ android {
         }
     }
 
+    // Native libraries compressed in the APK (unpacked when installed): a much
+    // smaller download for students on mobile data. Phones only: the APK carries
+    // Flutter for ARM (--target-platform android-arm,android-arm64), so no
+    // plugin's x86 code either, or an x86 device would install an app that cannot start.
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+            excludes += listOf("lib/x86/**", "lib/x86_64/**")
+        }
+    }
+
     buildTypes {
         release {
             signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")

@@ -94,20 +94,24 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   keys and the seal-key ceremony are postponed to later versions, so do not bring them up again.
   The "development build" notes are gone from both apps. The code paths for later
   (`FVI_ISSUER_KEY` in the student app, `FVI_PRODUCTION` in the admin app) stay, unused.
-- **The APK files** (decision #50, approved; in progress): both apps go on a private download
-  page as APKs. The Android projects are ready: names "FVI" and "FVI Admin" (approved, question
-  103), the FVI icons
-  (white for the student app, navy for the admin app), packages `sd.futurevision.fvi_student`
-  and `sd.futurevision.fvi_admin`, version 1.0.0, no Android backup (activation belongs to the
-  install), WhatsApp links in `<queries>`, and for the admin app `FlutterFragmentActivity`, an
-  AppCompat theme and `USE_BIOMETRIC` (local_auth). Release signing reads
-  `apps/<app>/android/key.properties` (ignored) pointing at `keys/prod/fvi-release.jks`
-  (ignored; alias `fvi`); both apps share the key. The key must survive: once APKs are out, keep
-  it on its own private Artifact page ("FVI Signing Key") and reuse it for every update, or
-  updates will not install over the old app. **Blocked:** `dl.google.com` (the Android SDK) is
-  denied by this environment's network policy; the user was asked to allow it (30 October 2026)
-  and does not know how, so walk them through it simply. GitHub's CI (`.github/workflows/ci.yml`)
-  builds both APKs with the runner's debug key as a check; its files are not the release.
+- **The APK files** (decision #50; **delivered 30 October 2026**, version 1.0.0): private Artifact
+  pages "FVI Student App" (19.3 MB) and "FVI Admin App" (17.8 MB). A page cannot serve an .apk or
+  .zip and may only save allowlisted extensions, so each page fetches its zip (the APK inside) as
+  base64 `.txt` parts and saves it as `.zip`; the generator is `make_pages.py` in that session's
+  scratchpad, so rebuild it from the published page when needed. The Android projects: names
+  "FVI" and "FVI Admin" (approved, question 103), the FVI icons (white for the student app, navy
+  for the admin app), packages `sd.futurevision.fvi_student` and `sd.futurevision.fvi_admin`,
+  Android 7+, no Android backup (activation belongs to the install), WhatsApp links in
+  `<queries>`, native libraries compressed and ARM only, and for the admin app
+  `FlutterFragmentActivity`, an AppCompat theme and `USE_BIOMETRIC` (local_auth). Not yet run on
+  a real phone (no emulator here): the institute's first install is the first device test.
+- **The signing key** (both apps; alias `fvi`, SHA-256 D6:59:24:3A:...:CA:EB) is on the private
+  Artifact page "FVI Signing Key" as `fvi-signing-key.txt` (base64 of a zip: `fvi-release.jks` and
+  a README with the password). Every update must be signed with it, or it will not install over
+  the old app. To build: read that file with the Artifact tool, decode, unzip to
+  `keys/prod/fvi-release.jks` (ignored) and write `apps/<app>/android/key.properties` (ignored)
+  from the README. Never commit it. Without key.properties a release is debug-signed (CI does
+  that as a check: `.github/workflows/ci.yml` analyzes, tests and builds both APKs).
 - **Then:** `FLAG_SECURE` where REQUIREMENTS 5.7 asks (the admin's backup and keys screens).
 
 ## Commands
@@ -127,6 +131,15 @@ flutter pub get                                  # at the repo root (pub workspa
 (cd packages/fvi_core && dart test)              # 54 tests
 (cd apps/student && flutter analyze && flutter build web --release --no-web-resources-cdn)
 (cd apps/admin && flutter analyze && flutter test)  # 5 tests; the same web build for previews
+
+# The APKs (the Android SDK is not preinstalled; dl.google.com must be allowed in the environment)
+curl -sS -o /tmp/clt.zip https://dl.google.com/android/repository/commandlinetools-linux-16111833_latest.zip
+mkdir -p /opt/android-sdk/cmdline-tools && unzip -q /tmp/clt.zip -d /opt/android-sdk/cmdline-tools && mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest
+yes | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses && /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-36"
+flutter config --android-sdk /opt/android-sdk
+# Maven Central answers this container with 429: ~/.gradle/init.d/central-mirror.gradle points
+# repo.maven.apache.org at https://maven-central.storage-download.googleapis.com/maven2/
+(cd apps/student && flutter build apk --release --target-platform android-arm,android-arm64)   # same for apps/admin
 
 # The voices: their own Python 3.12 venv (docs/VOICES.md)
 python3.12 -m venv ~/.venvs/voices && ~/.venvs/voices/bin/pip install -r curriculum/tools/voices-requirements.txt
