@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 91:** …`); the last one asked was 90, so continue from 91.
+  (`**السؤال 92:** …`); the last one asked was 91, so continue from 92.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -48,10 +48,10 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   screen design is approved. No audio yet.
 - **Next: the voices.** Everything is in `docs/VOICES.md` and `curriculum/voices.yaml`. It
   was blocked by the network (`huggingface.co`); check it first.
-- **Institute ads** (`marketing/`, apart from the app): navy did not suit; the institute asked for
-  another logo color and few colors, so the ads are now orange with white and navy only (no green
-  WhatsApp mark). The three are on the Artifact "Institute Ads" for approval (question 89).
-  WhatsApp number: 0904 011 473. Still to come: the address and the course lists.
+- **Institute ads** (`marketing/`, apart from the app): after navy and orange grounds, the
+  institute chose **white** as the main color, with the logo's navy and orange only (few colors,
+  no green WhatsApp mark). The three ads are on the Artifact "Institute Ads" for approval
+  (question 91). WhatsApp number: 0904 011 473. Still to come: the address and the course lists.
 - **Voices with Gemini:** the institute said to try it. Waiting for the key as `GEMINI_API_KEY`
   (question 90); then the voice sample. The API host is open; see `docs/VOICES.md`.
 - **After the voices**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a

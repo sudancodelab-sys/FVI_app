@@ -8,11 +8,11 @@ later, printed posters. Each ad is one HTML page in `ads/` that sets its own siz
 ```bash
 node marketing/render.js            # every ad to marketing/out/<name>.png
 node marketing/render.js 2 english-post   # one ad at twice the size (for print)
-node marketing/render.js --theme=white general-post   # on a white ground, e.g. for printing
 ```
 
-The main color is the logo's orange, with white and navy only (`ad.css`): the institute said navy
-did not suit and asked for few colors. A theme (`data-theme` on `<html>`) changes the ground.
+The main color is white, with the logo's navy and orange only (`ad.css`). The institute saw navy
+and orange grounds first, chose white, and asked for few colors. `--theme=<name>` renders an ad
+with a `data-theme` on `<html>`, for any theme added to `ad.css` later.
 
 | Ad | Size | What it says |
 |---|---|---|
