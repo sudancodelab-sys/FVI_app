@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Lexend:wght@400;500;600&display=swap">
 <style>
-/* Layout: one phone-width column, as in the student app. A header with what to approve, the four sample lessons as tabs, then either one exercise at a time (as a student does them) or every exercise with its answer (to review). Colors and fonts are the app's (lib/src/theme.dart): Cairo for the Arabic interface, Lexend for the English of the lessons. */
+/* Layout: one phone-width column. A note to the institute (Arabic, not part of the app), then the app itself: English unless the student picks Arabic as the app's language, the four sample lessons as tabs, and either one exercise at a time (as a student does them) or every exercise with its answer (to review). Colors and fonts are the app's (lib/src/theme.dart): Lexend for English, Cairo for Arabic. */
 :root {
   --bg: #F5F6FA;
   --card: #FFFFFF;
@@ -40,7 +40,7 @@
 }
 * { box-sizing: border-box; }
 body {
-  background: var(--bg); color: var(--ink); font-family: var(--font-ar); font-size: 16px; line-height: 1.7;
+  background: var(--bg); color: var(--ink); font-family: var(--font-en); font-size: 16px; line-height: 1.6;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 32px;
@@ -48,8 +48,10 @@ body {
 main { max-width: 640px; margin: 0 auto; display: grid; gap: 20px; }
 button { font: inherit; color: inherit; }
 button:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+[lang="ar"] { font-family: var(--font-ar); line-height: 1.7; }
 .en { font-family: var(--font-en); direction: ltr; text-align: left; unicode-bidi: isolate; }
 
+/* The note to the institute */
 .intro { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); display: grid; gap: 14px; }
 .eyebrow { font-size: 13px; font-weight: 700; color: var(--orange); }
 h1 { margin: 0; font-size: 30px; line-height: 1.3; font-weight: 800; color: var(--navy); text-wrap: balance; }
@@ -59,6 +61,16 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 .ask { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 15px; }
 .ask li { display: flex; gap: 10px; align-items: baseline; }
 .ask b { color: var(--orange); font-variant-numeric: tabular-nums; }
+.note { margin: 0; font-size: 14px; color: var(--muted); }
+
+/* The app */
+.app { display: grid; gap: 14px; }
+.bar-top { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+.seg { display: flex; gap: 4px; background: var(--navy-soft); padding: 4px; border-radius: 12px; }
+.seg button { appearance: none; border: 0; background: transparent; cursor: pointer; padding: 5px 13px; border-radius: 9px; font-weight: 600; font-size: 14px; color: var(--muted); }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.seg [lang="ar"] { font-weight: 700; }
+.lang { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); font-weight: 600; }
 
 .tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .tab {
@@ -67,14 +79,10 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 }
 .tab .lvl { font-size: 12.5px; color: var(--muted); font-weight: 600; }
 .tab .lvl bdi { white-space: nowrap; }
-.tab .ttl { font-family: var(--font-en); font-weight: 600; font-size: 15px; overflow-wrap: anywhere; direction: ltr; unicode-bidi: isolate; text-align: right; }
-.tab .knd { font-family: var(--font-en); font-size: 11px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; }
+.tab .ttl { font-family: var(--font-en); font-weight: 600; font-size: 15px; overflow-wrap: anywhere; direction: ltr; unicode-bidi: isolate; text-align: left; }
+[dir="rtl"] .tab .ttl { text-align: right; }
+.tab .knd { font-family: var(--font-en); font-size: 11px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; color: var(--k); }
 .tab[aria-selected="true"] { border-color: var(--k); box-shadow: inset 0 0 0 1px var(--k); }
-.tab .knd { color: var(--k); }
-
-.modes { display: flex; gap: 6px; background: var(--navy-soft); padding: 4px; border-radius: 12px; justify-self: start; }
-.mode { appearance: none; border: 0; background: transparent; cursor: pointer; padding: 6px 14px; border-radius: 9px; font-weight: 700; font-size: 14.5px; color: var(--muted); }
-.mode[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
 
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: grid; gap: 14px; }
 .top { display: flex; align-items: center; gap: 10px; }
@@ -108,12 +116,13 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 .feedback.right { color: var(--green); }
 .feedback.wrong { color: var(--red); }
 .feedback .en { font-weight: 500; color: var(--ink); }
-.actions { display: flex; justify-content: flex-end; gap: 8px; }
+.actions { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
 .go { appearance: none; border: 0; cursor: pointer; background: var(--orange); color: var(--on-accent); font-weight: 700; font-size: 16px; padding: 9px 22px; border-radius: 12px; min-height: 44px; }
 .go:disabled { opacity: .45; cursor: default; }
 .go.ghost { background: transparent; color: var(--orange); box-shadow: inset 0 0 0 1.5px var(--orange); }
 
 .done { text-align: center; display: grid; gap: 8px; justify-items: center; padding-block: 10px; }
+.done .actions { justify-content: center; }
 .score { font-size: 44px; font-weight: 800; color: var(--navy); font-variant-numeric: tabular-nums; line-height: 1.2; }
 
 .list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
@@ -124,7 +133,6 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 .item ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; }
 .item li { font-family: var(--font-en); font-size: 15px; padding: 3px 10px; border-radius: 8px; direction: ltr; text-align: left; }
 .item li.ok { background: var(--green-soft); color: var(--green); font-weight: 600; }
-.foot { margin: 0; font-size: 13px; color: var(--muted); text-align: center; }
 
 @media (max-width: 480px) {
   body { padding-block: 16px; }
@@ -135,8 +143,8 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 @media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
 </style>
 
-<main dir="rtl" lang="ar">
-  <section class="intro">
+<main>
+  <section class="intro" dir="rtl" lang="ar">
     <div>
       <div class="eyebrow">معهد الرؤية المستقبلية · تطبيق الطالب</div>
       <h1>عيّنة التمارين<span>كلها مأخوذة من نصوص الكتب المعتمدة، بلا نص جديد</span></h1>
@@ -144,37 +152,59 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     <ul class="facts"><!--FACTS--></ul>
     <ol class="ask">
       <li><b>1</b><span>هل أنواع التمارين مناسبة: أسئلة الفهم، ومعاني الكلمات والتعابير، وإكمال الجملة كما في القصة، والرد المناسب، وترتيب الكلمات؟</span></li>
-      <li><b>2</b><span>هل التعليمات بالعربية والتمرين بالإنجليزية، كما في باقي التطبيق، مناسبة؟</span></li>
+      <li><b>2</b><span>لغة التطبيق الإنجليزية، ولا تظهر العربية إلا إذا اختارها الطالب لغةً للتطبيق. جرّبوا زر <bdi>English | العربية</bdi> أسفل هذه البطاقة.</span></li>
     </ol>
+    <p class="note">هذه البطاقة رسالة إليكم وليست من التطبيق. في التطبيق يكون زر التمارين في آخر كل درس، والإجابات هنا لا تُحفظ.</p>
   </section>
 
-  <div class="tabs" role="tablist" aria-label="الدروس" id="tabs"></div>
-
-  <div class="modes" role="group" aria-label="طريقة العرض">
-    <button class="mode" type="button" data-mode="play" aria-pressed="true">جرّب كطالب</button>
-    <button class="mode" type="button" data-mode="review" aria-pressed="false">راجع كل التمارين</button>
+  <div class="app" id="app">
+    <div class="bar-top">
+      <div class="seg" role="group" id="modes">
+        <button type="button" data-mode="play" aria-pressed="true"></button>
+        <button type="button" data-mode="review" aria-pressed="false"></button>
+      </div>
+      <div class="lang"><span id="lang-label"></span>
+        <div class="seg" role="group" id="langs">
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button>
+        </div>
+      </div>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <section id="view" aria-live="polite"></section>
   </div>
-
-  <section id="view" aria-live="polite"></section>
-
-  <p class="foot">في التطبيق يكون زر «تمارين» في آخر كل درس. الإجابات هنا لا تُحفظ.</p>
 </main>
 
 <script>
 (function () {
   const lessons = /*DATA*/[];
-  const KINDS = {
-    question: { label: 'Questions', how: 'اختر الجواب الصحيح حسب الدرس' },
-    meaning: { label: 'New words', how: 'ما معنى هذه الكلمة؟' },
-    idiom: { label: 'Idioms, proverbs and phrases', how: 'ما معنى هذا التعبير؟' },
-    form: { label: 'Grammar', how: 'أكمل الجملة كما جاءت في القصة' },
-    reply: { label: 'Useful phrases', how: 'اختر الردّ المناسب' },
-    order: { label: 'Useful phrases', how: 'رتّب الكلمات لتكوّن العبارة' },
+  // The app's words: English, unless the student picks Arabic as the app's language.
+  const UI = {
+    en: {
+      how: { question: 'Choose the right answer.', meaning: 'What does this word mean?', idiom: 'What does this mean?',
+             form: 'Complete the sentence as in the story.', reply: 'Choose the right reply.', order: 'Put the words in order.' },
+      play: 'Try it', review: 'All exercises', language: 'App language', lesson: 'Lesson', of: 'of', lessons: 'Lessons',
+      check: 'Check', next: 'Next', score: 'See your score', right: 'Right!', answer: 'The right answer:',
+      done: 'You finished the exercises of this lesson.', allRight: 'All right!',
+      more: 'You can do them again, or look at all the answers.', again: 'Do them again', all: 'Look at all answers',
+    },
+    ar: {
+      how: { question: 'اختر الجواب الصحيح حسب الدرس', meaning: 'ما معنى هذه الكلمة؟', idiom: 'ما معنى هذا التعبير؟',
+             form: 'أكمل الجملة كما جاءت في القصة', reply: 'اختر الردّ المناسب', order: 'رتّب الكلمات لتكوّن العبارة' },
+      play: 'جرّب', review: 'كل التمارين', language: 'لغة التطبيق', lesson: 'الدرس', of: 'من', lessons: 'الدروس',
+      check: 'تحقّق', next: 'التالي', score: 'النتيجة', right: 'صحيح', answer: 'الجواب الصحيح:',
+      done: 'انتهت تمارين الدرس.', allRight: 'كلها صحيحة.',
+      more: 'يمكنك إعادة التمارين، أو رؤية أجوبتها كلها.', again: 'أعد التمارين', all: 'كل الأجوبة',
+    },
   };
+  const LABELS = { question: 'Questions', meaning: 'New words', idiom: 'Idioms, proverbs and phrases',
+                   form: 'Grammar', reply: 'Useful phrases', order: 'Useful phrases' };
   const COLORS = { story: '--orange', topic: '--navy', conversation: '--green' };
-  const state = { lesson: 0, mode: 'play', index: 0, right: 0, answered: false };
+  const state = { lesson: 0, mode: 'play', lang: 'en', index: 0, right: 0, answered: false };
+  const app = document.getElementById('app');
   const view = document.getElementById('view');
   const tabs = document.getElementById('tabs');
+  const t = () => UI[state.lang];
 
   function el(tag, cls, text) {
     const e = document.createElement(tag);
@@ -195,7 +225,16 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     return p;
   }
 
-  function renderTabs() {
+  function renderChrome() {
+    app.dir = state.lang === 'ar' ? 'rtl' : 'ltr';
+    app.lang = state.lang;
+    document.getElementById('lang-label').textContent = t().language;
+    document.querySelectorAll('#modes button').forEach((b) => {
+      b.textContent = t()[b.dataset.mode];
+      b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode));
+    });
+    document.querySelectorAll('#langs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === state.lang)));
+    tabs.setAttribute('aria-label', t().lessons);
     tabs.replaceChildren(...lessons.map((l, i) => {
       const b = el('button', 'tab');
       b.type = 'button';
@@ -203,7 +242,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
       b.setAttribute('aria-selected', String(i === state.lesson));
       b.style.setProperty('--k', kindColor(l.kind));
       const lvl = el('span', 'lvl');
-      lvl.append('الدرس ' + l.number + ' · ', el('bdi', '', l.level));
+      lvl.append(`${t().lesson} ${l.number} · `, el('bdi', '', l.level));
       b.append(lvl, el('span', 'ttl', l.title), el('span', 'knd', l.kind));
       b.addEventListener('click', () => { state.lesson = i; restart(); });
       return b;
@@ -212,12 +251,11 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
 
   function restart() {
     state.index = 0; state.right = 0; state.answered = false;
-    renderTabs();
     render();
   }
 
   function render() {
-    document.querySelectorAll('.mode').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode)));
+    renderChrome();
     const lesson = lessons[state.lesson];
     view.style.setProperty('--k', kindColor(lesson.kind));
     if (state.mode === 'review') return renderReview(lesson);
@@ -233,8 +271,8 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     const fill = el('i');
     fill.style.width = (100 * state.index / total) + '%';
     bar.append(fill);
-    top.append(el('span', 'count', `${state.index + 1} من ${total}`), bar);
-    card.append(top, el('div', 'label', KINDS[ex.kind].label), el('p', 'how', KINDS[ex.kind].how));
+    top.append(el('span', 'count', `${state.index + 1} ${t().of} ${total}`), bar);
+    card.append(top, el('div', 'label', LABELS[ex.kind]), el('p', 'how', t().how[ex.kind]));
     if (ex.kind === 'order') {
       if (ex.prompt) card.append(el('p', 'example en', ex.prompt));
     } else {
@@ -242,7 +280,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
       if (ex.example) card.append(el('p', 'example en', ex.example));
     }
     const feedback = el('p', 'feedback');
-    const next = el('button', 'go', state.index + 1 < total ? 'التالي' : 'النتيجة');
+    const next = el('button', 'go', state.index + 1 < total ? t().next : t().score);
     next.type = 'button';
     next.hidden = true;
     next.addEventListener('click', () => { state.index++; state.answered = false; render(); });
@@ -251,7 +289,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
       state.answered = true;
       if (ok) state.right++;
       feedback.className = 'feedback ' + (ok ? 'right' : 'wrong');
-      feedback.replaceChildren(el('span', '', ok ? 'صحيح' : 'الجواب الصحيح:'));
+      feedback.replaceChildren(el('span', '', ok ? t().right : t().answer));
       if (!ok) feedback.append(el('span', 'en', answerText(ex)));
       next.hidden = false;
       if (button) button.hidden = true;
@@ -280,7 +318,7 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     } else {
       const built = el('div', 'built');
       const pool = el('div', 'pool');
-      const check = el('button', 'go', 'تحقّق');
+      const check = el('button', 'go', t().check);
       check.type = 'button';
       check.disabled = true;
       const sync = () => { check.disabled = pool.children.length > 0; };
@@ -311,17 +349,16 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
   function renderDone(lesson) {
     const card = el('div', 'card done');
     const total = lesson.exercises.length;
-    card.append(el('div', 'how', 'انتهت تمارين الدرس'), el('div', 'score', `${state.right} من ${total}`),
-                el('p', 'example', state.right === total ? 'كلها صحيحة.' : 'يمكنك إعادة التمارين، أو مراجعة أجوبتها كلها.'));
-    const again = el('button', 'go', 'أعد التمارين');
+    card.append(el('div', 'how', t().done), el('div', 'score', `${state.right} ${t().of} ${total}`),
+                el('p', 'example', state.right === total ? t().allRight : t().more));
+    const again = el('button', 'go', t().again);
     again.type = 'button';
     again.addEventListener('click', restart);
-    const review = el('button', 'go ghost', 'راجع كل التمارين');
-    review.type = 'button';
-    review.addEventListener('click', () => { state.mode = 'review'; render(); });
+    const all = el('button', 'go ghost', t().all);
+    all.type = 'button';
+    all.addEventListener('click', () => { state.mode = 'review'; render(); });
     const actions = el('div', 'actions');
-    actions.style.justifyContent = 'center';
-    actions.append(again, review);
+    actions.append(again, all);
     card.append(actions);
     view.replaceChildren(card);
   }
@@ -331,30 +368,32 @@ h1 span { display: block; font-size: 15.5px; font-weight: 600; color: var(--mute
     lesson.exercises.forEach((ex, n) => {
       const item = el('li', 'item');
       const head = el('div', 'head');
-      head.append(el('span', 'n', String(n + 1)), el('span', 'label', KINDS[ex.kind].label), el('span', 'example', KINDS[ex.kind].how));
+      head.append(el('span', 'n', String(n + 1)), el('span', 'label', LABELS[ex.kind]), el('span', 'example', t().how[ex.kind]));
       item.append(head);
+      const ul = el('ul');
       if (ex.kind === 'order') {
         if (ex.prompt) item.append(el('p', 'example en', ex.prompt));
         item.append(el('p', 'prompt en', ex.words.join('  /  ')));
-        const ul = el('ul');
         ul.append(el('li', 'ok', ex.answer));
-        item.append(ul);
       } else {
         item.append(promptOf(ex));
         if (ex.example) item.append(el('p', 'example en', ex.example));
-        const ul = el('ul');
         ex.choices.forEach((c, i) => ul.append(el('li', i === ex.answer ? 'ok' : '', c)));
-        item.append(ul);
       }
+      item.append(ul);
       list.append(item);
     });
     view.replaceChildren(list);
   }
 
-  document.querySelectorAll('.mode').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('#modes button').forEach((b) => b.addEventListener('click', () => {
     state.mode = b.dataset.mode;
     if (state.mode === 'play' && state.index >= lessons[state.lesson].exercises.length) restart();
     else render();
+  }));
+  document.querySelectorAll('#langs button').forEach((b) => b.addEventListener('click', () => {
+    state.lang = b.dataset.lang;
+    render();
   }));
   restart();
 })();

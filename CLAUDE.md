@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 92:** …`); the last one asked was 91, so continue from 92.
+  (`**السؤال 93:** …`); the last one asked was 92, so continue from 93.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -54,7 +54,12 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   makes them (1,846 for Pre-Intermediate 1 to Advanced 3: questions, word and idiom meanings,
   grammar forms as in the story, replies, phrases to put in order). The sample is the private
   Artifact page "FVI Exercise Sample" (`curriculum/tools/dev/exercise_sample.py`), **waiting for
-  approval** (question 91). Starter's exercises wait for question 90. Then: the exercises in the
+  approval** (question 91).
+- **The app is in English** (decision #45): nothing in Arabic unless the student picks Arabic as
+  the app's language; then the interface and the exercise instructions are Arabic. The app is
+  still fixed to Arabic (`locale: Locale('ar')` in `apps/student/lib/src/app.dart`): it needs a
+  language choice, English by default. Whether the Arabic grammar notes show only in Arabic is
+  question 92. Starter's exercises wait for question 90. Then: the exercises in the
   export and the app, and the play buttons out of the lesson screens.
 - **After the exercises**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
