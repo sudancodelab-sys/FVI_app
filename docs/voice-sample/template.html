@@ -1,0 +1,186 @@
+<title>Gemini Voice Sample</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a listening booklet. One column of sections; every clip is a row with its play button and its text, as in the app. */
+:root {
+  --bg: #F4F5FB;
+  --card: #FFFFFF;
+  --ink: #1D2040;
+  --muted: #5F6385;
+  --line: #E1E4F0;
+  --navy: #262E62;
+  --orange: #E4451A;
+  --orange-soft: #FDEEE8;
+  --teal: #0E7C86;
+  --teal-soft: #E3F3F4;
+  --on-accent: #FFFFFF;
+  --shadow: 0 18px 40px -26px rgba(38, 46, 98, .45);
+  --font: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12152B; --card: #1B1F3B; --ink: #ECEEF8; --muted: #A5A9C8; --line: #2C3157;
+    --navy: #C9CEF2; --orange: #FF7A52; --orange-soft: #3A2224; --teal: #5CC8D0; --teal-soft: #173238;
+    --on-accent: #1B0E0A; --shadow: 0 18px 40px -26px rgba(0, 0, 0, .7); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12152B; --card: #1B1F3B; --ink: #ECEEF8; --muted: #A5A9C8; --line: #2C3157;
+  --navy: #C9CEF2; --orange: #FF7A52; --orange-soft: #3A2224; --teal: #5CC8D0; --teal-soft: #173238;
+  --on-accent: #1B0E0A; --shadow: 0 18px 40px -26px rgba(0, 0, 0, .7); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px;
+}
+main { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 10px; padding-inline: 4px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .4px; color: var(--orange); }
+h1 { margin: 0; font-size: 34px; line-height: 1.25; font-weight: 700; color: var(--navy); text-wrap: balance; }
+.lead { margin: 0; color: var(--muted); max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; padding: 0; list-style: none; }
+.facts li { font-size: 14px; font-weight: 500; padding: 4px 12px; border-radius: 99px; background: var(--orange-soft); font-variant-numeric: tabular-nums; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 22px 18px; box-shadow: var(--shadow); display: grid; gap: 12px; min-width: 0; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+h2 { margin: 0; font-size: 20px; font-weight: 600; color: var(--navy); text-wrap: balance; }
+.src { font-size: 13px; color: var(--muted); }
+.src [lang="en"] { font-weight: 500; }
+.note { margin: 0; font-size: 14px; color: var(--muted); }
+.all { font: inherit; font-size: 14px; font-weight: 600; color: var(--on-accent); background: var(--orange); border: 0; border-radius: 99px; padding: 6px 16px; cursor: pointer; }
+.all:focus-visible, .play:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.clip { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; align-items: start; padding: 8px 10px; border-radius: 12px; transition: background .2s; }
+.clip.on { background: var(--teal-soft); }
+.play { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--navy); color: var(--card); cursor: pointer; display: grid; place-items: center; margin-top: 2px; }
+.tri { width: 0; height: 0; border-block: 7px solid transparent; border-inline-end: 12px solid currentColor; margin-inline-end: 3px; }
+.clip.on .play { background: var(--teal); }
+.clip.on .tri { width: 12px; height: 12px; border: 0; background: currentColor; border-radius: 2px; margin: 0; }
+.body { min-width: 0; }
+.who { font-size: 13px; font-weight: 600; color: var(--teal); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.wpm, .lvl { font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.en { margin: 2px 0 0; font-size: 17px; line-height: 1.6; text-align: left; }
+.table { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: start; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; font-weight: 600; color: var(--muted); }
+.vname { font-weight: 600; text-align: left; }
+.mono { font-size: 13px; text-align: left; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; font-weight: 600; }
+details summary { cursor: pointer; font-weight: 600; color: var(--navy); }
+@media (max-width: 520px) { h1 { font-size: 28px; } section { padding: 18px 14px 14px; } .clip { padding: 8px 4px; } }
+@media (prefers-reduced-motion: reduce) { .clip { transition: none; } }
+</style>
+
+<main dir="rtl" lang="ar">
+  <header>
+    <div class="eyebrow">معهد الرؤية المستقبلية · أصوات تطبيق الطالب</div>
+    <h1>عينة أصوات Gemini</h1>
+    <p class="lead">هذه الأصوات صنعها Gemini من نصوص الكتب المعتمدة. استمعوا واحكموا: هل يناسب كل صوت صاحبه، وهل النطق الأمريكي واضح، وهل سرعة المبتدئ مناسبة؟ كل مقطع يُسمع وحده كما في التطبيق، وزر «استمع إلى الكل» يقرأ الأسطر متتابعة.</p>
+    <ul class="facts">
+      <li>{{N}} مقطعًا</li>
+      <li>{{MIN}} دقيقة</li>
+      <li>اجتازت الفحص: {{OK}} من {{N}}</li>
+    </ul>
+  </header>
+
+  <section>
+    <div class="head">
+      <h2>محادثة: سارة وموظف الاستقبال</h2>
+      <button class="all" type="button">استمع إلى الكل</button>
+    </div>
+    <div class="src">المتقدم 1، الدرس 3: <span lang="en" dir="ltr">There's a Problem With My Room</span></div>
+    <p class="note">امرأة ورجل، كل سطر مقطع وحده، بسرعة المتقدم.</p>
+    <ol>{{CONV}}</ol>
+  </section>
+
+  <section>
+    <div class="head"><h2>فقرة من قصة بسرعتين</h2></div>
+    <div class="src">ما قبل المتوسط 1، الدرس 1: <span lang="en" dir="ltr">The New Student</span></div>
+    <p class="note">الراوي يقرأ الفقرة نفسها بالسرعة الطبيعية، ثم ببطء للمبتدئ بطريقتين: أن يُطلب من Gemini القراءة ببطء، أو أن تُبطّأ القراءة الطبيعية نفسها دون تغيير طبقة الصوت. أيهما أوضح للمبتدئ؟ في الفقرة اسما الخرطوم وبورتسودان.</p>
+    <ol>{{STORY}}</ol>
+  </section>
+
+  <section>
+    <div class="head">
+      <h2>السؤال والجواب</h2>
+      <button class="all" type="button">استمع إلى الكل</button>
+    </div>
+    <div class="src">ما قبل المتوسط 1، الدرس 1</div>
+    <p class="note">السؤال بصوت امرأة والجواب بصوت رجل، ليسمع الطالب التغيّر. بسرعة ما قبل المتوسط 1 (0.85).</p>
+    <ol>{{QA}}</ol>
+  </section>
+
+  <section>
+    <div class="head"><h2>كلمة جديدة وخبر</h2></div>
+    <div class="src">المتقدم 1، الدرسان 1 و13</div>
+    <ol>{{WORD}}{{NEWS}}</ol>
+  </section>
+
+  <section>
+    <div class="head"><h2>شخصيات المنهج</h2></div>
+    <p class="note">لكل شخصية صوت واحد في كل المستويات. هذا سطر حقيقي من كلام كل واحد منهم.</p>
+    <ol>{{CAST}}</ol>
+  </section>
+
+  <section>
+    <div class="head"><h2>من يقرأ بأي صوت</h2></div>
+    <p class="note">في Gemini ثلاثون صوتًا جاهزًا. هذا اقتراحي، ويمكن سماع غيره لأي شخصية. طبقة الصوت المقيسة تفرّق الرجل من المرأة: أصوات الرجال هنا تحت 150 هرتز تقريبًا، وأصوات النساء فوقها.</p>
+    <div class="table"><table>
+      <thead><tr><th>من</th><th>الصوت</th><th>وصفه</th><th>رجل أم امرأة</th><th>طبقة الصوت (هرتز)</th></tr></thead>
+      <tbody>{{ROWS}}</tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <details>
+      <summary>الفحص: هل قال كل مقطع نصه؟</summary>
+      <p class="note">استمع نموذج آخر من Gemini إلى كل مقطع وكتب ما سمعه، وقورنت كلماته بكلمات النص: ١٠٠٪ تعني أنه سمع النص كلمة بكلمة. وقيست طبقة الصوت لنتأكد أن صوت الرجل رجل وصوت المرأة امرأة. صنعت الأصوات نماذج: <span lang="en" dir="ltr">{{MODEL}}</span>.</p>
+      <div class="table"><table>
+        <thead><tr><th>المقطع</th><th>التطابق</th><th>هرتز</th><th>النموذج</th></tr></thead>
+        <tbody>{{CHECKS}}</tbody>
+      </table></div>
+    </details>
+  </section>
+</main>
+
+<script>
+// One player for the whole page, like the app's Speaker: starting a clip stops the one before.
+(function () {
+  var current = null, queue = [], GAP = 450, timer = null;
+  function stop() {
+    clearTimeout(timer); queue = [];
+    if (current) { current.audio.pause(); current.audio.currentTime = 0; current.li.classList.remove('on'); current = null; }
+  }
+  function play(li, rest) {
+    var audio = li.querySelector('audio');
+    current = { li: li, audio: audio };
+    li.classList.add('on');
+    audio.onended = function () {
+      li.classList.remove('on'); current = null;
+      if (rest && rest.length) { timer = setTimeout(function () { play(rest[0], rest.slice(1)); }, GAP); }
+    };
+    var p = audio.play();
+    if (p && p.catch) p.catch(function () { li.classList.remove('on'); current = null; });
+  }
+  document.querySelectorAll('.clip .play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var li = b.closest('.clip'), was = current && current.li === li;
+      stop();
+      if (!was) play(li, []);
+    });
+  });
+  document.querySelectorAll('.all').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var items = Array.prototype.slice.call(b.closest('section').querySelectorAll('.clip'));
+      stop();
+      play(items[0], items.slice(1));
+    });
+  });
+})();
+</script>

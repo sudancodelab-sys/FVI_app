@@ -27,6 +27,30 @@ themselves are in `curriculum/voices.yaml`.
 - **Size of the run:** the export has 4,077 clips (3,987 distinct) and 42,165 words. At one
   request a clip and 3 a minute, that is about 22 hours of speech requests and 22 more of
   checks, before any daily limit; the full run needs a paid tier (or grouped requests).
+- **The voice sample is made** (30 October, waiting for the institute to listen): the private
+  Artifact "Gemini Voice Sample", 22 clips, made by `curriculum/tools/dev/voice_sample.py` (its
+  voices and groups are at the top) and `docs/voice-sample/build_page.py`. What it taught:
+  - Free tier per model: **10 requests a day** for each TTS model (`gemini-2.5-pro-preview-tts`
+    has 0: paid only), about 20 a day for `gemini-3.5-transcribe`, 3 a minute for all. The
+    4,077 clips cannot be made on the free tier.
+  - `gemini-3.8-flash-tts` and `-lite` **read any direction aloud** ("Read this aloud in ...")
+    and refuse a system instruction (400), so they get the bare text, and a slower level is
+    made by stretching with ffmpeg `rubberband` (pitch kept). `gemini-2.5-flash-preview-tts`
+    follows "Say ... slowly:" without reading it, but "slowly" gave 83 words a minute for a
+    paragraph read at 155 naturally (0.54, not 0.80); stretching gives the speed exactly (124).
+    `gemini-3.1-flash-tts-preview` gave a British accent.
+  - One request for a whole conversation (2 speakers) works on 2.5, but the pauses between
+    lines are no longer than those inside a line, so the audio is cut where every line gets
+    the length of its text, plus the change of pitch between a man and a woman. 2.5 also
+    **left a line out** once (silence instead) and once gave the answer voice (Iapetus, a man)
+    a woman's pitch (195 Hz); both were caught by the checks and remade on 3.8 Lite.
+  - Checks: the words are compared with what another model hears (whole clips; it can leave
+    out spoken directions, so the length check matters too). The listening model's "man or
+    woman" and "accent" were often wrong; the pitch (YIN) was right: men 98-147 Hz, women
+    152-217 Hz here.
+  - Proposed voices (Gemini's): narrator and teacher Sulafat, question Erinome, answer Iapetus,
+    anchor Charon, Sara Leda, Huda Aoede, Adam Puck, Omar Achird, Mr. Ali Sadaltager,
+    Grandfather Algenib, Clerk Schedar. Not in `voices.yaml` until approved.
 - **Blocked by the network:** `huggingface.co`, where Kokoro's model and voices are, was refused
   (403) in the session that wrote this, although the institute had allowed it in the
   environment settings. Check first:
