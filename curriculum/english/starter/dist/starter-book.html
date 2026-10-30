@@ -42,17 +42,17 @@
 .starter-book .page.fit.denser .ph p{font-size:10pt}
 .starter-book .page.fit .word{font-size:10.5pt}
 .starter-book .page.fit .word b{font-size:11.5pt}
-.starter-book .page.starter-cover{padding:0;display:block}
-.starter-book .page.starter-cover .starter-cover-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.starter-book .page.starter-cover .starter-cover-logo{position:absolute;top:4mm;left:50%;transform:translateX(-50%);width:45mm;height:45mm;object-fit:contain;z-index:2}
+.page.cover.illustrated-cover{padding:0;display:block}
+.page.cover.illustrated-cover .cover-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:center}
+.page.cover.illustrated-cover .cover-logo{position:absolute;top:4mm;left:50%;transform:translateX(-50%);width:45mm;height:45mm;object-fit:contain;z-index:2}
 </style>
 
 </head>
 <body class="starter-book">
 
-<div class="page cover starter-cover">
-  <img class="starter-cover-art" src="starter-cover-art.png" alt="">
-  <img class="starter-cover-logo" src="starter-cover-logo.png" alt="Future Vision Institute logo">
+<div class="page cover illustrated-cover">
+  <img class="cover-art" src="starter-cover-art.jpg" alt="">
+  <img class="cover-logo" src="../../../assets/institute-logo.png" alt="Future Vision Institute logo">
 </div>
 
 <div class="page toc">
