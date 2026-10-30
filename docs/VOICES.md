@@ -15,6 +15,16 @@ themselves are in `curriculum/voices.yaml`.
 
   Downloads also go through `cdn-lfs.hf.co` / `cas-bridge.xethub.hf.co` (allow `*.hf.co`).
   `pypi.org` is open; `github.com` and `download.pytorch.org` were closed.
+- **Checked again (30 October 2026, later):** `huggingface.co` still 403. The Gemini API
+  (`generativelanguage.googleapis.com`) is open, but `ai.google.dev` (its docs) is not.
+- **Gemini, proposed by the institute's question (not approved: it changes the engine named in
+  `APP-PLAN.md`):** Google's TTS models (`gemini-3.8-flash-tts` in Google's docs in October 2026;
+  older previews retire in November 2026, so check the id) speak two voices in one request, so a
+  conversation's man and woman come in one call; podcasts (three people) go in pairs. Pace is set
+  by the instruction, not a number, so measure each clip's words per minute against `speed`. The
+  speech check can be Gemini too (transcribe each clip), since faster-whisper is on Hugging Face.
+  Needs a key in the environment settings as `GEMINI_API_KEY` (never in the repo). Then the voice
+  sample below, with Gemini's voices in place of Kokoro's.
 - **Python:** the `kokoro` package needs Python < 3.13, and the session had 3.13. Either install
   Python 3.12, or use `kokoro-onnx` (runs on 3.13) with the ONNX model
   `onnx-community/Kokoro-82M-v1.0-ONNX` (one `voices/<name>.bin` per voice; build the

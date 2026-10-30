@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 87:** …`); the last one asked was 86, so continue from 87.
+  (`**السؤال 89:** …`); the last one asked was 88, so continue from 89.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -48,10 +48,12 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   screen design is approved. No audio yet.
 - **Next: the voices.** Everything is in `docs/VOICES.md` and `curriculum/voices.yaml`. It
   was blocked by the network (`huggingface.co`); check it first.
-- **Institute ads** (`marketing/`, apart from the app): the plan and a first sample of three
-  (institute post, English course post, WhatsApp status) are on the Artifact "Institute Ads",
-  waiting for approval and for the institute's WhatsApp number, address and course lists
-  (questions 85 and 86). The number is a placeholder (`0XXX XXX XXX`). `marketing/README.md`.
+- **Institute ads** (`marketing/`, apart from the app): the first sample was navy; the institute
+  said the main color does not suit, so the Artifact "Institute Ads" shows the institute post in
+  four themes (white, orange, blue, teal; `ad.css`) to choose from (question 87). WhatsApp number:
+  0904 011 473. Still to come: the address and the course lists. `marketing/README.md`.
+- **Voices with Gemini?** The institute asked; the API is reachable. Waiting for a key as
+  `GEMINI_API_KEY` and approval to change the engine (question 88, `docs/VOICES.md`).
 - **After the voices**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
   content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK

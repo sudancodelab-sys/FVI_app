@@ -8,7 +8,11 @@ later, printed posters. Each ad is one HTML page in `ads/` that sets its own siz
 ```bash
 node marketing/render.js            # every ad to marketing/out/<name>.png
 node marketing/render.js 2 english-post   # one ad at twice the size (for print)
+node marketing/render.js --theme=white,orange,blue,teal general-post   # one ad in each color
 ```
+
+The main color is a theme in `ad.css` (`data-theme` on `<html>`); without one an ad is navy.
+The institute said navy does not suit, and is choosing among the four themes.
 
 | Ad | Size | What it says |
 |---|---|---|
@@ -16,5 +20,5 @@ node marketing/render.js 2 english-post   # one ad at twice the size (for print)
 | `english-post` | 1080×1080 | The English course: ten levels as a staircase, numbered as on the book covers, with CEFR |
 | `general-story` | 1080×1920 | `general-post` as a WhatsApp status; the top and bottom 200px stay clear |
 
-The WhatsApp number (`0XXX XXX XXX`) is a placeholder until the institute sends its number.
+The institute's WhatsApp number is 0904 011 473.
 `out/` is not committed: the PNGs go to the institute on a private Artifact page.
