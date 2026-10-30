@@ -32,7 +32,7 @@ ROOT = build.ROOT
 FORMAT = 1
 
 # Who reads the parts that are not dialogue, by kind of lesson.
-_READER = {'story': 'narrator', 'topic': 'narrator', 'science': 'science',
+_READER = {'story': 'narrator', 'topic': 'narrator', 'science': 'narrator',
            'news': 'anchor', 'podcast': 'narrator', 'conversation': 'narrator'}
 
 

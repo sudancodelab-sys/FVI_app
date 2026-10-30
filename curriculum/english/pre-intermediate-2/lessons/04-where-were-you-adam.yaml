@@ -45,6 +45,13 @@ learn:
     - {title: "you · we · they → [were]", text: "We were at the hospital all day."}
     - {title: "Not: [wasn't · weren't]", text: "Adam wasn't in class. They weren't at home."}
   ask: ["Were you in class yesterday?", "Yes, I was.  /  No, I wasn't."]
+  ar:
+    summary: "الفعلان was · were هما ماضي am · is · are. نستعملهما للحديث عن أمس والأسبوع الماضي وكل ما قبل الآن."
+    points:
+      - ["مع I · he · she · it نستعمل was.", "I [was] at home. It [was] bad."]
+      - ["مع you · we · they نستعمل were.", "We [were] at the hospital."]
+      - ["للنفي نضيف not.", "Adam [wasn't] in class. They [weren't] at home."]
+      - ["للسؤال نبدأ بـ Was أو Were.", "[Were] you sick? [Was] it bad?"]
 words:
   - {word: yesterday, meaning: the day before today}
   - {word: empty, meaning: with nothing and no one in it}

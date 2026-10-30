@@ -46,6 +46,14 @@ learn:
     - {title: "[ever] in questions, [never] for no", text: "Have you ever flown? I have never flown."}
     - {title: "Some verbs change: [been · flown · seen]", text: "be → been, fly → flown, see → seen, buy → bought"}
   ask: ["Have you ever been on a plane?", "Yes, I have.  /  No, I haven't."]
+  ar:
+    summary: "نستعمل المضارع التام لشيء حدث في الماضي دون أن نذكر متى. فإذا ذكرنا الوقت استعملنا الماضي البسيط."
+    points:
+      - ["نكوّنه من have أو has ثم التصريف الثالث للفعل.", "I [have seen] the planes. He [has bought] a ticket."]
+      - ["نستعمل ever في السؤال.", "[Have] you ever [flown]?"]
+      - ["نستعمل never للنفي.", "Sara [has never been] to Kassala."]
+      - ["إذا ذكرنا الوقت نستعمل الماضي البسيط.", "I [saw] the planes yesterday."]
+      - ["بعض الأفعال يتغير تصريفها الثالث، فنحفظه.", "be → [been] · fly → [flown] · see → [seen]"]
 words:
   - {word: airports, meaning: places where planes arrive and leave}
   - {word: ticket, meaning: a paper or code that lets you travel}

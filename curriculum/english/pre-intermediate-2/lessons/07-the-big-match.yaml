@@ -45,6 +45,13 @@ learn:
     - {title: "Ends in -e: add only [-d]", text: "score → scored, smile → smiled"}
     - {title: "Learn the verbs that [change]", text: "go → went, have → had, see → saw"}
   ask: ["Who scored the last goal?", "Omar scored it!"]
+  ar:
+    summary: "نستعمل الماضي البسيط لأشياء حدثت وانتهت قبل الآن، مثل أمس أو الجمعة الماضية."
+    points:
+      - ["أغلب الأفعال نضيف لها ed.", "play → play[ed] · start → start[ed]"]
+      - ["إذا انتهى الفعل بـ e نضيف d فقط.", "score → score[d] · smile → smile[d]"]
+      - ["بعض الأفعال تتغير كلها، فنحفظها.", "go → [went] · have → [had] · see → [saw]"]
+      - ["الفعل في الماضي واحد مع كل الضمائر.", "I [played]. He [played]. They [played]."]
 words:
   - {word: team, meaning: a group of players who play together}
   - {word: match, meaning: a game between two teams}

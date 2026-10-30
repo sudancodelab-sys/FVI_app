@@ -1,0 +1,62 @@
+# Voices of the student app (docs/VOICES.md). Approved: the plan
+# (docs/APP-PLAN.md). Still to approve by listening: the exact voices below,
+# with the voice sample.
+engine: Kokoro-82M v1.0 (hexgrad/Kokoro-82M, Apache-2.0), American English voices
+
+# Speed of speech in each level, 1.0 = natural. Clips are made at this
+# speed; the app never slows them down.
+speed:
+  starter: 0.80
+  pre-intermediate-1: 0.85
+  pre-intermediate-2: 0.88
+  pre-intermediate-3: 0.90
+  pre-intermediate-4: 0.92
+  intermediate-1: 0.95
+  intermediate-2: 0.97
+  advanced-1: 1.0
+  advanced-2: 1.0
+  advanced-3: 1.0
+
+# Who reads what is not dialogue (the v of each item in the export).
+roles:
+  narrator: af_heart    # stories, topics, science, "Before you listen", Did you know
+  teacher: af_heart     # new words, idioms, useful phrases, Starter example words
+  anchor: am_onyx       # news: headline, standfirst, article
+  question: af_kore     # questions are a woman's voice
+  answer: am_echo       # answers a man's, so the student hears the change
+
+# The characters keep one voice in every level.
+cast:
+  Adam: am_michael
+  Omar: am_puck
+  Mr. Ali: am_fenrir
+  Sara: af_bella
+  Huda: af_sarah
+  Grandfather: am_onyx
+
+# Everyone else takes a voice of their gender from these lists: the first
+# one that nobody else in the same lesson speaks with.
+pool:
+  female: [af_aoede, af_kore, af_nicole, af_sky]
+  male: [am_eric, am_liam, am_echo, am_onyx]
+
+# Gender of the people who are not in the cast above. Roles with no
+# gender in the text (Agent, Clerk, Waiter, ...) take the opposite gender
+# of the person they talk to, so each conversation has a man and a woman.
+gender:
+  pre-intermediate-1: {Waiter: female, Seller: female}
+  pre-intermediate-2: {Driver: male, Pharmacist: male, Mrs. Hassan: female}
+  pre-intermediate-3: {Seller: female, Waiter: female}
+  pre-intermediate-4: {Shopkeeper: female, Agent: female, Mrs. Hassan: female}
+  intermediate-1: {Assistant: female, Clerk: female, Driver: male, Agent: female, Mr. Kamal: male}
+  intermediate-2: {Doctor: female, Worker: female, Hamza: male, Father: male}
+  advanced-1: {Clerk: male, Customer: female, Agent: male, Dr. Amira: female, Captain Nour: female,
+               Dr. Idris: male, Mrs. Karim: female}
+  advanced-2: {Agent: male, Mrs. Karim: female, Dr. Amira: female, Mr. Hassan: male, Tarig: male,
+               Mona: female, Captain Nour: female, Ms. Salma: female}
+  advanced-3: {Mona: female, Rania: female, Dr. Kamal: male, Dr. Malik: male, Amir: male,
+               Ms. Layla: female, Dr. Nabil: male, Dr. Amira: female}
+
+# Places and names to check by ear; Kokoro accepts a pronunciation as
+# [word](/IPA/) if one comes out wrong.
+listen_for: [Khartoum, Omdurman, Kassala, Gezira, Port Sudan, Wadi Howar, Gash, Huda, Omar, Tarig, Rania]

@@ -45,6 +45,13 @@ learn:
     - {title: "After can: the [verb] only", text: "He can cook. Not: can to cook."}
     - {title: "can't = [cannot]", text: "We usually say can't."}
   ask: ["Can you cook?", "Yes, I can.  /  No, I can't."]
+  ar:
+    summary: "نستعمل can لما نستطيع فعله، ونستعمل can't لما لا نستطيع فعله."
+    points:
+      - ["can لا تتغير مع أي ضمير، ولا نضيف لها s.", "I [can] cook. He [can] cook."]
+      - ["بعد can يأتي الفعل مباشرة، بلا to.", "He [can play] football."]
+      - ["can't هي اختصار cannot.", "He [can't] cook."]
+      - ["للسؤال نبدأ بـ Can.", "[Can] you cook? Yes, I [can]."]
 words:
   - {word: apartment, meaning: a home in a big building}
   - {word: fix, meaning: make something work again}

@@ -46,6 +46,14 @@ learn:
     - {title: "[don't have to] = not necessary", text: "You don't have to wear a suit. You can if you want."}
     - {title: "should + [verb], the same for everyone", text: "I should, she should, they should."}
   ask: ["Do you have to work on Fridays?", "No, I don't. Friday is my day off."]
+  ar:
+    summary: "نستعمل have to لما هو ضروري ولا بد منه، ونستعمل should للنصيحة."
+    points:
+      - ["مع he · she · it نقول has to.", "Omar [has to] be there at five."]
+      - ["don't have to تعني أن الأمر غير ضروري، لا أنه ممنوع.", "You [don't have to] wear a suit."]
+      - ["should واحدة مع كل الضمائر، وبعدها الفعل مباشرة.", "You [should] be polite."]
+      - ["shouldn't تعني أن الأمر ليس فكرة جيدة.", "You [shouldn't] use your phone."]
+      - ["للسؤال نبدأ بـ Do أو Should.", "[Do] I [have to] work on Friday? [Should] I call him?"]
 words:
   - {word: part-time, meaning: for only some hours of the week}
   - {word: repair, meaning: fixing something that is broken}

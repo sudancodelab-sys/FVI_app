@@ -46,6 +46,13 @@ learn:
     - {title: "Then: [will · won't] + verb", text: "we will pass, we won't fail"}
     - {title: "Two orders, the [same] meaning", text: "If we study, we'll pass. = We'll pass if we study."}
   ask: ["What will you do if you pass?", "If I pass, I'll go to the next level."]
+  ar:
+    summary: "نستعمل الشرط الأول لشيء يمكن أن يحدث في المستقبل، ولنتيجته."
+    points:
+      - ["بعد if يأتي المضارع، لا will.", "If I [study]. Not: if I will study."]
+      - ["في النتيجة نستعمل will أو won't ثم الفعل.", "If we study, we [will pass]."]
+      - ["يمكن أن نبدأ بالنتيجة، والمعنى واحد.", "We'll pass [if] we study."]
+      - ["إذا بدأنا بـ if نضع فاصلة بعد الشرط.", "If it [doesn't rain], we [won't need] umbrellas."]
 words:
   - {word: final, meaning: the last}
   - {word: fail, meaning: not pass a test}

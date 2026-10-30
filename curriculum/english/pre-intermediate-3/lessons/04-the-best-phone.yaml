@@ -45,6 +45,14 @@ learn:
     - {title: "Long words: [more · the most]", text: "expensive → more expensive → the most expensive"}
     - {title: "Different: [better · the best]", text: "good → better → the best. bad → worse → the worst"}
   ask: ["Which phone is the best?", "The gold one. It's the fastest."]
+  ar:
+    summary: "نستعمل صيغة المقارنة لنقارن بين شيئين، وصيغة التفضيل لنقول أيّ شيء هو الأول بين الجميع."
+    points:
+      - ["الكلمات القصيرة نضيف لها er للمقارنة، ونضيف est للتفضيل.", "cheap → cheap[er] than → the cheap[est]"]
+      - ["إذا انتهت الكلمة بحرف متحرك ثم ساكن نضاعف الأخير.", "big → big[ger] → the big[gest]"]
+      - ["الكلمات الطويلة نضع قبلها more أو the most.", "[more] expensive → [the most] expensive"]
+      - ["بعض الكلمات تتغير كلها.", "good → [better] → [the best] · bad → [worse] → [the worst]"]
+      - ["بعد صيغة المقارنة نستعمل than.", "This phone is cheap[er] [than] that one."]
 words:
   - {word: slower, meaning: not as fast}
   - {word: camera, meaning: the part of a phone that takes photos}

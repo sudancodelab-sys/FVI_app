@@ -50,6 +50,14 @@ learn:
     - {title: "Now, at [this moment]", text: "Look! A rickshaw is coming."}
     - {title: "run → run[ning] · smile → smil[ing]", text: "Some verbs double the last letter. Others lose the e."}
   ask: ["What are you doing?", "I'm reading.  /  I'm studying."]
+  ar:
+    summary: "نستعمل المضارع المستمر للأشياء التي تحدث الآن، في هذه اللحظة."
+    points:
+      - ["نكوّنه من am · is · are ثم الفعل مع ing.", "He [is running]. They [are sleeping]."]
+      - ["مع I نستعمل am، ومع he · she · it نستعمل is، ومع you · we · they نستعمل are.", "I['m] reading. She['s] cooking. We['re] waiting."]
+      - ["للنفي نضيف not.", "She [isn't sleeping]. They [aren't sleeping]."]
+      - ["للسؤال نبدأ بـ am · is · are.", "[Is] he [smiling]? What [are] you [doing]?"]
+      - ["بعض الأفعال تضاعف حرفها الأخير، وبعضها يحذف e.", "run → runn[ing] · smile → smil[ing]"]
 words:
   - {word: late, meaning: after the right time}
   - {word: rickshaw, meaning: a small taxi with three wheels}

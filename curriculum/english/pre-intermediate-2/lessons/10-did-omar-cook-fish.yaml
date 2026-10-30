@@ -46,6 +46,13 @@ learn:
     - {title: "After didn't and Did: the [first form]", text: "He didn't eat. Not: didn't ate."}
     - {title: "The [same] for everyone", text: "I didn't, she didn't, they didn't."}
   ask: ["Did you cook yesterday?", "Yes, I did.  /  No, I didn't."]
+  ar:
+    summary: "ننفي الماضي البسيط بـ didn't، ونسأل عنه بـ Did."
+    points:
+      - ["بعد didn't يعود الفعل إلى صورته الأولى.", "He [didn't eat] fish. Not: didn't ate."]
+      - ["للسؤال نبدأ بـ Did، والفعل في صورته الأولى.", "[Did] he [burn] the fish?"]
+      - ["في الجواب القصير نستعمل did أو didn't.", "Yes, he [did]. No, he [didn't]."]
+      - ["didn't هي اختصار did not، وهي واحدة مع كل الضمائر.", "I [didn't]. She [didn't]. They [didn't]."]
 words:
   - {word: bought, meaning: the past of buy}
   - {word: oil, meaning: a yellow liquid we cook with}

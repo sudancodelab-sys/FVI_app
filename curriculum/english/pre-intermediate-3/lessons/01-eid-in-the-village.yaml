@@ -44,6 +44,13 @@ learn:
     - {title: "For [plans]", text: "tonight, tomorrow, next week, next year"}
     - {title: "Plan → [past]", text: "Before Eid: we're going to travel. After Eid: we traveled."}
   ask: ["What are you going to do this weekend?", "I'm going to visit my family."]
+  ar:
+    summary: "نستعمل be going to للحديث عن خطط قررناها للمستقبل: الليلة، وغداً، والأسبوع القادم."
+    points:
+      - ["نكوّنه من am · is · are ثم going to ثم الفعل.", "We['re going to visit] our cousins."]
+      - ["للنفي نضيف not.", "She [isn't going to] cook."]
+      - ["للسؤال نبدأ بـ am · is · are.", "What [are] you [going to] do?"]
+      - ["بعد أن تتم الخطة نتحدث عنها بالماضي.", "We're going to travel. → We [traveled]."]
 words:
   - {word: village, meaning: a very small town in the country}
   - {word: bake, meaning: "cook in an oven: bread, cakes, cookies"}

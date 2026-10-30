@@ -46,6 +46,14 @@ learn:
     - {title: "Short forms: ['ll · won't]", text: "I'll = I will. won't = will not."}
     - {title: "[going to] or [will]?", text: "A plan: I'm going to travel. A quick decision: I'll help you!"}
   ask: ["Will it rain tomorrow?", "Yes, it will.  /  No, it won't."]
+  ar:
+    summary: "نستعمل will للمستقبل: لنقول ما نتوقعه، أو لنَعِد، أو لنقرر شيئاً الآن."
+    points:
+      - ["بعد will يأتي الفعل مباشرة، وهي واحدة مع كل الضمائر.", "I [will help]. She [will help]."]
+      - ["في الكلام نختصرها غالباً.", "I['ll] bring umbrellas! (I'll = I will)"]
+      - ["للنفي نستعمل won't، أي will not.", "It [won't rain]."]
+      - ["للسؤال نبدأ بـ Will.", "[Will] we [need] umbrellas?"]
+      - ["للخطة المقررة من قبل نستعمل going to، وللقرار السريع will.", "I'm going to travel. · I['ll help] you!"]
 words:
   - {word: picnic, meaning: "a meal outside, in a park or by a river"}
   - {word: app, meaning: a program on a phone}

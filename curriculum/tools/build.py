@@ -403,6 +403,8 @@ def check_arabic_note(level, lesson, where, report):
     shows on its own line, left to right, so the two never mix."""
     note = (lesson.get('learn') or {}).get('ar')
     if note is None:
+        if level.get('arabic_notes') and lesson['kind'] == 'story':
+            report.error(where, 'every grammar lesson of this level needs its Arabic note (learn.ar)')
         return
     if not level.get('arabic_notes'):
         report.error(where, 'an Arabic grammar note belongs to the levels with arabic_notes: true only')

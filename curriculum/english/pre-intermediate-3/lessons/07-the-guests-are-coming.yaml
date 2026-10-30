@@ -46,6 +46,14 @@ learn:
     - {title: "[many] if we can count, [much] if we can't", text: "How many cups? How much money?"}
     - {title: "[a lot of] for both", text: "a lot of cups, a lot of sugar"}
   ask: ["Is there any sugar?", "Yes, there is some.  /  No, there isn't any."]
+  ar:
+    summary: "نستعمل هذه الكلمات للحديث عن الكمية. واختيارها يتوقف على نوع الجملة، وعلى إمكان عدّ الشيء."
+    points:
+      - ["some في الجملة المثبتة.", "There are [some] cups."]
+      - ["any في النفي والسؤال.", "There isn't [any] milk. Is there [any] sugar?"]
+      - ["many مع الأشياء التي نعدّها.", "How [many] cups?"]
+      - ["much مع الأشياء التي لا نعدّها.", "How [much] sugar?"]
+      - ["a lot of تصلح للنوعين.", "[a lot of] cups · [a lot of] sugar"]
 words:
   - {word: guests, meaning: people who visit your home}
   - {word: cupboard, meaning: a small closet for cups and food}

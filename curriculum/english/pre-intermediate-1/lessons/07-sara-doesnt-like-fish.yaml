@@ -46,6 +46,14 @@ learn:
     - {title: "After doesn't: no [-s]", text: "She doesn't like fish. Not: doesn't likes."}
     - {title: "Questions start with [Do / Does]", text: "Do you want some fish? Does Lina like fish?"}
   ask: ["Does Sara like fish?", "Yes, she does.  /  No, she doesn't."]
+  ar:
+    summary: "نستعمل don't أو doesn't للنفي في المضارع البسيط، ونبدأ السؤال بـ Do أو Does."
+    points:
+      - ["مع I · you · we · they ننفي بـ don't.", "I [don't] like fish."]
+      - ["مع he · she · it ننفي بـ doesn't.", "She [doesn't] like fish."]
+      - ["بعد doesn't يعود الفعل بلا s.", "She doesn't [like] fish. Not: doesn't likes."]
+      - ["للسؤال نبدأ بـ Do أو Does.", "[Do] you like fish? [Does] she like fish?"]
+      - ["في الجواب القصير نكرر do أو does.", "Yes, she [does]. No, she [doesn't]."]
 words:
   - {word: cook, meaning: make food hot and ready to eat}
   - {word: rice, meaning: small white seeds we cook and eat}
