@@ -49,6 +49,7 @@ class CastMember {
 class LevelSummary {
   const LevelSummary({
     required this.slug,
+    required this.id,
     required this.order,
     required this.name,
     required this.cefr,
@@ -58,6 +59,7 @@ class LevelSummary {
 
   factory LevelSummary.fromJson(Json json) => LevelSummary(
         slug: json['slug'] as String,
+        id: json['id'] as String,
         order: json['order'] as int,
         name: json['name'] as String,
         cefr: json['cefr'] as String,
@@ -66,6 +68,10 @@ class LevelSummary {
       );
 
   final String slug;
+
+  /// Its node in the content tree (languages/english/starter): its key and
+  /// its activation are tied to it.
+  final String id;
   final int order;
   final String name;
   final String cefr;

@@ -13,9 +13,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_secure_storage: ^11.2.0
+  fvi_core: any
   intl: any
   just_audio: ^0.10.6
   shared_preferences: ^2.5.6
+  url_launcher: ^6.3.3
 
 dev_dependencies:
   flutter_test:
@@ -26,8 +29,10 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    # Written by curriculum/tools/export_app.py; not committed.
+    # Written by tools/content_builder from the export of curriculum/tools/export_app.py:
+    # index.json and one encrypted file per level. Not committed.
     - assets/content/
+    - assets/branding/
   fonts:
     # Arabic and the interface.
     - family: Cairo

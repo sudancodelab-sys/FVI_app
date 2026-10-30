@@ -312,6 +312,360 @@ abstract class L10n {
   /// In ar, this message translates to:
   /// **'أيّ حرف لا يُنطق؟'**
   String get howSilent;
+
+  /// No description provided for @welcomeName.
+  ///
+  /// In ar, this message translates to:
+  /// **'معهد الرؤية المستقبلية'**
+  String get welcomeName;
+
+  /// No description provided for @welcomeNameSub.
+  ///
+  /// In ar, this message translates to:
+  /// **'للحاسوب واللغات'**
+  String get welcomeNameSub;
+
+  /// No description provided for @welcomeTagline.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق المذاكرة والمراجعة'**
+  String get welcomeTagline;
+
+  /// No description provided for @chooseLanguage.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر لغة التطبيق'**
+  String get chooseLanguage;
+
+  /// No description provided for @languageEnglish.
+  ///
+  /// In ar, this message translates to:
+  /// **'English'**
+  String get languageEnglish;
+
+  /// No description provided for @languageEnglishSub.
+  ///
+  /// In ar, this message translates to:
+  /// **'Left-to-right interface'**
+  String get languageEnglishSub;
+
+  /// No description provided for @languageArabic.
+  ///
+  /// In ar, this message translates to:
+  /// **'العربية'**
+  String get languageArabic;
+
+  /// No description provided for @languageArabicSub.
+  ///
+  /// In ar, this message translates to:
+  /// **'الواجهة من اليمين إلى اليسار'**
+  String get languageArabicSub;
+
+  /// No description provided for @continueButton.
+  ///
+  /// In ar, this message translates to:
+  /// **'متابعة'**
+  String get continueButton;
+
+  /// No description provided for @versionN.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإصدار {v}'**
+  String versionN(String v);
+
+  /// No description provided for @requestTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'طلب التفعيل'**
+  String get requestTitle;
+
+  /// No description provided for @requestIntro.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل بياناتك، وسيصل طلبك إلى إدارة المعهد عبر واتساب لإصدار كود التفعيل.'**
+  String get requestIntro;
+
+  /// No description provided for @fullName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم الكامل'**
+  String get fullName;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهاتف'**
+  String get phoneNumber;
+
+  /// No description provided for @yourLevel.
+  ///
+  /// In ar, this message translates to:
+  /// **'المستوى الذي تدرس فيه'**
+  String get yourLevel;
+
+  /// No description provided for @levelOption.
+  ///
+  /// In ar, this message translates to:
+  /// **'{course} · {level}'**
+  String levelOption(String course, String level);
+
+  /// No description provided for @deviceCodeLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'رمز جهازك'**
+  String get deviceCodeLabel;
+
+  /// No description provided for @deviceCodeNote.
+  ///
+  /// In ar, this message translates to:
+  /// **'يُرسل الرمز تلقائياً مع الطلب، ويربط التفعيل بهذا الهاتف فقط.'**
+  String get deviceCodeNote;
+
+  /// No description provided for @requestOnWhatsapp.
+  ///
+  /// In ar, this message translates to:
+  /// **'اطلب التفعيل عبر واتساب'**
+  String get requestOnWhatsapp;
+
+  /// No description provided for @haveCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'لديّ كود تفعيل بالفعل'**
+  String get haveCode;
+
+  /// No description provided for @nameNeeded.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب اسمك الكامل.'**
+  String get nameNeeded;
+
+  /// No description provided for @phoneNeeded.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب رقم هاتفك.'**
+  String get phoneNeeded;
+
+  /// No description provided for @levelNeeded.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر مستواك.'**
+  String get levelNeeded;
+
+  /// No description provided for @messageHeading.
+  ///
+  /// In ar, this message translates to:
+  /// **'طلب تفعيل تطبيق FVI'**
+  String get messageHeading;
+
+  /// No description provided for @messageName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم: {v}'**
+  String messageName(String v);
+
+  /// No description provided for @messagePhone.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهاتف: {v}'**
+  String messagePhone(String v);
+
+  /// No description provided for @messageLevel.
+  ///
+  /// In ar, this message translates to:
+  /// **'المستوى: {v}'**
+  String messageLevel(String v);
+
+  /// No description provided for @messageDevice.
+  ///
+  /// In ar, this message translates to:
+  /// **'رمز الجهاز: {v}'**
+  String messageDevice(String v);
+
+  /// No description provided for @whatsappFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يُفتح واتساب. هل هو مثبّت على هذا الهاتف؟'**
+  String get whatsappFailed;
+
+  /// No description provided for @activateTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تفعيل التطبيق'**
+  String get activateTitle;
+
+  /// No description provided for @waitingTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'بانتظار كود التفعيل'**
+  String get waitingTitle;
+
+  /// No description provided for @waitingText.
+  ///
+  /// In ar, this message translates to:
+  /// **'عندما يصلك رد الإدارة في واتساب، انسخ الرسالة ثم ارجع إلى التطبيق، وسيجد الكود تلقائياً.'**
+  String get waitingText;
+
+  /// No description provided for @stepDetails.
+  ///
+  /// In ar, this message translates to:
+  /// **'إدخال البيانات'**
+  String get stepDetails;
+
+  /// No description provided for @stepSent.
+  ///
+  /// In ar, this message translates to:
+  /// **'إرسال الطلب عبر واتساب'**
+  String get stepSent;
+
+  /// No description provided for @stepCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'استلام كود التفعيل من الإدارة'**
+  String get stepCode;
+
+  /// No description provided for @orEnterCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'أو أدخل الكود يدوياً'**
+  String get orEnterCode;
+
+  /// No description provided for @pasteHere.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصق كود التفعيل هنا'**
+  String get pasteHere;
+
+  /// No description provided for @paste.
+  ///
+  /// In ar, this message translates to:
+  /// **'لصق'**
+  String get paste;
+
+  /// No description provided for @activate.
+  ///
+  /// In ar, this message translates to:
+  /// **'تفعيل'**
+  String get activate;
+
+  /// No description provided for @sendAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة إرسال الطلب'**
+  String get sendAgain;
+
+  /// No description provided for @codeFound.
+  ///
+  /// In ar, this message translates to:
+  /// **'وُجد كود تفعيل فيما نسخته.'**
+  String get codeFound;
+
+  /// No description provided for @problemNoCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد كود تفعيل في هذا النص. انسخ رسالة الإدارة كاملة وحاول مرة أخرى.'**
+  String get problemNoCode;
+
+  /// No description provided for @problemOtherInstitute.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الكود ليس من معهد الرؤية المستقبلية.'**
+  String get problemOtherInstitute;
+
+  /// No description provided for @problemAltered.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيّر هذا الكود بعد إرساله. انسخه مرة أخرى من الرسالة.'**
+  String get problemAltered;
+
+  /// No description provided for @problemOtherPhone.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الكود لهاتف آخر، أو لهذا الهاتف قبل إعادة تثبيت التطبيق. أرسل طلباً جديداً.'**
+  String get problemOtherPhone;
+
+  /// No description provided for @problemClock.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ هاتفك غير صحيح. صحّحه من إعدادات الهاتف ثم حاول مرة أخرى.'**
+  String get problemClock;
+
+  /// No description provided for @activated.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم تفعيل التطبيق.'**
+  String get activated;
+
+  /// No description provided for @clockTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحّح تاريخ هاتفك'**
+  String get clockTitle;
+
+  /// No description provided for @clockText.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ هاتفك أقدم من تاريخ رآه التطبيق من قبل، فأُغلقت المستويات. صحّح التاريخ من إعدادات الهاتف، أو اطلب كوداً جديداً من الإدارة.'**
+  String get clockText;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'حاول مرة أخرى'**
+  String get tryAgain;
+
+  /// No description provided for @enterCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل كود تفعيل'**
+  String get enterCode;
+
+  /// No description provided for @lockedTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا المستوى مقفل'**
+  String get lockedTitle;
+
+  /// No description provided for @lockedText.
+  ///
+  /// In ar, this message translates to:
+  /// **'اطلب من إدارة المعهد تفعيل {level} لك.'**
+  String lockedText(String level);
+
+  /// No description provided for @expiredTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهى تفعيل هذا المستوى'**
+  String get expiredTitle;
+
+  /// No description provided for @expiredText.
+  ///
+  /// In ar, this message translates to:
+  /// **'اطلب من الإدارة تجديد {level}. تقدّمك محفوظ.'**
+  String expiredText(String level);
+
+  /// No description provided for @renewOnWhatsapp.
+  ///
+  /// In ar, this message translates to:
+  /// **'اطلب التجديد عبر واتساب'**
+  String get renewOnWhatsapp;
+
+  /// No description provided for @endsOn.
+  ///
+  /// In ar, this message translates to:
+  /// **'ينتهي تفعيل {level} في {date}.'**
+  String endsOn(String level, String date);
+
+  /// No description provided for @openUntil.
+  ///
+  /// In ar, this message translates to:
+  /// **'مفتوح حتى {date}'**
+  String openUntil(String date);
+
+  /// No description provided for @developmentBuild.
+  ///
+  /// In ar, this message translates to:
+  /// **'نسخة تطوير: تقبل الأكواد التجريبية فقط.'**
+  String get developmentBuild;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

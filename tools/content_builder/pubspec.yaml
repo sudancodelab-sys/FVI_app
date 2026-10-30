@@ -1,0 +1,15 @@
+name: content_builder
+description: Encrypts the exported levels for the student app, and (development only) makes test keys and activation codes.
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  fvi_core: any
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: ^1.25.0

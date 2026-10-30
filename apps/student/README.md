@@ -5,8 +5,9 @@
 ## التشغيل
 
 ```bash
-# 1. ملفات المحتوى من الكتب المعتمدة (لا تُرفع إلى المستودع)
-python3 curriculum/tools/export_app.py --out apps/student/assets/content
+# 1. ملفات المحتوى من الكتب المعتمدة، ثم تشفير كل مستوى بمفتاحه (لا تُرفع إلى المستودع)
+python3 curriculum/tools/export_app.py --out build/content
+dart run content_builder build          # بمفاتيح التطوير في keys/dev
 
 # 2. التطبيق
 cd apps/student
@@ -19,7 +20,9 @@ flutter build web --release --no-web-resources-cdn   # نسخة للمعاينة
 
 | الملف | الوظيفة |
 |---|---|
-| `lib/src/content/` | قراءة المستويات المصدّرة، ومعها تمارين كل درس (`curriculum/tools/exercises.py`). |
+| `lib/src/content/` | قراءة المستويات: فهرسها مقروء، وكل مستوى يُفك تشفيره بمفتاحه من التفعيل، ومعه تمارين كل درس. |
+| `lib/src/activation/` | التفعيل: مفتاح الجهاز، وبيانات الطالب، والصلاحيات ومفاتيحها في التخزين الآمن، وفحص ساعة الهاتف. |
+| `lib/src/screens/gate.dart`, `onboarding/` | أول تشغيل حسب التصميم المعتمد: الترحيب واللغة، والبيانات وطلب التفعيل عبر واتساب، وانتظار الكود. |
 | `lib/src/language.dart` | لغة التطبيق: الإنجليزية، أو العربية إن اختارها الطالب من زر الشاشة الأولى، ويبقى اختياره محفوظاً. |
 | `lib/src/screens/lesson/sections.dart` | أقسام كل نوع من الدروس كما في الكتب. الشرح العربي للقواعد يظهر في العربية فقط. |
 | `lib/src/screens/exercise_screen.dart` | تمارين الدرس، تمريناً بعد تمرين: الجواب الصحيح فوراً، ثم النتيجة. |

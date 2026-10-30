@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 95:** …`); the last one asked was 94, so continue from 95.
+  (`**السؤال 98:** …`); the last one asked was 97, so continue from 98.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -46,7 +46,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   place of the audio clips. Do not generate audio.
 - **The student app** (`apps/student`, Flutter): the course, level and lesson screens for
   every kind of lesson, the Arabic note box, and the exercise screen. The screen design is
-  approved. Text only: no play buttons. `flutter test`: 9 tests.
+  approved. Text only: no play buttons. `flutter test`: 12 tests.
 - **The voices are stopped** (decision #44). The generator (`curriculum/tools/voices.py`), the
   `Speaker` and `docs/VOICES.md` stay in the repo, unused, in case the institute returns to audio.
 - **Exercises in the app** (decisions #44, #46, approved): made only from the approved books'
@@ -66,17 +66,31 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   with the button on the course screen (kept with `shared_preferences`); then the interface, the
   exercise instructions and the Arabic grammar notes are Arabic. The button shows "العربية" in
   its own script.
-- **After the exercises**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
-  content builder that encrypts each level with `packages/fvi_core`, the
-  activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK
-  build on GitHub Actions.
+- **Activation and encrypted content** (built, **waiting for approval**: question 96; the
+  institute's WhatsApp number is question 97). `tools/content_builder` (Dart) encrypts each level
+  of the export with its own key (`<slug>.fvc`; `index.json` stays readable for the course list
+  and its locks). The app (`lib/src/activation/`, `screens/gate.dart`, `screens/onboarding/`)
+  follows `docs/design/screens/1-student-onboarding.png`: welcome and language (English first),
+  details and device code, "Request on WhatsApp" (message as in REQUIREMENTS 5.2), waiting and
+  paste (the clipboard is read when the app returns), then the course with locks, open-until
+  dates, a 7-day renewal banner and the clock guard. Keys and grants are in
+  `flutter_secure_storage`. It is built with the **development keys** of `keys/dev` (public;
+  see its README); production keys come with the admin app. Until then
+  `dart run content_builder issue --request FILE --level SLUG --days N` makes a test code. The
+  sample is the private Artifact page "FVI Activation Sample" (screenshots of a full walk in
+  the web build, driven through Flutter's accessibility tree with Playwright).
+- **Next**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): the admin app
+  (read a request, issue codes, records, backup, production keys), then the APK build on GitHub
+  Actions with the production keys as secrets, and `FLAG_SECURE` where 5.7 asks.
 
 ## Commands
 
 ```bash
 python3 curriculum/tools/build.py english/<level> --check            # the checks
 python3 curriculum/tools/build.py english/<level> --book --out <name>  # a book: dist/<name>.pdf
-python3 curriculum/tools/export_app.py --out apps/student/assets/content  # the app's content
+python3 curriculum/tools/export_app.py --out build/content   # the levels, plain
+dart run content_builder build                                  # encrypted into apps/student/assets/content
+(cd tools/content_builder && dart test)                        # 2 tests
 
 # Flutter 3.47.8 is not preinstalled:
 curl -sS -o /tmp/flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.8-stable.tar.xz

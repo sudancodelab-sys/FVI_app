@@ -83,5 +83,140 @@
   "doAgain": "أعد التمارين",
   "backToLesson": "العودة إلى الدرس",
   "howLetters": "اختر الحروف التي تكمل الكلمة",
-  "howSilent": "أيّ حرف لا يُنطق؟"
+  "howSilent": "أيّ حرف لا يُنطق؟",
+  "welcomeName": "معهد الرؤية المستقبلية",
+  "welcomeNameSub": "للحاسوب واللغات",
+  "welcomeTagline": "تطبيق المذاكرة والمراجعة",
+  "chooseLanguage": "اختر لغة التطبيق",
+  "languageEnglish": "English",
+  "languageEnglishSub": "Left-to-right interface",
+  "languageArabic": "العربية",
+  "languageArabicSub": "الواجهة من اليمين إلى اليسار",
+  "continueButton": "متابعة",
+  "versionN": "الإصدار {v}",
+  "@versionN": {
+    "placeholders": {
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "requestTitle": "طلب التفعيل",
+  "requestIntro": "أدخل بياناتك، وسيصل طلبك إلى إدارة المعهد عبر واتساب لإصدار كود التفعيل.",
+  "fullName": "الاسم الكامل",
+  "phoneNumber": "رقم الهاتف",
+  "yourLevel": "المستوى الذي تدرس فيه",
+  "levelOption": "{course} · {level}",
+  "@levelOption": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      },
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceCodeLabel": "رمز جهازك",
+  "deviceCodeNote": "يُرسل الرمز تلقائياً مع الطلب، ويربط التفعيل بهذا الهاتف فقط.",
+  "requestOnWhatsapp": "اطلب التفعيل عبر واتساب",
+  "haveCode": "لديّ كود تفعيل بالفعل",
+  "nameNeeded": "اكتب اسمك الكامل.",
+  "phoneNeeded": "اكتب رقم هاتفك.",
+  "levelNeeded": "اختر مستواك.",
+  "messageHeading": "طلب تفعيل تطبيق FVI",
+  "messageName": "الاسم: {v}",
+  "@messageName": {
+    "placeholders": {
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "messagePhone": "الهاتف: {v}",
+  "@messagePhone": {
+    "placeholders": {
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "messageLevel": "المستوى: {v}",
+  "@messageLevel": {
+    "placeholders": {
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "messageDevice": "رمز الجهاز: {v}",
+  "@messageDevice": {
+    "placeholders": {
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "whatsappFailed": "لم يُفتح واتساب. هل هو مثبّت على هذا الهاتف؟",
+  "activateTitle": "تفعيل التطبيق",
+  "waitingTitle": "بانتظار كود التفعيل",
+  "waitingText": "عندما يصلك رد الإدارة في واتساب، انسخ الرسالة ثم ارجع إلى التطبيق، وسيجد الكود تلقائياً.",
+  "stepDetails": "إدخال البيانات",
+  "stepSent": "إرسال الطلب عبر واتساب",
+  "stepCode": "استلام كود التفعيل من الإدارة",
+  "orEnterCode": "أو أدخل الكود يدوياً",
+  "pasteHere": "الصق كود التفعيل هنا",
+  "paste": "لصق",
+  "activate": "تفعيل",
+  "sendAgain": "إعادة إرسال الطلب",
+  "codeFound": "وُجد كود تفعيل فيما نسخته.",
+  "problemNoCode": "لا يوجد كود تفعيل في هذا النص. انسخ رسالة الإدارة كاملة وحاول مرة أخرى.",
+  "problemOtherInstitute": "هذا الكود ليس من معهد الرؤية المستقبلية.",
+  "problemAltered": "تغيّر هذا الكود بعد إرساله. انسخه مرة أخرى من الرسالة.",
+  "problemOtherPhone": "هذا الكود لهاتف آخر، أو لهذا الهاتف قبل إعادة تثبيت التطبيق. أرسل طلباً جديداً.",
+  "problemClock": "تاريخ هاتفك غير صحيح. صحّحه من إعدادات الهاتف ثم حاول مرة أخرى.",
+  "activated": "تم تفعيل التطبيق.",
+  "clockTitle": "صحّح تاريخ هاتفك",
+  "clockText": "تاريخ هاتفك أقدم من تاريخ رآه التطبيق من قبل، فأُغلقت المستويات. صحّح التاريخ من إعدادات الهاتف، أو اطلب كوداً جديداً من الإدارة.",
+  "tryAgain": "حاول مرة أخرى",
+  "enterCode": "أدخل كود تفعيل",
+  "lockedTitle": "هذا المستوى مقفل",
+  "lockedText": "اطلب من إدارة المعهد تفعيل {level} لك.",
+  "@lockedText": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "expiredTitle": "انتهى تفعيل هذا المستوى",
+  "expiredText": "اطلب من الإدارة تجديد {level}. تقدّمك محفوظ.",
+  "@expiredText": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "renewOnWhatsapp": "اطلب التجديد عبر واتساب",
+  "endsOn": "ينتهي تفعيل {level} في {date}.",
+  "@endsOn": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "openUntil": "مفتوح حتى {date}",
+  "@openUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "developmentBuild": "نسخة تطوير: تقبل الأكواد التجريبية فقط."
 }
