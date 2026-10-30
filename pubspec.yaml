@@ -7,4 +7,5 @@ environment:
 workspace:
   - packages/fvi_core
   - apps/student
+  - apps/admin
   - tools/content_builder

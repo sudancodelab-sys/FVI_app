@@ -1,0 +1,48 @@
+name: fvi_admin
+description: The admin app of Future Vision Institute. Issues activation codes for the student app, offline, on one phone.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  fvi_core: any
+  flutter_secure_storage: ^11.2.0
+  shared_preferences: ^2.5.6
+  url_launcher: ^6.3.3
+  local_auth: ^3.0.2
+  file_picker: ^13.3.0
+  cryptography: ^2.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    # The content tree: tools/content_builder's index.json (names and ids only).
+    - assets/content/
+    - assets/branding/
+  fonts:
+    - family: Cairo
+      fonts:
+        - {asset: assets/fonts/Cairo-Regular.ttf, weight: 400}
+        - {asset: assets/fonts/Cairo-SemiBold.ttf, weight: 600}
+        - {asset: assets/fonts/Cairo-Bold.ttf, weight: 700}
+        - {asset: assets/fonts/Cairo-ExtraBold.ttf, weight: 800}
+    - family: Lexend
+      fonts:
+        - {asset: assets/fonts/Lexend-Regular.ttf, weight: 400}
+        - {asset: assets/fonts/Lexend-SemiBold.ttf, weight: 600}
+        - {asset: assets/fonts/Lexend-Bold.ttf, weight: 700}

@@ -3,6 +3,7 @@
 /// ```text
 /// python3 curriculum/tools/export_app.py --out build/content
 /// dart run content_builder build [--in build/content] [--out apps/student/assets/content] [--keys keys/dev]
+///                                [--admin apps/admin/assets/content]
 /// ```
 ///
 /// Development only, until the admin app exists:
@@ -38,6 +39,10 @@ Future<void> main(List<String> args) async {
       for (final level in built) {
         stdout.writeln('${level.node}: ${levelPath(level.slug)}, ${level.bytes} bytes');
       }
+      // The admin app grants from the same tree: the index only, never the levels.
+      final admin = Directory(one('admin', 'apps/admin/assets/content'));
+      await admin.create(recursive: true);
+      await File('${one('out', 'apps/student/assets/content')}/index.json').copy('${admin.path}/index.json');
     case 'dev-keys':
       final keys = await BuildKeys.create(keysDir);
       final issuer = await keys.issuer();

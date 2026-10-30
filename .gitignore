@@ -16,5 +16,6 @@ keys/prod/
 __pycache__/
 *.pyc
 
-# Student app content, written by curriculum/tools/export_app.py
+# The apps' content, written by tools/content_builder from curriculum/tools/export_app.py
 apps/student/assets/content/
+apps/admin/assets/content/

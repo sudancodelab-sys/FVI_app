@@ -1,0 +1,199 @@
+{
+  "@@locale": "ar",
+  "appTitle": "إدارة معهد الرؤية",
+  "adminBadge": "تطبيق الإدارة",
+  "lockTitle": "أدخل رمز الدخول",
+  "lockSub": "أو استخدم بصمة الهاتف",
+  "lockSubPin": "رمز من 4 أرقام",
+  "wrongPin": "الرمز غير صحيح.",
+  "createPinTitle": "اختر رمز الدخول",
+  "createPinSub": "4 أرقام تفتح بها تطبيق الإدارة",
+  "confirmPinTitle": "أعد كتابة الرمز",
+  "pinMismatch": "الرمزان مختلفان. اختر الرمز مرة أخرى.",
+  "useBiometrics": "البصمة",
+  "delete": "حذف",
+  "setupTitle": "إعداد تطبيق الإدارة",
+  "setupText": "مفاتيح المعهد تُصنع مرة واحدة على هذا الهاتف، وبها تُختم الأكواد. احفظ بعدها نسخة احتياطية خارج الهاتف.",
+  "createKeys": "إنشاء مفاتيح المعهد",
+  "developmentBuild": "نسخة تطوير: المفاتيح تجريبية، وأكوادها تفتح النسخة التجريبية من تطبيق الطالب فقط.",
+  "navHome": "الرئيسية",
+  "navNew": "تفعيل جديد",
+  "navStudents": "الطلاب",
+  "navSettings": "الإعدادات",
+  "dashboardTitle": "لوحة الإدارة",
+  "newActivationSub": "الصق رسالة الطالب من واتساب",
+  "statActive": "طالب مفعّل",
+  "statEnding": "تنتهي قريباً",
+  "statExpired": "منتهية",
+  "statCodes": "كوداً هذا الشهر",
+  "endingSoon": "تنتهي قريباً",
+  "seeAll": "عرض الكل",
+  "nothingEnding": "لا تفعيلات تنتهي هذا الأسبوع.",
+  "backupDaysAgo": "{n, plural, =0{آخر نسخة احتياطية اليوم} =1{آخر نسخة احتياطية قبل يوم} =2{آخر نسخة احتياطية قبل يومين} few{آخر نسخة احتياطية قبل {n} أيام} other{آخر نسخة احتياطية قبل {n} يوماً}}",
+  "@backupDaysAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "backupNever": "لم تُنشأ نسخة احتياطية بعد",
+  "backupNow": "نسخ الآن",
+  "daysLeft": "{n, plural, =0{اليوم} =1{يوم} =2{يومان} few{{n} أيام} other{{n} يوماً}}",
+  "@daysLeft": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pasteRequest": "الصق رسالة طلب الطالب هنا",
+  "paste": "لصق",
+  "noRequest": "لا توجد رسالة طلب في هذا النص. انسخ رسالة الطالب كاملة من واتساب.",
+  "studentData": "بيانات الطالب",
+  "readFromWhatsapp": "قُرئت من رسالة واتساب",
+  "name": "الاسم",
+  "phone": "الهاتف",
+  "deviceCode": "رمز الجهاز",
+  "newDevice": "جهاز جديد · لم يُفعَّل من قبل",
+  "knownDevice": "سبق تفعيل هذا الجهاز: {name}",
+  "@knownDevice": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sameNameOrPhone": "الاسم أو الرقم موجود بجهاز آخر ({names}): غالباً أعاد الطالب تثبيت التطبيق، أو غيّر هاتفه.",
+  "@sameNameOrPhone": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "whatOpens": "ما الذي يُفتح للطالب؟",
+  "requestedTag": "طلبه الطالب",
+  "duration": "مدة التفعيل",
+  "oneMonth": "شهر",
+  "twoMonths": "شهران",
+  "threeMonths": "3 أشهر",
+  "customDate": "مخصص",
+  "endsOn": "ينتهي في: {date}",
+  "@endsOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "issueAndSend": "إصدار الكود وإرساله عبر واتساب",
+  "chooseSomething": "اختر ما يُفتح للطالب.",
+  "issued": "صدر الكود.",
+  "whatsappFailed": "لم يُفتح واتساب.",
+  "copyCode": "نسخ الكود",
+  "copied": "نُسخ الكود.",
+  "studentsTitle": "الطلاب",
+  "search": "ابحث بالاسم أو رقم الهاتف",
+  "filterAll": "الكل",
+  "filterActive": "فعّال {n}",
+  "@filterActive": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "filterSoon": "قريباً {n}",
+  "@filterSoon": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "filterExpired": "منتهٍ {n}",
+  "@filterExpired": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "statusActive": "فعّال",
+  "statusExpired": "منتهٍ",
+  "statusNew": "جديد",
+  "noStudents": "لا يوجد طلاب بعد. أول تفعيل يضيف الطالب هنا.",
+  "noMatch": "لا أحد بهذا الاسم أو الرقم.",
+  "studentTitle": "سجل الطالب",
+  "since": "منذ {date}",
+  "@since": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceChip": "رمز الجهاز {code}",
+  "@deviceChip": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "activations": "التفعيلات",
+  "ended": "انتهى",
+  "renewedTag": "جُدِّد",
+  "period": "{from} ← {to}",
+  "@period": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "renew": "تجديد {label}",
+  "@renew": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "moreContent": "فتح محتوى إضافي",
+  "resendLast": "إعادة إرسال آخر كود عبر واتساب",
+  "renewTitle": "تجديد",
+  "settingsTitle": "الإعدادات",
+  "backupSection": "النسخ الاحتياطي",
+  "makeBackup": "إنشاء نسخة احتياطية",
+  "makeBackupSub": "السجل + مفاتيح المعهد، مشفّرة بكلمة سر",
+  "restore": "استعادة من نسخة احتياطية",
+  "restoreSub": "عند تغيير هاتف الإدارة",
+  "whatsappSection": "واتساب",
+  "whatsappNumber": "رقم طلبات التفعيل",
+  "change": "تغيير",
+  "whatsappNote": "عند تغيير الرقم، يحمل كل كود جديد الرقم الجديد، فيتحدّث عند الطلاب المفعّلين تلقائياً.",
+  "security": "الأمان",
+  "biometricLogin": "الدخول بالبصمة",
+  "changePin": "تغيير رمز الدخول",
+  "sealKey": "مفتاح الختم",
+  "sealKeySub": "محفوظ ومشفّر على هذا الهاتف",
+  "sealOk": "سليم",
+  "sealDevelopment": "تجريبي",
+  "lockNow": "قفل التطبيق",
+  "backupPassword": "كلمة سر النسخة الاحتياطية",
+  "passwordHint": "8 أحرف على الأقل. احفظها في مكان آمن: بدونها لا تُفتح النسخة.",
+  "passwordTooShort": "كلمة السر قصيرة: 8 أحرف على الأقل.",
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "backupMade": "أُنشئت النسخة الاحتياطية. احفظ الملف خارج الهاتف.",
+  "restoreDone": "تمت الاستعادة.",
+  "wrongPassword": "كلمة السر غير صحيحة.",
+  "notBackup": "هذا الملف ليس نسخة احتياطية لتطبيق الإدارة.",
+  "restoreWarning": "الاستعادة تستبدل كل ما في هذا الهاتف بما في النسخة.",
+  "openRestore": "اختر الملف"
+}

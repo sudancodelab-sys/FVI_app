@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 98:** …`); the last one asked was 97, so continue from 98.
+  (`**السؤال 101:** …`); the last one asked was 100, so continue from 101.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -79,9 +79,24 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   `dart run content_builder issue --request FILE --level SLUG --days N` makes a test code. The
   sample is the private Artifact page "FVI Activation Sample" (screenshots of a full walk in
   the web build, driven through Flutter's accessibility tree with Playwright).
-- **Next**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): the admin app
-  (read a request, issue codes, records, backup, production keys), then the APK build on GitHub
-  Actions with the production keys as secrets, and `FLAG_SECURE` where 5.7 asks.
+- **The admin app** (`apps/admin`, Flutter, Arabic only; **sample sent, waiting for approval**,
+  questions 99 and 100): screens A1 to A6 of `docs/design/screens/4-admin-activation.png` and
+  `5-admin-records.png`. PIN lock (and fingerprint), dashboard, new activation (paste the
+  student's message; familiar-device and reinstall alerts; content tree from the student index,
+  which `content_builder build` copies to `apps/admin/assets/content/`; 1, 2, 3 months or a date;
+  issue and open WhatsApp with a bilingual message), students and details (renewal starts where
+  the current activation ends), settings (backup file sealed with a password, restore, WhatsApp
+  number, fingerprint, PIN). Records are AES-GCM encrypted with a key in secure storage. It uses
+  `keys/dev` unless built with `--dart-define=FVI_PRODUCTION=true`, which has no keys: its first
+  run makes them or restores them from a backup file. The sample is the private Artifact page
+  "FVI Admin Sample" (`curriculum/tools/dev/adminshots.js`: the student build on :8123, the admin
+  build on :8124).
+  **Open (question 100):** the production key ceremony; the proposal is keys made once on a
+  computer into a password file in the backup format, imported on the admin phone, and the root
+  key and public seal key as GitHub secrets.
+- **Next**, after the admin app's approval (`docs/REQUIREMENTS.md` section 9): the production key
+  tool, the APK builds on GitHub Actions with the production keys as secrets, and `FLAG_SECURE`
+  where 5.7 asks (in the admin app: the keys and backup screens).
 
 ## Commands
 
@@ -89,7 +104,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 python3 curriculum/tools/build.py english/<level> --check            # the checks
 python3 curriculum/tools/build.py english/<level> --book --out <name>  # a book: dist/<name>.pdf
 python3 curriculum/tools/export_app.py --out build/content   # the levels, plain
-dart run content_builder build                                  # encrypted into apps/student/assets/content
+dart run content_builder build                                  # encrypted into apps/student/assets/content (+ the admin index)
 (cd tools/content_builder && dart test)                        # 2 tests
 
 # Flutter 3.47.8 is not preinstalled:
@@ -99,6 +114,7 @@ export PATH=/opt/sdk/flutter/bin:$PATH && flutter config --no-analytics
 flutter pub get                                  # at the repo root (pub workspace)
 (cd packages/fvi_core && dart test)              # 54 tests
 (cd apps/student && flutter analyze && flutter build web --release --no-web-resources-cdn)
+(cd apps/admin && flutter analyze && flutter test)  # 5 tests; the same web build for previews
 
 # The voices: their own Python 3.12 venv (docs/VOICES.md)
 python3.12 -m venv ~/.venvs/voices && ~/.venvs/voices/bin/pip install -r curriculum/tools/voices-requirements.txt
