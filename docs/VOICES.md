@@ -32,7 +32,9 @@ themselves are in `curriculum/voices.yaml`.
   voices and groups are at the top) and `docs/voice-sample/build_page.py`. What it taught:
   - Free tier per model: **10 requests a day** for each TTS model (`gemini-2.5-pro-preview-tts`
     has 0: paid only), about 20 a day for `gemini-3.5-transcribe`, 3 a minute for all. The
-    4,077 clips cannot be made on the free tier.
+    4,077 clips cannot be made on the free tier. The institute's Gemini Pro subscription (the
+    Gemini app) does not change this: the key was still on the free tier after it (2.5 Pro TTS
+    limit 0, "free_tier" in the 429). The API needs billing on the key's Google Cloud project.
   - `gemini-3.8-flash-tts` and `-lite` **read any direction aloud** ("Read this aloud in ...")
     and refuse a system instruction (400), so they get the bare text, and a slower level is
     made by stretching with ffmpeg `rubberband` (pitch kept). `gemini-2.5-flash-preview-tts`
