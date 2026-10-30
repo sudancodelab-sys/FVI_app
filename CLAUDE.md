@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 103:** …`); the last one asked was 102, so continue from 103.
+  (`**السؤال 104:** …`); the last one asked was 103, so continue from 104.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -95,7 +95,8 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   The "development build" notes are gone from both apps. The code paths for later
   (`FVI_ISSUER_KEY` in the student app, `FVI_PRODUCTION` in the admin app) stay, unused.
 - **The APK files** (decision #50, approved; in progress): both apps go on a private download
-  page as APKs. The Android projects are ready: names "FVI" and "FVI Admin", the FVI icons
+  page as APKs. The Android projects are ready: names "FVI" and "FVI Admin" (approved, question
+  103), the FVI icons
   (white for the student app, navy for the admin app), packages `sd.futurevision.fvi_student`
   and `sd.futurevision.fvi_admin`, version 1.0.0, no Android backup (activation belongs to the
   install), WhatsApp links in `<queries>`, and for the admin app `FlutterFragmentActivity`, an
@@ -104,7 +105,9 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   (ignored; alias `fvi`); both apps share the key. The key must survive: once APKs are out, keep
   it on its own private Artifact page ("FVI Signing Key") and reuse it for every update, or
   updates will not install over the old app. **Blocked:** `dl.google.com` (the Android SDK) is
-  denied by this environment's network policy; the user was asked to allow it (30 October 2026).
+  denied by this environment's network policy; the user was asked to allow it (30 October 2026)
+  and does not know how, so walk them through it simply. GitHub's CI (`.github/workflows/ci.yml`)
+  builds both APKs with the runner's debug key as a check; its files are not the release.
 - **Then:** `FLAG_SECURE` where REQUIREMENTS 5.7 asks (the admin's backup and keys screens).
 
 ## Commands
