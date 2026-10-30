@@ -25,6 +25,11 @@ themselves are in `curriculum/voices.yaml`.
   speech check can be Gemini too (transcribe each clip), since faster-whisper is on Hugging Face.
   Needs a key in the environment settings as `GEMINI_API_KEY` (never in the repo). Then the voice
   sample below, with Gemini's voices in place of Kokoro's.
+- **The institute said "let's try Gemini" (30 October 2026).** Waiting for the key; a new session
+  picks it up. Ready here: `ffmpeg`, Python 3.13 and the `google-genai` SDK on PyPI (2.34.0).
+  With the key: list the models (`GET /v1beta/models`, keep the TTS ones) and use the newest
+  stable one, one short call to see the audio format, then the voice sample. Without a key the API
+  answers 403 "unregistered callers", which only shows the host is open.
 - **Python:** the `kokoro` package needs Python < 3.13, and the session had 3.13. Either install
   Python 3.12, or use `kokoro-onnx` (runs on 3.13) with the ONNX model
   `onnx-community/Kokoro-82M-v1.0-ONNX` (one `voices/<name>.bin` per voice; build the
