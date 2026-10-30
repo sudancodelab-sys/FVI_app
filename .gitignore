@@ -18,3 +18,6 @@ __pycache__/
 
 # Student app content, written by curriculum/tools/export_app.py
 apps/student/assets/content/
+
+# Rendered ads, written by marketing/render.js
+marketing/out/

@@ -1,0 +1,41 @@
+/* Shared look of the institute's ads: the logo's navy and orange, Cairo for Arabic, Lexend for English. */
+@font-face{font-family:Cairo;font-weight:400;src:url(../../docs/design/fonts/cairo-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200E,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:600;src:url(../../docs/design/fonts/cairo-arabic-600-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200E,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:700;src:url(../../docs/design/fonts/cairo-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200E,U+FE70-FEFF}
+@font-face{font-family:Cairo;font-weight:800;src:url(../../docs/design/fonts/cairo-arabic-800-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+200C-200E,U+FE70-FEFF}
+@font-face{font-family:Lexend;font-weight:400;src:url(../../curriculum/assets/fonts/lexend-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:Lexend;font-weight:600;src:url(../../curriculum/assets/fonts/lexend-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Lexend;font-weight:700;src:url(../../curriculum/assets/fonts/lexend-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:Lexend;font-weight:800;src:url(../../curriculum/assets/fonts/lexend-latin-800-normal.woff2) format('woff2')}
+
+:root{
+  --navy:#262E62; --navy-d:#1A2048; --navy-soft:#E9EBF6; --navy-tint:#F4F5FB;
+  --orange:#E4451A; --orange-l:#FF7A52; --orange-soft:#FDEEE8;
+  --blue:#3D5FC4; --blue-soft:#E6ECFA;
+  --ink:#1D2040; --muted:#5F6385; --line:#E1E4F0; --wa:#1FA855;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:var(--w);height:var(--h);overflow:hidden}
+body{font-family:Lexend,Cairo,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.ar{font-family:Cairo,Lexend,sans-serif}
+.en{font-family:Lexend,sans-serif;direction:ltr;unicode-bidi:isolate}
+.ad{position:relative;width:var(--w);height:var(--h);overflow:hidden}
+
+/* The logo sits in a white disc so it reads on any background. */
+.logo{border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.logo img{width:92%;height:92%;object-fit:contain}
+
+/* The brand line: logo, then the name in Arabic and English. */
+.brand{display:flex;align-items:center;gap:22px}
+.brand .name{line-height:1.25}
+.brand .name b{display:block;font-weight:800}
+.brand .name span{display:block;font-weight:700;color:var(--orange)}
+.brand .name i{display:block;font-style:normal;font-family:Lexend;font-weight:600;letter-spacing:.06em;direction:ltr;text-align:right}
+
+/* The call to action: register, and the WhatsApp number. */
+.cta{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.cta .go{font-weight:800;color:#fff;background:var(--orange);border-radius:999px;white-space:nowrap}
+.cta .wa{display:flex;align-items:center;gap:14px;font-weight:700}
+.cta .wa svg{flex:none}
+.cta .num{font-family:Lexend;font-weight:700;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
+.where{display:flex;align-items:center;gap:10px;font-weight:600}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>English course post</title>
+<link rel="stylesheet" href="ad.css">
+<style>
+/* A square post for the English course: ten levels as a staircase, numbered as on the books' covers. */
+:root{--w:1080px;--h:1080px}
+.ad{background:linear-gradient(160deg,#fff 0%,var(--navy-tint) 55%,var(--orange-soft) 100%);padding:60px 72px 56px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between}
+.brand{gap:18px}
+.brand .logo{width:104px;height:104px;box-shadow:0 0 0 2px var(--line)}
+.brand .name b{font-size:32px;color:var(--navy)}
+.brand .name span{font-size:24px}
+.tag{font-family:Lexend;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--orange);direction:ltr;text-align:left;line-height:1.5}
+h1{margin-top:30px;font-weight:800;font-size:92px;line-height:1.1;color:var(--navy)}
+h1 span{display:block;font-size:48px;line-height:1.4;color:var(--orange)}
+
+.stairs{margin-top:auto;display:grid;grid-template-columns:repeat(10,1fr);gap:10px;align-items:end}
+.step{border-radius:16px 16px 6px 6px;color:#fff;text-align:center;padding-top:12px;font-family:Lexend}
+.step b{display:block;font-size:30px;font-weight:800;line-height:1.1}
+.step b svg{width:30px;height:30px;fill:#fff;vertical-align:-3px}
+.step small{display:block;font-size:14px;font-weight:600;opacity:.85;margin-top:2px}
+.s{background:var(--orange)} .p{background:#EE6A42} .i{background:var(--blue)} .a{background:var(--navy)}
+.groups{display:grid;grid-template-columns:repeat(10,1fr);gap:10px;margin-top:12px}
+.group{font-family:Lexend;font-weight:700;font-size:17px;text-align:center;border-top:3px solid;padding-top:6px;white-space:nowrap}
+.group.s{grid-column:span 1;color:var(--orange);background:none}
+.group.p{grid-column:span 4;color:#D9552E;background:none}
+.group.i{grid-column:span 2;color:var(--blue);background:none}
+.group.a{grid-column:span 3;color:var(--navy);background:none}
+
+.feats{margin-top:26px;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:8px}
+.feat{display:flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--line);border-radius:999px;padding:5px 14px 7px 11px;font-size:21px;white-space:nowrap;font-weight:700;color:var(--navy)}
+.feat svg{flex:none;width:24px;height:24px;stroke:var(--orange);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.cta{margin-top:28px;background:var(--navy);border-radius:28px;padding:18px 22px 18px 34px;color:#fff}
+.cta .go{font-size:34px;padding:8px 38px 12px}
+.cta .wa small{display:block;font-size:22px;font-weight:600;color:rgba(255,255,255,.75);line-height:1.3}
+.cta .num{display:block;font-size:40px;white-space:nowrap;line-height:1.2}
+.cta .wa svg{width:56px;height:56px}
+</style>
+</head>
+<body>
+<div class="ad ar">
+  <div class="top">
+    <div class="brand">
+      <div class="logo"><img src="../../assets/branding/fvi_logo.png" alt=""></div>
+      <div class="name"><b>معهد الرؤية المستقبلية</b><span>للحاسوب واللغات</span></div>
+    </div>
+    <div class="tag">FUTURE VISION<br>ENGLISH COURSE</div>
+  </div>
+
+  <h1>تعلّم الإنجليزية<span>من الصفر حتى المستوى المتقدم</span></h1>
+
+  <div class="stairs">
+    <div class="step s" style="height:100px"><b><svg viewBox="0 0 24 24"><path d="M12 1.8l3 7.1 7.7.6-5.9 5 1.8 7.5L12 18l-6.6 4 1.8-7.5-5.9-5 7.7-.6z"/></svg></b><small>Pre A1</small></div>
+    <div class="step p" style="height:124px"><b>1</b><small>A1.1</small></div>
+    <div class="step p" style="height:148px"><b>2</b><small>A1.2</small></div>
+    <div class="step p" style="height:172px"><b>3</b><small>A2.1</small></div>
+    <div class="step p" style="height:196px"><b>4</b><small>A2.2</small></div>
+    <div class="step i" style="height:220px"><b>5</b><small>B1.1</small></div>
+    <div class="step i" style="height:244px"><b>6</b><small>B1.2</small></div>
+    <div class="step a" style="height:268px"><b>7</b><small>B2.1</small></div>
+    <div class="step a" style="height:292px"><b>8</b><small>B2.2</small></div>
+    <div class="step a" style="height:316px"><b>9</b><small>C1.1</small></div>
+  </div>
+  <div class="groups">
+    <div class="group s">Starter</div>
+    <div class="group p">Pre-Intermediate</div>
+    <div class="group i">Intermediate</div>
+    <div class="group a">Advanced</div>
+  </div>
+
+  <div class="feats">
+    <div class="feat"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg>10 مستويات</div>
+    <div class="feat"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg>كتاب لكل مستوى</div>
+    <div class="feat"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg>قصص ومحادثات وقواعد</div>
+    <div class="feat"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg>نطق أمريكي</div>
+  </div>
+
+  <div class="cta">
+    <div class="go">سجّل الآن</div>
+    <div class="wa">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1FA855"/><path fill="#fff" d="M9.1 6.6c.3 0 .5 0 .7.5l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.1.2-.2.3 0 .6.5.9 1.2 1.7 2 2.3.6.4 1 .6 1.3.7.2.1.4 0 .5-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.4.4.1.6-.1 1.5-.8 2-.9.6-2 .7-3.6.1-1.9-.8-3.6-2.4-4.6-4.2-.8-1.4-.8-2.8.1-3.9.3-.4.6-.6.8-.6z"/></svg>
+      <div><small>للتسجيل والاستفسار عبر واتساب</small><span class="num">0XXX XXX XXX</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
