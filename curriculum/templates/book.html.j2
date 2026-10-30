@@ -4,8 +4,51 @@
 <meta charset="utf-8">
 <title>{{ level.name }}</title>
 <link rel="stylesheet" href="{{ assets }}/sheet.css">
+{% if book and level.name == 'Starter' %}
+<style>
+/* A modest, Starter-only type increase for comfortable A4 classroom printing. */
+.starter-book .page.toc .toc-row{font-size:11.5pt}
+.starter-book .page.toc .toc-part h2{font-size:13pt}
+.starter-book .page.stream .abc .lbl{font-size:8.5pt}
+.starter-book .page.stream .abc i{font-size:8pt}
+.starter-book .page.stream .hero p{font-size:11pt}
+.starter-book .page.stream .sec h2{font-size:14pt}
+.starter-book .page.stream.dense .sec h2{font-size:13pt}
+.starter-book .page.stream .sec h2 .num{font-size:10pt}
+.starter-book .page.stream .lead{font-size:12pt}
+.starter-book .page.stream .aside{font-size:11pt}
+.starter-book .page.stream .alpha-key{font-size:10.5pt}
+.starter-book .page.stream .sound .name{font-size:9.5pt}
+.starter-book .page.stream .sound li{font-size:14.5pt}
+.starter-book .page.stream .sounds.n4 .sound li{font-size:14pt}
+.starter-book .page.stream .sounds.n5 .sound .name{font-size:8.5pt}
+.starter-book .page.stream .sounds.n5 .sound li{font-size:13.5pt}
+.starter-book .page.stream .rule .txt p{font-size:12pt}
+.starter-book .page.stream .rule.plain p{font-size:12pt}
+.starter-book .page.stream .side p{font-size:9.5pt}
+.starter-book .page.stream .rel{font-size:8.5pt}
+.starter-book .page.stream .team .r .w{font-size:14pt}
+.starter-book .page.stream .tnote{font-size:9pt}
+.starter-book .page .chart div b{font-size:14pt}
+.starter-book .page .chart div span{font-size:12.5pt}
+.starter-book .page.stream .ncell small{font-size:8.5pt}
+.starter-book .page.stream .symbols div{font-size:11.5pt}
+.starter-book .page.stream .legend-list div{font-size:11.5pt}
+.starter-book .page.fit .scene{font-size:10.5pt}
+.starter-book .page.fit .line{font-size:12pt}
+.starter-book .page.fit.denser .line{font-size:11.5pt}
+.starter-book .page.fit .ph p{font-size:11pt}
+.starter-book .page.fit.dense .ph p{font-size:10.5pt}
+.starter-book .page.fit.denser .ph p{font-size:10pt}
+.starter-book .page.fit .word{font-size:10.5pt}
+.starter-book .page.fit .word b{font-size:11.5pt}
+.starter-book .page.starter-cover{padding:0;display:block}
+.starter-book .page.starter-cover .starter-cover-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.starter-book .page.starter-cover .starter-cover-logo{position:absolute;top:4mm;left:50%;transform:translateX(-50%);width:45mm;height:45mm;object-fit:contain;z-index:2}
+</style>
+{% endif %}
 </head>
-<body>
+<body{% if book and level.name == 'Starter' %} class="starter-book"{% endif %}>
 {%- macro head(where) %}
   <div class="head">
     <img src="{{ assets }}/logo-512.png" alt="">
@@ -147,6 +190,12 @@
 {%- set c = level.course %}
 {%- set parts = level.name.rsplit(' ', 1) %}
 {%- set numbered = parts|length == 2 and parts[1].isdigit() %}
+{% if level.name == 'Starter' %}
+<div class="page cover starter-cover">
+  <img class="starter-cover-art" src="starter-cover-art.png" alt="">
+  <img class="starter-cover-logo" src="starter-cover-logo.png" alt="Future Vision Institute logo">
+</div>
+{% else %}
 <div class="page cover">
   {#- Every level of the course, the first at the bottom; this book's level is filled. #}
   <div class="cv-strip" aria-hidden="true">
@@ -188,6 +237,7 @@
   </div>
   <div class="cv-foot"><i></i><span{{ ' class="long"'|safe if level.subtitle|length > 32 }}>{{ level.subtitle }}</span><i></i></div>
 </div>
+{% endif %}
 <div class="page toc">
   {{ head('Contents') }}
   <h1 class="toc-title">Contents</h1>
