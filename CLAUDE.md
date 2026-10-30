@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 101:** …`); the last one asked was 100, so continue from 101.
+  (`**السؤال 103:** …`); the last one asked was 102, so continue from 103.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -40,7 +40,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 
 - **All ten books are approved:** Starter 36 pages, Pre-Intermediate 1-4 21/22/23/23,
   Intermediate 1-2 28/29, Advanced 1-3 31/36/37. Source in `curriculum/english/<level>/`;
-  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #48).
+  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #49).
 - **The app plan is approved:** `docs/APP-PLAN.md` (ten levels, one player), **except its audio:**
   decision #44 (30 October 2026) stopped the voices. The app is text only, with exercises in
   place of the audio clips. Do not generate audio.
@@ -74,29 +74,30 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   details and device code, "Request on WhatsApp" (message as in REQUIREMENTS 5.2), waiting and
   paste (the clipboard is read when the app returns), then the course with locks, open-until
   dates, a 7-day renewal banner and the clock guard. Keys and grants are in
-  `flutter_secure_storage`. It is built with the **development keys** of `keys/dev` (public;
-  see its README); production keys come with the admin app. Until then
-  `dart run content_builder issue --request FILE --level SLUG --days N` makes a test code. The
+  `flutter_secure_storage`. It is built with the keys of `keys/dev` (decision #49; see its
+  README). `dart run content_builder issue --request FILE --level SLUG --days N` makes a test
+  code without the admin app. The
   sample is the private Artifact page "FVI Activation Sample" (screenshots of a full walk in
   the web build, driven through Flutter's accessibility tree with Playwright).
-- **The admin app** (`apps/admin`, Flutter, Arabic only; **sample sent, waiting for approval**,
-  questions 99 and 100): screens A1 to A6 of `docs/design/screens/4-admin-activation.png` and
+- **The admin app** (`apps/admin`, Flutter, Arabic only; **sample sent**; question 101 asks
+  for its approval): screens A1 to A6 of `docs/design/screens/4-admin-activation.png` and
   `5-admin-records.png`. PIN lock (and fingerprint), dashboard, new activation (paste the
   student's message; familiar-device and reinstall alerts; content tree from the student index,
   which `content_builder build` copies to `apps/admin/assets/content/`; 1, 2, 3 months or a date;
   issue and open WhatsApp with a bilingual message), students and details (renewal starts where
   the current activation ends), settings (backup file sealed with a password, restore, WhatsApp
-  number, fingerprint, PIN). Records are AES-GCM encrypted with a key in secure storage. It uses
-  `keys/dev` unless built with `--dart-define=FVI_PRODUCTION=true`, which has no keys: its first
-  run makes them or restores them from a backup file. The sample is the private Artifact page
+  number, fingerprint, PIN). Records are AES-GCM encrypted with a key in secure storage. The
+  sample is the private Artifact page
   "FVI Admin Sample" (`curriculum/tools/dev/adminshots.js`: the student build on :8123, the admin
   build on :8124).
-  **Open (question 100):** the production key ceremony; the proposal is keys made once on a
-  computer into a password file in the backup format, imported on the admin phone, and the root
-  key and public seal key as GitHub secrets.
-- **Next**, after the admin app's approval (`docs/REQUIREMENTS.md` section 9): the production key
-  tool, the APK builds on GitHub Actions with the production keys as secrets, and `FLAG_SECURE`
-  where 5.7 asks (in the admin app: the keys and backup screens).
+- **Keys** (decision #49, 30 October 2026): the first version of both apps uses the keys of
+  `keys/dev` (public). The institute wants the app locked and activated now; secret production
+  keys and the seal-key ceremony are postponed to later versions, so do not bring them up again.
+  The "development build" notes are gone from both apps. The code paths for later
+  (`FVI_ISSUER_KEY` in the student app, `FVI_PRODUCTION` in the admin app) stay, unused.
+- **Next**, after the admin app's approval (`docs/REQUIREMENTS.md` section 9): the APK builds of
+  both apps (with `keys/dev`; only the APK signing key is secret), and `FLAG_SECURE` where 5.7
+  asks.
 
 ## Commands
 

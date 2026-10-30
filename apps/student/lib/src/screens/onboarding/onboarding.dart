@@ -342,10 +342,6 @@ class _Waiting extends StatelessWidget {
           icon: const Icon(Icons.refresh_rounded, color: Fvi.navy),
           label: Text(t.sendAgain, style: const TextStyle(fontWeight: FontWeight.w700, color: Fvi.navy, fontSize: 15)),
         ),
-        if (isDevelopmentBuild) ...[
-          const SizedBox(height: 8),
-          Text(t.developmentBuild, textAlign: TextAlign.center, style: const TextStyle(color: Fvi.muted, fontSize: 12.5)),
-        ],
       ]),
     );
   }

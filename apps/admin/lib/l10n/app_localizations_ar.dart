@@ -56,10 +56,6 @@ class L10nAr extends L10n {
   String get createKeys => 'إنشاء مفاتيح المعهد';
 
   @override
-  String get developmentBuild =>
-      'نسخة تطوير: المفاتيح تجريبية، وأكوادها تفتح النسخة التجريبية من تطبيق الطالب فقط.';
-
-  @override
   String get navHome => 'الرئيسية';
 
   @override
@@ -342,9 +338,6 @@ class L10nAr extends L10n {
 
   @override
   String get sealOk => 'سليم';
-
-  @override
-  String get sealDevelopment => 'تجريبي';
 
   @override
   String get lockNow => 'قفل التطبيق';

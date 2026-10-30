@@ -660,12 +660,6 @@ abstract class L10n {
   /// In ar, this message translates to:
   /// **'مفتوح حتى {date}'**
   String openUntil(String date);
-
-  /// No description provided for @developmentBuild.
-  ///
-  /// In ar, this message translates to:
-  /// **'نسخة تطوير: تقبل الأكواد التجريبية فقط.'**
-  String get developmentBuild;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

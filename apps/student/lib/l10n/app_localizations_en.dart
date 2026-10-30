@@ -332,8 +332,4 @@ class L10nEn extends L10n {
   String openUntil(String date) {
     return 'Open until $date';
   }
-
-  @override
-  String get developmentBuild =>
-      'Development build: it accepts test codes only.';
 }

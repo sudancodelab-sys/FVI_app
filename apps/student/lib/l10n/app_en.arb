@@ -93,6 +93,5 @@
   "expiredText": "Ask the institute to renew {level}. Your progress is kept.",
   "renewOnWhatsapp": "Renew on WhatsApp",
   "endsOn": "Your access to {level} ends on {date}.",
-  "openUntil": "Open until {date}",
-  "developmentBuild": "Development build: it accepts test codes only."
+  "openUntil": "Open until {date}"
 }

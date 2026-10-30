@@ -183,12 +183,6 @@ abstract class L10n {
   /// **'إنشاء مفاتيح المعهد'**
   String get createKeys;
 
-  /// No description provided for @developmentBuild.
-  ///
-  /// In ar, this message translates to:
-  /// **'نسخة تطوير: المفاتيح تجريبية، وأكوادها تفتح النسخة التجريبية من تطبيق الطالب فقط.'**
-  String get developmentBuild;
-
   /// No description provided for @navHome.
   ///
   /// In ar, this message translates to:
@@ -668,12 +662,6 @@ abstract class L10n {
   /// In ar, this message translates to:
   /// **'سليم'**
   String get sealOk;
-
-  /// No description provided for @sealDevelopment.
-  ///
-  /// In ar, this message translates to:
-  /// **'تجريبي'**
-  String get sealDevelopment;
 
   /// No description provided for @lockNow.
   ///

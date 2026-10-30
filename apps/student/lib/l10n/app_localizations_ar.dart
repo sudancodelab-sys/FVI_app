@@ -331,7 +331,4 @@ class L10nAr extends L10n {
   String openUntil(String date) {
     return 'مفتوح حتى $date';
   }
-
-  @override
-  String get developmentBuild => 'نسخة تطوير: تقبل الأكواد التجريبية فقط.';
 }

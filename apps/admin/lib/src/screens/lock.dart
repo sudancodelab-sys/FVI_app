@@ -190,10 +190,6 @@ class _LockScreenState extends State<LockScreen> {
                   ]),
                 ]),
               ),
-              if (admin.keys?.isDevelopment ?? false) ...[
-                const SizedBox(height: 16),
-                Text(t.developmentBuild, textAlign: TextAlign.center, style: const TextStyle(color: Color(0xFFC9CEF2), fontSize: 12.5)),
-              ],
             ]),
           ),
         ),

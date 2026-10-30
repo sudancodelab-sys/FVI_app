@@ -34,7 +34,6 @@ class SettingsScreen extends StatelessWidget {
           trailing: trailing ?? (onTap == null ? null : const Icon(Icons.chevron_left_rounded)),
           onTap: onTap,
         );
-    final development = admin.keys?.isDevelopment ?? true;
     return Scaffold(
       appBar: AppBar(title: Text(t.settingsTitle)),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 0, 16, 24), children: [
@@ -84,17 +83,11 @@ class SettingsScreen extends StatelessWidget {
             const Divider(height: 1, color: Fvi.line),
             tile(icon(Icons.key_rounded, Fvi.orange, Fvi.orangeSoft), t.sealKey,
                 subtitle: t.sealKeySub,
-                trailing: development
-                    ? Pill(t.sealDevelopment, color: Fvi.amber, background: Fvi.amberSoft)
-                    : Pill('✓ ${t.sealOk}', color: Fvi.green, background: Fvi.greenSoft)),
+                trailing: Pill('✓ ${t.sealOk}', color: Fvi.green, background: Fvi.greenSoft)),
             const Divider(height: 1, color: Fvi.line),
             tile(icon(Icons.logout_rounded, Fvi.muted, Fvi.navyTint), t.lockNow, onTap: admin.lock),
           ]),
         ),
-        if (development) ...[
-          const SizedBox(height: 14),
-          Text(t.developmentBuild, textAlign: TextAlign.center, style: const TextStyle(color: Fvi.muted, fontSize: 12.5)),
-        ],
       ]),
     );
   }

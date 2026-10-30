@@ -7,7 +7,7 @@
 ```bash
 # 1. ملفات المحتوى من الكتب المعتمدة، ثم تشفير كل مستوى بمفتاحه (لا تُرفع إلى المستودع)
 python3 curriculum/tools/export_app.py --out build/content
-dart run content_builder build          # بمفاتيح التطوير في keys/dev
+dart run content_builder build          # بمفاتيح keys/dev (القرار 49)
 
 # 2. التطبيق
 cd apps/student

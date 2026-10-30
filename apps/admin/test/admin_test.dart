@@ -29,7 +29,7 @@ void main() {
   test('a code issued here opens on the student phone, and the records stay encrypted', () async {
     final a = admin();
     await a.load();
-    expect(a.keys!.isDevelopment, isTrue);
+    expect(a.keys!.rootKey, InstituteKeys.development.rootKey);
     final (device, req) = await request('Ahmed Mohamed', '0912 345 678');
     final issued = await a.issue(req, [level1], a.until(months: 1));
 

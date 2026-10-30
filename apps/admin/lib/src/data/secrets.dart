@@ -22,8 +22,8 @@ class InstituteKeys {
     return InstituteKeys(issuerSeed: key(), rootKey: key());
   }
 
-  /// The public development keys of keys/dev: codes made with them open only
-  /// a student app built with them.
+  /// The keys of keys/dev, which the first version of both apps uses
+  /// (decision #49). They are public: a later version replaces them.
   static final development = InstituteKeys(
     issuerSeed: _hex('fd5d0883a7c40124e8f474b80895c73697327fd164dd1d0570f355aecb5a09c5'),
     rootKey: _hex('a3e9aaf0310e6610087999481d28072369cec22b67d6d31a4d72fb40b31768df'),
@@ -32,13 +32,12 @@ class InstituteKeys {
   final Uint8List issuerSeed;
   final Uint8List rootKey;
 
-  bool get isDevelopment => _equal(issuerSeed, development.issuerSeed);
-
   Map<String, Object?> toJson() => {'seal': base64.encode(issuerSeed), 'root': base64.encode(rootKey)};
 }
 
-/// A build for the institute passes `--dart-define=FVI_PRODUCTION=true`: it
-/// never uses the development keys, and makes or restores the real ones.
+/// For a later version with secret keys (decision #49): a build with
+/// `--dart-define=FVI_PRODUCTION=true` has no keys of its own, and its first
+/// run makes them or restores them from a backup.
 const isProductionBuild = bool.fromEnvironment('FVI_PRODUCTION');
 
 class BackupException implements Exception {
