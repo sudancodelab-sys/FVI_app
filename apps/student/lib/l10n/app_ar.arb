@@ -3,23 +3,83 @@
   "appTitle": "معهد الرؤية المستقبلية",
   "courseEnglish": "اللغة الإنجليزية",
   "courseEnglishSub": "قسم اللغات · {count} مستويات وفق إطار CEFR",
-  "@courseEnglishSub": {"placeholders": {"count": {"type": "int"}}},
+  "@courseEnglishSub": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "lessonsCount": "{count} درساً",
-  "@lessonsCount": {"placeholders": {"count": {"type": "int"}}},
+  "@lessonsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "unitN": "الوحدة {n}",
-  "@unitN": {"placeholders": {"n": {"type": "int"}}},
+  "@unitN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "lessonNofM": "الدرس {n} من {m}",
-  "@lessonNofM": {"placeholders": {"n": {"type": "int"}, "m": {"type": "int"}}},
-  "listenAll": "استمع للدرس كله",
-  "stopListening": "إيقاف",
+  "@lessonNofM": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
   "inArabic": "الشرح بالعربية",
-  "audioMissing": "صوت هذا الجزء لم يُضف بعد.",
   "nextLesson": "الدرس التالي",
   "previousLesson": "الدرس السابق",
   "phonicsPart": "الجزء الأول: الصوتيات",
   "speakingPart": "الجزء الثاني: المخاطبة",
-  "play": "استمع",
   "stagePreIntermediate": "ما قبل المتوسط",
   "stageIntermediate": "المتوسط",
-  "stageAdvanced": "المتقدم"
+  "stageAdvanced": "المتقدم",
+  "appLanguage": "لغة التطبيق",
+  "otherLanguage": "English",
+  "exercises": "التمارين",
+  "exercisesN": "التمارين · {count}",
+  "@exercisesN": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "howQuestion": "اختر الجواب الصحيح حسب الدرس",
+  "howMeaning": "ما معنى هذه الكلمة؟",
+  "howIdiom": "ما معنى هذا التعبير؟",
+  "howForm": "أكمل الجملة كما جاءت في القصة",
+  "howReply": "اختر الردّ المناسب",
+  "howOrder": "رتّب الكلمات لتكوّن العبارة",
+  "check": "تحقّق",
+  "next": "التالي",
+  "seeScore": "النتيجة",
+  "right": "صحيح",
+  "rightAnswer": "الجواب الصحيح:",
+  "nOfM": "{n} من {m}",
+  "@nOfM": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "exercisesDone": "انتهت تمارين الدرس.",
+  "allRight": "كلها صحيحة.",
+  "doAgain": "أعد التمارين",
+  "backToLesson": "العودة إلى الدرس"
 }

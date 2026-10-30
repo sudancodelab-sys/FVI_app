@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 93:** …`); the last one asked was 92, so continue from 93.
+  (`**السؤال 94:** …`); the last one asked was 93, so continue from 94.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -40,31 +40,30 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 
 - **All ten books are approved:** Starter 36 pages, Pre-Intermediate 1-4 21/22/23/23,
   Intermediate 1-2 28/29, Advanced 1-3 31/36/37. Source in `curriculum/english/<level>/`;
-  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #42).
+  `PLAN.md` per level; decisions in `docs/REQUIREMENTS.md` section 11 (up to #46).
 - **The app plan is approved:** `docs/APP-PLAN.md` (ten levels, one player), **except its audio:**
   decision #44 (30 October 2026) stopped the voices. The app is text only, with exercises in
   place of the audio clips. Do not generate audio.
 - **The student app** (`apps/student`, Flutter): the course, level and lesson screens for
-  every kind of lesson, the Arabic note box, the play buttons and the one `Speaker`. The
-  screen design is approved. No audio yet.
+  every kind of lesson, the Arabic note box, and the exercise screen. The screen design is
+  approved. Text only: no play buttons. `flutter test`: 8 tests.
 - **The voices are stopped** (decision #44). The generator (`curriculum/tools/voices.py`), the
   `Speaker` and `docs/VOICES.md` stay in the repo, unused, in case the institute returns to audio.
-- **Next: exercises in the app**, made only from the approved books' content; the books stay
-  without exercises (#28). The plan is approved (question 89). `curriculum/tools/exercises.py`
-  makes them (1,846 for Pre-Intermediate 1 to Advanced 3: questions, word and idiom meanings,
-  grammar forms as in the story, replies, phrases to put in order). The sample is the private
-  Artifact page "FVI Exercise Sample" (`curriculum/tools/dev/exercise_sample.py`), **waiting for
-  approval** (question 91).
-- **The app is in English** (decision #45): nothing in Arabic unless the student picks Arabic as
-  the app's language; then the interface and the exercise instructions are Arabic. The app is
-  still fixed to Arabic (`locale: Locale('ar')` in `apps/student/lib/src/app.dart`): it needs a
-  language choice, English by default. Whether the Arabic grammar notes show only in Arabic is
-  question 92. Starter's exercises wait for question 90. Then: the exercises in the
-  export and the app, and the play buttons out of the lesson screens.
+- **Exercises in the app** (decisions #44, #46, approved): made only from the approved books'
+  content by `curriculum/tools/exercises.py` and exported with each lesson (1,846 for
+  Pre-Intermediate 1 to Advanced 3: questions, word and idiom meanings, grammar forms as in the
+  story, replies, phrases to put in order). The books stay without exercises (#28). The
+  "Exercises · n" button at the bottom of a lesson opens `exercise_screen.dart`. The approved
+  sample is the private Artifact page "FVI Exercise Sample". **Starter has none yet** (question
+  93: none, or simple letter-to-word matching).
+- **The app is in English** (decision #45): nothing in Arabic unless the student picks Arabic
+  with the button on the course screen (kept with `shared_preferences`); then the interface, the
+  exercise instructions and the Arabic grammar notes are Arabic. The button shows "العربية" in
+  its own script.
 - **After the exercises**, the rest of the original plan (`docs/REQUIREMENTS.md` section 9): a
-  content builder that encrypts each level (and its audio) with `packages/fvi_core`, the
+  content builder that encrypts each level with `packages/fvi_core`, the
   activation screens (`docs/design/screens/1-student-onboarding.png`), the admin app, the APK
-  build on GitHub Actions, and tests for the `Speaker`.
+  build on GitHub Actions.
 
 ## Commands
 

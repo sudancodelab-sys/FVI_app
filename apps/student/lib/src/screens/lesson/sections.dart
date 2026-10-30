@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../l10n/app_localizations.dart';
-import '../../audio/speaker.dart';
 import '../../content/model.dart';
 import '../../theme.dart';
 import '../../widgets/marked_text.dart';
@@ -11,15 +10,13 @@ import 'icons.dart';
 const _body = TextStyle(fontFamily: Fvi.english, fontSize: 16, height: 1.65, color: Fvi.text);
 const _small = TextStyle(fontFamily: Fvi.english, fontSize: 14, height: 1.5, color: Fvi.muted);
 
-/// Builds a lesson the way the books lay it out, section by section, and
-/// fills [playlist] with its clips in the same order.
+/// Builds a lesson the way the books lay it out, section by section.
 class LessonSections {
-  LessonSections(this.context, this.level, this.lesson, this.playlist);
+  LessonSections(this.context, this.level, this.lesson);
 
   final BuildContext context;
   final Level level;
   final Lesson lesson;
-  final Playlist playlist;
   final _out = <Widget>[];
   var _number = 0;
 
@@ -129,11 +126,8 @@ class LessonSections {
     _out.addAll(children);
   }
 
-  /// A paragraph with its clip.
-  Widget _para(Spoken item, {Mark mark = Mark.grammar, TextStyle style = _body, Color? tint}) => SpokenBlock(
-        key: playlist.add(item),
-        items: [item],
-        color: tint ?? color,
+  /// A paragraph.
+  Widget _para(Spoken item, {Mark mark = Mark.grammar, TextStyle style = _body}) => TextBlock(
         child: MarkedText(item.text, mark: mark, style: style),
       );
 
@@ -176,7 +170,7 @@ class LessonSections {
                 fontWeight: FontWeight.w700, color: Fvi.navy)),
           ]),
         ),
-        for (final p in Spoken.list(pov['text'])) _para(p, tint: Fvi.navy),
+        for (final p in Spoken.list(pov['text'])) _para(p),
       ]),
     ], note: pov['intro'] as String);
     _learn(j['learn'] as Json);
@@ -188,9 +182,7 @@ class LessonSections {
       for (var i = 0; i < qas.length; i++)
         Container(
           decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Fvi.line))),
-          child: SpokenBlock(
-            key: playlist.add(qas[i].question, qas[i].answer),
-            items: [qas[i].question, qas[i].answer],
+          child: TextBlock(
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               SizedBox(width: 26, child: Text('${i + 1}', style: _body.copyWith(color: Fvi.orange,
                   fontWeight: FontWeight.w700, fontSize: 14))),
@@ -210,7 +202,8 @@ class LessonSections {
   void _learn(Json learn) {
     final table = (learn['table'] as List).cast<List>();
     final ask = QuestionAnswer.fromJson(learn['ask'] as Json);
-    final ar = learn['ar'] as Json?;
+    // The Arabic explanation shows only when Arabic is the app's language (decision #45).
+    final ar = Localizations.localeOf(context).languageCode == 'ar' ? learn['ar'] as Json? : null;
     _section('What did you learn?', [
       Container(
         padding: const EdgeInsets.all(16),
@@ -242,9 +235,7 @@ class LessonSections {
               ]),
             ),
           const Divider(height: 18, color: Fvi.line),
-          SpokenBlock(
-            key: playlist.add(ask.question, ask.answer),
-            items: [ask.question, ask.answer],
+          TextBlock(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('QUESTIONS', style: _small.copyWith(color: Fvi.orange, fontSize: 11,
                   letterSpacing: 1.2, fontWeight: FontWeight.w700)),
@@ -357,7 +348,7 @@ class LessonSections {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('DID YOU KNOW?', style: _small.copyWith(color: Fvi.teal, fontSize: 11.5,
                 letterSpacing: 1.1, fontWeight: FontWeight.w800)),
-            _para(dyk, style: _body.copyWith(fontSize: 15), tint: Fvi.teal),
+            _para(dyk, style: _body.copyWith(fontSize: 15)),
           ]),
         ),
       ));
@@ -439,7 +430,7 @@ class LessonSections {
   void _podcast() {
     _section('Before you listen', [
       _box(edge: Fvi.pink, background: Fvi.pinkSoft,
-          [for (final q in Spoken.list(j['before'])) _para(q, tint: Fvi.pink)]),
+          [for (final q in Spoken.list(j['before'])) _para(q)]),
     ]);
     _section('Listen and read', [
       Text(j['scene'] as String, style: _small.copyWith(fontStyle: FontStyle.italic)),
@@ -480,10 +471,7 @@ class LessonSections {
   Widget _line(Json line, {String? time}) {
     final item = Spoken.fromJson(line);
     final who = line['who'] as String;
-    return SpokenBlock(
-      key: playlist.add(item),
-      items: [item],
-      color: color,
+    return TextBlock(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         if (time != null)
@@ -514,10 +502,7 @@ class LessonSections {
           padding: const EdgeInsets.fromLTRB(14, 12, 8, 12),
           decoration: BoxDecoration(color: Fvi.amberSoft, borderRadius: BorderRadius.circular(14),
               border: Border.all(color: const Color(0xFFF1DDA8))),
-          child: SpokenBlock(
-            key: playlist.add(Spoken.fromJson(e)),
-            items: [Spoken.fromJson(e)],
-            color: Fvi.amber,
+          child: TextBlock(
             padding: EdgeInsets.zero,
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
@@ -549,9 +534,7 @@ class LessonSections {
       for (final w in (j['words'] as List).cast<Json>())
         Container(
           decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Fvi.line))),
-          child: SpokenBlock(
-            key: playlist.add(Spoken.fromJson(w)),
-            items: [Spoken.fromJson(w)],
+          child: TextBlock(
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               SizedBox(width: 120, child: Text(w['word'] as String, style: const TextStyle(
                   fontFamily: Fvi.english, fontWeight: FontWeight.w700, fontSize: 15.5, color: Fvi.navy))),
@@ -573,7 +556,7 @@ class LessonSections {
   };
 
   Widget _wordChips(List items) => Wrap(spacing: 8, runSpacing: 8, children: [
-        for (final w in Spoken.list(items)) _WordChip(item: w, playlistKey: playlist.add(w)),
+        for (final w in Spoken.list(items)) _WordChip(item: w),
       ]);
 
   Widget _ipa(String ipa) => Container(
@@ -692,8 +675,7 @@ class LessonSections {
             Column(mainAxisSize: MainAxisSize.min, children: [
               _ipa(it['ipa'] as String),
               const SizedBox(height: 4),
-              _WordChip(item: Spoken.fromJson(it['word'] as Json),
-                  playlistKey: playlist.add(Spoken.fromJson(it['word'] as Json))),
+              _WordChip(item: Spoken.fromJson(it['word'] as Json)),
             ]),
         ]),
       ]);
@@ -702,34 +684,17 @@ class LessonSections {
 }
 
 /// A Starter example word: the letters taught in orange, a silent letter
-/// in grey, and tapping it says the word.
+/// in grey.
 class _WordChip extends StatelessWidget {
-  const _WordChip({required this.item, required this.playlistKey});
+  const _WordChip({required this.item});
 
   final Spoken item;
-  final GlobalKey playlistKey;
 
   @override
-  Widget build(BuildContext context) {
-    final speaker = SpeakerScope.of(context);
-    final playing = speaker.current == item.id;
-    return Material(
-      key: playlistKey,
-      color: playing ? Fvi.orange.withValues(alpha: .12) : Fvi.navyTint,
-      borderRadius: BorderRadius.circular(12),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(12),
-        onTap: () => playing ? speaker.stop() : speaker.play(item),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            MarkedText(item.text, mark: Mark.phonics, style: const TextStyle(fontFamily: Fvi.english,
-                fontSize: 20, fontWeight: FontWeight.w600, color: Fvi.text)),
-            const SizedBox(width: 6),
-            Icon(playing ? Icons.graphic_eq_rounded : Icons.volume_up_rounded, size: 18, color: Fvi.orange),
-          ]),
-        ),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        decoration: BoxDecoration(color: Fvi.navyTint, borderRadius: BorderRadius.circular(12)),
+        child: MarkedText(item.text, mark: Mark.phonics, style: const TextStyle(fontFamily: Fvi.english,
+            fontSize: 20, fontWeight: FontWeight.w600, color: Fvi.text)),
+      );
 }

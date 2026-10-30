@@ -16,14 +16,16 @@ abstract final class Fvi {
   static const violet = Color(0xFF5B4BB7);
   static const pink = Color(0xFFB83280);
   static const pinkSoft = Color(0xFFFCEBF4);
+  static const red = Color(0xFFC62D2D); // a wrong answer
+  static const redSoft = Color(0xFFFBE9E9);
   static const text = Color(0xFF1A1D3B);
   static const muted = Color(0xFF6B6E8C);
   static const line = Color(0xFFE2E4EE);
   static const bg = Color(0xFFF5F6FA);
   static const surface = Color(0xFFFFFFFF);
 
-  /// English lesson text uses the font of the books; Arabic and the
-  /// interface use Cairo. IPA symbols fall back to Noto Sans.
+  /// English uses the font of the books, Lexend: the lessons, and the
+  /// interface in English. Arabic uses Cairo. IPA symbols fall back to Noto Sans.
   static const english = 'Lexend';
   static const arabic = 'Cairo';
   static const fallback = ['NotoSansIPA', 'Cairo'];
@@ -48,7 +50,7 @@ abstract final class Fvi {
         _ => muted,
       };
 
-  static ThemeData theme() {
+  static ThemeData theme({bool arabic = false}) {
     final scheme = ColorScheme.fromSeed(
       seedColor: navy,
       primary: navy,
@@ -58,7 +60,7 @@ abstract final class Fvi {
     return ThemeData(
       colorScheme: scheme,
       scaffoldBackgroundColor: bg,
-      fontFamily: arabic,
+      fontFamily: arabic ? Fvi.arabic : english,
       fontFamilyFallback: fallback,
       appBarTheme: const AppBarTheme(
         backgroundColor: surface,

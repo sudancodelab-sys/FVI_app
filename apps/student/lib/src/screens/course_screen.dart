@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import '../content/model.dart';
 import '../content/repository.dart';
+import '../language.dart';
 import '../theme.dart';
 import 'level_screen.dart';
 
-/// The English course: its ten levels, each with its CEFR circle.
+/// The English course: its ten levels, each with its CEFR circle, and the
+/// button that changes the app's language.
 class CourseScreen extends StatelessWidget {
   const CourseScreen({super.key, required this.content});
 
@@ -15,8 +17,25 @@ class CourseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = L10n.of(context);
+    final language = AppLanguage.of(context);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 8),
+            child: Tooltip(
+              message: t.appLanguage,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(foregroundColor: Colors.white),
+                onPressed: () => language.choose(language.isArabic ? AppLanguage.english : AppLanguage.arabic),
+                icon: const Icon(Icons.translate_rounded, size: 20),
+                // The other language, in its own script.
+                label: Text(t.otherLanguage, style: TextStyle(
+                    fontFamily: language.isArabic ? Fvi.english : Fvi.arabic, fontWeight: FontWeight.w700)),
+              ),
+            ),
+          ),
+        ],
         backgroundColor: Fvi.navy,
         foregroundColor: Colors.white,
         toolbarHeight: 72,

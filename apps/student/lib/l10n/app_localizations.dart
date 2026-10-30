@@ -133,29 +133,11 @@ abstract class L10n {
   /// **'الدرس {n} من {m}'**
   String lessonNofM(int n, int m);
 
-  /// No description provided for @listenAll.
-  ///
-  /// In ar, this message translates to:
-  /// **'استمع للدرس كله'**
-  String get listenAll;
-
-  /// No description provided for @stopListening.
-  ///
-  /// In ar, this message translates to:
-  /// **'إيقاف'**
-  String get stopListening;
-
   /// No description provided for @inArabic.
   ///
   /// In ar, this message translates to:
   /// **'الشرح بالعربية'**
   String get inArabic;
-
-  /// No description provided for @audioMissing.
-  ///
-  /// In ar, this message translates to:
-  /// **'صوت هذا الجزء لم يُضف بعد.'**
-  String get audioMissing;
 
   /// No description provided for @nextLesson.
   ///
@@ -181,12 +163,6 @@ abstract class L10n {
   /// **'الجزء الثاني: المخاطبة'**
   String get speakingPart;
 
-  /// No description provided for @play.
-  ///
-  /// In ar, this message translates to:
-  /// **'استمع'**
-  String get play;
-
   /// No description provided for @stagePreIntermediate.
   ///
   /// In ar, this message translates to:
@@ -204,6 +180,126 @@ abstract class L10n {
   /// In ar, this message translates to:
   /// **'المتقدم'**
   String get stageAdvanced;
+
+  /// No description provided for @appLanguage.
+  ///
+  /// In ar, this message translates to:
+  /// **'لغة التطبيق'**
+  String get appLanguage;
+
+  /// No description provided for @otherLanguage.
+  ///
+  /// In ar, this message translates to:
+  /// **'English'**
+  String get otherLanguage;
+
+  /// No description provided for @exercises.
+  ///
+  /// In ar, this message translates to:
+  /// **'التمارين'**
+  String get exercises;
+
+  /// No description provided for @exercisesN.
+  ///
+  /// In ar, this message translates to:
+  /// **'التمارين · {count}'**
+  String exercisesN(int count);
+
+  /// No description provided for @howQuestion.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر الجواب الصحيح حسب الدرس'**
+  String get howQuestion;
+
+  /// No description provided for @howMeaning.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما معنى هذه الكلمة؟'**
+  String get howMeaning;
+
+  /// No description provided for @howIdiom.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما معنى هذا التعبير؟'**
+  String get howIdiom;
+
+  /// No description provided for @howForm.
+  ///
+  /// In ar, this message translates to:
+  /// **'أكمل الجملة كما جاءت في القصة'**
+  String get howForm;
+
+  /// No description provided for @howReply.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر الردّ المناسب'**
+  String get howReply;
+
+  /// No description provided for @howOrder.
+  ///
+  /// In ar, this message translates to:
+  /// **'رتّب الكلمات لتكوّن العبارة'**
+  String get howOrder;
+
+  /// No description provided for @check.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقّق'**
+  String get check;
+
+  /// No description provided for @next.
+  ///
+  /// In ar, this message translates to:
+  /// **'التالي'**
+  String get next;
+
+  /// No description provided for @seeScore.
+  ///
+  /// In ar, this message translates to:
+  /// **'النتيجة'**
+  String get seeScore;
+
+  /// No description provided for @right.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحيح'**
+  String get right;
+
+  /// No description provided for @rightAnswer.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجواب الصحيح:'**
+  String get rightAnswer;
+
+  /// No description provided for @nOfM.
+  ///
+  /// In ar, this message translates to:
+  /// **'{n} من {m}'**
+  String nOfM(int n, int m);
+
+  /// No description provided for @exercisesDone.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهت تمارين الدرس.'**
+  String get exercisesDone;
+
+  /// No description provided for @allRight.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلها صحيحة.'**
+  String get allRight;
+
+  /// No description provided for @doAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد التمارين'**
+  String get doAgain;
+
+  /// No description provided for @backToLesson.
+  ///
+  /// In ar, this message translates to:
+  /// **'العودة إلى الدرس'**
+  String get backToLesson;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

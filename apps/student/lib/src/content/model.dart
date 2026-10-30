@@ -99,6 +99,41 @@ class Lesson {
   String? get subtitle => json['subtitle'] as String? ?? json['intro'] as String?;
   String get icon => json['icon'] as String? ?? 'book';
   List<String> get goals => [for (final g in (json['goals'] as List? ?? const [])) g as String];
+  List<Exercise> get exercises => [
+        for (final e in (json['exercises'] as List? ?? const [])) Exercise.fromJson(e as Json),
+      ];
+}
+
+/// An exercise of a lesson, made from the lesson by curriculum/tools/exercises.py.
+///
+/// [kind] is question, meaning, idiom, form, reply or order. An order
+/// exercise gives [words] to put back into [sentence]; the others give
+/// [choices], of which [rightChoice] is the right one. A form exercise is a
+/// sentence of the story with a gap between [before] and [after].
+class Exercise {
+  Exercise.fromJson(Json json)
+      : kind = json['kind'] as String,
+        prompt = json['prompt'] as String? ?? '',
+        choices = [for (final c in json['choices'] as List? ?? const []) c as String],
+        rightChoice = json['type'] == 'choice' ? json['answer'] as int : -1,
+        words = [for (final w in json['words'] as List? ?? const []) w as String],
+        sentence = json['type'] == 'order' ? json['answer'] as String : '',
+        before = json['before'] as String? ?? '',
+        after = json['after'] as String? ?? '',
+        example = json['example'] as String?;
+
+  final String kind;
+  final String prompt;
+  final List<String> choices;
+  final int rightChoice;
+  final List<String> words;
+  final String sentence;
+  final String before;
+  final String after;
+  final String? example;
+
+  bool get isOrder => kind == 'order';
+  String get rightText => isOrder ? sentence : choices[rightChoice];
 }
 
 class Level {

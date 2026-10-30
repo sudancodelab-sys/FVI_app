@@ -27,6 +27,7 @@ import yaml
 TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS))
 import build  # noqa: E402  (the checks and loaders of the books)
+import exercises  # noqa: E402  (the exercises of a lesson, decision #44)
 
 ROOT = build.ROOT
 FORMAT = 1
@@ -203,6 +204,8 @@ def export_level(level_path):
     if staged:
         out['units'] = [{'unit': n, 'title': t} for n, t in sorted(level['units'].items())]
         out['lessons'] = [export_lesson(slug, l) for l in lessons]
+        for lesson in out['lessons']:
+            lesson['exercises'] = exercises.lesson_exercises(out, lesson)
     else:
         out['letter_order'] = level['letter_order']
         out['phonics'] = [export_phonics(slug, l) for l in phonics]
@@ -242,8 +245,9 @@ def main():
         index.append({k: data[k] for k in ('slug', 'id', 'order', 'name', 'cefr', 'stage')}
                      | {'lessons': len(data.get('lessons', [])) or len(data['phonics']) + len(data['speaking'])})
         items = list(audio_items(data))
+        drills = sum(len(lesson['exercises']) for lesson in data.get('lessons', []))
         print(f'{path.relative_to(out_dir.parent.parent) if out_dir.is_relative_to(ROOT.parent) else path}: '
-              f'{len(data.get("lessons", data.get("phonics", [])))} lessons, {len(items)} audio items')
+              f'{len(data.get("lessons", data.get("phonics", [])))} lessons, {drills} exercises, {len(items)} audio items')
     if not args.levels:
         index.sort(key=lambda l: l['order'])
         (out_dir / 'index.json').write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding='utf-8')

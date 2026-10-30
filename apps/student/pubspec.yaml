@@ -1,5 +1,5 @@
 name: fvi_student
-description: The student app of Future Vision Institute. The English course, offline, with audio.
+description: The student app of Future Vision Institute. The English course, offline, with exercises.
 publish_to: none
 version: 0.1.0+1
 
@@ -15,6 +15,7 @@ dependencies:
     sdk: flutter
   intl: any
   just_audio: ^0.10.6
+  shared_preferences: ^2.5.6
 
 dev_dependencies:
   flutter_test:
@@ -27,8 +28,6 @@ flutter:
   assets:
     # Written by curriculum/tools/export_app.py; not committed.
     - assets/content/
-    # Written by curriculum/tools/voices.py: the clips and their manifest.
-    - assets/audio/
   fonts:
     # Arabic and the interface.
     - family: Cairo

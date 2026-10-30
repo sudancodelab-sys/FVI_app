@@ -36,16 +36,7 @@ class L10nEn extends L10n {
   }
 
   @override
-  String get listenAll => 'Listen to the whole lesson';
-
-  @override
-  String get stopListening => 'Stop';
-
-  @override
   String get inArabic => 'Explained in Arabic';
-
-  @override
-  String get audioMissing => 'The audio for this part has not been added yet.';
 
   @override
   String get nextLesson => 'Next lesson';
@@ -60,9 +51,6 @@ class L10nEn extends L10n {
   String get speakingPart => 'Part 2: Speaking';
 
   @override
-  String get play => 'Listen';
-
-  @override
   String get stagePreIntermediate => 'Pre-Intermediate';
 
   @override
@@ -70,4 +58,68 @@ class L10nEn extends L10n {
 
   @override
   String get stageAdvanced => 'Advanced';
+
+  @override
+  String get appLanguage => 'App language';
+
+  @override
+  String get otherLanguage => 'العربية';
+
+  @override
+  String get exercises => 'Exercises';
+
+  @override
+  String exercisesN(int count) {
+    return 'Exercises · $count';
+  }
+
+  @override
+  String get howQuestion => 'Choose the right answer.';
+
+  @override
+  String get howMeaning => 'What does this word mean?';
+
+  @override
+  String get howIdiom => 'What does this mean?';
+
+  @override
+  String get howForm => 'Complete the sentence as in the story.';
+
+  @override
+  String get howReply => 'Choose the right reply.';
+
+  @override
+  String get howOrder => 'Put the words in order.';
+
+  @override
+  String get check => 'Check';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get seeScore => 'See your score';
+
+  @override
+  String get right => 'Right!';
+
+  @override
+  String get rightAnswer => 'The right answer:';
+
+  @override
+  String nOfM(int n, int m) {
+    return '$n of $m';
+  }
+
+  @override
+  String get exercisesDone => 'You finished the exercises of this lesson.';
+
+  @override
+  String get allRight => 'All right!';
+
+  @override
+  String get doAgain => 'Do them again';
+
+  @override
+  String get backToLesson => 'Back to the lesson';
 }
