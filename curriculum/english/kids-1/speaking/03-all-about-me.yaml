@@ -1,0 +1,23 @@
+lesson: 3
+kind: about
+title: All About Me
+subtitle: Lina says who she is. Now you say who you are.
+icon: card
+speaker: Lina
+about:
+  - {icon: card, text: Hello! My name is Lina.}
+  - {icon: cake, text: I am eight years old.}
+  - {icon: pin, text: I am from Sudan.}
+  - {icon: users, text: I have a brother and a sister.}
+  - {icon: color, text: My favorite color is blue.}
+  - {icon: cat, text: I like cats.}
+you:
+  title: Now you!
+  lead: Say it about you.
+  lines:
+    - My name is …
+    - I am … years old.
+    - I am from …
+    - I have …
+    - My favorite color is …
+    - I like …

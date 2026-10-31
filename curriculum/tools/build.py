@@ -5,6 +5,7 @@ Usage:
     python3 curriculum/tools/build.py english/starter --lessons 1-6 --out starter-batch-1
     python3 curriculum/tools/build.py english/pre-intermediate-1 --book --out pi1-book
     python3 curriculum/tools/build.py english/starter --check
+    python3 curriculum/tools/build.py english/kids-1 --book --letters A-F --out kids1-sample
 
 Lesson content lives in YAML (one file per lesson). Starter has phonics/ and
 speaking/ folders; later levels have one lessons/ folder of stories, topics
@@ -580,10 +581,15 @@ def main():
     ap.add_argument('--book', action='store_true', help='the whole level, with cover and contents')
     ap.add_argument('--out', help='output name (without extension) in the level dist/ folder')
     ap.add_argument('--check', action='store_true', help='only run the checks')
+    ap.add_argument('--letters', help='Kids levels: only these letters, e.g. A-F (a sample)')
     args = ap.parse_args()
 
     level_dir = ROOT / args.level
     wordlists = yaml.safe_load((ROOT / 'wordlists.yaml').read_text(encoding='utf-8'))
+    if yaml.safe_load((level_dir / 'level.yaml').read_text(encoding='utf-8')).get('layout') == 'kids':
+        import kids  # the Kids levels: letters on four lines, then speaking
+        kids.build(level_dir, args, wordlists, Report)
+        return
     staged = (level_dir / 'lessons').is_dir()
     if staged:
         level = yaml.safe_load((level_dir / 'level.yaml').read_text(encoding='utf-8'))

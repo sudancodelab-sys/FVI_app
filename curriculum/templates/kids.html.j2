@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ level.name }}</title>
+<link rel="stylesheet" href="{{ assets }}/sheet.css">
+<link rel="stylesheet" href="{{ assets }}/kids.css">
+</head>
+<body class="kids">
+{%- macro head() %}
+  <div class="head">
+    <img src="{{ assets }}/logo-512.png" alt="">
+    <div class="brand"><b>Future Vision Institute</b><span>English Programme</span></div>
+    <div class="where"><span class="chip">{{ level.chip }}</span><small></small></div>
+  </div>
+{%- endmacro %}
+{%- macro foot(where='') %}
+  <div class="foot">
+    <span><b>{{ level.name }}</b>{{ where }}</span>
+    <span>Future Vision Institute</span>
+    <span class="pg"></span>
+  </div>
+{%- endmacro %}
+{%- macro icon(name) %}<svg viewBox="0 0 24 24">{{ icons[name]|safe }}</svg>{% endmacro %}
+{%- macro face(who) %}<span class="face">{{ picture(level.cast[who].face) }}</span>{% endmacro %}
+
+{%- if book %}
+{#- The cover: the institute, the course, the level in toy blocks, and a copybook line. #}
+<div class="page kcover">
+  <svg class="kc-bg" viewBox="0 0 210 297" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 0h96C70 8 34 28 0 64z" fill="#262E62"/>
+    <path d="M0 64C34 28 70 8 96 0h10C76 10 38 32 0 72z" fill="#E4451A"/>
+    <path d="M210 0v40c-14-16-30-28-52-40z" fill="#FFD23F" opacity=".9"/>
+  </svg>
+  <svg class="kc-confetti" viewBox="0 0 210 297" aria-hidden="true">
+    <path d="M178 66l2 5 5 .6-4 3.4 1.2 5-4.2-2.7-4.3 2.7 1.2-5-4-3.4 5-.6z" fill="#FFC531"/>
+    <path d="M26 104l1.6 4 4 .4-3 2.7 1 4-3.6-2.1-3.5 2.1 1-4-3-2.7 4-.4z" fill="#3BA7F0"/>
+    <path d="M190 150l1.4 3.4 3.6.4-2.7 2.3.8 3.5-3.1-1.9-3.1 1.9.8-3.5-2.7-2.3 3.6-.4z" fill="#E4451A"/>
+    <circle cx="166" cy="40" r="2.2" fill="#2BB673"/><circle cx="42" cy="86" r="1.8" fill="#E4451A"/>
+    <circle cx="20" cy="150" r="2.4" fill="#FFC531"/><circle cx="186" cy="110" r="1.8" fill="#262E62"/>
+    <rect x="30" y="128" width="4" height="4" rx="1" transform="rotate(20 32 130)" fill="#2BB673"/>
+    <rect x="174" y="92" width="4" height="4" rx="1" transform="rotate(-25 176 94)" fill="#3BA7F0"/>
+  </svg>
+  <img class="kc-logo" src="{{ assets }}/institute-logo.png" alt="Future Vision Institute logo">
+  <div class="kc-inst">Future Vision Institute</div>
+  <div class="kc-rule"><i></i><i></i><i></i></div>
+  <div class="kc-course">Future Vision English Course</div>
+  {#- KIDS in toy blocks #}
+  <div class="kc-blocks">
+    {%- for ch, color in [('K', 'o'), ('I', 'n'), ('D', 'g'), ('S', 'y')] %}
+    <div class="kc-block {{ color }}"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="top" d="M14 14l12-10h66l-12 10z"/><path class="side" d="M80 14l12-10v70l-12 12z"/><rect class="front" x="6" y="14" width="74" height="72" rx="10"/><rect class="inner" x="13" y="21" width="60" height="58" rx="7"/></svg><b>{{ ch }}</b></div>
+    {%- endfor %}
+    <div class="kc-level"><small>Level</small><b>1</b></div>
+  </div>
+  <div class="kc-book">Student Book</div>
+  <p class="kc-tag">{{ level.tagline }}</p>
+  {#- The copybook card, with Sami and Lina on either side #}
+  <div class="kc-scene">
+    <div class="kc-kid left">{{ picture('sami') }}<span class="kc-say">Hello!</span></div>
+    <div class="kc-card">
+      <div class="kc-rings">{% for i in range(9) %}<i></i>{% endfor %}</div>
+      {{ cover_lines[0] }}
+      <div class="kc-pics">{{ picture('apple') }}{{ picture('ball') }}{{ picture('cat') }}</div>
+    </div>
+    <div class="kc-kid right">{{ picture('lina') }}<span class="kc-say">Hi!</span></div>
+    <svg class="kc-pencil" viewBox="0 0 200 40" aria-hidden="true"><path d="M30 6h140v28H30z" fill="#FFC531" stroke="#2A2F5A" stroke-width="2.4"/><path d="M30 15h140M30 25h140" stroke="#E9A912" stroke-width="2"/><path d="M170 6h12a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6h-12z" fill="#F28BA8" stroke="#2A2F5A" stroke-width="2.4"/><path d="M162 6h10v28h-10z" fill="#B8BDD6" stroke="#2A2F5A" stroke-width="2.4"/><path d="M30 6 4 20l26 14z" fill="#F6D7A7" stroke="#2A2F5A" stroke-width="2.4" stroke-linejoin="round"/><path d="M13 15 4 20l9 5z" fill="#2A2F5A"/></svg>
+  </div>
+  <svg class="kc-front" viewBox="0 0 210 42" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 14C48-2 118-6 210 6v36H0z" fill="#E4451A"/>
+    <path d="M0 20C50 5 120 2 210 13v29H0z" fill="#262E62"/>
+  </svg>
+  <div class="kc-foot">{{ level.subtitle }}</div>
+</div>
+
+<div class="page ktoc">
+  {{ head() }}
+  <h1 class="toc-title">Contents</h1>
+  <div class="toc-part">
+    <h2>Part 1 — My ABC</h2>
+    <div class="toc-row"><span class="toc-n">1</span><span class="toc-t">{{ intro.title }}</span><span class="toc-dots"></span><span class="toc-p" data-toc-ref="intro"></span></div>
+    <div class="toc-row"><span class="toc-n">2</span><span class="toc-t">{{ intro.letters_title }}{% if sample %} <small class="kind">sample: {{ selected[0] }}–{{ selected[-1] }}</small>{% endif %}</span><span class="toc-dots"></span><span class="toc-p" data-toc-ref="letters"></span></div>
+  </div>
+  <div class="toc-part">
+    <h2>Part 2 — Speaking</h2>
+    {%- for l in speaking %}
+    <div class="toc-row"><span class="toc-n">{{ l.lesson }}</span><span class="toc-t">{{ l.title }}</span><span class="toc-dots"></span><span class="toc-p" data-toc-ref="speaking-{{ l.lesson }}"></span></div>
+    {%- endfor %}
+  </div>
+  <div class="friends">
+    <h2>Meet your friends</h2>
+    <div class="friend-row">
+      {%- for who, line in [('Sami', 'Hello! I am Sami. I am seven.'), ('Lina', 'Hi! I am Lina. I am eight.'), ('Ms. Huda', 'Good morning! I am your teacher.')] %}
+      <div class="friend">{{ face(who) }}<b>{{ who }}</b><span>{{ line }}</span></div>
+      {%- endfor %}
+    </div>
+  </div>
+  {{ foot(' · Contents') }}
+</div>
+{%- endif %}
+
+<template id="page"><div class="page stream">{{ head() }}<div class="flow"></div>{{ foot(' ') }}</div></template>
+
+<div id="flow">
+  {#- Part 1: the alphabet and the four lines #}
+  <div class="blk keep lstart" data-where="{{ intro.title }}" data-part="My ABC" data-toc="intro">
+    <div class="hero">
+      <div class="tile"><span>A<em>a</em></span></div>
+      <div>
+        <span class="kind">My ABC · Lesson 1</span>
+        <h1>{{ intro.title }}</h1>
+        <p>{{ intro.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="blk sec" data-where="{{ intro.title }}" data-part="My ABC">
+    <h2><span class="num">1</span>{{ intro.alphabet.title }}</h2>
+    <p class="lead">{{ intro.alphabet.lead }}</p>
+    <div class="abcgrid">
+      {%- for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}<div><b>{{ c }}</b><em>{{ c|lower }}</em></div>{% endfor %}
+    </div>
+    <div class="bigsmall"><span><b>A</b>{{ intro.alphabet.big }}</span><span><em>a</em>{{ intro.alphabet.small }}</span></div>
+  </div>
+  <div class="blk sec" data-where="{{ intro.title }}" data-part="My ABC">
+    <h2><span class="num">2</span>{{ intro.lines.title }}</h2>
+    <p class="lead">{{ intro.lines.lead }}</p>
+    <div class="lines4">{{ lines_svg }}</div>
+  </div>
+  <div class="blk keep sec-head" data-where="{{ intro.title }}" data-part="My ABC">
+    <h2><span class="num">3</span>{{ intro.groups.title }}</h2>
+  </div>
+  {%- for row in groups|batch(2) %}
+  <div class="blk groups" data-where="{{ intro.title }}" data-part="My ABC">
+    {%- for g in row %}
+    <div class="group g{{ g.n }}"><h3>{{ g.name }}</h3><p>{{ g.text }}</p>{{ g.strip }}</div>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+  <div class="blk sec" data-where="{{ intro.title }}" data-part="My ABC">
+    <h2><span class="num">4</span>{{ intro.how.title }}</h2>
+    <div class="how">
+      <div class="how-model">{{ how_svg }}</div>
+      <ol>
+        {%- for s in intro.how.steps %}
+        <li><span class="mk m{{ loop.index }}">{% if loop.index == 2 %}<svg viewBox="0 0 24 24"><path d="M5 12h12M12 6l6 6-6 6"/></svg>{% else %}{{ 1 if loop.first else 2 }}{% endif %}</span>{{ s }}</li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </div>
+
+  {#- The letters A to Z #}
+  <div class="blk keep sec-head" data-part="My ABC" data-toc="letters">
+    <h2 class="big"><span class="num">{{ icon('pencil') }}</span>{{ intro.letters_title }}</h2>
+    <p class="lead">{{ intro.letters_lead }}</p>
+  </div>
+  {%- for c in cards %}
+  <div class="blk lcard" data-letter="{{ c.letter }}" data-part="My ABC">
+    <div class="pic">
+      <span class="lt">{{ c.letter }}<em>{{ c.letter|lower }}</em></span>
+      {{ c.picture }}
+      {%- set m = c.mark or 0 %}
+      <b>{{ c.word[:m] }}<span class="hl">{{ c.word[m] }}</span>{{ c.word[m + 1:] }}</b>
+    </div>
+    {{ c.strip }}
+  </div>
+  {%- endfor %}
+
+  {#- Part 2: speaking #}
+  {%- for l in speaking %}
+  <div class="blk keep lstart" data-where="{{ l.title }}" data-part="Speaking" data-toc="speaking-{{ l.lesson }}">
+    <div class="hero">
+      <div class="tile icon">{{ icon(l.icon) }}</div>
+      <div>
+        <span class="kind">Speaking · Lesson {{ l.lesson }}</span>
+        <h1>{{ l.title }}</h1>
+        <p>{{ l.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+  {%- if l.conversation %}
+  {%- set first = l.conversation[0][0] %}
+  <div class="blk sec split" data-where="{{ l.title }}" data-part="Speaking">
+    <h2><span class="num">1</span>Listen and say</h2>
+    <div class="kchat items">
+      {%- for who, text in l.conversation %}
+      <div class="kmsg {{ 'l' if who == first else 'r' }}">{{ face(who) }}<div class="bub"><small>{{ who }}</small>{{ text }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="blk sec" data-where="{{ l.title }}" data-part="Speaking">
+    <h2><span class="num">2</span>Say it!</h2>
+    <div class="phrases">
+      {%- for ph in l.phrases %}
+      <div class="ph"><h3>{{ ph.title }}</h3><p>{% for line in ph.lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}{% if ph.reply %}<br><span class="reply">— {{ ph.reply }}</span>{% endif %}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endif %}
+  {%- if l.about %}
+  <div class="blk sec" data-where="{{ l.title }}" data-part="Speaking">
+    <h2><span class="num">1</span>Meet {{ l.speaker }}</h2>
+    <div class="about">
+      <div class="about-face">{{ face(l.speaker) }}<b>{{ l.speaker }}</b></div>
+      <ul>
+        {%- for a in l.about %}
+        <li><span class="ai">{% if a.icon in icons %}{{ icon(a.icon) }}{% else %}{{ picture(a.icon) }}{% endif %}</span>{{ a.text }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="blk sec" data-where="{{ l.title }}" data-part="Speaking">
+    <h2><span class="num">2</span>{{ l.you.title }} <small>{{ l.you.lead }}</small></h2>
+    <div class="you">
+      {%- for line in l.you.lines %}<p>{{ line }}</p>{% endfor %}
+    </div>
+  </div>
+  {%- endif %}
+  {%- endfor %}
+</div>
+<script>{{ paginate_js|safe }}</script>
+</body>
+</html>

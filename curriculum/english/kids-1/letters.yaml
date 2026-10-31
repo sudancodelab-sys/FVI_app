@@ -1,0 +1,31 @@
+# One example word for every letter, with its picture (assets/kids/<word>.svg).
+# The letter is orange in the word: the first letter, or the one given by mark
+# (0 is the first letter). The example rules of GUIDELINES.md apply: short,
+# not tied to a boy or a girl, and nothing that sounds like a rude word in Arabic.
+letters:
+  - {letter: A, word: apple}
+  - {letter: B, word: ball}
+  - {letter: C, word: cat}
+  - {letter: D, word: dog}
+  - {letter: E, word: egg}
+  - {letter: F, word: fish}
+  - {letter: G, word: gift}
+  - {letter: H, word: hat}
+  - {letter: I, word: ink}
+  - {letter: J, word: jam}
+  - {letter: K, word: kite}
+  - {letter: L, word: lion}
+  - {letter: M, word: moon}
+  - {letter: N, word: nest}
+  - {letter: O, word: orange}
+  - {letter: P, word: pen}
+  - {letter: Q, word: quilt}
+  - {letter: R, word: rabbit}
+  - {letter: S, word: sun}
+  - {letter: T, word: tree}
+  - {letter: U, word: umbrella}
+  - {letter: V, word: van}
+  - {letter: W, word: watch}
+  - {letter: X, word: box, mark: 2}
+  - {letter: Y, word: yo-yo}
+  - {letter: Z, word: zero}

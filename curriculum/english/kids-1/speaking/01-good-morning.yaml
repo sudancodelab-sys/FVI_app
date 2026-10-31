@@ -1,0 +1,18 @@
+lesson: 1
+title: Good Morning!
+subtitle: Say hello to your teacher.
+icon: sunrise
+conversation:
+  - [Ms. Huda, "Good morning, Sami!"]
+  - [Sami, "Good morning, Ms. Huda!"]
+  - [Ms. Huda, "How are you today?"]
+  - [Sami, "I'm fine, thank you. And you?"]
+  - [Ms. Huda, "I'm very well, thank you. Please sit down."]
+  - [Sami, "Thank you, Ms. Huda."]
+phrases:
+  - title: Say hello
+    lines: ["Hello!", "Hi!", "Good morning!"]
+  - title: "How are you?"
+    lines: ["I'm fine, thank you.", "I'm very well."]
+  - title: Say goodbye
+    lines: ["Goodbye!", "Bye!", "See you tomorrow!"]

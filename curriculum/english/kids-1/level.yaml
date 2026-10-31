@@ -1,0 +1,12 @@
+# Kids 1: the first level for children. Not one of the ten levels of the
+# course (course.yaml): a track of its own, before Starter.
+name: Kids 1
+chip: KIDS 1
+layout: kids
+subtitle: Letters · Writing · Speaking
+tagline: Write every letter, learn new words and say hello!
+# The same three characters appear in every lesson; face: assets/kids/<face>.svg
+cast:
+  Sami: {initial: S, color: a, face: sami}
+  Lina: {initial: L, color: b, face: lina}
+  Ms. Huda: {initial: MH, color: c, face: huda}

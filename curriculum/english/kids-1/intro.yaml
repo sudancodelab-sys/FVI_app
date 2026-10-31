@@ -1,0 +1,36 @@
+# The first lesson: the alphabet and the four lines.
+title: Hello, ABC!
+subtitle: English has 26 letters. Let's read them, say them and write them.
+alphabet:
+  title: The alphabet
+  lead: Every letter has a big letter and a small letter.
+  big: big letter
+  small: small letter
+lines:
+  title: My four lines
+  lead: We write English on four lines. Every letter sits on the red line.
+  names: [top line, middle line, red line, bottom line]
+groups:
+  title: Where does each letter go?
+  items:
+    - name: Big letters
+      text: Start at the top line. Stop at the red line.
+      letters: A B C D E
+    - name: Small letters
+      text: Start at the middle line. Stop at the red line.
+      letters: a c e m n o
+    - name: Tall small letters
+      text: Start at the top line. Stop at the red line.
+      letters: b d f h k l
+    - name: Letters with a tail
+      text: Start at the middle line. Go down to the bottom line.
+      letters: g j p q y
+how:
+  title: How to write a letter
+  steps:
+    - Start at number 1.
+    - Follow the arrow.
+    - Then write number 2.
+  letter: A
+letters_title: The letters A to Z
+letters_lead: Write the big letter, the small letter and then the word.

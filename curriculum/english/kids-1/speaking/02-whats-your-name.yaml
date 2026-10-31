@@ -1,0 +1,23 @@
+lesson: 2
+title: What's Your Name?
+subtitle: Say your name and how old you are.
+icon: chat
+conversation:
+  - [Sami, "Hello! I'm Sami. What's your name?"]
+  - [Lina, "Hi, Sami! My name is Lina."]
+  - [Sami, "Nice to meet you, Lina."]
+  - [Lina, "Nice to meet you, too."]
+  - [Sami, "How old are you?"]
+  - [Lina, "I'm eight. And you?"]
+  - [Sami, "I'm seven."]
+  - [Lina, "Let's play, Sami!"]
+phrases:
+  - title: Your name
+    lines: ["What's your name?"]
+    reply: "My name is Lina."
+  - title: Your age
+    lines: ["How old are you?"]
+    reply: "I'm seven."
+  - title: Be friendly
+    lines: ["Nice to meet you."]
+    reply: "Nice to meet you, too."
