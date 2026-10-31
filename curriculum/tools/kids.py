@@ -376,7 +376,8 @@ def build(level_dir, args, wordlists, report_cls):
     wanted = args.letters.upper().split('-') if args.letters else ['A', 'Z']
     selected = [chr(c) for c in range(ord(wanted[0]), ord(wanted[-1]) + 1)]
     report = report_cls()
-    check(level, intro, letters, speaking, wordlists, report, selected)
+    # A missing picture stops a build of its letter; --check only warns.
+    check(level, intro, letters, speaking, wordlists, report, [] if args.check else selected)
     for w in report.warnings:
         print('warning:', w)
     for e in report.errors:
