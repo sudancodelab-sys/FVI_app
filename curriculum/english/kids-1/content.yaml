@@ -1,0 +1,109 @@
+welcome:
+  title: Welcome, Little Learner!
+  lead: Let's learn the English alphabet together!
+  paragraphs:
+    - There are 26 letters. Every letter has a capital letter and a small letter.
+    - Look at each model, say the letter, copy it, and write it by yourself.
+    - Use the word example to practice your new letter.
+  steps:
+    - Look
+    - Say
+    - Copy
+    - Write
+  encouragement: You can do it! One letter at a time.
+
+guide:
+  title: How to Use the Four Guide Lines
+  lead: The four lines help you write each letter in the right place.
+  labels:
+    - name: TOP LINE
+      hint: Many capital letters start here.
+    - name: MIDDLE LINE
+      hint: Small letters start here.
+    - name: BASE LINE
+      hint: Letters rest here.
+    - name: BOTTOM LINE
+      hint: Letter tails reach here.
+  notes:
+    - Most capital letters start at the top line and sit on the base line.
+    - Small letters usually sit between the middle line and the base line.
+    - Tall small letters reach the top line. Letter tails go down to the bottom line.
+    - Capital J and Q can dip below the base line.
+  examples:
+    - {label: "CAPITAL LETTERS", sample: "A A A A", style: cap, caption: "TOP TO BASE"}
+    - {label: "SMALL LETTERS", sample: "a a a a", style: small, caption: "MIDDLE TO BASE"}
+    - {label: "LETTER TAILS", sample: "p p p p", style: small, caption: "BASE TO BOTTOM"}
+
+letters:
+  - {upper: A, lower: a, example: apple}
+  - {upper: B, lower: b, example: ball}
+  - {upper: C, lower: c, example: cat}
+  - {upper: D, lower: d, example: dog}
+  - {upper: E, lower: e, example: egg}
+  - {upper: F, lower: f, example: fish}
+  - {upper: G, lower: g, example: goat}
+  - {upper: H, lower: h, example: hat}
+  - {upper: I, lower: i, example: ice cream}
+  - {upper: J, lower: j, example: jam}
+  - {upper: K, lower: k, example: kite}
+  - {upper: L, lower: l, example: lamp}
+  - {upper: M, lower: m, example: moon}
+  - {upper: N, lower: n, example: nest}
+  - {upper: O, lower: o, example: orange}
+  - {upper: P, lower: p, example: pencil}
+  - {upper: Q, lower: q, example: quilt}
+  - {upper: R, lower: r, example: robot}
+  - {upper: S, lower: s, example: sun}
+  - {upper: T, lower: t, example: tiger}
+  - {upper: U, lower: u, example: umbrella}
+  - {upper: V, lower: v, example: van}
+  - {upper: W, lower: w, example: whale}
+  - {upper: X, lower: x, example: xylophone}
+  - {upper: Y, lower: y, example: yo-yo}
+  - {upper: Z, lower: z, example: zoo}
+
+conversations:
+  - title: Hello, Friend!
+    scene: Adam and Sara meet for the first time.
+    lines:
+      - {speaker: Adam, text: "Hello! My name is Adam. What is your name?", side: left, color: navy}
+      - {speaker: Sara, text: "Hi, Adam! My name is Sara.", side: right, color: orange}
+      - {speaker: Adam, text: "Nice to meet you.", side: left, color: navy}
+      - {speaker: Sara, text: "Nice to meet you, too!", side: right, color: orange}
+    practice_items:
+      - {label: ASK, text: "What is your name?"}
+      - {label: ANSWER, text: "My name is _____."}
+    words: [hello, name, friend]
+  - title: In the Classroom
+    scene: The class greets Mr. Ali and gets ready to learn.
+    lines:
+      - {speaker: Mr. Ali, text: "Hello, class!", side: left, color: navy}
+      - {speaker: Class, text: "Hello, Mr. Ali!", side: right, color: orange}
+      - {speaker: Mr. Ali, text: "Open your book, please.", side: left, color: navy}
+      - {speaker: Sara, text: "I am ready!", side: right, color: orange}
+      - {speaker: Adam, text: "Me too!", side: left, color: navy}
+    practice_items:
+      - {label: SAY, text: "Open your book, please."}
+      - {label: ANSWER, text: "I am ready!"}
+    words: [book, please, ready]
+
+self_introduction:
+  title: This Is Me!
+  lead: Use the words to tell a new friend about yourself.
+  lines:
+    - Hello! My name is _______________.
+    - I am ______ years old.
+    - I like _________________________.
+    - My favorite color is ____________.
+    - Nice to meet you!
+  write_prompts:
+    - Write your name on the four guide lines.
+    - Write one thing you like on the four guide lines.
+
+certificate:
+  title: I Finished Kids English 1!
+  statement: I can write capital and small letters from A to Z.
+  statement2: I can say my name and talk with a new friend.
+  name_label: "This book belongs to:"
+  teacher_label: "Teacher:"
+  date_label: "Date:"

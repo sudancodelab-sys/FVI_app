@@ -1,0 +1,14 @@
+name: Kids English 1
+short_name: Kids 1
+chip: KIDS 1
+course: Future Vision English Course
+institute: Future Vision Institute
+title: KIDS ENGLISH
+level_label: LEVEL 1
+book_type: Student Book
+tagline: Learn the alphabet, write clearly, and start speaking
+categories: [Alphabet, Handwriting, Conversations]
+cover_art: assets/kids1-cover-art.png
+logo: ../../assets/institute-logo.png
+page_count: 34
+paper: A4

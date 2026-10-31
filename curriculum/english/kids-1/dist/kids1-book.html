@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids English 1</title>
+<style>
+@font-face{font-family:Lexend;font-weight:400;src:url('../../../assets/fonts/lexend-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:Lexend;font-weight:500;src:url('../../../assets/fonts/lexend-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:Lexend;font-weight:600;src:url('../../../assets/fonts/lexend-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:Lexend;font-weight:700;src:url('../../../assets/fonts/lexend-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:Lexend;font-weight:800;src:url('../../../assets/fonts/lexend-latin-800-normal.woff2') format('woff2')}
+:root{--navy:#262E62;--orange:#E4451A;--ink:#000;--muted:#676E85;--line:#D9DDE7;--pale:#F5F6FA;--teal:#2B9DA5;--teal-pale:#EEF9F9}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#e9ebf0;color:var(--ink);font-family:Lexend,Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#fff;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto}
+.content-page{padding:9mm 11mm 8mm;display:flex;flex-direction:column;gap:2mm}
+.page-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1mm solid var(--orange);padding-bottom:2mm;flex:none}
+.brandline{font-size:8pt;font-weight:700;letter-spacing:.45px;color:var(--navy)}
+.pageno{font-size:8pt;font-weight:700;color:var(--muted);background:var(--pale);padding:1.3mm 3mm;border-radius:99px;white-space:nowrap}
+.footer{margin-top:auto;border-top:.35mm solid var(--line);padding-top:1.5mm;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:7pt;flex:none}
+.footer b{color:var(--navy)}
+.star{color:var(--orange);font-size:11pt}
+.eyebrow{color:var(--orange);font-size:7pt;font-weight:800;letter-spacing:.9px;text-transform:uppercase}
+
+/* Cover: the full course-cover hierarchy approved for the series. */
+.cover{background:#fff}
+.cover-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.cover-head{position:absolute;z-index:2;top:2mm;left:10mm;right:10mm;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cover-logo{width:38mm;height:38mm;object-fit:contain}
+.cover-institute{margin:0;color:var(--navy);font-size:16pt;font-weight:800;line-height:1.05}
+.cover-mark{display:flex;gap:1.2mm;margin-top:1.4mm}
+.cover-mark i{display:block;width:28mm;height:1.2mm;background:var(--navy)}
+.cover-mark i:nth-child(2){background:var(--orange)}
+.cover-course{margin-top:2.4mm;color:var(--navy);font-size:14pt;font-weight:700;line-height:1.1}
+.cover-title{margin:2mm 0 0;color:var(--orange);font-size:34pt;font-weight:800;line-height:1;letter-spacing:.2px}
+.cover-level{margin-top:1.7mm;padding:1.5mm 7mm;border-radius:99px;background:var(--navy);color:#fff;font-size:11.5pt;font-weight:800;letter-spacing:1px}
+.cover-book{margin-top:1.8mm;padding:1.6mm 9mm;border-radius:99px;background:var(--orange);color:#fff;font-size:14pt;font-weight:800}
+.cover-tagline{margin-top:1.8mm;color:var(--navy);font-size:9.6pt;font-weight:600;line-height:1.15}
+.cover-categories{margin-top:1.3mm;color:var(--orange);font-size:8.7pt;font-weight:700;letter-spacing:.15px}
+.cover-student{position:absolute;z-index:3;left:27mm;right:27mm;bottom:13mm;display:flex;align-items:center;gap:3mm;height:10mm;padding:1.5mm 3mm;border:1px solid var(--navy);border-radius:2mm;background:rgba(255,255,255,.96);color:var(--navy);font-size:9.5pt;font-weight:800}
+.cover-student i{flex:1;height:4mm;border-bottom:.4mm solid var(--navy)}
+
+/* Common page titles and cards. */
+.page-title{margin:0;color:var(--navy);font-size:23pt;font-weight:800;line-height:1.08}
+.page-lead{margin:1mm 0 0;color:var(--muted);font-size:9.5pt;line-height:1.45}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:3mm;margin:1mm 0 1.2mm}
+.section-head b{color:var(--navy);font-size:9pt;font-weight:800}
+.section-head span{color:var(--muted);font-size:7.4pt}
+.pill{display:inline-flex;align-items:center;justify-content:center;padding:1mm 2.4mm;border-radius:99px;background:#fff;border:1px solid var(--line);color:var(--navy);font-size:6.8pt;font-weight:800;white-space:nowrap}
+
+/* Table of contents. */
+.toc-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:2mm;margin-top:1mm}
+.toc-section{min-height:15mm;border:1px solid var(--line);border-radius:2.5mm;padding:2mm 2.7mm;display:grid;grid-template-columns:8mm 1fr auto;align-items:center;gap:2mm;background:#fff}
+.toc-section .num{width:7mm;height:7mm;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:7.5pt;font-weight:800}
+.toc-section b{font-size:8pt;color:var(--navy);line-height:1.2}
+.toc-section small{font-size:6.8pt;color:var(--muted);white-space:nowrap}
+.toc-letters{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(13,10.5mm);grid-auto-flow:column;gap:1.2mm}
+.toc-letter{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.4mm;padding:1.2mm 1.7mm;border:1px solid var(--line);border-radius:2mm;background:#fff;min-width:0}
+.toc-letter b{font-size:10pt;color:var(--navy);white-space:nowrap}
+.toc-letter span{font-size:7.8pt;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toc-letter i{font-style:normal;font-size:7.5pt;font-weight:800;color:var(--orange)}
+
+/* Welcome page. */
+.welcome-hero{padding:5mm 6mm;border-radius:4mm;background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.welcome-hero:after{content:"";position:absolute;right:-8mm;bottom:-15mm;width:42mm;height:42mm;border:3mm solid rgba(255,255,255,.12);border-radius:50%}
+.welcome-hero .eyebrow{color:#FFC2AE}
+.welcome-hero h1{margin:1.5mm 0 1mm;color:#fff;font-size:25pt;line-height:1.05;font-weight:800}
+.welcome-hero p{margin:0;color:#F2F3FA;font-size:11pt;font-weight:600}
+.welcome-copy{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.welcome-copy p{margin:0;padding:3mm 3.5mm;border-left:1.2mm solid var(--orange);border-radius:2.5mm;background:var(--pale);color:#30344B;font-size:9.5pt;line-height:1.45}
+.welcome-copy p:last-child{grid-column:1/-1}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm}
+.step-card{min-height:36mm;border:1px solid var(--line);border-radius:3mm;padding:2.5mm 2mm;text-align:center;background:#fff}
+.step-card .step-num{width:7mm;height:7mm;margin:0 auto 1.3mm;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff;font-size:8pt;font-weight:800}
+.step-card b{display:block;color:var(--navy);font-size:9pt}
+.step-card small{display:block;margin-top:1mm;color:var(--muted);font-size:6.8pt;line-height:1.25}
+.welcome-goals{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.goal-card{padding:3.2mm 4mm;border-radius:3mm;background:var(--teal-pale);border:1px solid #D5EEEE}
+.goal-card h2{margin:0 0 1.5mm;color:var(--navy);font-size:9pt}
+.goal-card p{margin:0;color:#344751;font-size:8.7pt;line-height:1.45}
+.welcome-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm}
+.stat-card{min-height:18mm;display:flex;align-items:center;gap:3mm;padding:2mm 3mm;border:1px solid var(--line);border-radius:3mm;background:#fff}
+.stat-card b{color:var(--orange);font-size:22pt;font-weight:800;line-height:1}
+.stat-card span{color:var(--navy);font-size:8.5pt;font-weight:700}
+.encouragement{padding:3mm 4mm;border-radius:3mm;background:var(--orange);color:#fff;font-size:10pt;font-weight:800;text-align:center}
+
+/* Four-line handwriting guide. */
+.guide-note{border-left:1.2mm solid var(--teal);background:var(--teal-pale);border-radius:2.5mm;padding:2mm 3mm;font-size:8.5pt;line-height:1.4;color:#263B46}
+.guide-key{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm}
+.key-item{display:flex;align-items:center;gap:1.5mm;border:1px solid var(--line);border-radius:2mm;padding:1.5mm 1.8mm;font-size:6.7pt;font-weight:800;color:var(--muted);white-space:nowrap}
+.key-mark{width:7mm;height:0;border-top:.4mm solid #8994AB;flex:none}
+.key-mark.middle{border-top:.4mm dashed var(--orange)}
+.key-mark.base{border-top:.7mm solid var(--navy)}
+.key-mark.bottom{border-top:.4mm solid #BBC3D0}
+.writing-row{height:31mm;position:relative;border:1px solid #E5E8EF;border-radius:2.5mm;background:#fff;overflow:hidden;flex:none}
+.guide-line{position:absolute;left:2mm;right:2mm;height:0}
+.guide-line.top{top:2mm;border-top:.35mm solid #8994AB}
+.guide-line.middle{top:33.333%;border-top:.35mm dashed var(--orange)}
+.guide-line.base{top:66.666%;border-top:.65mm solid var(--navy)}
+.guide-line.bottom{bottom:2mm;border-top:.35mm solid #BBC3D0}
+.demo-letter{position:absolute;color:#000;font-weight:700;line-height:1;white-space:nowrap}
+.demo-letter.cap{left:18mm;bottom:6.5mm;font-size:78pt}
+.demo-letter.small{left:80mm;bottom:6.5mm;font-size:52pt}
+.demo-letter.tail{left:140mm;bottom:6.5mm;font-size:52pt}
+.demo-captions{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;text-align:center}
+.demo-captions span{font-size:7pt;font-weight:800;color:var(--navy)}
+.guide-notes{display:grid;grid-template-columns:1fr 1fr;gap:2mm}
+.guide-rule{padding:2.3mm 3mm;border:1px solid var(--line);border-radius:2.5mm;background:#fff;color:#34384F;font-size:8pt;line-height:1.4}
+.guide-rule b{color:var(--orange)}
+
+/* Approved letter practice layout. */
+.lesson-banner{display:flex;justify-content:space-between;align-items:center;border-left:1.4mm solid var(--orange);background:var(--pale);border-radius:2.5mm;padding:2mm 3.5mm;flex:none}
+.lesson-banner h1{margin:0;color:var(--navy);font-size:15pt;font-weight:800;line-height:1.1}
+.lesson-banner p{margin:.8mm 0 0;color:var(--muted);font-size:8pt;font-weight:600}
+.step-tags{display:flex;gap:1.2mm;white-space:nowrap}
+.step-tags span{padding:1mm 2mm;border-radius:99px;background:#fff;border:1px solid var(--line);color:var(--navy);font-size:6.5pt;font-weight:800}
+.practice-block{display:flex;flex-direction:column;gap:1mm;flex:none}
+.practice-head{display:flex;align-items:baseline;gap:2mm;color:var(--navy)}
+.practice-head b{font-size:8.7pt;font-weight:800}
+.practice-head span{font-size:7.2pt;color:var(--muted)}
+.model{position:absolute;left:6mm;bottom:6.5mm;color:#000;line-height:1;font-weight:700;white-space:nowrap}
+.model.cap{font-size:78pt;letter-spacing:4mm}
+.model.cap.wide{font-size:70pt;letter-spacing:3mm}
+.model.small{font-size:52pt;letter-spacing:4mm}
+.model.small.wide{font-size:48pt;letter-spacing:3mm}
+.model.word{font-size:42pt;letter-spacing:1.2mm}
+.model.word.long{font-size:36pt;letter-spacing:1mm}
+.write-label{position:absolute;right:4mm;top:2mm;background:#fff;color:var(--muted);font-size:6.4pt;font-weight:800;padding:.4mm 1.2mm;border-radius:1mm;letter-spacing:.5px;text-transform:uppercase}
+
+/* Short conversations. */
+.conversation-title{display:flex;align-items:center;gap:4mm;padding:3mm 4mm;border-radius:3.5mm;background:var(--navy);color:#fff}
+.conversation-number{width:10mm;height:10mm;border-radius:50%;display:grid;place-items:center;background:var(--orange);font-size:10pt;font-weight:800;flex:none}
+.conversation-title h1{margin:0;color:#fff;font-size:20pt;line-height:1.08}
+.conversation-title small{display:block;margin-top:1mm;color:#E9EAF4;font-size:8pt;font-weight:600}
+.scene{display:flex;gap:2mm;align-items:center;margin:1mm 0;color:var(--muted);font-size:8.5pt;font-style:italic}
+.scene:before{content:"";width:1.1mm;align-self:stretch;border-radius:1mm;background:var(--orange)}
+.chat{display:flex;flex-direction:column;gap:3mm;padding:1mm 0}
+.message{display:flex;align-items:flex-end;gap:2.5mm;max-width:84%}
+.message.right{align-self:flex-end;flex-direction:row-reverse}
+.avatar{width:10mm;height:10mm;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:8pt;font-weight:800;flex:none}
+.avatar.navy{background:var(--navy)}
+.avatar.orange{background:var(--orange)}
+.bubble{border-radius:4mm;padding:2.5mm 4mm 2.8mm;font-size:12.5pt;line-height:1.4;color:#1D2040}
+.message.left .bubble{background:var(--pale);border-bottom-left-radius:1mm}
+.message.right .bubble{background:#FDEEE8;border-bottom-right-radius:1mm}
+.speaker{display:block;margin-bottom:.6mm;color:var(--muted);font-size:7.5pt;font-weight:700;letter-spacing:.2px}
+.conversation-support{display:flex;flex-direction:column;gap:2mm;margin-top:1mm}
+.practice-pair{display:grid;grid-template-columns:1fr 1fr;gap:2mm}
+.practice-turn{min-height:17mm;padding:2.5mm 3mm;border:1px solid var(--line);border-radius:2.5mm;background:#fff}
+.practice-turn b{display:block;color:var(--orange);font-size:7pt;letter-spacing:.5px}
+.practice-turn span{display:block;margin-top:1mm;color:var(--navy);font-size:9pt;font-weight:700}
+.word-strip{display:flex;align-items:center;gap:3mm;padding:2mm 3mm;border-left:1mm solid var(--teal);border-radius:2.5mm;background:var(--teal-pale)}
+.word-strip b{color:var(--teal);font-size:7pt;letter-spacing:.5px;white-space:nowrap}
+.word-strip span{color:var(--navy);font-size:8.5pt;font-weight:700}
+
+/* Self-introduction and certificate pages. */
+.profile-card{padding:4mm 5mm;border:1px solid var(--line);border-radius:3.5mm;background:#fff}
+.profile-line{padding:2.7mm 0;border-bottom:1px dashed #BBC3D0;color:var(--navy);font-size:12pt;font-weight:600}
+.profile-line:last-child{border-bottom:0}
+.profile-line em{font-style:normal;color:var(--orange)}
+.name-practice{display:flex;flex-direction:column;gap:2mm}
+.name-practice-group{display:flex;flex-direction:column;gap:1mm}
+.name-practice-label{color:var(--navy);font-size:8.5pt;font-weight:800}
+.profile-prompt{padding:3mm 4mm;border-radius:3mm;background:var(--orange);color:#fff;text-align:center;font-size:10pt;font-weight:800}
+.certificate{height:100%;min-height:250mm;border:1.5mm solid var(--navy);outline:1px solid var(--orange);outline-offset:-4mm;border-radius:4mm;padding:12mm 12mm 10mm;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:5mm;background:linear-gradient(180deg,#fff 0%,#fff 72%,#F5F6FA 100%)}
+.certificate .medal{width:18mm;height:18mm;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff;font-size:22pt;font-weight:800}
+.certificate h1{margin:0;color:var(--navy);font-size:26pt;line-height:1.1}
+.certificate .sub{max-width:145mm;color:var(--muted);font-size:11pt;line-height:1.5}
+.certificate .name-field{width:135mm;margin:3mm 0;padding:3mm 4mm;border-bottom:1px solid var(--navy);color:var(--navy);font-size:10pt;font-weight:800;text-align:left}
+.certificate .statement{max-width:150mm;color:#34384F;font-size:11pt;line-height:1.55}
+.certificate .signatures{width:145mm;display:flex;justify-content:space-between;gap:16mm;margin-top:6mm}
+.signature{flex:1;border-top:1px solid var(--navy);padding-top:2mm;color:var(--muted);font-size:8pt}
+.certificate .brand{margin-top:3mm;color:var(--orange);font-size:8pt;font-weight:800;letter-spacing:1px}
+@media screen{.page{margin:8mm auto;box-shadow:0 3mm 14mm rgba(26,32,60,.18)}}
+@media print{html,body{background:#fff}.page{margin:0;box-shadow:none}}
+</style>
+</head>
+<body>
+
+<section class="page cover" data-page="1">
+  <img class="cover-art" src="../assets/kids1-cover-art.png" alt="Two children practicing English writing at a classroom desk">
+  <div class="cover-head">
+    <img class="cover-logo" src="../../../assets/institute-logo.png" alt="Future Vision Institute logo">
+    <h1 class="cover-institute">Future Vision Institute</h1>
+    <div class="cover-mark"><i></i><i></i><i></i></div>
+    <div class="cover-course">Future Vision English Course</div>
+    <div class="cover-title">KIDS ENGLISH</div>
+    <div class="cover-level">LEVEL 1</div>
+    <div class="cover-book">Student Book</div>
+    <div class="cover-tagline">Learn the alphabet, write clearly, and start speaking</div>
+    <div class="cover-categories">Alphabet · Handwriting · Conversations</div>
+  </div>
+  <div class="cover-student"><b>Student Name:</b><i></i></div>
+</section>
+
+<section class="page content-page toc-page" data-page="2">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">CONTENTS</div>
+</header>
+  <div>
+    <h1 class="page-title">Inside This Book</h1>
+    <p class="page-lead">Start with the guide, then explore every letter.</p>
+  </div>
+  <div class="toc-summary">
+    <div class="toc-section"><span class="num">1</span><b>Welcome and four guide lines</b><small>Pages 3–4</small></div>
+    <div class="toc-section"><span class="num">2</span><b>Letters A–Z</b><small>Pages 5–30</small></div>
+    <div class="toc-section"><span class="num">3</span><b>Two short conversations</b><small>Pages 31–32</small></div>
+    <div class="toc-section"><span class="num">4</span><b>This Is Me! and certificate</b><small>Pages 33–34</small></div>
+  </div>
+  <div class="section-head"><b>LETTER MAP</b><span>One page for each letter</span></div>
+  <div class="toc-letters">
+    <div class="toc-letter"><b>A a</b><span>apple</span><i>05</i></div>
+    <div class="toc-letter"><b>B b</b><span>ball</span><i>06</i></div>
+    <div class="toc-letter"><b>C c</b><span>cat</span><i>07</i></div>
+    <div class="toc-letter"><b>D d</b><span>dog</span><i>08</i></div>
+    <div class="toc-letter"><b>E e</b><span>egg</span><i>09</i></div>
+    <div class="toc-letter"><b>F f</b><span>fish</span><i>10</i></div>
+    <div class="toc-letter"><b>G g</b><span>goat</span><i>11</i></div>
+    <div class="toc-letter"><b>H h</b><span>hat</span><i>12</i></div>
+    <div class="toc-letter"><b>I i</b><span>ice cream</span><i>13</i></div>
+    <div class="toc-letter"><b>J j</b><span>jam</span><i>14</i></div>
+    <div class="toc-letter"><b>K k</b><span>kite</span><i>15</i></div>
+    <div class="toc-letter"><b>L l</b><span>lamp</span><i>16</i></div>
+    <div class="toc-letter"><b>M m</b><span>moon</span><i>17</i></div>
+    <div class="toc-letter"><b>N n</b><span>nest</span><i>18</i></div>
+    <div class="toc-letter"><b>O o</b><span>orange</span><i>19</i></div>
+    <div class="toc-letter"><b>P p</b><span>pencil</span><i>20</i></div>
+    <div class="toc-letter"><b>Q q</b><span>quilt</span><i>21</i></div>
+    <div class="toc-letter"><b>R r</b><span>robot</span><i>22</i></div>
+    <div class="toc-letter"><b>S s</b><span>sun</span><i>23</i></div>
+    <div class="toc-letter"><b>T t</b><span>tiger</span><i>24</i></div>
+    <div class="toc-letter"><b>U u</b><span>umbrella</span><i>25</i></div>
+    <div class="toc-letter"><b>V v</b><span>van</span><i>26</i></div>
+    <div class="toc-letter"><b>W w</b><span>whale</span><i>27</i></div>
+    <div class="toc-letter"><b>X x</b><span>xylophone</span><i>28</i></div>
+    <div class="toc-letter"><b>Y y</b><span>yo-yo</span><i>29</i></div>
+    <div class="toc-letter"><b>Z z</b><span>zoo</span><i>30</i></div>
+  </div>
+  <footer class="footer"><span><b>Kids English 1</b> · Contents</span><span>Future Vision Institute</span><span class="star">2</span></footer>
+</section>
+
+<section class="page content-page welcome-page" data-page="3">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">WELCOME</div>
+</header>
+  <div class="welcome-hero">
+    <div class="eyebrow">YOUR FIRST ENGLISH BOOK</div>
+    <h1>Welcome, Little Learner!</h1>
+    <p>Let&#39;s learn the English alphabet together!</p>
+  </div>
+  <div class="welcome-copy">
+    <p>There are 26 letters. Every letter has a capital letter and a small letter.</p>
+    <p>Look at each model, say the letter, copy it, and write it by yourself.</p>
+    <p>Use the word example to practice your new letter.</p>
+  </div>
+  <div class="section-head"><b>LEARN IN FOUR STEPS</b><span>Try this on every page.</span></div>
+  <div class="step-grid">
+    <div class="step-card"><span class="step-num">1</span><b>Look</b><small>Look at the black model.</small></div>
+    <div class="step-card"><span class="step-num">2</span><b>Say</b><small>Say the letter aloud.</small></div>
+    <div class="step-card"><span class="step-num">3</span><b>Copy</b><small>Follow the guide lines.</small></div>
+    <div class="step-card"><span class="step-num">4</span><b>Write</b><small>Write it by yourself.</small></div>
+  </div>
+  <div class="welcome-goals">
+    <div class="goal-card"><h2>In this book, you will:</h2><p>Write big and small letters, practice one word for every letter, and speak with a new friend.</p></div>
+    <div class="goal-card"><h2>Get ready:</h2><p>Find a pencil, sit comfortably, and take your time. Good writing grows with practice.</p></div>
+  </div>
+  <div class="welcome-stats">
+    <div class="stat-card"><b>26</b><span>English letters</span></div>
+    <div class="stat-card"><b>4</b><span>guide lines</span></div>
+    <div class="stat-card"><b>2</b><span>conversations</span></div>
+  </div>
+  <div class="encouragement">You can do it! One letter at a time.</div>
+  <footer class="footer"><span><b>Kids English 1</b> · Welcome</span><span>Future Vision Institute</span><span class="star">3</span></footer>
+</section>
+
+<section class="page content-page guide-page" data-page="4">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">FOUR GUIDE LINES</div>
+</header>
+  <div>
+    <h1 class="page-title">How to Use the Four Guide Lines</h1>
+    <p class="page-lead">The four lines help you write each letter in the right place.</p>
+  </div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <div class="section-head"><b>SEE HOW LETTERS SIT</b><span>Black models inside the four guide lines.</span></div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTERS</b><span>TOP TO BASE</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">A A A A</span><span class="write-label">MODEL</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTERS</b><span>MIDDLE TO BASE</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">a a a a</span><span class="write-label">MODEL</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>LETTER TAILS</b><span>BASE TO BOTTOM</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">p p p p</span><span class="write-label">MODEL</span></div>
+  </section>
+  <div class="guide-notes">
+    <div class="guide-rule"><b>1.</b> Most capital letters start at the top line and sit on the base line.</div>
+    <div class="guide-rule"><b>2.</b> Small letters usually sit between the middle line and the base line.</div>
+    <div class="guide-rule"><b>3.</b> Tall small letters reach the top line. Letter tails go down to the bottom line.</div>
+    <div class="guide-rule"><b>4.</b> Capital J and Q can dip below the base line.</div>
+  </div>
+  <div class="guide-note"><b>Remember:</b> Keep each letter in its place. Look at the model before you write.</div>
+  <footer class="footer"><span><b>Kids English 1</b> · Writing Guide</span><span>Future Vision Institute</span><span class="star">4</span></footer>
+</section>
+
+<section class="page content-page letter-page" data-page="5" data-letter="A">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 1 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">A A A A</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">a a a a</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">apple</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">5</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="6" data-letter="B">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 2 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">B B B B</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">b b b b</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">ball</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">6</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="7" data-letter="C">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 3 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">C C C C</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">c c c c</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">cat</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">7</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="8" data-letter="D">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 4 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">D D D D</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">d d d d</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">dog</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">8</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="9" data-letter="E">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 5 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">E E E E</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">e e e e</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">egg</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">9</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="10" data-letter="F">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 6 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">F F F F</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">f f f f</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">fish</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">10</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="11" data-letter="G">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 7 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">G G G G</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">g g g g</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">goat</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">11</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="12" data-letter="H">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 8 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">H H H H</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">h h h h</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">hat</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">12</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="13" data-letter="I">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 9 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">I I I I</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">i i i i</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word long">ice cream</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">13</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="14" data-letter="J">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 10 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">J J J J</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">j j j j</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">jam</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">14</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="15" data-letter="K">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 11 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">K K K K</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">k k k k</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">kite</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">15</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="16" data-letter="L">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 12 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">L L L L</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">l l l l</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">lamp</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">16</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="17" data-letter="M">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 13 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap wide">M M M M</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small wide">m m m m</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">moon</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">17</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="18" data-letter="N">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 14 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">N N N N</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">n n n n</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">nest</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">18</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="19" data-letter="O">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 15 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">O O O O</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">o o o o</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">orange</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">19</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="20" data-letter="P">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 16 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">P P P P</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">p p p p</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">pencil</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">20</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="21" data-letter="Q">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 17 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">Q Q Q Q</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">q q q q</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">quilt</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">21</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="22" data-letter="R">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 18 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">R R R R</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">r r r r</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">robot</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">22</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="23" data-letter="S">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 19 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">S S S S</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">s s s s</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">sun</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">23</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="24" data-letter="T">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 20 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">T T T T</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">t t t t</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">tiger</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">24</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="25" data-letter="U">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 21 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">U U U U</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">u u u u</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word long">umbrella</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">25</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="26" data-letter="V">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 22 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">V V V V</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">v v v v</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">van</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">26</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="27" data-letter="W">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 23 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap wide">W W W W</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small wide">w w w w</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">whale</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">27</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="28" data-letter="X">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 24 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">X X X X</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">x x x x</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word long">xylophone</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">28</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="29" data-letter="Y">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 25 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">Y Y Y Y</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">y y y y</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">yo-yo</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">29</span></footer>
+</section>
+<section class="page content-page letter-page" data-page="30" data-letter="Z">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LETTER 26 / 26</div>
+</header>
+  <div class="lesson-banner">
+    <div><div class="eyebrow">LETTER PRACTICE</div><h1>Look · Copy · Write</h1><p>Use the four guide lines for every letter and word.</p></div>
+    <div class="step-tags"><span>CAPITAL</span><span>SMALL</span><span>WORD</span></div>
+  </div>
+  <div class="guide-note"><b>Letter placement:</b> Most capital letters start at the top line and sit on the base line. Small letters use the middle and base lines. Letter tails can reach the bottom line.</div>
+  <div class="guide-key">
+    <div class="key-item"><i class="key-mark"></i>TOP LINE</div>
+    <div class="key-item"><i class="key-mark middle"></i>MIDDLE LINE</div>
+    <div class="key-item"><i class="key-mark base"></i>BASE LINE</div>
+    <div class="key-item"><i class="key-mark bottom"></i>BOTTOM LINE</div>
+  </div>
+  <section class="practice-block">
+    <div class="practice-head"><b>CAPITAL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model cap">Z Z Z Z</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>SMALL LETTER</b><span>Four models to copy.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model small">z z z z</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <section class="practice-block">
+    <div class="practice-head"><b>WORD EXAMPLE</b><span>Copy the example word on the four lines.</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="model word">zoo</span><span class="write-label">MODEL</span></div>
+    <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i><span class="write-label">YOUR TURN</span></div>
+  </section>
+  <footer class="footer"><span><b>Kids English 1</b> · Handwriting</span><span>Future Vision Institute</span><span class="star">30</span></footer>
+</section>
+
+<section class="page content-page conversation-page" data-page="31">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LET’S TALK 1</div>
+</header>
+  <div class="conversation-title"><span class="conversation-number">1</span><div><h1>Hello, Friend!</h1><small>SHORT CONVERSATION</small></div></div>
+  <div class="scene">Adam and Sara meet for the first time.</div>
+  <div class="chat">
+    <div class="message left">
+      <span class="avatar navy">A</span>
+      <div class="bubble"><span class="speaker">Adam</span>Hello! My name is Adam. What is your name?</div>
+    </div>
+    <div class="message right">
+      <span class="avatar orange">S</span>
+      <div class="bubble"><span class="speaker">Sara</span>Hi, Adam! My name is Sara.</div>
+    </div>
+    <div class="message left">
+      <span class="avatar navy">A</span>
+      <div class="bubble"><span class="speaker">Adam</span>Nice to meet you.</div>
+    </div>
+    <div class="message right">
+      <span class="avatar orange">S</span>
+      <div class="bubble"><span class="speaker">Sara</span>Nice to meet you, too!</div>
+    </div>
+  </div>
+  <div class="conversation-support">
+    <div class="practice-pair">
+      <div class="practice-turn"><b>ASK</b><span>What is your name?</span></div>
+      <div class="practice-turn"><b>ANSWER</b><span>My name is _____.</span></div>
+    </div>
+    <div class="word-strip"><b>NEW WORDS</b><span>hello · name · friend</span></div>
+  </div>
+  <footer class="footer"><span><b>Kids English 1</b> · Speaking</span><span>Future Vision Institute</span><span class="star">31</span></footer>
+</section>
+<section class="page content-page conversation-page" data-page="32">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">LET’S TALK 2</div>
+</header>
+  <div class="conversation-title"><span class="conversation-number">2</span><div><h1>In the Classroom</h1><small>SHORT CONVERSATION</small></div></div>
+  <div class="scene">The class greets Mr. Ali and gets ready to learn.</div>
+  <div class="chat">
+    <div class="message left">
+      <span class="avatar navy">MA</span>
+      <div class="bubble"><span class="speaker">Mr. Ali</span>Hello, class!</div>
+    </div>
+    <div class="message right">
+      <span class="avatar orange">C</span>
+      <div class="bubble"><span class="speaker">Class</span>Hello, Mr. Ali!</div>
+    </div>
+    <div class="message left">
+      <span class="avatar navy">MA</span>
+      <div class="bubble"><span class="speaker">Mr. Ali</span>Open your book, please.</div>
+    </div>
+    <div class="message right">
+      <span class="avatar orange">S</span>
+      <div class="bubble"><span class="speaker">Sara</span>I am ready!</div>
+    </div>
+    <div class="message left">
+      <span class="avatar navy">A</span>
+      <div class="bubble"><span class="speaker">Adam</span>Me too!</div>
+    </div>
+  </div>
+  <div class="conversation-support">
+    <div class="practice-pair">
+      <div class="practice-turn"><b>SAY</b><span>Open your book, please.</span></div>
+      <div class="practice-turn"><b>ANSWER</b><span>I am ready!</span></div>
+    </div>
+    <div class="word-strip"><b>NEW WORDS</b><span>book · please · ready</span></div>
+  </div>
+  <footer class="footer"><span><b>Kids English 1</b> · Speaking</span><span>Future Vision Institute</span><span class="star">32</span></footer>
+</section>
+
+<section class="page content-page self-page" data-page="33">
+  <header class="page-head">
+  <div class="brandline">FUTURE VISION INSTITUTE · KIDS ENGLISH 1</div>
+  <div class="pageno">MY INTRODUCTION</div>
+</header>
+  <div>
+    <div class="eyebrow">SPEAKING ABOUT YOU</div>
+    <h1 class="page-title">This Is Me!</h1>
+    <p class="page-lead">Use the words to tell a new friend about yourself.</p>
+  </div>
+  <div class="profile-card">
+    <div class="profile-line">Hello! My name is _______________.</div>
+    <div class="profile-line">I am ______ years old.</div>
+    <div class="profile-line">I like _________________________.</div>
+    <div class="profile-line">My favorite color is ____________.</div>
+    <div class="profile-line">Nice to meet you!</div>
+  </div>
+  <div class="name-practice">
+    <div class="name-practice-group">
+      <div class="name-practice-label">Write your name on the four guide lines.</div>
+      <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i></div>
+    </div>
+    <div class="name-practice-group">
+      <div class="name-practice-label">Write one thing you like on the four guide lines.</div>
+      <div class="writing-row"><i class="guide-line top"></i><i class="guide-line middle"></i><i class="guide-line base"></i><i class="guide-line bottom"></i></div>
+    </div>
+  </div>
+  <div class="profile-prompt">Look up, smile, and say hello!</div>
+  <footer class="footer"><span><b>Kids English 1</b> · Speaking</span><span>Future Vision Institute</span><span class="star">33</span></footer>
+</section>
+
+<section class="page content-page certificate-page" data-page="34">
+  <div class="certificate">
+    <div class="eyebrow">FUTURE VISION INSTITUTE</div>
+    <div class="medal">★</div>
+    <h1>I Finished Kids English 1!</h1>
+    <div class="sub">I can say my name and talk with a new friend.</div>
+    <div class="name-field">This book belongs to: __________________________________</div>
+    <div class="statement">I can write capital and small letters from A to Z.</div>
+    <div class="signatures"><div class="signature">Teacher:</div><div class="signature">Date:</div></div>
+    <div class="brand">KIDS ENGLISH · LEVEL 1</div>
+  </div>
+  <footer class="footer"><span><b>Kids English 1</b> · Certificate</span><span>Future Vision Institute</span><span class="star">34</span></footer>
+</section>
+</body>
+</html>

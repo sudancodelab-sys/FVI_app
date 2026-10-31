@@ -34,6 +34,7 @@ cd packages/fvi_core && dart test
 - مستوى Advanced 1 معتمد من المعهد: 13 درساً في 5 وحدات، منها خبر صحفي وبودكاست، في كتاب من 31 صفحة.
 - مستوى Advanced 2 معتمد من المعهد: 13 درساً في 5 وحدات، و31 تعبيراً ومثلاً، في كتاب من 36 صفحة.
 - مستوى Advanced 3 معتمد من المعهد: 13 درساً في 5 وحدات، و31 تعبيراً ومثلاً، في كتاب من 37 صفحة. وبه تكتمل كتب المنهج العشرة.
+- مسار Kids English 1 مستقل عن مستويات CEFR: كتاب أطفال من 34 صفحة A4 للحروف والكتابة والمحادثة والتعريف بالنفس.
 - تطبيق الطالب (`apps/student`): شاشات المستويات والدروس معتمدة، والشرح العربي لقواعد Pre-Intermediate 1 إلى 4 مكتوب. الأصوات هي الخطوة التالية (`docs/VOICES.md`).
 
 لبناء كتاب المستوى (يحتاج Python مع PyYAML وJinja2 وcmudict، وNode مع Playwright):
@@ -49,4 +50,10 @@ python3 curriculum/tools/build.py english/intermediate-2 --book --out int2-book
 python3 curriculum/tools/build.py english/advanced-1 --book --out adv1-book
 python3 curriculum/tools/build.py english/advanced-2 --book --out adv2-book
 python3 curriculum/tools/build.py english/advanced-3 --book --out adv3-book
+```
+
+يبنى مسار الأطفال بقالب مستقل، ويحتاج Python Playwright وChromium:
+
+```bash
+python3 curriculum/english/kids-1/build_kids_book.py
 ```
