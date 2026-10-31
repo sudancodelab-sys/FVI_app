@@ -6,7 +6,7 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
 ## Working with the institute
 
 - **Reply in Arabic.** End each reply with at most **two numbered questions**
-  (`**السؤال 87:** …`); the last one asked was 86, so continue from 87.
+  (`**السؤال 89:** …`); the last one asked was 88, so continue from 89.
 - **Plan and sample first.** For every new piece of work (a level, a design, the voices),
   send a plan and a sample, and go on only after the institute approves both.
 - **Never change what is approved** unless asked. New behavior goes behind an option (a
@@ -50,7 +50,9 @@ Institute, Sudan). Read this first; it is what earlier sessions learned.
   was blocked by the network (`huggingface.co`); check it first.
 - **Kids 1** (`curriculum/english/kids-1`, 31 October 2026): a children's level outside the ten
   (letters A to Z written on the four copybook lines, then two conversations and "All About Me").
-  Plan and sample (A to F) sent, **waiting for approval** (questions 85 and 86). Its own build path
+  The cover is approved ("do not change it"). The institute asked for one or two letters a page
+  (big and small letter on one line, the word on the next), speaking at the end: second sample
+  (A to F) sent, **waiting for approval** (questions 87 and 88). Its own build path
   (`layout: kids`): `tools/kids.py` draws each letter as numbered pen strokes; `kids.html.j2`,
   `assets/kids.css`, `tools/kids-paginate.js`, pictures in `assets/kids/`. After approval: draw the
   other 20 pictures, build the whole book. Approved books are untouched (checked with `cmp`).

@@ -1,7 +1,8 @@
 // Pages of a Kids book. The blocks of #flow (lesson starts, sections, letter
 // cards) fill A4 pages one after another, so no page is left half empty. A
 // block marked .keep (a lesson start or a heading) never ends a page: it moves
-// with the block after it; a long conversation goes on on the next page.
+// with the block after it; a long conversation goes on on the next page,
+// and a block marked data-break starts a new page.
 // Then each page names what it holds, the pages are
 // numbered and the contents get their page numbers.
 window.fviReady = (async () => {
@@ -20,7 +21,7 @@ window.fviReady = (async () => {
   // heading and "(continued)", keeping at least three lines on each page.
   const split = (block, page) => {
     const box = block.querySelector('.items');
-    if (!block.classList.contains('split') || box.children.length <= 3) return null;
+    if (!overflows(page) || !block.classList.contains('split') || box.children.length <= 3) return null;
     const tail = block.cloneNode(false);
     const heading = block.querySelector('h2').cloneNode(true);
     heading.querySelectorAll('small').forEach((el) => el.remove());
@@ -38,6 +39,8 @@ window.fviReady = (async () => {
   const queue = [...src.children];
   while (queue.length) {
     const block = queue.shift();
+    // data-break: the block starts a page (two letters on each page).
+    if (block.hasAttribute('data-break') && flowOf(page).children.length) page = newPage();
     flowOf(page).append(block);
     if (!overflows(page)) continue;
     let tail = split(block, page);

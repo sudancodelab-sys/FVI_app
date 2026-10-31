@@ -64,14 +64,19 @@
 .how .mk{width:8mm;height:8mm;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:11pt;display:grid;place-items:center;flex:none}
 .how .mk svg{width:5mm;height:5mm;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 
-/* a letter: its picture and word, then its line in the copybook */
-.lcard{display:grid;grid-template-columns:33mm 1fr;gap:3.5mm;align-items:stretch;border:1.3px solid var(--line);border-radius:5mm;padding:2mm 2.5mm 2mm 2mm;margin-top:3.6mm}
-.lcard .pic{position:relative;border-radius:4mm;background:linear-gradient(160deg,var(--navy-tint),#FFF3EC);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8mm;padding:2mm 0}
-.lcard .pic > svg{width:19mm;height:19mm}
-.lcard .pic b{font-size:13.5pt;font-weight:600;color:var(--navy);line-height:1}
-.lcard .lt{position:absolute;top:1.6mm;left:1.6mm;font-size:10pt;font-weight:800;color:#fff;background:var(--navy);border-radius:2mm;padding:.2mm 1.6mm}
-.lcard .lt em{font-style:normal;color:#FF9B7A}
-.lcard .strip{align-self:center}
+/* a letter: its heading, its picture and word, then two lines of the copybook */
+.lblock{margin-top:4mm}
+.lblock + .lblock{margin-top:7mm}
+.lhead{display:flex;align-items:center;gap:4mm;margin-bottom:2.5mm}
+.ltile{min-width:13mm;height:13mm;padding:0 2.6mm;border-radius:3.5mm;background:var(--navy);color:#fff;font-size:17pt;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:-.5px;box-shadow:0 2mm 4mm -2mm rgba(38,46,98,.45);flex:none}
+.ltile em{font-style:normal;color:#FF9B7A}
+.lhead h2{font-size:18pt;font-weight:800;color:var(--navy);line-height:1.1}
+.lhead p{font-size:11pt;color:var(--muted);margin-top:.3mm}
+.lcard{display:grid;grid-template-columns:38mm 1fr;gap:4mm;border:1.3px solid var(--line);border-radius:5mm;padding:2mm 3mm 2mm 2mm}
+.lcard .pic{border-radius:4mm;background:linear-gradient(160deg,var(--navy-tint),#FFF3EC);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3mm}
+.lcard .pic > svg{width:30mm;height:30mm}
+.lcard .pic b{font-size:17pt;font-weight:600;color:var(--navy);line-height:1}
+.lcard .lines{display:flex;flex-direction:column;justify-content:center}
 
 /* speaking */
 .face{display:block;width:15mm;height:15mm;border-radius:50%;background:#EEF1FB;border:1.3px solid var(--line);overflow:hidden;flex:none}

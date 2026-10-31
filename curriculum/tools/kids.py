@@ -246,10 +246,11 @@ def make_strip(*runs, space=None):
     return s
 
 
-def letter_strip(entry):
-    """The copybook line of a letter: the big letter, the small letter, the word."""
-    return make_strip((entry['letter'], 'model'), (entry['letter'].lower(), 'model'),
-                      (entry['word'], 'word', {entry.get('mark', 0)}))
+def letter_strips(entry):
+    """The two copybook lines of a letter: the big and the small letter
+    with their strokes numbered, then the word with the letter in orange."""
+    return (make_strip((entry['letter'], 'model'), (entry['letter'].lower(), 'model'), space=1.4),
+            make_strip((entry['word'], 'word', {entry.get('mark', 0)})))
 
 
 # ------------------------------------------------------- level, checks, book
@@ -388,10 +389,15 @@ def build(level_dir, args, wordlists, report_cls):
     if args.check:
         return
 
-    # Every letter line is drawn at the same size: the size that fits the longest one.
-    width = max(letter_strip(e).width() for e in letters)
-    cards = [dict(e, strip=Markup(letter_strip(e).svg(width=width)), picture=Markup(picture(e['word'])))
-             for e in letters if e['letter'] in selected]
+    # Every letter line is drawn at the same size: the size that fits the longest
+    # one with a little room after it, so that two letters fill a page.
+    width = max(s.width() for e in letters for s in letter_strips(e)) + 90
+    cards = []
+    for e in letters:
+        if e['letter'] in selected:
+            big_small, word = letter_strips(e)
+            cards.append(dict(e, letters=Markup(big_small.svg(width=width)),
+                              word_line=Markup(word.svg(width=width)), picture=Markup(picture(e['word']))))
     lines = make_strip(('A', 'word'), ('a', 'word'), ('b', 'word'), ('g', 'word'), space=1.6)
     groups = [dict(g, n=n, strip=Markup(make_strip(*[(c, 'word') for c in g['letters'].split()], space=.75)
                                   .svg(width=1250, lead=40, tail=20)))

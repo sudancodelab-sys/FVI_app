@@ -147,20 +147,23 @@
     </div>
   </div>
 
-  {#- The letters A to Z #}
-  <div class="blk keep sec-head" data-part="My ABC" data-toc="letters">
-    <h2 class="big"><span class="num">{{ icon('pencil') }}</span>{{ intro.letters_title }}</h2>
-    <p class="lead">{{ intro.letters_lead }}</p>
-  </div>
+  {#- The letters A to Z: two letters on a page. Each one on two copybook
+      lines: the big and the small letter with their strokes numbered, then
+      the word. #}
   {%- for c in cards %}
-  <div class="blk lcard" data-letter="{{ c.letter }}" data-part="My ABC">
-    <div class="pic">
-      <span class="lt">{{ c.letter }}<em>{{ c.letter|lower }}</em></span>
-      {{ c.picture }}
-      {%- set m = c.mark or 0 %}
-      <b>{{ c.word[:m] }}<span class="hl">{{ c.word[m] }}</span>{{ c.word[m + 1:] }}</b>
+  {%- set m = c.mark or 0 %}
+  <div class="blk lblock" data-letter="{{ c.letter }}" data-part="My ABC"{% if loop.index0 is even %} data-break{% endif %}{% if loop.first %} data-toc="letters"{% endif %}>
+    <div class="lhead">
+      <span class="ltile">{{ c.letter }}<em>{{ c.letter|lower }}</em></span>
+      <div><h2>The Letter {{ c.letter }}</h2><p>{{ c.letter }} is for {{ c.word }}.</p></div>
     </div>
-    {{ c.strip }}
+    <div class="lcard">
+      <div class="pic">
+        {{ c.picture }}
+        <b>{{ c.word[:m] }}<span class="hl">{{ c.word[m] }}</span>{{ c.word[m + 1:] }}</b>
+      </div>
+      <div class="lines">{{ c.letters }}{{ c.word_line }}</div>
+    </div>
   </div>
   {%- endfor %}
 
